@@ -1,0 +1,1087 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<REPORT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <REPORT_NAME>f294</REPORT_NAME>
+  <TABLE>
+    <TABLE_NAME>Таблица 1</TABLE_NAME>
+    <TABLE_DESCRIPTION>Сведения об организации оказания медицинской помощи</TABLE_DESCRIPTION>
+    <ROWS_COUNT>4</ROWS_COUNT>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, получивших направление на оказание медицинской помощи в условиях дневного стационара,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>01</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    выбравших МО на территории субъекта РФ, в котором выдан полис ОМС</ROW_TEXT>
+      <ROW_NUM>01.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    выбравших МО за пределами субъекта РФ, в котором выдан полис ОМС</ROW_TEXT>
+      <ROW_NUM>01.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, получивших направление на оказание медицинской помощи в условиях круглосуточного стационара,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>02</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    выбравших МО на территории субъекта РФ, в котором выдан полис ОМС</ROW_TEXT>
+      <ROW_NUM>02.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    выбравших МО за пределами субъекта РФ, в котором выдан полис ОМС</ROW_TEXT>
+      <ROW_NUM>02.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, госпитализированных в МО для оказания медицинской помощи, из числа получивших направление,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>03</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    в дневной стационар</ROW_TEXT>
+      <ROW_NUM>03.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    в круглосуточный стационар</ROW_TEXT>
+      <ROW_NUM>03.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, госпитализированных в МО для оказания медицинской помощи с нарушением срока ожидания, из числа получивших направление,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>04</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    в дневной стационар</ROW_TEXT>
+      <ROW_NUM>04.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    в круглосуточный стационар</ROW_TEXT>
+      <ROW_NUM>04.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Количество случаев оказания медицинской помощи с нарушением сроков ожидания, по которым проведены МЭЭ и ЭКМП,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>05</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    в дневном стационаре</ROW_TEXT>
+      <ROW_NUM>05.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    в круглосуточном стационаре</ROW_TEXT>
+      <ROW_NUM>05.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, в отношении которых не состоялась запланированная госпитализация из-за отсутствия медицинских показаний,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>06</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    в дневной стационар</ROW_TEXT>
+      <ROW_NUM>06.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    в круглосуточный стационар</ROW_TEXT>
+      <ROW_NUM>06.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Количество случаев, по которым проведены МЭЭ и ЭКМП в связи с несостоявшейся госпитализацией из-за отсутствия медицинских показаний,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>07</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    в дневном стационаре</ROW_TEXT>
+      <ROW_NUM>07.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    в круглосуточном стационаре</ROW_TEXT>
+      <ROW_NUM>07.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Количество случаев оказания плановой медицинской помощи, отклоненных от оплаты в связи с превышением объема медицинской помощи,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>08</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    в дневном стационаре</ROW_TEXT>
+      <ROW_NUM>08.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    в круглосуточном стационаре</ROW_TEXT>
+      <ROW_NUM>08.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+  </TABLE>
+  <TABLE>
+    <TABLE_NAME>Таблица 2</TABLE_NAME>
+    <TABLE_DESCRIPTION>Сведения о численности застрахованных лиц, включенных в списки для прохождения первого этапа диспансеризации.</TABLE_DESCRIPTION>
+    <ROWS_COUNT>4</ROWS_COUNT>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, включенных МО в списки для проведения первого этапа диспансеризации, проводимой с периодичностью 1 раз в 3 года,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>01</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    граждане мужского пола</ROW_TEXT>
+      <ROW_NUM>01.1</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        18 - 39 лет</ROW_TEXT>
+      <ROW_NUM>01.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        40 - 59 лет</ROW_TEXT>
+      <ROW_NUM>01.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        60 - 65 лет</ROW_TEXT>
+      <ROW_NUM>01.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        66 - 74 года</ROW_TEXT>
+      <ROW_NUM>01.5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        75 лет и старше</ROW_TEXT>
+      <ROW_NUM>01.6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    граждане женского пола</ROW_TEXT>
+      <ROW_NUM>01.7</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        18 - 39 лет</ROW_TEXT>
+      <ROW_NUM>01.8</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        40 - 54 года</ROW_TEXT>
+      <ROW_NUM>01.9</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        55 - 65 лет</ROW_TEXT>
+      <ROW_NUM>01.10</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        66 - 74 года</ROW_TEXT>
+      <ROW_NUM>01.11</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        75 лет и старше</ROW_TEXT>
+      <ROW_NUM>01.12</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, включенных МО в списки для проведения первого этапа диспансеризации, проводимой с периодичностью 1 раз в 2 года,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>02</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    граждане мужского пола</ROW_TEXT>
+      <ROW_NUM>02.1</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        49 - 59 лет</ROW_TEXT>
+      <ROW_NUM>02.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        60 - 65 лет</ROW_TEXT>
+      <ROW_NUM>02.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        66 - 73 года</ROW_TEXT>
+      <ROW_NUM>02.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    граждане женского пола</ROW_TEXT>
+      <ROW_NUM>02.5</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        49 - 54 лет</ROW_TEXT>
+      <ROW_NUM>02.6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        55 - 65 лет</ROW_TEXT>
+      <ROW_NUM>02.7</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        66 - 73 года</ROW_TEXT>
+      <ROW_NUM>02.8</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+  </TABLE>
+  <TABLE>
+    <TABLE_NAME>Таблица 3</TABLE_NAME>
+    <TABLE_DESCRIPTION>Сведения об организации информирования застрахованных лиц, включенных медицинскими организациями в списки для проведения первого этапа диспансеризации, проводимой с периодичностью 1 раз в 3 года.</TABLE_DESCRIPTION>
+    <ROWS_COUNT>10</ROWS_COUNT>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, индивидуально проинформированных о возможности прохождения диспансеризации в МО, к которой они прикреплены,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>01</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    граждане мужского пола</ROW_TEXT>
+      <ROW_NUM>01.1</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        18 - 39 лет</ROW_TEXT>
+      <ROW_NUM>01.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        40 - 59 лет</ROW_TEXT>
+      <ROW_NUM>01.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        60 - 65 лет</ROW_TEXT>
+      <ROW_NUM>01.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        66 - 74 года</ROW_TEXT>
+      <ROW_NUM>01.5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        75 лет и старше</ROW_TEXT>
+      <ROW_NUM>01.6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    граждане женского пола</ROW_TEXT>
+      <ROW_NUM>01.7</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        18 - 39 лет</ROW_TEXT>
+      <ROW_NUM>01.8</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        40 - 54 года</ROW_TEXT>
+      <ROW_NUM>01.9</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        55 - 65 лет</ROW_TEXT>
+      <ROW_NUM>01.10</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        66 - 74 года</ROW_TEXT>
+      <ROW_NUM>01.11</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        75 лет и старше</ROW_TEXT>
+      <ROW_NUM>01.12</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, повторно индивидуально проинформированных о возможности прохождения диспансеризации в МО, к которой они прикреплены,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>02</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    граждане мужского пола</ROW_TEXT>
+      <ROW_NUM>02.1</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        18 - 39 лет</ROW_TEXT>
+      <ROW_NUM>02.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        40 - 59 лет</ROW_TEXT>
+      <ROW_NUM>02.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        60 - 65 лет</ROW_TEXT>
+      <ROW_NUM>02.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        66 - 74 года</ROW_TEXT>
+      <ROW_NUM>02.5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        75 лет и старше</ROW_TEXT>
+      <ROW_NUM>02.6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    граждане женского пола</ROW_TEXT>
+      <ROW_NUM>02.7</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        18 - 39 лет</ROW_TEXT>
+      <ROW_NUM>02.8</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        40 - 54 года</ROW_TEXT>
+      <ROW_NUM>02.9</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        55 - 65 лет</ROW_TEXT>
+      <ROW_NUM>02.10</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        66 - 74 года</ROW_TEXT>
+      <ROW_NUM>02.11</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        75 лет и старше</ROW_TEXT>
+      <ROW_NUM>02.12</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+  </TABLE>
+  <TABLE>
+    <TABLE_NAME>Таблица 4</TABLE_NAME>
+    <TABLE_DESCRIPTION>Сведения об организации информирования застрахованных лиц, включенных медицинскими организациями в списки для проведения первого этапа диспансеризации, проводимой с периодичностью 1 раз в 2 года.</TABLE_DESCRIPTION>
+    <ROWS_COUNT>10</ROWS_COUNT>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, индивидуально проинформированных о возможности прохождения диспансеризации в МО, к которой они прикреплены,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>01</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    граждане мужского пола</ROW_TEXT>
+      <ROW_NUM>01.1</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        49 - 59 лет</ROW_TEXT>
+      <ROW_NUM>01.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        60 - 65 лет</ROW_TEXT>
+      <ROW_NUM>01.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        66 - 73 года</ROW_TEXT>
+      <ROW_NUM>01.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    граждане женского пола</ROW_TEXT>
+      <ROW_NUM>01.5</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        49 - 54 лет</ROW_TEXT>
+      <ROW_NUM>01.6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        55 - 65 лет</ROW_TEXT>
+      <ROW_NUM>01.7</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        66 - 73 года</ROW_TEXT>
+      <ROW_NUM>01.8</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, повторно индивидуально проинформированных о возможности прохождения диспансеризации в МО, к которой они прикреплены,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>02</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    граждане мужского пола</ROW_TEXT>
+      <ROW_NUM>02.1</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        49 - 59 лет</ROW_TEXT>
+      <ROW_NUM>02.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        60 - 65 лет</ROW_TEXT>
+      <ROW_NUM>02.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        66 - 73 года</ROW_TEXT>
+      <ROW_NUM>02.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    граждане женского пола</ROW_TEXT>
+      <ROW_NUM>02.5</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        49 - 54 лет</ROW_TEXT>
+      <ROW_NUM>02.6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        55 - 65 лет</ROW_TEXT>
+      <ROW_NUM>02.7</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        66 - 73 года</ROW_TEXT>
+      <ROW_NUM>02.8</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+  </TABLE>
+  <TABLE>
+    <TABLE_NAME>Таблица 5</TABLE_NAME>
+    <TABLE_DESCRIPTION>Сведения об организации информирования застрахованных лиц, направленных для проведения 2 этапа диспансеризации, включенных медицинскими организациями в списки для проведения первого этапа диспансеризации.</TABLE_DESCRIPTION>
+    <ROWS_COUNT>10</ROWS_COUNT>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, индивидуально проинформированных о необходимости прохождения диспансеризации в рамках 2 этапа,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>01</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    граждане мужского пола</ROW_TEXT>
+      <ROW_NUM>02</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        18 - 39 лет</ROW_TEXT>
+      <ROW_NUM>03</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        40 - 59 лет</ROW_TEXT>
+      <ROW_NUM>04</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        60 - 65 лет</ROW_TEXT>
+      <ROW_NUM>05</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        66 - 74 года</ROW_TEXT>
+      <ROW_NUM>06</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        75 лет и старше</ROW_TEXT>
+      <ROW_NUM>07</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    граждане женского пола</ROW_TEXT>
+      <ROW_NUM>08</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        18 - 39 лет</ROW_TEXT>
+      <ROW_NUM>09</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        40 - 54 года</ROW_TEXT>
+      <ROW_NUM>10</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        55 - 65 лет</ROW_TEXT>
+      <ROW_NUM>11</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        66 - 74 года</ROW_TEXT>
+      <ROW_NUM>12</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        75 лет и старше</ROW_TEXT>
+      <ROW_NUM>13</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+  </TABLE>
+  <TABLE>
+    <TABLE_NAME>Таблица 6</TABLE_NAME>
+    <TABLE_DESCRIPTION>Сведения об организации информирования застрахованных лиц, подлежащих диспансерному наблюдению в медицинской организации, к которой они прикреплены.</TABLE_DESCRIPTION>
+    <ROWS_COUNT>8</ROWS_COUNT>
+    <ROW>
+      <ROW_TEXT>
+        Численность застрахованных лиц, индивидуально проинформированных о необходимости прохождения диспансерного наблюдения,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>01</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    граждане мужского пола</ROW_TEXT>
+      <ROW_NUM>02</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        18 - 39 лет</ROW_TEXT>
+      <ROW_NUM>03</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        40 - 59 лет</ROW_TEXT>
+      <ROW_NUM>04</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        60 - 65 лет</ROW_TEXT>
+      <ROW_NUM>05</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        66 - 74 года</ROW_TEXT>
+      <ROW_NUM>06</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        75 лет и старше</ROW_TEXT>
+      <ROW_NUM>07</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    граждане женского пола</ROW_TEXT>
+      <ROW_NUM>08</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        18 - 39 лет</ROW_TEXT>
+      <ROW_NUM>09</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        40 - 54 года</ROW_TEXT>
+      <ROW_NUM>10</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        55 - 65 лет</ROW_TEXT>
+      <ROW_NUM>11</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        66 - 74 года</ROW_TEXT>
+      <ROW_NUM>12</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        75 лет и старше</ROW_TEXT>
+      <ROW_NUM>13</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+  </TABLE>
+  <TABLE>
+    <TABLE_NAME>Таблица 7</TABLE_NAME>
+    <TABLE_DESCRIPTION>Сведения об организации телефонных опросов застрахованных лиц, включенных медицинскими организациями в списки для проведения диспансеризации.</TABLE_DESCRIPTION>
+    <ROWS_COUNT>4</ROWS_COUNT>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, принявших участие в телефонном опросе по вопросам прохождения профилактических мероприятий,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>01</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    граждане мужского пола</ROW_TEXT>
+      <ROW_NUM>01.1</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        18 - 39 лет</ROW_TEXT>
+      <ROW_NUM>01.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        40 - 59 лет</ROW_TEXT>
+      <ROW_NUM>01.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        60 - 65 лет</ROW_TEXT>
+      <ROW_NUM>01.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        66 - 74 года</ROW_TEXT>
+      <ROW_NUM>01.5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        75 лет и старше</ROW_TEXT>
+      <ROW_NUM>01.6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    граждане женского пола</ROW_TEXT>
+      <ROW_NUM>01.7</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        18 - 39 лет</ROW_TEXT>
+      <ROW_NUM>01.8</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        40 - 54 года</ROW_TEXT>
+      <ROW_NUM>01.9</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        55 - 65 лет</ROW_TEXT>
+      <ROW_NUM>01.10</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        66 - 74 года</ROW_TEXT>
+      <ROW_NUM>01.11</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        75 лет и старше</ROW_TEXT>
+      <ROW_NUM>01.12</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, принявших участие в телефонном опросе по вопросам прохождения диспансеризации (не прошедшие профилактические мероприятия),
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>02</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    граждане мужского пола</ROW_TEXT>
+      <ROW_NUM>02.1</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        18 - 39 лет</ROW_TEXT>
+      <ROW_NUM>02.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        40 - 59 лет</ROW_TEXT>
+      <ROW_NUM>02.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        60 - 65 лет</ROW_TEXT>
+      <ROW_NUM>02.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        66 - 74 года</ROW_TEXT>
+      <ROW_NUM>02.5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        75 лет и старше</ROW_TEXT>
+      <ROW_NUM>02.6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    граждане женского пола</ROW_TEXT>
+      <ROW_NUM>02.7</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        18 - 39 лет</ROW_TEXT>
+      <ROW_NUM>02.8</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        40 - 54 года</ROW_TEXT>
+      <ROW_NUM>02.9</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        55 - 65 лет</ROW_TEXT>
+      <ROW_NUM>02.10</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        66 - 74 года</ROW_TEXT>
+      <ROW_NUM>02.11</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>        75 лет и старше</ROW_TEXT>
+      <ROW_NUM>02.12</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+  </TABLE>
+  <TABLE>
+    <TABLE_NAME>Таблица 8</TABLE_NAME>
+    <TABLE_DESCRIPTION>Сведения о количестве страховых представителей.</TABLE_DESCRIPTION>
+    <ROWS_COUNT>4</ROWS_COUNT>
+    <ROW>
+      <ROW_TEXT>Численность СП></ROW_TEXT>
+      <ROW_NUM>00</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Численность СП 1 уровня,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>01</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    специалист федерального контакт-центра:</ROW_TEXT>
+      <ROW_NUM>01.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    из них: прошедших специальную подготовку:</ROW_TEXT>
+      <ROW_NUM>01.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    специалист регионального контакт-центра:</ROW_TEXT>
+      <ROW_NUM>01.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    из них: прошедших специальную подготовку:</ROW_TEXT>
+      <ROW_NUM>01.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Численность СП 2 уровня, всего:</ROW_TEXT>
+      <ROW_NUM>02</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    из них: прошедших специальную подготовку:</ROW_TEXT>
+      <ROW_NUM>02.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Численность СП 3 уровня, всего:</ROW_TEXT>
+      <ROW_NUM>03</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    из них: прошедших специальную подготовку:</ROW_TEXT>
+      <ROW_NUM>03.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+  </TABLE>
+  <TABLE>
+    <TABLE_NAME>Таблица 9</TABLE_NAME>
+    <TABLE_DESCRIPTION>Сведения о деятельности страховых представителей.</TABLE_DESCRIPTION>
+    <ROWS_COUNT>4</ROWS_COUNT>
+    <ROW>
+      <ROW_TEXT>Количество поступивших устных обращений, всего:</ROW_TEXT>
+      <ROW_NUM>01</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    из них: переадресованных к СП 2 уровня</ROW_TEXT>
+      <ROW_NUM>01.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    из них: переадресованных к СП 3 уровня</ROW_TEXT>
+      <ROW_NUM>01.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Количество поступивших письменных обращений от ЗЛ, всего</ROW_TEXT>
+      <ROW_NUM>02</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        к специалисту 2 уровня
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>02.1</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    рассмотренные без нарушения сроков</ROW_TEXT>
+      <ROW_NUM>02.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    рассмотренные с нарушением сроков обращения</ROW_TEXT>
+      <ROW_NUM>02.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    к специалисту 3 уровня</ROW_TEXT>
+      <ROW_NUM>02.4</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    рассмотренные без нарушения сроков</ROW_TEXT>
+      <ROW_NUM>02.5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    рассмотренные с нарушением сроков обращения</ROW_TEXT>
+      <ROW_NUM>02.6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Количество поступивших письменных обращений от ЗЛ, требующих организации проведения МЭЭ  и ЭКМП</ROW_TEXT>
+      <ROW_NUM>03</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+  </TABLE>
+  <TABLE>
+    <TABLE_NAME>Эффективность</TABLE_NAME>
+    <TABLE_DESCRIPTION>Сведения об эффективности информирования (данная форма заполняется только для сдачи в ЦО)</TABLE_DESCRIPTION>
+    <ROWS_COUNT>4</ROWS_COUNT>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, включенных МО в списки для проведения первого этапа диспансеризации проводимой с периодичностью 1 раз в 3 года,
+        всего
+      </ROW_TEXT>
+      <ROW_NUM>Д13.1</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, включенных МО в списки для проведения первого этапа диспансеризации проводимой с периодичностью 1 раз в 3 года,
+        на текущий квартал
+      </ROW_TEXT>
+      <ROW_NUM>Д13.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, индивидуально проинформированных о возможности прохождения диспансеризации в МО, к которой они прикреплены,
+        всего
+      </ROW_TEXT>
+      <ROW_NUM>Д13.3</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, повторно индивидуально проинформированных о возможности прохождения диспансеризации в МО, к которой они прикреплены,
+        всего
+      </ROW_TEXT>
+      <ROW_NUM>Д13.4</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, прошедших 1 этап диспансеризации (по реестрам счетов)
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>Д13.5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    включенных в списки на текущий месяц</ROW_TEXT>
+      <ROW_NUM>Д13.6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    включенных в списки на текущий квартал</ROW_TEXT>
+      <ROW_NUM>Д13.7</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    из числа проинформированных</ROW_TEXT>
+      <ROW_NUM>Д13.8</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    из числа повторно проинформированных</ROW_TEXT>
+      <ROW_NUM>Д13.9</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, включенных МО в списки для проведения первого этапа диспансеризации проводимой с периодичностью 1 раз в 2 года,
+        всего
+      </ROW_TEXT>
+      <ROW_NUM>Д12.1</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, включенных МО в списки для проведения первого этапа диспансеризации проводимой с периодичностью 1 раз в 2 года,
+        на текущий квартал
+      </ROW_TEXT>
+      <ROW_NUM>Д12.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, индивидуально проинформированных о возможности прохождения диспансеризации в МО, к которой они прикреплены,
+        всего
+      </ROW_TEXT>
+      <ROW_NUM>Д12.3</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, повторно индивидуально проинформированных о возможности прохождения диспансеризации в МО, к которой они прикреплены,
+        всего
+      </ROW_TEXT>
+      <ROW_NUM>Д12.4</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, прошедших диспансеризацию (по реестрам счетов)
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>Д12.5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    включенных в списки на текущий месяц</ROW_TEXT>
+      <ROW_NUM>Д12.6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    включенных в списки на текущий квартал</ROW_TEXT>
+      <ROW_NUM>Д12.7</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    из числа проинформированных</ROW_TEXT>
+      <ROW_NUM>Д12.8</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    из числа повторно проинформированных</ROW_TEXT>
+      <ROW_NUM>Д12.9</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, направленных на 2 этап диспансеризации,
+        всего
+      </ROW_TEXT>
+      <ROW_NUM>Д2.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, индивидуально проинформированных о возможности прохождения  2 этапа диспансеризации в МО, к которой они прикреплены,
+        всего
+      </ROW_TEXT>
+      <ROW_NUM>Д2.2</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Численность ЗЛ, прошедших 2 этап диспансеризации (по реестрам счетов)</ROW_TEXT>
+      <ROW_NUM>Д2.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, подлежащих диспансерному наблюдению,
+        всего
+      </ROW_TEXT>
+      <ROW_NUM>ДН.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Численность ЗЛ, индивидуально проин-формированных о необходимости прохождения диспансерного наблюдения,
+        всего
+      </ROW_TEXT>
+      <ROW_NUM>ДН.2</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+  </TABLE>
+</REPORT>

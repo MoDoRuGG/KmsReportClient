@@ -1,0 +1,983 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using KmsReportClient.Excel.Creator.Consolidate;
+using KmsReportClient.External;
+using KmsReportClient.Global;
+using KmsReportClient.Model.Enums;
+using KmsReportClient.Support;
+using NLog;
+
+namespace KmsReportClient.Forms
+{
+    public partial class ConsolidateForm : Form
+    {
+        private const string SummaryFilialName = "ООО «Капитал МС»";
+        private const string SummaryFilialCode = "RU";
+
+        private static readonly ConsolidateReport[] FolderReports = { ConsolidateReport.ZpzWebSite };
+
+        private readonly EndpointSoapClient _client;
+        private readonly string _filialName;
+        private readonly List<KmsReportDictionary> _regions;
+        private readonly ConsolidateReport _report;
+
+        public ConsolidateForm(EndpointSoapClient client, List<KmsReportDictionary> regions,
+            ConsolidateReport report, string filialName)
+        {
+            InitializeComponent();
+            this._client = client;
+            this._report = report;
+            this._regions = regions;
+            this._filialName = filialName;
+        }
+
+        private void ConsolidateForm_Load(object sender, EventArgs e)
+        {
+            int year = DateTime.Today.Year;
+            nudStart.Value = year;
+            nudEnd.Value = year;
+            nudSingle.Value = year;
+
+            var monthsStart = GlobalConst.Months;
+            var monthsEnd = GlobalConst.Months;
+
+            cmbStart.DataSource = monthsStart;
+            cmbEnd.DataSource = GlobalConst.Months.Clone();
+
+            cmbRegion.DisplayMember = "Value";
+            cmbRegion.ValueMember = "Key";
+
+            if (_report == ConsolidateReport.ConsolidateOped)
+            {
+                _regions.Add(new KmsReportDictionary { Key = "Все филиалы", Value = "Все филиалы" });
+
+            }
+            cmbRegion.DataSource = _regions;
+
+            switch (_report)
+            {
+                case ConsolidateReport.Consolidate262T1:
+                    labelStart.Text = "Год";
+                    panelSt.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать свод к табл.1 по отчетной форме к приказу 262";
+                    saveFileDialog1.FileName = "Свод к табл.1 по форме 262";
+                    break;
+                case ConsolidateReport.Consolidate262T2:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать свод к табл.2 по отчетной форме к приказу 262";
+                    saveFileDialog1.FileName = "Свод к табл.2 по форме 262";
+                    break;
+                case ConsolidateReport.Consolidate262T3:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать свод к табл.3 по отчетной форме к приказу 262";
+                    saveFileDialog1.FileName = "Свод к табл.3 по форме 262";
+                    break;
+                case ConsolidateReport.ConsolidateFilial294:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = true;
+                    btnDo.Text = "Сформировать сводную таблицу по форме 294";
+                    saveFileDialog1.FileName = "Свод по форме 294";
+                    break;
+                case ConsolidateReport.ConsolidateFull294:
+                    labelStart.Text = "Год";
+                    panelSt.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать итоговый отчет по филиалам по форме 294";
+                    saveFileDialog1.FileName = "Итоговый отчет по форме 294";
+                    break;
+                case ConsolidateReport.ZpzWebSite:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать отчет ЗПЗ для сайта";
+                    saveFileDialog1.FileName = "Сводный отчет ЗПЗ для сайта";
+
+                    cmbStart.DataSource = GlobalConst.Periods;
+                    break;
+                case ConsolidateReport.ControlZpzMonthly:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать сводный отчет для контроля ЗПЗ";
+                    saveFileDialog1.FileName = "Сводный отчет для контроля ЗПЗ";
+                    break;
+                case ConsolidateReport.ControlZpzQuarterly:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать сводный отчет для контроля ЗПЗ (квартальный)";
+                    saveFileDialog1.FileName = "Сводный отчет для контроля ЗПЗ (квартальный)";
+
+                    cmbStart.DataSource = GlobalConst.Periods;
+                    break;
+                case ConsolidateReport.Onko:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать сводный отчет по онкологии";
+                    saveFileDialog1.FileName = "Сводный отчет по онкологии";
+                    break;
+                case ConsolidateReport.OnkoQuarterly:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать сводный отчет по онкологии (квартальный)";
+                    saveFileDialog1.FileName = "Сводный отчет по онкологии (квартальный)";
+                    cmbStart.DataSource = GlobalConst.Periods;
+                    break;
+
+                case ConsolidateReport.Cardio:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать сводный отчет по сердечно-сосудистым заболеваниям (квартальный)";
+                    saveFileDialog1.FileName = "Сводный отчет по сердечно-сосудистым заболеваниям (квартальный)";
+                    cmbStart.DataSource = GlobalConst.Periods;
+                    break;
+
+                case ConsolidateReport.Disp:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать сводный отчет Диспансеризация(квартальный)";
+                    saveFileDialog1.FileName = "Сводный отчет Диспансеризация (квартальный)";
+                    cmbStart.DataSource = GlobalConst.Periods;
+                    break;
+
+                case ConsolidateReport.Letal:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать сводный отчет Летальные";
+                    saveFileDialog1.FileName = "Сводный отчет Летальные";
+                    cmbStart.DataSource = GlobalConst.Periods;
+                    break;
+
+                case ConsolidateReport.CnpnQuarterly:
+                    labelStart.Text = "Период";
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    nudSingle.Visible = false;
+                    cmbStart.DataSource = GlobalConst.Periods;
+                    btnDo.Text = "Сформировать сводный отчет  об исполнении ЦПНП";
+                    saveFileDialog1.FileName = "Cводный отчет  об исполнении ЦПНП";
+                    break;
+
+                case ConsolidateReport.ConsolidateOped:
+                    //oped
+                    labelStart.Text = "Период начала";
+                    panelEnd.Visible = true;
+                    panelRegion.Visible = true;
+                    nudSingle.Visible = false;
+                    cmbStart.DataSource = GlobalConst.Months;
+                    btnDo.Text = "Сформировать сводный отчёт ОПЭД";
+                    saveFileDialog1.FileName = "Сводный отчёт ОПЭД";
+                    break;
+                case ConsolidateReport.CnpnMonthly:
+                    labelStart.Text = "Период";
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    nudSingle.Visible = false;
+                    cmbStart.DataSource = GlobalConst.Months;
+                    btnDo.Text = "Сформировать сводный отчет об исполнении ЦПНП";
+                    saveFileDialog1.FileName = "Cводный отчет об исполнении ЦПНП";
+                    break;
+
+                case ConsolidateReport.Cadri:
+                    labelStart.Text = "Период";
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    nudSingle.Visible = false;
+                    cmbStart.DataSource = GlobalConst.Periods;
+                    btnDo.Text = "Сформировать сводный отчет об Кадрах";
+                    saveFileDialog1.FileName = "Cводный отчет  об Кадрах";
+                    break;
+
+                case ConsolidateReport.ConsolidateVSS:
+                    labelStart.Text = "Период";
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    nudSingle.Visible = false;
+                    cmbStart.DataSource = GlobalConst.Months;
+                    btnDo.Text = "Сформировать сводный отчёт Мониторинг ВСС";
+                    saveFileDialog1.FileName = "Cводный отчет Мониторинг ВСС";
+                    break;
+
+                case ConsolidateReport.ConsolidateOpedQ:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать сводный отчет ОПЭД квартальный";
+                    saveFileDialog1.FileName = "Сводный отчет ОПЭД квартальный";
+                    cmbStart.DataSource = GlobalConst.PeriodsQ;
+                    break;
+
+                case ConsolidateReport.ConsolidateCPNP2Q:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать сводный отчет об исполнении ЦПНП";
+                    saveFileDialog1.FileName = "Сводный отчет об исполнении ЦПНП";
+                    cmbStart.DataSource = GlobalConst.PeriodsQ;
+                    break;
+
+                case ConsolidateReport.ConsOpedFinance1:
+                    labelStart.Text = "Период";
+                    //nudSingle.Visible = false;
+                    nudEnd.Visible = false;
+                    cmbEnd.Visible = false;
+                    cmbStart.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    nudStart.Visible = false;
+                    btnDo.Text = "Сформировать сводный отчёт ОПЭД финансы 1";
+                    saveFileDialog1.FileName = "Сводный отчёт ОПЭД финансы 1";
+                    cmbStart.DataSource = GlobalConst.PeriodsQ;
+                    labelStart.Text = "Год";
+                    break;
+
+                case ConsolidateReport.ConsOpedFinance2:
+                    labelStart.Text = "Период";
+                    //nudSingle.Visible = false;
+                    nudEnd.Visible = false;
+                    cmbEnd.Visible = false;
+                    cmbStart.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    nudStart.Visible = false;
+                    btnDo.Text = "Сформировать сводный отчёт ОПЭД финансы 2";
+                    saveFileDialog1.FileName = "Сводный отчёт ОПЭД финансы 2";
+                    cmbStart.DataSource = GlobalConst.PeriodsQ;
+                    labelStart.Text = "Год";
+                    break;
+                case ConsolidateReport.ConsPropsal:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать сводный отчет о предложениях";
+                    saveFileDialog1.FileName = "Сводный отчет о предложениях";
+                    cmbStart.DataSource = GlobalConst.PeriodsQ;
+                    break;
+
+
+            }
+        }
+
+        private int GetYymm(string monthForm, int yearForm)
+        {
+            int month = Array.IndexOf(GlobalConst.Months, monthForm) + 1;
+            return (yearForm - 2000) * 100 + month;
+        }
+
+        private void BtnDo_Click(object sender, EventArgs e)
+        {
+            var dialogResult = FolderReports.Contains(_report) ?
+                folderBrowserDialog1.ShowDialog() :
+                saveFileDialog1.ShowDialog();
+
+            if (dialogResult == DialogResult.OK)
+            {
+                var waitingForm = new WaitingForm();
+                waitingForm.Show();
+                Application.DoEvents();
+
+                switch (_report)
+                {
+                    case ConsolidateReport.Consolidate262T1:
+                        CreateReport262T1();
+                        break;
+                    case ConsolidateReport.Consolidate262T2:
+                        CreateReport262T2();
+                        break;
+                    case ConsolidateReport.Consolidate262T3:
+                        CreateReport262T3();
+                        break;
+                    case ConsolidateReport.ConsolidateFilial294:
+                        CreateFilial294();
+                        break;
+                    case ConsolidateReport.ConsolidateFull294:
+                        CreateFull294();
+                        break;
+                    case ConsolidateReport.ControlZpzMonthly:
+                        CreateControlZpz(true);
+                        break;
+                    case ConsolidateReport.ControlZpzQuarterly:
+                        CreateControlZpz(false);
+                        break;
+                    case ConsolidateReport.ZpzWebSite:
+                        CreateZpzWebSite();
+                        break;
+                    case ConsolidateReport.Onko:
+                        CreateOnko(true);
+                        break;
+                    case ConsolidateReport.OnkoQuarterly:
+                        CreateOnko(false);
+                        break;
+                    case ConsolidateReport.CnpnQuarterly:
+                        CreateCReportCpnp();
+                        break;
+
+                    case ConsolidateReport.CnpnMonthly:
+                        CreateCReportCpnpMonth();
+                        break;
+                    case ConsolidateReport.Cardio:
+                        CreateCReportCardio();
+                        break;
+                    case ConsolidateReport.Disp:
+                        CreateCReportDisp();
+                        break;
+                    case ConsolidateReport.Letal:
+                        CreateCReportLetal();
+                        break;
+                    case ConsolidateReport.Cadri:
+                        CreateCCadri();
+                        break;
+                    case ConsolidateReport.ConsolidateOped:
+                        CreateCOped();
+                        break;
+
+                    case ConsolidateReport.ConsolidateVSS:
+                        CreateCVSS();
+                        break;
+                    case ConsolidateReport.ConsolidateOpedQ:
+                        CreateCOpedQ();
+                        break;
+                    case ConsolidateReport.ConsolidateCPNP2Q:
+                        CreateCPNP2Q();
+                        break;
+                    case ConsolidateReport.ConsOpedFinance1:
+                        ConsolidateOpedFinance1();
+                        break;
+                    case ConsolidateReport.ConsOpedFinance2:
+                        ConsolidateOpedFinance2();
+                        break;
+                    case ConsolidateReport.ConsPropsal:
+                        ConsolidateProposal();
+                        break;
+                        
+
+
+                }
+
+                waitingForm.Close();
+            }
+
+            Close();
+        }
+
+        private void ConsolidateProposal()
+        {
+            string yymm = GetYymmQuarterly2();
+
+            var data = _client.ConsolidateProposalCollect(yymm);
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            //string header = $"За {cmbStart.Text} {nudStart.Value} года";
+            var excel = new ExcelConsoldatePropasalCreator(saveFileDialog1.FileName, "", _filialName);
+
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+        }
+
+        private void ConsolidateOpedFinance1()
+        {
+            string year = nudSingle.Value.ToString();
+
+            var data = _client.ConsolidateOpedFinance1(year);
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            var excel = new ExcelConsolidateOpenFinance1(saveFileDialog1.FileName, "", _filialName);
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+        }
+
+        private void ConsolidateOpedFinance2()
+        {
+            string year = nudSingle.Value.ToString();
+
+            var data = _client.ConsolidateOpedFinance2(year);
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            var excel = new ExcelConsolidateOpenFinance2(saveFileDialog1.FileName, "", _filialName);
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+        }
+
+        private void CreateCPNP2Q()
+        {
+            string yymm = GetYymmQuarterly2();
+
+            var data = _client.ConsolidateCPNP2QCollect(yymm);
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            string header = $"За {cmbStart.Text} {nudStart.Value} года";
+            var excel = new ExcelConsoldateCPNPQ2Creator(saveFileDialog1.FileName, header, _filialName);
+
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+        }
+
+        private void CreateCOpedQ()
+        {
+            string yymm = GetYymmQuarterly2();
+
+            var data = _client.ConsolidateOpedQCollect(yymm);
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var excel = new ExcelConsolidateOpedQCreator(saveFileDialog1.FileName, "", _filialName);
+
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+
+        }
+
+        private void CreateCVSS()
+        {
+            string yymm = GetYymm(cmbStart.Text, Convert.ToInt32(nudStart.Value)).ToString();
+
+
+
+
+            string mm = YymmUtils.GetMonth(yymm.Substring(2));
+
+            var data = _client.CreateReportVSS(yymm);
+
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var excel = new ExcelConsolidateVSSCreator(saveFileDialog1.FileName, "", _filialName, mm);
+
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+        }
+
+        private void CreateZpzWebSite()
+        {
+            string yymm = GetYymmQuarterly();
+            string folder = folderBrowserDialog1.SelectedPath;
+
+            var reports = _client.CreateZpzForWebSite(yymm);
+
+            foreach (var report in reports)
+            {
+                string filename = folder + $"/Отчет_для_сайта_{report.Filial}_{yymm}.xlsx";
+                string filialName = _regions.Single(x => x.Key == report.Filial).ForeignKey;
+                CreateReport(filename, filialName, report);
+            }
+
+            var summaryReport = CollectSummaryReport(reports);
+            string summaryFilename = folder + $"/Отчет_для_сайта_суммарный_{yymm}.xlsx";
+            CreateReport(summaryFilename, SummaryFilialName, summaryReport);
+
+            GlobalUtils.OpenFileOrDirectory(folder);
+        }
+
+        private ZpzForWebSite CollectSummaryReport(ZpzForWebSite[] reports)
+        {
+            var treatments = reports.SelectMany(x => x.Treatments).GroupBy(x => x.Row).Select(x => new ZpzTreatment
+            {
+                Row = x.Key,
+                Oral = x.Sum(x => x.Oral),
+                Written = x.Sum(x => x.Written)
+            }).ToArray();
+            var complaints = reports.SelectMany(x => x.Complaints).GroupBy(x => x.Row).Select(x => new ZpzTreatment
+            {
+                Row = x.Key,
+                Oral = x.Sum(x => x.Oral),
+                Written = x.Sum(x => x.Written)
+            }).ToArray();
+            var protections = reports.SelectMany(x => x.Protections).GroupBy(x => x.Row).Select(x => new ZpzStatistics
+            {
+                Row = x.Key,
+                Count = x.Sum(x => x.Count)
+            }).ToArray();
+            var expertises = reports.SelectMany(x => x.Expertises).GroupBy(x => x.Row).Select(x => new Expertise
+            {
+                Row = x.Key,
+                Target = x.Sum(x => x.Target),
+                Plan = x.Sum(x => x.Plan),
+                Violation = x.Sum(x => x.Violation)
+            }).ToArray();
+            var specialists = reports.SelectMany(x => x.Specialists).GroupBy(x => x.Row).Select(x => new ZpzStatistics
+            {
+                Row = x.Key,
+                Count = x.Sum(x => x.Count)
+            }).ToArray();
+            var complacence = reports.SelectMany(x => x.Complacence).GroupBy(x => x.Row).Select(x => new ZpzStatistics
+            {
+                Row = x.Key,
+                Count = x.Sum(x => x.Count)
+            }).ToArray();
+            var informations = reports.SelectMany(x => x.Informations).GroupBy(x => x.Row).Select(x => new ZpzStatistics
+            {
+                Row = x.Key,
+                Count = x.Sum(x => x.Count)
+            }).ToArray();
+
+            return new ZpzForWebSite
+            {
+                Filial = SummaryFilialCode,
+                Treatments = treatments,
+                Complacence = complacence,
+                Complaints = complaints,
+                Expertises = expertises,
+                Informations = informations,
+                Protections = protections,
+                Specialists = specialists
+            };
+        }
+
+        private void CreateReport(string filename, string filialName, ZpzForWebSite report)
+        {
+            var excel = new ExcelConsZpzWebSite(filename, "", filialName);
+            excel.CreateReport(report, null);
+        }
+
+        private void CreateControlZpz(bool isMonthly)
+        {
+            string yymm = isMonthly ?
+                GetYymm(cmbStart.Text, Convert.ToInt32(nudStart.Value)).ToString() :
+                GetYymmQuarterly();
+
+            var data = _client.CreateReportControlPgZpz(yymm, isMonthly);
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            foreach (var d in data)
+            {
+                d.Filial = _regions.Single(x => x.Key == d.Filial).Value;
+            }
+
+            data = data.OrderBy(x => x.Filial).ToArray();
+
+            string filename = saveFileDialog1.FileName;
+            var excel = new ExcelControlZpzCreator(filename, "", _filialName, yymm);
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(filename);
+        }
+
+        private void CreateOnko(bool isMonthly)
+        {
+            string yymm = isMonthly ?
+                GetYymm(cmbStart.Text, Convert.ToInt32(nudStart.Value)).ToString() :
+                GetYymmQuarterly();
+
+            var data = _client.CreateConsolidateOnko(yymm, isMonthly);
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            foreach (var d in data)
+            {
+                d.Filial = _regions.Single(x => x.Key == d.Filial).Value;
+            }
+
+            data = data.OrderBy(x => x.Filial).ToArray();
+
+            string filename = saveFileDialog1.FileName;
+            var excel = new ExcelOnkoCreator(filename, "", _filialName);
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(filename);
+        }
+
+        private void CreateFull294()
+        {
+            string yymm = Convert.ToInt32(nudSingle.Value - 2000).ToString() + "12";
+
+            var report = _client.CreateConsolidate294(yymm);
+            //if (report != null && report.EfficiencyList != null && report.EfficiencyList.Length > 0)
+            if (report != null)
+            {
+                var excel = new ExcelConsolidateFull294Creator(saveFileDialog1.FileName, "", _filialName);
+                excel.CreateReport(report, null);
+                GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+            }
+            else
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void CreateFilial294()
+        {
+            var reportList = new List<Report294>();
+            int endMonth = cmbStart.SelectedIndex;
+            for (int i = 0; i <= endMonth; i++)
+            {
+                string filialCode = cmbRegion.SelectedValue.ToString();
+                string month = GlobalConst.Months[i];
+                string yymm = GetYymm(month, Convert.ToInt32(nudStart.Value)).ToString();
+
+                var response = _client.GetReport(filialCode, yymm, ReportType.F294);
+                var monthlyReport = response == null ? null : response as Report294;
+                reportList.Add(monthlyReport);
+            }
+
+            if (reportList.Count > 0)
+            {
+                var excel = new ExcelConsolidateFilial294Creator(saveFileDialog1.FileName, "", _filialName);
+                excel.CreateReport(reportList.ToArray(), null);
+                GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+            }
+            else
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void CreateReport262T3()
+        {
+            string yymm = GetYymm(cmbStart.Text, Convert.ToInt32(nudStart.Value)).ToString();
+            var data = _client.CreateReport262T3(yymm);
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            foreach (var d in data)
+            {
+                d.Filial = _regions.Single(x => x.Key == d.Filial).Value;
+            }
+
+            data = data.OrderBy(x => x.Filial).ToArray();
+
+            var excel = new ExcelConsolidate262T3Creator(saveFileDialog1.FileName, "", _filialName);
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+        }
+
+        private void CreateReport262T2()
+        {
+            string yymm = GetYymm(cmbStart.Text, Convert.ToInt32(nudStart.Value)).ToString();
+            var dataMonths = _client.CreateReport262T2(yymm, yymm);
+            if (dataMonths.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            foreach (var d in dataMonths)
+            {
+                d.Filial = _regions.Single(x => x.Key == d.Filial).Value;
+            }
+
+            dataMonths = dataMonths.OrderBy(x => x.Filial).ToArray();
+
+            string statPeriod = yymm.Substring(0, 2) + "01";
+            var dataYear = _client.CreateReport262T2(statPeriod, yymm);
+            foreach (var d in dataYear)
+            {
+                d.Filial = _regions.Single(x => x.Key == d.Filial).Value;
+            }
+
+            dataYear = dataYear.OrderBy(x => x.Filial).ToArray();
+
+            var excel = new ExcelConsolidate262T2Creator(saveFileDialog1.FileName, "", _filialName);
+            excel.CreateReport(dataMonths, dataYear);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+        }
+
+        private void CreateReport262T1()
+        {
+            int year = Convert.ToInt32(nudSingle.Value);
+            var data = _client.CreateReport262T1(year);
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            foreach (var d in data)
+            {
+                d.Filial = _regions.Single(x => x.Key == d.Filial).Value;
+            }
+
+            data = data.OrderBy(x => x.Filial).ToArray();
+
+            var excel = new ExcelConsolidate262T1Creator(saveFileDialog1.FileName, "", _filialName);
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+        }
+
+        private void CreateCReportCpnp()
+        {
+            string yymm = GetYymmQuarterly();
+
+            int q = cmbStart.SelectedIndex + 1;
+
+            int year = Convert.ToInt32(nudStart.Value);
+
+
+            var data = _client.CreateReportCpnp(yymm);
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var excel = new ExcelConsolidateCnpnCreator(saveFileDialog1.FileName, "", _filialName, q, year);
+
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+
+        }
+
+
+        private void CreateCReportCpnpMonth()
+        {
+            string yymm = GetYymm(cmbStart.Text, Convert.ToInt32(nudStart.Value)).ToString();
+
+
+            int year = Convert.ToInt32(nudStart.Value);
+
+            string mm = YymmUtils.GetMonth(yymm.Substring(2));
+
+            var data = _client.CreateReportCpnpM(yymm);
+
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var excel = new ExcelConsolidateCpnpMonthCreator(saveFileDialog1.FileName, "", _filialName, mm, year);
+
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+
+        }
+
+        private void CreateCReportCardio()
+        {
+            string yymm = GetYymmQuarterly();
+
+            var data = _client.CreateReportCardio(yymm);
+
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var excel = new ExcelConsolidateCardio(saveFileDialog1.FileName, "", _filialName);
+
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+
+        }
+
+        private void CreateCCadri()
+        {
+            string yymm = GetYymmQuarterly();
+
+            var data = _client.CreateConsolidateCadri(yymm);
+
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var excel = new ExcelConsolidateCadri(saveFileDialog1.FileName, "", _filialName);
+
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+
+        }
+
+        private void CreateCOped()
+        {
+            string yymmStart = GetYymm(cmbStart.Text, Convert.ToInt32(nudStart.Value)).ToString();
+            string yymmEnd = GetYymm(cmbEnd.Text, Convert.ToInt32(nudEnd.Value)).ToString();
+            ArrayOfString currentRegion = new ArrayOfString();
+            if (cmbRegion.Text == "Все филиалы")
+            {
+                foreach (var region in _regions)
+                {
+                    currentRegion.Add(region.Key);
+
+                }
+            }
+            else
+            {
+                currentRegion.Add(((KmsReportDictionary)cmbRegion.SelectedItem).Key);
+            }
+
+
+            var data = _client.CreateReportCOped(yymmStart, yymmEnd, currentRegion);
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var excel = new ExcelConsolidateOpedCreator(saveFileDialog1.FileName, "", _filialName, yymmStart, yymmEnd);
+
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+
+        }
+
+        private void CreateCReportDisp()
+        {
+            string yymm = GetYymmQuarterly();
+
+
+            var data = _client.CreateReportDisp(yymm);
+
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var excel = new ExcelConsolidateDisp(saveFileDialog1.FileName, "", _filialName);
+
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+
+        }
+
+
+        private void CreateCReportLetal()
+        {
+            string yymm = GetYymmQuarterly();
+
+
+            var data = _client.CreateConsolidateLetal(yymm);
+
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var excel = new ExcelConsolidateLetal(saveFileDialog1.FileName, "", _filialName);
+
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+
+        }
+
+
+        private string GetYymmQuarterly()
+        {
+            decimal yy = nudStart.Value - 2000;
+            string mmEnd = "0" + (3 * (Array.IndexOf(GlobalConst.Periods, cmbStart.Text) + 1)).ToString();
+
+            return $"{yy}{mmEnd.Substring(mmEnd.Length - 2)}";
+        }
+
+        private string GetYymmQuarterly2()
+        {
+            decimal yy = nudStart.Value - 2000;
+            string mmEnd = "0" + (3 * (Array.IndexOf(GlobalConst.PeriodsQ, cmbStart.Text) + 1)).ToString();
+
+            return $"{yy}{mmEnd.Substring(mmEnd.Length - 2)}";
+        }
+    }
+}

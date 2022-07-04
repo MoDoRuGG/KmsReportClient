@@ -1,0 +1,673 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<REPORT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <REPORT_NAME>f262</REPORT_NAME>
+  <TABLE>
+    <TABLE_NAME>Согласие</TABLE_NAME>
+    <TABLE_DESCRIPTION>Согласие на информационное сопровождение ЗЛ</TABLE_DESCRIPTION>
+    <ROWS_COUNT>3</ROWS_COUNT>
+    <ROW>
+      <ROW_TEXT>Количество застрахованных лиц, для которых в отчетном периоде оформлено письменное СОГЛАСИЕ на информационное сопровождение, всего</ROW_TEXT>
+      <ROW_NUM>0</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>по телефону, в том числе с использованием автоматического информатора</ROW_TEXT>
+      <ROW_NUM>1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>по мобильному телефону – SMS</ROW_TEXT>
+      <ROW_NUM>2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>по мобильному телефону –  программное обеспечение для смартфона (мессенджер), в том числе</ROW_TEXT>
+      <ROW_NUM>3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>по мобильному телефону –  Viber</ROW_TEXT>
+      <ROW_NUM>3-1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>текстовое сообщение по почте</ROW_TEXT>
+      <ROW_NUM>4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>текстовое сообщение через электронные средства связи, в том числе</ROW_TEXT>
+      <ROW_NUM>5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>по электронной почте</ROW_TEXT>
+      <ROW_NUM>5-1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>через мобильное приложение</ROW_TEXT>
+      <ROW_NUM>5-2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Количество застрахованных лиц, для которых в отчетном периоде оформлено письменное НЕСОГЛАСИЕ на информационное сопровождение, всего</ROW_TEXT>
+      <ROW_NUM>6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+  </TABLE>
+  <TABLE>
+    <TABLE_NAME>Тема Д1</TABLE_NAME>
+    <TABLE_DESCRIPTION>Диспансеризация 1/3, первый этап</TABLE_DESCRIPTION>
+    <ROWS_COUNT>7</ROWS_COUNT>
+    <ROW>
+      <ROW_TEXT>При поступлении в филиал к страховому представителю обращения ЗЛ по телефону КЦ</ROW_TEXT>
+      <ROW_NUM>Д1-У1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При проведении страховым представителем информирования по телефонам ЗЛ</ROW_TEXT>
+      <ROW_NUM>Д1-У2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При проведении страховым представителем опроса по телефонам ЗЛ</ROW_TEXT>
+      <ROW_NUM>Д1-У3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>С использованием автоматического информатора по телефонам ЗЛ</ROW_TEXT>
+      <ROW_NUM>Д1-У4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в филиале</ROW_TEXT>
+      <ROW_NUM>Д1-У5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в медицинской организации</ROW_TEXT>
+      <ROW_NUM>Д1-У6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Рассылка сообщений - SMS</ROW_TEXT>
+      <ROW_NUM>Д1-П1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Рассылка сообщений - Viber</ROW_TEXT>
+      <ROW_NUM>Д1-П2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Почта России - Direct mail</ROW_TEXT>
+      <ROW_NUM>Д1-П3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Почта России - Простое письмо</ROW_TEXT>
+      <ROW_NUM>Д1-П4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Почта России - Заказное письмо</ROW_TEXT>
+      <ROW_NUM>Д1-П5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Адресная передача</ROW_TEXT>
+      <ROW_NUM>Д1-П6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Электронные средства связи - Email, мобильное приложение, личный кабинет на сайте</ROW_TEXT>
+      <ROW_NUM>Д1-П7</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в филиале</ROW_TEXT>
+      <ROW_NUM>Д1-П8</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в медицинской организации</ROW_TEXT>
+      <ROW_NUM>Д1-П9</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Итого ЗЛ</ROW_TEXT>
+      <ROW_NUM>И-Д1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>4,5,6</EXCLUSION_CELL>
+    </ROW>
+  </TABLE>
+  <TABLE>
+    <TABLE_NAME>Тема Д2</TABLE_NAME>
+    <TABLE_DESCRIPTION>Диспансеризация, этап 2</TABLE_DESCRIPTION>
+    <ROWS_COUNT>7</ROWS_COUNT>
+    <ROW>
+      <ROW_TEXT>При поступлении в филиал к страховому представителю обращения ЗЛ по телефону КЦ</ROW_TEXT>
+      <ROW_NUM>Д2-У1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При проведении страховым представителем информирования по телефонам ЗЛ</ROW_TEXT>
+      <ROW_NUM>Д2-У2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При проведении страховым представителем опроса по телефонам ЗЛ</ROW_TEXT>
+      <ROW_NUM>Д2-У3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>С использованием автоматического информатора по телефонам ЗЛ</ROW_TEXT>
+      <ROW_NUM>Д2-У4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в филиале</ROW_TEXT>
+      <ROW_NUM>Д2-У5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в медицинской организации</ROW_TEXT>
+      <ROW_NUM>Д2-У6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Рассылка сообщений - SMS</ROW_TEXT>
+      <ROW_NUM>Д2-П1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Рассылка сообщений - Viber</ROW_TEXT>
+      <ROW_NUM>Д2-П2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Почта России - Direct mail</ROW_TEXT>
+      <ROW_NUM>Д2-П3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Почта России - Простое письмо</ROW_TEXT>
+      <ROW_NUM>Д2-П4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Почта России - Заказное письмо</ROW_TEXT>
+      <ROW_NUM>Д2-П5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Адресная передача</ROW_TEXT>
+      <ROW_NUM>Д2-П6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Электронные средства связи - Email, мобильное приложение, личный кабинет на сайте</ROW_TEXT>
+      <ROW_NUM>Д2-П7</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в филиале</ROW_TEXT>
+      <ROW_NUM>Д2-П8</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в медицинской организации</ROW_TEXT>
+      <ROW_NUM>Д2-П9</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Итого ЗЛ</ROW_TEXT>
+      <ROW_NUM>И-Д2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>4,5,6</EXCLUSION_CELL>
+    </ROW>
+  </TABLE>
+  <TABLE>
+    <TABLE_NAME>Тема Д3</TABLE_NAME>
+    <TABLE_DESCRIPTION>Диспансеризация ежегодная, этап 1</TABLE_DESCRIPTION>
+    <ROWS_COUNT>7</ROWS_COUNT>
+    <ROW>
+      <ROW_TEXT>При поступлении в филиал к страховому представителю обращения ЗЛ по телефону КЦ</ROW_TEXT>
+      <ROW_NUM>Д3-У1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При проведении страховым представителем информирования по телефонам ЗЛ</ROW_TEXT>
+      <ROW_NUM>Д3-У2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При проведении страховым представителем опроса по телефонам ЗЛ</ROW_TEXT>
+      <ROW_NUM>Д3-У3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>С использованием автоматического информатора по телефонам ЗЛ</ROW_TEXT>
+      <ROW_NUM>Д3-У4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в филиале</ROW_TEXT>
+      <ROW_NUM>Д3-У5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в медицинской организации</ROW_TEXT>
+      <ROW_NUM>Д3-У6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Рассылка сообщений - SMS</ROW_TEXT>
+      <ROW_NUM>Д3-П1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Рассылка сообщений - Viber</ROW_TEXT>
+      <ROW_NUM>Д3-П2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Почта России - Direct mail</ROW_TEXT>
+      <ROW_NUM>Д3-П3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Почта России - Простое письмо</ROW_TEXT>
+      <ROW_NUM>Д3-П4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Почта России - Заказное письмо</ROW_TEXT>
+      <ROW_NUM>Д3-П5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Адресная передача</ROW_TEXT>
+      <ROW_NUM>Д3-П6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Электронные средства связи - Email, мобильное приложение, личный кабинет на сайте</ROW_TEXT>
+      <ROW_NUM>Д3-П7</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в филиале</ROW_TEXT>
+      <ROW_NUM>Д3-П8</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в медицинской организации</ROW_TEXT>
+      <ROW_NUM>Д3-П9</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Итого ЗЛ</ROW_TEXT>
+      <ROW_NUM>И-Д3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>4,5,6</EXCLUSION_CELL>
+    </ROW>
+  </TABLE>
+  <TABLE>
+    <TABLE_NAME>Тема Д4</TABLE_NAME>
+    <TABLE_DESCRIPTION>Диспансерное наблюдение</TABLE_DESCRIPTION>
+    <ROWS_COUNT>7</ROWS_COUNT>
+    <ROW>
+      <ROW_TEXT>При поступлении в филиал к страховому представителю обращения ЗЛ по телефону КЦ</ROW_TEXT>
+      <ROW_NUM>Д4-У1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При проведении страховым представителем информирования по телефонам ЗЛ</ROW_TEXT>
+      <ROW_NUM>Д4-У2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При проведении страховым представителем опроса по телефонам ЗЛ</ROW_TEXT>
+      <ROW_NUM>Д4-У3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>С использованием автоматического информатора по телефонам ЗЛ</ROW_TEXT>
+      <ROW_NUM>Д4-У4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в филиале</ROW_TEXT>
+      <ROW_NUM>Д4-У5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в медицинской организации</ROW_TEXT>
+      <ROW_NUM>Д4-У6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Рассылка сообщений - SMS</ROW_TEXT>
+      <ROW_NUM>Д4-П1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Рассылка сообщений - Viber</ROW_TEXT>
+      <ROW_NUM>Д4-П2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Почта России - Direct mail</ROW_TEXT>
+      <ROW_NUM>Д4-П3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Почта России - Простое письмо</ROW_TEXT>
+      <ROW_NUM>Д4-П4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Почта России - Заказное письмо</ROW_TEXT>
+      <ROW_NUM>Д4-П5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Адресная передача</ROW_TEXT>
+      <ROW_NUM>Д4-П6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Электронные средства связи - Email, мобильное приложение, личный кабинет на сайте</ROW_TEXT>
+      <ROW_NUM>Д4-П7</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в филиале</ROW_TEXT>
+      <ROW_NUM>Д4-П8</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в медицинской организации</ROW_TEXT>
+      <ROW_NUM>Д4-П9</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Итого ЗЛ</ROW_TEXT>
+      <ROW_NUM>И-Д4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>4,5,6</EXCLUSION_CELL>
+    </ROW>
+  </TABLE>
+  <TABLE>
+    <TABLE_NAME>Тема П</TABLE_NAME>
+    <TABLE_DESCRIPTION>Профилактические медицинские осмотры</TABLE_DESCRIPTION>
+    <ROWS_COUNT>7</ROWS_COUNT>
+    <ROW>
+      <ROW_TEXT>При поступлении в филиал к страховому представителю обращения ЗЛ по телефону КЦ</ROW_TEXT>
+      <ROW_NUM>П-У1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При проведении страховым представителем информирования по телефонам ЗЛ</ROW_TEXT>
+      <ROW_NUM>П-У2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При проведении страховым представителем опроса по телефонам ЗЛ</ROW_TEXT>
+      <ROW_NUM>П-У3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>С использованием автоматического информатора по телефонам ЗЛ</ROW_TEXT>
+      <ROW_NUM>П-У4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в филиале</ROW_TEXT>
+      <ROW_NUM>П-У5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в медицинской организации</ROW_TEXT>
+      <ROW_NUM>П-У6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Рассылка сообщений - SMS</ROW_TEXT>
+      <ROW_NUM>П-П1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Рассылка сообщений - Viber</ROW_TEXT>
+      <ROW_NUM>П-П2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Почта России - Direct mail</ROW_TEXT>
+      <ROW_NUM>П-П3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Почта России - Простое письмо</ROW_TEXT>
+      <ROW_NUM>П-П4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Почта России - Заказное письмо</ROW_TEXT>
+      <ROW_NUM>П-П5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Адресная передача</ROW_TEXT>
+      <ROW_NUM>П-П6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Электронные средства связи - Email, мобильное приложение, личный кабинет на сайте</ROW_TEXT>
+      <ROW_NUM>П-П7</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в филиале</ROW_TEXT>
+      <ROW_NUM>П-П8</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в медицинской организации</ROW_TEXT>
+      <ROW_NUM>П-П9</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Итого ЗЛ</ROW_TEXT>
+      <ROW_NUM>И-П</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>4,5,6</EXCLUSION_CELL>
+    </ROW>
+  </TABLE>
+  <TABLE>
+    <TABLE_NAME>Тема С</TABLE_NAME>
+    <TABLE_DESCRIPTION>Перечень оказанных медицинских услуг и их стоимость, сообщение о готовности справки к выдаче</TABLE_DESCRIPTION>
+    <ROWS_COUNT>7</ROWS_COUNT>
+    <ROW>
+      <ROW_TEXT>При поступлении в филиал к страховому представителю обращения ЗЛ по телефону КЦ</ROW_TEXT>
+      <ROW_NUM>С-У1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При проведении страховым представителем информирования по телефонам ЗЛ</ROW_TEXT>
+      <ROW_NUM>С-У2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в филиале</ROW_TEXT>
+      <ROW_NUM>С-У5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в медицинской организации</ROW_TEXT>
+      <ROW_NUM>С-У6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Почта России - Заказное письмо</ROW_TEXT>
+      <ROW_NUM>С-П5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Электронные средства связи - Email, мобильное приложение, личный кабинет на сайте</ROW_TEXT>
+      <ROW_NUM>С-П7</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном обращении к страховому представителю в филиале</ROW_TEXT>
+      <ROW_NUM>С-П8</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном обращении к страховому представителю в медицинской организации</ROW_TEXT>
+      <ROW_NUM>С-П9</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Итого ЗЛ</ROW_TEXT>
+      <ROW_NUM>И-С</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>4,5,6</EXCLUSION_CELL>
+    </ROW>
+  </TABLE>
+  <TABLE>
+    <TABLE_NAME>Тема К</TABLE_NAME>
+    <TABLE_DESCRIPTION>Выявленные нарушения по результатам проведенного контроля, сообщение о готовности материалов к выдаче</TABLE_DESCRIPTION>
+    <ROWS_COUNT>7</ROWS_COUNT>
+    <ROW>
+      <ROW_TEXT>При поступлении в филиал к страховому представителю обращения ЗЛ по телефону КЦ</ROW_TEXT>
+      <ROW_NUM>К-У1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При проведении страховым представителем информирования по телефонам ЗЛ</ROW_TEXT>
+      <ROW_NUM>К-У2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в филиале</ROW_TEXT>
+      <ROW_NUM>К-У5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в медицинской организации</ROW_TEXT>
+      <ROW_NUM>К-У6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Почта России - Заказное письмо</ROW_TEXT>
+      <ROW_NUM>К-П5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Электронные средства связи - Email, мобильное приложение, личный кабинет на сайте</ROW_TEXT>
+      <ROW_NUM>К-П7</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном обращении к страховому представителю в филиале</ROW_TEXT>
+      <ROW_NUM>К-П8</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном обращении к страховому представителю в медицинской организации</ROW_TEXT>
+      <ROW_NUM>К-П9</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Итого ЗЛ</ROW_TEXT>
+      <ROW_NUM>И-К</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>4,5,6</EXCLUSION_CELL>
+    </ROW>
+  </TABLE>
+  <TABLE>
+    <TABLE_NAME>Тема О</TABLE_NAME>
+    <TABLE_DESCRIPTION>Онкопатология</TABLE_DESCRIPTION>
+    <ROWS_COUNT>7</ROWS_COUNT>
+    <ROW>
+      <ROW_TEXT>При поступлении в филиал к страховому представителю обращения ЗЛ по телефону КЦ</ROW_TEXT>
+      <ROW_NUM>О-У1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При проведении страховым представителем информирования по телефонам ЗЛ</ROW_TEXT>
+      <ROW_NUM>О-У2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При проведении страховым представителем опроса по телефонам ЗЛ</ROW_TEXT>
+      <ROW_NUM>О-У3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в филиале</ROW_TEXT>
+      <ROW_NUM>О-У5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в медицинской организации</ROW_TEXT>
+      <ROW_NUM>О-У6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Рассылка сообщений - SMS</ROW_TEXT>
+      <ROW_NUM>О-П1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Рассылка сообщений - Viber</ROW_TEXT>
+      <ROW_NUM>О-П2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Почта России - Direct mail</ROW_TEXT>
+      <ROW_NUM>О-П3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Почта России - Простое письмо</ROW_TEXT>
+      <ROW_NUM>О-П4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Почта России - Заказное письмо</ROW_TEXT>
+      <ROW_NUM>О-П5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Адресная передача</ROW_TEXT>
+      <ROW_NUM>О-П6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Электронные средства связи - Email, мобильное приложение, личный кабинет на сайте</ROW_TEXT>
+      <ROW_NUM>О-П7</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в филиале</ROW_TEXT>
+      <ROW_NUM>О-П8</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>При личном контакте страхового представителя и ЗЛ в медицинской организации</ROW_TEXT>
+      <ROW_NUM>О-П9</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Итого ЗЛ</ROW_TEXT>
+      <ROW_NUM>И-О</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>4,5,6</EXCLUSION_CELL>
+    </ROW>
+  </TABLE>
+</REPORT>

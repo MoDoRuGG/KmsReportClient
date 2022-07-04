@@ -1,0 +1,1306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<REPORT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <REPORT_NAME>pg</REPORT_NAME>
+  <TABLE>
+    <TABLE_NAME>Таблица 1</TABLE_NAME>
+    <TABLE_DESCRIPTION>Обращения застрахованных лиц</TABLE_DESCRIPTION>
+    <ROWS_COUNT>4</ROWS_COUNT>
+    <ROW>
+      <ROW_TEXT>
+        Всего поступивших обращений от застрахованных лиц, всего,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>1</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Жалоб, всего</ROW_TEXT>
+      <ROW_NUM>2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>в том числе обоснованные:</ROW_TEXT>
+      <ROW_NUM>3</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        на оказание медицинской помощи, всего
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>3.6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    при направлении на экстракорпоральное оплодотворение (далее - ЭКО) и при его проведении</ROW_TEXT>
+      <ROW_NUM>3.6.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        при онкологических заболеваниях (за исключением оказания медицинской помощи несовершеннолетним), всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>3.6.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>      на нарушение сроков ожидания медицинской помощи</ROW_TEXT>
+      <ROW_NUM>3.6.2.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    при сердечно-сосудистых заболеваниях (за исключением оказания медицинской помощи несовершеннолетним)</ROW_TEXT>
+      <ROW_NUM>3.6.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    при оказании медицинской помощи несовершеннолетним</ROW_TEXT>
+      <ROW_NUM>3.6.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    при оказании высокотехнологичной медицинской помощи (далее - ВМП)  (за исключением оказания медицинской помощи несовершеннолетним)</ROW_TEXT>
+      <ROW_NUM>3.6.5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        на проведение профилактических мероприятий (за исключением профилактических мероприятий несовершеннолетним), всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>3.7</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    при проведении профилактических мероприятий застрахованным лицам в возрасте 65 лет и старше</ROW_TEXT>
+      <ROW_NUM>3.7.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        при прохождении диспансеризации (за исключением диспансеризации несовершеннолетних), всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>3.7.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>      застрахованных лиц в возрасте 65 лет и старше</ROW_TEXT>
+      <ROW_NUM>3.7.2.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        при диспансерном наблюдении (за исключением диспансерного наблюдения несовершеннолетних),
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>3.7.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>      застрахованных лиц в возрасте 65 лет и старше</ROW_TEXT>
+      <ROW_NUM>3.7.3.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        на лекарственное обеспечение, всего,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>3.8</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        при оказании медицинской помощи по профилю «онкология», всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>3.8.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>      на несвоевременное назначение наркотических, сильнодействующих и психотропных лекарственных препаратов</ROW_TEXT>
+      <ROW_NUM>3.8.1.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>      на неназначение наркотических, сильнодействующих и психотропных лекарственных препаратов</ROW_TEXT>
+      <ROW_NUM>3.8.1.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Обращения за разъяснениями, всего,
+        в том числе о (об):
+      </ROW_TEXT>
+      <ROW_NUM>4</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        оказании медицинской помощи, всего,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>4.6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    сроках ожидания медицинской помощи</ROW_TEXT>
+      <ROW_NUM>4.6.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    проведении ЭКО</ROW_TEXT>
+      <ROW_NUM>4.6.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    при онкологических заболеваниях (за исключением оказания медицинской помощи несовершеннолетним)</ROW_TEXT>
+      <ROW_NUM>4.6.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    при сердечно-сосудистых заболеваниях (за исключением оказания медицинской помощи несовершеннолетним)</ROW_TEXT>
+      <ROW_NUM>4.6.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    при оказании медицинской помощи несовершеннолетним</ROW_TEXT>
+      <ROW_NUM>4.6.5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        при проведении профилактических мероприятий, всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>4.7</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    о проведении профилактических мероприятий застрахованным лицам в возрасте 65 лет и старше</ROW_TEXT>
+      <ROW_NUM>4.7.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        прохождении диспансеризации (за исключением диспансеризации несовершеннолетних),
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>4.7.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>      застрахованных лиц в возрасте 65 лет и старше</ROW_TEXT>
+      <ROW_NUM>4.7.2.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        диспансерном наблюдении (за исключением диспансерного наблюдения несовершеннолетних),
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>4.7.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>      застрахованных лиц в возрасте 65 лет и старше</ROW_TEXT>
+      <ROW_NUM>4.7.3.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        лекарственном обеспечении, всего,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>4.8</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        при оказании медицинской помощи по профилю «онкология», всего,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>4.8.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>      о назначении наркотических, сильнодействующих и психотропных лекарственных препаратов</ROW_TEXT>
+      <ROW_NUM>4.8.1.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>  проведении консультаций/консилиумов с применением телемедицинских технологий медицинскими работниками федеральных государственных учреждений, подведомственных Министерству здравоохранения Российской Федерации, участвующих в реализации федерального проекта «Развитие сети национальных медицинских исследовательских центров и внедрение инновационных медицинских технологий» национального проекта «Здравоохранение» (далее - проведение консультаций/консилиумов медицинскими работниками национальных медицинских исследовательских центров)</ROW_TEXT>
+      <ROW_NUM>4.9</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+  </TABLE>
+  <TABLE>
+    <TABLE_NAME>Таблица 5</TABLE_NAME>
+    <TABLE_DESCRIPTION>Результаты медико-экономического контроля</TABLE_DESCRIPTION>
+    <ROWS_COUNT>8</ROWS_COUNT>
+    <ROW>
+      <ROW_TEXT>
+        Количество предъявленных к оплате счетов за оказанную медицинскую помощь (тыс. ед.), всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>  по профилю «онкология»</ROW_TEXT>
+      <ROW_NUM>1.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>  при оказании медицинской помощи с проведением консультаций/консилиумов с применением телемедицинских технологий медицинскими работниками национальных исследовательских медицинских центров</ROW_TEXT>
+      <ROW_NUM>1.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Количество счетов, содержащих нарушения, всего,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        в оформлении и предъявлении на оплату счетов и реестров счетов, всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>4.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «онкология»</ROW_TEXT>
+      <ROW_NUM>4.1.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        связанные с включением в реестр счетов видов медицинской помощи, не входящих в территориальную программу ОМС, всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>4.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «онкология»</ROW_TEXT>
+      <ROW_NUM>4.2.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        связанные с необоснованным применением тарифа на оплату медицинской помощи, всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>4.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «онкология»</ROW_TEXT>
+      <ROW_NUM>4.3.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        связанные с включением в реестр счетов нелицензированных видов медицинской деятельности, всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>4.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «онкология»</ROW_TEXT>
+      <ROW_NUM>4.4.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        связанные с повторным или необоснованным включением в реестр счетов медицинской помощи, всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>4.5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «онкология»</ROW_TEXT>
+      <ROW_NUM>4.5.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        прочие основания, всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>4.6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «онкология»</ROW_TEXT>
+      <ROW_NUM>4.6.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Количество принятых к оплате счетов (тыс. ед.), всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>  по профилю «онкология»</ROW_TEXT>
+      <ROW_NUM>5.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>  при оказании медицинской помощи с проведением консультаций/консилиумов  медицинскими работниками национальных исследовательских медицинских центров</ROW_TEXT>
+      <ROW_NUM>5.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+  </TABLE>
+  <TABLE>
+    <TABLE_NAME>Таблица 6</TABLE_NAME>
+    <TABLE_DESCRIPTION>Результаты медико-экономической экспертизы медицинской помощи, оказанной застрахованному лицу на территории субъекта Российской Федерации, в котором выдан полис ОМС</TABLE_DESCRIPTION>
+    <ROWS_COUNT>14</ROWS_COUNT>
+    <ROW>
+      <ROW_TEXT>Количество проведенных МЭЭ (тыс. ед.)</ROW_TEXT>
+      <ROW_NUM>1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Количество страховых случаев, подвергшихся МЭЭ, всего,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        в связи с получением жалоб от застрахованных лиц или их законных представителей, всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>2.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>9,10,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «онкология»</ROW_TEXT>
+      <ROW_NUM>2.2.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>9,10,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «сердечно-сосудистые заболевания»</ROW_TEXT>
+      <ROW_NUM>2.2.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>9,10,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    при проведении ЭКО</ROW_TEXT>
+      <ROW_NUM>2.2.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,4,6,7,8,9,10,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    при оказании медицинской помощи детям</ROW_TEXT>
+      <ROW_NUM>2.2.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>9,10,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>  в связи с оказанием медицинской помощи по профилю «онкология» с примененим противоопухолевой терапии</ROW_TEXT>
+      <ROW_NUM>2.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,4,9,10,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        в связи с несвоевременной постановкой на диспансерное наблюдение застрахованных лиц, которым по результатам проведения профилактических мероприятий или оказания иной медицинской помощи впервые установлены диагнозы, при которых предусмотрено диспансерное наблюдение (далее - диспансерное наблюдение), всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>2.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,5,6,7,8,9,10,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    застрахованных лиц в возрасте 65 лет и старше</ROW_TEXT>
+      <ROW_NUM>2.4.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,5,6,7,8,9,10,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        в связи с госпитализацией застрахованного лица, медицинская помощь которому должна быть оказана в плановой форме в стационаре (структурном подразделении стационара) другого профиля в соответствии с принятыми в субъекте Российской Федерации на основе порядков оказания медицинской помощи нормативными документами, регламентирующими маршрутизацию пациентов (далее - непрофильная госпитализация), всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>2.5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,4,5,9,10,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «онкология»</ROW_TEXT>
+      <ROW_NUM>2.5.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,4,5,9,10,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «сердечно-сосудистые заболевания»</ROW_TEXT>
+      <ROW_NUM>2.5.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,4,5,9,10,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    при оказании медицинской помощи детям</ROW_TEXT>
+      <ROW_NUM>2.5.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,4,5,9,10,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>  при оказании медицинской помощи с проведением консультаций/консилиумов медицинскими работниками национальных исследовательских медицинских центров</ROW_TEXT>
+      <ROW_NUM>2.6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,4,5,9,10,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Количество выявленных нарушений, всего,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        нарушение условий оказания медицинской помощи, включая нарушение сроков ее ожидания, всего,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>5.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        несвоевременное включение застрахованных лиц в группу диспансерного наблюдения,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>5.3.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,5,6,7,8,9,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>      застрахованных лиц в возрасте 65 лет и старше</ROW_TEXT>
+      <ROW_NUM>5.3.1.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,5,6,7,8,9,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>      медицинской помощи по профилю «онкология»</ROW_TEXT>
+      <ROW_NUM>5.3.1.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>      медицинской помощи по профилю «сердечно-сосудистые заболевания»</ROW_TEXT>
+      <ROW_NUM>5.3.1.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>      медицинской помощи детям</ROW_TEXT>
+      <ROW_NUM>5.3.1.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    сроков направления к врачу-онкологу первичного онкологического кабинета (отделения)</ROW_TEXT>
+      <ROW_NUM>5.3.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,5,6,7,8,9,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    сроков направления на исследование с целью гистологической верификации</ROW_TEXT>
+      <ROW_NUM>5.3.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,9</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    сроков направления к врачу-онкологу в специализированную медицинскую организацию с целью диагностики</ROW_TEXT>
+      <ROW_NUM>5.3.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,9</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>  непрофильная госпитализация</ROW_TEXT>
+      <ROW_NUM>5.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,4,5,6,9,11,12</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>  отсутствие записей лечащего врача в медицинской документации о консультациях/консилиумах медицинских работников национальных исследовательских медицинских центров</ROW_TEXT>
+      <ROW_NUM>5.5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,4,5,6,9,11,12</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        невключение застрахованных лиц в группу диспансерного наблюдения лиц, всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>5.6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,5,6,7,8,9,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    застрахованных лиц в возрасте 65 лет и старше</ROW_TEXT>
+      <ROW_NUM>5.6.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,5,6,7,8,9,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+  </TABLE>
+  <TABLE>
+    <TABLE_NAME>Таблица 8</TABLE_NAME>
+    <TABLE_DESCRIPTION>Результаты экспертизы качества медицинской помощи, оказанной застрахованным лицам на территории субъекта Российской Федерации, в котором выдан полис ОМС</TABLE_DESCRIPTION>
+    <ROWS_COUNT>14</ROWS_COUNT>
+    <ROW>
+      <ROW_TEXT>Количество проведенных ЭКМП (тыс. ед.)</ROW_TEXT>
+      <ROW_NUM>1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Количество страховых случаев, подвергшихся ЭКМП, всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        в связи с получением жалоб от застрахованных лиц или их представителей, всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>2.2</ROW_NUM>
+      <EXCLUSION_CELL>9,10,11,12,13,14</EXCLUSION_CELL>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «онкология»</ROW_TEXT>
+      <ROW_NUM>2.2.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>9,10,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «сердечно-сосудистые заболевания»</ROW_TEXT>
+      <ROW_NUM>2.2.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>9,10,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    при проведении ЭКО</ROW_TEXT>
+      <ROW_NUM>2.2.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,4,6,7,8,9,10,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>  при оказании медицинской помощи несовершеннолетним</ROW_TEXT>
+      <ROW_NUM>2.2.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>9,10,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>  в связи с выявлением по результатам МЭЭ нарушений при оказании медицинской помощи по профилю «онкология»</ROW_TEXT>
+      <ROW_NUM>2.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>9,10,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        в связи с летальным исходом, всего,
+        из них при:
+      </ROW_TEXT>
+      <ROW_NUM>2.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,4,9,10,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    остром коронарном синдроме</ROW_TEXT>
+      <ROW_NUM>2.4.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>9,10,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    остром нарушении мозгового кровообращения</ROW_TEXT>
+      <ROW_NUM>2.4.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>9,10,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    злокачественных новообразованиях</ROW_TEXT>
+      <ROW_NUM>2.4.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>9,10,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        в связи с несвоевременным включением (невключением) застрахованных лиц в группу диспансерного наблюдения, всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>2.5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,5,6,7,8,9,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    застрахованных лиц в возрасте 65 лет и старше</ROW_TEXT>
+      <ROW_NUM>2.5.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,5,6,7,8,9,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Количество страховых случаев, подвергшихся тематической ЭКМП, всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,5,6,7,8</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>  по профилю «онкология»</ROW_TEXT>
+      <ROW_NUM>3.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,5,6,7,8</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Количество выявленных нарушений, всего,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>6</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        нарушение условий оказания медицинской помощи, включая нарушение сроков ее ожидания, всего,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>6.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        несвоевременное включение застрахованных лиц в группу диспансерного наблюдения, всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>6.1.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,5,6,7,8,9,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>      застрахованных лиц в возрасте 65 лет и старше</ROW_TEXT>
+      <ROW_NUM>6.1.1.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,5,6,7,8,9,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>      по профилю «онкология» (за исключением несовершеннолетних)</ROW_TEXT>
+      <ROW_NUM>6.1.1.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,5,6,7,8,9,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>      по профилю «сердечно-сосудистые заболевания» (за исключением несовершеннолетних)</ROW_TEXT>
+      <ROW_NUM>6.1.1.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,5,6,7,8,9,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>      несовершеннолетних</ROW_TEXT>
+      <ROW_NUM>6.1.1.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,5,6,7,8,9,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        непрофильная госпитализация, всего,
+        из них при оказании медицинской помощи:
+      </ROW_TEXT>
+      <ROW_NUM>6.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,4,5,6,9,10,11,12</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «онкология» (за исключением несовершеннолетних)</ROW_TEXT>
+      <ROW_NUM>6.2.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,4,5,6,9,10,11,12</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «сердечно-сосудистые заболевания» (за исключением несовершеннолетних)</ROW_TEXT>
+      <ROW_NUM>6.2.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,4,5,6,9,10,11,12</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    несовершеннолетних</ROW_TEXT>
+      <ROW_NUM>6.2.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,4,5,6,9,10,11,12</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        необоснованное невыполнение консультаций/консилиумов медицинских работников национальных исследовательских медицинских центров, всего,
+        из них при оказании медицинской помощи:
+      </ROW_TEXT>
+      <ROW_NUM>6.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «онкология» (за исключением несовершеннолетних)</ROW_TEXT>
+      <ROW_NUM>6.3.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «сердечно-сосудистые заболевания» (за исключением несовершеннолетних)</ROW_TEXT>
+      <ROW_NUM>6.3.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    несовершеннолетних</ROW_TEXT>
+      <ROW_NUM>6.3.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        невключение застрахованных лиц в группу диспансерного наблюдения, всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>6.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,5,6,7,8,9,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    застрахованных лиц в возрасте 65 лет и старше</ROW_TEXT>
+      <ROW_NUM>6.4.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,5,6,7,8,9,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «онкология» (за исключением несовершеннолетних)</ROW_TEXT>
+      <ROW_NUM>6.4.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,5,6,7,8,9,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «сердечно-сосудистые заболевания» (за исключением несовершеннолетних)</ROW_TEXT>
+      <ROW_NUM>6.4.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,5,6,7,8,9,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    несовершеннолетних</ROW_TEXT>
+      <ROW_NUM>6.4.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+      <EXCLUSION_CELL>3,5,6,7,8,9,11,12,13,14</EXCLUSION_CELL>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        несоблюдение клинических рекомендаций, порядков оказания медицинской помощи, стандартов медицинской помощи, всего,
+        из них при оказании медицинской помощи:
+      </ROW_TEXT>
+      <ROW_NUM>6.5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «онкология» (за исключением несовершеннолетних</ROW_TEXT>
+      <ROW_NUM>	6.5.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «сердечно-сосудистые заболевания» (за исключением несовершеннолетних)</ROW_TEXT>
+      <ROW_NUM>6.5.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    несовершеннолетним</ROW_TEXT>
+      <ROW_NUM>6.5.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        преждевременное с клинической точки зрения прекращение проведения лечебных мероприятий, всего,
+        из них при оказании медицинской помощи:
+      </ROW_TEXT>
+      <ROW_NUM>6.6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «онкология» (за исключением несовершеннолетних)</ROW_TEXT>
+      <ROW_NUM>6.6.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «сердечно-сосудистые заболевания» (за исключением несовершеннолетних)</ROW_TEXT>
+      <ROW_NUM>6.6.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    несовершеннолетним</ROW_TEXT>
+      <ROW_NUM>6.6.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        нарушение по вине медицинской организации преемственности в лечении, всего,
+        из них при оказании медицинской помощи
+      </ROW_TEXT>
+      <ROW_NUM>6.7</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «онкология» (за исключением несовершеннолетних)</ROW_TEXT>
+      <ROW_NUM>6.7.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «сердечно-сосудистые заболевания» (за исключением несовершеннолетних)</ROW_TEXT>
+      <ROW_NUM>6.7.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    несовершеннолетним</ROW_TEXT>
+      <ROW_NUM>6.7.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        необоснованный отказ застрахованному лицу в оказании медицинской помощи, всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>6.8</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «онкология» (за исключением несовершеннолетних)</ROW_TEXT>
+      <ROW_NUM>6.8.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «сердечно-сосудистые заболевания» (за исключением несовершеннолетних)</ROW_TEXT>
+      <ROW_NUM>6.8.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    несовершеннолетним</ROW_TEXT>
+      <ROW_NUM>6.8.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        взимание платы с застрахованного лица за оказанную медицинскую помощь, предусмотренную программами ОМС, всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>6.9</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «онкология»</ROW_TEXT>
+      <ROW_NUM>6.9.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        прочие нарушения, всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>6.10</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>    по профилю «онкология»</ROW_TEXT>
+      <ROW_NUM>6.10.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+  </TABLE>
+  <TABLE>
+    <TABLE_NAME>Таблица 10</TABLE_NAME>
+    <TABLE_DESCRIPTION>Финансовые результаты контроля объемов, сроков, качества и условий</TABLE_DESCRIPTION>
+    <ROWS_COUNT>3</ROWS_COUNT>
+    <ROW>
+      <ROW_TEXT>Сумма средств, направленная МО за оказанную медицинскую помощь (руб.)</ROW_TEXT>
+      <ROW_NUM>1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Сумма неоплаты (уменьшения оплаты) медицинской помощи, штрафов с медицинских организаций (руб.), всего,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        по результатам МЭК, всего,
+        в том числе:
+      </ROW_TEXT>
+      <ROW_NUM>3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>по профилю «онкология»</ROW_TEXT>
+      <ROW_NUM>  3.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        по результатам МЭЭ, всего,
+        в том числе за нарушения:
+      </ROW_TEXT>
+      <ROW_NUM>4</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        несвоевременное включение (невключение) застрахованных лиц в группу диспансерного наблюдения, всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>  4.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>застрахованных лиц в возрасте 65 лет и старше</ROW_TEXT>
+      <ROW_NUM>    4.1.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>по профилю «онкология» (за исключением медицинской помощи несовершеннолетним)</ROW_TEXT>
+      <ROW_NUM>	   4.1.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>по профилю «сердечно-сосудистые заболевания» (за исключением медицинской помощи несовершеннолетним)</ROW_TEXT>
+      <ROW_NUM>    4.1.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>при медицинской помощи детям</ROW_TEXT>
+      <ROW_NUM>    4.1.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>при оказании медицинской помощи по профилю «онкология»</ROW_TEXT>
+      <ROW_NUM>  4.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>непрофильную госпитализацию</ROW_TEXT>
+      <ROW_NUM>  4.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>прочие нарушения</ROW_TEXT>
+      <ROW_NUM>  4.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        по результатам ЭКМП, всего,
+        в том числе за нарушения:
+      </ROW_TEXT>
+      <ROW_NUM>5</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        несвоевременное включение (невключение) застрахованных лиц в группу диспансерного наблюдения, всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>  5.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>застрахованных лиц в возрасте 65 лет и старше</ROW_TEXT>
+      <ROW_NUM>    5.1.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>по профилю «онкология» (за исключением медицинской помощи несовершеннолетним)</ROW_TEXT>
+      <ROW_NUM>    5.1.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>по профилю «сердечно-сосудистые заболевания» (за исключением медицинской помощи несовершеннолетним</ROW_TEXT>
+      <ROW_NUM>	   5.1.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>несовершеннолетних</ROW_TEXT>
+      <ROW_NUM>    5.1.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        непрофильную госпитализацию, всего,
+        из них при оказании медицинской помощи:
+      </ROW_TEXT>
+      <ROW_NUM>  5.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>по профилю «онкология» (за исключением медицинской помощи несовершеннолетним)</ROW_TEXT>
+      <ROW_NUM>    5.2.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>по профилю «сердечно-сосудистые заболевания» (за исключением медицинской помощи несовершеннолетним)</ROW_TEXT>
+      <ROW_NUM>    5.2.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>несовершеннолетним</ROW_TEXT>
+      <ROW_NUM>    5.2.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        необоснованное невыполнение консультаций/консилиумов медицинских работников национальных исследовательских медицинских центров, всего,
+        из них при оказании медицинской помощи:
+      </ROW_TEXT>
+      <ROW_NUM>  5.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>по профилю «онкология» (за исключением медицинской помощи несовершеннолетним)</ROW_TEXT>
+      <ROW_NUM>    5.3.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>по профилю «сердечно-сосудистые заболевания» (за исключением медицинской помощи несовершеннолетним)</ROW_TEXT>
+      <ROW_NUM>    5.3.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>несовершеннолетним</ROW_TEXT>
+      <ROW_NUM>    5.3.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        несоблюдение клинических рекомендаций, порядков оказания медицинской помощи, стандартов медицинской помощи, всего,
+        из них при оказании медицинской помощи:
+      </ROW_TEXT>
+      <ROW_NUM>  5.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>по профилю «онкология» (за исключением медицинской помощи несовершеннолетним)</ROW_TEXT>
+      <ROW_NUM>    5.4.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>по профилю «сердечно-сосудистые заболевания» (за исключением медицинской помощи несовершеннолетним)</ROW_TEXT>
+      <ROW_NUM>    5.4.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>несовершеннолетним</ROW_TEXT>
+      <ROW_NUM>    5.4.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        преждевременное с клинической точки зрения прекращение проведения лечебных мероприятий, всего,
+        из них при оказании медицинской помощи:
+      </ROW_TEXT>
+      <ROW_NUM>  5.5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>по профилю «онкология» (за исключением медицинской помощи несовершеннолетним)</ROW_TEXT>
+      <ROW_NUM>    5.5.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>по профилю «сердечно-сосудистые заболевания» (за исключением медицинской помощи несовершеннолетним)</ROW_TEXT>
+      <ROW_NUM>    5.5.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>несовершеннолетним</ROW_TEXT>
+      <ROW_NUM>    5.5.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        нарушение по вине медицинской организации преемственности в лечении, всего,
+        из них при оказании медицинской помощи:
+      </ROW_TEXT>
+      <ROW_NUM>  5.6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>по профилю «онкология» (за исключением медицинской помощи несовершеннолетним)</ROW_TEXT>
+      <ROW_NUM>    5.6.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>по профилю «сердечно-сосудистые заболевания» (за исключением медицинской помощи несовершеннолетним)</ROW_TEXT>
+      <ROW_NUM>    5.6.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>несовершеннолетним</ROW_TEXT>
+      <ROW_NUM>    5.6.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        взимание платы с застрахованного лица за оказанную медицинскую помощь, предусмотренную программами ОМС, всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>  5.7</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>по профилю «онкология»</ROW_TEXT>
+      <ROW_NUM>    5.7.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        прочие нарушения, всего,
+        из них
+      </ROW_TEXT>
+      <ROW_NUM>	 5.8</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>по профилю «онкология»</ROW_TEXT>
+      <ROW_NUM>    5.8.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+  </TABLE>
+  <TABLE>
+    <TABLE_NAME>Таблица 12</TABLE_NAME>
+    <TABLE_DESCRIPTION>Удовлетворенность объемом, доступностью и качеством медицинской помощи по данным опросов</TABLE_DESCRIPTION>
+    <ROWS_COUNT>4</ROWS_COUNT>
+    <ROW>
+      <ROW_TEXT>
+        Количество опрошенных застрахованных лиц, всего,
+        в том числе при получении медицинской помощи:
+      </ROW_TEXT>
+      <ROW_NUM>1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        в медицинских организациях, оказывающих первичную медико-санитарную помощь амбулаторно, предусматривающих планировочные решения внутренних пространств, обеспечивающих комфортность пребывания пациентов, включая организацию открытой регистратуры с инфоматом, электронного табло с расписанием приема врачей, колл-центра, системы навигации, зоны комфортного пребывания в холлах и оснащение входа автоматическими дверями	4
+        по профилю «онкология» (за исключением медицинской помощи несовершеннолетним)
+      </ROW_TEXT>
+      <ROW_NUM>4.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>по профилю «сердечно-сосудистые заболевания» (за исключением медицинской помощи несовершеннолетним)</ROW_TEXT>
+      <ROW_NUM>4.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>несовершеннолетним</ROW_TEXT>
+      <ROW_NUM>4.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+  </TABLE>
+  <TABLE>
+    <TABLE_NAME>Таблица 13</TABLE_NAME>
+    <TABLE_DESCRIPTION>Информирование ЗЛ о правах в сфере ОМС</TABLE_DESCRIPTION>
+    <ROWS_COUNT>3</ROWS_COUNT>
+    <ROW>
+      <ROW_TEXT>
+        Индивидуально проинформированы, всего,
+        в том числе посредством:
+      </ROW_TEXT>
+      <ROW_NUM>1</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>телефонной связи</ROW_TEXT>
+      <ROW_NUM>1.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>SMS-сообщений, систем обмена текстовыми сообщениями для мобильных платформ</ROW_TEXT>
+      <ROW_NUM>1.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>электронной почты</ROW_TEXT>
+      <ROW_NUM>1.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>почтовых рассылок</ROW_TEXT>
+      <ROW_NUM>1.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>других информационных ресурсов</ROW_TEXT>
+      <ROW_NUM>1.5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        Публично проинформированы, всего,
+        в том числе посредством:
+      </ROW_TEXT>
+      <ROW_NUM>2</ROW_NUM>
+      <EXCLUSION>true</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>статей в СМИ</ROW_TEXT>
+      <ROW_NUM>2.1</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>выступлений на ТВ</ROW_TEXT>
+      <ROW_NUM>2.2</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>выступлений на радио</ROW_TEXT>
+      <ROW_NUM>2.3</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>
+        выступлений в коллективах ЗЛ, всего,
+        из них:
+      </ROW_TEXT>
+      <ROW_NUM>2.4</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>о прохождении профилактических мероприятий</ROW_TEXT>
+      <ROW_NUM>2.5</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>о формировании здорового образа жизни</ROW_TEXT>
+      <ROW_NUM>2.6</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>стендов в медицинских организациях</ROW_TEXT>
+      <ROW_NUM>2.7</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+    <ROW>
+      <ROW_TEXT>Интернет-ресурсов</ROW_TEXT>
+      <ROW_NUM>2.8</ROW_NUM>
+      <EXCLUSION>false</EXCLUSION>
+    </ROW>
+  </TABLE>
+</REPORT>
