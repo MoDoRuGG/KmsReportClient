@@ -165,7 +165,7 @@ namespace KmsReportClient.Excel.Creator
         {
             for (int i = 1; i <= count; i++)
             {
-                worksheet.Columns[i].ColumnWidth += 8;
+                //worksheet.Columns[i].ColumnWidth += 8;
                 worksheet.Cells[4, i].Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
                 worksheet.Cells[5, i].Style.HorizontalAlignment = XlHAlign.xlHAlignCenter;
 
