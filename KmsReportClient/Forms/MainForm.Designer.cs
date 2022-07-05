@@ -105,6 +105,8 @@
             this.оПЭДФинансыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.свод1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.свод2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.отчётОПредложенияхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сводToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.serviceMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.рассылкаУведомленийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuHelp = new System.Windows.Forms.ToolStripMenuItem();
@@ -225,8 +227,7 @@
             this.TxtbInfo = new System.Windows.Forms.TextBox();
             this.PageElement = new System.Windows.Forms.TabPage();
             this.TbxEmentInfo = new System.Windows.Forms.TextBox();
-            this.отчётОПредложенияхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сводToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -287,7 +288,8 @@
             this.serviceMenu,
             this.MenuHelp,
             this.Con,
-            this.SpravItem});
+            this.SpravItem,
+            this.оПрограммеToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(950, 24);
@@ -305,7 +307,7 @@
             // MenuExit
             // 
             this.MenuExit.Name = "MenuExit";
-            this.MenuExit.Size = new System.Drawing.Size(109, 22);
+            this.MenuExit.Size = new System.Drawing.Size(180, 22);
             this.MenuExit.Text = "Выход";
             this.MenuExit.Click += new System.EventHandler(this.MenuExit_Click);
             // 
@@ -555,6 +557,21 @@
             this.свод2ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.свод2ToolStripMenuItem.Text = "Свод 2";
             this.свод2ToolStripMenuItem.Click += new System.EventHandler(this.свод2ToolStripMenuItem_Click);
+            // 
+            // отчётОПредложенияхToolStripMenuItem
+            // 
+            this.отчётОПредложенияхToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.сводToolStripMenuItem3});
+            this.отчётОПредложенияхToolStripMenuItem.Name = "отчётОПредложенияхToolStripMenuItem";
+            this.отчётОПредложенияхToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.отчётОПредложенияхToolStripMenuItem.Text = "Отчёт о предложениях";
+            // 
+            // сводToolStripMenuItem3
+            // 
+            this.сводToolStripMenuItem3.Name = "сводToolStripMenuItem3";
+            this.сводToolStripMenuItem3.Size = new System.Drawing.Size(101, 22);
+            this.сводToolStripMenuItem3.Text = "Свод";
+            this.сводToolStripMenuItem3.Click += new System.EventHandler(this.сводToolStripMenuItem3_Click);
             // 
             // serviceMenu
             // 
@@ -888,7 +905,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(9, 69);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(116, 16);
+            this.label7.Size = new System.Drawing.Size(115, 16);
             this.label7.TabIndex = 4;
             this.label7.Text = "Сохранен в БД";
             // 
@@ -899,7 +916,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(9, 53);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(129, 16);
+            this.label6.Size = new System.Drawing.Size(128, 16);
             this.label6.TabIndex = 3;
             this.label6.Text = "Направлен скан";
             // 
@@ -910,7 +927,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(9, 37);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(139, 16);
+            this.label5.Size = new System.Drawing.Size(138, 16);
             this.label5.TabIndex = 2;
             this.label5.Text = "Отчет возвращен";
             // 
@@ -922,7 +939,7 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label4.Location = new System.Drawing.Point(9, 21);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(176, 16);
+            this.label4.Size = new System.Drawing.Size(175, 16);
             this.label4.TabIndex = 1;
             this.label4.Text = "Отчет направлен в ЦО";
             // 
@@ -933,7 +950,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(9, 5);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 16);
+            this.label3.Size = new System.Drawing.Size(146, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "Отчет принят в ЦО";
             // 
@@ -2308,20 +2325,11 @@
             this.TbxEmentInfo.Size = new System.Drawing.Size(713, 58);
             this.TbxEmentInfo.TabIndex = 8;
             // 
-            // отчётОПредложенияхToolStripMenuItem
+            // оПрограммеToolStripMenuItem
             // 
-            this.отчётОПредложенияхToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.сводToolStripMenuItem3});
-            this.отчётОПредложенияхToolStripMenuItem.Name = "отчётОПредложенияхToolStripMenuItem";
-            this.отчётОПредложенияхToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.отчётОПредложенияхToolStripMenuItem.Text = "Отчёт о предложениях";
-            // 
-            // сводToolStripMenuItem3
-            // 
-            this.сводToolStripMenuItem3.Name = "сводToolStripMenuItem3";
-            this.сводToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
-            this.сводToolStripMenuItem3.Text = "Свод";
-            this.сводToolStripMenuItem3.Click += new System.EventHandler(this.сводToolStripMenuItem3_Click);
+            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.оПрограммеToolStripMenuItem.Text = "О программе";
             // 
             // MainForm
             // 
@@ -2573,6 +2581,7 @@
         private System.Windows.Forms.ToolStripMenuItem свод2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отчётОПредложенияхToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сводToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
     }
 }
 

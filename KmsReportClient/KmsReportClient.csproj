@@ -204,6 +204,12 @@
       <DependentUpon>EmailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\EmailService.cs" />
+    <Compile Include="Forms\ReleaseChangelogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReleaseChangelogForm.Designer.cs">
+      <DependentUpon>ReleaseChangelogForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ScanDynamicForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -684,6 +690,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmailForm.resx">
       <DependentUpon>EmailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReleaseChangelogForm.resx">
+      <DependentUpon>ReleaseChangelogForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
