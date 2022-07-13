@@ -331,8 +331,7 @@ namespace KmsReportClient.Report.Basic
 
                 if (IdReportType == "foped")
                     result.Add(new KmsReportDictionary { Key = "Свод", Value = "За год" });
-
-
+           
                 return result;
 
 

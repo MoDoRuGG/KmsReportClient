@@ -90,5 +90,8 @@ namespace KmsReportClient.Model.Enums
         consOpedFinance2,
         [Description(GlobalConst.TempFolder + "consProposal.xlsx")]
         consProposal,
+        //добавляем кадры
+        [Description(GlobalConst.TempFolder + "cadre.xlsx")]
+        kadry,
     }
 }

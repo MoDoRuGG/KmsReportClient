@@ -2,6 +2,137 @@
 <wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://kms-oms.ru/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://kms-oms.ru/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://kms-oms.ru/">
+      <s:element name="CreateReportCpnpM">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateReportCpnpMResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateReportCpnpMResult" type="tns:ArrayOfConsolidateCpnpM" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfConsolidateCpnpM">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsolidateCpnpM" nillable="true" type="tns:ConsolidateCpnpM" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConsolidateCpnpM">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountAll" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountReason" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateReportCardio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateReportCardioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateReportCardioResult" type="tns:ArrayOfConsolidateCardio" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfConsolidateCardio">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsolidateCardio" nillable="true" type="tns:ConsolidateCardio" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConsolidateCardio">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Complaint" type="tns:CardioComplaint" />
+          <s:element minOccurs="0" maxOccurs="1" name="Protection" type="tns:CardioProtection" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeeEkmp" type="tns:CardioMeeEkmp" />
+          <s:element minOccurs="0" maxOccurs="1" name="Finance" type="tns:CardioFinance" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CardioComplaint">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MedicalHelp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Underage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AskMedicalHelp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnderageAskMedicalHelp" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CardioProtection">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PretrialMedicalHelp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PretrialUnderage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="JudicalMedicalHelp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="JudicalUnderage" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CardioMeeEkmp">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ComplaintsMEE" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="HospitalizationMEE" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CelExpertiseMEE" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlanExpertiseMEE" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ComplaintsEKMP" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CelLetalKoronar" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CelLetalOnmk" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CelAllCardio" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CelUnderage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlanAllCardio" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlanCardioUnderage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CelNeprofilGospital" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CelNeprofilGospitalUnderage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlanNeprofilGospital" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlanNeprofilGospitalUnderage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CelNevipolnenie" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CelNevipolnenieUnderage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlanNevipolnenie" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlanNevipolnenieUnderage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CelNotAddDispNab" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CelNotAddDispNabUnderage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlanNotAddDispNab" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlanNotAddDispNabUnderage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CelNotSobludClinicRecomendation" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CelNotSobludClinicRecomendationUnderage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlanNotSobludClinicRecomendation" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlanNotSobludClinicRecomendationUnderage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CelPrematureCloseHelpMerop" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CelPrematureCloseHelpMeropUnderage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlanPrematureCloseHelpMerop" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlanPrematureCloseHelpMeropUnderage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CelViolationHospital" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CelViolationHospitalUnderage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlanViolationHospital" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlanViolationHospitalUnderage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CelNeobosOtkaz" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CelNeobosOtkazUnderage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlanNeobosOtkaz" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlanNeobosOtkazUnderage" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CardioFinance">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SumMeeNotTimeDispan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumMeeNotTimeDispanUnderage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumEkmpNotTimeDispan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumEkmpNotTimeDispanUnderage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumNeprofilHelp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumNeprofilHelpUnderage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumNevipolnenie" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumNevipolnenieUnderage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumNesobludRecomedation" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumNesobludRecomedationUnderage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumCloseHelp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumCloseHelpUnderage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumViolation" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumViolationUnderage" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="CreateReport262T1">
         <s:complexType>
           <s:sequence>
@@ -604,6 +735,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Report_Proposals" type="tns:ArrayOfReport_Proposal" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_OpedFinances" type="tns:ArrayOfReport_OpedFinance" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Iilzs" type="tns:ArrayOfReport_Iilz" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Cadre" type="tns:ArrayOfReport_Cadre" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:Report_Flow" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Type" type="tns:Report_Type" />
         </s:sequence>
@@ -832,6 +964,46 @@
           <s:element minOccurs="0" maxOccurs="1" name="Accounting_Document" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="average_cost_per_message" nillable="true" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="average_cost_of_informing_1_PL" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:Report_Data" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReport_Cadre">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Report_Cadre" nillable="true" type="tns:Report_Cadre" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Report_Cadre">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_Report_Data" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowNum" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_itog_state" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_itog_fact" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_itog_vacancy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_leader_state" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_leader_fact" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_leader_vacancy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_deputy_leader_state" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_deputy_leader_fact" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_deputy_leader_vacancy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_expert_doctor_state" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_expert_doctor_fact" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_expert_doctor_vacancy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_specialist_state" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_specialist_fact" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_specialist_vacancy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf15" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf16" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf17" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf18" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf19" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf20" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf21" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf22" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf23" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf24" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf25" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf26" nillable="true" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:Report_Data" />
         </s:sequence>
       </s:complexType>
@@ -1475,6 +1647,54 @@
           <s:element minOccurs="1" maxOccurs="1" name="CountPast" type="s:int" />
         </s:sequence>
       </s:complexType>
+      <s:element name="GetCadreYearData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="theme" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fillial" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCadreYearDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCadreYearDataResult" type="tns:ReportCadreDataDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReportCadreDataDto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_itog_state" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_itog_fact" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_itog_vacancy" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_leader_state" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_leader_fact" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_leader_vacancy" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_deputy_leader_state" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_deputy_leader_fact" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_deputy_leader_vacancy" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_expert_doctor_state" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_expert_doctor_fact" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_expert_doctor_vacancy" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_specialist_state" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_specialist_fact" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_specialist_vacancy" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf15" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf16" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf17" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf18" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf19" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf20" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf21" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf22" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf23" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf24" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf25" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf26" type="s:int" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="GetVacYearData">
         <s:complexType>
           <s:sequence>
@@ -1749,7 +1969,7 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="Test123">
+      <s:element name="WebReportOped">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:ReportOped" />
@@ -1765,10 +1985,10 @@
           </s:extension>
         </s:complexContent>
       </s:complexType>
-      <s:element name="Test123Response">
+      <s:element name="WebReportOpedResponse">
         <s:complexType />
       </s:element>
-      <s:element name="Test12asdasd34">
+      <s:element name="WebReportInfrormationResponse">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:ReportInfrormationResponse" />
@@ -1795,20 +2015,20 @@
           <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ReportInfrormationResponseDataDto" />
         </s:sequence>
       </s:complexType>
-      <s:element name="Test12asdasd34Response">
+      <s:element name="WebReportInfrormationResponseResponse">
         <s:complexType />
       </s:element>
-      <s:element name="Testasd12asdasd34">
+      <s:element name="WebReportVaccination">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:ReportVaccination" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="Testasd12asdasd34Response">
+      <s:element name="WebReportVaccinationResponse">
         <s:complexType />
       </s:element>
-      <s:element name="Testasd12asdasd34s1">
+      <s:element name="WebReportFSSMonitroing">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:ReportFSSMonitroing" />
@@ -1839,10 +2059,10 @@
           <s:element minOccurs="1" maxOccurs="1" name="Total" nillable="true" type="s:decimal" />
         </s:sequence>
       </s:complexType>
-      <s:element name="Testasd12asdasd34s1Response">
+      <s:element name="WebReportFSSMonitroingResponse">
         <s:complexType />
       </s:element>
-      <s:element name="Testasd1asd2asdasd34s1">
+      <s:element name="WebReportProposal">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:ReportProposal" />
@@ -1863,10 +2083,10 @@
           </s:extension>
         </s:complexContent>
       </s:complexType>
-      <s:element name="Testasd1asd2asdasd34s1Response">
+      <s:element name="WebReportProposalResponse">
         <s:complexType />
       </s:element>
-      <s:element name="Testasd1asd2asdasd34s1231">
+      <s:element name="WebReportOpedFinance">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:ReportOpedFinance" />
@@ -1895,7 +2115,37 @@
           <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
         </s:sequence>
       </s:complexType>
-      <s:element name="Testasd1asd2asdasd34s1231Response">
+      <s:element name="WebReportOpedFinanceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="WebReportCadre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:ReportCadre" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReportCadre">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AbstractReport">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ReportDataList" type="tns:ArrayOfReportCadreDto" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfReportCadreDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReportCadreDto" nillable="true" type="tns:ReportCadreDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReportCadreDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Theme" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ReportCadreDataDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WebReportCadreResponse">
         <s:complexType />
       </s:element>
       <s:element name="GetReportRegionData">
@@ -2265,6 +2515,7 @@
           <s:enumeration value="MFSS" />
           <s:enumeration value="Proposal" />
           <s:enumeration value="OpedFinance" />
+          <s:enumeration value="Cadre" />
         </s:restriction>
       </s:simpleType>
       <s:element name="CollectSummaryReportResponse">
@@ -2815,139 +3066,20 @@
           <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:decimal" />
         </s:sequence>
       </s:complexType>
-      <s:element name="CreateReportCpnpM">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CreateReportCpnpMResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CreateReportCpnpMResult" type="tns:ArrayOfConsolidateCpnpM" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfConsolidateCpnpM">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsolidateCpnpM" nillable="true" type="tns:ConsolidateCpnpM" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ConsolidateCpnpM">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="CountAll" nillable="true" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CountReason" nillable="true" type="s:decimal" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="CreateReportCardio">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CreateReportCardioResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CreateReportCardioResult" type="tns:ArrayOfConsolidateCardio" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfConsolidateCardio">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsolidateCardio" nillable="true" type="tns:ConsolidateCardio" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ConsolidateCardio">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Complaint" type="tns:CardioComplaint" />
-          <s:element minOccurs="0" maxOccurs="1" name="Protection" type="tns:CardioProtection" />
-          <s:element minOccurs="0" maxOccurs="1" name="MeeEkmp" type="tns:CardioMeeEkmp" />
-          <s:element minOccurs="0" maxOccurs="1" name="Finance" type="tns:CardioFinance" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="CardioComplaint">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="MedicalHelp" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="Underage" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="AskMedicalHelp" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="UnderageAskMedicalHelp" type="s:decimal" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="CardioProtection">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="PretrialMedicalHelp" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="PretrialUnderage" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="JudicalMedicalHelp" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="JudicalUnderage" type="s:decimal" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="CardioMeeEkmp">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="ComplaintsMEE" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="HospitalizationMEE" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CelExpertiseMEE" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="PlanExpertiseMEE" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="ComplaintsEKMP" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CelLetalKoronar" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CelLetalOnmk" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CelAllCardio" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CelUnderage" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="PlanAllCardio" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="PlanCardioUnderage" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CelNeprofilGospital" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CelNeprofilGospitalUnderage" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="PlanNeprofilGospital" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="PlanNeprofilGospitalUnderage" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CelNevipolnenie" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CelNevipolnenieUnderage" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="PlanNevipolnenie" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="PlanNevipolnenieUnderage" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CelNotAddDispNab" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CelNotAddDispNabUnderage" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="PlanNotAddDispNab" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="PlanNotAddDispNabUnderage" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CelNotSobludClinicRecomendation" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CelNotSobludClinicRecomendationUnderage" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="PlanNotSobludClinicRecomendation" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="PlanNotSobludClinicRecomendationUnderage" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CelPrematureCloseHelpMerop" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CelPrematureCloseHelpMeropUnderage" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="PlanPrematureCloseHelpMerop" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="PlanPrematureCloseHelpMeropUnderage" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CelViolationHospital" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CelViolationHospitalUnderage" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="PlanViolationHospital" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="PlanViolationHospitalUnderage" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CelNeobosOtkaz" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CelNeobosOtkazUnderage" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="PlanNeobosOtkaz" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="PlanNeobosOtkazUnderage" type="s:decimal" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="CardioFinance">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="SumMeeNotTimeDispan" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="SumMeeNotTimeDispanUnderage" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="SumEkmpNotTimeDispan" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="SumEkmpNotTimeDispanUnderage" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="SumNeprofilHelp" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="SumNeprofilHelpUnderage" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="SumNevipolnenie" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="SumNevipolnenieUnderage" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="SumNesobludRecomedation" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="SumNesobludRecomedationUnderage" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="SumCloseHelp" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="SumCloseHelpUnderage" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="SumViolation" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="SumViolationUnderage" type="s:decimal" />
-        </s:sequence>
-      </s:complexType>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="CreateReportCpnpMSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateReportCpnpM" />
+  </wsdl:message>
+  <wsdl:message name="CreateReportCpnpMSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateReportCpnpMResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateReportCardioSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateReportCardio" />
+  </wsdl:message>
+  <wsdl:message name="CreateReportCardioSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateReportCardioResponse" />
+  </wsdl:message>
   <wsdl:message name="CreateReport262T1SoapIn">
     <wsdl:part name="parameters" element="tns:CreateReport262T1" />
   </wsdl:message>
@@ -3080,6 +3212,12 @@
   <wsdl:message name="GetIRYearDataSoapOut">
     <wsdl:part name="parameters" element="tns:GetIRYearDataResponse" />
   </wsdl:message>
+  <wsdl:message name="GetCadreYearDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCadreYearData" />
+  </wsdl:message>
+  <wsdl:message name="GetCadreYearDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCadreYearDataResponse" />
+  </wsdl:message>
   <wsdl:message name="GetVacYearDataSoapIn">
     <wsdl:part name="parameters" element="tns:GetVacYearData" />
   </wsdl:message>
@@ -3164,41 +3302,47 @@
   <wsdl:message name="GetReportDynamicFlowByIdSoapOut">
     <wsdl:part name="parameters" element="tns:GetReportDynamicFlowByIdResponse" />
   </wsdl:message>
-  <wsdl:message name="Test123SoapIn">
-    <wsdl:part name="parameters" element="tns:Test123" />
+  <wsdl:message name="WebReportOpedSoapIn">
+    <wsdl:part name="parameters" element="tns:WebReportOped" />
   </wsdl:message>
-  <wsdl:message name="Test123SoapOut">
-    <wsdl:part name="parameters" element="tns:Test123Response" />
+  <wsdl:message name="WebReportOpedSoapOut">
+    <wsdl:part name="parameters" element="tns:WebReportOpedResponse" />
   </wsdl:message>
-  <wsdl:message name="Test12asdasd34SoapIn">
-    <wsdl:part name="parameters" element="tns:Test12asdasd34" />
+  <wsdl:message name="WebReportInfrormationResponseSoapIn">
+    <wsdl:part name="parameters" element="tns:WebReportInfrormationResponse" />
   </wsdl:message>
-  <wsdl:message name="Test12asdasd34SoapOut">
-    <wsdl:part name="parameters" element="tns:Test12asdasd34Response" />
+  <wsdl:message name="WebReportInfrormationResponseSoapOut">
+    <wsdl:part name="parameters" element="tns:WebReportInfrormationResponseResponse" />
   </wsdl:message>
-  <wsdl:message name="Testasd12asdasd34SoapIn">
-    <wsdl:part name="parameters" element="tns:Testasd12asdasd34" />
+  <wsdl:message name="WebReportVaccinationSoapIn">
+    <wsdl:part name="parameters" element="tns:WebReportVaccination" />
   </wsdl:message>
-  <wsdl:message name="Testasd12asdasd34SoapOut">
-    <wsdl:part name="parameters" element="tns:Testasd12asdasd34Response" />
+  <wsdl:message name="WebReportVaccinationSoapOut">
+    <wsdl:part name="parameters" element="tns:WebReportVaccinationResponse" />
   </wsdl:message>
-  <wsdl:message name="Testasd12asdasd34s1SoapIn">
-    <wsdl:part name="parameters" element="tns:Testasd12asdasd34s1" />
+  <wsdl:message name="WebReportFSSMonitroingSoapIn">
+    <wsdl:part name="parameters" element="tns:WebReportFSSMonitroing" />
   </wsdl:message>
-  <wsdl:message name="Testasd12asdasd34s1SoapOut">
-    <wsdl:part name="parameters" element="tns:Testasd12asdasd34s1Response" />
+  <wsdl:message name="WebReportFSSMonitroingSoapOut">
+    <wsdl:part name="parameters" element="tns:WebReportFSSMonitroingResponse" />
   </wsdl:message>
-  <wsdl:message name="Testasd1asd2asdasd34s1SoapIn">
-    <wsdl:part name="parameters" element="tns:Testasd1asd2asdasd34s1" />
+  <wsdl:message name="WebReportProposalSoapIn">
+    <wsdl:part name="parameters" element="tns:WebReportProposal" />
   </wsdl:message>
-  <wsdl:message name="Testasd1asd2asdasd34s1SoapOut">
-    <wsdl:part name="parameters" element="tns:Testasd1asd2asdasd34s1Response" />
+  <wsdl:message name="WebReportProposalSoapOut">
+    <wsdl:part name="parameters" element="tns:WebReportProposalResponse" />
   </wsdl:message>
-  <wsdl:message name="Testasd1asd2asdasd34s1231SoapIn">
-    <wsdl:part name="parameters" element="tns:Testasd1asd2asdasd34s1231" />
+  <wsdl:message name="WebReportOpedFinanceSoapIn">
+    <wsdl:part name="parameters" element="tns:WebReportOpedFinance" />
   </wsdl:message>
-  <wsdl:message name="Testasd1asd2asdasd34s1231SoapOut">
-    <wsdl:part name="parameters" element="tns:Testasd1asd2asdasd34s1231Response" />
+  <wsdl:message name="WebReportOpedFinanceSoapOut">
+    <wsdl:part name="parameters" element="tns:WebReportOpedFinanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebReportCadreSoapIn">
+    <wsdl:part name="parameters" element="tns:WebReportCadre" />
+  </wsdl:message>
+  <wsdl:message name="WebReportCadreSoapOut">
+    <wsdl:part name="parameters" element="tns:WebReportCadreResponse" />
   </wsdl:message>
   <wsdl:message name="GetReportRegionDataSoapIn">
     <wsdl:part name="parameters" element="tns:GetReportRegionData" />
@@ -3380,19 +3524,15 @@
   <wsdl:message name="CreateReportVSSSoapOut">
     <wsdl:part name="parameters" element="tns:CreateReportVSSResponse" />
   </wsdl:message>
-  <wsdl:message name="CreateReportCpnpMSoapIn">
-    <wsdl:part name="parameters" element="tns:CreateReportCpnpM" />
-  </wsdl:message>
-  <wsdl:message name="CreateReportCpnpMSoapOut">
-    <wsdl:part name="parameters" element="tns:CreateReportCpnpMResponse" />
-  </wsdl:message>
-  <wsdl:message name="CreateReportCardioSoapIn">
-    <wsdl:part name="parameters" element="tns:CreateReportCardio" />
-  </wsdl:message>
-  <wsdl:message name="CreateReportCardioSoapOut">
-    <wsdl:part name="parameters" element="tns:CreateReportCardioResponse" />
-  </wsdl:message>
   <wsdl:portType name="EndpointSoap">
+    <wsdl:operation name="CreateReportCpnpM">
+      <wsdl:input message="tns:CreateReportCpnpMSoapIn" />
+      <wsdl:output message="tns:CreateReportCpnpMSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateReportCardio">
+      <wsdl:input message="tns:CreateReportCardioSoapIn" />
+      <wsdl:output message="tns:CreateReportCardioSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="CreateReport262T1">
       <wsdl:input message="tns:CreateReport262T1SoapIn" />
       <wsdl:output message="tns:CreateReport262T1SoapOut" />
@@ -3481,6 +3621,10 @@
       <wsdl:input message="tns:GetIRYearDataSoapIn" />
       <wsdl:output message="tns:GetIRYearDataSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetCadreYearData">
+      <wsdl:input message="tns:GetCadreYearDataSoapIn" />
+      <wsdl:output message="tns:GetCadreYearDataSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetVacYearData">
       <wsdl:input message="tns:GetVacYearDataSoapIn" />
       <wsdl:output message="tns:GetVacYearDataSoapOut" />
@@ -3537,29 +3681,33 @@
       <wsdl:input message="tns:GetReportDynamicFlowByIdSoapIn" />
       <wsdl:output message="tns:GetReportDynamicFlowByIdSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="Test123">
-      <wsdl:input message="tns:Test123SoapIn" />
-      <wsdl:output message="tns:Test123SoapOut" />
+    <wsdl:operation name="WebReportOped">
+      <wsdl:input message="tns:WebReportOpedSoapIn" />
+      <wsdl:output message="tns:WebReportOpedSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="Test12asdasd34">
-      <wsdl:input message="tns:Test12asdasd34SoapIn" />
-      <wsdl:output message="tns:Test12asdasd34SoapOut" />
+    <wsdl:operation name="WebReportInfrormationResponse">
+      <wsdl:input message="tns:WebReportInfrormationResponseSoapIn" />
+      <wsdl:output message="tns:WebReportInfrormationResponseSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="Testasd12asdasd34">
-      <wsdl:input message="tns:Testasd12asdasd34SoapIn" />
-      <wsdl:output message="tns:Testasd12asdasd34SoapOut" />
+    <wsdl:operation name="WebReportVaccination">
+      <wsdl:input message="tns:WebReportVaccinationSoapIn" />
+      <wsdl:output message="tns:WebReportVaccinationSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="Testasd12asdasd34s1">
-      <wsdl:input message="tns:Testasd12asdasd34s1SoapIn" />
-      <wsdl:output message="tns:Testasd12asdasd34s1SoapOut" />
+    <wsdl:operation name="WebReportFSSMonitroing">
+      <wsdl:input message="tns:WebReportFSSMonitroingSoapIn" />
+      <wsdl:output message="tns:WebReportFSSMonitroingSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="Testasd1asd2asdasd34s1">
-      <wsdl:input message="tns:Testasd1asd2asdasd34s1SoapIn" />
-      <wsdl:output message="tns:Testasd1asd2asdasd34s1SoapOut" />
+    <wsdl:operation name="WebReportProposal">
+      <wsdl:input message="tns:WebReportProposalSoapIn" />
+      <wsdl:output message="tns:WebReportProposalSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="Testasd1asd2asdasd34s1231">
-      <wsdl:input message="tns:Testasd1asd2asdasd34s1231SoapIn" />
-      <wsdl:output message="tns:Testasd1asd2asdasd34s1231SoapOut" />
+    <wsdl:operation name="WebReportOpedFinance">
+      <wsdl:input message="tns:WebReportOpedFinanceSoapIn" />
+      <wsdl:output message="tns:WebReportOpedFinanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebReportCadre">
+      <wsdl:input message="tns:WebReportCadreSoapIn" />
+      <wsdl:output message="tns:WebReportCadreSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetReportRegionData">
       <wsdl:input message="tns:GetReportRegionDataSoapIn" />
@@ -3681,17 +3829,27 @@
       <wsdl:input message="tns:CreateReportVSSSoapIn" />
       <wsdl:output message="tns:CreateReportVSSSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="CreateReportCpnpM">
-      <wsdl:input message="tns:CreateReportCpnpMSoapIn" />
-      <wsdl:output message="tns:CreateReportCpnpMSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="CreateReportCardio">
-      <wsdl:input message="tns:CreateReportCardioSoapIn" />
-      <wsdl:output message="tns:CreateReportCardioSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="EndpointSoap" type="tns:EndpointSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateReportCpnpM">
+      <soap:operation soapAction="http://kms-oms.ru/CreateReportCpnpM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateReportCardio">
+      <soap:operation soapAction="http://kms-oms.ru/CreateReportCardio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateReport262T1">
       <soap:operation soapAction="http://kms-oms.ru/CreateReport262T1" style="document" />
       <wsdl:input>
@@ -3890,6 +4048,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetCadreYearData">
+      <soap:operation soapAction="http://kms-oms.ru/GetCadreYearData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetVacYearData">
       <soap:operation soapAction="http://kms-oms.ru/GetVacYearData" style="document" />
       <wsdl:input>
@@ -4016,8 +4183,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Test123">
-      <soap:operation soapAction="http://kms-oms.ru/Test123" style="document" />
+    <wsdl:operation name="WebReportOped">
+      <soap:operation soapAction="http://kms-oms.ru/WebReportOped" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4025,8 +4192,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Test12asdasd34">
-      <soap:operation soapAction="http://kms-oms.ru/Test12asdasd34" style="document" />
+    <wsdl:operation name="WebReportInfrormationResponse">
+      <soap:operation soapAction="http://kms-oms.ru/WebReportInfrormationResponse" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4034,8 +4201,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Testasd12asdasd34">
-      <soap:operation soapAction="http://kms-oms.ru/Testasd12asdasd34" style="document" />
+    <wsdl:operation name="WebReportVaccination">
+      <soap:operation soapAction="http://kms-oms.ru/WebReportVaccination" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4043,8 +4210,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Testasd12asdasd34s1">
-      <soap:operation soapAction="http://kms-oms.ru/Testasd12asdasd34s1" style="document" />
+    <wsdl:operation name="WebReportFSSMonitroing">
+      <soap:operation soapAction="http://kms-oms.ru/WebReportFSSMonitroing" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4052,8 +4219,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Testasd1asd2asdasd34s1">
-      <soap:operation soapAction="http://kms-oms.ru/Testasd1asd2asdasd34s1" style="document" />
+    <wsdl:operation name="WebReportProposal">
+      <soap:operation soapAction="http://kms-oms.ru/WebReportProposal" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4061,8 +4228,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Testasd1asd2asdasd34s1231">
-      <soap:operation soapAction="http://kms-oms.ru/Testasd1asd2asdasd34s1231" style="document" />
+    <wsdl:operation name="WebReportOpedFinance">
+      <soap:operation soapAction="http://kms-oms.ru/WebReportOpedFinance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebReportCadre">
+      <soap:operation soapAction="http://kms-oms.ru/WebReportCadre" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4340,27 +4516,27 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateReportCpnpM">
-      <soap:operation soapAction="http://kms-oms.ru/CreateReportCpnpM" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateReportCardio">
-      <soap:operation soapAction="http://kms-oms.ru/CreateReportCardio" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="EndpointSoap12" type="tns:EndpointSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateReportCpnpM">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateReportCpnpM" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateReportCardio">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateReportCardio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateReport262T1">
       <soap12:operation soapAction="http://kms-oms.ru/CreateReport262T1" style="document" />
       <wsdl:input>
@@ -4559,6 +4735,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetCadreYearData">
+      <soap12:operation soapAction="http://kms-oms.ru/GetCadreYearData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetVacYearData">
       <soap12:operation soapAction="http://kms-oms.ru/GetVacYearData" style="document" />
       <wsdl:input>
@@ -4685,8 +4870,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Test123">
-      <soap12:operation soapAction="http://kms-oms.ru/Test123" style="document" />
+    <wsdl:operation name="WebReportOped">
+      <soap12:operation soapAction="http://kms-oms.ru/WebReportOped" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4694,8 +4879,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Test12asdasd34">
-      <soap12:operation soapAction="http://kms-oms.ru/Test12asdasd34" style="document" />
+    <wsdl:operation name="WebReportInfrormationResponse">
+      <soap12:operation soapAction="http://kms-oms.ru/WebReportInfrormationResponse" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4703,8 +4888,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Testasd12asdasd34">
-      <soap12:operation soapAction="http://kms-oms.ru/Testasd12asdasd34" style="document" />
+    <wsdl:operation name="WebReportVaccination">
+      <soap12:operation soapAction="http://kms-oms.ru/WebReportVaccination" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4712,8 +4897,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Testasd12asdasd34s1">
-      <soap12:operation soapAction="http://kms-oms.ru/Testasd12asdasd34s1" style="document" />
+    <wsdl:operation name="WebReportFSSMonitroing">
+      <soap12:operation soapAction="http://kms-oms.ru/WebReportFSSMonitroing" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4721,8 +4906,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Testasd1asd2asdasd34s1">
-      <soap12:operation soapAction="http://kms-oms.ru/Testasd1asd2asdasd34s1" style="document" />
+    <wsdl:operation name="WebReportProposal">
+      <soap12:operation soapAction="http://kms-oms.ru/WebReportProposal" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4730,8 +4915,17 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Testasd1asd2asdasd34s1231">
-      <soap12:operation soapAction="http://kms-oms.ru/Testasd1asd2asdasd34s1231" style="document" />
+    <wsdl:operation name="WebReportOpedFinance">
+      <soap12:operation soapAction="http://kms-oms.ru/WebReportOpedFinance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebReportCadre">
+      <soap12:operation soapAction="http://kms-oms.ru/WebReportCadre" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5002,24 +5196,6 @@
     </wsdl:operation>
     <wsdl:operation name="CreateReportVSS">
       <soap12:operation soapAction="http://kms-oms.ru/CreateReportVSS" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateReportCpnpM">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateReportCpnpM" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateReportCardio">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateReportCardio" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

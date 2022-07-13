@@ -142,6 +142,7 @@ namespace KmsReportClient.Forms
             TbControl.TabPages.Remove(PageProposal);
             TbControl.TabPages.Remove(tpOpedFinance);
             TbControl.TabPages.Remove(tpIizl2022);
+            TbControl.TabPages.Remove(PageCadre);
 
             if (CurrentUser.IsMain)
             {
@@ -172,6 +173,7 @@ namespace KmsReportClient.Forms
                         {PageProposal, ReportGlobalConst.ReportProposal},
                         {tpOpedFinance, ReportGlobalConst.ReportOpedFinance},
                         {tpIizl2022, ReportGlobalConst.ReportIizl2022},
+                        {PageCadre, ReportGlobalConst.ReportCadre},
             };
 
         private Dictionary<string, IReportProcessor> CreateProcessorMap() =>
@@ -231,6 +233,10 @@ namespace KmsReportClient.Forms
                   {
                     ReportGlobalConst.ReportIizl2022,
                     new ReportIizlProcessor2022(_client, _reportsDictionary, dgvIizl2022, cbIizl2022, tbIizl2022, tpIizl2022)
+                },
+                {
+                    ReportGlobalConst.ReportCadre,
+                    new ReportCadreProcessor(_client, _reportsDictionary, DgwReportPageCadre, CmbPageCadre, TxtbPageCadre, PageCadre)
                 }
             };
 
@@ -1756,6 +1762,11 @@ namespace KmsReportClient.Forms
         {
             ChangeIndexComboBox(DgvOtclkInfrorm, CbxOtclkInfrorm, TxtOtclkInfrorm);
         }
+        
+        private void CmbPageCadre_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ChangeIndexComboBox(DgwReportPageCadre, CmbPageCadre, TxtbPageCadre);
+        }
 
         private void DgvOtclkInfrorm_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -1856,6 +1867,11 @@ namespace KmsReportClient.Forms
         {
             (_processor as ReportIizlProcessor2022).SetCalculateCellsValue();
         }
+
+        //private void DgwReportPageCadre_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    (_processor as ReportCadreProcessor).SetCalculateCellsValue();
+        //}
 
         private void свод2ToolStripMenuItem_Click(object sender, EventArgs e)
         {

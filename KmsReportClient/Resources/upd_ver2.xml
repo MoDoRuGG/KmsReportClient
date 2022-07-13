@@ -57,6 +57,10 @@
   <FILE>
     <NAME>TemplateTextPG.xml</NAME>
     <IS_NEED_DOWNLOAD>true</IS_NEED_DOWNLOAD>
+  </FILE>  
+  <FILE>
+    <NAME>TemplateTextCadre.xml</NAME>
+    <IS_NEED_DOWNLOAD>true</IS_NEED_DOWNLOAD>
   </FILE>
   <FILE>
     <NAME>Инструкция.docx</NAME>

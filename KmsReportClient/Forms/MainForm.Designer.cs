@@ -71,6 +71,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -118,6 +121,7 @@
             this.SpravItem = new System.Windows.Forms.ToolStripMenuItem();
             this.электронныеАдресаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.планРезультативностиЭкспертнойДеятельностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.TsslVersion = new System.Windows.Forms.ToolStripStatusLabel();
             this.ReportTree = new System.Windows.Forms.TreeView();
@@ -206,6 +210,10 @@
             this.tbVac = new System.Windows.Forms.TextBox();
             this.cbVac = new System.Windows.Forms.ComboBox();
             this.gVac = new System.Windows.Forms.DataGridView();
+            this.PageCadre = new System.Windows.Forms.TabPage();
+            this.TxtbPageCadre = new System.Windows.Forms.TextBox();
+            this.CmbPageCadre = new System.Windows.Forms.ComboBox();
+            this.DgwReportPageCadre = new System.Windows.Forms.DataGridView();
             this.PageFssMonitoring = new System.Windows.Forms.TabPage();
             this.tbFssM = new System.Windows.Forms.TextBox();
             this.cbFssM = new System.Windows.Forms.ComboBox();
@@ -227,7 +235,6 @@
             this.TxtbInfo = new System.Windows.Forms.TextBox();
             this.PageElement = new System.Windows.Forms.TabPage();
             this.TbxEmentInfo = new System.Windows.Forms.TextBox();
-            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -266,6 +273,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvOpedQ)).BeginInit();
             this.tabVac.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gVac)).BeginInit();
+            this.PageCadre.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgwReportPageCadre)).BeginInit();
             this.PageFssMonitoring.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFssM)).BeginInit();
             this.PageProposal.SuspendLayout();
@@ -307,7 +316,7 @@
             // MenuExit
             // 
             this.MenuExit.Name = "MenuExit";
-            this.MenuExit.Size = new System.Drawing.Size(180, 22);
+            this.MenuExit.Size = new System.Drawing.Size(109, 22);
             this.MenuExit.Text = "Выход";
             this.MenuExit.Click += new System.EventHandler(this.MenuExit_Click);
             // 
@@ -659,6 +668,12 @@
             this.планРезультативностиЭкспертнойДеятельностиToolStripMenuItem.Size = new System.Drawing.Size(348, 22);
             this.планРезультативностиЭкспертнойДеятельностиToolStripMenuItem.Text = "План результативности экспертной деятельности";
             this.планРезультативностиЭкспертнойДеятельностиToolStripMenuItem.Click += new System.EventHandler(this.планРезультативностиЭкспертнойДеятельностиToolStripMenuItem_Click);
+            // 
+            // оПрограммеToolStripMenuItem
+            // 
+            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.оПрограммеToolStripMenuItem.Text = "О программе";
             // 
             // statusStrip1
             // 
@@ -1227,6 +1242,7 @@
             this.TbControl.Controls.Add(this.PageOtclkInfrorm);
             this.TbControl.Controls.Add(this.PageOpedQ);
             this.TbControl.Controls.Add(this.tabVac);
+            this.TbControl.Controls.Add(this.PageCadre);
             this.TbControl.Controls.Add(this.PageFssMonitoring);
             this.TbControl.Controls.Add(this.PageProposal);
             this.TbControl.Controls.Add(this.tpOpedFinance);
@@ -2272,6 +2288,80 @@
             this.dgvIizl2022.TabIndex = 33;
             this.dgvIizl2022.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIizl2022_CellEndEdit);
             // 
+            // PageCadre
+            // 
+            this.PageCadre.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.PageCadre.Controls.Add(this.TxtbPageCadre);
+            this.PageCadre.Controls.Add(this.CmbPageCadre);
+            this.PageCadre.Controls.Add(this.DgwReportPageCadre);
+            this.PageCadre.Location = new System.Drawing.Point(4, 36);
+            this.PageCadre.Name = "PageCadre";
+            this.PageCadre.Padding = new System.Windows.Forms.Padding(3);
+            this.PageCadre.Size = new System.Drawing.Size(712, 330);
+            this.PageCadre.TabIndex = 15;
+            this.PageCadre.Text = "tabPage1";
+            // 
+            // TxtbPageCadre
+            // 
+            this.TxtbPageCadre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtbPageCadre.Location = new System.Drawing.Point(115, 5);
+            this.TxtbPageCadre.Multiline = true;
+            this.TxtbPageCadre.Name = "TxtbPageCadre";
+            this.TxtbPageCadre.ReadOnly = true;
+            this.TxtbPageCadre.Size = new System.Drawing.Size(593, 39);
+            this.TxtbPageCadre.TabIndex = 38;
+            // 
+            // CmbPageCadre
+            // 
+            this.CmbPageCadre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbPageCadre.FormattingEnabled = true;
+            this.CmbPageCadre.Location = new System.Drawing.Point(9, 5);
+            this.CmbPageCadre.Name = "CmbPageCadre";
+            this.CmbPageCadre.Size = new System.Drawing.Size(100, 21);
+            this.CmbPageCadre.TabIndex = 37;
+            this.CmbPageCadre.SelectedIndexChanged += new System.EventHandler(this.CmbPageCadre_SelectedIndexChanged);
+            // 
+            // DgwReportPageCadre
+            // 
+            this.DgwReportPageCadre.AllowUserToAddRows = false;
+            this.DgwReportPageCadre.AllowUserToDeleteRows = false;
+            this.DgwReportPageCadre.AllowUserToResizeColumns = false;
+            this.DgwReportPageCadre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DgwReportPageCadre.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgwReportPageCadre.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle44;
+            this.DgwReportPageCadre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle45.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle45.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle45.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwReportPageCadre.DefaultCellStyle = dataGridViewCellStyle45;
+            this.DgwReportPageCadre.Location = new System.Drawing.Point(5, 50);
+            this.DgwReportPageCadre.Name = "DgwReportPageCadre";
+            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle46.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle46.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle46.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle46.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgwReportPageCadre.RowHeadersDefaultCellStyle = dataGridViewCellStyle46;
+            this.DgwReportPageCadre.Size = new System.Drawing.Size(703, 276);
+            this.DgwReportPageCadre.TabIndex = 36;
+           // this.DgwReportPageCadre.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwReportPageCadre_CellEndEdit);
+            // 
             // PageInfo
             // 
             this.PageInfo.Controls.Add(this.PageReportInfo);
@@ -2324,12 +2414,6 @@
             this.TbxEmentInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.TbxEmentInfo.Size = new System.Drawing.Size(713, 58);
             this.TbxEmentInfo.TabIndex = 8;
-            // 
-            // оПрограммеToolStripMenuItem
-            // 
-            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
-            this.оПрограммеToolStripMenuItem.Text = "О программе";
             // 
             // MainForm
             // 
@@ -2401,6 +2485,9 @@
             this.tabVac.ResumeLayout(false);
             this.tabVac.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gVac)).EndInit();
+            this.PageCadre.ResumeLayout(false);
+            this.PageCadre.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgwReportPageCadre)).EndInit();
             this.PageFssMonitoring.ResumeLayout(false);
             this.PageFssMonitoring.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFssM)).EndInit();
@@ -2501,6 +2588,10 @@
         private System.Windows.Forms.DataGridView DgwReportPgQ;
         private System.Windows.Forms.TextBox TxtbPgQ;
         private System.Windows.Forms.ComboBox CmbPgQ;
+        private System.Windows.Forms.TabPage PageCadre;
+        private System.Windows.Forms.DataGridView DgwReportPageCadre;
+        private System.Windows.Forms.TextBox TxtbPageCadre;
+        private System.Windows.Forms.ComboBox CmbPageCadre;
         private System.Windows.Forms.ToolStripMenuItem формаПГToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem контрольЗПЗToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem суммарныйОтчетПоФилиалуToolStripMenuItem;
