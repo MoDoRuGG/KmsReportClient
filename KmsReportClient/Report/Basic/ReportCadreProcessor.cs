@@ -155,74 +155,59 @@ namespace KmsReportClient.Report.Basic
 
             }
 
-            //    var yearThemeData = Client.GetIRYearData(new GetIRYearDataRequest(new GetIRYearDataRequestBody
-            //    {
-            //        fillial = FilialCode,
-            //        theme = form,
-            //        yymm = Report.Yymm
-            //    })).Body.GetIRYearDataResult;
 
-            //    if (yearThemeData != null)
-            //    {
-            //        Dgv.Rows[0].Cells[7].Value = yearThemeData.Plan;
-            //        Dgv.Rows[0].Cells[8].Value = yearThemeData.Informed;
-            //        Dgv.Rows[0].Cells[10].Value = yearThemeData.CountPast;
-            //        Dgv.Rows[0].Cells[11].Value = yearThemeData.CountRegistry;
-            //    }
-            //    SetFormula();
-
-
-            //}
-
-
-            //public void SetFormula()
-            //{
-            //    //Console.WriteLine(Dgv.Rows[0].Cells[1].Value);
-            //    //Console.WriteLine(Dgv.Rows[0].Cells[2].Value);
-            //    //Console.WriteLine(GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[2].Value) / GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[1].Value));
-
-            //    try
-            //    {
-
-            //        Dgv.Rows[0].Cells[3].Value = Math.Round(GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[2].Value) / GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[1].Value) * 100, 2);
-
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        Console.WriteLine(ex.Message);
-            //    }
-
-            //    try
-            //    {
-            //        Dgv.Rows[0].Cells[6].Value = Math.Round(GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[5].Value) / GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[2].Value) * 100, 2);
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        Console.WriteLine(ex.Message);
-            //    }
-
-            //    Dgv.Rows[0].Cells[7].Value = Dgv.Rows[0].Cells[1].Value;
-
-            //    try
-            //    {
-            //        Dgv.Rows[0].Cells[9].Value = Math.Round(GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[8].Value) / GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[7].Value) * 100, 2);
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        Console.WriteLine(ex.Message);
-            //    }
-
-            //    try
-            //    {
-            //        Dgv.Rows[0].Cells[12].Value = Math.Round(GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[11].Value) / GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[8].Value) * 100, 2);
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        Console.WriteLine(ex.Message);
-            //    }
+            //SetFormula();
 
 
         }
+
+
+        //public void SetFormula()
+        //{
+
+
+        //    try
+        //    {
+
+        //        Dgv.Rows[0].Cells[3].Value = Math.Round(GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[2].Value) / GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[1].Value) * 100, 2);
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //    }
+
+        //    try
+        //    {
+        //        Dgv.Rows[0].Cells[6].Value = Math.Round(GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[5].Value) / GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[2].Value) * 100, 2);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //    }
+
+        //    Dgv.Rows[0].Cells[7].Value = Dgv.Rows[0].Cells[1].Value;
+
+        //    try
+        //    {
+        //        Dgv.Rows[0].Cells[9].Value = Math.Round(GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[8].Value) / GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[7].Value) * 100, 2);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //    }
+
+        //    try
+        //    {
+        //        Dgv.Rows[0].Cells[12].Value = Math.Round(GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[11].Value) / GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[8].Value) * 100, 2);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //    }
+
+
+        //}
 
 
         public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status)
@@ -350,6 +335,11 @@ namespace KmsReportClient.Report.Basic
             //Dgv.Columns[10].DefaultCellStyle.BackColor =
             //Dgv.Columns[11].DefaultCellStyle.BackColor =
             //Dgv.Columns[12].DefaultCellStyle.BackColor = Color.LightGray;
+
+            Dgv.Columns[1].DefaultCellStyle.BackColor =
+            Dgv.Columns[2].DefaultCellStyle.BackColor =
+            Dgv.Columns[3].DefaultCellStyle.BackColor = Color.Beige;
+
 
 
             //Dgv.Columns[3].ReadOnly =
