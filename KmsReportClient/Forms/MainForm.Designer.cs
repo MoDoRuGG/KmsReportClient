@@ -211,9 +211,9 @@
             this.cbVac = new System.Windows.Forms.ComboBox();
             this.gVac = new System.Windows.Forms.DataGridView();
             this.PageCadre = new System.Windows.Forms.TabPage();
-            this.TxtbPageCadre = new System.Windows.Forms.TextBox();
-            this.CmbPageCadre = new System.Windows.Forms.ComboBox();
-            this.DgwReportPageCadre = new System.Windows.Forms.DataGridView();
+            this.TxtbCadre = new System.Windows.Forms.TextBox();
+            this.CmbCadre = new System.Windows.Forms.ComboBox();
+            this.DgvCadre = new System.Windows.Forms.DataGridView();
             this.PageFssMonitoring = new System.Windows.Forms.TabPage();
             this.tbFssM = new System.Windows.Forms.TextBox();
             this.cbFssM = new System.Windows.Forms.ComboBox();
@@ -274,7 +274,7 @@
             this.tabVac.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gVac)).BeginInit();
             this.PageCadre.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgwReportPageCadre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCadre)).BeginInit();
             this.PageFssMonitoring.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFssM)).BeginInit();
             this.PageProposal.SuspendLayout();
@@ -2291,9 +2291,9 @@
             // PageCadre
             // 
             this.PageCadre.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.PageCadre.Controls.Add(this.TxtbPageCadre);
-            this.PageCadre.Controls.Add(this.CmbPageCadre);
-            this.PageCadre.Controls.Add(this.DgwReportPageCadre);
+            this.PageCadre.Controls.Add(this.TxtbCadre);
+            this.PageCadre.Controls.Add(this.CmbCadre);
+            this.PageCadre.Controls.Add(this.DgvCadre);
             this.PageCadre.Location = new System.Drawing.Point(4, 36);
             this.PageCadre.Name = "PageCadre";
             this.PageCadre.Padding = new System.Windows.Forms.Padding(3);
@@ -2301,36 +2301,36 @@
             this.PageCadre.TabIndex = 15;
             this.PageCadre.Text = "tabPage1";
             // 
-            // TxtbPageCadre
+            // TxtbCadre
             // 
-            this.TxtbPageCadre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.TxtbCadre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtbPageCadre.Location = new System.Drawing.Point(115, 5);
-            this.TxtbPageCadre.Multiline = true;
-            this.TxtbPageCadre.Name = "TxtbPageCadre";
-            this.TxtbPageCadre.ReadOnly = true;
-            this.TxtbPageCadre.Size = new System.Drawing.Size(593, 39);
-            this.TxtbPageCadre.TabIndex = 38;
+            this.TxtbCadre.Location = new System.Drawing.Point(115, 5);
+            this.TxtbCadre.Multiline = true;
+            this.TxtbCadre.Name = "TxtbPageCadre";
+            this.TxtbCadre.ReadOnly = true;
+            this.TxtbCadre.Size = new System.Drawing.Size(593, 39);
+            this.TxtbCadre.TabIndex = 38;
             // 
-            // CmbPageCadre
+            // CmbCadre
             // 
-            this.CmbPageCadre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbPageCadre.FormattingEnabled = true;
-            this.CmbPageCadre.Location = new System.Drawing.Point(9, 5);
-            this.CmbPageCadre.Name = "CmbPageCadre";
-            this.CmbPageCadre.Size = new System.Drawing.Size(100, 21);
-            this.CmbPageCadre.TabIndex = 37;
-            this.CmbPageCadre.SelectedIndexChanged += new System.EventHandler(this.CmbPageCadre_SelectedIndexChanged);
+            this.CmbCadre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbCadre.FormattingEnabled = true;
+            this.CmbCadre.Location = new System.Drawing.Point(9, 5);
+            this.CmbCadre.Name = "CmbCadre";
+            this.CmbCadre.Size = new System.Drawing.Size(100, 21);
+            this.CmbCadre.TabIndex = 37;
+            this.CmbCadre.SelectedIndexChanged += new System.EventHandler(this.CmbPageCadre_SelectedIndexChanged);
             // 
-            // DgwReportPageCadre
+            // DgvCadre
             // 
-            this.DgwReportPageCadre.AllowUserToAddRows = false;
-            this.DgwReportPageCadre.AllowUserToDeleteRows = false;
-            this.DgwReportPageCadre.AllowUserToResizeColumns = false;
-            this.DgwReportPageCadre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.DgvCadre.AllowUserToAddRows = false;
+            this.DgvCadre.AllowUserToDeleteRows = false;
+            this.DgvCadre.AllowUserToResizeColumns = false;
+            this.DgvCadre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DgwReportPageCadre.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            this.DgvCadre.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
             dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -2338,8 +2338,8 @@
             dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwReportPageCadre.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle44;
-            this.DgwReportPageCadre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvCadre.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle44;
+            this.DgvCadre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle45.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle45.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -2347,9 +2347,9 @@
             dataGridViewCellStyle45.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle45.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwReportPageCadre.DefaultCellStyle = dataGridViewCellStyle45;
-            this.DgwReportPageCadre.Location = new System.Drawing.Point(5, 50);
-            this.DgwReportPageCadre.Name = "DgwReportPageCadre";
+            this.DgvCadre.DefaultCellStyle = dataGridViewCellStyle45;
+            this.DgvCadre.Location = new System.Drawing.Point(5, 50);
+            this.DgvCadre.Name = "DgvCadre";
             dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle46.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -2357,10 +2357,11 @@
             dataGridViewCellStyle46.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle46.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwReportPageCadre.RowHeadersDefaultCellStyle = dataGridViewCellStyle46;
-            this.DgwReportPageCadre.Size = new System.Drawing.Size(703, 276);
-            this.DgwReportPageCadre.TabIndex = 36;
-           // this.DgwReportPageCadre.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwReportPageCadre_CellEndEdit);
+            this.DgvCadre.RowHeadersDefaultCellStyle = dataGridViewCellStyle46;
+            this.DgvCadre.Size = new System.Drawing.Size(703, 276);
+            this.DgvCadre.TabIndex = 36;
+            this.DgvCadre.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvCadre_CellEndEdit);
+            this.DgvCadre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DgvCadre_KeyPress);
             // 
             // PageInfo
             // 
@@ -2487,7 +2488,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gVac)).EndInit();
             this.PageCadre.ResumeLayout(false);
             this.PageCadre.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgwReportPageCadre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCadre)).EndInit();
             this.PageFssMonitoring.ResumeLayout(false);
             this.PageFssMonitoring.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFssM)).EndInit();
@@ -2589,9 +2590,9 @@
         private System.Windows.Forms.TextBox TxtbPgQ;
         private System.Windows.Forms.ComboBox CmbPgQ;
         private System.Windows.Forms.TabPage PageCadre;
-        private System.Windows.Forms.DataGridView DgwReportPageCadre;
-        private System.Windows.Forms.TextBox TxtbPageCadre;
-        private System.Windows.Forms.ComboBox CmbPageCadre;
+        private System.Windows.Forms.DataGridView DgvCadre;
+        private System.Windows.Forms.TextBox TxtbCadre;
+        private System.Windows.Forms.ComboBox CmbCadre;
         private System.Windows.Forms.ToolStripMenuItem формаПГToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem контрольЗПЗToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem суммарныйОтчетПоФилиалуToolStripMenuItem;

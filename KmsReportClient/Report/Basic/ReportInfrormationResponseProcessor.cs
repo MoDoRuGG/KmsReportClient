@@ -56,7 +56,6 @@ namespace KmsReportClient.Report.Basic
 
         };
 
-
         private readonly List<string> dispNabColumns = new List<string>
         {
              "Id",
@@ -189,7 +188,7 @@ namespace KmsReportClient.Report.Basic
             }
 
 
-        }
+            }
 
 
         public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status)

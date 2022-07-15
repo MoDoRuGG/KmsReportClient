@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -25,16 +24,16 @@ namespace KmsReportClient.Report.Basic
         {
             "Id",
             "Численность,всего;по штату",
-            "Численность,всего;факт.",
+            "Численность,всего;факт",
             "Численность,всего;вакансии",
             "в том числе:;Руководитель;по штату",
-            "в том числе:;Руководитель;факт.",
+            "в том числе:;Руководитель;факт",
             "в том числе:;Руководитель;вакансии",
             "в том числе:;Заместитель руководителя;по штату",
-            "в том числе:;Заместитель руководителя;факт.",
+            "в том числе:;Заместитель руководителя;факт",
             "в том числе:;Заместитель руководителя;вакансии",
             "в том числе:;Врачи-эксперты (исключая руководство);по штату",
-            "в том числе:;Врачи-эксперты (исключая руководство);факт.",
+            "в том числе:;Врачи-эксперты (исключая руководство);факт",
             "в том числе:;Врачи-эксперты (исключая руководство);вакансии",
             "в том числе:;из них (из гр.13) заняты на Х ставок:гр.(15+16+17+18+19+20) = гр.13; Х > 1,0",
             "в том числе:;из них (из гр.13) заняты на Х ставок:гр.(15+16+17+18+19+20) = гр.13; Х = 1,0",
@@ -49,24 +48,24 @@ namespace KmsReportClient.Report.Basic
             "в том числе:;Врачи-эксперты качества МП (вх. в реестр врачей-экспертов ФОМС), занятые на ставку X (из гр. 13):; Х < 1,0;Х = 0,25",
             "в том числе:;Врачи-эксперты качества МП (вх. в реестр врачей-экспертов ФОМС), занятые на ставку X (из гр. 13):; Х < 1,0;X <= 0,1",
             "в том числе:;Специалисты;по штату",
-            "в том числе:;Специалисты;факт.",
+            "в том числе:;Специалисты;факт",
             "в том числе:;Специалисты;вакансии",
         };
 
         private readonly List<string> oi_zpz = new List<string>
         {
-            "Id",
+                       "Id",
             "Численность,всего;по штату",
-            "Численность,всего;факт.",
+            "Численность,всего;факт",
             "Численность,всего;вакансии",
             "в том числе:;Руководитель;по штату",
-            "в том числе:;Руководитель;факт.",
+            "в том числе:;Руководитель;факт",
             "в том числе:;Руководитель;вакансии",
             "в том числе:;Заместитель руководителя;по штату",
-            "в том числе:;Заместитель руководителя;факт.",
+            "в том числе:;Заместитель руководителя;факт",
             "в том числе:;Заместитель руководителя;вакансии",
             "в том числе:;Врачи-эксперты (исключая руководство);по штату",
-            "в том числе:;Врачи-эксперты (исключая руководство);факт.",
+            "в том числе:;Врачи-эксперты (исключая руководство);факт",
             "в том числе:;Врачи-эксперты (исключая руководство);вакансии",
             "в том числе:;из них (из гр.13) заняты на Х ставок:гр.(15+16+17+18+19+20) = гр.13; Х > 1,0",
             "в том числе:;из них (из гр.13) заняты на Х ставок:гр.(15+16+17+18+19+20) = гр.13; Х = 1,0",
@@ -81,7 +80,7 @@ namespace KmsReportClient.Report.Basic
             "в том числе:;Врачи-эксперты качества МП (вх. в реестр врачей-экспертов ФОМС), занятые на ставку X (из гр. 13):; Х < 1,0;Х = 0,25",
             "в том числе:;Врачи-эксперты качества МП (вх. в реестр врачей-экспертов ФОМС), занятые на ставку X (из гр. 13):; Х < 1,0;X <= 0,1",
             "в том числе:;Специалисты;по штату",
-            "в том числе:;Специалисты;факт.",
+            "в том числе:;Специалисты;факт",
             "в том числе:;Специалисты;вакансии",
         };
 
@@ -156,58 +155,103 @@ namespace KmsReportClient.Report.Basic
             }
 
 
-            //SetFormula();
+            SetFormula();
 
 
         }
 
 
-        //public void SetFormula()
-        //{
+        public void SetFormula()
+        {
+
+            try
+            {
+                Dgv.Rows[0].Cells[3].Value = Math.Round(GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[6].Value) + GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[9].Value) +
+                                                        GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[12].Value) + GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[27].Value), 2);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            try
+            {
+                Dgv.Rows[0].Cells[2].Value = Math.Round(GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[5].Value) + GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[8].Value) +
+                                                        GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[11].Value) + GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[26].Value), 2);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            try
+            {
+                Dgv.Rows[0].Cells[1].Value = Math.Round(GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[4].Value) + GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[7].Value) +
+                                                        GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[10].Value) + GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[25].Value), 2);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            try
+            {
+                Dgv.Rows[0].Cells[6].Value = Math.Round(GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[4].Value) - GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[5].Value), 2);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
+            try
+            {
+                Dgv.Rows[0].Cells[9].Value = Math.Round(GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[7].Value) - GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[8].Value), 2);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
 
-        //    try
-        //    {
+            try
+            {
 
-        //        Dgv.Rows[0].Cells[3].Value = Math.Round(GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[2].Value) / GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[1].Value) * 100, 2);
+                Dgv.Rows[0].Cells[11].Value = Math.Round(GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[13].Value) +
+                                                         GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[14].Value) +
+                                                         GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[15].Value) +
+                                                         GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[16].Value) +
+                                                         GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[17].Value) +
+                                                         GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[18].Value), 2);
 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine(ex.Message);
-        //    }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
-        //    try
-        //    {
-        //        Dgv.Rows[0].Cells[6].Value = Math.Round(GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[5].Value) / GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[2].Value) * 100, 2);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine(ex.Message);
-        //    }
+            try
+            {
+                Dgv.Rows[0].Cells[12].Value = Math.Round(GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[10].Value) - GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[11].Value), 2);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
+            
+            try
+            {
 
-        //    Dgv.Rows[0].Cells[7].Value = Dgv.Rows[0].Cells[1].Value;
+                Dgv.Rows[0].Cells[27].Value = Math.Round(GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[25].Value) - GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[26].Value), 2);
 
-        //    try
-        //    {
-        //        Dgv.Rows[0].Cells[9].Value = Math.Round(GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[8].Value) / GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[7].Value) * 100, 2);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine(ex.Message);
-        //    }
-
-        //    try
-        //    {
-        //        Dgv.Rows[0].Cells[12].Value = Math.Round(GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[11].Value) / GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[8].Value) * 100, 2);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine(ex.Message);
-        //    }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
 
-        //}
+        }
 
 
         public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status)
@@ -296,62 +340,61 @@ namespace KmsReportClient.Report.Basic
 
             Dgv.Rows.Add();
             Dgv.Columns[0].Visible = false;
-            Dgv.Columns[1].Width =
-            Dgv.Columns[2].Width =
-            Dgv.Columns[3].Width =
-            Dgv.Columns[4].Width =
-            Dgv.Columns[5].Width =
-            Dgv.Columns[6].Width =
-            Dgv.Columns[7].Width =
-            Dgv.Columns[8].Width =
-            Dgv.Columns[9].Width =
-            Dgv.Columns[10].Width =
-            Dgv.Columns[11].Width =
-            Dgv.Columns[12].Width =
-            Dgv.Columns[13].Width =
-            Dgv.Columns[14].Width =
-            Dgv.Columns[15].Width =
-            Dgv.Columns[16].Width =
-            Dgv.Columns[17].Width =
-            Dgv.Columns[18].Width =
-            Dgv.Columns[19].Width =
-            Dgv.Columns[20].Width =
-            Dgv.Columns[21].Width =
-            Dgv.Columns[22].Width =
-            Dgv.Columns[23].Width =
-            Dgv.Columns[24].Width =
-            Dgv.Columns[25].Width =
-            Dgv.Columns[26].Width = 
-            Dgv.Columns[27].Width = 80;
 
+            // красим диапазоны колонок в соответствии с шаблоном Excel
+            for (int i = 1; i < 28; i++)
+            {
+                Dgv.Columns[i].Width = 80;
+                Dgv.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomRight;
+            }
+            for (int j = 1; j < 4; j++)
+            {
+                Dgv.Columns[j].DefaultCellStyle.BackColor = Color.FromArgb(253, 233, 217);
+            }
+            for (int j = 4; j < 7; j++)
+            {
+                Dgv.Columns[j].DefaultCellStyle.BackColor = Color.FromArgb(242, 220, 219);
+            }
+            for (int j = 7; j < 10; j++)
+            {
+                Dgv.Columns[j].DefaultCellStyle.BackColor = Color.FromArgb(216, 228, 188);
+            }
+            for (int j = 10; j < 13; j++)
+            {
+                Dgv.Columns[j].DefaultCellStyle.BackColor = Color.FromArgb(197, 217, 241);
+            }
+            for (int j = 13; j < 19; j++)
+            {
+                Dgv.Columns[j].DefaultCellStyle.BackColor = Color.FromArgb(218, 238, 243);
+            }
+            for (int j = 19; j < 25; j++)
+            {
+                Dgv.Columns[j].DefaultCellStyle.BackColor = Color.FromArgb(228, 223, 236);
+            }
+            for (int j = 25; j < 28; j++)
+            {
+                Dgv.Columns[j].DefaultCellStyle.BackColor = Color.FromArgb(242, 242, 242);
+            }
+            // конец покраски
 
+            Dgv.Columns[1].ReadOnly =
+            Dgv.Columns[2].ReadOnly =
+            Dgv.Columns[3].ReadOnly =
+            Dgv.Columns[6].ReadOnly =
+            Dgv.Columns[9].ReadOnly =
+            Dgv.Columns[11].ReadOnly =
+            Dgv.Columns[12].ReadOnly = 
+            Dgv.Columns[27].ReadOnly = true;
 
-            //            Dgv.Columns[3].DefaultCellStyle.BackColor =
-            //Dgv.Columns[6].DefaultCellStyle.BackColor =
-            //Dgv.Columns[7].DefaultCellStyle.BackColor =
-            //Dgv.Columns[7].DefaultCellStyle.BackColor =
-            //Dgv.Columns[8].DefaultCellStyle.BackColor =
-            //Dgv.Columns[9].DefaultCellStyle.BackColor =
-            //Dgv.Columns[10].DefaultCellStyle.BackColor =
-            //Dgv.Columns[11].DefaultCellStyle.BackColor =
-            //Dgv.Columns[12].DefaultCellStyle.BackColor = Color.LightGray;
 
             Dgv.Columns[1].DefaultCellStyle.BackColor =
             Dgv.Columns[2].DefaultCellStyle.BackColor =
-            Dgv.Columns[3].DefaultCellStyle.BackColor = Color.Beige;
-
-
-
-            //Dgv.Columns[3].ReadOnly =
-            //Dgv.Columns[6].ReadOnly =
-            //Dgv.Columns[7].ReadOnly =
-            //Dgv.Columns[7].ReadOnly =
-            //Dgv.Columns[8].ReadOnly =
-            //Dgv.Columns[9].ReadOnly =
-            //Dgv.Columns[10].ReadOnly =
-            //Dgv.Columns[11].ReadOnly =
-            //Dgv.Columns[12].ReadOnly = true;
-
+            Dgv.Columns[3].DefaultCellStyle.BackColor =
+            Dgv.Columns[6].DefaultCellStyle.BackColor =
+            Dgv.Columns[9].DefaultCellStyle.BackColor =
+            Dgv.Columns[11].DefaultCellStyle.BackColor =
+            Dgv.Columns[12].DefaultCellStyle.BackColor =
+            Dgv.Columns[27].DefaultCellStyle.BackColor = Color.LightGray;
 
         }
         protected override void FillReport(string form)
