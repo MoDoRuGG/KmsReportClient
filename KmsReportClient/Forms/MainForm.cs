@@ -236,7 +236,7 @@ namespace KmsReportClient.Forms
                 },
                 {
                     ReportGlobalConst.ReportCadre,
-                    new ReportCadreProcessor(_client, _reportsDictionary, DgwReportPageCadre, CmbPageCadre, TxtbPageCadre, PageCadre)
+                    new ReportCadreProcessor(_client, _reportsDictionary, DgvCadre, CmbCadre, TxtbCadre, PageCadre)
                 }
             };
 
@@ -1765,10 +1765,15 @@ namespace KmsReportClient.Forms
         
         private void CmbPageCadre_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ChangeIndexComboBox(DgwReportPageCadre, CmbPageCadre, TxtbPageCadre);
+            ChangeIndexComboBox(DgvCadre, CmbCadre, TxtbCadre);
         }
 
         private void DgvOtclkInfrorm_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void DgvCadre_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
 
         }
@@ -1778,9 +1783,19 @@ namespace KmsReportClient.Forms
             (_processor as ReportInfrormationResponseProcessor).SetFormula();
         }
 
+        private void DgvCadre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            (_processor as ReportCadreProcessor).SetFormula();
+        }
+
         private void DgvOtclkInfrorm_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             (_processor as ReportInfrormationResponseProcessor).SetFormula();
+        }
+
+        private void DgvCadre_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as ReportCadreProcessor).SetFormula();
         }
 
         private void dgvOpedQ_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -1868,7 +1883,7 @@ namespace KmsReportClient.Forms
             (_processor as ReportIizlProcessor2022).SetCalculateCellsValue();
         }
 
-        //private void DgwReportPageCadre_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        //private void DgwReportPCadre_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         //{
         //    (_processor as ReportCadreProcessor).SetCalculateCellsValue();
         //}

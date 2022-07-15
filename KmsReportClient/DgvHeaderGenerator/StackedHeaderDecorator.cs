@@ -67,7 +67,7 @@ namespace KmsReportClient.DgvHeaderGenerator
             iNoOfLevels = NoOfLevels(objHeaderTree);
             objGraphics = e.Graphics;
             objDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            objDataGrid.ColumnHeadersHeight = iNoOfLevels * 20;
+            objDataGrid.ColumnHeadersHeight = iNoOfLevels * 30;
             if (null != objHeaderTree)
             {
                 RenderColumnHeaders();

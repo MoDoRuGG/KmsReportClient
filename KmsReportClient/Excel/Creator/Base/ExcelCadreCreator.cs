@@ -51,21 +51,22 @@ namespace KmsReportClient.Excel.Creator.Base
                 ObjWorkSheet.Cells[7, 12] = theme.Data.count_expert_doctor_state;
                 ObjWorkSheet.Cells[7, 13] = theme.Data.count_expert_doctor_fact;
                 ObjWorkSheet.Cells[7, 14] = theme.Data.count_expert_doctor_vacancy;
-                ObjWorkSheet.Cells[7, 15] = theme.Data.count_specialist_state;
-                ObjWorkSheet.Cells[7, 16] = theme.Data.count_specialist_fact;
-                ObjWorkSheet.Cells[7, 17] = theme.Data.count_specialist_vacancy;
-                ObjWorkSheet.Cells[7, 18] = theme.Data.count_grf15;
-                ObjWorkSheet.Cells[7, 19] = theme.Data.count_grf16;
-                ObjWorkSheet.Cells[7, 20] = theme.Data.count_grf17;
-                ObjWorkSheet.Cells[7, 21] = theme.Data.count_grf18;
-                ObjWorkSheet.Cells[7, 22] = theme.Data.count_grf19;
-                ObjWorkSheet.Cells[7, 23] = theme.Data.count_grf20;
-                ObjWorkSheet.Cells[7, 24] = theme.Data.count_grf21;
-                ObjWorkSheet.Cells[7, 25] = theme.Data.count_grf22;
-                ObjWorkSheet.Cells[7, 26] = theme.Data.count_grf23;
-                ObjWorkSheet.Cells[7, 27] = theme.Data.count_grf24;
-                ObjWorkSheet.Cells[7, 28] = theme.Data.count_grf25;
-                ObjWorkSheet.Cells[7, 29] = theme.Data.count_grf26;
+                ObjWorkSheet.Cells[7, 15] = theme.Data.count_grf15;
+                ObjWorkSheet.Cells[7, 16] = theme.Data.count_grf16;
+                ObjWorkSheet.Cells[7, 17] = theme.Data.count_grf17;
+                ObjWorkSheet.Cells[7, 18] = theme.Data.count_grf18;
+                ObjWorkSheet.Cells[7, 19] = theme.Data.count_grf19;
+                ObjWorkSheet.Cells[7, 20] = theme.Data.count_grf20;
+                ObjWorkSheet.Cells[7, 21] = theme.Data.count_grf21;
+                ObjWorkSheet.Cells[7, 22] = theme.Data.count_grf22;
+                ObjWorkSheet.Cells[7, 23] = theme.Data.count_grf23;
+                ObjWorkSheet.Cells[7, 24] = theme.Data.count_grf24;
+                ObjWorkSheet.Cells[7, 25] = theme.Data.count_grf25;
+                ObjWorkSheet.Cells[7, 26] = theme.Data.count_grf26;
+                ObjWorkSheet.Cells[7, 27] = theme.Data.count_specialist_state;
+                ObjWorkSheet.Cells[7, 28] = theme.Data.count_specialist_fact;
+                ObjWorkSheet.Cells[7, 29] = theme.Data.count_specialist_vacancy;
+                
 
 
 

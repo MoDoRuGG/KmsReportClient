@@ -33,7 +33,7 @@ namespace KmsReportClient.DgvHeaderGenerator
             foreach (DataGridViewColumn objColumn in objGridView.Columns)
             {
                 string[] segments = objColumn.HeaderText.Split(';');
-                if (segments.Length > 0)
+                //if (segments.Length > 0)
                 {
                     string segment = segments[0];
                     Header tempHeader, lastTempHeader = null;
