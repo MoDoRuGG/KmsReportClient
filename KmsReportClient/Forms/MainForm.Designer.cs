@@ -71,6 +71,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -105,6 +108,8 @@
             this.оПЭДФинансыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.свод1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.свод2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.отчётОПредложенияхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сводToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.serviceMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.рассылкаУведомленийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuHelp = new System.Windows.Forms.ToolStripMenuItem();
@@ -116,6 +121,7 @@
             this.SpravItem = new System.Windows.Forms.ToolStripMenuItem();
             this.электронныеАдресаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.планРезультативностиЭкспертнойДеятельностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.TsslVersion = new System.Windows.Forms.ToolStripStatusLabel();
             this.ReportTree = new System.Windows.Forms.TreeView();
@@ -204,6 +210,10 @@
             this.tbVac = new System.Windows.Forms.TextBox();
             this.cbVac = new System.Windows.Forms.ComboBox();
             this.gVac = new System.Windows.Forms.DataGridView();
+            this.PageCadre = new System.Windows.Forms.TabPage();
+            this.TxtbCadre = new System.Windows.Forms.TextBox();
+            this.CmbCadre = new System.Windows.Forms.ComboBox();
+            this.DgvCadre = new System.Windows.Forms.DataGridView();
             this.PageFssMonitoring = new System.Windows.Forms.TabPage();
             this.tbFssM = new System.Windows.Forms.TextBox();
             this.cbFssM = new System.Windows.Forms.ComboBox();
@@ -225,8 +235,6 @@
             this.TxtbInfo = new System.Windows.Forms.TextBox();
             this.PageElement = new System.Windows.Forms.TabPage();
             this.TbxEmentInfo = new System.Windows.Forms.TextBox();
-            this.отчётОПредложенияхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сводToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -265,6 +273,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvOpedQ)).BeginInit();
             this.tabVac.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gVac)).BeginInit();
+            this.PageCadre.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCadre)).BeginInit();
             this.PageFssMonitoring.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFssM)).BeginInit();
             this.PageProposal.SuspendLayout();
@@ -287,7 +297,8 @@
             this.serviceMenu,
             this.MenuHelp,
             this.Con,
-            this.SpravItem});
+            this.SpravItem,
+            this.оПрограммеToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(950, 24);
@@ -556,6 +567,21 @@
             this.свод2ToolStripMenuItem.Text = "Свод 2";
             this.свод2ToolStripMenuItem.Click += new System.EventHandler(this.свод2ToolStripMenuItem_Click);
             // 
+            // отчётОПредложенияхToolStripMenuItem
+            // 
+            this.отчётОПредложенияхToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.сводToolStripMenuItem3});
+            this.отчётОПредложенияхToolStripMenuItem.Name = "отчётОПредложенияхToolStripMenuItem";
+            this.отчётОПредложенияхToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.отчётОПредложенияхToolStripMenuItem.Text = "Отчёт о предложениях";
+            // 
+            // сводToolStripMenuItem3
+            // 
+            this.сводToolStripMenuItem3.Name = "сводToolStripMenuItem3";
+            this.сводToolStripMenuItem3.Size = new System.Drawing.Size(101, 22);
+            this.сводToolStripMenuItem3.Text = "Свод";
+            this.сводToolStripMenuItem3.Click += new System.EventHandler(this.сводToolStripMenuItem3_Click);
+            // 
             // serviceMenu
             // 
             this.serviceMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -642,6 +668,12 @@
             this.планРезультативностиЭкспертнойДеятельностиToolStripMenuItem.Size = new System.Drawing.Size(348, 22);
             this.планРезультативностиЭкспертнойДеятельностиToolStripMenuItem.Text = "План результативности экспертной деятельности";
             this.планРезультативностиЭкспертнойДеятельностиToolStripMenuItem.Click += new System.EventHandler(this.планРезультативностиЭкспертнойДеятельностиToolStripMenuItem_Click);
+            // 
+            // оПрограммеToolStripMenuItem
+            // 
+            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.оПрограммеToolStripMenuItem.Text = "О программе";
             // 
             // statusStrip1
             // 
@@ -888,7 +920,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(9, 69);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(116, 16);
+            this.label7.Size = new System.Drawing.Size(115, 16);
             this.label7.TabIndex = 4;
             this.label7.Text = "Сохранен в БД";
             // 
@@ -899,7 +931,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(9, 53);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(129, 16);
+            this.label6.Size = new System.Drawing.Size(128, 16);
             this.label6.TabIndex = 3;
             this.label6.Text = "Направлен скан";
             // 
@@ -910,7 +942,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(9, 37);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(139, 16);
+            this.label5.Size = new System.Drawing.Size(138, 16);
             this.label5.TabIndex = 2;
             this.label5.Text = "Отчет возвращен";
             // 
@@ -922,7 +954,7 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label4.Location = new System.Drawing.Point(9, 21);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(176, 16);
+            this.label4.Size = new System.Drawing.Size(175, 16);
             this.label4.TabIndex = 1;
             this.label4.Text = "Отчет направлен в ЦО";
             // 
@@ -933,7 +965,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(9, 5);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 16);
+            this.label3.Size = new System.Drawing.Size(146, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "Отчет принят в ЦО";
             // 
@@ -1210,6 +1242,7 @@
             this.TbControl.Controls.Add(this.PageOtclkInfrorm);
             this.TbControl.Controls.Add(this.PageOpedQ);
             this.TbControl.Controls.Add(this.tabVac);
+            this.TbControl.Controls.Add(this.PageCadre);
             this.TbControl.Controls.Add(this.PageFssMonitoring);
             this.TbControl.Controls.Add(this.PageProposal);
             this.TbControl.Controls.Add(this.tpOpedFinance);
@@ -2255,6 +2288,81 @@
             this.dgvIizl2022.TabIndex = 33;
             this.dgvIizl2022.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIizl2022_CellEndEdit);
             // 
+            // PageCadre
+            // 
+            this.PageCadre.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.PageCadre.Controls.Add(this.TxtbCadre);
+            this.PageCadre.Controls.Add(this.CmbCadre);
+            this.PageCadre.Controls.Add(this.DgvCadre);
+            this.PageCadre.Location = new System.Drawing.Point(4, 36);
+            this.PageCadre.Name = "PageCadre";
+            this.PageCadre.Padding = new System.Windows.Forms.Padding(3);
+            this.PageCadre.Size = new System.Drawing.Size(712, 330);
+            this.PageCadre.TabIndex = 15;
+            this.PageCadre.Text = "tabPage1";
+            // 
+            // TxtbCadre
+            // 
+            this.TxtbCadre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtbCadre.Location = new System.Drawing.Point(115, 5);
+            this.TxtbCadre.Multiline = true;
+            this.TxtbCadre.Name = "TxtbPageCadre";
+            this.TxtbCadre.ReadOnly = true;
+            this.TxtbCadre.Size = new System.Drawing.Size(593, 39);
+            this.TxtbCadre.TabIndex = 38;
+            // 
+            // CmbCadre
+            // 
+            this.CmbCadre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbCadre.FormattingEnabled = true;
+            this.CmbCadre.Location = new System.Drawing.Point(9, 5);
+            this.CmbCadre.Name = "CmbCadre";
+            this.CmbCadre.Size = new System.Drawing.Size(100, 21);
+            this.CmbCadre.TabIndex = 37;
+            this.CmbCadre.SelectedIndexChanged += new System.EventHandler(this.CmbPageCadre_SelectedIndexChanged);
+            // 
+            // DgvCadre
+            // 
+            this.DgvCadre.AllowUserToAddRows = false;
+            this.DgvCadre.AllowUserToDeleteRows = false;
+            this.DgvCadre.AllowUserToResizeColumns = false;
+            this.DgvCadre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DgvCadre.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvCadre.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle44;
+            this.DgvCadre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle45.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle45.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle45.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvCadre.DefaultCellStyle = dataGridViewCellStyle45;
+            this.DgvCadre.Location = new System.Drawing.Point(5, 50);
+            this.DgvCadre.Name = "DgvCadre";
+            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle46.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle46.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle46.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle46.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvCadre.RowHeadersDefaultCellStyle = dataGridViewCellStyle46;
+            this.DgvCadre.Size = new System.Drawing.Size(703, 276);
+            this.DgvCadre.TabIndex = 36;
+            this.DgvCadre.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvCadre_CellEndEdit);
+            this.DgvCadre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DgvCadre_KeyPress);
+            // 
             // PageInfo
             // 
             this.PageInfo.Controls.Add(this.PageReportInfo);
@@ -2307,21 +2415,6 @@
             this.TbxEmentInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.TbxEmentInfo.Size = new System.Drawing.Size(713, 58);
             this.TbxEmentInfo.TabIndex = 8;
-            // 
-            // отчётОПредложенияхToolStripMenuItem
-            // 
-            this.отчётОПредложенияхToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.сводToolStripMenuItem3});
-            this.отчётОПредложенияхToolStripMenuItem.Name = "отчётОПредложенияхToolStripMenuItem";
-            this.отчётОПредложенияхToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.отчётОПредложенияхToolStripMenuItem.Text = "Отчёт о предложениях";
-            // 
-            // сводToolStripMenuItem3
-            // 
-            this.сводToolStripMenuItem3.Name = "сводToolStripMenuItem3";
-            this.сводToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
-            this.сводToolStripMenuItem3.Text = "Свод";
-            this.сводToolStripMenuItem3.Click += new System.EventHandler(this.сводToolStripMenuItem3_Click);
             // 
             // MainForm
             // 
@@ -2393,6 +2486,9 @@
             this.tabVac.ResumeLayout(false);
             this.tabVac.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gVac)).EndInit();
+            this.PageCadre.ResumeLayout(false);
+            this.PageCadre.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCadre)).EndInit();
             this.PageFssMonitoring.ResumeLayout(false);
             this.PageFssMonitoring.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFssM)).EndInit();
@@ -2493,6 +2589,10 @@
         private System.Windows.Forms.DataGridView DgwReportPgQ;
         private System.Windows.Forms.TextBox TxtbPgQ;
         private System.Windows.Forms.ComboBox CmbPgQ;
+        private System.Windows.Forms.TabPage PageCadre;
+        private System.Windows.Forms.DataGridView DgvCadre;
+        private System.Windows.Forms.TextBox TxtbCadre;
+        private System.Windows.Forms.ComboBox CmbCadre;
         private System.Windows.Forms.ToolStripMenuItem формаПГToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem контрольЗПЗToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem суммарныйОтчетПоФилиалуToolStripMenuItem;
@@ -2573,6 +2673,7 @@
         private System.Windows.Forms.ToolStripMenuItem свод2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отчётОПредложенияхToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сводToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
     }
 }
 

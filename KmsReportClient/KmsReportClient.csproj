@@ -122,6 +122,7 @@
     <Compile Include="Excel\Collector\ExcelCollectorFactory.cs" />
     <Compile Include="Excel\Collector\IExcelCollector.cs" />
     <Compile Include="Excel\Collector\PgExcelCollector.cs" />
+    <Compile Include="Excel\Creator\Base\ExcelCadreCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExceIRCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelIizl2022Creator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelMFSSCreator.cs" />
@@ -204,6 +205,12 @@
       <DependentUpon>EmailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\EmailService.cs" />
+    <Compile Include="Forms\ReleaseChangelogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReleaseChangelogForm.Designer.cs">
+      <DependentUpon>ReleaseChangelogForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ScanDynamicForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,6 +262,7 @@
     <Compile Include="Model\XML\TemplateDynamicReport.cs" />
     <Compile Include="Model\XML\TemplateForm.cs" />
     <Compile Include="Model\XML\TemplateTextMail.cs" />
+    <Compile Include="Report\Basic\ReportCadreProcessor.cs" />
     <Compile Include="Report\Basic\DynamicReportProcessor.cs" />
     <Compile Include="Report\Basic\FSSMonitoringProcessor.cs" />
     <Compile Include="Report\Basic\ReportIizlProcessor2022.cs" />
@@ -451,6 +459,9 @@
     <None Include="Connected Services\External\KmsReportClient.External.FSSMonitoringPgDataDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.GetCadreYearDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.GetCheckFFOMS2022CommonDataResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -520,6 +531,9 @@
     <None Include="Connected Services\External\KmsReportClient.External.OpedFinancePlanDictionaryItem.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.ReportCadreDataDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.ReportDynamicDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -571,28 +585,31 @@
     <None Include="Connected Services\External\KmsReportClient.External.SendNotificationResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\External\KmsReportClient.External.Test123Response.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\External\KmsReportClient.External.Test12asdasd34Response.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\External\KmsReportClient.External.Testasd12asdasd34Response.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\External\KmsReportClient.External.Testasd12asdasd34s1Response.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\External\KmsReportClient.External.Testasd1asd2asdasd34s1231Response.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\External\KmsReportClient.External.Testasd1asd2asdasd34s1Response.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\External\KmsReportClient.External.UnreadComment.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.UploadXmlDynamicFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.WebReportCadreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.WebReportFSSMonitroingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.WebReportInfrormationResponseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.WebReportOpedFinanceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.WebReportOpedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.WebReportProposalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.WebReportVaccinationResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="KmsReportClient_TemporaryKey.pfx" />
@@ -684,6 +701,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmailForm.resx">
       <DependentUpon>EmailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReleaseChangelogForm.resx">
+      <DependentUpon>ReleaseChangelogForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

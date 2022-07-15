@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<REPORT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <REPORT_NAME>cadre</REPORT_NAME>
+   <TABLE>
+    <TABLE_NAME>Отдел ЗПЗ и ЭКМП</TABLE_NAME>
+    <TABLE_DESCRIPTION>Кадры Отдела ЗПЗ и ЭКМП</TABLE_DESCRIPTION>
+
+  </TABLE>
+     <TABLE>
+    <TABLE_NAME>ОИ и ЗПЗ</TABLE_NAME>
+    <TABLE_DESCRIPTION>Кадры Отдела ОИ и ЗПЗ</TABLE_DESCRIPTION>	
+	
+  </TABLE>
+  
+</REPORT>

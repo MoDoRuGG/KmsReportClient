@@ -19,5 +19,6 @@ namespace KmsReportClient.Model.Enums
         [Description("TemplateTextProposal.xml")] Proposal,
         [Description("TemplateTextOpedFinance.xml")] OpedFinance,
         [Description("TemplateTextIizl2022.xml")] Iizl2022,
+        [Description("TemplateTextCadre.xml")] Cadre,
     }
 }

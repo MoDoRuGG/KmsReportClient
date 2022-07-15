@@ -142,6 +142,7 @@ namespace KmsReportClient.Forms
             TbControl.TabPages.Remove(PageProposal);
             TbControl.TabPages.Remove(tpOpedFinance);
             TbControl.TabPages.Remove(tpIizl2022);
+            TbControl.TabPages.Remove(PageCadre);
 
             if (CurrentUser.IsMain)
             {
@@ -172,6 +173,7 @@ namespace KmsReportClient.Forms
                         {PageProposal, ReportGlobalConst.ReportProposal},
                         {tpOpedFinance, ReportGlobalConst.ReportOpedFinance},
                         {tpIizl2022, ReportGlobalConst.ReportIizl2022},
+                        {PageCadre, ReportGlobalConst.ReportCadre},
             };
 
         private Dictionary<string, IReportProcessor> CreateProcessorMap() =>
@@ -231,6 +233,10 @@ namespace KmsReportClient.Forms
                   {
                     ReportGlobalConst.ReportIizl2022,
                     new ReportIizlProcessor2022(_client, _reportsDictionary, dgvIizl2022, cbIizl2022, tbIizl2022, tpIizl2022)
+                },
+                {
+                    ReportGlobalConst.ReportCadre,
+                    new ReportCadreProcessor(_client, _reportsDictionary, DgvCadre, CmbCadre, TxtbCadre, PageCadre)
                 }
             };
 
@@ -1756,8 +1762,18 @@ namespace KmsReportClient.Forms
         {
             ChangeIndexComboBox(DgvOtclkInfrorm, CbxOtclkInfrorm, TxtOtclkInfrorm);
         }
+        
+        private void CmbPageCadre_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ChangeIndexComboBox(DgvCadre, CmbCadre, TxtbCadre);
+        }
 
         private void DgvOtclkInfrorm_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void DgvCadre_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
 
         }
@@ -1767,9 +1783,19 @@ namespace KmsReportClient.Forms
             (_processor as ReportInfrormationResponseProcessor).SetFormula();
         }
 
+        private void DgvCadre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            (_processor as ReportCadreProcessor).SetFormula();
+        }
+
         private void DgvOtclkInfrorm_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             (_processor as ReportInfrormationResponseProcessor).SetFormula();
+        }
+
+        private void DgvCadre_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as ReportCadreProcessor).SetFormula();
         }
 
         private void dgvOpedQ_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -1856,6 +1882,11 @@ namespace KmsReportClient.Forms
         {
             (_processor as ReportIizlProcessor2022).SetCalculateCellsValue();
         }
+
+        //private void DgwReportPCadre_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    (_processor as ReportCadreProcessor).SetCalculateCellsValue();
+        //}
 
         private void свод2ToolStripMenuItem_Click(object sender, EventArgs e)
         {

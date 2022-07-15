@@ -16,6 +16,8 @@
         public const string ReportProposal = "proposal";
         public const string ReportOpedFinance = "oped_fin";
         public const string ReportIizl2022 = "iizl2022";
+        //добавлены кадры
+        public const string ReportCadre = "cadre";
         
     }
 }

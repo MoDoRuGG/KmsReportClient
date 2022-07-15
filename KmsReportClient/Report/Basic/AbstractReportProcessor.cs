@@ -233,7 +233,8 @@ namespace KmsReportClient.Report.Basic
 
                     if (Report.IdType == "PG_Q" && GetCurrentTheme() == "Таблица 6")
                     {
-                        string[] rowFor5Row = { "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8" };
+                        //string[] rowFor5Row = { "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8" };
+                        string[] rowFor5Row = { "5" };
                         var row5 = Dgv.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[1].Value.ToString() == "5");
                         var rowsForCalcluate5Total = Dgv.Rows.Cast<DataGridViewRow>().Where(x => rowFor5Row.Contains(x.Cells[1].Value.ToString()));
                         row5.Cells["Total"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["Total"].Value));
@@ -331,8 +332,7 @@ namespace KmsReportClient.Report.Basic
 
                 if (IdReportType == "foped")
                     result.Add(new KmsReportDictionary { Key = "Свод", Value = "За год" });
-
-
+           
                 return result;
 
 
