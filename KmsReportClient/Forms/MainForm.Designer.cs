@@ -97,7 +97,6 @@
             this.цПНПквартальныйToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.диспанцеризацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.летальныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.кадрыкваратальныйToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.цПНП2квартальныйToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.формаОПЭДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сводToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -409,7 +408,6 @@
             this.цПНПквартальныйToolStripMenuItem,
             this.диспанцеризацияToolStripMenuItem,
             this.летальныеToolStripMenuItem,
-            this.кадрыкваратальныйToolStripMenuItem,
             this.цПНП2квартальныйToolStripMenuItem});
             this.формаПГToolStripMenuItem.Name = "формаПГToolStripMenuItem";
             this.формаПГToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
@@ -484,13 +482,6 @@
             this.летальныеToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
             this.летальныеToolStripMenuItem.Text = "Летальные";
             this.летальныеToolStripMenuItem.Click += new System.EventHandler(this.летальныеToolStripMenuItem_Click);
-            // 
-            // кадрыкваратальныйToolStripMenuItem
-            // 
-            this.кадрыкваратальныйToolStripMenuItem.Name = "кадрыкваратальныйToolStripMenuItem";
-            this.кадрыкваратальныйToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
-            this.кадрыкваратальныйToolStripMenuItem.Text = "Кадры (кваратальный)";
-            this.кадрыкваратальныйToolStripMenuItem.Click += new System.EventHandler(this.кадрыкваратальныйToolStripMenuItem_Click);
             // 
             // цПНП2квартальныйToolStripMenuItem
             // 
@@ -2625,7 +2616,6 @@
         private System.Windows.Forms.TextBox TbxEmentInfo;
         private System.Windows.Forms.ToolStripMenuItem редактироватьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem летальныеToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem кадрыкваратальныйToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SpravItem;
         private System.Windows.Forms.ToolStripMenuItem электронныеАдресаToolStripMenuItem;
         private System.Windows.Forms.TabPage PageOped;

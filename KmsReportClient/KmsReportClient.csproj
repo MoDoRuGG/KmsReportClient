@@ -138,7 +138,6 @@
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidate262T1Creator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidate262T2Creator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidate262T3Creator.cs" />
-    <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateCadri.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateCardio.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateCnpnCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateCpnpMonthCreator.cs" />
@@ -339,9 +338,6 @@
     <None Include="Connected Services\External\KmsReportClient.External.CollectSummaryReportResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\External\KmsReportClient.External.ConsolidateCadri.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\External\KmsReportClient.External.ConsolidateCardio.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -397,9 +393,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateConsolidate294Response.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\External\KmsReportClient.External.CreateConsolidateCadriResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateConsolidateLetalResponse.datasource">

@@ -1701,11 +1701,6 @@ namespace KmsReportClient.Forms
             OpenConsolidateReportForm(ConsolidateReport.Letal);
         }
 
-        private void кадрыкваратальныйToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenConsolidateReportForm(ConsolidateReport.Cadri);
-        }
-
         private void справочникиToolStripMenuItem_Click(object sender, EventArgs e)
         {
 

@@ -205,16 +205,6 @@ namespace KmsReportClient.Forms
                     saveFileDialog1.FileName = "Cводный отчет об исполнении ЦПНП";
                     break;
 
-                case ConsolidateReport.Cadri:
-                    labelStart.Text = "Период";
-                    panelEnd.Visible = false;
-                    panelRegion.Visible = false;
-                    nudSingle.Visible = false;
-                    cmbStart.DataSource = GlobalConst.Periods;
-                    btnDo.Text = "Сформировать сводный отчет об Кадрах";
-                    saveFileDialog1.FileName = "Cводный отчет  об Кадрах";
-                    break;
-
                 case ConsolidateReport.ConsolidateVSS:
                     labelStart.Text = "Период";
                     panelEnd.Visible = false;
@@ -354,13 +344,9 @@ namespace KmsReportClient.Forms
                     case ConsolidateReport.Letal:
                         CreateCReportLetal();
                         break;
-                    case ConsolidateReport.Cadri:
-                        CreateCCadri();
-                        break;
                     case ConsolidateReport.ConsolidateOped:
                         CreateCOped();
                         break;
-
                     case ConsolidateReport.ConsolidateVSS:
                         CreateCVSS();
                         break;
@@ -851,28 +837,6 @@ namespace KmsReportClient.Forms
             }
 
             var excel = new ExcelConsolidateCardio(saveFileDialog1.FileName, "", _filialName);
-
-            excel.CreateReport(data, null);
-
-            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
-
-        }
-
-        private void CreateCCadri()
-        {
-            string yymm = GetYymmQuarterly();
-
-            var data = _client.CreateConsolidateCadri(yymm);
-
-
-            if (data.Length == 0)
-            {
-                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            var excel = new ExcelConsolidateCadri(saveFileDialog1.FileName, "", _filialName);
 
             excel.CreateReport(data, null);
 

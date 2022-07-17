@@ -15,9 +15,1125 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateCpnpM", Namespace="http://kms-oms.ru/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateProposal", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
-    public partial class ConsolidateCpnpM : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ConsolidateProposal : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RegionIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RegionNameField;
+        
+        private System.Nullable<int> CountMoCheckField;
+        
+        private System.Nullable<int> CountMoCheckWithDefectField;
+        
+        private System.Nullable<int> CountProporsalsField;
+        
+        private System.Nullable<int> CountProporsalsWithDefectField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NotesField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string RegionId {
+            get {
+                return this.RegionIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RegionIdField, value) != true)) {
+                    this.RegionIdField = value;
+                    this.RaisePropertyChanged("RegionId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string RegionName {
+            get {
+                return this.RegionNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RegionNameField, value) != true)) {
+                    this.RegionNameField = value;
+                    this.RaisePropertyChanged("RegionName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public System.Nullable<int> CountMoCheck {
+            get {
+                return this.CountMoCheckField;
+            }
+            set {
+                if ((this.CountMoCheckField.Equals(value) != true)) {
+                    this.CountMoCheckField = value;
+                    this.RaisePropertyChanged("CountMoCheck");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public System.Nullable<int> CountMoCheckWithDefect {
+            get {
+                return this.CountMoCheckWithDefectField;
+            }
+            set {
+                if ((this.CountMoCheckWithDefectField.Equals(value) != true)) {
+                    this.CountMoCheckWithDefectField = value;
+                    this.RaisePropertyChanged("CountMoCheckWithDefect");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public System.Nullable<int> CountProporsals {
+            get {
+                return this.CountProporsalsField;
+            }
+            set {
+                if ((this.CountProporsalsField.Equals(value) != true)) {
+                    this.CountProporsalsField = value;
+                    this.RaisePropertyChanged("CountProporsals");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public System.Nullable<int> CountProporsalsWithDefect {
+            get {
+                return this.CountProporsalsWithDefectField;
+            }
+            set {
+                if ((this.CountProporsalsWithDefectField.Equals(value) != true)) {
+                    this.CountProporsalsWithDefectField = value;
+                    this.RaisePropertyChanged("CountProporsalsWithDefect");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string Notes {
+            get {
+                return this.NotesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NotesField, value) != true)) {
+                    this.NotesField = value;
+                    this.RaisePropertyChanged("Notes");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CheckFFOMS2022CommonData", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class CheckFFOMS2022CommonData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private System.Nullable<decimal> CountLetalAllField;
+        
+        private System.Nullable<decimal> CountEkmpField;
+        
+        private System.Nullable<decimal> CountNarushField;
+        
+        private System.Nullable<decimal> CountNeProvedenaObField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.Nullable<decimal> CountLetalAll {
+            get {
+                return this.CountLetalAllField;
+            }
+            set {
+                if ((this.CountLetalAllField.Equals(value) != true)) {
+                    this.CountLetalAllField = value;
+                    this.RaisePropertyChanged("CountLetalAll");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public System.Nullable<decimal> CountEkmp {
+            get {
+                return this.CountEkmpField;
+            }
+            set {
+                if ((this.CountEkmpField.Equals(value) != true)) {
+                    this.CountEkmpField = value;
+                    this.RaisePropertyChanged("CountEkmp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public System.Nullable<decimal> CountNarush {
+            get {
+                return this.CountNarushField;
+            }
+            set {
+                if ((this.CountNarushField.Equals(value) != true)) {
+                    this.CountNarushField = value;
+                    this.RaisePropertyChanged("CountNarush");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public System.Nullable<decimal> CountNeProvedenaOb {
+            get {
+                return this.CountNeProvedenaObField;
+            }
+            set {
+                if ((this.CountNeProvedenaObField.Equals(value) != true)) {
+                    this.CountNeProvedenaObField = value;
+                    this.RaisePropertyChanged("CountNeProvedenaOb");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OpedFinancePlanDictionaryItem", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class OpedFinancePlanDictionaryItem : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdOpedFinancePlanField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IdRegionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string YymmField;
+        
+        private decimal ValueField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int IdOpedFinancePlan {
+            get {
+                return this.IdOpedFinancePlanField;
+            }
+            set {
+                if ((this.IdOpedFinancePlanField.Equals(value) != true)) {
+                    this.IdOpedFinancePlanField = value;
+                    this.RaisePropertyChanged("IdOpedFinancePlan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string IdRegion {
+            get {
+                return this.IdRegionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IdRegionField, value) != true)) {
+                    this.IdRegionField = value;
+                    this.RaisePropertyChanged("IdRegion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Yymm {
+            get {
+                return this.YymmField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.YymmField, value) != true)) {
+                    this.YymmField = value;
+                    this.RaisePropertyChanged("Yymm");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public decimal Value {
+            get {
+                return this.ValueField;
+            }
+            set {
+                if ((this.ValueField.Equals(value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateOpedFinance_2", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ConsolidateOpedFinance_2 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IdRegionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RegionNameField;
+        
+        private System.Nullable<decimal> Fact1Field;
+        
+        private System.Nullable<decimal> Plan1Field;
+        
+        private System.Nullable<decimal> Fact2Field;
+        
+        private System.Nullable<decimal> Plan2Field;
+        
+        private System.Nullable<decimal> Fact3Field;
+        
+        private System.Nullable<decimal> Plan3Field;
+        
+        private System.Nullable<decimal> Fact4Field;
+        
+        private System.Nullable<decimal> Plan4Field;
+        
+        private System.Nullable<decimal> Fact5Field;
+        
+        private System.Nullable<decimal> Plan5Field;
+        
+        private System.Nullable<decimal> Fact6Field;
+        
+        private System.Nullable<decimal> Plan6Field;
+        
+        private System.Nullable<decimal> Fact7Field;
+        
+        private System.Nullable<decimal> Plan7Field;
+        
+        private System.Nullable<decimal> Fact8Field;
+        
+        private System.Nullable<decimal> Plan8Field;
+        
+        private System.Nullable<decimal> Fact9Field;
+        
+        private System.Nullable<decimal> Plan9Field;
+        
+        private System.Nullable<decimal> Fact10Field;
+        
+        private System.Nullable<decimal> Plan10Field;
+        
+        private System.Nullable<decimal> Fact11Field;
+        
+        private System.Nullable<decimal> Plan11Field;
+        
+        private System.Nullable<decimal> Fact12Field;
+        
+        private System.Nullable<decimal> Plan12Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string IdRegion {
+            get {
+                return this.IdRegionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IdRegionField, value) != true)) {
+                    this.IdRegionField = value;
+                    this.RaisePropertyChanged("IdRegion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string RegionName {
+            get {
+                return this.RegionNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RegionNameField, value) != true)) {
+                    this.RegionNameField = value;
+                    this.RaisePropertyChanged("RegionName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public System.Nullable<decimal> Fact1 {
+            get {
+                return this.Fact1Field;
+            }
+            set {
+                if ((this.Fact1Field.Equals(value) != true)) {
+                    this.Fact1Field = value;
+                    this.RaisePropertyChanged("Fact1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public System.Nullable<decimal> Plan1 {
+            get {
+                return this.Plan1Field;
+            }
+            set {
+                if ((this.Plan1Field.Equals(value) != true)) {
+                    this.Plan1Field = value;
+                    this.RaisePropertyChanged("Plan1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public System.Nullable<decimal> Fact2 {
+            get {
+                return this.Fact2Field;
+            }
+            set {
+                if ((this.Fact2Field.Equals(value) != true)) {
+                    this.Fact2Field = value;
+                    this.RaisePropertyChanged("Fact2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public System.Nullable<decimal> Plan2 {
+            get {
+                return this.Plan2Field;
+            }
+            set {
+                if ((this.Plan2Field.Equals(value) != true)) {
+                    this.Plan2Field = value;
+                    this.RaisePropertyChanged("Plan2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public System.Nullable<decimal> Fact3 {
+            get {
+                return this.Fact3Field;
+            }
+            set {
+                if ((this.Fact3Field.Equals(value) != true)) {
+                    this.Fact3Field = value;
+                    this.RaisePropertyChanged("Fact3");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public System.Nullable<decimal> Plan3 {
+            get {
+                return this.Plan3Field;
+            }
+            set {
+                if ((this.Plan3Field.Equals(value) != true)) {
+                    this.Plan3Field = value;
+                    this.RaisePropertyChanged("Plan3");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        public System.Nullable<decimal> Fact4 {
+            get {
+                return this.Fact4Field;
+            }
+            set {
+                if ((this.Fact4Field.Equals(value) != true)) {
+                    this.Fact4Field = value;
+                    this.RaisePropertyChanged("Fact4");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        public System.Nullable<decimal> Plan4 {
+            get {
+                return this.Plan4Field;
+            }
+            set {
+                if ((this.Plan4Field.Equals(value) != true)) {
+                    this.Plan4Field = value;
+                    this.RaisePropertyChanged("Plan4");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        public System.Nullable<decimal> Fact5 {
+            get {
+                return this.Fact5Field;
+            }
+            set {
+                if ((this.Fact5Field.Equals(value) != true)) {
+                    this.Fact5Field = value;
+                    this.RaisePropertyChanged("Fact5");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        public System.Nullable<decimal> Plan5 {
+            get {
+                return this.Plan5Field;
+            }
+            set {
+                if ((this.Plan5Field.Equals(value) != true)) {
+                    this.Plan5Field = value;
+                    this.RaisePropertyChanged("Plan5");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
+        public System.Nullable<decimal> Fact6 {
+            get {
+                return this.Fact6Field;
+            }
+            set {
+                if ((this.Fact6Field.Equals(value) != true)) {
+                    this.Fact6Field = value;
+                    this.RaisePropertyChanged("Fact6");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
+        public System.Nullable<decimal> Plan6 {
+            get {
+                return this.Plan6Field;
+            }
+            set {
+                if ((this.Plan6Field.Equals(value) != true)) {
+                    this.Plan6Field = value;
+                    this.RaisePropertyChanged("Plan6");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
+        public System.Nullable<decimal> Fact7 {
+            get {
+                return this.Fact7Field;
+            }
+            set {
+                if ((this.Fact7Field.Equals(value) != true)) {
+                    this.Fact7Field = value;
+                    this.RaisePropertyChanged("Fact7");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
+        public System.Nullable<decimal> Plan7 {
+            get {
+                return this.Plan7Field;
+            }
+            set {
+                if ((this.Plan7Field.Equals(value) != true)) {
+                    this.Plan7Field = value;
+                    this.RaisePropertyChanged("Plan7");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
+        public System.Nullable<decimal> Fact8 {
+            get {
+                return this.Fact8Field;
+            }
+            set {
+                if ((this.Fact8Field.Equals(value) != true)) {
+                    this.Fact8Field = value;
+                    this.RaisePropertyChanged("Fact8");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
+        public System.Nullable<decimal> Plan8 {
+            get {
+                return this.Plan8Field;
+            }
+            set {
+                if ((this.Plan8Field.Equals(value) != true)) {
+                    this.Plan8Field = value;
+                    this.RaisePropertyChanged("Plan8");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=18)]
+        public System.Nullable<decimal> Fact9 {
+            get {
+                return this.Fact9Field;
+            }
+            set {
+                if ((this.Fact9Field.Equals(value) != true)) {
+                    this.Fact9Field = value;
+                    this.RaisePropertyChanged("Fact9");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=19)]
+        public System.Nullable<decimal> Plan9 {
+            get {
+                return this.Plan9Field;
+            }
+            set {
+                if ((this.Plan9Field.Equals(value) != true)) {
+                    this.Plan9Field = value;
+                    this.RaisePropertyChanged("Plan9");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=20)]
+        public System.Nullable<decimal> Fact10 {
+            get {
+                return this.Fact10Field;
+            }
+            set {
+                if ((this.Fact10Field.Equals(value) != true)) {
+                    this.Fact10Field = value;
+                    this.RaisePropertyChanged("Fact10");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=21)]
+        public System.Nullable<decimal> Plan10 {
+            get {
+                return this.Plan10Field;
+            }
+            set {
+                if ((this.Plan10Field.Equals(value) != true)) {
+                    this.Plan10Field = value;
+                    this.RaisePropertyChanged("Plan10");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=22)]
+        public System.Nullable<decimal> Fact11 {
+            get {
+                return this.Fact11Field;
+            }
+            set {
+                if ((this.Fact11Field.Equals(value) != true)) {
+                    this.Fact11Field = value;
+                    this.RaisePropertyChanged("Fact11");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=23)]
+        public System.Nullable<decimal> Plan11 {
+            get {
+                return this.Plan11Field;
+            }
+            set {
+                if ((this.Plan11Field.Equals(value) != true)) {
+                    this.Plan11Field = value;
+                    this.RaisePropertyChanged("Plan11");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=24)]
+        public System.Nullable<decimal> Fact12 {
+            get {
+                return this.Fact12Field;
+            }
+            set {
+                if ((this.Fact12Field.Equals(value) != true)) {
+                    this.Fact12Field = value;
+                    this.RaisePropertyChanged("Fact12");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=25)]
+        public System.Nullable<decimal> Plan12 {
+            get {
+                return this.Plan12Field;
+            }
+            set {
+                if ((this.Plan12Field.Equals(value) != true)) {
+                    this.Plan12Field = value;
+                    this.RaisePropertyChanged("Plan12");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateOpedFinance_1", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ConsolidateOpedFinance_1 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RegionNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IdRegionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string YymmField;
+        
+        private System.Nullable<decimal> FactField;
+        
+        private System.Nullable<decimal> PlanOField;
+        
+        private System.Nullable<decimal> MeeField;
+        
+        private System.Nullable<decimal> EkmpField;
+        
+        private System.Nullable<decimal> PenaltyField;
+        
+        private System.Nullable<decimal> CountRegularExpertMeeField;
+        
+        private System.Nullable<decimal> CountRegularExpertEkmpField;
+        
+        private System.Nullable<decimal> CountFreelanceExpertField;
+        
+        private System.Nullable<decimal> PaymentFreelanceExpertField;
+        
+        private System.Nullable<decimal> PenaltyTfomsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string RegionName {
+            get {
+                return this.RegionNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RegionNameField, value) != true)) {
+                    this.RegionNameField = value;
+                    this.RaisePropertyChanged("RegionName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string IdRegion {
+            get {
+                return this.IdRegionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IdRegionField, value) != true)) {
+                    this.IdRegionField = value;
+                    this.RaisePropertyChanged("IdRegion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Yymm {
+            get {
+                return this.YymmField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.YymmField, value) != true)) {
+                    this.YymmField = value;
+                    this.RaisePropertyChanged("Yymm");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public System.Nullable<decimal> Fact {
+            get {
+                return this.FactField;
+            }
+            set {
+                if ((this.FactField.Equals(value) != true)) {
+                    this.FactField = value;
+                    this.RaisePropertyChanged("Fact");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public System.Nullable<decimal> PlanO {
+            get {
+                return this.PlanOField;
+            }
+            set {
+                if ((this.PlanOField.Equals(value) != true)) {
+                    this.PlanOField = value;
+                    this.RaisePropertyChanged("PlanO");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public System.Nullable<decimal> Mee {
+            get {
+                return this.MeeField;
+            }
+            set {
+                if ((this.MeeField.Equals(value) != true)) {
+                    this.MeeField = value;
+                    this.RaisePropertyChanged("Mee");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public System.Nullable<decimal> Ekmp {
+            get {
+                return this.EkmpField;
+            }
+            set {
+                if ((this.EkmpField.Equals(value) != true)) {
+                    this.EkmpField = value;
+                    this.RaisePropertyChanged("Ekmp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public System.Nullable<decimal> Penalty {
+            get {
+                return this.PenaltyField;
+            }
+            set {
+                if ((this.PenaltyField.Equals(value) != true)) {
+                    this.PenaltyField = value;
+                    this.RaisePropertyChanged("Penalty");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        public System.Nullable<decimal> CountRegularExpertMee {
+            get {
+                return this.CountRegularExpertMeeField;
+            }
+            set {
+                if ((this.CountRegularExpertMeeField.Equals(value) != true)) {
+                    this.CountRegularExpertMeeField = value;
+                    this.RaisePropertyChanged("CountRegularExpertMee");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        public System.Nullable<decimal> CountRegularExpertEkmp {
+            get {
+                return this.CountRegularExpertEkmpField;
+            }
+            set {
+                if ((this.CountRegularExpertEkmpField.Equals(value) != true)) {
+                    this.CountRegularExpertEkmpField = value;
+                    this.RaisePropertyChanged("CountRegularExpertEkmp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        public System.Nullable<decimal> CountFreelanceExpert {
+            get {
+                return this.CountFreelanceExpertField;
+            }
+            set {
+                if ((this.CountFreelanceExpertField.Equals(value) != true)) {
+                    this.CountFreelanceExpertField = value;
+                    this.RaisePropertyChanged("CountFreelanceExpert");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        public System.Nullable<decimal> PaymentFreelanceExpert {
+            get {
+                return this.PaymentFreelanceExpertField;
+            }
+            set {
+                if ((this.PaymentFreelanceExpertField.Equals(value) != true)) {
+                    this.PaymentFreelanceExpertField = value;
+                    this.RaisePropertyChanged("PaymentFreelanceExpert");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
+        public System.Nullable<decimal> PenaltyTfoms {
+            get {
+                return this.PenaltyTfomsField;
+            }
+            set {
+                if ((this.PenaltyTfomsField.Equals(value) != true)) {
+                    this.PenaltyTfomsField = value;
+                    this.RaisePropertyChanged("PenaltyTfoms");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateOpedQ", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ConsolidateOpedQ : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RegionField;
+        
+        private decimal MeePovtorPlanField;
+        
+        private decimal MeePovtorFactField;
+        
+        private decimal MeeOnkoPlanField;
+        
+        private decimal MeeOnkoFactField;
+        
+        private decimal EkmpLetalPlanField;
+        
+        private decimal EkmpLetalFactField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NotesField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Region {
+            get {
+                return this.RegionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RegionField, value) != true)) {
+                    this.RegionField = value;
+                    this.RaisePropertyChanged("Region");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public decimal MeePovtorPlan {
+            get {
+                return this.MeePovtorPlanField;
+            }
+            set {
+                if ((this.MeePovtorPlanField.Equals(value) != true)) {
+                    this.MeePovtorPlanField = value;
+                    this.RaisePropertyChanged("MeePovtorPlan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public decimal MeePovtorFact {
+            get {
+                return this.MeePovtorFactField;
+            }
+            set {
+                if ((this.MeePovtorFactField.Equals(value) != true)) {
+                    this.MeePovtorFactField = value;
+                    this.RaisePropertyChanged("MeePovtorFact");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public decimal MeeOnkoPlan {
+            get {
+                return this.MeeOnkoPlanField;
+            }
+            set {
+                if ((this.MeeOnkoPlanField.Equals(value) != true)) {
+                    this.MeeOnkoPlanField = value;
+                    this.RaisePropertyChanged("MeeOnkoPlan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public decimal MeeOnkoFact {
+            get {
+                return this.MeeOnkoFactField;
+            }
+            set {
+                if ((this.MeeOnkoFactField.Equals(value) != true)) {
+                    this.MeeOnkoFactField = value;
+                    this.RaisePropertyChanged("MeeOnkoFact");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public decimal EkmpLetalPlan {
+            get {
+                return this.EkmpLetalPlanField;
+            }
+            set {
+                if ((this.EkmpLetalPlanField.Equals(value) != true)) {
+                    this.EkmpLetalPlanField = value;
+                    this.RaisePropertyChanged("EkmpLetalPlan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public decimal EkmpLetalFact {
+            get {
+                return this.EkmpLetalFactField;
+            }
+            set {
+                if ((this.EkmpLetalFactField.Equals(value) != true)) {
+                    this.EkmpLetalFactField = value;
+                    this.RaisePropertyChanged("EkmpLetalFact");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string Notes {
+            get {
+                return this.NotesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NotesField, value) != true)) {
+                    this.NotesField = value;
+                    this.RaisePropertyChanged("Notes");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateCPNP_Q_2", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ConsolidateCPNP_Q_2 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -25,9 +1141,9 @@ namespace KmsReportClient.External {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string FilialField;
         
-        private System.Nullable<decimal> CountAllField;
+        private decimal CountSporDoSudaField;
         
-        private System.Nullable<decimal> CountReasonField;
+        private decimal CountObosnZhalobField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -53,27 +1169,27 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public System.Nullable<decimal> CountAll {
+        public decimal CountSporDoSuda {
             get {
-                return this.CountAllField;
+                return this.CountSporDoSudaField;
             }
             set {
-                if ((this.CountAllField.Equals(value) != true)) {
-                    this.CountAllField = value;
-                    this.RaisePropertyChanged("CountAll");
+                if ((this.CountSporDoSudaField.Equals(value) != true)) {
+                    this.CountSporDoSudaField = value;
+                    this.RaisePropertyChanged("CountSporDoSuda");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public System.Nullable<decimal> CountReason {
+        public decimal CountObosnZhalob {
             get {
-                return this.CountReasonField;
+                return this.CountObosnZhalobField;
             }
             set {
-                if ((this.CountReasonField.Equals(value) != true)) {
-                    this.CountReasonField = value;
-                    this.RaisePropertyChanged("CountReason");
+                if ((this.CountObosnZhalobField.Equals(value) != true)) {
+                    this.CountObosnZhalobField = value;
+                    this.RaisePropertyChanged("CountObosnZhalob");
                 }
             }
         }
@@ -90,27 +1206,27 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateCardio", Namespace="http://kms-oms.ru/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportScanModel", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
-    public partial class ConsolidateCardio : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ReportScanModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilialField;
+        private int IdScanField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.CardioComplaint ComplaintField;
+        private string FileNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.CardioProtection ProtectionField;
+        private string UserAddedField;
+        
+        private System.DateTime DateAddedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.CardioMeeEkmp MeeEkmpField;
+        private string UserUpdateField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.CardioFinance FinanceField;
+        private System.Nullable<System.DateTime> DateUpdatedField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -122,859 +1238,80 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Filial {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int IdScan {
             get {
-                return this.FilialField;
+                return this.IdScanField;
             }
             set {
-                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
-                    this.FilialField = value;
-                    this.RaisePropertyChanged("Filial");
+                if ((this.IdScanField.Equals(value) != true)) {
+                    this.IdScanField = value;
+                    this.RaisePropertyChanged("IdScan");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public KmsReportClient.External.CardioComplaint Complaint {
+        public string FileName {
             get {
-                return this.ComplaintField;
+                return this.FileNameField;
             }
             set {
-                if ((object.ReferenceEquals(this.ComplaintField, value) != true)) {
-                    this.ComplaintField = value;
-                    this.RaisePropertyChanged("Complaint");
+                if ((object.ReferenceEquals(this.FileNameField, value) != true)) {
+                    this.FileNameField = value;
+                    this.RaisePropertyChanged("FileName");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public KmsReportClient.External.CardioProtection Protection {
+        public string UserAdded {
             get {
-                return this.ProtectionField;
+                return this.UserAddedField;
             }
             set {
-                if ((object.ReferenceEquals(this.ProtectionField, value) != true)) {
-                    this.ProtectionField = value;
-                    this.RaisePropertyChanged("Protection");
+                if ((object.ReferenceEquals(this.UserAddedField, value) != true)) {
+                    this.UserAddedField = value;
+                    this.RaisePropertyChanged("UserAdded");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public KmsReportClient.External.CardioMeeEkmp MeeEkmp {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public System.DateTime DateAdded {
             get {
-                return this.MeeEkmpField;
+                return this.DateAddedField;
             }
             set {
-                if ((object.ReferenceEquals(this.MeeEkmpField, value) != true)) {
-                    this.MeeEkmpField = value;
-                    this.RaisePropertyChanged("MeeEkmp");
+                if ((this.DateAddedField.Equals(value) != true)) {
+                    this.DateAddedField = value;
+                    this.RaisePropertyChanged("DateAdded");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public KmsReportClient.External.CardioFinance Finance {
+        public string UserUpdate {
             get {
-                return this.FinanceField;
+                return this.UserUpdateField;
             }
             set {
-                if ((object.ReferenceEquals(this.FinanceField, value) != true)) {
-                    this.FinanceField = value;
-                    this.RaisePropertyChanged("Finance");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CardioComplaint", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class CardioComplaint : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private decimal MedicalHelpField;
-        
-        private decimal UnderageField;
-        
-        private decimal AskMedicalHelpField;
-        
-        private decimal UnderageAskMedicalHelpField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal MedicalHelp {
-            get {
-                return this.MedicalHelpField;
-            }
-            set {
-                if ((this.MedicalHelpField.Equals(value) != true)) {
-                    this.MedicalHelpField = value;
-                    this.RaisePropertyChanged("MedicalHelp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal Underage {
-            get {
-                return this.UnderageField;
-            }
-            set {
-                if ((this.UnderageField.Equals(value) != true)) {
-                    this.UnderageField = value;
-                    this.RaisePropertyChanged("Underage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public decimal AskMedicalHelp {
-            get {
-                return this.AskMedicalHelpField;
-            }
-            set {
-                if ((this.AskMedicalHelpField.Equals(value) != true)) {
-                    this.AskMedicalHelpField = value;
-                    this.RaisePropertyChanged("AskMedicalHelp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public decimal UnderageAskMedicalHelp {
-            get {
-                return this.UnderageAskMedicalHelpField;
-            }
-            set {
-                if ((this.UnderageAskMedicalHelpField.Equals(value) != true)) {
-                    this.UnderageAskMedicalHelpField = value;
-                    this.RaisePropertyChanged("UnderageAskMedicalHelp");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CardioProtection", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class CardioProtection : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private decimal PretrialMedicalHelpField;
-        
-        private decimal PretrialUnderageField;
-        
-        private decimal JudicalMedicalHelpField;
-        
-        private decimal JudicalUnderageField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal PretrialMedicalHelp {
-            get {
-                return this.PretrialMedicalHelpField;
-            }
-            set {
-                if ((this.PretrialMedicalHelpField.Equals(value) != true)) {
-                    this.PretrialMedicalHelpField = value;
-                    this.RaisePropertyChanged("PretrialMedicalHelp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal PretrialUnderage {
-            get {
-                return this.PretrialUnderageField;
-            }
-            set {
-                if ((this.PretrialUnderageField.Equals(value) != true)) {
-                    this.PretrialUnderageField = value;
-                    this.RaisePropertyChanged("PretrialUnderage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public decimal JudicalMedicalHelp {
-            get {
-                return this.JudicalMedicalHelpField;
-            }
-            set {
-                if ((this.JudicalMedicalHelpField.Equals(value) != true)) {
-                    this.JudicalMedicalHelpField = value;
-                    this.RaisePropertyChanged("JudicalMedicalHelp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public decimal JudicalUnderage {
-            get {
-                return this.JudicalUnderageField;
-            }
-            set {
-                if ((this.JudicalUnderageField.Equals(value) != true)) {
-                    this.JudicalUnderageField = value;
-                    this.RaisePropertyChanged("JudicalUnderage");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CardioMeeEkmp", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class CardioMeeEkmp : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private decimal ComplaintsMEEField;
-        
-        private decimal HospitalizationMEEField;
-        
-        private decimal CelExpertiseMEEField;
-        
-        private decimal PlanExpertiseMEEField;
-        
-        private decimal ComplaintsEKMPField;
-        
-        private decimal CelLetalKoronarField;
-        
-        private decimal CelLetalOnmkField;
-        
-        private decimal CelAllCardioField;
-        
-        private decimal CelUnderageField;
-        
-        private decimal PlanAllCardioField;
-        
-        private decimal PlanCardioUnderageField;
-        
-        private decimal CelNeprofilGospitalField;
-        
-        private decimal CelNeprofilGospitalUnderageField;
-        
-        private decimal PlanNeprofilGospitalField;
-        
-        private decimal PlanNeprofilGospitalUnderageField;
-        
-        private decimal CelNevipolnenieField;
-        
-        private decimal CelNevipolnenieUnderageField;
-        
-        private decimal PlanNevipolnenieField;
-        
-        private decimal PlanNevipolnenieUnderageField;
-        
-        private decimal CelNotAddDispNabField;
-        
-        private decimal CelNotAddDispNabUnderageField;
-        
-        private decimal PlanNotAddDispNabField;
-        
-        private decimal PlanNotAddDispNabUnderageField;
-        
-        private decimal CelNotSobludClinicRecomendationField;
-        
-        private decimal CelNotSobludClinicRecomendationUnderageField;
-        
-        private decimal PlanNotSobludClinicRecomendationField;
-        
-        private decimal PlanNotSobludClinicRecomendationUnderageField;
-        
-        private decimal CelPrematureCloseHelpMeropField;
-        
-        private decimal CelPrematureCloseHelpMeropUnderageField;
-        
-        private decimal PlanPrematureCloseHelpMeropField;
-        
-        private decimal PlanPrematureCloseHelpMeropUnderageField;
-        
-        private decimal CelViolationHospitalField;
-        
-        private decimal CelViolationHospitalUnderageField;
-        
-        private decimal PlanViolationHospitalField;
-        
-        private decimal PlanViolationHospitalUnderageField;
-        
-        private decimal CelNeobosOtkazField;
-        
-        private decimal CelNeobosOtkazUnderageField;
-        
-        private decimal PlanNeobosOtkazField;
-        
-        private decimal PlanNeobosOtkazUnderageField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal ComplaintsMEE {
-            get {
-                return this.ComplaintsMEEField;
-            }
-            set {
-                if ((this.ComplaintsMEEField.Equals(value) != true)) {
-                    this.ComplaintsMEEField = value;
-                    this.RaisePropertyChanged("ComplaintsMEE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal HospitalizationMEE {
-            get {
-                return this.HospitalizationMEEField;
-            }
-            set {
-                if ((this.HospitalizationMEEField.Equals(value) != true)) {
-                    this.HospitalizationMEEField = value;
-                    this.RaisePropertyChanged("HospitalizationMEE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public decimal CelExpertiseMEE {
-            get {
-                return this.CelExpertiseMEEField;
-            }
-            set {
-                if ((this.CelExpertiseMEEField.Equals(value) != true)) {
-                    this.CelExpertiseMEEField = value;
-                    this.RaisePropertyChanged("CelExpertiseMEE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public decimal PlanExpertiseMEE {
-            get {
-                return this.PlanExpertiseMEEField;
-            }
-            set {
-                if ((this.PlanExpertiseMEEField.Equals(value) != true)) {
-                    this.PlanExpertiseMEEField = value;
-                    this.RaisePropertyChanged("PlanExpertiseMEE");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public decimal ComplaintsEKMP {
-            get {
-                return this.ComplaintsEKMPField;
-            }
-            set {
-                if ((this.ComplaintsEKMPField.Equals(value) != true)) {
-                    this.ComplaintsEKMPField = value;
-                    this.RaisePropertyChanged("ComplaintsEKMP");
+                if ((object.ReferenceEquals(this.UserUpdateField, value) != true)) {
+                    this.UserUpdateField = value;
+                    this.RaisePropertyChanged("UserUpdate");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public decimal CelLetalKoronar {
+        public System.Nullable<System.DateTime> DateUpdated {
             get {
-                return this.CelLetalKoronarField;
+                return this.DateUpdatedField;
             }
             set {
-                if ((this.CelLetalKoronarField.Equals(value) != true)) {
-                    this.CelLetalKoronarField = value;
-                    this.RaisePropertyChanged("CelLetalKoronar");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public decimal CelLetalOnmk {
-            get {
-                return this.CelLetalOnmkField;
-            }
-            set {
-                if ((this.CelLetalOnmkField.Equals(value) != true)) {
-                    this.CelLetalOnmkField = value;
-                    this.RaisePropertyChanged("CelLetalOnmk");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public decimal CelAllCardio {
-            get {
-                return this.CelAllCardioField;
-            }
-            set {
-                if ((this.CelAllCardioField.Equals(value) != true)) {
-                    this.CelAllCardioField = value;
-                    this.RaisePropertyChanged("CelAllCardio");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public decimal CelUnderage {
-            get {
-                return this.CelUnderageField;
-            }
-            set {
-                if ((this.CelUnderageField.Equals(value) != true)) {
-                    this.CelUnderageField = value;
-                    this.RaisePropertyChanged("CelUnderage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
-        public decimal PlanAllCardio {
-            get {
-                return this.PlanAllCardioField;
-            }
-            set {
-                if ((this.PlanAllCardioField.Equals(value) != true)) {
-                    this.PlanAllCardioField = value;
-                    this.RaisePropertyChanged("PlanAllCardio");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
-        public decimal PlanCardioUnderage {
-            get {
-                return this.PlanCardioUnderageField;
-            }
-            set {
-                if ((this.PlanCardioUnderageField.Equals(value) != true)) {
-                    this.PlanCardioUnderageField = value;
-                    this.RaisePropertyChanged("PlanCardioUnderage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
-        public decimal CelNeprofilGospital {
-            get {
-                return this.CelNeprofilGospitalField;
-            }
-            set {
-                if ((this.CelNeprofilGospitalField.Equals(value) != true)) {
-                    this.CelNeprofilGospitalField = value;
-                    this.RaisePropertyChanged("CelNeprofilGospital");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
-        public decimal CelNeprofilGospitalUnderage {
-            get {
-                return this.CelNeprofilGospitalUnderageField;
-            }
-            set {
-                if ((this.CelNeprofilGospitalUnderageField.Equals(value) != true)) {
-                    this.CelNeprofilGospitalUnderageField = value;
-                    this.RaisePropertyChanged("CelNeprofilGospitalUnderage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
-        public decimal PlanNeprofilGospital {
-            get {
-                return this.PlanNeprofilGospitalField;
-            }
-            set {
-                if ((this.PlanNeprofilGospitalField.Equals(value) != true)) {
-                    this.PlanNeprofilGospitalField = value;
-                    this.RaisePropertyChanged("PlanNeprofilGospital");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
-        public decimal PlanNeprofilGospitalUnderage {
-            get {
-                return this.PlanNeprofilGospitalUnderageField;
-            }
-            set {
-                if ((this.PlanNeprofilGospitalUnderageField.Equals(value) != true)) {
-                    this.PlanNeprofilGospitalUnderageField = value;
-                    this.RaisePropertyChanged("PlanNeprofilGospitalUnderage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
-        public decimal CelNevipolnenie {
-            get {
-                return this.CelNevipolnenieField;
-            }
-            set {
-                if ((this.CelNevipolnenieField.Equals(value) != true)) {
-                    this.CelNevipolnenieField = value;
-                    this.RaisePropertyChanged("CelNevipolnenie");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
-        public decimal CelNevipolnenieUnderage {
-            get {
-                return this.CelNevipolnenieUnderageField;
-            }
-            set {
-                if ((this.CelNevipolnenieUnderageField.Equals(value) != true)) {
-                    this.CelNevipolnenieUnderageField = value;
-                    this.RaisePropertyChanged("CelNevipolnenieUnderage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
-        public decimal PlanNevipolnenie {
-            get {
-                return this.PlanNevipolnenieField;
-            }
-            set {
-                if ((this.PlanNevipolnenieField.Equals(value) != true)) {
-                    this.PlanNevipolnenieField = value;
-                    this.RaisePropertyChanged("PlanNevipolnenie");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=18)]
-        public decimal PlanNevipolnenieUnderage {
-            get {
-                return this.PlanNevipolnenieUnderageField;
-            }
-            set {
-                if ((this.PlanNevipolnenieUnderageField.Equals(value) != true)) {
-                    this.PlanNevipolnenieUnderageField = value;
-                    this.RaisePropertyChanged("PlanNevipolnenieUnderage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=19)]
-        public decimal CelNotAddDispNab {
-            get {
-                return this.CelNotAddDispNabField;
-            }
-            set {
-                if ((this.CelNotAddDispNabField.Equals(value) != true)) {
-                    this.CelNotAddDispNabField = value;
-                    this.RaisePropertyChanged("CelNotAddDispNab");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=20)]
-        public decimal CelNotAddDispNabUnderage {
-            get {
-                return this.CelNotAddDispNabUnderageField;
-            }
-            set {
-                if ((this.CelNotAddDispNabUnderageField.Equals(value) != true)) {
-                    this.CelNotAddDispNabUnderageField = value;
-                    this.RaisePropertyChanged("CelNotAddDispNabUnderage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=21)]
-        public decimal PlanNotAddDispNab {
-            get {
-                return this.PlanNotAddDispNabField;
-            }
-            set {
-                if ((this.PlanNotAddDispNabField.Equals(value) != true)) {
-                    this.PlanNotAddDispNabField = value;
-                    this.RaisePropertyChanged("PlanNotAddDispNab");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=22)]
-        public decimal PlanNotAddDispNabUnderage {
-            get {
-                return this.PlanNotAddDispNabUnderageField;
-            }
-            set {
-                if ((this.PlanNotAddDispNabUnderageField.Equals(value) != true)) {
-                    this.PlanNotAddDispNabUnderageField = value;
-                    this.RaisePropertyChanged("PlanNotAddDispNabUnderage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=23)]
-        public decimal CelNotSobludClinicRecomendation {
-            get {
-                return this.CelNotSobludClinicRecomendationField;
-            }
-            set {
-                if ((this.CelNotSobludClinicRecomendationField.Equals(value) != true)) {
-                    this.CelNotSobludClinicRecomendationField = value;
-                    this.RaisePropertyChanged("CelNotSobludClinicRecomendation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=24)]
-        public decimal CelNotSobludClinicRecomendationUnderage {
-            get {
-                return this.CelNotSobludClinicRecomendationUnderageField;
-            }
-            set {
-                if ((this.CelNotSobludClinicRecomendationUnderageField.Equals(value) != true)) {
-                    this.CelNotSobludClinicRecomendationUnderageField = value;
-                    this.RaisePropertyChanged("CelNotSobludClinicRecomendationUnderage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=25)]
-        public decimal PlanNotSobludClinicRecomendation {
-            get {
-                return this.PlanNotSobludClinicRecomendationField;
-            }
-            set {
-                if ((this.PlanNotSobludClinicRecomendationField.Equals(value) != true)) {
-                    this.PlanNotSobludClinicRecomendationField = value;
-                    this.RaisePropertyChanged("PlanNotSobludClinicRecomendation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=26)]
-        public decimal PlanNotSobludClinicRecomendationUnderage {
-            get {
-                return this.PlanNotSobludClinicRecomendationUnderageField;
-            }
-            set {
-                if ((this.PlanNotSobludClinicRecomendationUnderageField.Equals(value) != true)) {
-                    this.PlanNotSobludClinicRecomendationUnderageField = value;
-                    this.RaisePropertyChanged("PlanNotSobludClinicRecomendationUnderage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=27)]
-        public decimal CelPrematureCloseHelpMerop {
-            get {
-                return this.CelPrematureCloseHelpMeropField;
-            }
-            set {
-                if ((this.CelPrematureCloseHelpMeropField.Equals(value) != true)) {
-                    this.CelPrematureCloseHelpMeropField = value;
-                    this.RaisePropertyChanged("CelPrematureCloseHelpMerop");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=28)]
-        public decimal CelPrematureCloseHelpMeropUnderage {
-            get {
-                return this.CelPrematureCloseHelpMeropUnderageField;
-            }
-            set {
-                if ((this.CelPrematureCloseHelpMeropUnderageField.Equals(value) != true)) {
-                    this.CelPrematureCloseHelpMeropUnderageField = value;
-                    this.RaisePropertyChanged("CelPrematureCloseHelpMeropUnderage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=29)]
-        public decimal PlanPrematureCloseHelpMerop {
-            get {
-                return this.PlanPrematureCloseHelpMeropField;
-            }
-            set {
-                if ((this.PlanPrematureCloseHelpMeropField.Equals(value) != true)) {
-                    this.PlanPrematureCloseHelpMeropField = value;
-                    this.RaisePropertyChanged("PlanPrematureCloseHelpMerop");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=30)]
-        public decimal PlanPrematureCloseHelpMeropUnderage {
-            get {
-                return this.PlanPrematureCloseHelpMeropUnderageField;
-            }
-            set {
-                if ((this.PlanPrematureCloseHelpMeropUnderageField.Equals(value) != true)) {
-                    this.PlanPrematureCloseHelpMeropUnderageField = value;
-                    this.RaisePropertyChanged("PlanPrematureCloseHelpMeropUnderage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=31)]
-        public decimal CelViolationHospital {
-            get {
-                return this.CelViolationHospitalField;
-            }
-            set {
-                if ((this.CelViolationHospitalField.Equals(value) != true)) {
-                    this.CelViolationHospitalField = value;
-                    this.RaisePropertyChanged("CelViolationHospital");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=32)]
-        public decimal CelViolationHospitalUnderage {
-            get {
-                return this.CelViolationHospitalUnderageField;
-            }
-            set {
-                if ((this.CelViolationHospitalUnderageField.Equals(value) != true)) {
-                    this.CelViolationHospitalUnderageField = value;
-                    this.RaisePropertyChanged("CelViolationHospitalUnderage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=33)]
-        public decimal PlanViolationHospital {
-            get {
-                return this.PlanViolationHospitalField;
-            }
-            set {
-                if ((this.PlanViolationHospitalField.Equals(value) != true)) {
-                    this.PlanViolationHospitalField = value;
-                    this.RaisePropertyChanged("PlanViolationHospital");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=34)]
-        public decimal PlanViolationHospitalUnderage {
-            get {
-                return this.PlanViolationHospitalUnderageField;
-            }
-            set {
-                if ((this.PlanViolationHospitalUnderageField.Equals(value) != true)) {
-                    this.PlanViolationHospitalUnderageField = value;
-                    this.RaisePropertyChanged("PlanViolationHospitalUnderage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=35)]
-        public decimal CelNeobosOtkaz {
-            get {
-                return this.CelNeobosOtkazField;
-            }
-            set {
-                if ((this.CelNeobosOtkazField.Equals(value) != true)) {
-                    this.CelNeobosOtkazField = value;
-                    this.RaisePropertyChanged("CelNeobosOtkaz");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=36)]
-        public decimal CelNeobosOtkazUnderage {
-            get {
-                return this.CelNeobosOtkazUnderageField;
-            }
-            set {
-                if ((this.CelNeobosOtkazUnderageField.Equals(value) != true)) {
-                    this.CelNeobosOtkazUnderageField = value;
-                    this.RaisePropertyChanged("CelNeobosOtkazUnderage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=37)]
-        public decimal PlanNeobosOtkaz {
-            get {
-                return this.PlanNeobosOtkazField;
-            }
-            set {
-                if ((this.PlanNeobosOtkazField.Equals(value) != true)) {
-                    this.PlanNeobosOtkazField = value;
-                    this.RaisePropertyChanged("PlanNeobosOtkaz");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=38)]
-        public decimal PlanNeobosOtkazUnderage {
-            get {
-                return this.PlanNeobosOtkazUnderageField;
-            }
-            set {
-                if ((this.PlanNeobosOtkazUnderageField.Equals(value) != true)) {
-                    this.PlanNeobosOtkazUnderageField = value;
-                    this.RaisePropertyChanged("PlanNeobosOtkazUnderage");
+                if ((this.DateUpdatedField.Equals(value) != true)) {
+                    this.DateUpdatedField = value;
+                    this.RaisePropertyChanged("DateUpdated");
                 }
             }
         }
@@ -991,260 +1328,24 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CardioFinance", Namespace="http://kms-oms.ru/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="KmsReportDictionary", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
-    public partial class CardioFinance : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private decimal SumMeeNotTimeDispanField;
-        
-        private decimal SumMeeNotTimeDispanUnderageField;
-        
-        private decimal SumEkmpNotTimeDispanField;
-        
-        private decimal SumEkmpNotTimeDispanUnderageField;
-        
-        private decimal SumNeprofilHelpField;
-        
-        private decimal SumNeprofilHelpUnderageField;
-        
-        private decimal SumNevipolnenieField;
-        
-        private decimal SumNevipolnenieUnderageField;
-        
-        private decimal SumNesobludRecomedationField;
-        
-        private decimal SumNesobludRecomedationUnderageField;
-        
-        private decimal SumCloseHelpField;
-        
-        private decimal SumCloseHelpUnderageField;
-        
-        private decimal SumViolationField;
-        
-        private decimal SumViolationUnderageField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal SumMeeNotTimeDispan {
-            get {
-                return this.SumMeeNotTimeDispanField;
-            }
-            set {
-                if ((this.SumMeeNotTimeDispanField.Equals(value) != true)) {
-                    this.SumMeeNotTimeDispanField = value;
-                    this.RaisePropertyChanged("SumMeeNotTimeDispan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal SumMeeNotTimeDispanUnderage {
-            get {
-                return this.SumMeeNotTimeDispanUnderageField;
-            }
-            set {
-                if ((this.SumMeeNotTimeDispanUnderageField.Equals(value) != true)) {
-                    this.SumMeeNotTimeDispanUnderageField = value;
-                    this.RaisePropertyChanged("SumMeeNotTimeDispanUnderage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public decimal SumEkmpNotTimeDispan {
-            get {
-                return this.SumEkmpNotTimeDispanField;
-            }
-            set {
-                if ((this.SumEkmpNotTimeDispanField.Equals(value) != true)) {
-                    this.SumEkmpNotTimeDispanField = value;
-                    this.RaisePropertyChanged("SumEkmpNotTimeDispan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public decimal SumEkmpNotTimeDispanUnderage {
-            get {
-                return this.SumEkmpNotTimeDispanUnderageField;
-            }
-            set {
-                if ((this.SumEkmpNotTimeDispanUnderageField.Equals(value) != true)) {
-                    this.SumEkmpNotTimeDispanUnderageField = value;
-                    this.RaisePropertyChanged("SumEkmpNotTimeDispanUnderage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public decimal SumNeprofilHelp {
-            get {
-                return this.SumNeprofilHelpField;
-            }
-            set {
-                if ((this.SumNeprofilHelpField.Equals(value) != true)) {
-                    this.SumNeprofilHelpField = value;
-                    this.RaisePropertyChanged("SumNeprofilHelp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public decimal SumNeprofilHelpUnderage {
-            get {
-                return this.SumNeprofilHelpUnderageField;
-            }
-            set {
-                if ((this.SumNeprofilHelpUnderageField.Equals(value) != true)) {
-                    this.SumNeprofilHelpUnderageField = value;
-                    this.RaisePropertyChanged("SumNeprofilHelpUnderage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public decimal SumNevipolnenie {
-            get {
-                return this.SumNevipolnenieField;
-            }
-            set {
-                if ((this.SumNevipolnenieField.Equals(value) != true)) {
-                    this.SumNevipolnenieField = value;
-                    this.RaisePropertyChanged("SumNevipolnenie");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public decimal SumNevipolnenieUnderage {
-            get {
-                return this.SumNevipolnenieUnderageField;
-            }
-            set {
-                if ((this.SumNevipolnenieUnderageField.Equals(value) != true)) {
-                    this.SumNevipolnenieUnderageField = value;
-                    this.RaisePropertyChanged("SumNevipolnenieUnderage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public decimal SumNesobludRecomedation {
-            get {
-                return this.SumNesobludRecomedationField;
-            }
-            set {
-                if ((this.SumNesobludRecomedationField.Equals(value) != true)) {
-                    this.SumNesobludRecomedationField = value;
-                    this.RaisePropertyChanged("SumNesobludRecomedation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
-        public decimal SumNesobludRecomedationUnderage {
-            get {
-                return this.SumNesobludRecomedationUnderageField;
-            }
-            set {
-                if ((this.SumNesobludRecomedationUnderageField.Equals(value) != true)) {
-                    this.SumNesobludRecomedationUnderageField = value;
-                    this.RaisePropertyChanged("SumNesobludRecomedationUnderage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
-        public decimal SumCloseHelp {
-            get {
-                return this.SumCloseHelpField;
-            }
-            set {
-                if ((this.SumCloseHelpField.Equals(value) != true)) {
-                    this.SumCloseHelpField = value;
-                    this.RaisePropertyChanged("SumCloseHelp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
-        public decimal SumCloseHelpUnderage {
-            get {
-                return this.SumCloseHelpUnderageField;
-            }
-            set {
-                if ((this.SumCloseHelpUnderageField.Equals(value) != true)) {
-                    this.SumCloseHelpUnderageField = value;
-                    this.RaisePropertyChanged("SumCloseHelpUnderage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
-        public decimal SumViolation {
-            get {
-                return this.SumViolationField;
-            }
-            set {
-                if ((this.SumViolationField.Equals(value) != true)) {
-                    this.SumViolationField = value;
-                    this.RaisePropertyChanged("SumViolation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
-        public decimal SumViolationUnderage {
-            get {
-                return this.SumViolationUnderageField;
-            }
-            set {
-                if ((this.SumViolationUnderageField.Equals(value) != true)) {
-                    this.SumViolationUnderageField = value;
-                    this.RaisePropertyChanged("SumViolationUnderage");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CReport262Table1", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class CReport262Table1 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class KmsReportDictionary : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilialField;
+        private string KeyField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.CReport262Table1Row[] ListOfCountPplField;
+        private string ValueField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.CReport262Table1Row[] ListOfCountInformField;
+        private string ForeignKeyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AdditionalFieldField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1257,100 +1358,53 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Filial {
+        public string Key {
             get {
-                return this.FilialField;
+                return this.KeyField;
             }
             set {
-                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
-                    this.FilialField = value;
-                    this.RaisePropertyChanged("Filial");
+                if ((object.ReferenceEquals(this.KeyField, value) != true)) {
+                    this.KeyField = value;
+                    this.RaisePropertyChanged("Key");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.CReport262Table1Row[] ListOfCountPpl {
-            get {
-                return this.ListOfCountPplField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ListOfCountPplField, value) != true)) {
-                    this.ListOfCountPplField = value;
-                    this.RaisePropertyChanged("ListOfCountPpl");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public KmsReportClient.External.CReport262Table1Row[] ListOfCountInform {
-            get {
-                return this.ListOfCountInformField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ListOfCountInformField, value) != true)) {
-                    this.ListOfCountInformField = value;
-                    this.RaisePropertyChanged("ListOfCountInform");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CReport262Table1Row", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class CReport262Table1Row : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int ValueField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string yymmField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int Value {
+        public string Value {
             get {
                 return this.ValueField;
             }
             set {
-                if ((this.ValueField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.ValueField, value) != true)) {
                     this.ValueField = value;
                     this.RaisePropertyChanged("Value");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string yymm {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string ForeignKey {
             get {
-                return this.yymmField;
+                return this.ForeignKeyField;
             }
             set {
-                if ((object.ReferenceEquals(this.yymmField, value) != true)) {
-                    this.yymmField = value;
-                    this.RaisePropertyChanged("yymm");
+                if ((object.ReferenceEquals(this.ForeignKeyField, value) != true)) {
+                    this.ForeignKeyField = value;
+                    this.RaisePropertyChanged("ForeignKey");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string AdditionalField {
+            get {
+                return this.AdditionalFieldField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AdditionalFieldField, value) != true)) {
+                    this.AdditionalFieldField = value;
+                    this.RaisePropertyChanged("AdditionalField");
                 }
             }
         }
@@ -1367,18 +1421,26 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CReport262Table2", Namespace="http://kms-oms.ru/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportOpedDto", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
-    public partial class CReport262Table2 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ReportOpedDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilialField;
+        private string RowNumField;
+        
+        private decimal AppField;
+        
+        private decimal KsField;
+        
+        private decimal DsField;
+        
+        private decimal SmpField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.Report262DataDto DataField;
+        private string NotesField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1391,20 +1453,1033 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Filial {
+        public string RowNum {
             get {
-                return this.FilialField;
+                return this.RowNumField;
             }
             set {
-                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
-                    this.FilialField = value;
-                    this.RaisePropertyChanged("Filial");
+                if ((object.ReferenceEquals(this.RowNumField, value) != true)) {
+                    this.RowNumField = value;
+                    this.RaisePropertyChanged("RowNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public decimal App {
+            get {
+                return this.AppField;
+            }
+            set {
+                if ((this.AppField.Equals(value) != true)) {
+                    this.AppField = value;
+                    this.RaisePropertyChanged("App");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public decimal Ks {
+            get {
+                return this.KsField;
+            }
+            set {
+                if ((this.KsField.Equals(value) != true)) {
+                    this.KsField = value;
+                    this.RaisePropertyChanged("Ks");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public decimal Ds {
+            get {
+                return this.DsField;
+            }
+            set {
+                if ((this.DsField.Equals(value) != true)) {
+                    this.DsField = value;
+                    this.RaisePropertyChanged("Ds");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public decimal Smp {
+            get {
+                return this.SmpField;
+            }
+            set {
+                if ((this.SmpField.Equals(value) != true)) {
+                    this.SmpField = value;
+                    this.RaisePropertyChanged("Smp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string Notes {
+            get {
+                return this.NotesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NotesField, value) != true)) {
+                    this.NotesField = value;
+                    this.RaisePropertyChanged("Notes");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportInfrormationResponseDataDto", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportInfrormationResponseDataDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdField;
+        
+        private int PlanField;
+        
+        private int InformedField;
+        
+        private int CountRegistryField;
+        
+        private int CountPastField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Plan {
+            get {
+                return this.PlanField;
+            }
+            set {
+                if ((this.PlanField.Equals(value) != true)) {
+                    this.PlanField = value;
+                    this.RaisePropertyChanged("Plan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int Informed {
+            get {
+                return this.InformedField;
+            }
+            set {
+                if ((this.InformedField.Equals(value) != true)) {
+                    this.InformedField = value;
+                    this.RaisePropertyChanged("Informed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int CountRegistry {
+            get {
+                return this.CountRegistryField;
+            }
+            set {
+                if ((this.CountRegistryField.Equals(value) != true)) {
+                    this.CountRegistryField = value;
+                    this.RaisePropertyChanged("CountRegistry");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public int CountPast {
+            get {
+                return this.CountPastField;
+            }
+            set {
+                if ((this.CountPastField.Equals(value) != true)) {
+                    this.CountPastField = value;
+                    this.RaisePropertyChanged("CountPast");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportCadreDataDto", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportCadreDataDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdField;
+        
+        private int count_itog_stateField;
+        
+        private int count_itog_factField;
+        
+        private int count_itog_vacancyField;
+        
+        private int count_leader_stateField;
+        
+        private int count_leader_factField;
+        
+        private int count_leader_vacancyField;
+        
+        private int count_deputy_leader_stateField;
+        
+        private int count_deputy_leader_factField;
+        
+        private int count_deputy_leader_vacancyField;
+        
+        private int count_expert_doctor_stateField;
+        
+        private int count_expert_doctor_factField;
+        
+        private int count_expert_doctor_vacancyField;
+        
+        private int count_specialist_stateField;
+        
+        private int count_specialist_factField;
+        
+        private int count_specialist_vacancyField;
+        
+        private int count_grf15Field;
+        
+        private int count_grf16Field;
+        
+        private int count_grf17Field;
+        
+        private int count_grf18Field;
+        
+        private int count_grf19Field;
+        
+        private int count_grf20Field;
+        
+        private int count_grf21Field;
+        
+        private int count_grf22Field;
+        
+        private int count_grf23Field;
+        
+        private int count_grf24Field;
+        
+        private int count_grf25Field;
+        
+        private int count_grf26Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int count_itog_state {
+            get {
+                return this.count_itog_stateField;
+            }
+            set {
+                if ((this.count_itog_stateField.Equals(value) != true)) {
+                    this.count_itog_stateField = value;
+                    this.RaisePropertyChanged("count_itog_state");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int count_itog_fact {
+            get {
+                return this.count_itog_factField;
+            }
+            set {
+                if ((this.count_itog_factField.Equals(value) != true)) {
+                    this.count_itog_factField = value;
+                    this.RaisePropertyChanged("count_itog_fact");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int count_itog_vacancy {
+            get {
+                return this.count_itog_vacancyField;
+            }
+            set {
+                if ((this.count_itog_vacancyField.Equals(value) != true)) {
+                    this.count_itog_vacancyField = value;
+                    this.RaisePropertyChanged("count_itog_vacancy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public int count_leader_state {
+            get {
+                return this.count_leader_stateField;
+            }
+            set {
+                if ((this.count_leader_stateField.Equals(value) != true)) {
+                    this.count_leader_stateField = value;
+                    this.RaisePropertyChanged("count_leader_state");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public int count_leader_fact {
+            get {
+                return this.count_leader_factField;
+            }
+            set {
+                if ((this.count_leader_factField.Equals(value) != true)) {
+                    this.count_leader_factField = value;
+                    this.RaisePropertyChanged("count_leader_fact");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public int count_leader_vacancy {
+            get {
+                return this.count_leader_vacancyField;
+            }
+            set {
+                if ((this.count_leader_vacancyField.Equals(value) != true)) {
+                    this.count_leader_vacancyField = value;
+                    this.RaisePropertyChanged("count_leader_vacancy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public int count_deputy_leader_state {
+            get {
+                return this.count_deputy_leader_stateField;
+            }
+            set {
+                if ((this.count_deputy_leader_stateField.Equals(value) != true)) {
+                    this.count_deputy_leader_stateField = value;
+                    this.RaisePropertyChanged("count_deputy_leader_state");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        public int count_deputy_leader_fact {
+            get {
+                return this.count_deputy_leader_factField;
+            }
+            set {
+                if ((this.count_deputy_leader_factField.Equals(value) != true)) {
+                    this.count_deputy_leader_factField = value;
+                    this.RaisePropertyChanged("count_deputy_leader_fact");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        public int count_deputy_leader_vacancy {
+            get {
+                return this.count_deputy_leader_vacancyField;
+            }
+            set {
+                if ((this.count_deputy_leader_vacancyField.Equals(value) != true)) {
+                    this.count_deputy_leader_vacancyField = value;
+                    this.RaisePropertyChanged("count_deputy_leader_vacancy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        public int count_expert_doctor_state {
+            get {
+                return this.count_expert_doctor_stateField;
+            }
+            set {
+                if ((this.count_expert_doctor_stateField.Equals(value) != true)) {
+                    this.count_expert_doctor_stateField = value;
+                    this.RaisePropertyChanged("count_expert_doctor_state");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        public int count_expert_doctor_fact {
+            get {
+                return this.count_expert_doctor_factField;
+            }
+            set {
+                if ((this.count_expert_doctor_factField.Equals(value) != true)) {
+                    this.count_expert_doctor_factField = value;
+                    this.RaisePropertyChanged("count_expert_doctor_fact");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
+        public int count_expert_doctor_vacancy {
+            get {
+                return this.count_expert_doctor_vacancyField;
+            }
+            set {
+                if ((this.count_expert_doctor_vacancyField.Equals(value) != true)) {
+                    this.count_expert_doctor_vacancyField = value;
+                    this.RaisePropertyChanged("count_expert_doctor_vacancy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
+        public int count_specialist_state {
+            get {
+                return this.count_specialist_stateField;
+            }
+            set {
+                if ((this.count_specialist_stateField.Equals(value) != true)) {
+                    this.count_specialist_stateField = value;
+                    this.RaisePropertyChanged("count_specialist_state");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
+        public int count_specialist_fact {
+            get {
+                return this.count_specialist_factField;
+            }
+            set {
+                if ((this.count_specialist_factField.Equals(value) != true)) {
+                    this.count_specialist_factField = value;
+                    this.RaisePropertyChanged("count_specialist_fact");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
+        public int count_specialist_vacancy {
+            get {
+                return this.count_specialist_vacancyField;
+            }
+            set {
+                if ((this.count_specialist_vacancyField.Equals(value) != true)) {
+                    this.count_specialist_vacancyField = value;
+                    this.RaisePropertyChanged("count_specialist_vacancy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
+        public int count_grf15 {
+            get {
+                return this.count_grf15Field;
+            }
+            set {
+                if ((this.count_grf15Field.Equals(value) != true)) {
+                    this.count_grf15Field = value;
+                    this.RaisePropertyChanged("count_grf15");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
+        public int count_grf16 {
+            get {
+                return this.count_grf16Field;
+            }
+            set {
+                if ((this.count_grf16Field.Equals(value) != true)) {
+                    this.count_grf16Field = value;
+                    this.RaisePropertyChanged("count_grf16");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=18)]
+        public int count_grf17 {
+            get {
+                return this.count_grf17Field;
+            }
+            set {
+                if ((this.count_grf17Field.Equals(value) != true)) {
+                    this.count_grf17Field = value;
+                    this.RaisePropertyChanged("count_grf17");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=19)]
+        public int count_grf18 {
+            get {
+                return this.count_grf18Field;
+            }
+            set {
+                if ((this.count_grf18Field.Equals(value) != true)) {
+                    this.count_grf18Field = value;
+                    this.RaisePropertyChanged("count_grf18");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=20)]
+        public int count_grf19 {
+            get {
+                return this.count_grf19Field;
+            }
+            set {
+                if ((this.count_grf19Field.Equals(value) != true)) {
+                    this.count_grf19Field = value;
+                    this.RaisePropertyChanged("count_grf19");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=21)]
+        public int count_grf20 {
+            get {
+                return this.count_grf20Field;
+            }
+            set {
+                if ((this.count_grf20Field.Equals(value) != true)) {
+                    this.count_grf20Field = value;
+                    this.RaisePropertyChanged("count_grf20");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=22)]
+        public int count_grf21 {
+            get {
+                return this.count_grf21Field;
+            }
+            set {
+                if ((this.count_grf21Field.Equals(value) != true)) {
+                    this.count_grf21Field = value;
+                    this.RaisePropertyChanged("count_grf21");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=23)]
+        public int count_grf22 {
+            get {
+                return this.count_grf22Field;
+            }
+            set {
+                if ((this.count_grf22Field.Equals(value) != true)) {
+                    this.count_grf22Field = value;
+                    this.RaisePropertyChanged("count_grf22");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=24)]
+        public int count_grf23 {
+            get {
+                return this.count_grf23Field;
+            }
+            set {
+                if ((this.count_grf23Field.Equals(value) != true)) {
+                    this.count_grf23Field = value;
+                    this.RaisePropertyChanged("count_grf23");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=25)]
+        public int count_grf24 {
+            get {
+                return this.count_grf24Field;
+            }
+            set {
+                if ((this.count_grf24Field.Equals(value) != true)) {
+                    this.count_grf24Field = value;
+                    this.RaisePropertyChanged("count_grf24");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=26)]
+        public int count_grf25 {
+            get {
+                return this.count_grf25Field;
+            }
+            set {
+                if ((this.count_grf25Field.Equals(value) != true)) {
+                    this.count_grf25Field = value;
+                    this.RaisePropertyChanged("count_grf25");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=27)]
+        public int count_grf26 {
+            get {
+                return this.count_grf26Field;
+            }
+            set {
+                if ((this.count_grf26Field.Equals(value) != true)) {
+                    this.count_grf26Field = value;
+                    this.RaisePropertyChanged("count_grf26");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AbstractReport", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportOped))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportInfrormationResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportFSSMonitroing))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportProposal))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportOpedFinance))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportCadre))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.Report262))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.Report294))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportIizl))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportPg))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportVaccination))]
+    public partial class AbstractReport : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdFlowField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IdTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string YymmField;
+        
+        private System.DateTime CreatedField;
+        
+        private int IdEmployeeField;
+        
+        private System.Nullable<System.DateTime> UpdatedField;
+        
+        private int IdEmployeeUpdField;
+        
+        private System.Nullable<System.DateTime> DateToCoField;
+        
+        private int UserToCoField;
+        
+        private System.Nullable<System.DateTime> RefuseDateField;
+        
+        private int RefuseUserField;
+        
+        private System.Nullable<System.DateTime> DateIsDoneField;
+        
+        private int UserSubmitField;
+        
+        private int VersionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ScanField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Scan2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Scan3Field;
+        
+        private KmsReportClient.External.ReportStatus StatusField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int IdFlow {
+            get {
+                return this.IdFlowField;
+            }
+            set {
+                if ((this.IdFlowField.Equals(value) != true)) {
+                    this.IdFlowField = value;
+                    this.RaisePropertyChanged("IdFlow");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string IdType {
+            get {
+                return this.IdTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IdTypeField, value) != true)) {
+                    this.IdTypeField = value;
+                    this.RaisePropertyChanged("IdType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Yymm {
+            get {
+                return this.YymmField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.YymmField, value) != true)) {
+                    this.YymmField = value;
+                    this.RaisePropertyChanged("Yymm");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public System.DateTime Created {
+            get {
+                return this.CreatedField;
+            }
+            set {
+                if ((this.CreatedField.Equals(value) != true)) {
+                    this.CreatedField = value;
+                    this.RaisePropertyChanged("Created");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public int IdEmployee {
+            get {
+                return this.IdEmployeeField;
+            }
+            set {
+                if ((this.IdEmployeeField.Equals(value) != true)) {
+                    this.IdEmployeeField = value;
+                    this.RaisePropertyChanged("IdEmployee");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public System.Nullable<System.DateTime> Updated {
+            get {
+                return this.UpdatedField;
+            }
+            set {
+                if ((this.UpdatedField.Equals(value) != true)) {
+                    this.UpdatedField = value;
+                    this.RaisePropertyChanged("Updated");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public int IdEmployeeUpd {
+            get {
+                return this.IdEmployeeUpdField;
+            }
+            set {
+                if ((this.IdEmployeeUpdField.Equals(value) != true)) {
+                    this.IdEmployeeUpdField = value;
+                    this.RaisePropertyChanged("IdEmployeeUpd");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public System.Nullable<System.DateTime> DateToCo {
+            get {
+                return this.DateToCoField;
+            }
+            set {
+                if ((this.DateToCoField.Equals(value) != true)) {
+                    this.DateToCoField = value;
+                    this.RaisePropertyChanged("DateToCo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        public int UserToCo {
+            get {
+                return this.UserToCoField;
+            }
+            set {
+                if ((this.UserToCoField.Equals(value) != true)) {
+                    this.UserToCoField = value;
+                    this.RaisePropertyChanged("UserToCo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        public System.Nullable<System.DateTime> RefuseDate {
+            get {
+                return this.RefuseDateField;
+            }
+            set {
+                if ((this.RefuseDateField.Equals(value) != true)) {
+                    this.RefuseDateField = value;
+                    this.RaisePropertyChanged("RefuseDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        public int RefuseUser {
+            get {
+                return this.RefuseUserField;
+            }
+            set {
+                if ((this.RefuseUserField.Equals(value) != true)) {
+                    this.RefuseUserField = value;
+                    this.RaisePropertyChanged("RefuseUser");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        public System.Nullable<System.DateTime> DateIsDone {
+            get {
+                return this.DateIsDoneField;
+            }
+            set {
+                if ((this.DateIsDoneField.Equals(value) != true)) {
+                    this.DateIsDoneField = value;
+                    this.RaisePropertyChanged("DateIsDone");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
+        public int UserSubmit {
+            get {
+                return this.UserSubmitField;
+            }
+            set {
+                if ((this.UserSubmitField.Equals(value) != true)) {
+                    this.UserSubmitField = value;
+                    this.RaisePropertyChanged("UserSubmit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
+        public int Version {
+            get {
+                return this.VersionField;
+            }
+            set {
+                if ((this.VersionField.Equals(value) != true)) {
+                    this.VersionField = value;
+                    this.RaisePropertyChanged("Version");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
+        public string Scan {
+            get {
+                return this.ScanField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ScanField, value) != true)) {
+                    this.ScanField = value;
+                    this.RaisePropertyChanged("Scan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
+        public string Scan2 {
+            get {
+                return this.Scan2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Scan2Field, value) != true)) {
+                    this.Scan2Field = value;
+                    this.RaisePropertyChanged("Scan2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=16)]
+        public string Scan3 {
+            get {
+                return this.Scan3Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Scan3Field, value) != true)) {
+                    this.Scan3Field = value;
+                    this.RaisePropertyChanged("Scan3");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
+        public KmsReportClient.External.ReportStatus Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((this.StatusField.Equals(value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportOped", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportOped : KmsReportClient.External.AbstractReport {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.ReportOpedDto[] ReportDataListField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public KmsReportClient.External.ReportOpedDto[] ReportDataList {
+            get {
+                return this.ReportDataListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReportDataListField, value) != true)) {
+                    this.ReportDataListField = value;
+                    this.RaisePropertyChanged("ReportDataList");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportInfrormationResponse", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportInfrormationResponse : KmsReportClient.External.AbstractReport {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.ReportInfrormationResponseDto[] ReportDataListField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public KmsReportClient.External.ReportInfrormationResponseDto[] ReportDataList {
+            get {
+                return this.ReportDataListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReportDataListField, value) != true)) {
+                    this.ReportDataListField = value;
+                    this.RaisePropertyChanged("ReportDataList");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportFSSMonitroing", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportFSSMonitroing : KmsReportClient.External.AbstractReport {
+        
+        private int IdReportDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.FSSMonitroingData[] DataField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int IdReportData {
+            get {
+                return this.IdReportDataField;
+            }
+            set {
+                if ((this.IdReportDataField.Equals(value) != true)) {
+                    this.IdReportDataField = value;
+                    this.RaisePropertyChanged("IdReportData");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public KmsReportClient.External.Report262DataDto Data {
+        public KmsReportClient.External.FSSMonitroingData[] Data {
             get {
                 return this.DataField;
             }
@@ -1412,6 +2487,838 @@ namespace KmsReportClient.External {
                 if ((object.ReferenceEquals(this.DataField, value) != true)) {
                     this.DataField = value;
                     this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportProposal", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportProposal : KmsReportClient.External.AbstractReport {
+        
+        private int IdReportDataField;
+        
+        private System.Nullable<int> CountMoCheckField;
+        
+        private System.Nullable<int> CountMoCheckWithDefectField;
+        
+        private System.Nullable<int> CountProporsalsField;
+        
+        private System.Nullable<int> CountProporsalsWithDefectField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NotesField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int IdReportData {
+            get {
+                return this.IdReportDataField;
+            }
+            set {
+                if ((this.IdReportDataField.Equals(value) != true)) {
+                    this.IdReportDataField = value;
+                    this.RaisePropertyChanged("IdReportData");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public System.Nullable<int> CountMoCheck {
+            get {
+                return this.CountMoCheckField;
+            }
+            set {
+                if ((this.CountMoCheckField.Equals(value) != true)) {
+                    this.CountMoCheckField = value;
+                    this.RaisePropertyChanged("CountMoCheck");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public System.Nullable<int> CountMoCheckWithDefect {
+            get {
+                return this.CountMoCheckWithDefectField;
+            }
+            set {
+                if ((this.CountMoCheckWithDefectField.Equals(value) != true)) {
+                    this.CountMoCheckWithDefectField = value;
+                    this.RaisePropertyChanged("CountMoCheckWithDefect");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public System.Nullable<int> CountProporsals {
+            get {
+                return this.CountProporsalsField;
+            }
+            set {
+                if ((this.CountProporsalsField.Equals(value) != true)) {
+                    this.CountProporsalsField = value;
+                    this.RaisePropertyChanged("CountProporsals");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public System.Nullable<int> CountProporsalsWithDefect {
+            get {
+                return this.CountProporsalsWithDefectField;
+            }
+            set {
+                if ((this.CountProporsalsWithDefectField.Equals(value) != true)) {
+                    this.CountProporsalsWithDefectField = value;
+                    this.RaisePropertyChanged("CountProporsalsWithDefect");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string Notes {
+            get {
+                return this.NotesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NotesField, value) != true)) {
+                    this.NotesField = value;
+                    this.RaisePropertyChanged("Notes");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportOpedFinance", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportOpedFinance : KmsReportClient.External.AbstractReport {
+        
+        private int IdReportDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.ReportOpedFinanceData[] ReportDataListField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int IdReportData {
+            get {
+                return this.IdReportDataField;
+            }
+            set {
+                if ((this.IdReportDataField.Equals(value) != true)) {
+                    this.IdReportDataField = value;
+                    this.RaisePropertyChanged("IdReportData");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public KmsReportClient.External.ReportOpedFinanceData[] ReportDataList {
+            get {
+                return this.ReportDataListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReportDataListField, value) != true)) {
+                    this.ReportDataListField = value;
+                    this.RaisePropertyChanged("ReportDataList");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportCadre", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportCadre : KmsReportClient.External.AbstractReport {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.ReportCadreDto[] ReportDataListField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public KmsReportClient.External.ReportCadreDto[] ReportDataList {
+            get {
+                return this.ReportDataListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReportDataListField, value) != true)) {
+                    this.ReportDataListField = value;
+                    this.RaisePropertyChanged("ReportDataList");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report262", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class Report262 : KmsReportClient.External.AbstractReport {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.Report262Dto[] ReportDataListField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public KmsReportClient.External.Report262Dto[] ReportDataList {
+            get {
+                return this.ReportDataListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReportDataListField, value) != true)) {
+                    this.ReportDataListField = value;
+                    this.RaisePropertyChanged("ReportDataList");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report294", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class Report294 : KmsReportClient.External.AbstractReport {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.Report294Dto[] ReportDataListField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public KmsReportClient.External.Report294Dto[] ReportDataList {
+            get {
+                return this.ReportDataListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReportDataListField, value) != true)) {
+                    this.ReportDataListField = value;
+                    this.RaisePropertyChanged("ReportDataList");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportIizl", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportIizl : KmsReportClient.External.AbstractReport {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.ReportIizlDto[] ReportDataListField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public KmsReportClient.External.ReportIizlDto[] ReportDataList {
+            get {
+                return this.ReportDataListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReportDataListField, value) != true)) {
+                    this.ReportDataListField = value;
+                    this.RaisePropertyChanged("ReportDataList");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportPg", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportPg : KmsReportClient.External.AbstractReport {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.ReportPgDto[] ReportDataListField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public KmsReportClient.External.ReportPgDto[] ReportDataList {
+            get {
+                return this.ReportDataListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReportDataListField, value) != true)) {
+                    this.ReportDataListField = value;
+                    this.RaisePropertyChanged("ReportDataList");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportVaccination", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportVaccination : KmsReportClient.External.AbstractReport {
+        
+        private int IdField;
+        
+        private int IdReportDataField;
+        
+        private int M18_39Field;
+        
+        private int M40_59Field;
+        
+        private int M60_65Field;
+        
+        private int M66_74Field;
+        
+        private int M75_MoreField;
+        
+        private int W18_39Field;
+        
+        private int W40_54Field;
+        
+        private int W55_65Field;
+        
+        private int W66_74Field;
+        
+        private int W75_MoreField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int IdReportData {
+            get {
+                return this.IdReportDataField;
+            }
+            set {
+                if ((this.IdReportDataField.Equals(value) != true)) {
+                    this.IdReportDataField = value;
+                    this.RaisePropertyChanged("IdReportData");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int M18_39 {
+            get {
+                return this.M18_39Field;
+            }
+            set {
+                if ((this.M18_39Field.Equals(value) != true)) {
+                    this.M18_39Field = value;
+                    this.RaisePropertyChanged("M18_39");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int M40_59 {
+            get {
+                return this.M40_59Field;
+            }
+            set {
+                if ((this.M40_59Field.Equals(value) != true)) {
+                    this.M40_59Field = value;
+                    this.RaisePropertyChanged("M40_59");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int M60_65 {
+            get {
+                return this.M60_65Field;
+            }
+            set {
+                if ((this.M60_65Field.Equals(value) != true)) {
+                    this.M60_65Field = value;
+                    this.RaisePropertyChanged("M60_65");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int M66_74 {
+            get {
+                return this.M66_74Field;
+            }
+            set {
+                if ((this.M66_74Field.Equals(value) != true)) {
+                    this.M66_74Field = value;
+                    this.RaisePropertyChanged("M66_74");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int M75_More {
+            get {
+                return this.M75_MoreField;
+            }
+            set {
+                if ((this.M75_MoreField.Equals(value) != true)) {
+                    this.M75_MoreField = value;
+                    this.RaisePropertyChanged("M75_More");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int W18_39 {
+            get {
+                return this.W18_39Field;
+            }
+            set {
+                if ((this.W18_39Field.Equals(value) != true)) {
+                    this.W18_39Field = value;
+                    this.RaisePropertyChanged("W18_39");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int W40_54 {
+            get {
+                return this.W40_54Field;
+            }
+            set {
+                if ((this.W40_54Field.Equals(value) != true)) {
+                    this.W40_54Field = value;
+                    this.RaisePropertyChanged("W40_54");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int W55_65 {
+            get {
+                return this.W55_65Field;
+            }
+            set {
+                if ((this.W55_65Field.Equals(value) != true)) {
+                    this.W55_65Field = value;
+                    this.RaisePropertyChanged("W55_65");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int W66_74 {
+            get {
+                return this.W66_74Field;
+            }
+            set {
+                if ((this.W66_74Field.Equals(value) != true)) {
+                    this.W66_74Field = value;
+                    this.RaisePropertyChanged("W66_74");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int W75_More {
+            get {
+                return this.W75_MoreField;
+            }
+            set {
+                if ((this.W75_MoreField.Equals(value) != true)) {
+                    this.W75_MoreField = value;
+                    this.RaisePropertyChanged("W75_More");
+                }
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportStatus", Namespace="http://kms-oms.ru/")]
+    public enum ReportStatus : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        New = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Saved = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Scan = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Submit = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Refuse = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Done = 5,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportInfrormationResponseDto", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportInfrormationResponseDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ThemeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.ReportInfrormationResponseDataDto DataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Theme {
+            get {
+                return this.ThemeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ThemeField, value) != true)) {
+                    this.ThemeField = value;
+                    this.RaisePropertyChanged("Theme");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public KmsReportClient.External.ReportInfrormationResponseDataDto Data {
+            get {
+                return this.DataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataField, value) != true)) {
+                    this.DataField = value;
+                    this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FSSMonitroingData", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class FSSMonitroingData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdFssMonitoringField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RowNumField;
+        
+        private System.Nullable<decimal> ExpertWithEducationField;
+        
+        private System.Nullable<decimal> ExpertWithoutEducationField;
+        
+        private System.Nullable<decimal> TotalField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int IdFssMonitoring {
+            get {
+                return this.IdFssMonitoringField;
+            }
+            set {
+                if ((this.IdFssMonitoringField.Equals(value) != true)) {
+                    this.IdFssMonitoringField = value;
+                    this.RaisePropertyChanged("IdFssMonitoring");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string RowNum {
+            get {
+                return this.RowNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RowNumField, value) != true)) {
+                    this.RowNumField = value;
+                    this.RaisePropertyChanged("RowNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public System.Nullable<decimal> ExpertWithEducation {
+            get {
+                return this.ExpertWithEducationField;
+            }
+            set {
+                if ((this.ExpertWithEducationField.Equals(value) != true)) {
+                    this.ExpertWithEducationField = value;
+                    this.RaisePropertyChanged("ExpertWithEducation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public System.Nullable<decimal> ExpertWithoutEducation {
+            get {
+                return this.ExpertWithoutEducationField;
+            }
+            set {
+                if ((this.ExpertWithoutEducationField.Equals(value) != true)) {
+                    this.ExpertWithoutEducationField = value;
+                    this.RaisePropertyChanged("ExpertWithoutEducation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public System.Nullable<decimal> Total {
+            get {
+                return this.TotalField;
+            }
+            set {
+                if ((this.TotalField.Equals(value) != true)) {
+                    this.TotalField = value;
+                    this.RaisePropertyChanged("Total");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportOpedFinanceData", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportOpedFinanceData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RowNumField;
+        
+        private System.Nullable<decimal> ValueFactField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NotesField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string RowNum {
+            get {
+                return this.RowNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RowNumField, value) != true)) {
+                    this.RowNumField = value;
+                    this.RaisePropertyChanged("RowNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.Nullable<decimal> ValueFact {
+            get {
+                return this.ValueFactField;
+            }
+            set {
+                if ((this.ValueFactField.Equals(value) != true)) {
+                    this.ValueFactField = value;
+                    this.RaisePropertyChanged("ValueFact");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Notes {
+            get {
+                return this.NotesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NotesField, value) != true)) {
+                    this.NotesField = value;
+                    this.RaisePropertyChanged("Notes");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportCadreDto", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportCadreDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ThemeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.ReportCadreDataDto DataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Theme {
+            get {
+                return this.ThemeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ThemeField, value) != true)) {
+                    this.ThemeField = value;
+                    this.RaisePropertyChanged("Theme");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public KmsReportClient.External.ReportCadreDataDto Data {
+            get {
+                return this.DataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataField, value) != true)) {
+                    this.DataField = value;
+                    this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report262Dto", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class Report262Dto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ThemeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.Report262DataDto[] DataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.Report262Table3Data[] Table3Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Theme {
+            get {
+                return this.ThemeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ThemeField, value) != true)) {
+                    this.ThemeField = value;
+                    this.RaisePropertyChanged("Theme");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public KmsReportClient.External.Report262DataDto[] Data {
+            get {
+                return this.DataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataField, value) != true)) {
+                    this.DataField = value;
+                    this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public KmsReportClient.External.Report262Table3Data[] Table3 {
+            get {
+                return this.Table3Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Table3Field, value) != true)) {
+                    this.Table3Field = value;
+                    this.RaisePropertyChanged("Table3");
                 }
             }
         }
@@ -1591,67 +3498,6 @@ namespace KmsReportClient.External {
                 if ((this.CountAnotherField.Equals(value) != true)) {
                     this.CountAnotherField = value;
                     this.RaisePropertyChanged("CountAnother");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CReport262Table3", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class CReport262Table3 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilialField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.Report262Table3Data DataField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Filial {
-            get {
-                return this.FilialField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
-                    this.FilialField = value;
-                    this.RaisePropertyChanged("Filial");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public KmsReportClient.External.Report262Table3Data Data {
-            get {
-                return this.DataField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DataField, value) != true)) {
-                    this.DataField = value;
-                    this.RaisePropertyChanged("Data");
                 }
             }
         }
@@ -1893,27 +3739,18 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CReportPg", Namespace="http://kms-oms.ru/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report294Dto", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
-    public partial class CReportPg : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Report294Dto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilialField;
+        private string ThemeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.PgExpertise ExpertiseField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.PgNormative NormativeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.PgFinance FinanceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.PgPersonnel PersonnelField;
+        private KmsReportClient.External.Report294DataDto[] DataField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1926,2743 +3763,20 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Filial {
+        public string Theme {
             get {
-                return this.FilialField;
+                return this.ThemeField;
             }
             set {
-                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
-                    this.FilialField = value;
-                    this.RaisePropertyChanged("Filial");
+                if ((object.ReferenceEquals(this.ThemeField, value) != true)) {
+                    this.ThemeField = value;
+                    this.RaisePropertyChanged("Theme");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public KmsReportClient.External.PgExpertise Expertise {
-            get {
-                return this.ExpertiseField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExpertiseField, value) != true)) {
-                    this.ExpertiseField = value;
-                    this.RaisePropertyChanged("Expertise");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public KmsReportClient.External.PgNormative Normative {
-            get {
-                return this.NormativeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NormativeField, value) != true)) {
-                    this.NormativeField = value;
-                    this.RaisePropertyChanged("Normative");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public KmsReportClient.External.PgFinance Finance {
-            get {
-                return this.FinanceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FinanceField, value) != true)) {
-                    this.FinanceField = value;
-                    this.RaisePropertyChanged("Finance");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public KmsReportClient.External.PgPersonnel Personnel {
-            get {
-                return this.PersonnelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PersonnelField, value) != true)) {
-                    this.PersonnelField = value;
-                    this.RaisePropertyChanged("Personnel");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PgExpertise", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class PgExpertise : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private decimal BillsField;
-        
-        private decimal BillsOncoField;
-        
-        private decimal BillsVioletionField;
-        
-        private decimal PaymentBillsField;
-        
-        private decimal PaymentBillsOncoField;
-        
-        private decimal MeeTargetField;
-        
-        private decimal MeePlanField;
-        
-        private decimal CaseMeeTargetField;
-        
-        private decimal CaseMeePlanField;
-        
-        private decimal DefectMeeTargetField;
-        
-        private decimal DefectMeePlanField;
-        
-        private decimal EkmpTargetField;
-        
-        private decimal EkmpPlanField;
-        
-        private decimal ThemeCaseEkmpPlanField;
-        
-        private decimal CaseEkmpTargetField;
-        
-        private decimal CaseEkmpPlanField;
-        
-        private decimal DefectEkmpTargetField;
-        
-        private decimal DefectEkmpPlanField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal Bills {
-            get {
-                return this.BillsField;
-            }
-            set {
-                if ((this.BillsField.Equals(value) != true)) {
-                    this.BillsField = value;
-                    this.RaisePropertyChanged("Bills");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal BillsOnco {
-            get {
-                return this.BillsOncoField;
-            }
-            set {
-                if ((this.BillsOncoField.Equals(value) != true)) {
-                    this.BillsOncoField = value;
-                    this.RaisePropertyChanged("BillsOnco");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal BillsVioletion {
-            get {
-                return this.BillsVioletionField;
-            }
-            set {
-                if ((this.BillsVioletionField.Equals(value) != true)) {
-                    this.BillsVioletionField = value;
-                    this.RaisePropertyChanged("BillsVioletion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal PaymentBills {
-            get {
-                return this.PaymentBillsField;
-            }
-            set {
-                if ((this.PaymentBillsField.Equals(value) != true)) {
-                    this.PaymentBillsField = value;
-                    this.RaisePropertyChanged("PaymentBills");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal PaymentBillsOnco {
-            get {
-                return this.PaymentBillsOncoField;
-            }
-            set {
-                if ((this.PaymentBillsOncoField.Equals(value) != true)) {
-                    this.PaymentBillsOncoField = value;
-                    this.RaisePropertyChanged("PaymentBillsOnco");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public decimal MeeTarget {
-            get {
-                return this.MeeTargetField;
-            }
-            set {
-                if ((this.MeeTargetField.Equals(value) != true)) {
-                    this.MeeTargetField = value;
-                    this.RaisePropertyChanged("MeeTarget");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public decimal MeePlan {
-            get {
-                return this.MeePlanField;
-            }
-            set {
-                if ((this.MeePlanField.Equals(value) != true)) {
-                    this.MeePlanField = value;
-                    this.RaisePropertyChanged("MeePlan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public decimal CaseMeeTarget {
-            get {
-                return this.CaseMeeTargetField;
-            }
-            set {
-                if ((this.CaseMeeTargetField.Equals(value) != true)) {
-                    this.CaseMeeTargetField = value;
-                    this.RaisePropertyChanged("CaseMeeTarget");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public decimal CaseMeePlan {
-            get {
-                return this.CaseMeePlanField;
-            }
-            set {
-                if ((this.CaseMeePlanField.Equals(value) != true)) {
-                    this.CaseMeePlanField = value;
-                    this.RaisePropertyChanged("CaseMeePlan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
-        public decimal DefectMeeTarget {
-            get {
-                return this.DefectMeeTargetField;
-            }
-            set {
-                if ((this.DefectMeeTargetField.Equals(value) != true)) {
-                    this.DefectMeeTargetField = value;
-                    this.RaisePropertyChanged("DefectMeeTarget");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
-        public decimal DefectMeePlan {
-            get {
-                return this.DefectMeePlanField;
-            }
-            set {
-                if ((this.DefectMeePlanField.Equals(value) != true)) {
-                    this.DefectMeePlanField = value;
-                    this.RaisePropertyChanged("DefectMeePlan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
-        public decimal EkmpTarget {
-            get {
-                return this.EkmpTargetField;
-            }
-            set {
-                if ((this.EkmpTargetField.Equals(value) != true)) {
-                    this.EkmpTargetField = value;
-                    this.RaisePropertyChanged("EkmpTarget");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
-        public decimal EkmpPlan {
-            get {
-                return this.EkmpPlanField;
-            }
-            set {
-                if ((this.EkmpPlanField.Equals(value) != true)) {
-                    this.EkmpPlanField = value;
-                    this.RaisePropertyChanged("EkmpPlan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
-        public decimal ThemeCaseEkmpPlan {
-            get {
-                return this.ThemeCaseEkmpPlanField;
-            }
-            set {
-                if ((this.ThemeCaseEkmpPlanField.Equals(value) != true)) {
-                    this.ThemeCaseEkmpPlanField = value;
-                    this.RaisePropertyChanged("ThemeCaseEkmpPlan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
-        public decimal CaseEkmpTarget {
-            get {
-                return this.CaseEkmpTargetField;
-            }
-            set {
-                if ((this.CaseEkmpTargetField.Equals(value) != true)) {
-                    this.CaseEkmpTargetField = value;
-                    this.RaisePropertyChanged("CaseEkmpTarget");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
-        public decimal CaseEkmpPlan {
-            get {
-                return this.CaseEkmpPlanField;
-            }
-            set {
-                if ((this.CaseEkmpPlanField.Equals(value) != true)) {
-                    this.CaseEkmpPlanField = value;
-                    this.RaisePropertyChanged("CaseEkmpPlan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
-        public decimal DefectEkmpTarget {
-            get {
-                return this.DefectEkmpTargetField;
-            }
-            set {
-                if ((this.DefectEkmpTargetField.Equals(value) != true)) {
-                    this.DefectEkmpTargetField = value;
-                    this.RaisePropertyChanged("DefectEkmpTarget");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
-        public decimal DefectEkmpPlan {
-            get {
-                return this.DefectEkmpPlanField;
-            }
-            set {
-                if ((this.DefectEkmpPlanField.Equals(value) != true)) {
-                    this.DefectEkmpPlanField = value;
-                    this.RaisePropertyChanged("DefectEkmpPlan");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PgNormative", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class PgNormative : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private decimal BillsOutMoField;
-        
-        private decimal MeeOutMoPlanField;
-        
-        private decimal MeeOutMoTargetField;
-        
-        private decimal BillsAppField;
-        
-        private decimal MeeAppPlanField;
-        
-        private decimal MeeAppTargetField;
-        
-        private decimal BillsDayHospField;
-        
-        private decimal MeeDayHospPlanField;
-        
-        private decimal MeeDayHospTargetField;
-        
-        private decimal BillsHospField;
-        
-        private decimal MeeHospPlanField;
-        
-        private decimal MeeHospTargetField;
-        
-        private decimal EkmpOutMoPlanField;
-        
-        private decimal EkmpOutMoTargetField;
-        
-        private decimal EkmpAppPlanField;
-        
-        private decimal EkmpAppTargetField;
-        
-        private decimal EkmpDayHospPlanField;
-        
-        private decimal EkmpDayHospTargetField;
-        
-        private decimal EkmpHospPlanField;
-        
-        private decimal EkmpHospTargetField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal BillsOutMo {
-            get {
-                return this.BillsOutMoField;
-            }
-            set {
-                if ((this.BillsOutMoField.Equals(value) != true)) {
-                    this.BillsOutMoField = value;
-                    this.RaisePropertyChanged("BillsOutMo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal MeeOutMoPlan {
-            get {
-                return this.MeeOutMoPlanField;
-            }
-            set {
-                if ((this.MeeOutMoPlanField.Equals(value) != true)) {
-                    this.MeeOutMoPlanField = value;
-                    this.RaisePropertyChanged("MeeOutMoPlan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal MeeOutMoTarget {
-            get {
-                return this.MeeOutMoTargetField;
-            }
-            set {
-                if ((this.MeeOutMoTargetField.Equals(value) != true)) {
-                    this.MeeOutMoTargetField = value;
-                    this.RaisePropertyChanged("MeeOutMoTarget");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public decimal BillsApp {
-            get {
-                return this.BillsAppField;
-            }
-            set {
-                if ((this.BillsAppField.Equals(value) != true)) {
-                    this.BillsAppField = value;
-                    this.RaisePropertyChanged("BillsApp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public decimal MeeAppPlan {
-            get {
-                return this.MeeAppPlanField;
-            }
-            set {
-                if ((this.MeeAppPlanField.Equals(value) != true)) {
-                    this.MeeAppPlanField = value;
-                    this.RaisePropertyChanged("MeeAppPlan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public decimal MeeAppTarget {
-            get {
-                return this.MeeAppTargetField;
-            }
-            set {
-                if ((this.MeeAppTargetField.Equals(value) != true)) {
-                    this.MeeAppTargetField = value;
-                    this.RaisePropertyChanged("MeeAppTarget");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public decimal BillsDayHosp {
-            get {
-                return this.BillsDayHospField;
-            }
-            set {
-                if ((this.BillsDayHospField.Equals(value) != true)) {
-                    this.BillsDayHospField = value;
-                    this.RaisePropertyChanged("BillsDayHosp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public decimal MeeDayHospPlan {
-            get {
-                return this.MeeDayHospPlanField;
-            }
-            set {
-                if ((this.MeeDayHospPlanField.Equals(value) != true)) {
-                    this.MeeDayHospPlanField = value;
-                    this.RaisePropertyChanged("MeeDayHospPlan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public decimal MeeDayHospTarget {
-            get {
-                return this.MeeDayHospTargetField;
-            }
-            set {
-                if ((this.MeeDayHospTargetField.Equals(value) != true)) {
-                    this.MeeDayHospTargetField = value;
-                    this.RaisePropertyChanged("MeeDayHospTarget");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
-        public decimal BillsHosp {
-            get {
-                return this.BillsHospField;
-            }
-            set {
-                if ((this.BillsHospField.Equals(value) != true)) {
-                    this.BillsHospField = value;
-                    this.RaisePropertyChanged("BillsHosp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
-        public decimal MeeHospPlan {
-            get {
-                return this.MeeHospPlanField;
-            }
-            set {
-                if ((this.MeeHospPlanField.Equals(value) != true)) {
-                    this.MeeHospPlanField = value;
-                    this.RaisePropertyChanged("MeeHospPlan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
-        public decimal MeeHospTarget {
-            get {
-                return this.MeeHospTargetField;
-            }
-            set {
-                if ((this.MeeHospTargetField.Equals(value) != true)) {
-                    this.MeeHospTargetField = value;
-                    this.RaisePropertyChanged("MeeHospTarget");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
-        public decimal EkmpOutMoPlan {
-            get {
-                return this.EkmpOutMoPlanField;
-            }
-            set {
-                if ((this.EkmpOutMoPlanField.Equals(value) != true)) {
-                    this.EkmpOutMoPlanField = value;
-                    this.RaisePropertyChanged("EkmpOutMoPlan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
-        public decimal EkmpOutMoTarget {
-            get {
-                return this.EkmpOutMoTargetField;
-            }
-            set {
-                if ((this.EkmpOutMoTargetField.Equals(value) != true)) {
-                    this.EkmpOutMoTargetField = value;
-                    this.RaisePropertyChanged("EkmpOutMoTarget");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
-        public decimal EkmpAppPlan {
-            get {
-                return this.EkmpAppPlanField;
-            }
-            set {
-                if ((this.EkmpAppPlanField.Equals(value) != true)) {
-                    this.EkmpAppPlanField = value;
-                    this.RaisePropertyChanged("EkmpAppPlan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
-        public decimal EkmpAppTarget {
-            get {
-                return this.EkmpAppTargetField;
-            }
-            set {
-                if ((this.EkmpAppTargetField.Equals(value) != true)) {
-                    this.EkmpAppTargetField = value;
-                    this.RaisePropertyChanged("EkmpAppTarget");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
-        public decimal EkmpDayHospPlan {
-            get {
-                return this.EkmpDayHospPlanField;
-            }
-            set {
-                if ((this.EkmpDayHospPlanField.Equals(value) != true)) {
-                    this.EkmpDayHospPlanField = value;
-                    this.RaisePropertyChanged("EkmpDayHospPlan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
-        public decimal EkmpDayHospTarget {
-            get {
-                return this.EkmpDayHospTargetField;
-            }
-            set {
-                if ((this.EkmpDayHospTargetField.Equals(value) != true)) {
-                    this.EkmpDayHospTargetField = value;
-                    this.RaisePropertyChanged("EkmpDayHospTarget");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=18)]
-        public decimal EkmpHospPlan {
-            get {
-                return this.EkmpHospPlanField;
-            }
-            set {
-                if ((this.EkmpHospPlanField.Equals(value) != true)) {
-                    this.EkmpHospPlanField = value;
-                    this.RaisePropertyChanged("EkmpHospPlan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=19)]
-        public decimal EkmpHospTarget {
-            get {
-                return this.EkmpHospTargetField;
-            }
-            set {
-                if ((this.EkmpHospTargetField.Equals(value) != true)) {
-                    this.EkmpHospTargetField = value;
-                    this.RaisePropertyChanged("EkmpHospTarget");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PgFinance", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class PgFinance : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private decimal SumPaymentField;
-        
-        private decimal SumNotPaymentField;
-        
-        private decimal SumMekField;
-        
-        private decimal SumMeeField;
-        
-        private decimal SumEkmpField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal SumPayment {
-            get {
-                return this.SumPaymentField;
-            }
-            set {
-                if ((this.SumPaymentField.Equals(value) != true)) {
-                    this.SumPaymentField = value;
-                    this.RaisePropertyChanged("SumPayment");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public decimal SumNotPayment {
-            get {
-                return this.SumNotPaymentField;
-            }
-            set {
-                if ((this.SumNotPaymentField.Equals(value) != true)) {
-                    this.SumNotPaymentField = value;
-                    this.RaisePropertyChanged("SumNotPayment");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public decimal SumMek {
-            get {
-                return this.SumMekField;
-            }
-            set {
-                if ((this.SumMekField.Equals(value) != true)) {
-                    this.SumMekField = value;
-                    this.RaisePropertyChanged("SumMek");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public decimal SumMee {
-            get {
-                return this.SumMeeField;
-            }
-            set {
-                if ((this.SumMeeField.Equals(value) != true)) {
-                    this.SumMeeField = value;
-                    this.RaisePropertyChanged("SumMee");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public decimal SumEkmp {
-            get {
-                return this.SumEkmpField;
-            }
-            set {
-                if ((this.SumEkmpField.Equals(value) != true)) {
-                    this.SumEkmpField = value;
-                    this.RaisePropertyChanged("SumEkmp");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PgPersonnel", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class PgPersonnel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private decimal SpecialistField;
-        
-        private decimal MekFullTimeField;
-        
-        private decimal MekRemoteField;
-        
-        private decimal ExpertsFullTimeField;
-        
-        private decimal ExpertsRemoteField;
-        
-        private decimal ExpertsEkmpRegionField;
-        
-        private decimal ExpertsEkmpRemoteField;
-        
-        private decimal ExpertsEkmpRegionOnkoField;
-        
-        private decimal ExpertsEkmpRemoteOnkoField;
-        
-        private decimal ExpertsEkmpRegisterField;
-        
-        private decimal ExpertsEkmpRegisterRemoteField;
-        
-        private decimal ExpertsEkmpRegisterOnkoField;
-        
-        private decimal ExpertsEkmpRegisterRemoteOnkoField;
-        
-        private decimal ExpertsOmsFullTimeField;
-        
-        private decimal ExpertsOmsRemoteField;
-        
-        private decimal ExpertsOmsEkmpFullTimeField;
-        
-        private decimal ExpertsOmsEkmpRemoteField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal Specialist {
-            get {
-                return this.SpecialistField;
-            }
-            set {
-                if ((this.SpecialistField.Equals(value) != true)) {
-                    this.SpecialistField = value;
-                    this.RaisePropertyChanged("Specialist");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public decimal MekFullTime {
-            get {
-                return this.MekFullTimeField;
-            }
-            set {
-                if ((this.MekFullTimeField.Equals(value) != true)) {
-                    this.MekFullTimeField = value;
-                    this.RaisePropertyChanged("MekFullTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public decimal MekRemote {
-            get {
-                return this.MekRemoteField;
-            }
-            set {
-                if ((this.MekRemoteField.Equals(value) != true)) {
-                    this.MekRemoteField = value;
-                    this.RaisePropertyChanged("MekRemote");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public decimal ExpertsFullTime {
-            get {
-                return this.ExpertsFullTimeField;
-            }
-            set {
-                if ((this.ExpertsFullTimeField.Equals(value) != true)) {
-                    this.ExpertsFullTimeField = value;
-                    this.RaisePropertyChanged("ExpertsFullTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public decimal ExpertsRemote {
-            get {
-                return this.ExpertsRemoteField;
-            }
-            set {
-                if ((this.ExpertsRemoteField.Equals(value) != true)) {
-                    this.ExpertsRemoteField = value;
-                    this.RaisePropertyChanged("ExpertsRemote");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public decimal ExpertsEkmpRegion {
-            get {
-                return this.ExpertsEkmpRegionField;
-            }
-            set {
-                if ((this.ExpertsEkmpRegionField.Equals(value) != true)) {
-                    this.ExpertsEkmpRegionField = value;
-                    this.RaisePropertyChanged("ExpertsEkmpRegion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public decimal ExpertsEkmpRemote {
-            get {
-                return this.ExpertsEkmpRemoteField;
-            }
-            set {
-                if ((this.ExpertsEkmpRemoteField.Equals(value) != true)) {
-                    this.ExpertsEkmpRemoteField = value;
-                    this.RaisePropertyChanged("ExpertsEkmpRemote");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public decimal ExpertsEkmpRegionOnko {
-            get {
-                return this.ExpertsEkmpRegionOnkoField;
-            }
-            set {
-                if ((this.ExpertsEkmpRegionOnkoField.Equals(value) != true)) {
-                    this.ExpertsEkmpRegionOnkoField = value;
-                    this.RaisePropertyChanged("ExpertsEkmpRegionOnko");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public decimal ExpertsEkmpRemoteOnko {
-            get {
-                return this.ExpertsEkmpRemoteOnkoField;
-            }
-            set {
-                if ((this.ExpertsEkmpRemoteOnkoField.Equals(value) != true)) {
-                    this.ExpertsEkmpRemoteOnkoField = value;
-                    this.RaisePropertyChanged("ExpertsEkmpRemoteOnko");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
-        public decimal ExpertsEkmpRegister {
-            get {
-                return this.ExpertsEkmpRegisterField;
-            }
-            set {
-                if ((this.ExpertsEkmpRegisterField.Equals(value) != true)) {
-                    this.ExpertsEkmpRegisterField = value;
-                    this.RaisePropertyChanged("ExpertsEkmpRegister");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
-        public decimal ExpertsEkmpRegisterRemote {
-            get {
-                return this.ExpertsEkmpRegisterRemoteField;
-            }
-            set {
-                if ((this.ExpertsEkmpRegisterRemoteField.Equals(value) != true)) {
-                    this.ExpertsEkmpRegisterRemoteField = value;
-                    this.RaisePropertyChanged("ExpertsEkmpRegisterRemote");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
-        public decimal ExpertsEkmpRegisterOnko {
-            get {
-                return this.ExpertsEkmpRegisterOnkoField;
-            }
-            set {
-                if ((this.ExpertsEkmpRegisterOnkoField.Equals(value) != true)) {
-                    this.ExpertsEkmpRegisterOnkoField = value;
-                    this.RaisePropertyChanged("ExpertsEkmpRegisterOnko");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
-        public decimal ExpertsEkmpRegisterRemoteOnko {
-            get {
-                return this.ExpertsEkmpRegisterRemoteOnkoField;
-            }
-            set {
-                if ((this.ExpertsEkmpRegisterRemoteOnkoField.Equals(value) != true)) {
-                    this.ExpertsEkmpRegisterRemoteOnkoField = value;
-                    this.RaisePropertyChanged("ExpertsEkmpRegisterRemoteOnko");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
-        public decimal ExpertsOmsFullTime {
-            get {
-                return this.ExpertsOmsFullTimeField;
-            }
-            set {
-                if ((this.ExpertsOmsFullTimeField.Equals(value) != true)) {
-                    this.ExpertsOmsFullTimeField = value;
-                    this.RaisePropertyChanged("ExpertsOmsFullTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
-        public decimal ExpertsOmsRemote {
-            get {
-                return this.ExpertsOmsRemoteField;
-            }
-            set {
-                if ((this.ExpertsOmsRemoteField.Equals(value) != true)) {
-                    this.ExpertsOmsRemoteField = value;
-                    this.RaisePropertyChanged("ExpertsOmsRemote");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
-        public decimal ExpertsOmsEkmpFullTime {
-            get {
-                return this.ExpertsOmsEkmpFullTimeField;
-            }
-            set {
-                if ((this.ExpertsOmsEkmpFullTimeField.Equals(value) != true)) {
-                    this.ExpertsOmsEkmpFullTimeField = value;
-                    this.RaisePropertyChanged("ExpertsOmsEkmpFullTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
-        public decimal ExpertsOmsEkmpRemote {
-            get {
-                return this.ExpertsOmsEkmpRemoteField;
-            }
-            set {
-                if ((this.ExpertsOmsEkmpRemoteField.Equals(value) != true)) {
-                    this.ExpertsOmsEkmpRemoteField = value;
-                    this.RaisePropertyChanged("ExpertsOmsEkmpRemote");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateOnko", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ConsolidateOnko : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilialField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.OnkoComplaint ComplaintField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.OnkoProtection ProtectionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.OnkoMek MekField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.OnkoMee MeeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.OnkoEkmp EkmpField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.OnkoFinance FinanceField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Filial {
-            get {
-                return this.FilialField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
-                    this.FilialField = value;
-                    this.RaisePropertyChanged("Filial");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public KmsReportClient.External.OnkoComplaint Complaint {
-            get {
-                return this.ComplaintField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ComplaintField, value) != true)) {
-                    this.ComplaintField = value;
-                    this.RaisePropertyChanged("Complaint");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public KmsReportClient.External.OnkoProtection Protection {
-            get {
-                return this.ProtectionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProtectionField, value) != true)) {
-                    this.ProtectionField = value;
-                    this.RaisePropertyChanged("Protection");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public KmsReportClient.External.OnkoMek Mek {
-            get {
-                return this.MekField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MekField, value) != true)) {
-                    this.MekField = value;
-                    this.RaisePropertyChanged("Mek");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public KmsReportClient.External.OnkoMee Mee {
-            get {
-                return this.MeeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MeeField, value) != true)) {
-                    this.MeeField = value;
-                    this.RaisePropertyChanged("Mee");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public KmsReportClient.External.OnkoEkmp Ekmp {
-            get {
-                return this.EkmpField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EkmpField, value) != true)) {
-                    this.EkmpField = value;
-                    this.RaisePropertyChanged("Ekmp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public KmsReportClient.External.OnkoFinance Finance {
-            get {
-                return this.FinanceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FinanceField, value) != true)) {
-                    this.FinanceField = value;
-                    this.RaisePropertyChanged("Finance");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OnkoComplaint", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class OnkoComplaint : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private decimal MedicalHelpField;
-        
-        private decimal DedlinesField;
-        
-        private decimal MedicineProvisionField;
-        
-        private decimal DedlineDrugMedicineField;
-        
-        private decimal NoDrugMedicineField;
-        
-        private decimal AppealMedicalHelpField;
-        
-        private decimal AppealMedicineProvisionField;
-        
-        private decimal AppealDrugsMedicineField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal MedicalHelp {
-            get {
-                return this.MedicalHelpField;
-            }
-            set {
-                if ((this.MedicalHelpField.Equals(value) != true)) {
-                    this.MedicalHelpField = value;
-                    this.RaisePropertyChanged("MedicalHelp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public decimal Dedlines {
-            get {
-                return this.DedlinesField;
-            }
-            set {
-                if ((this.DedlinesField.Equals(value) != true)) {
-                    this.DedlinesField = value;
-                    this.RaisePropertyChanged("Dedlines");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public decimal MedicineProvision {
-            get {
-                return this.MedicineProvisionField;
-            }
-            set {
-                if ((this.MedicineProvisionField.Equals(value) != true)) {
-                    this.MedicineProvisionField = value;
-                    this.RaisePropertyChanged("MedicineProvision");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public decimal DedlineDrugMedicine {
-            get {
-                return this.DedlineDrugMedicineField;
-            }
-            set {
-                if ((this.DedlineDrugMedicineField.Equals(value) != true)) {
-                    this.DedlineDrugMedicineField = value;
-                    this.RaisePropertyChanged("DedlineDrugMedicine");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public decimal NoDrugMedicine {
-            get {
-                return this.NoDrugMedicineField;
-            }
-            set {
-                if ((this.NoDrugMedicineField.Equals(value) != true)) {
-                    this.NoDrugMedicineField = value;
-                    this.RaisePropertyChanged("NoDrugMedicine");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public decimal AppealMedicalHelp {
-            get {
-                return this.AppealMedicalHelpField;
-            }
-            set {
-                if ((this.AppealMedicalHelpField.Equals(value) != true)) {
-                    this.AppealMedicalHelpField = value;
-                    this.RaisePropertyChanged("AppealMedicalHelp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public decimal AppealMedicineProvision {
-            get {
-                return this.AppealMedicineProvisionField;
-            }
-            set {
-                if ((this.AppealMedicineProvisionField.Equals(value) != true)) {
-                    this.AppealMedicineProvisionField = value;
-                    this.RaisePropertyChanged("AppealMedicineProvision");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public decimal AppealDrugsMedicine {
-            get {
-                return this.AppealDrugsMedicineField;
-            }
-            set {
-                if ((this.AppealDrugsMedicineField.Equals(value) != true)) {
-                    this.AppealDrugsMedicineField = value;
-                    this.RaisePropertyChanged("AppealDrugsMedicine");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OnkoProtection", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class OnkoProtection : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private decimal PretrialMedicalHelpField;
-        
-        private decimal PretrialDeadlineField;
-        
-        private decimal PretrialMedicineProvisionField;
-        
-        private decimal PretrialDedlineDrugMedicineField;
-        
-        private decimal PretrialNoDrugMedicineField;
-        
-        private decimal JudicalMedicalHelpField;
-        
-        private decimal JudicalDeadlineField;
-        
-        private decimal JudicalMedicineProvisionField;
-        
-        private decimal JudicalDedlineDrugMedicineField;
-        
-        private decimal JudicalNoDrugMedicineField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal PretrialMedicalHelp {
-            get {
-                return this.PretrialMedicalHelpField;
-            }
-            set {
-                if ((this.PretrialMedicalHelpField.Equals(value) != true)) {
-                    this.PretrialMedicalHelpField = value;
-                    this.RaisePropertyChanged("PretrialMedicalHelp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public decimal PretrialDeadline {
-            get {
-                return this.PretrialDeadlineField;
-            }
-            set {
-                if ((this.PretrialDeadlineField.Equals(value) != true)) {
-                    this.PretrialDeadlineField = value;
-                    this.RaisePropertyChanged("PretrialDeadline");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public decimal PretrialMedicineProvision {
-            get {
-                return this.PretrialMedicineProvisionField;
-            }
-            set {
-                if ((this.PretrialMedicineProvisionField.Equals(value) != true)) {
-                    this.PretrialMedicineProvisionField = value;
-                    this.RaisePropertyChanged("PretrialMedicineProvision");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public decimal PretrialDedlineDrugMedicine {
-            get {
-                return this.PretrialDedlineDrugMedicineField;
-            }
-            set {
-                if ((this.PretrialDedlineDrugMedicineField.Equals(value) != true)) {
-                    this.PretrialDedlineDrugMedicineField = value;
-                    this.RaisePropertyChanged("PretrialDedlineDrugMedicine");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public decimal PretrialNoDrugMedicine {
-            get {
-                return this.PretrialNoDrugMedicineField;
-            }
-            set {
-                if ((this.PretrialNoDrugMedicineField.Equals(value) != true)) {
-                    this.PretrialNoDrugMedicineField = value;
-                    this.RaisePropertyChanged("PretrialNoDrugMedicine");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public decimal JudicalMedicalHelp {
-            get {
-                return this.JudicalMedicalHelpField;
-            }
-            set {
-                if ((this.JudicalMedicalHelpField.Equals(value) != true)) {
-                    this.JudicalMedicalHelpField = value;
-                    this.RaisePropertyChanged("JudicalMedicalHelp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public decimal JudicalDeadline {
-            get {
-                return this.JudicalDeadlineField;
-            }
-            set {
-                if ((this.JudicalDeadlineField.Equals(value) != true)) {
-                    this.JudicalDeadlineField = value;
-                    this.RaisePropertyChanged("JudicalDeadline");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public decimal JudicalMedicineProvision {
-            get {
-                return this.JudicalMedicineProvisionField;
-            }
-            set {
-                if ((this.JudicalMedicineProvisionField.Equals(value) != true)) {
-                    this.JudicalMedicineProvisionField = value;
-                    this.RaisePropertyChanged("JudicalMedicineProvision");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public decimal JudicalDedlineDrugMedicine {
-            get {
-                return this.JudicalDedlineDrugMedicineField;
-            }
-            set {
-                if ((this.JudicalDedlineDrugMedicineField.Equals(value) != true)) {
-                    this.JudicalDedlineDrugMedicineField = value;
-                    this.RaisePropertyChanged("JudicalDedlineDrugMedicine");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
-        public decimal JudicalNoDrugMedicine {
-            get {
-                return this.JudicalNoDrugMedicineField;
-            }
-            set {
-                if ((this.JudicalNoDrugMedicineField.Equals(value) != true)) {
-                    this.JudicalNoDrugMedicineField = value;
-                    this.RaisePropertyChanged("JudicalNoDrugMedicine");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OnkoMek", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class OnkoMek : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private decimal PresentedBillsField;
-        
-        private decimal AcceptedBillsField;
-        
-        private decimal RegistrationMekField;
-        
-        private decimal NotInProgramMekField;
-        
-        private decimal TarifMekField;
-        
-        private decimal LicenceMekField;
-        
-        private decimal RepeatMekField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal PresentedBills {
-            get {
-                return this.PresentedBillsField;
-            }
-            set {
-                if ((this.PresentedBillsField.Equals(value) != true)) {
-                    this.PresentedBillsField = value;
-                    this.RaisePropertyChanged("PresentedBills");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public decimal AcceptedBills {
-            get {
-                return this.AcceptedBillsField;
-            }
-            set {
-                if ((this.AcceptedBillsField.Equals(value) != true)) {
-                    this.AcceptedBillsField = value;
-                    this.RaisePropertyChanged("AcceptedBills");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public decimal RegistrationMek {
-            get {
-                return this.RegistrationMekField;
-            }
-            set {
-                if ((this.RegistrationMekField.Equals(value) != true)) {
-                    this.RegistrationMekField = value;
-                    this.RaisePropertyChanged("RegistrationMek");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public decimal NotInProgramMek {
-            get {
-                return this.NotInProgramMekField;
-            }
-            set {
-                if ((this.NotInProgramMekField.Equals(value) != true)) {
-                    this.NotInProgramMekField = value;
-                    this.RaisePropertyChanged("NotInProgramMek");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public decimal TarifMek {
-            get {
-                return this.TarifMekField;
-            }
-            set {
-                if ((this.TarifMekField.Equals(value) != true)) {
-                    this.TarifMekField = value;
-                    this.RaisePropertyChanged("TarifMek");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public decimal LicenceMek {
-            get {
-                return this.LicenceMekField;
-            }
-            set {
-                if ((this.LicenceMekField.Equals(value) != true)) {
-                    this.LicenceMekField = value;
-                    this.RaisePropertyChanged("LicenceMek");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public decimal RepeatMek {
-            get {
-                return this.RepeatMekField;
-            }
-            set {
-                if ((this.RepeatMekField.Equals(value) != true)) {
-                    this.RepeatMekField = value;
-                    this.RaisePropertyChanged("RepeatMek");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OnkoMee", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class OnkoMee : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private decimal ComplaintField;
-        
-        private decimal AntitumorField;
-        
-        private decimal PlanHospField;
-        
-        private decimal ViolationConditionField;
-        
-        private decimal ViolationOnkoFirstField;
-        
-        private decimal ViolationHistoField;
-        
-        private decimal ViolationOnkoDiagnosticField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal Complaint {
-            get {
-                return this.ComplaintField;
-            }
-            set {
-                if ((this.ComplaintField.Equals(value) != true)) {
-                    this.ComplaintField = value;
-                    this.RaisePropertyChanged("Complaint");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public decimal Antitumor {
-            get {
-                return this.AntitumorField;
-            }
-            set {
-                if ((this.AntitumorField.Equals(value) != true)) {
-                    this.AntitumorField = value;
-                    this.RaisePropertyChanged("Antitumor");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public decimal PlanHosp {
-            get {
-                return this.PlanHospField;
-            }
-            set {
-                if ((this.PlanHospField.Equals(value) != true)) {
-                    this.PlanHospField = value;
-                    this.RaisePropertyChanged("PlanHosp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public decimal ViolationCondition {
-            get {
-                return this.ViolationConditionField;
-            }
-            set {
-                if ((this.ViolationConditionField.Equals(value) != true)) {
-                    this.ViolationConditionField = value;
-                    this.RaisePropertyChanged("ViolationCondition");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public decimal ViolationOnkoFirst {
-            get {
-                return this.ViolationOnkoFirstField;
-            }
-            set {
-                if ((this.ViolationOnkoFirstField.Equals(value) != true)) {
-                    this.ViolationOnkoFirstField = value;
-                    this.RaisePropertyChanged("ViolationOnkoFirst");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public decimal ViolationHisto {
-            get {
-                return this.ViolationHistoField;
-            }
-            set {
-                if ((this.ViolationHistoField.Equals(value) != true)) {
-                    this.ViolationHistoField = value;
-                    this.RaisePropertyChanged("ViolationHisto");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public decimal ViolationOnkoDiagnostic {
-            get {
-                return this.ViolationOnkoDiagnosticField;
-            }
-            set {
-                if ((this.ViolationOnkoDiagnosticField.Equals(value) != true)) {
-                    this.ViolationOnkoDiagnosticField = value;
-                    this.RaisePropertyChanged("ViolationOnkoDiagnostic");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OnkoEkmp", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class OnkoEkmp : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private decimal EkmpComplaintField;
-        
-        private decimal EkmpFromMeeField;
-        
-        private decimal DeathEkmpField;
-        
-        private decimal ThematicEkmpField;
-        
-        private decimal CountOnkoField;
-        
-        private decimal NoProfilOnkoField;
-        
-        private decimal UnreasonEkmpField;
-        
-        private decimal DispEkmpField;
-        
-        private decimal RecommendationEkmpField;
-        
-        private decimal PrematureField;
-        
-        private decimal ViolationMoEmkpField;
-        
-        private decimal FailureField;
-        
-        private decimal PaymentField;
-        
-        private decimal OtherViolationField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal EkmpComplaint {
-            get {
-                return this.EkmpComplaintField;
-            }
-            set {
-                if ((this.EkmpComplaintField.Equals(value) != true)) {
-                    this.EkmpComplaintField = value;
-                    this.RaisePropertyChanged("EkmpComplaint");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal EkmpFromMee {
-            get {
-                return this.EkmpFromMeeField;
-            }
-            set {
-                if ((this.EkmpFromMeeField.Equals(value) != true)) {
-                    this.EkmpFromMeeField = value;
-                    this.RaisePropertyChanged("EkmpFromMee");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public decimal DeathEkmp {
-            get {
-                return this.DeathEkmpField;
-            }
-            set {
-                if ((this.DeathEkmpField.Equals(value) != true)) {
-                    this.DeathEkmpField = value;
-                    this.RaisePropertyChanged("DeathEkmp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public decimal ThematicEkmp {
-            get {
-                return this.ThematicEkmpField;
-            }
-            set {
-                if ((this.ThematicEkmpField.Equals(value) != true)) {
-                    this.ThematicEkmpField = value;
-                    this.RaisePropertyChanged("ThematicEkmp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public decimal CountOnko {
-            get {
-                return this.CountOnkoField;
-            }
-            set {
-                if ((this.CountOnkoField.Equals(value) != true)) {
-                    this.CountOnkoField = value;
-                    this.RaisePropertyChanged("CountOnko");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public decimal NoProfilOnko {
-            get {
-                return this.NoProfilOnkoField;
-            }
-            set {
-                if ((this.NoProfilOnkoField.Equals(value) != true)) {
-                    this.NoProfilOnkoField = value;
-                    this.RaisePropertyChanged("NoProfilOnko");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public decimal UnreasonEkmp {
-            get {
-                return this.UnreasonEkmpField;
-            }
-            set {
-                if ((this.UnreasonEkmpField.Equals(value) != true)) {
-                    this.UnreasonEkmpField = value;
-                    this.RaisePropertyChanged("UnreasonEkmp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public decimal DispEkmp {
-            get {
-                return this.DispEkmpField;
-            }
-            set {
-                if ((this.DispEkmpField.Equals(value) != true)) {
-                    this.DispEkmpField = value;
-                    this.RaisePropertyChanged("DispEkmp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public decimal RecommendationEkmp {
-            get {
-                return this.RecommendationEkmpField;
-            }
-            set {
-                if ((this.RecommendationEkmpField.Equals(value) != true)) {
-                    this.RecommendationEkmpField = value;
-                    this.RaisePropertyChanged("RecommendationEkmp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
-        public decimal Premature {
-            get {
-                return this.PrematureField;
-            }
-            set {
-                if ((this.PrematureField.Equals(value) != true)) {
-                    this.PrematureField = value;
-                    this.RaisePropertyChanged("Premature");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
-        public decimal ViolationMoEmkp {
-            get {
-                return this.ViolationMoEmkpField;
-            }
-            set {
-                if ((this.ViolationMoEmkpField.Equals(value) != true)) {
-                    this.ViolationMoEmkpField = value;
-                    this.RaisePropertyChanged("ViolationMoEmkp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
-        public decimal Failure {
-            get {
-                return this.FailureField;
-            }
-            set {
-                if ((this.FailureField.Equals(value) != true)) {
-                    this.FailureField = value;
-                    this.RaisePropertyChanged("Failure");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
-        public decimal Payment {
-            get {
-                return this.PaymentField;
-            }
-            set {
-                if ((this.PaymentField.Equals(value) != true)) {
-                    this.PaymentField = value;
-                    this.RaisePropertyChanged("Payment");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
-        public decimal OtherViolation {
-            get {
-                return this.OtherViolationField;
-            }
-            set {
-                if ((this.OtherViolationField.Equals(value) != true)) {
-                    this.OtherViolationField = value;
-                    this.RaisePropertyChanged("OtherViolation");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OnkoFinance", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class OnkoFinance : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private decimal SumMekField;
-        
-        private decimal SumDispMeeField;
-        
-        private decimal SumMeeField;
-        
-        private decimal SumDispEkmpField;
-        
-        private decimal SumNoProfilEkmpField;
-        
-        private decimal SumUnreasonEkmpField;
-        
-        private decimal SumRecommendationEkmpField;
-        
-        private decimal SumPrematureEkmpField;
-        
-        private decimal SumFailureEkmpField;
-        
-        private decimal SumPaymentEkmpField;
-        
-        private decimal SumOtherEkmpField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal SumMek {
-            get {
-                return this.SumMekField;
-            }
-            set {
-                if ((this.SumMekField.Equals(value) != true)) {
-                    this.SumMekField = value;
-                    this.RaisePropertyChanged("SumMek");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public decimal SumDispMee {
-            get {
-                return this.SumDispMeeField;
-            }
-            set {
-                if ((this.SumDispMeeField.Equals(value) != true)) {
-                    this.SumDispMeeField = value;
-                    this.RaisePropertyChanged("SumDispMee");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public decimal SumMee {
-            get {
-                return this.SumMeeField;
-            }
-            set {
-                if ((this.SumMeeField.Equals(value) != true)) {
-                    this.SumMeeField = value;
-                    this.RaisePropertyChanged("SumMee");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public decimal SumDispEkmp {
-            get {
-                return this.SumDispEkmpField;
-            }
-            set {
-                if ((this.SumDispEkmpField.Equals(value) != true)) {
-                    this.SumDispEkmpField = value;
-                    this.RaisePropertyChanged("SumDispEkmp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public decimal SumNoProfilEkmp {
-            get {
-                return this.SumNoProfilEkmpField;
-            }
-            set {
-                if ((this.SumNoProfilEkmpField.Equals(value) != true)) {
-                    this.SumNoProfilEkmpField = value;
-                    this.RaisePropertyChanged("SumNoProfilEkmp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public decimal SumUnreasonEkmp {
-            get {
-                return this.SumUnreasonEkmpField;
-            }
-            set {
-                if ((this.SumUnreasonEkmpField.Equals(value) != true)) {
-                    this.SumUnreasonEkmpField = value;
-                    this.RaisePropertyChanged("SumUnreasonEkmp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public decimal SumRecommendationEkmp {
-            get {
-                return this.SumRecommendationEkmpField;
-            }
-            set {
-                if ((this.SumRecommendationEkmpField.Equals(value) != true)) {
-                    this.SumRecommendationEkmpField = value;
-                    this.RaisePropertyChanged("SumRecommendationEkmp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public decimal SumPrematureEkmp {
-            get {
-                return this.SumPrematureEkmpField;
-            }
-            set {
-                if ((this.SumPrematureEkmpField.Equals(value) != true)) {
-                    this.SumPrematureEkmpField = value;
-                    this.RaisePropertyChanged("SumPrematureEkmp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public decimal SumFailureEkmp {
-            get {
-                return this.SumFailureEkmpField;
-            }
-            set {
-                if ((this.SumFailureEkmpField.Equals(value) != true)) {
-                    this.SumFailureEkmpField = value;
-                    this.RaisePropertyChanged("SumFailureEkmp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
-        public decimal SumPaymentEkmp {
-            get {
-                return this.SumPaymentEkmpField;
-            }
-            set {
-                if ((this.SumPaymentEkmpField.Equals(value) != true)) {
-                    this.SumPaymentEkmpField = value;
-                    this.RaisePropertyChanged("SumPaymentEkmp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
-        public decimal SumOtherEkmp {
-            get {
-                return this.SumOtherEkmpField;
-            }
-            set {
-                if ((this.SumOtherEkmpField.Equals(value) != true)) {
-                    this.SumOtherEkmpField = value;
-                    this.RaisePropertyChanged("SumOtherEkmp");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateCadri", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ConsolidateCadri : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilialField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ConsolidateCardiData dataField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Filial {
-            get {
-                return this.FilialField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
-                    this.FilialField = value;
-                    this.RaisePropertyChanged("Filial");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.ConsolidateCardiData data {
-            get {
-                return this.dataField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.dataField, value) != true)) {
-                    this.dataField = value;
-                    this.RaisePropertyChanged("data");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateCardiData", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ConsolidateCardiData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ConsolidateCardiDataF r1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ConsolidateCardiDataF r11Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ConsolidateCardiDataF r111Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ConsolidateCardiDataF r112Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ConsolidateCardiDataF r113Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ConsolidateCardiDataF r1131Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ConsolidateCardiDataF r11311Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ConsolidateCardiDataF r1132Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ConsolidateCardiDataF r11321Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ConsolidateCardiDataF r2Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ConsolidateCardiDataF r21Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ConsolidateCardiDataF r3Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ConsolidateCardiDataF r31Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ConsolidateCardiDataF r32Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ConsolidateCardiDataF r33Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ConsolidateCardiDataF r4Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ConsolidateCardiDataF r41Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ConsolidateCardiDataF r42Field;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.ConsolidateCardiDataF r1 {
-            get {
-                return this.r1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.r1Field, value) != true)) {
-                    this.r1Field = value;
-                    this.RaisePropertyChanged("r1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.ConsolidateCardiDataF r11 {
-            get {
-                return this.r11Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.r11Field, value) != true)) {
-                    this.r11Field = value;
-                    this.RaisePropertyChanged("r11");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.ConsolidateCardiDataF r111 {
-            get {
-                return this.r111Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.r111Field, value) != true)) {
-                    this.r111Field = value;
-                    this.RaisePropertyChanged("r111");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.ConsolidateCardiDataF r112 {
-            get {
-                return this.r112Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.r112Field, value) != true)) {
-                    this.r112Field = value;
-                    this.RaisePropertyChanged("r112");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.ConsolidateCardiDataF r113 {
-            get {
-                return this.r113Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.r113Field, value) != true)) {
-                    this.r113Field = value;
-                    this.RaisePropertyChanged("r113");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.ConsolidateCardiDataF r1131 {
-            get {
-                return this.r1131Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.r1131Field, value) != true)) {
-                    this.r1131Field = value;
-                    this.RaisePropertyChanged("r1131");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.ConsolidateCardiDataF r11311 {
-            get {
-                return this.r11311Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.r11311Field, value) != true)) {
-                    this.r11311Field = value;
-                    this.RaisePropertyChanged("r11311");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.ConsolidateCardiDataF r1132 {
-            get {
-                return this.r1132Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.r1132Field, value) != true)) {
-                    this.r1132Field = value;
-                    this.RaisePropertyChanged("r1132");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.ConsolidateCardiDataF r11321 {
-            get {
-                return this.r11321Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.r11321Field, value) != true)) {
-                    this.r11321Field = value;
-                    this.RaisePropertyChanged("r11321");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.ConsolidateCardiDataF r2 {
-            get {
-                return this.r2Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.r2Field, value) != true)) {
-                    this.r2Field = value;
-                    this.RaisePropertyChanged("r2");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.ConsolidateCardiDataF r21 {
-            get {
-                return this.r21Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.r21Field, value) != true)) {
-                    this.r21Field = value;
-                    this.RaisePropertyChanged("r21");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.ConsolidateCardiDataF r3 {
-            get {
-                return this.r3Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.r3Field, value) != true)) {
-                    this.r3Field = value;
-                    this.RaisePropertyChanged("r3");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.ConsolidateCardiDataF r31 {
-            get {
-                return this.r31Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.r31Field, value) != true)) {
-                    this.r31Field = value;
-                    this.RaisePropertyChanged("r31");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.ConsolidateCardiDataF r32 {
-            get {
-                return this.r32Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.r32Field, value) != true)) {
-                    this.r32Field = value;
-                    this.RaisePropertyChanged("r32");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.ConsolidateCardiDataF r33 {
-            get {
-                return this.r33Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.r33Field, value) != true)) {
-                    this.r33Field = value;
-                    this.RaisePropertyChanged("r33");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.ConsolidateCardiDataF r4 {
-            get {
-                return this.r4Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.r4Field, value) != true)) {
-                    this.r4Field = value;
-                    this.RaisePropertyChanged("r4");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.ConsolidateCardiDataF r41 {
-            get {
-                return this.r41Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.r41Field, value) != true)) {
-                    this.r41Field = value;
-                    this.RaisePropertyChanged("r41");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.ConsolidateCardiDataF r42 {
-            get {
-                return this.r42Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.r42Field, value) != true)) {
-                    this.r42Field = value;
-                    this.RaisePropertyChanged("r42");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateCardiDataF", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ConsolidateCardiDataF : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private decimal IzNih1Field;
-        
-        private decimal IzNih2Field;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal IzNih1 {
-            get {
-                return this.IzNih1Field;
-            }
-            set {
-                if ((this.IzNih1Field.Equals(value) != true)) {
-                    this.IzNih1Field = value;
-                    this.RaisePropertyChanged("IzNih1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal IzNih2 {
-            get {
-                return this.IzNih2Field;
-            }
-            set {
-                if ((this.IzNih2Field.Equals(value) != true)) {
-                    this.IzNih2Field = value;
-                    this.RaisePropertyChanged("IzNih2");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateLetal", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ConsolidateLetal : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilialField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.LetalData DataField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Filial {
-            get {
-                return this.FilialField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
-                    this.FilialField = value;
-                    this.RaisePropertyChanged("Filial");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public KmsReportClient.External.LetalData Data {
+        public KmsReportClient.External.Report294DataDto[] Data {
             get {
                 return this.DataField;
             }
@@ -4686,60 +3800,41 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="LetalData", Namespace="http://kms-oms.ru/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report294DataDto", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
-    public partial class LetalData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Report294DataDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        private decimal r1Field;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RowNumField;
         
-        private decimal r1_1Field;
+        private int CountPplField;
         
-        private decimal r1_2Field;
+        private int CountSmsField;
         
-        private decimal r121Field;
+        private int CountPostField;
         
-        private decimal r2Field;
+        private int CountPhoneField;
         
-        private decimal r3Field;
+        private int CountMessengersField;
         
-        private decimal r31Field;
+        private int CountEmailField;
         
-        private decimal r311Field;
+        private int CountAddressField;
         
-        private decimal r3111Field;
+        private int CountAnotherField;
         
-        private decimal r3112Field;
+        private int CountOncologicalDiseaseField;
         
-        private decimal r3113Field;
+        private int CountEndocrineDiseaseField;
         
-        private decimal r3114Field;
+        private int CountBronchoDiseaseField;
         
-        private decimal r32Field;
+        private int CountBloodDiseaseField;
         
-        private decimal r33Field;
-        
-        private decimal r4Field;
-        
-        private decimal r5Field;
-        
-        private decimal r6Field;
-        
-        private decimal r7Field;
-        
-        private decimal r8Field;
-        
-        private decimal r9Field;
-        
-        private decimal r10Field;
-        
-        private decimal r11Field;
-        
-        private decimal r12Field;
-        
-        private decimal r13Field;
+        private int CountAnotherDiseaseField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -4751,314 +3846,184 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal r1 {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string RowNum {
             get {
-                return this.r1Field;
+                return this.RowNumField;
             }
             set {
-                if ((this.r1Field.Equals(value) != true)) {
-                    this.r1Field = value;
-                    this.RaisePropertyChanged("r1");
+                if ((object.ReferenceEquals(this.RowNumField, value) != true)) {
+                    this.RowNumField = value;
+                    this.RaisePropertyChanged("RowNum");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal r1_1 {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public int CountPpl {
             get {
-                return this.r1_1Field;
+                return this.CountPplField;
             }
             set {
-                if ((this.r1_1Field.Equals(value) != true)) {
-                    this.r1_1Field = value;
-                    this.RaisePropertyChanged("r1_1");
+                if ((this.CountPplField.Equals(value) != true)) {
+                    this.CountPplField = value;
+                    this.RaisePropertyChanged("CountPpl");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal r1_2 {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int CountSms {
             get {
-                return this.r1_2Field;
+                return this.CountSmsField;
             }
             set {
-                if ((this.r1_2Field.Equals(value) != true)) {
-                    this.r1_2Field = value;
-                    this.RaisePropertyChanged("r1_2");
+                if ((this.CountSmsField.Equals(value) != true)) {
+                    this.CountSmsField = value;
+                    this.RaisePropertyChanged("CountSms");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public decimal r121 {
+        public int CountPost {
             get {
-                return this.r121Field;
+                return this.CountPostField;
             }
             set {
-                if ((this.r121Field.Equals(value) != true)) {
-                    this.r121Field = value;
-                    this.RaisePropertyChanged("r121");
+                if ((this.CountPostField.Equals(value) != true)) {
+                    this.CountPostField = value;
+                    this.RaisePropertyChanged("CountPost");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public decimal r2 {
+        public int CountPhone {
             get {
-                return this.r2Field;
+                return this.CountPhoneField;
             }
             set {
-                if ((this.r2Field.Equals(value) != true)) {
-                    this.r2Field = value;
-                    this.RaisePropertyChanged("r2");
+                if ((this.CountPhoneField.Equals(value) != true)) {
+                    this.CountPhoneField = value;
+                    this.RaisePropertyChanged("CountPhone");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public decimal r3 {
+        public int CountMessengers {
             get {
-                return this.r3Field;
+                return this.CountMessengersField;
             }
             set {
-                if ((this.r3Field.Equals(value) != true)) {
-                    this.r3Field = value;
-                    this.RaisePropertyChanged("r3");
+                if ((this.CountMessengersField.Equals(value) != true)) {
+                    this.CountMessengersField = value;
+                    this.RaisePropertyChanged("CountMessengers");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public decimal r31 {
+        public int CountEmail {
             get {
-                return this.r31Field;
+                return this.CountEmailField;
             }
             set {
-                if ((this.r31Field.Equals(value) != true)) {
-                    this.r31Field = value;
-                    this.RaisePropertyChanged("r31");
+                if ((this.CountEmailField.Equals(value) != true)) {
+                    this.CountEmailField = value;
+                    this.RaisePropertyChanged("CountEmail");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public decimal r311 {
+        public int CountAddress {
             get {
-                return this.r311Field;
+                return this.CountAddressField;
             }
             set {
-                if ((this.r311Field.Equals(value) != true)) {
-                    this.r311Field = value;
-                    this.RaisePropertyChanged("r311");
+                if ((this.CountAddressField.Equals(value) != true)) {
+                    this.CountAddressField = value;
+                    this.RaisePropertyChanged("CountAddress");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public decimal r3111 {
+        public int CountAnother {
             get {
-                return this.r3111Field;
+                return this.CountAnotherField;
             }
             set {
-                if ((this.r3111Field.Equals(value) != true)) {
-                    this.r3111Field = value;
-                    this.RaisePropertyChanged("r3111");
+                if ((this.CountAnotherField.Equals(value) != true)) {
+                    this.CountAnotherField = value;
+                    this.RaisePropertyChanged("CountAnother");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
-        public decimal r3112 {
+        public int CountOncologicalDisease {
             get {
-                return this.r3112Field;
+                return this.CountOncologicalDiseaseField;
             }
             set {
-                if ((this.r3112Field.Equals(value) != true)) {
-                    this.r3112Field = value;
-                    this.RaisePropertyChanged("r3112");
+                if ((this.CountOncologicalDiseaseField.Equals(value) != true)) {
+                    this.CountOncologicalDiseaseField = value;
+                    this.RaisePropertyChanged("CountOncologicalDisease");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
-        public decimal r3113 {
+        public int CountEndocrineDisease {
             get {
-                return this.r3113Field;
+                return this.CountEndocrineDiseaseField;
             }
             set {
-                if ((this.r3113Field.Equals(value) != true)) {
-                    this.r3113Field = value;
-                    this.RaisePropertyChanged("r3113");
+                if ((this.CountEndocrineDiseaseField.Equals(value) != true)) {
+                    this.CountEndocrineDiseaseField = value;
+                    this.RaisePropertyChanged("CountEndocrineDisease");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
-        public decimal r3114 {
+        public int CountBronchoDisease {
             get {
-                return this.r3114Field;
+                return this.CountBronchoDiseaseField;
             }
             set {
-                if ((this.r3114Field.Equals(value) != true)) {
-                    this.r3114Field = value;
-                    this.RaisePropertyChanged("r3114");
+                if ((this.CountBronchoDiseaseField.Equals(value) != true)) {
+                    this.CountBronchoDiseaseField = value;
+                    this.RaisePropertyChanged("CountBronchoDisease");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
-        public decimal r32 {
+        public int CountBloodDisease {
             get {
-                return this.r32Field;
+                return this.CountBloodDiseaseField;
             }
             set {
-                if ((this.r32Field.Equals(value) != true)) {
-                    this.r32Field = value;
-                    this.RaisePropertyChanged("r32");
+                if ((this.CountBloodDiseaseField.Equals(value) != true)) {
+                    this.CountBloodDiseaseField = value;
+                    this.RaisePropertyChanged("CountBloodDisease");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
-        public decimal r33 {
+        public int CountAnotherDisease {
             get {
-                return this.r33Field;
+                return this.CountAnotherDiseaseField;
             }
             set {
-                if ((this.r33Field.Equals(value) != true)) {
-                    this.r33Field = value;
-                    this.RaisePropertyChanged("r33");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
-        public decimal r4 {
-            get {
-                return this.r4Field;
-            }
-            set {
-                if ((this.r4Field.Equals(value) != true)) {
-                    this.r4Field = value;
-                    this.RaisePropertyChanged("r4");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
-        public decimal r5 {
-            get {
-                return this.r5Field;
-            }
-            set {
-                if ((this.r5Field.Equals(value) != true)) {
-                    this.r5Field = value;
-                    this.RaisePropertyChanged("r5");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
-        public decimal r6 {
-            get {
-                return this.r6Field;
-            }
-            set {
-                if ((this.r6Field.Equals(value) != true)) {
-                    this.r6Field = value;
-                    this.RaisePropertyChanged("r6");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
-        public decimal r7 {
-            get {
-                return this.r7Field;
-            }
-            set {
-                if ((this.r7Field.Equals(value) != true)) {
-                    this.r7Field = value;
-                    this.RaisePropertyChanged("r7");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=18)]
-        public decimal r8 {
-            get {
-                return this.r8Field;
-            }
-            set {
-                if ((this.r8Field.Equals(value) != true)) {
-                    this.r8Field = value;
-                    this.RaisePropertyChanged("r8");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=19)]
-        public decimal r9 {
-            get {
-                return this.r9Field;
-            }
-            set {
-                if ((this.r9Field.Equals(value) != true)) {
-                    this.r9Field = value;
-                    this.RaisePropertyChanged("r9");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=20)]
-        public decimal r10 {
-            get {
-                return this.r10Field;
-            }
-            set {
-                if ((this.r10Field.Equals(value) != true)) {
-                    this.r10Field = value;
-                    this.RaisePropertyChanged("r10");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=21)]
-        public decimal r11 {
-            get {
-                return this.r11Field;
-            }
-            set {
-                if ((this.r11Field.Equals(value) != true)) {
-                    this.r11Field = value;
-                    this.RaisePropertyChanged("r11");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=22)]
-        public decimal r12 {
-            get {
-                return this.r12Field;
-            }
-            set {
-                if ((this.r12Field.Equals(value) != true)) {
-                    this.r12Field = value;
-                    this.RaisePropertyChanged("r12");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=23)]
-        public decimal r13 {
-            get {
-                return this.r13Field;
-            }
-            set {
-                if ((this.r13Field.Equals(value) != true)) {
-                    this.r13Field = value;
-                    this.RaisePropertyChanged("r13");
+                if ((this.CountAnotherDiseaseField.Equals(value) != true)) {
+                    this.CountAnotherDiseaseField = value;
+                    this.RaisePropertyChanged("CountAnotherDisease");
                 }
             }
         }
@@ -5071,6 +4036,721 @@ namespace KmsReportClient.External {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportIizlDto", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportIizlDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ThemeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.ReportIizlDataDto[] DataField;
+        
+        private int TotalPersFirstField;
+        
+        private int TotalPersRepeatField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Theme {
+            get {
+                return this.ThemeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ThemeField, value) != true)) {
+                    this.ThemeField = value;
+                    this.RaisePropertyChanged("Theme");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public KmsReportClient.External.ReportIizlDataDto[] Data {
+            get {
+                return this.DataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataField, value) != true)) {
+                    this.DataField = value;
+                    this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int TotalPersFirst {
+            get {
+                return this.TotalPersFirstField;
+            }
+            set {
+                if ((this.TotalPersFirstField.Equals(value) != true)) {
+                    this.TotalPersFirstField = value;
+                    this.RaisePropertyChanged("TotalPersFirst");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int TotalPersRepeat {
+            get {
+                return this.TotalPersRepeatField;
+            }
+            set {
+                if ((this.TotalPersRepeatField.Equals(value) != true)) {
+                    this.TotalPersRepeatField = value;
+                    this.RaisePropertyChanged("TotalPersRepeat");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportIizlDataDto", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportIizlDataDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodeField;
+        
+        private int CountPersFirstField;
+        
+        private int CountPersRepeatField;
+        
+        private int CountMessagesField;
+        
+        private decimal TotalCostField;
+        
+        private decimal AverageCostPerMessageField;
+        
+        private decimal AverageCostOfInforming1PLField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AccountingDocumentField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Code {
+            get {
+                return this.CodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodeField, value) != true)) {
+                    this.CodeField = value;
+                    this.RaisePropertyChanged("Code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int CountPersFirst {
+            get {
+                return this.CountPersFirstField;
+            }
+            set {
+                if ((this.CountPersFirstField.Equals(value) != true)) {
+                    this.CountPersFirstField = value;
+                    this.RaisePropertyChanged("CountPersFirst");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int CountPersRepeat {
+            get {
+                return this.CountPersRepeatField;
+            }
+            set {
+                if ((this.CountPersRepeatField.Equals(value) != true)) {
+                    this.CountPersRepeatField = value;
+                    this.RaisePropertyChanged("CountPersRepeat");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int CountMessages {
+            get {
+                return this.CountMessagesField;
+            }
+            set {
+                if ((this.CountMessagesField.Equals(value) != true)) {
+                    this.CountMessagesField = value;
+                    this.RaisePropertyChanged("CountMessages");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public decimal TotalCost {
+            get {
+                return this.TotalCostField;
+            }
+            set {
+                if ((this.TotalCostField.Equals(value) != true)) {
+                    this.TotalCostField = value;
+                    this.RaisePropertyChanged("TotalCost");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public decimal AverageCostPerMessage {
+            get {
+                return this.AverageCostPerMessageField;
+            }
+            set {
+                if ((this.AverageCostPerMessageField.Equals(value) != true)) {
+                    this.AverageCostPerMessageField = value;
+                    this.RaisePropertyChanged("AverageCostPerMessage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public decimal AverageCostOfInforming1PL {
+            get {
+                return this.AverageCostOfInforming1PLField;
+            }
+            set {
+                if ((this.AverageCostOfInforming1PLField.Equals(value) != true)) {
+                    this.AverageCostOfInforming1PLField = value;
+                    this.RaisePropertyChanged("AverageCostOfInforming1PL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string AccountingDocument {
+            get {
+                return this.AccountingDocumentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AccountingDocumentField, value) != true)) {
+                    this.AccountingDocumentField = value;
+                    this.RaisePropertyChanged("AccountingDocument");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportPgDto", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportPgDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ThemeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.ReportPgDataDto[] DataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Theme {
+            get {
+                return this.ThemeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ThemeField, value) != true)) {
+                    this.ThemeField = value;
+                    this.RaisePropertyChanged("Theme");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public KmsReportClient.External.ReportPgDataDto[] Data {
+            get {
+                return this.DataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataField, value) != true)) {
+                    this.DataField = value;
+                    this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportPgDataDto", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportPgDataDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodeField;
+        
+        private decimal CountSmoField;
+        
+        private decimal CountSmoAnotherField;
+        
+        private decimal CountInsuredField;
+        
+        private decimal CountInsuredRepresentativeField;
+        
+        private decimal CountTfomsField;
+        
+        private decimal CountProsecutorField;
+        
+        private decimal CountOutOfSmoField;
+        
+        private decimal CountAmbulatoryField;
+        
+        private decimal CountDsField;
+        
+        private decimal CountDsVmpField;
+        
+        private decimal CountStacField;
+        
+        private decimal CountStacVmpField;
+        
+        private decimal CountOutOfSmoAnotherField;
+        
+        private decimal CountAmbulatoryAnotherField;
+        
+        private decimal CountDsAnotherField;
+        
+        private decimal CountDsVmpAnotherField;
+        
+        private decimal CountStacAnotherField;
+        
+        private decimal CountStacVmpAnotherField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Code {
+            get {
+                return this.CodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodeField, value) != true)) {
+                    this.CodeField = value;
+                    this.RaisePropertyChanged("Code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal CountSmo {
+            get {
+                return this.CountSmoField;
+            }
+            set {
+                if ((this.CountSmoField.Equals(value) != true)) {
+                    this.CountSmoField = value;
+                    this.RaisePropertyChanged("CountSmo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal CountSmoAnother {
+            get {
+                return this.CountSmoAnotherField;
+            }
+            set {
+                if ((this.CountSmoAnotherField.Equals(value) != true)) {
+                    this.CountSmoAnotherField = value;
+                    this.RaisePropertyChanged("CountSmoAnother");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public decimal CountInsured {
+            get {
+                return this.CountInsuredField;
+            }
+            set {
+                if ((this.CountInsuredField.Equals(value) != true)) {
+                    this.CountInsuredField = value;
+                    this.RaisePropertyChanged("CountInsured");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public decimal CountInsuredRepresentative {
+            get {
+                return this.CountInsuredRepresentativeField;
+            }
+            set {
+                if ((this.CountInsuredRepresentativeField.Equals(value) != true)) {
+                    this.CountInsuredRepresentativeField = value;
+                    this.RaisePropertyChanged("CountInsuredRepresentative");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public decimal CountTfoms {
+            get {
+                return this.CountTfomsField;
+            }
+            set {
+                if ((this.CountTfomsField.Equals(value) != true)) {
+                    this.CountTfomsField = value;
+                    this.RaisePropertyChanged("CountTfoms");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public decimal CountProsecutor {
+            get {
+                return this.CountProsecutorField;
+            }
+            set {
+                if ((this.CountProsecutorField.Equals(value) != true)) {
+                    this.CountProsecutorField = value;
+                    this.RaisePropertyChanged("CountProsecutor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public decimal CountOutOfSmo {
+            get {
+                return this.CountOutOfSmoField;
+            }
+            set {
+                if ((this.CountOutOfSmoField.Equals(value) != true)) {
+                    this.CountOutOfSmoField = value;
+                    this.RaisePropertyChanged("CountOutOfSmo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        public decimal CountAmbulatory {
+            get {
+                return this.CountAmbulatoryField;
+            }
+            set {
+                if ((this.CountAmbulatoryField.Equals(value) != true)) {
+                    this.CountAmbulatoryField = value;
+                    this.RaisePropertyChanged("CountAmbulatory");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        public decimal CountDs {
+            get {
+                return this.CountDsField;
+            }
+            set {
+                if ((this.CountDsField.Equals(value) != true)) {
+                    this.CountDsField = value;
+                    this.RaisePropertyChanged("CountDs");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        public decimal CountDsVmp {
+            get {
+                return this.CountDsVmpField;
+            }
+            set {
+                if ((this.CountDsVmpField.Equals(value) != true)) {
+                    this.CountDsVmpField = value;
+                    this.RaisePropertyChanged("CountDsVmp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        public decimal CountStac {
+            get {
+                return this.CountStacField;
+            }
+            set {
+                if ((this.CountStacField.Equals(value) != true)) {
+                    this.CountStacField = value;
+                    this.RaisePropertyChanged("CountStac");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
+        public decimal CountStacVmp {
+            get {
+                return this.CountStacVmpField;
+            }
+            set {
+                if ((this.CountStacVmpField.Equals(value) != true)) {
+                    this.CountStacVmpField = value;
+                    this.RaisePropertyChanged("CountStacVmp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
+        public decimal CountOutOfSmoAnother {
+            get {
+                return this.CountOutOfSmoAnotherField;
+            }
+            set {
+                if ((this.CountOutOfSmoAnotherField.Equals(value) != true)) {
+                    this.CountOutOfSmoAnotherField = value;
+                    this.RaisePropertyChanged("CountOutOfSmoAnother");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
+        public decimal CountAmbulatoryAnother {
+            get {
+                return this.CountAmbulatoryAnotherField;
+            }
+            set {
+                if ((this.CountAmbulatoryAnotherField.Equals(value) != true)) {
+                    this.CountAmbulatoryAnotherField = value;
+                    this.RaisePropertyChanged("CountAmbulatoryAnother");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
+        public decimal CountDsAnother {
+            get {
+                return this.CountDsAnotherField;
+            }
+            set {
+                if ((this.CountDsAnotherField.Equals(value) != true)) {
+                    this.CountDsAnotherField = value;
+                    this.RaisePropertyChanged("CountDsAnother");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
+        public decimal CountDsVmpAnother {
+            get {
+                return this.CountDsVmpAnotherField;
+            }
+            set {
+                if ((this.CountDsVmpAnotherField.Equals(value) != true)) {
+                    this.CountDsVmpAnotherField = value;
+                    this.RaisePropertyChanged("CountDsVmpAnother");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
+        public decimal CountStacAnother {
+            get {
+                return this.CountStacAnotherField;
+            }
+            set {
+                if ((this.CountStacAnotherField.Equals(value) != true)) {
+                    this.CountStacAnotherField = value;
+                    this.RaisePropertyChanged("CountStacAnother");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=18)]
+        public decimal CountStacVmpAnother {
+            get {
+                return this.CountStacVmpAnotherField;
+            }
+            set {
+                if ((this.CountStacVmpAnotherField.Equals(value) != true)) {
+                    this.CountStacVmpAnotherField = value;
+                    this.RaisePropertyChanged("CountStacVmpAnother");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FSSMonitoringPgDataDto", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class FSSMonitoringPgDataDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RowNumField;
+        
+        private System.Nullable<decimal> ExpertWithEducationField;
+        
+        private System.Nullable<decimal> ExpertWithoutEducationField;
+        
+        private System.Nullable<decimal> TotalField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string RowNum {
+            get {
+                return this.RowNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RowNumField, value) != true)) {
+                    this.RowNumField = value;
+                    this.RaisePropertyChanged("RowNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public System.Nullable<decimal> ExpertWithEducation {
+            get {
+                return this.ExpertWithEducationField;
+            }
+            set {
+                if ((this.ExpertWithEducationField.Equals(value) != true)) {
+                    this.ExpertWithEducationField = value;
+                    this.RaisePropertyChanged("ExpertWithEducation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public System.Nullable<decimal> ExpertWithoutEducation {
+            get {
+                return this.ExpertWithoutEducationField;
+            }
+            set {
+                if ((this.ExpertWithoutEducationField.Equals(value) != true)) {
+                    this.ExpertWithoutEducationField = value;
+                    this.RaisePropertyChanged("ExpertWithoutEducation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public System.Nullable<decimal> Total {
+            get {
+                return this.TotalField;
+            }
+            set {
+                if ((this.TotalField.Equals(value) != true)) {
+                    this.TotalField = value;
+                    this.RaisePropertyChanged("Total");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfString", Namespace="http://kms-oms.ru/", ItemName="string")]
+    [System.SerializableAttribute()]
+    public class ArrayOfString : System.Collections.Generic.List<string> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -10554,5832 +10234,6 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Consolidate294", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class Consolidate294 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.Dispanserization[] Disp13ListField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.Dispanserization[] Disp12ListField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.Dispanserization[] Disp2ListField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.DispensaryObservation[] DispensaryObservationListField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.PhoneQuestionary[] PhoneQuestionaryListField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.InsuranceRepresentative[] InsuranceRepresentativeListField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.Treatment[] TreatmentListField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.Efficiency[] EfficiencyListField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.Dispanserization[] Disp13List {
-            get {
-                return this.Disp13ListField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Disp13ListField, value) != true)) {
-                    this.Disp13ListField = value;
-                    this.RaisePropertyChanged("Disp13List");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public KmsReportClient.External.Dispanserization[] Disp12List {
-            get {
-                return this.Disp12ListField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Disp12ListField, value) != true)) {
-                    this.Disp12ListField = value;
-                    this.RaisePropertyChanged("Disp12List");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public KmsReportClient.External.Dispanserization[] Disp2List {
-            get {
-                return this.Disp2ListField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Disp2ListField, value) != true)) {
-                    this.Disp2ListField = value;
-                    this.RaisePropertyChanged("Disp2List");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public KmsReportClient.External.DispensaryObservation[] DispensaryObservationList {
-            get {
-                return this.DispensaryObservationListField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DispensaryObservationListField, value) != true)) {
-                    this.DispensaryObservationListField = value;
-                    this.RaisePropertyChanged("DispensaryObservationList");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public KmsReportClient.External.PhoneQuestionary[] PhoneQuestionaryList {
-            get {
-                return this.PhoneQuestionaryListField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PhoneQuestionaryListField, value) != true)) {
-                    this.PhoneQuestionaryListField = value;
-                    this.RaisePropertyChanged("PhoneQuestionaryList");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public KmsReportClient.External.InsuranceRepresentative[] InsuranceRepresentativeList {
-            get {
-                return this.InsuranceRepresentativeListField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InsuranceRepresentativeListField, value) != true)) {
-                    this.InsuranceRepresentativeListField = value;
-                    this.RaisePropertyChanged("InsuranceRepresentativeList");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public KmsReportClient.External.Treatment[] TreatmentList {
-            get {
-                return this.TreatmentListField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TreatmentListField, value) != true)) {
-                    this.TreatmentListField = value;
-                    this.RaisePropertyChanged("TreatmentList");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public KmsReportClient.External.Efficiency[] EfficiencyList {
-            get {
-                return this.EfficiencyListField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EfficiencyListField, value) != true)) {
-                    this.EfficiencyListField = value;
-                    this.RaisePropertyChanged("EfficiencyList");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Dispanserization", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class Dispanserization : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilialField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MonthField;
-        
-        private int CountPeoplelMoField;
-        
-        private int CountPeopleInformField;
-        
-        private int CountPeopleRepeatInformField;
-        
-        private int SmsField;
-        
-        private int PostField;
-        
-        private int PhoneField;
-        
-        private int MessangersField;
-        
-        private int EMailField;
-        
-        private int AddressField;
-        
-        private int AnotherTypeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Filial {
-            get {
-                return this.FilialField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
-                    this.FilialField = value;
-                    this.RaisePropertyChanged("Filial");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Month {
-            get {
-                return this.MonthField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MonthField, value) != true)) {
-                    this.MonthField = value;
-                    this.RaisePropertyChanged("Month");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public int CountPeoplelMo {
-            get {
-                return this.CountPeoplelMoField;
-            }
-            set {
-                if ((this.CountPeoplelMoField.Equals(value) != true)) {
-                    this.CountPeoplelMoField = value;
-                    this.RaisePropertyChanged("CountPeoplelMo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public int CountPeopleInform {
-            get {
-                return this.CountPeopleInformField;
-            }
-            set {
-                if ((this.CountPeopleInformField.Equals(value) != true)) {
-                    this.CountPeopleInformField = value;
-                    this.RaisePropertyChanged("CountPeopleInform");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public int CountPeopleRepeatInform {
-            get {
-                return this.CountPeopleRepeatInformField;
-            }
-            set {
-                if ((this.CountPeopleRepeatInformField.Equals(value) != true)) {
-                    this.CountPeopleRepeatInformField = value;
-                    this.RaisePropertyChanged("CountPeopleRepeatInform");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public int Sms {
-            get {
-                return this.SmsField;
-            }
-            set {
-                if ((this.SmsField.Equals(value) != true)) {
-                    this.SmsField = value;
-                    this.RaisePropertyChanged("Sms");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public int Post {
-            get {
-                return this.PostField;
-            }
-            set {
-                if ((this.PostField.Equals(value) != true)) {
-                    this.PostField = value;
-                    this.RaisePropertyChanged("Post");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public int Phone {
-            get {
-                return this.PhoneField;
-            }
-            set {
-                if ((this.PhoneField.Equals(value) != true)) {
-                    this.PhoneField = value;
-                    this.RaisePropertyChanged("Phone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public int Messangers {
-            get {
-                return this.MessangersField;
-            }
-            set {
-                if ((this.MessangersField.Equals(value) != true)) {
-                    this.MessangersField = value;
-                    this.RaisePropertyChanged("Messangers");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
-        public int EMail {
-            get {
-                return this.EMailField;
-            }
-            set {
-                if ((this.EMailField.Equals(value) != true)) {
-                    this.EMailField = value;
-                    this.RaisePropertyChanged("EMail");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
-        public int Address {
-            get {
-                return this.AddressField;
-            }
-            set {
-                if ((this.AddressField.Equals(value) != true)) {
-                    this.AddressField = value;
-                    this.RaisePropertyChanged("Address");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
-        public int AnotherType {
-            get {
-                return this.AnotherTypeField;
-            }
-            set {
-                if ((this.AnotherTypeField.Equals(value) != true)) {
-                    this.AnotherTypeField = value;
-                    this.RaisePropertyChanged("AnotherType");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DispensaryObservation", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class DispensaryObservation : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilialField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MonthField;
-        
-        private int CountPeopleInformField;
-        
-        private int OncoField;
-        
-        private int EndoField;
-        
-        private int BronchoField;
-        
-        private int BloodCirculatoryField;
-        
-        private int NotInfectionField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Filial {
-            get {
-                return this.FilialField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
-                    this.FilialField = value;
-                    this.RaisePropertyChanged("Filial");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Month {
-            get {
-                return this.MonthField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MonthField, value) != true)) {
-                    this.MonthField = value;
-                    this.RaisePropertyChanged("Month");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public int CountPeopleInform {
-            get {
-                return this.CountPeopleInformField;
-            }
-            set {
-                if ((this.CountPeopleInformField.Equals(value) != true)) {
-                    this.CountPeopleInformField = value;
-                    this.RaisePropertyChanged("CountPeopleInform");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public int Onco {
-            get {
-                return this.OncoField;
-            }
-            set {
-                if ((this.OncoField.Equals(value) != true)) {
-                    this.OncoField = value;
-                    this.RaisePropertyChanged("Onco");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public int Endo {
-            get {
-                return this.EndoField;
-            }
-            set {
-                if ((this.EndoField.Equals(value) != true)) {
-                    this.EndoField = value;
-                    this.RaisePropertyChanged("Endo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public int Broncho {
-            get {
-                return this.BronchoField;
-            }
-            set {
-                if ((this.BronchoField.Equals(value) != true)) {
-                    this.BronchoField = value;
-                    this.RaisePropertyChanged("Broncho");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public int BloodCirculatory {
-            get {
-                return this.BloodCirculatoryField;
-            }
-            set {
-                if ((this.BloodCirculatoryField.Equals(value) != true)) {
-                    this.BloodCirculatoryField = value;
-                    this.RaisePropertyChanged("BloodCirculatory");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public int NotInfection {
-            get {
-                return this.NotInfectionField;
-            }
-            set {
-                if ((this.NotInfectionField.Equals(value) != true)) {
-                    this.NotInfectionField = value;
-                    this.RaisePropertyChanged("NotInfection");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PhoneQuestionary", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class PhoneQuestionary : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilialField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MonthField;
-        
-        private int ProfField;
-        
-        private int DispField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Filial {
-            get {
-                return this.FilialField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
-                    this.FilialField = value;
-                    this.RaisePropertyChanged("Filial");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Month {
-            get {
-                return this.MonthField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MonthField, value) != true)) {
-                    this.MonthField = value;
-                    this.RaisePropertyChanged("Month");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int Prof {
-            get {
-                return this.ProfField;
-            }
-            set {
-                if ((this.ProfField.Equals(value) != true)) {
-                    this.ProfField = value;
-                    this.RaisePropertyChanged("Prof");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public int Disp {
-            get {
-                return this.DispField;
-            }
-            set {
-                if ((this.DispField.Equals(value) != true)) {
-                    this.DispField = value;
-                    this.RaisePropertyChanged("Disp");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="InsuranceRepresentative", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class InsuranceRepresentative : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilialField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MonthField;
-        
-        private int FirstLevelField;
-        
-        private int FirstLevelTrainingField;
-        
-        private int SecondLevelField;
-        
-        private int SecondLevelTrainingField;
-        
-        private int ThirdLevelField;
-        
-        private int ThirdLevelTrainingField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Filial {
-            get {
-                return this.FilialField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
-                    this.FilialField = value;
-                    this.RaisePropertyChanged("Filial");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Month {
-            get {
-                return this.MonthField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MonthField, value) != true)) {
-                    this.MonthField = value;
-                    this.RaisePropertyChanged("Month");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public int FirstLevel {
-            get {
-                return this.FirstLevelField;
-            }
-            set {
-                if ((this.FirstLevelField.Equals(value) != true)) {
-                    this.FirstLevelField = value;
-                    this.RaisePropertyChanged("FirstLevel");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public int FirstLevelTraining {
-            get {
-                return this.FirstLevelTrainingField;
-            }
-            set {
-                if ((this.FirstLevelTrainingField.Equals(value) != true)) {
-                    this.FirstLevelTrainingField = value;
-                    this.RaisePropertyChanged("FirstLevelTraining");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public int SecondLevel {
-            get {
-                return this.SecondLevelField;
-            }
-            set {
-                if ((this.SecondLevelField.Equals(value) != true)) {
-                    this.SecondLevelField = value;
-                    this.RaisePropertyChanged("SecondLevel");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public int SecondLevelTraining {
-            get {
-                return this.SecondLevelTrainingField;
-            }
-            set {
-                if ((this.SecondLevelTrainingField.Equals(value) != true)) {
-                    this.SecondLevelTrainingField = value;
-                    this.RaisePropertyChanged("SecondLevelTraining");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public int ThirdLevel {
-            get {
-                return this.ThirdLevelField;
-            }
-            set {
-                if ((this.ThirdLevelField.Equals(value) != true)) {
-                    this.ThirdLevelField = value;
-                    this.RaisePropertyChanged("ThirdLevel");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public int ThirdLevelTraining {
-            get {
-                return this.ThirdLevelTrainingField;
-            }
-            set {
-                if ((this.ThirdLevelTrainingField.Equals(value) != true)) {
-                    this.ThirdLevelTrainingField = value;
-                    this.RaisePropertyChanged("ThirdLevelTraining");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Treatment", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class Treatment : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilialField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MonthField;
-        
-        private int OralField;
-        
-        private int OralSecondField;
-        
-        private int OralThirdField;
-        
-        private int SecondLevelTrainingField;
-        
-        private int ThirdLevelField;
-        
-        private int ThirdLevelTrainingField;
-        
-        private int WrittenField;
-        
-        private int WrittenSecondField;
-        
-        private int WrittenThirdField;
-        
-        private int WrittenDoctorField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Filial {
-            get {
-                return this.FilialField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
-                    this.FilialField = value;
-                    this.RaisePropertyChanged("Filial");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Month {
-            get {
-                return this.MonthField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MonthField, value) != true)) {
-                    this.MonthField = value;
-                    this.RaisePropertyChanged("Month");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int Oral {
-            get {
-                return this.OralField;
-            }
-            set {
-                if ((this.OralField.Equals(value) != true)) {
-                    this.OralField = value;
-                    this.RaisePropertyChanged("Oral");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int OralSecond {
-            get {
-                return this.OralSecondField;
-            }
-            set {
-                if ((this.OralSecondField.Equals(value) != true)) {
-                    this.OralSecondField = value;
-                    this.RaisePropertyChanged("OralSecond");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int OralThird {
-            get {
-                return this.OralThirdField;
-            }
-            set {
-                if ((this.OralThirdField.Equals(value) != true)) {
-                    this.OralThirdField = value;
-                    this.RaisePropertyChanged("OralThird");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int SecondLevelTraining {
-            get {
-                return this.SecondLevelTrainingField;
-            }
-            set {
-                if ((this.SecondLevelTrainingField.Equals(value) != true)) {
-                    this.SecondLevelTrainingField = value;
-                    this.RaisePropertyChanged("SecondLevelTraining");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int ThirdLevel {
-            get {
-                return this.ThirdLevelField;
-            }
-            set {
-                if ((this.ThirdLevelField.Equals(value) != true)) {
-                    this.ThirdLevelField = value;
-                    this.RaisePropertyChanged("ThirdLevel");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int ThirdLevelTraining {
-            get {
-                return this.ThirdLevelTrainingField;
-            }
-            set {
-                if ((this.ThirdLevelTrainingField.Equals(value) != true)) {
-                    this.ThirdLevelTrainingField = value;
-                    this.RaisePropertyChanged("ThirdLevelTraining");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int Written {
-            get {
-                return this.WrittenField;
-            }
-            set {
-                if ((this.WrittenField.Equals(value) != true)) {
-                    this.WrittenField = value;
-                    this.RaisePropertyChanged("Written");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int WrittenSecond {
-            get {
-                return this.WrittenSecondField;
-            }
-            set {
-                if ((this.WrittenSecondField.Equals(value) != true)) {
-                    this.WrittenSecondField = value;
-                    this.RaisePropertyChanged("WrittenSecond");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int WrittenThird {
-            get {
-                return this.WrittenThirdField;
-            }
-            set {
-                if ((this.WrittenThirdField.Equals(value) != true)) {
-                    this.WrittenThirdField = value;
-                    this.RaisePropertyChanged("WrittenThird");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
-        public int WrittenDoctor {
-            get {
-                return this.WrittenDoctorField;
-            }
-            set {
-                if ((this.WrittenDoctorField.Equals(value) != true)) {
-                    this.WrittenDoctorField = value;
-                    this.RaisePropertyChanged("WrittenDoctor");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Efficiency", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class Efficiency : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilialField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MonthField;
-        
-        private int Disp13InformField;
-        
-        private int Disp12InformField;
-        
-        private int AimedDisp2Field;
-        
-        private int Disp2Field;
-        
-        private int SubjectToDispField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Filial {
-            get {
-                return this.FilialField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
-                    this.FilialField = value;
-                    this.RaisePropertyChanged("Filial");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Month {
-            get {
-                return this.MonthField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MonthField, value) != true)) {
-                    this.MonthField = value;
-                    this.RaisePropertyChanged("Month");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public int Disp13Inform {
-            get {
-                return this.Disp13InformField;
-            }
-            set {
-                if ((this.Disp13InformField.Equals(value) != true)) {
-                    this.Disp13InformField = value;
-                    this.RaisePropertyChanged("Disp13Inform");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public int Disp12Inform {
-            get {
-                return this.Disp12InformField;
-            }
-            set {
-                if ((this.Disp12InformField.Equals(value) != true)) {
-                    this.Disp12InformField = value;
-                    this.RaisePropertyChanged("Disp12Inform");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public int AimedDisp2 {
-            get {
-                return this.AimedDisp2Field;
-            }
-            set {
-                if ((this.AimedDisp2Field.Equals(value) != true)) {
-                    this.AimedDisp2Field = value;
-                    this.RaisePropertyChanged("AimedDisp2");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public int Disp2 {
-            get {
-                return this.Disp2Field;
-            }
-            set {
-                if ((this.Disp2Field.Equals(value) != true)) {
-                    this.Disp2Field = value;
-                    this.RaisePropertyChanged("Disp2");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public int SubjectToDisp {
-            get {
-                return this.SubjectToDispField;
-            }
-            set {
-                if ((this.SubjectToDispField.Equals(value) != true)) {
-                    this.SubjectToDispField = value;
-                    this.RaisePropertyChanged("SubjectToDisp");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ZpzForWebSite", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ZpzForWebSite : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilialField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ZpzTreatment[] TreatmentsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ZpzTreatment[] ComplaintsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ZpzStatistics[] ProtectionsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.Expertise[] ExpertisesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ZpzStatistics[] SpecialistsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ZpzStatistics[] ComplacenceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ZpzStatistics[] InformationsField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Filial {
-            get {
-                return this.FilialField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
-                    this.FilialField = value;
-                    this.RaisePropertyChanged("Filial");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.ZpzTreatment[] Treatments {
-            get {
-                return this.TreatmentsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TreatmentsField, value) != true)) {
-                    this.TreatmentsField = value;
-                    this.RaisePropertyChanged("Treatments");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public KmsReportClient.External.ZpzTreatment[] Complaints {
-            get {
-                return this.ComplaintsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ComplaintsField, value) != true)) {
-                    this.ComplaintsField = value;
-                    this.RaisePropertyChanged("Complaints");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public KmsReportClient.External.ZpzStatistics[] Protections {
-            get {
-                return this.ProtectionsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProtectionsField, value) != true)) {
-                    this.ProtectionsField = value;
-                    this.RaisePropertyChanged("Protections");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public KmsReportClient.External.Expertise[] Expertises {
-            get {
-                return this.ExpertisesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExpertisesField, value) != true)) {
-                    this.ExpertisesField = value;
-                    this.RaisePropertyChanged("Expertises");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public KmsReportClient.External.ZpzStatistics[] Specialists {
-            get {
-                return this.SpecialistsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SpecialistsField, value) != true)) {
-                    this.SpecialistsField = value;
-                    this.RaisePropertyChanged("Specialists");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public KmsReportClient.External.ZpzStatistics[] Complacence {
-            get {
-                return this.ComplacenceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ComplacenceField, value) != true)) {
-                    this.ComplacenceField = value;
-                    this.RaisePropertyChanged("Complacence");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public KmsReportClient.External.ZpzStatistics[] Informations {
-            get {
-                return this.InformationsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InformationsField, value) != true)) {
-                    this.InformationsField = value;
-                    this.RaisePropertyChanged("Informations");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ZpzTreatment", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ZpzTreatment : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RowField;
-        
-        private int OralField;
-        
-        private int WrittenField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Row {
-            get {
-                return this.RowField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RowField, value) != true)) {
-                    this.RowField = value;
-                    this.RaisePropertyChanged("Row");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public int Oral {
-            get {
-                return this.OralField;
-            }
-            set {
-                if ((this.OralField.Equals(value) != true)) {
-                    this.OralField = value;
-                    this.RaisePropertyChanged("Oral");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public int Written {
-            get {
-                return this.WrittenField;
-            }
-            set {
-                if ((this.WrittenField.Equals(value) != true)) {
-                    this.WrittenField = value;
-                    this.RaisePropertyChanged("Written");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ZpzStatistics", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ZpzStatistics : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RowField;
-        
-        private decimal CountField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Row {
-            get {
-                return this.RowField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RowField, value) != true)) {
-                    this.RowField = value;
-                    this.RaisePropertyChanged("Row");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public decimal Count {
-            get {
-                return this.CountField;
-            }
-            set {
-                if ((this.CountField.Equals(value) != true)) {
-                    this.CountField = value;
-                    this.RaisePropertyChanged("Count");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Expertise", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class Expertise : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RowField;
-        
-        private int TargetField;
-        
-        private int PlanField;
-        
-        private int ViolationField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Row {
-            get {
-                return this.RowField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RowField, value) != true)) {
-                    this.RowField = value;
-                    this.RaisePropertyChanged("Row");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int Target {
-            get {
-                return this.TargetField;
-            }
-            set {
-                if ((this.TargetField.Equals(value) != true)) {
-                    this.TargetField = value;
-                    this.RaisePropertyChanged("Target");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public int Plan {
-            get {
-                return this.PlanField;
-            }
-            set {
-                if ((this.PlanField.Equals(value) != true)) {
-                    this.PlanField = value;
-                    this.RaisePropertyChanged("Plan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public int Violation {
-            get {
-                return this.ViolationField;
-            }
-            set {
-                if ((this.ViolationField.Equals(value) != true)) {
-                    this.ViolationField = value;
-                    this.RaisePropertyChanged("Violation");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateProposal", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ConsolidateProposal : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RegionIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RegionNameField;
-        
-        private System.Nullable<int> CountMoCheckField;
-        
-        private System.Nullable<int> CountMoCheckWithDefectField;
-        
-        private System.Nullable<int> CountProporsalsField;
-        
-        private System.Nullable<int> CountProporsalsWithDefectField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NotesField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string RegionId {
-            get {
-                return this.RegionIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RegionIdField, value) != true)) {
-                    this.RegionIdField = value;
-                    this.RaisePropertyChanged("RegionId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string RegionName {
-            get {
-                return this.RegionNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RegionNameField, value) != true)) {
-                    this.RegionNameField = value;
-                    this.RaisePropertyChanged("RegionName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public System.Nullable<int> CountMoCheck {
-            get {
-                return this.CountMoCheckField;
-            }
-            set {
-                if ((this.CountMoCheckField.Equals(value) != true)) {
-                    this.CountMoCheckField = value;
-                    this.RaisePropertyChanged("CountMoCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public System.Nullable<int> CountMoCheckWithDefect {
-            get {
-                return this.CountMoCheckWithDefectField;
-            }
-            set {
-                if ((this.CountMoCheckWithDefectField.Equals(value) != true)) {
-                    this.CountMoCheckWithDefectField = value;
-                    this.RaisePropertyChanged("CountMoCheckWithDefect");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public System.Nullable<int> CountProporsals {
-            get {
-                return this.CountProporsalsField;
-            }
-            set {
-                if ((this.CountProporsalsField.Equals(value) != true)) {
-                    this.CountProporsalsField = value;
-                    this.RaisePropertyChanged("CountProporsals");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public System.Nullable<int> CountProporsalsWithDefect {
-            get {
-                return this.CountProporsalsWithDefectField;
-            }
-            set {
-                if ((this.CountProporsalsWithDefectField.Equals(value) != true)) {
-                    this.CountProporsalsWithDefectField = value;
-                    this.RaisePropertyChanged("CountProporsalsWithDefect");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string Notes {
-            get {
-                return this.NotesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NotesField, value) != true)) {
-                    this.NotesField = value;
-                    this.RaisePropertyChanged("Notes");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CheckFFOMS2022CommonData", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class CheckFFOMS2022CommonData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private System.Nullable<decimal> CountLetalAllField;
-        
-        private System.Nullable<decimal> CountEkmpField;
-        
-        private System.Nullable<decimal> CountNarushField;
-        
-        private System.Nullable<decimal> CountNeProvedenaObField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.Nullable<decimal> CountLetalAll {
-            get {
-                return this.CountLetalAllField;
-            }
-            set {
-                if ((this.CountLetalAllField.Equals(value) != true)) {
-                    this.CountLetalAllField = value;
-                    this.RaisePropertyChanged("CountLetalAll");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public System.Nullable<decimal> CountEkmp {
-            get {
-                return this.CountEkmpField;
-            }
-            set {
-                if ((this.CountEkmpField.Equals(value) != true)) {
-                    this.CountEkmpField = value;
-                    this.RaisePropertyChanged("CountEkmp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public System.Nullable<decimal> CountNarush {
-            get {
-                return this.CountNarushField;
-            }
-            set {
-                if ((this.CountNarushField.Equals(value) != true)) {
-                    this.CountNarushField = value;
-                    this.RaisePropertyChanged("CountNarush");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public System.Nullable<decimal> CountNeProvedenaOb {
-            get {
-                return this.CountNeProvedenaObField;
-            }
-            set {
-                if ((this.CountNeProvedenaObField.Equals(value) != true)) {
-                    this.CountNeProvedenaObField = value;
-                    this.RaisePropertyChanged("CountNeProvedenaOb");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OpedFinancePlanDictionaryItem", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class OpedFinancePlanDictionaryItem : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int IdOpedFinancePlanField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string IdRegionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string YymmField;
-        
-        private decimal ValueField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int IdOpedFinancePlan {
-            get {
-                return this.IdOpedFinancePlanField;
-            }
-            set {
-                if ((this.IdOpedFinancePlanField.Equals(value) != true)) {
-                    this.IdOpedFinancePlanField = value;
-                    this.RaisePropertyChanged("IdOpedFinancePlan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string IdRegion {
-            get {
-                return this.IdRegionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.IdRegionField, value) != true)) {
-                    this.IdRegionField = value;
-                    this.RaisePropertyChanged("IdRegion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Yymm {
-            get {
-                return this.YymmField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.YymmField, value) != true)) {
-                    this.YymmField = value;
-                    this.RaisePropertyChanged("Yymm");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public decimal Value {
-            get {
-                return this.ValueField;
-            }
-            set {
-                if ((this.ValueField.Equals(value) != true)) {
-                    this.ValueField = value;
-                    this.RaisePropertyChanged("Value");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateOpedFinance_2", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ConsolidateOpedFinance_2 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string IdRegionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RegionNameField;
-        
-        private System.Nullable<decimal> Fact1Field;
-        
-        private System.Nullable<decimal> Plan1Field;
-        
-        private System.Nullable<decimal> Fact2Field;
-        
-        private System.Nullable<decimal> Plan2Field;
-        
-        private System.Nullable<decimal> Fact3Field;
-        
-        private System.Nullable<decimal> Plan3Field;
-        
-        private System.Nullable<decimal> Fact4Field;
-        
-        private System.Nullable<decimal> Plan4Field;
-        
-        private System.Nullable<decimal> Fact5Field;
-        
-        private System.Nullable<decimal> Plan5Field;
-        
-        private System.Nullable<decimal> Fact6Field;
-        
-        private System.Nullable<decimal> Plan6Field;
-        
-        private System.Nullable<decimal> Fact7Field;
-        
-        private System.Nullable<decimal> Plan7Field;
-        
-        private System.Nullable<decimal> Fact8Field;
-        
-        private System.Nullable<decimal> Plan8Field;
-        
-        private System.Nullable<decimal> Fact9Field;
-        
-        private System.Nullable<decimal> Plan9Field;
-        
-        private System.Nullable<decimal> Fact10Field;
-        
-        private System.Nullable<decimal> Plan10Field;
-        
-        private System.Nullable<decimal> Fact11Field;
-        
-        private System.Nullable<decimal> Plan11Field;
-        
-        private System.Nullable<decimal> Fact12Field;
-        
-        private System.Nullable<decimal> Plan12Field;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string IdRegion {
-            get {
-                return this.IdRegionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.IdRegionField, value) != true)) {
-                    this.IdRegionField = value;
-                    this.RaisePropertyChanged("IdRegion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string RegionName {
-            get {
-                return this.RegionNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RegionNameField, value) != true)) {
-                    this.RegionNameField = value;
-                    this.RaisePropertyChanged("RegionName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public System.Nullable<decimal> Fact1 {
-            get {
-                return this.Fact1Field;
-            }
-            set {
-                if ((this.Fact1Field.Equals(value) != true)) {
-                    this.Fact1Field = value;
-                    this.RaisePropertyChanged("Fact1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public System.Nullable<decimal> Plan1 {
-            get {
-                return this.Plan1Field;
-            }
-            set {
-                if ((this.Plan1Field.Equals(value) != true)) {
-                    this.Plan1Field = value;
-                    this.RaisePropertyChanged("Plan1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public System.Nullable<decimal> Fact2 {
-            get {
-                return this.Fact2Field;
-            }
-            set {
-                if ((this.Fact2Field.Equals(value) != true)) {
-                    this.Fact2Field = value;
-                    this.RaisePropertyChanged("Fact2");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public System.Nullable<decimal> Plan2 {
-            get {
-                return this.Plan2Field;
-            }
-            set {
-                if ((this.Plan2Field.Equals(value) != true)) {
-                    this.Plan2Field = value;
-                    this.RaisePropertyChanged("Plan2");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public System.Nullable<decimal> Fact3 {
-            get {
-                return this.Fact3Field;
-            }
-            set {
-                if ((this.Fact3Field.Equals(value) != true)) {
-                    this.Fact3Field = value;
-                    this.RaisePropertyChanged("Fact3");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public System.Nullable<decimal> Plan3 {
-            get {
-                return this.Plan3Field;
-            }
-            set {
-                if ((this.Plan3Field.Equals(value) != true)) {
-                    this.Plan3Field = value;
-                    this.RaisePropertyChanged("Plan3");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public System.Nullable<decimal> Fact4 {
-            get {
-                return this.Fact4Field;
-            }
-            set {
-                if ((this.Fact4Field.Equals(value) != true)) {
-                    this.Fact4Field = value;
-                    this.RaisePropertyChanged("Fact4");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
-        public System.Nullable<decimal> Plan4 {
-            get {
-                return this.Plan4Field;
-            }
-            set {
-                if ((this.Plan4Field.Equals(value) != true)) {
-                    this.Plan4Field = value;
-                    this.RaisePropertyChanged("Plan4");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
-        public System.Nullable<decimal> Fact5 {
-            get {
-                return this.Fact5Field;
-            }
-            set {
-                if ((this.Fact5Field.Equals(value) != true)) {
-                    this.Fact5Field = value;
-                    this.RaisePropertyChanged("Fact5");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
-        public System.Nullable<decimal> Plan5 {
-            get {
-                return this.Plan5Field;
-            }
-            set {
-                if ((this.Plan5Field.Equals(value) != true)) {
-                    this.Plan5Field = value;
-                    this.RaisePropertyChanged("Plan5");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
-        public System.Nullable<decimal> Fact6 {
-            get {
-                return this.Fact6Field;
-            }
-            set {
-                if ((this.Fact6Field.Equals(value) != true)) {
-                    this.Fact6Field = value;
-                    this.RaisePropertyChanged("Fact6");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
-        public System.Nullable<decimal> Plan6 {
-            get {
-                return this.Plan6Field;
-            }
-            set {
-                if ((this.Plan6Field.Equals(value) != true)) {
-                    this.Plan6Field = value;
-                    this.RaisePropertyChanged("Plan6");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
-        public System.Nullable<decimal> Fact7 {
-            get {
-                return this.Fact7Field;
-            }
-            set {
-                if ((this.Fact7Field.Equals(value) != true)) {
-                    this.Fact7Field = value;
-                    this.RaisePropertyChanged("Fact7");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
-        public System.Nullable<decimal> Plan7 {
-            get {
-                return this.Plan7Field;
-            }
-            set {
-                if ((this.Plan7Field.Equals(value) != true)) {
-                    this.Plan7Field = value;
-                    this.RaisePropertyChanged("Plan7");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
-        public System.Nullable<decimal> Fact8 {
-            get {
-                return this.Fact8Field;
-            }
-            set {
-                if ((this.Fact8Field.Equals(value) != true)) {
-                    this.Fact8Field = value;
-                    this.RaisePropertyChanged("Fact8");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
-        public System.Nullable<decimal> Plan8 {
-            get {
-                return this.Plan8Field;
-            }
-            set {
-                if ((this.Plan8Field.Equals(value) != true)) {
-                    this.Plan8Field = value;
-                    this.RaisePropertyChanged("Plan8");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=18)]
-        public System.Nullable<decimal> Fact9 {
-            get {
-                return this.Fact9Field;
-            }
-            set {
-                if ((this.Fact9Field.Equals(value) != true)) {
-                    this.Fact9Field = value;
-                    this.RaisePropertyChanged("Fact9");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=19)]
-        public System.Nullable<decimal> Plan9 {
-            get {
-                return this.Plan9Field;
-            }
-            set {
-                if ((this.Plan9Field.Equals(value) != true)) {
-                    this.Plan9Field = value;
-                    this.RaisePropertyChanged("Plan9");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=20)]
-        public System.Nullable<decimal> Fact10 {
-            get {
-                return this.Fact10Field;
-            }
-            set {
-                if ((this.Fact10Field.Equals(value) != true)) {
-                    this.Fact10Field = value;
-                    this.RaisePropertyChanged("Fact10");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=21)]
-        public System.Nullable<decimal> Plan10 {
-            get {
-                return this.Plan10Field;
-            }
-            set {
-                if ((this.Plan10Field.Equals(value) != true)) {
-                    this.Plan10Field = value;
-                    this.RaisePropertyChanged("Plan10");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=22)]
-        public System.Nullable<decimal> Fact11 {
-            get {
-                return this.Fact11Field;
-            }
-            set {
-                if ((this.Fact11Field.Equals(value) != true)) {
-                    this.Fact11Field = value;
-                    this.RaisePropertyChanged("Fact11");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=23)]
-        public System.Nullable<decimal> Plan11 {
-            get {
-                return this.Plan11Field;
-            }
-            set {
-                if ((this.Plan11Field.Equals(value) != true)) {
-                    this.Plan11Field = value;
-                    this.RaisePropertyChanged("Plan11");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=24)]
-        public System.Nullable<decimal> Fact12 {
-            get {
-                return this.Fact12Field;
-            }
-            set {
-                if ((this.Fact12Field.Equals(value) != true)) {
-                    this.Fact12Field = value;
-                    this.RaisePropertyChanged("Fact12");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=25)]
-        public System.Nullable<decimal> Plan12 {
-            get {
-                return this.Plan12Field;
-            }
-            set {
-                if ((this.Plan12Field.Equals(value) != true)) {
-                    this.Plan12Field = value;
-                    this.RaisePropertyChanged("Plan12");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateOpedFinance_1", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ConsolidateOpedFinance_1 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RegionNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string IdRegionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string YymmField;
-        
-        private System.Nullable<decimal> FactField;
-        
-        private System.Nullable<decimal> PlanOField;
-        
-        private System.Nullable<decimal> MeeField;
-        
-        private System.Nullable<decimal> EkmpField;
-        
-        private System.Nullable<decimal> PenaltyField;
-        
-        private System.Nullable<decimal> CountRegularExpertMeeField;
-        
-        private System.Nullable<decimal> CountRegularExpertEkmpField;
-        
-        private System.Nullable<decimal> CountFreelanceExpertField;
-        
-        private System.Nullable<decimal> PaymentFreelanceExpertField;
-        
-        private System.Nullable<decimal> PenaltyTfomsField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string RegionName {
-            get {
-                return this.RegionNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RegionNameField, value) != true)) {
-                    this.RegionNameField = value;
-                    this.RaisePropertyChanged("RegionName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string IdRegion {
-            get {
-                return this.IdRegionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.IdRegionField, value) != true)) {
-                    this.IdRegionField = value;
-                    this.RaisePropertyChanged("IdRegion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string Yymm {
-            get {
-                return this.YymmField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.YymmField, value) != true)) {
-                    this.YymmField = value;
-                    this.RaisePropertyChanged("Yymm");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public System.Nullable<decimal> Fact {
-            get {
-                return this.FactField;
-            }
-            set {
-                if ((this.FactField.Equals(value) != true)) {
-                    this.FactField = value;
-                    this.RaisePropertyChanged("Fact");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public System.Nullable<decimal> PlanO {
-            get {
-                return this.PlanOField;
-            }
-            set {
-                if ((this.PlanOField.Equals(value) != true)) {
-                    this.PlanOField = value;
-                    this.RaisePropertyChanged("PlanO");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public System.Nullable<decimal> Mee {
-            get {
-                return this.MeeField;
-            }
-            set {
-                if ((this.MeeField.Equals(value) != true)) {
-                    this.MeeField = value;
-                    this.RaisePropertyChanged("Mee");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public System.Nullable<decimal> Ekmp {
-            get {
-                return this.EkmpField;
-            }
-            set {
-                if ((this.EkmpField.Equals(value) != true)) {
-                    this.EkmpField = value;
-                    this.RaisePropertyChanged("Ekmp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public System.Nullable<decimal> Penalty {
-            get {
-                return this.PenaltyField;
-            }
-            set {
-                if ((this.PenaltyField.Equals(value) != true)) {
-                    this.PenaltyField = value;
-                    this.RaisePropertyChanged("Penalty");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public System.Nullable<decimal> CountRegularExpertMee {
-            get {
-                return this.CountRegularExpertMeeField;
-            }
-            set {
-                if ((this.CountRegularExpertMeeField.Equals(value) != true)) {
-                    this.CountRegularExpertMeeField = value;
-                    this.RaisePropertyChanged("CountRegularExpertMee");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
-        public System.Nullable<decimal> CountRegularExpertEkmp {
-            get {
-                return this.CountRegularExpertEkmpField;
-            }
-            set {
-                if ((this.CountRegularExpertEkmpField.Equals(value) != true)) {
-                    this.CountRegularExpertEkmpField = value;
-                    this.RaisePropertyChanged("CountRegularExpertEkmp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
-        public System.Nullable<decimal> CountFreelanceExpert {
-            get {
-                return this.CountFreelanceExpertField;
-            }
-            set {
-                if ((this.CountFreelanceExpertField.Equals(value) != true)) {
-                    this.CountFreelanceExpertField = value;
-                    this.RaisePropertyChanged("CountFreelanceExpert");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
-        public System.Nullable<decimal> PaymentFreelanceExpert {
-            get {
-                return this.PaymentFreelanceExpertField;
-            }
-            set {
-                if ((this.PaymentFreelanceExpertField.Equals(value) != true)) {
-                    this.PaymentFreelanceExpertField = value;
-                    this.RaisePropertyChanged("PaymentFreelanceExpert");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
-        public System.Nullable<decimal> PenaltyTfoms {
-            get {
-                return this.PenaltyTfomsField;
-            }
-            set {
-                if ((this.PenaltyTfomsField.Equals(value) != true)) {
-                    this.PenaltyTfomsField = value;
-                    this.RaisePropertyChanged("PenaltyTfoms");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateOpedQ", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ConsolidateOpedQ : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RegionField;
-        
-        private decimal MeePovtorPlanField;
-        
-        private decimal MeePovtorFactField;
-        
-        private decimal MeeOnkoPlanField;
-        
-        private decimal MeeOnkoFactField;
-        
-        private decimal EkmpLetalPlanField;
-        
-        private decimal EkmpLetalFactField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NotesField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Region {
-            get {
-                return this.RegionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RegionField, value) != true)) {
-                    this.RegionField = value;
-                    this.RaisePropertyChanged("Region");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public decimal MeePovtorPlan {
-            get {
-                return this.MeePovtorPlanField;
-            }
-            set {
-                if ((this.MeePovtorPlanField.Equals(value) != true)) {
-                    this.MeePovtorPlanField = value;
-                    this.RaisePropertyChanged("MeePovtorPlan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public decimal MeePovtorFact {
-            get {
-                return this.MeePovtorFactField;
-            }
-            set {
-                if ((this.MeePovtorFactField.Equals(value) != true)) {
-                    this.MeePovtorFactField = value;
-                    this.RaisePropertyChanged("MeePovtorFact");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public decimal MeeOnkoPlan {
-            get {
-                return this.MeeOnkoPlanField;
-            }
-            set {
-                if ((this.MeeOnkoPlanField.Equals(value) != true)) {
-                    this.MeeOnkoPlanField = value;
-                    this.RaisePropertyChanged("MeeOnkoPlan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public decimal MeeOnkoFact {
-            get {
-                return this.MeeOnkoFactField;
-            }
-            set {
-                if ((this.MeeOnkoFactField.Equals(value) != true)) {
-                    this.MeeOnkoFactField = value;
-                    this.RaisePropertyChanged("MeeOnkoFact");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public decimal EkmpLetalPlan {
-            get {
-                return this.EkmpLetalPlanField;
-            }
-            set {
-                if ((this.EkmpLetalPlanField.Equals(value) != true)) {
-                    this.EkmpLetalPlanField = value;
-                    this.RaisePropertyChanged("EkmpLetalPlan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public decimal EkmpLetalFact {
-            get {
-                return this.EkmpLetalFactField;
-            }
-            set {
-                if ((this.EkmpLetalFactField.Equals(value) != true)) {
-                    this.EkmpLetalFactField = value;
-                    this.RaisePropertyChanged("EkmpLetalFact");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string Notes {
-            get {
-                return this.NotesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NotesField, value) != true)) {
-                    this.NotesField = value;
-                    this.RaisePropertyChanged("Notes");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateCPNP_Q_2", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ConsolidateCPNP_Q_2 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FilialField;
-        
-        private decimal CountSporDoSudaField;
-        
-        private decimal CountObosnZhalobField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Filial {
-            get {
-                return this.FilialField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
-                    this.FilialField = value;
-                    this.RaisePropertyChanged("Filial");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public decimal CountSporDoSuda {
-            get {
-                return this.CountSporDoSudaField;
-            }
-            set {
-                if ((this.CountSporDoSudaField.Equals(value) != true)) {
-                    this.CountSporDoSudaField = value;
-                    this.RaisePropertyChanged("CountSporDoSuda");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public decimal CountObosnZhalob {
-            get {
-                return this.CountObosnZhalobField;
-            }
-            set {
-                if ((this.CountObosnZhalobField.Equals(value) != true)) {
-                    this.CountObosnZhalobField = value;
-                    this.RaisePropertyChanged("CountObosnZhalob");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportScanModel", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ReportScanModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int IdScanField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FileNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UserAddedField;
-        
-        private System.DateTime DateAddedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UserUpdateField;
-        
-        private System.Nullable<System.DateTime> DateUpdatedField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int IdScan {
-            get {
-                return this.IdScanField;
-            }
-            set {
-                if ((this.IdScanField.Equals(value) != true)) {
-                    this.IdScanField = value;
-                    this.RaisePropertyChanged("IdScan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string FileName {
-            get {
-                return this.FileNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FileNameField, value) != true)) {
-                    this.FileNameField = value;
-                    this.RaisePropertyChanged("FileName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string UserAdded {
-            get {
-                return this.UserAddedField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UserAddedField, value) != true)) {
-                    this.UserAddedField = value;
-                    this.RaisePropertyChanged("UserAdded");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public System.DateTime DateAdded {
-            get {
-                return this.DateAddedField;
-            }
-            set {
-                if ((this.DateAddedField.Equals(value) != true)) {
-                    this.DateAddedField = value;
-                    this.RaisePropertyChanged("DateAdded");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string UserUpdate {
-            get {
-                return this.UserUpdateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UserUpdateField, value) != true)) {
-                    this.UserUpdateField = value;
-                    this.RaisePropertyChanged("UserUpdate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public System.Nullable<System.DateTime> DateUpdated {
-            get {
-                return this.DateUpdatedField;
-            }
-            set {
-                if ((this.DateUpdatedField.Equals(value) != true)) {
-                    this.DateUpdatedField = value;
-                    this.RaisePropertyChanged("DateUpdated");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="KmsReportDictionary", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class KmsReportDictionary : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string KeyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ValueField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ForeignKeyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AdditionalFieldField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Key {
-            get {
-                return this.KeyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.KeyField, value) != true)) {
-                    this.KeyField = value;
-                    this.RaisePropertyChanged("Key");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Value {
-            get {
-                return this.ValueField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ValueField, value) != true)) {
-                    this.ValueField = value;
-                    this.RaisePropertyChanged("Value");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string ForeignKey {
-            get {
-                return this.ForeignKeyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ForeignKeyField, value) != true)) {
-                    this.ForeignKeyField = value;
-                    this.RaisePropertyChanged("ForeignKey");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string AdditionalField {
-            get {
-                return this.AdditionalFieldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AdditionalFieldField, value) != true)) {
-                    this.AdditionalFieldField = value;
-                    this.RaisePropertyChanged("AdditionalField");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportOpedDto", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ReportOpedDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RowNumField;
-        
-        private decimal AppField;
-        
-        private decimal KsField;
-        
-        private decimal DsField;
-        
-        private decimal SmpField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NotesField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string RowNum {
-            get {
-                return this.RowNumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RowNumField, value) != true)) {
-                    this.RowNumField = value;
-                    this.RaisePropertyChanged("RowNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public decimal App {
-            get {
-                return this.AppField;
-            }
-            set {
-                if ((this.AppField.Equals(value) != true)) {
-                    this.AppField = value;
-                    this.RaisePropertyChanged("App");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public decimal Ks {
-            get {
-                return this.KsField;
-            }
-            set {
-                if ((this.KsField.Equals(value) != true)) {
-                    this.KsField = value;
-                    this.RaisePropertyChanged("Ks");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public decimal Ds {
-            get {
-                return this.DsField;
-            }
-            set {
-                if ((this.DsField.Equals(value) != true)) {
-                    this.DsField = value;
-                    this.RaisePropertyChanged("Ds");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public decimal Smp {
-            get {
-                return this.SmpField;
-            }
-            set {
-                if ((this.SmpField.Equals(value) != true)) {
-                    this.SmpField = value;
-                    this.RaisePropertyChanged("Smp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Notes {
-            get {
-                return this.NotesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NotesField, value) != true)) {
-                    this.NotesField = value;
-                    this.RaisePropertyChanged("Notes");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportInfrormationResponseDataDto", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ReportInfrormationResponseDataDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int IdField;
-        
-        private int PlanField;
-        
-        private int InformedField;
-        
-        private int CountRegistryField;
-        
-        private int CountPastField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int Plan {
-            get {
-                return this.PlanField;
-            }
-            set {
-                if ((this.PlanField.Equals(value) != true)) {
-                    this.PlanField = value;
-                    this.RaisePropertyChanged("Plan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public int Informed {
-            get {
-                return this.InformedField;
-            }
-            set {
-                if ((this.InformedField.Equals(value) != true)) {
-                    this.InformedField = value;
-                    this.RaisePropertyChanged("Informed");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public int CountRegistry {
-            get {
-                return this.CountRegistryField;
-            }
-            set {
-                if ((this.CountRegistryField.Equals(value) != true)) {
-                    this.CountRegistryField = value;
-                    this.RaisePropertyChanged("CountRegistry");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public int CountPast {
-            get {
-                return this.CountPastField;
-            }
-            set {
-                if ((this.CountPastField.Equals(value) != true)) {
-                    this.CountPastField = value;
-                    this.RaisePropertyChanged("CountPast");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportCadreDataDto", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ReportCadreDataDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int IdField;
-        
-        private int count_itog_stateField;
-        
-        private int count_itog_factField;
-        
-        private int count_itog_vacancyField;
-        
-        private int count_leader_stateField;
-        
-        private int count_leader_factField;
-        
-        private int count_leader_vacancyField;
-        
-        private int count_deputy_leader_stateField;
-        
-        private int count_deputy_leader_factField;
-        
-        private int count_deputy_leader_vacancyField;
-        
-        private int count_expert_doctor_stateField;
-        
-        private int count_expert_doctor_factField;
-        
-        private int count_expert_doctor_vacancyField;
-        
-        private int count_specialist_stateField;
-        
-        private int count_specialist_factField;
-        
-        private int count_specialist_vacancyField;
-        
-        private int count_grf15Field;
-        
-        private int count_grf16Field;
-        
-        private int count_grf17Field;
-        
-        private int count_grf18Field;
-        
-        private int count_grf19Field;
-        
-        private int count_grf20Field;
-        
-        private int count_grf21Field;
-        
-        private int count_grf22Field;
-        
-        private int count_grf23Field;
-        
-        private int count_grf24Field;
-        
-        private int count_grf25Field;
-        
-        private int count_grf26Field;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int count_itog_state {
-            get {
-                return this.count_itog_stateField;
-            }
-            set {
-                if ((this.count_itog_stateField.Equals(value) != true)) {
-                    this.count_itog_stateField = value;
-                    this.RaisePropertyChanged("count_itog_state");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public int count_itog_fact {
-            get {
-                return this.count_itog_factField;
-            }
-            set {
-                if ((this.count_itog_factField.Equals(value) != true)) {
-                    this.count_itog_factField = value;
-                    this.RaisePropertyChanged("count_itog_fact");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public int count_itog_vacancy {
-            get {
-                return this.count_itog_vacancyField;
-            }
-            set {
-                if ((this.count_itog_vacancyField.Equals(value) != true)) {
-                    this.count_itog_vacancyField = value;
-                    this.RaisePropertyChanged("count_itog_vacancy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public int count_leader_state {
-            get {
-                return this.count_leader_stateField;
-            }
-            set {
-                if ((this.count_leader_stateField.Equals(value) != true)) {
-                    this.count_leader_stateField = value;
-                    this.RaisePropertyChanged("count_leader_state");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public int count_leader_fact {
-            get {
-                return this.count_leader_factField;
-            }
-            set {
-                if ((this.count_leader_factField.Equals(value) != true)) {
-                    this.count_leader_factField = value;
-                    this.RaisePropertyChanged("count_leader_fact");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public int count_leader_vacancy {
-            get {
-                return this.count_leader_vacancyField;
-            }
-            set {
-                if ((this.count_leader_vacancyField.Equals(value) != true)) {
-                    this.count_leader_vacancyField = value;
-                    this.RaisePropertyChanged("count_leader_vacancy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public int count_deputy_leader_state {
-            get {
-                return this.count_deputy_leader_stateField;
-            }
-            set {
-                if ((this.count_deputy_leader_stateField.Equals(value) != true)) {
-                    this.count_deputy_leader_stateField = value;
-                    this.RaisePropertyChanged("count_deputy_leader_state");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public int count_deputy_leader_fact {
-            get {
-                return this.count_deputy_leader_factField;
-            }
-            set {
-                if ((this.count_deputy_leader_factField.Equals(value) != true)) {
-                    this.count_deputy_leader_factField = value;
-                    this.RaisePropertyChanged("count_deputy_leader_fact");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
-        public int count_deputy_leader_vacancy {
-            get {
-                return this.count_deputy_leader_vacancyField;
-            }
-            set {
-                if ((this.count_deputy_leader_vacancyField.Equals(value) != true)) {
-                    this.count_deputy_leader_vacancyField = value;
-                    this.RaisePropertyChanged("count_deputy_leader_vacancy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
-        public int count_expert_doctor_state {
-            get {
-                return this.count_expert_doctor_stateField;
-            }
-            set {
-                if ((this.count_expert_doctor_stateField.Equals(value) != true)) {
-                    this.count_expert_doctor_stateField = value;
-                    this.RaisePropertyChanged("count_expert_doctor_state");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
-        public int count_expert_doctor_fact {
-            get {
-                return this.count_expert_doctor_factField;
-            }
-            set {
-                if ((this.count_expert_doctor_factField.Equals(value) != true)) {
-                    this.count_expert_doctor_factField = value;
-                    this.RaisePropertyChanged("count_expert_doctor_fact");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
-        public int count_expert_doctor_vacancy {
-            get {
-                return this.count_expert_doctor_vacancyField;
-            }
-            set {
-                if ((this.count_expert_doctor_vacancyField.Equals(value) != true)) {
-                    this.count_expert_doctor_vacancyField = value;
-                    this.RaisePropertyChanged("count_expert_doctor_vacancy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
-        public int count_specialist_state {
-            get {
-                return this.count_specialist_stateField;
-            }
-            set {
-                if ((this.count_specialist_stateField.Equals(value) != true)) {
-                    this.count_specialist_stateField = value;
-                    this.RaisePropertyChanged("count_specialist_state");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
-        public int count_specialist_fact {
-            get {
-                return this.count_specialist_factField;
-            }
-            set {
-                if ((this.count_specialist_factField.Equals(value) != true)) {
-                    this.count_specialist_factField = value;
-                    this.RaisePropertyChanged("count_specialist_fact");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
-        public int count_specialist_vacancy {
-            get {
-                return this.count_specialist_vacancyField;
-            }
-            set {
-                if ((this.count_specialist_vacancyField.Equals(value) != true)) {
-                    this.count_specialist_vacancyField = value;
-                    this.RaisePropertyChanged("count_specialist_vacancy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
-        public int count_grf15 {
-            get {
-                return this.count_grf15Field;
-            }
-            set {
-                if ((this.count_grf15Field.Equals(value) != true)) {
-                    this.count_grf15Field = value;
-                    this.RaisePropertyChanged("count_grf15");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
-        public int count_grf16 {
-            get {
-                return this.count_grf16Field;
-            }
-            set {
-                if ((this.count_grf16Field.Equals(value) != true)) {
-                    this.count_grf16Field = value;
-                    this.RaisePropertyChanged("count_grf16");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=18)]
-        public int count_grf17 {
-            get {
-                return this.count_grf17Field;
-            }
-            set {
-                if ((this.count_grf17Field.Equals(value) != true)) {
-                    this.count_grf17Field = value;
-                    this.RaisePropertyChanged("count_grf17");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=19)]
-        public int count_grf18 {
-            get {
-                return this.count_grf18Field;
-            }
-            set {
-                if ((this.count_grf18Field.Equals(value) != true)) {
-                    this.count_grf18Field = value;
-                    this.RaisePropertyChanged("count_grf18");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=20)]
-        public int count_grf19 {
-            get {
-                return this.count_grf19Field;
-            }
-            set {
-                if ((this.count_grf19Field.Equals(value) != true)) {
-                    this.count_grf19Field = value;
-                    this.RaisePropertyChanged("count_grf19");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=21)]
-        public int count_grf20 {
-            get {
-                return this.count_grf20Field;
-            }
-            set {
-                if ((this.count_grf20Field.Equals(value) != true)) {
-                    this.count_grf20Field = value;
-                    this.RaisePropertyChanged("count_grf20");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=22)]
-        public int count_grf21 {
-            get {
-                return this.count_grf21Field;
-            }
-            set {
-                if ((this.count_grf21Field.Equals(value) != true)) {
-                    this.count_grf21Field = value;
-                    this.RaisePropertyChanged("count_grf21");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=23)]
-        public int count_grf22 {
-            get {
-                return this.count_grf22Field;
-            }
-            set {
-                if ((this.count_grf22Field.Equals(value) != true)) {
-                    this.count_grf22Field = value;
-                    this.RaisePropertyChanged("count_grf22");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=24)]
-        public int count_grf23 {
-            get {
-                return this.count_grf23Field;
-            }
-            set {
-                if ((this.count_grf23Field.Equals(value) != true)) {
-                    this.count_grf23Field = value;
-                    this.RaisePropertyChanged("count_grf23");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=25)]
-        public int count_grf24 {
-            get {
-                return this.count_grf24Field;
-            }
-            set {
-                if ((this.count_grf24Field.Equals(value) != true)) {
-                    this.count_grf24Field = value;
-                    this.RaisePropertyChanged("count_grf24");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=26)]
-        public int count_grf25 {
-            get {
-                return this.count_grf25Field;
-            }
-            set {
-                if ((this.count_grf25Field.Equals(value) != true)) {
-                    this.count_grf25Field = value;
-                    this.RaisePropertyChanged("count_grf25");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=27)]
-        public int count_grf26 {
-            get {
-                return this.count_grf26Field;
-            }
-            set {
-                if ((this.count_grf26Field.Equals(value) != true)) {
-                    this.count_grf26Field = value;
-                    this.RaisePropertyChanged("count_grf26");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AbstractReport", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportOped))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportInfrormationResponse))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportFSSMonitroing))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportProposal))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportOpedFinance))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportCadre))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.Report262))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.Report294))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportIizl))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportPg))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportVaccination))]
-    public partial class AbstractReport : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int IdFlowField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string IdTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string YymmField;
-        
-        private System.DateTime CreatedField;
-        
-        private int IdEmployeeField;
-        
-        private System.Nullable<System.DateTime> UpdatedField;
-        
-        private int IdEmployeeUpdField;
-        
-        private System.Nullable<System.DateTime> DateToCoField;
-        
-        private int UserToCoField;
-        
-        private System.Nullable<System.DateTime> RefuseDateField;
-        
-        private int RefuseUserField;
-        
-        private System.Nullable<System.DateTime> DateIsDoneField;
-        
-        private int UserSubmitField;
-        
-        private int VersionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ScanField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Scan2Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Scan3Field;
-        
-        private KmsReportClient.External.ReportStatus StatusField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int IdFlow {
-            get {
-                return this.IdFlowField;
-            }
-            set {
-                if ((this.IdFlowField.Equals(value) != true)) {
-                    this.IdFlowField = value;
-                    this.RaisePropertyChanged("IdFlow");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string IdType {
-            get {
-                return this.IdTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.IdTypeField, value) != true)) {
-                    this.IdTypeField = value;
-                    this.RaisePropertyChanged("IdType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Yymm {
-            get {
-                return this.YymmField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.YymmField, value) != true)) {
-                    this.YymmField = value;
-                    this.RaisePropertyChanged("Yymm");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public System.DateTime Created {
-            get {
-                return this.CreatedField;
-            }
-            set {
-                if ((this.CreatedField.Equals(value) != true)) {
-                    this.CreatedField = value;
-                    this.RaisePropertyChanged("Created");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public int IdEmployee {
-            get {
-                return this.IdEmployeeField;
-            }
-            set {
-                if ((this.IdEmployeeField.Equals(value) != true)) {
-                    this.IdEmployeeField = value;
-                    this.RaisePropertyChanged("IdEmployee");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public System.Nullable<System.DateTime> Updated {
-            get {
-                return this.UpdatedField;
-            }
-            set {
-                if ((this.UpdatedField.Equals(value) != true)) {
-                    this.UpdatedField = value;
-                    this.RaisePropertyChanged("Updated");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public int IdEmployeeUpd {
-            get {
-                return this.IdEmployeeUpdField;
-            }
-            set {
-                if ((this.IdEmployeeUpdField.Equals(value) != true)) {
-                    this.IdEmployeeUpdField = value;
-                    this.RaisePropertyChanged("IdEmployeeUpd");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public System.Nullable<System.DateTime> DateToCo {
-            get {
-                return this.DateToCoField;
-            }
-            set {
-                if ((this.DateToCoField.Equals(value) != true)) {
-                    this.DateToCoField = value;
-                    this.RaisePropertyChanged("DateToCo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public int UserToCo {
-            get {
-                return this.UserToCoField;
-            }
-            set {
-                if ((this.UserToCoField.Equals(value) != true)) {
-                    this.UserToCoField = value;
-                    this.RaisePropertyChanged("UserToCo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
-        public System.Nullable<System.DateTime> RefuseDate {
-            get {
-                return this.RefuseDateField;
-            }
-            set {
-                if ((this.RefuseDateField.Equals(value) != true)) {
-                    this.RefuseDateField = value;
-                    this.RaisePropertyChanged("RefuseDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
-        public int RefuseUser {
-            get {
-                return this.RefuseUserField;
-            }
-            set {
-                if ((this.RefuseUserField.Equals(value) != true)) {
-                    this.RefuseUserField = value;
-                    this.RaisePropertyChanged("RefuseUser");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
-        public System.Nullable<System.DateTime> DateIsDone {
-            get {
-                return this.DateIsDoneField;
-            }
-            set {
-                if ((this.DateIsDoneField.Equals(value) != true)) {
-                    this.DateIsDoneField = value;
-                    this.RaisePropertyChanged("DateIsDone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
-        public int UserSubmit {
-            get {
-                return this.UserSubmitField;
-            }
-            set {
-                if ((this.UserSubmitField.Equals(value) != true)) {
-                    this.UserSubmitField = value;
-                    this.RaisePropertyChanged("UserSubmit");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
-        public int Version {
-            get {
-                return this.VersionField;
-            }
-            set {
-                if ((this.VersionField.Equals(value) != true)) {
-                    this.VersionField = value;
-                    this.RaisePropertyChanged("Version");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
-        public string Scan {
-            get {
-                return this.ScanField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ScanField, value) != true)) {
-                    this.ScanField = value;
-                    this.RaisePropertyChanged("Scan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
-        public string Scan2 {
-            get {
-                return this.Scan2Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Scan2Field, value) != true)) {
-                    this.Scan2Field = value;
-                    this.RaisePropertyChanged("Scan2");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=16)]
-        public string Scan3 {
-            get {
-                return this.Scan3Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Scan3Field, value) != true)) {
-                    this.Scan3Field = value;
-                    this.RaisePropertyChanged("Scan3");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
-        public KmsReportClient.External.ReportStatus Status {
-            get {
-                return this.StatusField;
-            }
-            set {
-                if ((this.StatusField.Equals(value) != true)) {
-                    this.StatusField = value;
-                    this.RaisePropertyChanged("Status");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportOped", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ReportOped : KmsReportClient.External.AbstractReport {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ReportOpedDto[] ReportDataListField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.ReportOpedDto[] ReportDataList {
-            get {
-                return this.ReportDataListField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReportDataListField, value) != true)) {
-                    this.ReportDataListField = value;
-                    this.RaisePropertyChanged("ReportDataList");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportInfrormationResponse", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ReportInfrormationResponse : KmsReportClient.External.AbstractReport {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ReportInfrormationResponseDto[] ReportDataListField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.ReportInfrormationResponseDto[] ReportDataList {
-            get {
-                return this.ReportDataListField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReportDataListField, value) != true)) {
-                    this.ReportDataListField = value;
-                    this.RaisePropertyChanged("ReportDataList");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportFSSMonitroing", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ReportFSSMonitroing : KmsReportClient.External.AbstractReport {
-        
-        private int IdReportDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.FSSMonitroingData[] DataField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int IdReportData {
-            get {
-                return this.IdReportDataField;
-            }
-            set {
-                if ((this.IdReportDataField.Equals(value) != true)) {
-                    this.IdReportDataField = value;
-                    this.RaisePropertyChanged("IdReportData");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public KmsReportClient.External.FSSMonitroingData[] Data {
-            get {
-                return this.DataField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DataField, value) != true)) {
-                    this.DataField = value;
-                    this.RaisePropertyChanged("Data");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportProposal", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ReportProposal : KmsReportClient.External.AbstractReport {
-        
-        private int IdReportDataField;
-        
-        private System.Nullable<int> CountMoCheckField;
-        
-        private System.Nullable<int> CountMoCheckWithDefectField;
-        
-        private System.Nullable<int> CountProporsalsField;
-        
-        private System.Nullable<int> CountProporsalsWithDefectField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NotesField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int IdReportData {
-            get {
-                return this.IdReportDataField;
-            }
-            set {
-                if ((this.IdReportDataField.Equals(value) != true)) {
-                    this.IdReportDataField = value;
-                    this.RaisePropertyChanged("IdReportData");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public System.Nullable<int> CountMoCheck {
-            get {
-                return this.CountMoCheckField;
-            }
-            set {
-                if ((this.CountMoCheckField.Equals(value) != true)) {
-                    this.CountMoCheckField = value;
-                    this.RaisePropertyChanged("CountMoCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public System.Nullable<int> CountMoCheckWithDefect {
-            get {
-                return this.CountMoCheckWithDefectField;
-            }
-            set {
-                if ((this.CountMoCheckWithDefectField.Equals(value) != true)) {
-                    this.CountMoCheckWithDefectField = value;
-                    this.RaisePropertyChanged("CountMoCheckWithDefect");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public System.Nullable<int> CountProporsals {
-            get {
-                return this.CountProporsalsField;
-            }
-            set {
-                if ((this.CountProporsalsField.Equals(value) != true)) {
-                    this.CountProporsalsField = value;
-                    this.RaisePropertyChanged("CountProporsals");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public System.Nullable<int> CountProporsalsWithDefect {
-            get {
-                return this.CountProporsalsWithDefectField;
-            }
-            set {
-                if ((this.CountProporsalsWithDefectField.Equals(value) != true)) {
-                    this.CountProporsalsWithDefectField = value;
-                    this.RaisePropertyChanged("CountProporsalsWithDefect");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Notes {
-            get {
-                return this.NotesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NotesField, value) != true)) {
-                    this.NotesField = value;
-                    this.RaisePropertyChanged("Notes");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportOpedFinance", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ReportOpedFinance : KmsReportClient.External.AbstractReport {
-        
-        private int IdReportDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ReportOpedFinanceData[] ReportDataListField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int IdReportData {
-            get {
-                return this.IdReportDataField;
-            }
-            set {
-                if ((this.IdReportDataField.Equals(value) != true)) {
-                    this.IdReportDataField = value;
-                    this.RaisePropertyChanged("IdReportData");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.ReportOpedFinanceData[] ReportDataList {
-            get {
-                return this.ReportDataListField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReportDataListField, value) != true)) {
-                    this.ReportDataListField = value;
-                    this.RaisePropertyChanged("ReportDataList");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportCadre", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ReportCadre : KmsReportClient.External.AbstractReport {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ReportCadreDto[] ReportDataListField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.ReportCadreDto[] ReportDataList {
-            get {
-                return this.ReportDataListField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReportDataListField, value) != true)) {
-                    this.ReportDataListField = value;
-                    this.RaisePropertyChanged("ReportDataList");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report262", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class Report262 : KmsReportClient.External.AbstractReport {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.Report262Dto[] ReportDataListField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.Report262Dto[] ReportDataList {
-            get {
-                return this.ReportDataListField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReportDataListField, value) != true)) {
-                    this.ReportDataListField = value;
-                    this.RaisePropertyChanged("ReportDataList");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report294", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class Report294 : KmsReportClient.External.AbstractReport {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.Report294Dto[] ReportDataListField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.Report294Dto[] ReportDataList {
-            get {
-                return this.ReportDataListField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReportDataListField, value) != true)) {
-                    this.ReportDataListField = value;
-                    this.RaisePropertyChanged("ReportDataList");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportIizl", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ReportIizl : KmsReportClient.External.AbstractReport {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ReportIizlDto[] ReportDataListField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.ReportIizlDto[] ReportDataList {
-            get {
-                return this.ReportDataListField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReportDataListField, value) != true)) {
-                    this.ReportDataListField = value;
-                    this.RaisePropertyChanged("ReportDataList");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportPg", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ReportPg : KmsReportClient.External.AbstractReport {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ReportPgDto[] ReportDataListField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.ReportPgDto[] ReportDataList {
-            get {
-                return this.ReportDataListField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReportDataListField, value) != true)) {
-                    this.ReportDataListField = value;
-                    this.RaisePropertyChanged("ReportDataList");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportVaccination", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ReportVaccination : KmsReportClient.External.AbstractReport {
-        
-        private int IdField;
-        
-        private int IdReportDataField;
-        
-        private int M18_39Field;
-        
-        private int M40_59Field;
-        
-        private int M60_65Field;
-        
-        private int M66_74Field;
-        
-        private int M75_MoreField;
-        
-        private int W18_39Field;
-        
-        private int W40_54Field;
-        
-        private int W55_65Field;
-        
-        private int W66_74Field;
-        
-        private int W75_MoreField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int IdReportData {
-            get {
-                return this.IdReportDataField;
-            }
-            set {
-                if ((this.IdReportDataField.Equals(value) != true)) {
-                    this.IdReportDataField = value;
-                    this.RaisePropertyChanged("IdReportData");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int M18_39 {
-            get {
-                return this.M18_39Field;
-            }
-            set {
-                if ((this.M18_39Field.Equals(value) != true)) {
-                    this.M18_39Field = value;
-                    this.RaisePropertyChanged("M18_39");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int M40_59 {
-            get {
-                return this.M40_59Field;
-            }
-            set {
-                if ((this.M40_59Field.Equals(value) != true)) {
-                    this.M40_59Field = value;
-                    this.RaisePropertyChanged("M40_59");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int M60_65 {
-            get {
-                return this.M60_65Field;
-            }
-            set {
-                if ((this.M60_65Field.Equals(value) != true)) {
-                    this.M60_65Field = value;
-                    this.RaisePropertyChanged("M60_65");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int M66_74 {
-            get {
-                return this.M66_74Field;
-            }
-            set {
-                if ((this.M66_74Field.Equals(value) != true)) {
-                    this.M66_74Field = value;
-                    this.RaisePropertyChanged("M66_74");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int M75_More {
-            get {
-                return this.M75_MoreField;
-            }
-            set {
-                if ((this.M75_MoreField.Equals(value) != true)) {
-                    this.M75_MoreField = value;
-                    this.RaisePropertyChanged("M75_More");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int W18_39 {
-            get {
-                return this.W18_39Field;
-            }
-            set {
-                if ((this.W18_39Field.Equals(value) != true)) {
-                    this.W18_39Field = value;
-                    this.RaisePropertyChanged("W18_39");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int W40_54 {
-            get {
-                return this.W40_54Field;
-            }
-            set {
-                if ((this.W40_54Field.Equals(value) != true)) {
-                    this.W40_54Field = value;
-                    this.RaisePropertyChanged("W40_54");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int W55_65 {
-            get {
-                return this.W55_65Field;
-            }
-            set {
-                if ((this.W55_65Field.Equals(value) != true)) {
-                    this.W55_65Field = value;
-                    this.RaisePropertyChanged("W55_65");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int W66_74 {
-            get {
-                return this.W66_74Field;
-            }
-            set {
-                if ((this.W66_74Field.Equals(value) != true)) {
-                    this.W66_74Field = value;
-                    this.RaisePropertyChanged("W66_74");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int W75_More {
-            get {
-                return this.W75_MoreField;
-            }
-            set {
-                if ((this.W75_MoreField.Equals(value) != true)) {
-                    this.W75_MoreField = value;
-                    this.RaisePropertyChanged("W75_More");
-                }
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportStatus", Namespace="http://kms-oms.ru/")]
-    public enum ReportStatus : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        New = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Saved = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Scan = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Submit = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Refuse = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Done = 5,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportInfrormationResponseDto", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ReportInfrormationResponseDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ThemeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ReportInfrormationResponseDataDto DataField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Theme {
-            get {
-                return this.ThemeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ThemeField, value) != true)) {
-                    this.ThemeField = value;
-                    this.RaisePropertyChanged("Theme");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public KmsReportClient.External.ReportInfrormationResponseDataDto Data {
-            get {
-                return this.DataField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DataField, value) != true)) {
-                    this.DataField = value;
-                    this.RaisePropertyChanged("Data");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FSSMonitroingData", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class FSSMonitroingData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int IdFssMonitoringField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RowNumField;
-        
-        private System.Nullable<decimal> ExpertWithEducationField;
-        
-        private System.Nullable<decimal> ExpertWithoutEducationField;
-        
-        private System.Nullable<decimal> TotalField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int IdFssMonitoring {
-            get {
-                return this.IdFssMonitoringField;
-            }
-            set {
-                if ((this.IdFssMonitoringField.Equals(value) != true)) {
-                    this.IdFssMonitoringField = value;
-                    this.RaisePropertyChanged("IdFssMonitoring");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string RowNum {
-            get {
-                return this.RowNumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RowNumField, value) != true)) {
-                    this.RowNumField = value;
-                    this.RaisePropertyChanged("RowNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public System.Nullable<decimal> ExpertWithEducation {
-            get {
-                return this.ExpertWithEducationField;
-            }
-            set {
-                if ((this.ExpertWithEducationField.Equals(value) != true)) {
-                    this.ExpertWithEducationField = value;
-                    this.RaisePropertyChanged("ExpertWithEducation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public System.Nullable<decimal> ExpertWithoutEducation {
-            get {
-                return this.ExpertWithoutEducationField;
-            }
-            set {
-                if ((this.ExpertWithoutEducationField.Equals(value) != true)) {
-                    this.ExpertWithoutEducationField = value;
-                    this.RaisePropertyChanged("ExpertWithoutEducation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public System.Nullable<decimal> Total {
-            get {
-                return this.TotalField;
-            }
-            set {
-                if ((this.TotalField.Equals(value) != true)) {
-                    this.TotalField = value;
-                    this.RaisePropertyChanged("Total");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportOpedFinanceData", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ReportOpedFinanceData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RowNumField;
-        
-        private System.Nullable<decimal> ValueFactField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NotesField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string RowNum {
-            get {
-                return this.RowNumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RowNumField, value) != true)) {
-                    this.RowNumField = value;
-                    this.RaisePropertyChanged("RowNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.Nullable<decimal> ValueFact {
-            get {
-                return this.ValueFactField;
-            }
-            set {
-                if ((this.ValueFactField.Equals(value) != true)) {
-                    this.ValueFactField = value;
-                    this.RaisePropertyChanged("ValueFact");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string Notes {
-            get {
-                return this.NotesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NotesField, value) != true)) {
-                    this.NotesField = value;
-                    this.RaisePropertyChanged("Notes");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportCadreDto", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ReportCadreDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ThemeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ReportCadreDataDto DataField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Theme {
-            get {
-                return this.ThemeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ThemeField, value) != true)) {
-                    this.ThemeField = value;
-                    this.RaisePropertyChanged("Theme");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public KmsReportClient.External.ReportCadreDataDto Data {
-            get {
-                return this.DataField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DataField, value) != true)) {
-                    this.DataField = value;
-                    this.RaisePropertyChanged("Data");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report262Dto", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class Report262Dto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ThemeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.Report262DataDto[] DataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.Report262Table3Data[] Table3Field;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Theme {
-            get {
-                return this.ThemeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ThemeField, value) != true)) {
-                    this.ThemeField = value;
-                    this.RaisePropertyChanged("Theme");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public KmsReportClient.External.Report262DataDto[] Data {
-            get {
-                return this.DataField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DataField, value) != true)) {
-                    this.DataField = value;
-                    this.RaisePropertyChanged("Data");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public KmsReportClient.External.Report262Table3Data[] Table3 {
-            get {
-                return this.Table3Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Table3Field, value) != true)) {
-                    this.Table3Field = value;
-                    this.RaisePropertyChanged("Table3");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report294Dto", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class Report294Dto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ThemeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.Report294DataDto[] DataField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Theme {
-            get {
-                return this.ThemeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ThemeField, value) != true)) {
-                    this.ThemeField = value;
-                    this.RaisePropertyChanged("Theme");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public KmsReportClient.External.Report294DataDto[] Data {
-            get {
-                return this.DataField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DataField, value) != true)) {
-                    this.DataField = value;
-                    this.RaisePropertyChanged("Data");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report294DataDto", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class Report294DataDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RowNumField;
-        
-        private int CountPplField;
-        
-        private int CountSmsField;
-        
-        private int CountPostField;
-        
-        private int CountPhoneField;
-        
-        private int CountMessengersField;
-        
-        private int CountEmailField;
-        
-        private int CountAddressField;
-        
-        private int CountAnotherField;
-        
-        private int CountOncologicalDiseaseField;
-        
-        private int CountEndocrineDiseaseField;
-        
-        private int CountBronchoDiseaseField;
-        
-        private int CountBloodDiseaseField;
-        
-        private int CountAnotherDiseaseField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string RowNum {
-            get {
-                return this.RowNumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RowNumField, value) != true)) {
-                    this.RowNumField = value;
-                    this.RaisePropertyChanged("RowNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public int CountPpl {
-            get {
-                return this.CountPplField;
-            }
-            set {
-                if ((this.CountPplField.Equals(value) != true)) {
-                    this.CountPplField = value;
-                    this.RaisePropertyChanged("CountPpl");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public int CountSms {
-            get {
-                return this.CountSmsField;
-            }
-            set {
-                if ((this.CountSmsField.Equals(value) != true)) {
-                    this.CountSmsField = value;
-                    this.RaisePropertyChanged("CountSms");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public int CountPost {
-            get {
-                return this.CountPostField;
-            }
-            set {
-                if ((this.CountPostField.Equals(value) != true)) {
-                    this.CountPostField = value;
-                    this.RaisePropertyChanged("CountPost");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public int CountPhone {
-            get {
-                return this.CountPhoneField;
-            }
-            set {
-                if ((this.CountPhoneField.Equals(value) != true)) {
-                    this.CountPhoneField = value;
-                    this.RaisePropertyChanged("CountPhone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public int CountMessengers {
-            get {
-                return this.CountMessengersField;
-            }
-            set {
-                if ((this.CountMessengersField.Equals(value) != true)) {
-                    this.CountMessengersField = value;
-                    this.RaisePropertyChanged("CountMessengers");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public int CountEmail {
-            get {
-                return this.CountEmailField;
-            }
-            set {
-                if ((this.CountEmailField.Equals(value) != true)) {
-                    this.CountEmailField = value;
-                    this.RaisePropertyChanged("CountEmail");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public int CountAddress {
-            get {
-                return this.CountAddressField;
-            }
-            set {
-                if ((this.CountAddressField.Equals(value) != true)) {
-                    this.CountAddressField = value;
-                    this.RaisePropertyChanged("CountAddress");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public int CountAnother {
-            get {
-                return this.CountAnotherField;
-            }
-            set {
-                if ((this.CountAnotherField.Equals(value) != true)) {
-                    this.CountAnotherField = value;
-                    this.RaisePropertyChanged("CountAnother");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
-        public int CountOncologicalDisease {
-            get {
-                return this.CountOncologicalDiseaseField;
-            }
-            set {
-                if ((this.CountOncologicalDiseaseField.Equals(value) != true)) {
-                    this.CountOncologicalDiseaseField = value;
-                    this.RaisePropertyChanged("CountOncologicalDisease");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
-        public int CountEndocrineDisease {
-            get {
-                return this.CountEndocrineDiseaseField;
-            }
-            set {
-                if ((this.CountEndocrineDiseaseField.Equals(value) != true)) {
-                    this.CountEndocrineDiseaseField = value;
-                    this.RaisePropertyChanged("CountEndocrineDisease");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
-        public int CountBronchoDisease {
-            get {
-                return this.CountBronchoDiseaseField;
-            }
-            set {
-                if ((this.CountBronchoDiseaseField.Equals(value) != true)) {
-                    this.CountBronchoDiseaseField = value;
-                    this.RaisePropertyChanged("CountBronchoDisease");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
-        public int CountBloodDisease {
-            get {
-                return this.CountBloodDiseaseField;
-            }
-            set {
-                if ((this.CountBloodDiseaseField.Equals(value) != true)) {
-                    this.CountBloodDiseaseField = value;
-                    this.RaisePropertyChanged("CountBloodDisease");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
-        public int CountAnotherDisease {
-            get {
-                return this.CountAnotherDiseaseField;
-            }
-            set {
-                if ((this.CountAnotherDiseaseField.Equals(value) != true)) {
-                    this.CountAnotherDiseaseField = value;
-                    this.RaisePropertyChanged("CountAnotherDisease");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportIizlDto", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ReportIizlDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ThemeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ReportIizlDataDto[] DataField;
-        
-        private int TotalPersFirstField;
-        
-        private int TotalPersRepeatField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Theme {
-            get {
-                return this.ThemeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ThemeField, value) != true)) {
-                    this.ThemeField = value;
-                    this.RaisePropertyChanged("Theme");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public KmsReportClient.External.ReportIizlDataDto[] Data {
-            get {
-                return this.DataField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DataField, value) != true)) {
-                    this.DataField = value;
-                    this.RaisePropertyChanged("Data");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public int TotalPersFirst {
-            get {
-                return this.TotalPersFirstField;
-            }
-            set {
-                if ((this.TotalPersFirstField.Equals(value) != true)) {
-                    this.TotalPersFirstField = value;
-                    this.RaisePropertyChanged("TotalPersFirst");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public int TotalPersRepeat {
-            get {
-                return this.TotalPersRepeatField;
-            }
-            set {
-                if ((this.TotalPersRepeatField.Equals(value) != true)) {
-                    this.TotalPersRepeatField = value;
-                    this.RaisePropertyChanged("TotalPersRepeat");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportIizlDataDto", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ReportIizlDataDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CodeField;
-        
-        private int CountPersFirstField;
-        
-        private int CountPersRepeatField;
-        
-        private int CountMessagesField;
-        
-        private decimal TotalCostField;
-        
-        private decimal AverageCostPerMessageField;
-        
-        private decimal AverageCostOfInforming1PLField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AccountingDocumentField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Code {
-            get {
-                return this.CodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CodeField, value) != true)) {
-                    this.CodeField = value;
-                    this.RaisePropertyChanged("Code");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int CountPersFirst {
-            get {
-                return this.CountPersFirstField;
-            }
-            set {
-                if ((this.CountPersFirstField.Equals(value) != true)) {
-                    this.CountPersFirstField = value;
-                    this.RaisePropertyChanged("CountPersFirst");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int CountPersRepeat {
-            get {
-                return this.CountPersRepeatField;
-            }
-            set {
-                if ((this.CountPersRepeatField.Equals(value) != true)) {
-                    this.CountPersRepeatField = value;
-                    this.RaisePropertyChanged("CountPersRepeat");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public int CountMessages {
-            get {
-                return this.CountMessagesField;
-            }
-            set {
-                if ((this.CountMessagesField.Equals(value) != true)) {
-                    this.CountMessagesField = value;
-                    this.RaisePropertyChanged("CountMessages");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public decimal TotalCost {
-            get {
-                return this.TotalCostField;
-            }
-            set {
-                if ((this.TotalCostField.Equals(value) != true)) {
-                    this.TotalCostField = value;
-                    this.RaisePropertyChanged("TotalCost");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public decimal AverageCostPerMessage {
-            get {
-                return this.AverageCostPerMessageField;
-            }
-            set {
-                if ((this.AverageCostPerMessageField.Equals(value) != true)) {
-                    this.AverageCostPerMessageField = value;
-                    this.RaisePropertyChanged("AverageCostPerMessage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public decimal AverageCostOfInforming1PL {
-            get {
-                return this.AverageCostOfInforming1PLField;
-            }
-            set {
-                if ((this.AverageCostOfInforming1PLField.Equals(value) != true)) {
-                    this.AverageCostOfInforming1PLField = value;
-                    this.RaisePropertyChanged("AverageCostOfInforming1PL");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string AccountingDocument {
-            get {
-                return this.AccountingDocumentField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AccountingDocumentField, value) != true)) {
-                    this.AccountingDocumentField = value;
-                    this.RaisePropertyChanged("AccountingDocument");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportPgDto", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ReportPgDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ThemeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ReportPgDataDto[] DataField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Theme {
-            get {
-                return this.ThemeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ThemeField, value) != true)) {
-                    this.ThemeField = value;
-                    this.RaisePropertyChanged("Theme");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public KmsReportClient.External.ReportPgDataDto[] Data {
-            get {
-                return this.DataField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DataField, value) != true)) {
-                    this.DataField = value;
-                    this.RaisePropertyChanged("Data");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportPgDataDto", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ReportPgDataDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CodeField;
-        
-        private decimal CountSmoField;
-        
-        private decimal CountSmoAnotherField;
-        
-        private decimal CountInsuredField;
-        
-        private decimal CountInsuredRepresentativeField;
-        
-        private decimal CountTfomsField;
-        
-        private decimal CountProsecutorField;
-        
-        private decimal CountOutOfSmoField;
-        
-        private decimal CountAmbulatoryField;
-        
-        private decimal CountDsField;
-        
-        private decimal CountDsVmpField;
-        
-        private decimal CountStacField;
-        
-        private decimal CountStacVmpField;
-        
-        private decimal CountOutOfSmoAnotherField;
-        
-        private decimal CountAmbulatoryAnotherField;
-        
-        private decimal CountDsAnotherField;
-        
-        private decimal CountDsVmpAnotherField;
-        
-        private decimal CountStacAnotherField;
-        
-        private decimal CountStacVmpAnotherField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Code {
-            get {
-                return this.CodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CodeField, value) != true)) {
-                    this.CodeField = value;
-                    this.RaisePropertyChanged("Code");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal CountSmo {
-            get {
-                return this.CountSmoField;
-            }
-            set {
-                if ((this.CountSmoField.Equals(value) != true)) {
-                    this.CountSmoField = value;
-                    this.RaisePropertyChanged("CountSmo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal CountSmoAnother {
-            get {
-                return this.CountSmoAnotherField;
-            }
-            set {
-                if ((this.CountSmoAnotherField.Equals(value) != true)) {
-                    this.CountSmoAnotherField = value;
-                    this.RaisePropertyChanged("CountSmoAnother");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public decimal CountInsured {
-            get {
-                return this.CountInsuredField;
-            }
-            set {
-                if ((this.CountInsuredField.Equals(value) != true)) {
-                    this.CountInsuredField = value;
-                    this.RaisePropertyChanged("CountInsured");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public decimal CountInsuredRepresentative {
-            get {
-                return this.CountInsuredRepresentativeField;
-            }
-            set {
-                if ((this.CountInsuredRepresentativeField.Equals(value) != true)) {
-                    this.CountInsuredRepresentativeField = value;
-                    this.RaisePropertyChanged("CountInsuredRepresentative");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public decimal CountTfoms {
-            get {
-                return this.CountTfomsField;
-            }
-            set {
-                if ((this.CountTfomsField.Equals(value) != true)) {
-                    this.CountTfomsField = value;
-                    this.RaisePropertyChanged("CountTfoms");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public decimal CountProsecutor {
-            get {
-                return this.CountProsecutorField;
-            }
-            set {
-                if ((this.CountProsecutorField.Equals(value) != true)) {
-                    this.CountProsecutorField = value;
-                    this.RaisePropertyChanged("CountProsecutor");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public decimal CountOutOfSmo {
-            get {
-                return this.CountOutOfSmoField;
-            }
-            set {
-                if ((this.CountOutOfSmoField.Equals(value) != true)) {
-                    this.CountOutOfSmoField = value;
-                    this.RaisePropertyChanged("CountOutOfSmo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public decimal CountAmbulatory {
-            get {
-                return this.CountAmbulatoryField;
-            }
-            set {
-                if ((this.CountAmbulatoryField.Equals(value) != true)) {
-                    this.CountAmbulatoryField = value;
-                    this.RaisePropertyChanged("CountAmbulatory");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
-        public decimal CountDs {
-            get {
-                return this.CountDsField;
-            }
-            set {
-                if ((this.CountDsField.Equals(value) != true)) {
-                    this.CountDsField = value;
-                    this.RaisePropertyChanged("CountDs");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
-        public decimal CountDsVmp {
-            get {
-                return this.CountDsVmpField;
-            }
-            set {
-                if ((this.CountDsVmpField.Equals(value) != true)) {
-                    this.CountDsVmpField = value;
-                    this.RaisePropertyChanged("CountDsVmp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
-        public decimal CountStac {
-            get {
-                return this.CountStacField;
-            }
-            set {
-                if ((this.CountStacField.Equals(value) != true)) {
-                    this.CountStacField = value;
-                    this.RaisePropertyChanged("CountStac");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
-        public decimal CountStacVmp {
-            get {
-                return this.CountStacVmpField;
-            }
-            set {
-                if ((this.CountStacVmpField.Equals(value) != true)) {
-                    this.CountStacVmpField = value;
-                    this.RaisePropertyChanged("CountStacVmp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
-        public decimal CountOutOfSmoAnother {
-            get {
-                return this.CountOutOfSmoAnotherField;
-            }
-            set {
-                if ((this.CountOutOfSmoAnotherField.Equals(value) != true)) {
-                    this.CountOutOfSmoAnotherField = value;
-                    this.RaisePropertyChanged("CountOutOfSmoAnother");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
-        public decimal CountAmbulatoryAnother {
-            get {
-                return this.CountAmbulatoryAnotherField;
-            }
-            set {
-                if ((this.CountAmbulatoryAnotherField.Equals(value) != true)) {
-                    this.CountAmbulatoryAnotherField = value;
-                    this.RaisePropertyChanged("CountAmbulatoryAnother");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
-        public decimal CountDsAnother {
-            get {
-                return this.CountDsAnotherField;
-            }
-            set {
-                if ((this.CountDsAnotherField.Equals(value) != true)) {
-                    this.CountDsAnotherField = value;
-                    this.RaisePropertyChanged("CountDsAnother");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
-        public decimal CountDsVmpAnother {
-            get {
-                return this.CountDsVmpAnotherField;
-            }
-            set {
-                if ((this.CountDsVmpAnotherField.Equals(value) != true)) {
-                    this.CountDsVmpAnotherField = value;
-                    this.RaisePropertyChanged("CountDsVmpAnother");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
-        public decimal CountStacAnother {
-            get {
-                return this.CountStacAnotherField;
-            }
-            set {
-                if ((this.CountStacAnotherField.Equals(value) != true)) {
-                    this.CountStacAnotherField = value;
-                    this.RaisePropertyChanged("CountStacAnother");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=18)]
-        public decimal CountStacVmpAnother {
-            get {
-                return this.CountStacVmpAnotherField;
-            }
-            set {
-                if ((this.CountStacVmpAnotherField.Equals(value) != true)) {
-                    this.CountStacVmpAnotherField = value;
-                    this.RaisePropertyChanged("CountStacVmpAnother");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FSSMonitoringPgDataDto", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class FSSMonitoringPgDataDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RowNumField;
-        
-        private System.Nullable<decimal> ExpertWithEducationField;
-        
-        private System.Nullable<decimal> ExpertWithoutEducationField;
-        
-        private System.Nullable<decimal> TotalField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string RowNum {
-            get {
-                return this.RowNumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RowNumField, value) != true)) {
-                    this.RowNumField = value;
-                    this.RaisePropertyChanged("RowNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public System.Nullable<decimal> ExpertWithEducation {
-            get {
-                return this.ExpertWithEducationField;
-            }
-            set {
-                if ((this.ExpertWithEducationField.Equals(value) != true)) {
-                    this.ExpertWithEducationField = value;
-                    this.RaisePropertyChanged("ExpertWithEducation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public System.Nullable<decimal> ExpertWithoutEducation {
-            get {
-                return this.ExpertWithoutEducationField;
-            }
-            set {
-                if ((this.ExpertWithoutEducationField.Equals(value) != true)) {
-                    this.ExpertWithoutEducationField = value;
-                    this.RaisePropertyChanged("ExpertWithoutEducation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public System.Nullable<decimal> Total {
-            get {
-                return this.TotalField;
-            }
-            set {
-                if ((this.TotalField.Equals(value) != true)) {
-                    this.TotalField = value;
-                    this.RaisePropertyChanged("Total");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfString", Namespace="http://kms-oms.ru/", ItemName="string")]
-    [System.SerializableAttribute()]
-    public class ArrayOfString : System.Collections.Generic.List<string> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ReportDynamicFlowDto", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportDynamicFlowDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -20164,93 +14018,5718 @@ namespace KmsReportClient.External {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateCpnpM", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ConsolidateCpnpM : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilialField;
+        
+        private System.Nullable<decimal> CountAllField;
+        
+        private System.Nullable<decimal> CountReasonField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Filial {
+            get {
+                return this.FilialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
+                    this.FilialField = value;
+                    this.RaisePropertyChanged("Filial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public System.Nullable<decimal> CountAll {
+            get {
+                return this.CountAllField;
+            }
+            set {
+                if ((this.CountAllField.Equals(value) != true)) {
+                    this.CountAllField = value;
+                    this.RaisePropertyChanged("CountAll");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public System.Nullable<decimal> CountReason {
+            get {
+                return this.CountReasonField;
+            }
+            set {
+                if ((this.CountReasonField.Equals(value) != true)) {
+                    this.CountReasonField = value;
+                    this.RaisePropertyChanged("CountReason");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateCardio", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ConsolidateCardio : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.CardioComplaint ComplaintField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.CardioProtection ProtectionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.CardioMeeEkmp MeeEkmpField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.CardioFinance FinanceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Filial {
+            get {
+                return this.FilialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
+                    this.FilialField = value;
+                    this.RaisePropertyChanged("Filial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public KmsReportClient.External.CardioComplaint Complaint {
+            get {
+                return this.ComplaintField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ComplaintField, value) != true)) {
+                    this.ComplaintField = value;
+                    this.RaisePropertyChanged("Complaint");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public KmsReportClient.External.CardioProtection Protection {
+            get {
+                return this.ProtectionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProtectionField, value) != true)) {
+                    this.ProtectionField = value;
+                    this.RaisePropertyChanged("Protection");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public KmsReportClient.External.CardioMeeEkmp MeeEkmp {
+            get {
+                return this.MeeEkmpField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MeeEkmpField, value) != true)) {
+                    this.MeeEkmpField = value;
+                    this.RaisePropertyChanged("MeeEkmp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public KmsReportClient.External.CardioFinance Finance {
+            get {
+                return this.FinanceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FinanceField, value) != true)) {
+                    this.FinanceField = value;
+                    this.RaisePropertyChanged("Finance");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CardioComplaint", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class CardioComplaint : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private decimal MedicalHelpField;
+        
+        private decimal UnderageField;
+        
+        private decimal AskMedicalHelpField;
+        
+        private decimal UnderageAskMedicalHelpField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal MedicalHelp {
+            get {
+                return this.MedicalHelpField;
+            }
+            set {
+                if ((this.MedicalHelpField.Equals(value) != true)) {
+                    this.MedicalHelpField = value;
+                    this.RaisePropertyChanged("MedicalHelp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal Underage {
+            get {
+                return this.UnderageField;
+            }
+            set {
+                if ((this.UnderageField.Equals(value) != true)) {
+                    this.UnderageField = value;
+                    this.RaisePropertyChanged("Underage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public decimal AskMedicalHelp {
+            get {
+                return this.AskMedicalHelpField;
+            }
+            set {
+                if ((this.AskMedicalHelpField.Equals(value) != true)) {
+                    this.AskMedicalHelpField = value;
+                    this.RaisePropertyChanged("AskMedicalHelp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public decimal UnderageAskMedicalHelp {
+            get {
+                return this.UnderageAskMedicalHelpField;
+            }
+            set {
+                if ((this.UnderageAskMedicalHelpField.Equals(value) != true)) {
+                    this.UnderageAskMedicalHelpField = value;
+                    this.RaisePropertyChanged("UnderageAskMedicalHelp");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CardioProtection", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class CardioProtection : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private decimal PretrialMedicalHelpField;
+        
+        private decimal PretrialUnderageField;
+        
+        private decimal JudicalMedicalHelpField;
+        
+        private decimal JudicalUnderageField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal PretrialMedicalHelp {
+            get {
+                return this.PretrialMedicalHelpField;
+            }
+            set {
+                if ((this.PretrialMedicalHelpField.Equals(value) != true)) {
+                    this.PretrialMedicalHelpField = value;
+                    this.RaisePropertyChanged("PretrialMedicalHelp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal PretrialUnderage {
+            get {
+                return this.PretrialUnderageField;
+            }
+            set {
+                if ((this.PretrialUnderageField.Equals(value) != true)) {
+                    this.PretrialUnderageField = value;
+                    this.RaisePropertyChanged("PretrialUnderage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public decimal JudicalMedicalHelp {
+            get {
+                return this.JudicalMedicalHelpField;
+            }
+            set {
+                if ((this.JudicalMedicalHelpField.Equals(value) != true)) {
+                    this.JudicalMedicalHelpField = value;
+                    this.RaisePropertyChanged("JudicalMedicalHelp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public decimal JudicalUnderage {
+            get {
+                return this.JudicalUnderageField;
+            }
+            set {
+                if ((this.JudicalUnderageField.Equals(value) != true)) {
+                    this.JudicalUnderageField = value;
+                    this.RaisePropertyChanged("JudicalUnderage");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CardioMeeEkmp", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class CardioMeeEkmp : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private decimal ComplaintsMEEField;
+        
+        private decimal HospitalizationMEEField;
+        
+        private decimal CelExpertiseMEEField;
+        
+        private decimal PlanExpertiseMEEField;
+        
+        private decimal ComplaintsEKMPField;
+        
+        private decimal CelLetalKoronarField;
+        
+        private decimal CelLetalOnmkField;
+        
+        private decimal CelAllCardioField;
+        
+        private decimal CelUnderageField;
+        
+        private decimal PlanAllCardioField;
+        
+        private decimal PlanCardioUnderageField;
+        
+        private decimal CelNeprofilGospitalField;
+        
+        private decimal CelNeprofilGospitalUnderageField;
+        
+        private decimal PlanNeprofilGospitalField;
+        
+        private decimal PlanNeprofilGospitalUnderageField;
+        
+        private decimal CelNevipolnenieField;
+        
+        private decimal CelNevipolnenieUnderageField;
+        
+        private decimal PlanNevipolnenieField;
+        
+        private decimal PlanNevipolnenieUnderageField;
+        
+        private decimal CelNotAddDispNabField;
+        
+        private decimal CelNotAddDispNabUnderageField;
+        
+        private decimal PlanNotAddDispNabField;
+        
+        private decimal PlanNotAddDispNabUnderageField;
+        
+        private decimal CelNotSobludClinicRecomendationField;
+        
+        private decimal CelNotSobludClinicRecomendationUnderageField;
+        
+        private decimal PlanNotSobludClinicRecomendationField;
+        
+        private decimal PlanNotSobludClinicRecomendationUnderageField;
+        
+        private decimal CelPrematureCloseHelpMeropField;
+        
+        private decimal CelPrematureCloseHelpMeropUnderageField;
+        
+        private decimal PlanPrematureCloseHelpMeropField;
+        
+        private decimal PlanPrematureCloseHelpMeropUnderageField;
+        
+        private decimal CelViolationHospitalField;
+        
+        private decimal CelViolationHospitalUnderageField;
+        
+        private decimal PlanViolationHospitalField;
+        
+        private decimal PlanViolationHospitalUnderageField;
+        
+        private decimal CelNeobosOtkazField;
+        
+        private decimal CelNeobosOtkazUnderageField;
+        
+        private decimal PlanNeobosOtkazField;
+        
+        private decimal PlanNeobosOtkazUnderageField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal ComplaintsMEE {
+            get {
+                return this.ComplaintsMEEField;
+            }
+            set {
+                if ((this.ComplaintsMEEField.Equals(value) != true)) {
+                    this.ComplaintsMEEField = value;
+                    this.RaisePropertyChanged("ComplaintsMEE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal HospitalizationMEE {
+            get {
+                return this.HospitalizationMEEField;
+            }
+            set {
+                if ((this.HospitalizationMEEField.Equals(value) != true)) {
+                    this.HospitalizationMEEField = value;
+                    this.RaisePropertyChanged("HospitalizationMEE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public decimal CelExpertiseMEE {
+            get {
+                return this.CelExpertiseMEEField;
+            }
+            set {
+                if ((this.CelExpertiseMEEField.Equals(value) != true)) {
+                    this.CelExpertiseMEEField = value;
+                    this.RaisePropertyChanged("CelExpertiseMEE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public decimal PlanExpertiseMEE {
+            get {
+                return this.PlanExpertiseMEEField;
+            }
+            set {
+                if ((this.PlanExpertiseMEEField.Equals(value) != true)) {
+                    this.PlanExpertiseMEEField = value;
+                    this.RaisePropertyChanged("PlanExpertiseMEE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public decimal ComplaintsEKMP {
+            get {
+                return this.ComplaintsEKMPField;
+            }
+            set {
+                if ((this.ComplaintsEKMPField.Equals(value) != true)) {
+                    this.ComplaintsEKMPField = value;
+                    this.RaisePropertyChanged("ComplaintsEKMP");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public decimal CelLetalKoronar {
+            get {
+                return this.CelLetalKoronarField;
+            }
+            set {
+                if ((this.CelLetalKoronarField.Equals(value) != true)) {
+                    this.CelLetalKoronarField = value;
+                    this.RaisePropertyChanged("CelLetalKoronar");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public decimal CelLetalOnmk {
+            get {
+                return this.CelLetalOnmkField;
+            }
+            set {
+                if ((this.CelLetalOnmkField.Equals(value) != true)) {
+                    this.CelLetalOnmkField = value;
+                    this.RaisePropertyChanged("CelLetalOnmk");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public decimal CelAllCardio {
+            get {
+                return this.CelAllCardioField;
+            }
+            set {
+                if ((this.CelAllCardioField.Equals(value) != true)) {
+                    this.CelAllCardioField = value;
+                    this.RaisePropertyChanged("CelAllCardio");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        public decimal CelUnderage {
+            get {
+                return this.CelUnderageField;
+            }
+            set {
+                if ((this.CelUnderageField.Equals(value) != true)) {
+                    this.CelUnderageField = value;
+                    this.RaisePropertyChanged("CelUnderage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        public decimal PlanAllCardio {
+            get {
+                return this.PlanAllCardioField;
+            }
+            set {
+                if ((this.PlanAllCardioField.Equals(value) != true)) {
+                    this.PlanAllCardioField = value;
+                    this.RaisePropertyChanged("PlanAllCardio");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        public decimal PlanCardioUnderage {
+            get {
+                return this.PlanCardioUnderageField;
+            }
+            set {
+                if ((this.PlanCardioUnderageField.Equals(value) != true)) {
+                    this.PlanCardioUnderageField = value;
+                    this.RaisePropertyChanged("PlanCardioUnderage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        public decimal CelNeprofilGospital {
+            get {
+                return this.CelNeprofilGospitalField;
+            }
+            set {
+                if ((this.CelNeprofilGospitalField.Equals(value) != true)) {
+                    this.CelNeprofilGospitalField = value;
+                    this.RaisePropertyChanged("CelNeprofilGospital");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
+        public decimal CelNeprofilGospitalUnderage {
+            get {
+                return this.CelNeprofilGospitalUnderageField;
+            }
+            set {
+                if ((this.CelNeprofilGospitalUnderageField.Equals(value) != true)) {
+                    this.CelNeprofilGospitalUnderageField = value;
+                    this.RaisePropertyChanged("CelNeprofilGospitalUnderage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
+        public decimal PlanNeprofilGospital {
+            get {
+                return this.PlanNeprofilGospitalField;
+            }
+            set {
+                if ((this.PlanNeprofilGospitalField.Equals(value) != true)) {
+                    this.PlanNeprofilGospitalField = value;
+                    this.RaisePropertyChanged("PlanNeprofilGospital");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
+        public decimal PlanNeprofilGospitalUnderage {
+            get {
+                return this.PlanNeprofilGospitalUnderageField;
+            }
+            set {
+                if ((this.PlanNeprofilGospitalUnderageField.Equals(value) != true)) {
+                    this.PlanNeprofilGospitalUnderageField = value;
+                    this.RaisePropertyChanged("PlanNeprofilGospitalUnderage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
+        public decimal CelNevipolnenie {
+            get {
+                return this.CelNevipolnenieField;
+            }
+            set {
+                if ((this.CelNevipolnenieField.Equals(value) != true)) {
+                    this.CelNevipolnenieField = value;
+                    this.RaisePropertyChanged("CelNevipolnenie");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
+        public decimal CelNevipolnenieUnderage {
+            get {
+                return this.CelNevipolnenieUnderageField;
+            }
+            set {
+                if ((this.CelNevipolnenieUnderageField.Equals(value) != true)) {
+                    this.CelNevipolnenieUnderageField = value;
+                    this.RaisePropertyChanged("CelNevipolnenieUnderage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
+        public decimal PlanNevipolnenie {
+            get {
+                return this.PlanNevipolnenieField;
+            }
+            set {
+                if ((this.PlanNevipolnenieField.Equals(value) != true)) {
+                    this.PlanNevipolnenieField = value;
+                    this.RaisePropertyChanged("PlanNevipolnenie");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=18)]
+        public decimal PlanNevipolnenieUnderage {
+            get {
+                return this.PlanNevipolnenieUnderageField;
+            }
+            set {
+                if ((this.PlanNevipolnenieUnderageField.Equals(value) != true)) {
+                    this.PlanNevipolnenieUnderageField = value;
+                    this.RaisePropertyChanged("PlanNevipolnenieUnderage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=19)]
+        public decimal CelNotAddDispNab {
+            get {
+                return this.CelNotAddDispNabField;
+            }
+            set {
+                if ((this.CelNotAddDispNabField.Equals(value) != true)) {
+                    this.CelNotAddDispNabField = value;
+                    this.RaisePropertyChanged("CelNotAddDispNab");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=20)]
+        public decimal CelNotAddDispNabUnderage {
+            get {
+                return this.CelNotAddDispNabUnderageField;
+            }
+            set {
+                if ((this.CelNotAddDispNabUnderageField.Equals(value) != true)) {
+                    this.CelNotAddDispNabUnderageField = value;
+                    this.RaisePropertyChanged("CelNotAddDispNabUnderage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=21)]
+        public decimal PlanNotAddDispNab {
+            get {
+                return this.PlanNotAddDispNabField;
+            }
+            set {
+                if ((this.PlanNotAddDispNabField.Equals(value) != true)) {
+                    this.PlanNotAddDispNabField = value;
+                    this.RaisePropertyChanged("PlanNotAddDispNab");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=22)]
+        public decimal PlanNotAddDispNabUnderage {
+            get {
+                return this.PlanNotAddDispNabUnderageField;
+            }
+            set {
+                if ((this.PlanNotAddDispNabUnderageField.Equals(value) != true)) {
+                    this.PlanNotAddDispNabUnderageField = value;
+                    this.RaisePropertyChanged("PlanNotAddDispNabUnderage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=23)]
+        public decimal CelNotSobludClinicRecomendation {
+            get {
+                return this.CelNotSobludClinicRecomendationField;
+            }
+            set {
+                if ((this.CelNotSobludClinicRecomendationField.Equals(value) != true)) {
+                    this.CelNotSobludClinicRecomendationField = value;
+                    this.RaisePropertyChanged("CelNotSobludClinicRecomendation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=24)]
+        public decimal CelNotSobludClinicRecomendationUnderage {
+            get {
+                return this.CelNotSobludClinicRecomendationUnderageField;
+            }
+            set {
+                if ((this.CelNotSobludClinicRecomendationUnderageField.Equals(value) != true)) {
+                    this.CelNotSobludClinicRecomendationUnderageField = value;
+                    this.RaisePropertyChanged("CelNotSobludClinicRecomendationUnderage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=25)]
+        public decimal PlanNotSobludClinicRecomendation {
+            get {
+                return this.PlanNotSobludClinicRecomendationField;
+            }
+            set {
+                if ((this.PlanNotSobludClinicRecomendationField.Equals(value) != true)) {
+                    this.PlanNotSobludClinicRecomendationField = value;
+                    this.RaisePropertyChanged("PlanNotSobludClinicRecomendation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=26)]
+        public decimal PlanNotSobludClinicRecomendationUnderage {
+            get {
+                return this.PlanNotSobludClinicRecomendationUnderageField;
+            }
+            set {
+                if ((this.PlanNotSobludClinicRecomendationUnderageField.Equals(value) != true)) {
+                    this.PlanNotSobludClinicRecomendationUnderageField = value;
+                    this.RaisePropertyChanged("PlanNotSobludClinicRecomendationUnderage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=27)]
+        public decimal CelPrematureCloseHelpMerop {
+            get {
+                return this.CelPrematureCloseHelpMeropField;
+            }
+            set {
+                if ((this.CelPrematureCloseHelpMeropField.Equals(value) != true)) {
+                    this.CelPrematureCloseHelpMeropField = value;
+                    this.RaisePropertyChanged("CelPrematureCloseHelpMerop");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=28)]
+        public decimal CelPrematureCloseHelpMeropUnderage {
+            get {
+                return this.CelPrematureCloseHelpMeropUnderageField;
+            }
+            set {
+                if ((this.CelPrematureCloseHelpMeropUnderageField.Equals(value) != true)) {
+                    this.CelPrematureCloseHelpMeropUnderageField = value;
+                    this.RaisePropertyChanged("CelPrematureCloseHelpMeropUnderage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=29)]
+        public decimal PlanPrematureCloseHelpMerop {
+            get {
+                return this.PlanPrematureCloseHelpMeropField;
+            }
+            set {
+                if ((this.PlanPrematureCloseHelpMeropField.Equals(value) != true)) {
+                    this.PlanPrematureCloseHelpMeropField = value;
+                    this.RaisePropertyChanged("PlanPrematureCloseHelpMerop");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=30)]
+        public decimal PlanPrematureCloseHelpMeropUnderage {
+            get {
+                return this.PlanPrematureCloseHelpMeropUnderageField;
+            }
+            set {
+                if ((this.PlanPrematureCloseHelpMeropUnderageField.Equals(value) != true)) {
+                    this.PlanPrematureCloseHelpMeropUnderageField = value;
+                    this.RaisePropertyChanged("PlanPrematureCloseHelpMeropUnderage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=31)]
+        public decimal CelViolationHospital {
+            get {
+                return this.CelViolationHospitalField;
+            }
+            set {
+                if ((this.CelViolationHospitalField.Equals(value) != true)) {
+                    this.CelViolationHospitalField = value;
+                    this.RaisePropertyChanged("CelViolationHospital");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=32)]
+        public decimal CelViolationHospitalUnderage {
+            get {
+                return this.CelViolationHospitalUnderageField;
+            }
+            set {
+                if ((this.CelViolationHospitalUnderageField.Equals(value) != true)) {
+                    this.CelViolationHospitalUnderageField = value;
+                    this.RaisePropertyChanged("CelViolationHospitalUnderage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=33)]
+        public decimal PlanViolationHospital {
+            get {
+                return this.PlanViolationHospitalField;
+            }
+            set {
+                if ((this.PlanViolationHospitalField.Equals(value) != true)) {
+                    this.PlanViolationHospitalField = value;
+                    this.RaisePropertyChanged("PlanViolationHospital");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=34)]
+        public decimal PlanViolationHospitalUnderage {
+            get {
+                return this.PlanViolationHospitalUnderageField;
+            }
+            set {
+                if ((this.PlanViolationHospitalUnderageField.Equals(value) != true)) {
+                    this.PlanViolationHospitalUnderageField = value;
+                    this.RaisePropertyChanged("PlanViolationHospitalUnderage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=35)]
+        public decimal CelNeobosOtkaz {
+            get {
+                return this.CelNeobosOtkazField;
+            }
+            set {
+                if ((this.CelNeobosOtkazField.Equals(value) != true)) {
+                    this.CelNeobosOtkazField = value;
+                    this.RaisePropertyChanged("CelNeobosOtkaz");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=36)]
+        public decimal CelNeobosOtkazUnderage {
+            get {
+                return this.CelNeobosOtkazUnderageField;
+            }
+            set {
+                if ((this.CelNeobosOtkazUnderageField.Equals(value) != true)) {
+                    this.CelNeobosOtkazUnderageField = value;
+                    this.RaisePropertyChanged("CelNeobosOtkazUnderage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=37)]
+        public decimal PlanNeobosOtkaz {
+            get {
+                return this.PlanNeobosOtkazField;
+            }
+            set {
+                if ((this.PlanNeobosOtkazField.Equals(value) != true)) {
+                    this.PlanNeobosOtkazField = value;
+                    this.RaisePropertyChanged("PlanNeobosOtkaz");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=38)]
+        public decimal PlanNeobosOtkazUnderage {
+            get {
+                return this.PlanNeobosOtkazUnderageField;
+            }
+            set {
+                if ((this.PlanNeobosOtkazUnderageField.Equals(value) != true)) {
+                    this.PlanNeobosOtkazUnderageField = value;
+                    this.RaisePropertyChanged("PlanNeobosOtkazUnderage");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CardioFinance", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class CardioFinance : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private decimal SumMeeNotTimeDispanField;
+        
+        private decimal SumMeeNotTimeDispanUnderageField;
+        
+        private decimal SumEkmpNotTimeDispanField;
+        
+        private decimal SumEkmpNotTimeDispanUnderageField;
+        
+        private decimal SumNeprofilHelpField;
+        
+        private decimal SumNeprofilHelpUnderageField;
+        
+        private decimal SumNevipolnenieField;
+        
+        private decimal SumNevipolnenieUnderageField;
+        
+        private decimal SumNesobludRecomedationField;
+        
+        private decimal SumNesobludRecomedationUnderageField;
+        
+        private decimal SumCloseHelpField;
+        
+        private decimal SumCloseHelpUnderageField;
+        
+        private decimal SumViolationField;
+        
+        private decimal SumViolationUnderageField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal SumMeeNotTimeDispan {
+            get {
+                return this.SumMeeNotTimeDispanField;
+            }
+            set {
+                if ((this.SumMeeNotTimeDispanField.Equals(value) != true)) {
+                    this.SumMeeNotTimeDispanField = value;
+                    this.RaisePropertyChanged("SumMeeNotTimeDispan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal SumMeeNotTimeDispanUnderage {
+            get {
+                return this.SumMeeNotTimeDispanUnderageField;
+            }
+            set {
+                if ((this.SumMeeNotTimeDispanUnderageField.Equals(value) != true)) {
+                    this.SumMeeNotTimeDispanUnderageField = value;
+                    this.RaisePropertyChanged("SumMeeNotTimeDispanUnderage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public decimal SumEkmpNotTimeDispan {
+            get {
+                return this.SumEkmpNotTimeDispanField;
+            }
+            set {
+                if ((this.SumEkmpNotTimeDispanField.Equals(value) != true)) {
+                    this.SumEkmpNotTimeDispanField = value;
+                    this.RaisePropertyChanged("SumEkmpNotTimeDispan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public decimal SumEkmpNotTimeDispanUnderage {
+            get {
+                return this.SumEkmpNotTimeDispanUnderageField;
+            }
+            set {
+                if ((this.SumEkmpNotTimeDispanUnderageField.Equals(value) != true)) {
+                    this.SumEkmpNotTimeDispanUnderageField = value;
+                    this.RaisePropertyChanged("SumEkmpNotTimeDispanUnderage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public decimal SumNeprofilHelp {
+            get {
+                return this.SumNeprofilHelpField;
+            }
+            set {
+                if ((this.SumNeprofilHelpField.Equals(value) != true)) {
+                    this.SumNeprofilHelpField = value;
+                    this.RaisePropertyChanged("SumNeprofilHelp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public decimal SumNeprofilHelpUnderage {
+            get {
+                return this.SumNeprofilHelpUnderageField;
+            }
+            set {
+                if ((this.SumNeprofilHelpUnderageField.Equals(value) != true)) {
+                    this.SumNeprofilHelpUnderageField = value;
+                    this.RaisePropertyChanged("SumNeprofilHelpUnderage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public decimal SumNevipolnenie {
+            get {
+                return this.SumNevipolnenieField;
+            }
+            set {
+                if ((this.SumNevipolnenieField.Equals(value) != true)) {
+                    this.SumNevipolnenieField = value;
+                    this.RaisePropertyChanged("SumNevipolnenie");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public decimal SumNevipolnenieUnderage {
+            get {
+                return this.SumNevipolnenieUnderageField;
+            }
+            set {
+                if ((this.SumNevipolnenieUnderageField.Equals(value) != true)) {
+                    this.SumNevipolnenieUnderageField = value;
+                    this.RaisePropertyChanged("SumNevipolnenieUnderage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        public decimal SumNesobludRecomedation {
+            get {
+                return this.SumNesobludRecomedationField;
+            }
+            set {
+                if ((this.SumNesobludRecomedationField.Equals(value) != true)) {
+                    this.SumNesobludRecomedationField = value;
+                    this.RaisePropertyChanged("SumNesobludRecomedation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        public decimal SumNesobludRecomedationUnderage {
+            get {
+                return this.SumNesobludRecomedationUnderageField;
+            }
+            set {
+                if ((this.SumNesobludRecomedationUnderageField.Equals(value) != true)) {
+                    this.SumNesobludRecomedationUnderageField = value;
+                    this.RaisePropertyChanged("SumNesobludRecomedationUnderage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        public decimal SumCloseHelp {
+            get {
+                return this.SumCloseHelpField;
+            }
+            set {
+                if ((this.SumCloseHelpField.Equals(value) != true)) {
+                    this.SumCloseHelpField = value;
+                    this.RaisePropertyChanged("SumCloseHelp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        public decimal SumCloseHelpUnderage {
+            get {
+                return this.SumCloseHelpUnderageField;
+            }
+            set {
+                if ((this.SumCloseHelpUnderageField.Equals(value) != true)) {
+                    this.SumCloseHelpUnderageField = value;
+                    this.RaisePropertyChanged("SumCloseHelpUnderage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
+        public decimal SumViolation {
+            get {
+                return this.SumViolationField;
+            }
+            set {
+                if ((this.SumViolationField.Equals(value) != true)) {
+                    this.SumViolationField = value;
+                    this.RaisePropertyChanged("SumViolation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
+        public decimal SumViolationUnderage {
+            get {
+                return this.SumViolationUnderageField;
+            }
+            set {
+                if ((this.SumViolationUnderageField.Equals(value) != true)) {
+                    this.SumViolationUnderageField = value;
+                    this.RaisePropertyChanged("SumViolationUnderage");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CReport262Table1", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class CReport262Table1 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.CReport262Table1Row[] ListOfCountPplField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.CReport262Table1Row[] ListOfCountInformField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Filial {
+            get {
+                return this.FilialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
+                    this.FilialField = value;
+                    this.RaisePropertyChanged("Filial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public KmsReportClient.External.CReport262Table1Row[] ListOfCountPpl {
+            get {
+                return this.ListOfCountPplField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ListOfCountPplField, value) != true)) {
+                    this.ListOfCountPplField = value;
+                    this.RaisePropertyChanged("ListOfCountPpl");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public KmsReportClient.External.CReport262Table1Row[] ListOfCountInform {
+            get {
+                return this.ListOfCountInformField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ListOfCountInformField, value) != true)) {
+                    this.ListOfCountInformField = value;
+                    this.RaisePropertyChanged("ListOfCountInform");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CReport262Table1Row", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class CReport262Table1Row : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int ValueField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string yymmField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Value {
+            get {
+                return this.ValueField;
+            }
+            set {
+                if ((this.ValueField.Equals(value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string yymm {
+            get {
+                return this.yymmField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.yymmField, value) != true)) {
+                    this.yymmField = value;
+                    this.RaisePropertyChanged("yymm");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CReport262Table2", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class CReport262Table2 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.Report262DataDto DataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Filial {
+            get {
+                return this.FilialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
+                    this.FilialField = value;
+                    this.RaisePropertyChanged("Filial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public KmsReportClient.External.Report262DataDto Data {
+            get {
+                return this.DataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataField, value) != true)) {
+                    this.DataField = value;
+                    this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CReport262Table3", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class CReport262Table3 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.Report262Table3Data DataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Filial {
+            get {
+                return this.FilialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
+                    this.FilialField = value;
+                    this.RaisePropertyChanged("Filial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public KmsReportClient.External.Report262Table3Data Data {
+            get {
+                return this.DataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataField, value) != true)) {
+                    this.DataField = value;
+                    this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CReportPg", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class CReportPg : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.PgExpertise ExpertiseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.PgNormative NormativeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.PgFinance FinanceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.PgPersonnel PersonnelField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Filial {
+            get {
+                return this.FilialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
+                    this.FilialField = value;
+                    this.RaisePropertyChanged("Filial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public KmsReportClient.External.PgExpertise Expertise {
+            get {
+                return this.ExpertiseField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExpertiseField, value) != true)) {
+                    this.ExpertiseField = value;
+                    this.RaisePropertyChanged("Expertise");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public KmsReportClient.External.PgNormative Normative {
+            get {
+                return this.NormativeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NormativeField, value) != true)) {
+                    this.NormativeField = value;
+                    this.RaisePropertyChanged("Normative");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public KmsReportClient.External.PgFinance Finance {
+            get {
+                return this.FinanceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FinanceField, value) != true)) {
+                    this.FinanceField = value;
+                    this.RaisePropertyChanged("Finance");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public KmsReportClient.External.PgPersonnel Personnel {
+            get {
+                return this.PersonnelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PersonnelField, value) != true)) {
+                    this.PersonnelField = value;
+                    this.RaisePropertyChanged("Personnel");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PgExpertise", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class PgExpertise : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private decimal BillsField;
+        
+        private decimal BillsOncoField;
+        
+        private decimal BillsVioletionField;
+        
+        private decimal PaymentBillsField;
+        
+        private decimal PaymentBillsOncoField;
+        
+        private decimal MeeTargetField;
+        
+        private decimal MeePlanField;
+        
+        private decimal CaseMeeTargetField;
+        
+        private decimal CaseMeePlanField;
+        
+        private decimal DefectMeeTargetField;
+        
+        private decimal DefectMeePlanField;
+        
+        private decimal EkmpTargetField;
+        
+        private decimal EkmpPlanField;
+        
+        private decimal ThemeCaseEkmpPlanField;
+        
+        private decimal CaseEkmpTargetField;
+        
+        private decimal CaseEkmpPlanField;
+        
+        private decimal DefectEkmpTargetField;
+        
+        private decimal DefectEkmpPlanField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal Bills {
+            get {
+                return this.BillsField;
+            }
+            set {
+                if ((this.BillsField.Equals(value) != true)) {
+                    this.BillsField = value;
+                    this.RaisePropertyChanged("Bills");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal BillsOnco {
+            get {
+                return this.BillsOncoField;
+            }
+            set {
+                if ((this.BillsOncoField.Equals(value) != true)) {
+                    this.BillsOncoField = value;
+                    this.RaisePropertyChanged("BillsOnco");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal BillsVioletion {
+            get {
+                return this.BillsVioletionField;
+            }
+            set {
+                if ((this.BillsVioletionField.Equals(value) != true)) {
+                    this.BillsVioletionField = value;
+                    this.RaisePropertyChanged("BillsVioletion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal PaymentBills {
+            get {
+                return this.PaymentBillsField;
+            }
+            set {
+                if ((this.PaymentBillsField.Equals(value) != true)) {
+                    this.PaymentBillsField = value;
+                    this.RaisePropertyChanged("PaymentBills");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal PaymentBillsOnco {
+            get {
+                return this.PaymentBillsOncoField;
+            }
+            set {
+                if ((this.PaymentBillsOncoField.Equals(value) != true)) {
+                    this.PaymentBillsOncoField = value;
+                    this.RaisePropertyChanged("PaymentBillsOnco");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public decimal MeeTarget {
+            get {
+                return this.MeeTargetField;
+            }
+            set {
+                if ((this.MeeTargetField.Equals(value) != true)) {
+                    this.MeeTargetField = value;
+                    this.RaisePropertyChanged("MeeTarget");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public decimal MeePlan {
+            get {
+                return this.MeePlanField;
+            }
+            set {
+                if ((this.MeePlanField.Equals(value) != true)) {
+                    this.MeePlanField = value;
+                    this.RaisePropertyChanged("MeePlan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public decimal CaseMeeTarget {
+            get {
+                return this.CaseMeeTargetField;
+            }
+            set {
+                if ((this.CaseMeeTargetField.Equals(value) != true)) {
+                    this.CaseMeeTargetField = value;
+                    this.RaisePropertyChanged("CaseMeeTarget");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        public decimal CaseMeePlan {
+            get {
+                return this.CaseMeePlanField;
+            }
+            set {
+                if ((this.CaseMeePlanField.Equals(value) != true)) {
+                    this.CaseMeePlanField = value;
+                    this.RaisePropertyChanged("CaseMeePlan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        public decimal DefectMeeTarget {
+            get {
+                return this.DefectMeeTargetField;
+            }
+            set {
+                if ((this.DefectMeeTargetField.Equals(value) != true)) {
+                    this.DefectMeeTargetField = value;
+                    this.RaisePropertyChanged("DefectMeeTarget");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        public decimal DefectMeePlan {
+            get {
+                return this.DefectMeePlanField;
+            }
+            set {
+                if ((this.DefectMeePlanField.Equals(value) != true)) {
+                    this.DefectMeePlanField = value;
+                    this.RaisePropertyChanged("DefectMeePlan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        public decimal EkmpTarget {
+            get {
+                return this.EkmpTargetField;
+            }
+            set {
+                if ((this.EkmpTargetField.Equals(value) != true)) {
+                    this.EkmpTargetField = value;
+                    this.RaisePropertyChanged("EkmpTarget");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
+        public decimal EkmpPlan {
+            get {
+                return this.EkmpPlanField;
+            }
+            set {
+                if ((this.EkmpPlanField.Equals(value) != true)) {
+                    this.EkmpPlanField = value;
+                    this.RaisePropertyChanged("EkmpPlan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
+        public decimal ThemeCaseEkmpPlan {
+            get {
+                return this.ThemeCaseEkmpPlanField;
+            }
+            set {
+                if ((this.ThemeCaseEkmpPlanField.Equals(value) != true)) {
+                    this.ThemeCaseEkmpPlanField = value;
+                    this.RaisePropertyChanged("ThemeCaseEkmpPlan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
+        public decimal CaseEkmpTarget {
+            get {
+                return this.CaseEkmpTargetField;
+            }
+            set {
+                if ((this.CaseEkmpTargetField.Equals(value) != true)) {
+                    this.CaseEkmpTargetField = value;
+                    this.RaisePropertyChanged("CaseEkmpTarget");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
+        public decimal CaseEkmpPlan {
+            get {
+                return this.CaseEkmpPlanField;
+            }
+            set {
+                if ((this.CaseEkmpPlanField.Equals(value) != true)) {
+                    this.CaseEkmpPlanField = value;
+                    this.RaisePropertyChanged("CaseEkmpPlan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
+        public decimal DefectEkmpTarget {
+            get {
+                return this.DefectEkmpTargetField;
+            }
+            set {
+                if ((this.DefectEkmpTargetField.Equals(value) != true)) {
+                    this.DefectEkmpTargetField = value;
+                    this.RaisePropertyChanged("DefectEkmpTarget");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
+        public decimal DefectEkmpPlan {
+            get {
+                return this.DefectEkmpPlanField;
+            }
+            set {
+                if ((this.DefectEkmpPlanField.Equals(value) != true)) {
+                    this.DefectEkmpPlanField = value;
+                    this.RaisePropertyChanged("DefectEkmpPlan");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PgNormative", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class PgNormative : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private decimal BillsOutMoField;
+        
+        private decimal MeeOutMoPlanField;
+        
+        private decimal MeeOutMoTargetField;
+        
+        private decimal BillsAppField;
+        
+        private decimal MeeAppPlanField;
+        
+        private decimal MeeAppTargetField;
+        
+        private decimal BillsDayHospField;
+        
+        private decimal MeeDayHospPlanField;
+        
+        private decimal MeeDayHospTargetField;
+        
+        private decimal BillsHospField;
+        
+        private decimal MeeHospPlanField;
+        
+        private decimal MeeHospTargetField;
+        
+        private decimal EkmpOutMoPlanField;
+        
+        private decimal EkmpOutMoTargetField;
+        
+        private decimal EkmpAppPlanField;
+        
+        private decimal EkmpAppTargetField;
+        
+        private decimal EkmpDayHospPlanField;
+        
+        private decimal EkmpDayHospTargetField;
+        
+        private decimal EkmpHospPlanField;
+        
+        private decimal EkmpHospTargetField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal BillsOutMo {
+            get {
+                return this.BillsOutMoField;
+            }
+            set {
+                if ((this.BillsOutMoField.Equals(value) != true)) {
+                    this.BillsOutMoField = value;
+                    this.RaisePropertyChanged("BillsOutMo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal MeeOutMoPlan {
+            get {
+                return this.MeeOutMoPlanField;
+            }
+            set {
+                if ((this.MeeOutMoPlanField.Equals(value) != true)) {
+                    this.MeeOutMoPlanField = value;
+                    this.RaisePropertyChanged("MeeOutMoPlan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal MeeOutMoTarget {
+            get {
+                return this.MeeOutMoTargetField;
+            }
+            set {
+                if ((this.MeeOutMoTargetField.Equals(value) != true)) {
+                    this.MeeOutMoTargetField = value;
+                    this.RaisePropertyChanged("MeeOutMoTarget");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public decimal BillsApp {
+            get {
+                return this.BillsAppField;
+            }
+            set {
+                if ((this.BillsAppField.Equals(value) != true)) {
+                    this.BillsAppField = value;
+                    this.RaisePropertyChanged("BillsApp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public decimal MeeAppPlan {
+            get {
+                return this.MeeAppPlanField;
+            }
+            set {
+                if ((this.MeeAppPlanField.Equals(value) != true)) {
+                    this.MeeAppPlanField = value;
+                    this.RaisePropertyChanged("MeeAppPlan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public decimal MeeAppTarget {
+            get {
+                return this.MeeAppTargetField;
+            }
+            set {
+                if ((this.MeeAppTargetField.Equals(value) != true)) {
+                    this.MeeAppTargetField = value;
+                    this.RaisePropertyChanged("MeeAppTarget");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public decimal BillsDayHosp {
+            get {
+                return this.BillsDayHospField;
+            }
+            set {
+                if ((this.BillsDayHospField.Equals(value) != true)) {
+                    this.BillsDayHospField = value;
+                    this.RaisePropertyChanged("BillsDayHosp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public decimal MeeDayHospPlan {
+            get {
+                return this.MeeDayHospPlanField;
+            }
+            set {
+                if ((this.MeeDayHospPlanField.Equals(value) != true)) {
+                    this.MeeDayHospPlanField = value;
+                    this.RaisePropertyChanged("MeeDayHospPlan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        public decimal MeeDayHospTarget {
+            get {
+                return this.MeeDayHospTargetField;
+            }
+            set {
+                if ((this.MeeDayHospTargetField.Equals(value) != true)) {
+                    this.MeeDayHospTargetField = value;
+                    this.RaisePropertyChanged("MeeDayHospTarget");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        public decimal BillsHosp {
+            get {
+                return this.BillsHospField;
+            }
+            set {
+                if ((this.BillsHospField.Equals(value) != true)) {
+                    this.BillsHospField = value;
+                    this.RaisePropertyChanged("BillsHosp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        public decimal MeeHospPlan {
+            get {
+                return this.MeeHospPlanField;
+            }
+            set {
+                if ((this.MeeHospPlanField.Equals(value) != true)) {
+                    this.MeeHospPlanField = value;
+                    this.RaisePropertyChanged("MeeHospPlan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        public decimal MeeHospTarget {
+            get {
+                return this.MeeHospTargetField;
+            }
+            set {
+                if ((this.MeeHospTargetField.Equals(value) != true)) {
+                    this.MeeHospTargetField = value;
+                    this.RaisePropertyChanged("MeeHospTarget");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
+        public decimal EkmpOutMoPlan {
+            get {
+                return this.EkmpOutMoPlanField;
+            }
+            set {
+                if ((this.EkmpOutMoPlanField.Equals(value) != true)) {
+                    this.EkmpOutMoPlanField = value;
+                    this.RaisePropertyChanged("EkmpOutMoPlan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
+        public decimal EkmpOutMoTarget {
+            get {
+                return this.EkmpOutMoTargetField;
+            }
+            set {
+                if ((this.EkmpOutMoTargetField.Equals(value) != true)) {
+                    this.EkmpOutMoTargetField = value;
+                    this.RaisePropertyChanged("EkmpOutMoTarget");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
+        public decimal EkmpAppPlan {
+            get {
+                return this.EkmpAppPlanField;
+            }
+            set {
+                if ((this.EkmpAppPlanField.Equals(value) != true)) {
+                    this.EkmpAppPlanField = value;
+                    this.RaisePropertyChanged("EkmpAppPlan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
+        public decimal EkmpAppTarget {
+            get {
+                return this.EkmpAppTargetField;
+            }
+            set {
+                if ((this.EkmpAppTargetField.Equals(value) != true)) {
+                    this.EkmpAppTargetField = value;
+                    this.RaisePropertyChanged("EkmpAppTarget");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
+        public decimal EkmpDayHospPlan {
+            get {
+                return this.EkmpDayHospPlanField;
+            }
+            set {
+                if ((this.EkmpDayHospPlanField.Equals(value) != true)) {
+                    this.EkmpDayHospPlanField = value;
+                    this.RaisePropertyChanged("EkmpDayHospPlan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
+        public decimal EkmpDayHospTarget {
+            get {
+                return this.EkmpDayHospTargetField;
+            }
+            set {
+                if ((this.EkmpDayHospTargetField.Equals(value) != true)) {
+                    this.EkmpDayHospTargetField = value;
+                    this.RaisePropertyChanged("EkmpDayHospTarget");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=18)]
+        public decimal EkmpHospPlan {
+            get {
+                return this.EkmpHospPlanField;
+            }
+            set {
+                if ((this.EkmpHospPlanField.Equals(value) != true)) {
+                    this.EkmpHospPlanField = value;
+                    this.RaisePropertyChanged("EkmpHospPlan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=19)]
+        public decimal EkmpHospTarget {
+            get {
+                return this.EkmpHospTargetField;
+            }
+            set {
+                if ((this.EkmpHospTargetField.Equals(value) != true)) {
+                    this.EkmpHospTargetField = value;
+                    this.RaisePropertyChanged("EkmpHospTarget");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PgFinance", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class PgFinance : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private decimal SumPaymentField;
+        
+        private decimal SumNotPaymentField;
+        
+        private decimal SumMekField;
+        
+        private decimal SumMeeField;
+        
+        private decimal SumEkmpField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal SumPayment {
+            get {
+                return this.SumPaymentField;
+            }
+            set {
+                if ((this.SumPaymentField.Equals(value) != true)) {
+                    this.SumPaymentField = value;
+                    this.RaisePropertyChanged("SumPayment");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public decimal SumNotPayment {
+            get {
+                return this.SumNotPaymentField;
+            }
+            set {
+                if ((this.SumNotPaymentField.Equals(value) != true)) {
+                    this.SumNotPaymentField = value;
+                    this.RaisePropertyChanged("SumNotPayment");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public decimal SumMek {
+            get {
+                return this.SumMekField;
+            }
+            set {
+                if ((this.SumMekField.Equals(value) != true)) {
+                    this.SumMekField = value;
+                    this.RaisePropertyChanged("SumMek");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public decimal SumMee {
+            get {
+                return this.SumMeeField;
+            }
+            set {
+                if ((this.SumMeeField.Equals(value) != true)) {
+                    this.SumMeeField = value;
+                    this.RaisePropertyChanged("SumMee");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public decimal SumEkmp {
+            get {
+                return this.SumEkmpField;
+            }
+            set {
+                if ((this.SumEkmpField.Equals(value) != true)) {
+                    this.SumEkmpField = value;
+                    this.RaisePropertyChanged("SumEkmp");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PgPersonnel", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class PgPersonnel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private decimal SpecialistField;
+        
+        private decimal MekFullTimeField;
+        
+        private decimal MekRemoteField;
+        
+        private decimal ExpertsFullTimeField;
+        
+        private decimal ExpertsRemoteField;
+        
+        private decimal ExpertsEkmpRegionField;
+        
+        private decimal ExpertsEkmpRemoteField;
+        
+        private decimal ExpertsEkmpRegionOnkoField;
+        
+        private decimal ExpertsEkmpRemoteOnkoField;
+        
+        private decimal ExpertsEkmpRegisterField;
+        
+        private decimal ExpertsEkmpRegisterRemoteField;
+        
+        private decimal ExpertsEkmpRegisterOnkoField;
+        
+        private decimal ExpertsEkmpRegisterRemoteOnkoField;
+        
+        private decimal ExpertsOmsFullTimeField;
+        
+        private decimal ExpertsOmsRemoteField;
+        
+        private decimal ExpertsOmsEkmpFullTimeField;
+        
+        private decimal ExpertsOmsEkmpRemoteField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal Specialist {
+            get {
+                return this.SpecialistField;
+            }
+            set {
+                if ((this.SpecialistField.Equals(value) != true)) {
+                    this.SpecialistField = value;
+                    this.RaisePropertyChanged("Specialist");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public decimal MekFullTime {
+            get {
+                return this.MekFullTimeField;
+            }
+            set {
+                if ((this.MekFullTimeField.Equals(value) != true)) {
+                    this.MekFullTimeField = value;
+                    this.RaisePropertyChanged("MekFullTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public decimal MekRemote {
+            get {
+                return this.MekRemoteField;
+            }
+            set {
+                if ((this.MekRemoteField.Equals(value) != true)) {
+                    this.MekRemoteField = value;
+                    this.RaisePropertyChanged("MekRemote");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public decimal ExpertsFullTime {
+            get {
+                return this.ExpertsFullTimeField;
+            }
+            set {
+                if ((this.ExpertsFullTimeField.Equals(value) != true)) {
+                    this.ExpertsFullTimeField = value;
+                    this.RaisePropertyChanged("ExpertsFullTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public decimal ExpertsRemote {
+            get {
+                return this.ExpertsRemoteField;
+            }
+            set {
+                if ((this.ExpertsRemoteField.Equals(value) != true)) {
+                    this.ExpertsRemoteField = value;
+                    this.RaisePropertyChanged("ExpertsRemote");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public decimal ExpertsEkmpRegion {
+            get {
+                return this.ExpertsEkmpRegionField;
+            }
+            set {
+                if ((this.ExpertsEkmpRegionField.Equals(value) != true)) {
+                    this.ExpertsEkmpRegionField = value;
+                    this.RaisePropertyChanged("ExpertsEkmpRegion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public decimal ExpertsEkmpRemote {
+            get {
+                return this.ExpertsEkmpRemoteField;
+            }
+            set {
+                if ((this.ExpertsEkmpRemoteField.Equals(value) != true)) {
+                    this.ExpertsEkmpRemoteField = value;
+                    this.RaisePropertyChanged("ExpertsEkmpRemote");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public decimal ExpertsEkmpRegionOnko {
+            get {
+                return this.ExpertsEkmpRegionOnkoField;
+            }
+            set {
+                if ((this.ExpertsEkmpRegionOnkoField.Equals(value) != true)) {
+                    this.ExpertsEkmpRegionOnkoField = value;
+                    this.RaisePropertyChanged("ExpertsEkmpRegionOnko");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        public decimal ExpertsEkmpRemoteOnko {
+            get {
+                return this.ExpertsEkmpRemoteOnkoField;
+            }
+            set {
+                if ((this.ExpertsEkmpRemoteOnkoField.Equals(value) != true)) {
+                    this.ExpertsEkmpRemoteOnkoField = value;
+                    this.RaisePropertyChanged("ExpertsEkmpRemoteOnko");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        public decimal ExpertsEkmpRegister {
+            get {
+                return this.ExpertsEkmpRegisterField;
+            }
+            set {
+                if ((this.ExpertsEkmpRegisterField.Equals(value) != true)) {
+                    this.ExpertsEkmpRegisterField = value;
+                    this.RaisePropertyChanged("ExpertsEkmpRegister");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        public decimal ExpertsEkmpRegisterRemote {
+            get {
+                return this.ExpertsEkmpRegisterRemoteField;
+            }
+            set {
+                if ((this.ExpertsEkmpRegisterRemoteField.Equals(value) != true)) {
+                    this.ExpertsEkmpRegisterRemoteField = value;
+                    this.RaisePropertyChanged("ExpertsEkmpRegisterRemote");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        public decimal ExpertsEkmpRegisterOnko {
+            get {
+                return this.ExpertsEkmpRegisterOnkoField;
+            }
+            set {
+                if ((this.ExpertsEkmpRegisterOnkoField.Equals(value) != true)) {
+                    this.ExpertsEkmpRegisterOnkoField = value;
+                    this.RaisePropertyChanged("ExpertsEkmpRegisterOnko");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
+        public decimal ExpertsEkmpRegisterRemoteOnko {
+            get {
+                return this.ExpertsEkmpRegisterRemoteOnkoField;
+            }
+            set {
+                if ((this.ExpertsEkmpRegisterRemoteOnkoField.Equals(value) != true)) {
+                    this.ExpertsEkmpRegisterRemoteOnkoField = value;
+                    this.RaisePropertyChanged("ExpertsEkmpRegisterRemoteOnko");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
+        public decimal ExpertsOmsFullTime {
+            get {
+                return this.ExpertsOmsFullTimeField;
+            }
+            set {
+                if ((this.ExpertsOmsFullTimeField.Equals(value) != true)) {
+                    this.ExpertsOmsFullTimeField = value;
+                    this.RaisePropertyChanged("ExpertsOmsFullTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
+        public decimal ExpertsOmsRemote {
+            get {
+                return this.ExpertsOmsRemoteField;
+            }
+            set {
+                if ((this.ExpertsOmsRemoteField.Equals(value) != true)) {
+                    this.ExpertsOmsRemoteField = value;
+                    this.RaisePropertyChanged("ExpertsOmsRemote");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
+        public decimal ExpertsOmsEkmpFullTime {
+            get {
+                return this.ExpertsOmsEkmpFullTimeField;
+            }
+            set {
+                if ((this.ExpertsOmsEkmpFullTimeField.Equals(value) != true)) {
+                    this.ExpertsOmsEkmpFullTimeField = value;
+                    this.RaisePropertyChanged("ExpertsOmsEkmpFullTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
+        public decimal ExpertsOmsEkmpRemote {
+            get {
+                return this.ExpertsOmsEkmpRemoteField;
+            }
+            set {
+                if ((this.ExpertsOmsEkmpRemoteField.Equals(value) != true)) {
+                    this.ExpertsOmsEkmpRemoteField = value;
+                    this.RaisePropertyChanged("ExpertsOmsEkmpRemote");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateOnko", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ConsolidateOnko : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.OnkoComplaint ComplaintField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.OnkoProtection ProtectionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.OnkoMek MekField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.OnkoMee MeeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.OnkoEkmp EkmpField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.OnkoFinance FinanceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Filial {
+            get {
+                return this.FilialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
+                    this.FilialField = value;
+                    this.RaisePropertyChanged("Filial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public KmsReportClient.External.OnkoComplaint Complaint {
+            get {
+                return this.ComplaintField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ComplaintField, value) != true)) {
+                    this.ComplaintField = value;
+                    this.RaisePropertyChanged("Complaint");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public KmsReportClient.External.OnkoProtection Protection {
+            get {
+                return this.ProtectionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProtectionField, value) != true)) {
+                    this.ProtectionField = value;
+                    this.RaisePropertyChanged("Protection");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public KmsReportClient.External.OnkoMek Mek {
+            get {
+                return this.MekField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MekField, value) != true)) {
+                    this.MekField = value;
+                    this.RaisePropertyChanged("Mek");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public KmsReportClient.External.OnkoMee Mee {
+            get {
+                return this.MeeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MeeField, value) != true)) {
+                    this.MeeField = value;
+                    this.RaisePropertyChanged("Mee");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public KmsReportClient.External.OnkoEkmp Ekmp {
+            get {
+                return this.EkmpField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EkmpField, value) != true)) {
+                    this.EkmpField = value;
+                    this.RaisePropertyChanged("Ekmp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public KmsReportClient.External.OnkoFinance Finance {
+            get {
+                return this.FinanceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FinanceField, value) != true)) {
+                    this.FinanceField = value;
+                    this.RaisePropertyChanged("Finance");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OnkoComplaint", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class OnkoComplaint : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private decimal MedicalHelpField;
+        
+        private decimal DedlinesField;
+        
+        private decimal MedicineProvisionField;
+        
+        private decimal DedlineDrugMedicineField;
+        
+        private decimal NoDrugMedicineField;
+        
+        private decimal AppealMedicalHelpField;
+        
+        private decimal AppealMedicineProvisionField;
+        
+        private decimal AppealDrugsMedicineField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal MedicalHelp {
+            get {
+                return this.MedicalHelpField;
+            }
+            set {
+                if ((this.MedicalHelpField.Equals(value) != true)) {
+                    this.MedicalHelpField = value;
+                    this.RaisePropertyChanged("MedicalHelp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public decimal Dedlines {
+            get {
+                return this.DedlinesField;
+            }
+            set {
+                if ((this.DedlinesField.Equals(value) != true)) {
+                    this.DedlinesField = value;
+                    this.RaisePropertyChanged("Dedlines");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public decimal MedicineProvision {
+            get {
+                return this.MedicineProvisionField;
+            }
+            set {
+                if ((this.MedicineProvisionField.Equals(value) != true)) {
+                    this.MedicineProvisionField = value;
+                    this.RaisePropertyChanged("MedicineProvision");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public decimal DedlineDrugMedicine {
+            get {
+                return this.DedlineDrugMedicineField;
+            }
+            set {
+                if ((this.DedlineDrugMedicineField.Equals(value) != true)) {
+                    this.DedlineDrugMedicineField = value;
+                    this.RaisePropertyChanged("DedlineDrugMedicine");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public decimal NoDrugMedicine {
+            get {
+                return this.NoDrugMedicineField;
+            }
+            set {
+                if ((this.NoDrugMedicineField.Equals(value) != true)) {
+                    this.NoDrugMedicineField = value;
+                    this.RaisePropertyChanged("NoDrugMedicine");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public decimal AppealMedicalHelp {
+            get {
+                return this.AppealMedicalHelpField;
+            }
+            set {
+                if ((this.AppealMedicalHelpField.Equals(value) != true)) {
+                    this.AppealMedicalHelpField = value;
+                    this.RaisePropertyChanged("AppealMedicalHelp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public decimal AppealMedicineProvision {
+            get {
+                return this.AppealMedicineProvisionField;
+            }
+            set {
+                if ((this.AppealMedicineProvisionField.Equals(value) != true)) {
+                    this.AppealMedicineProvisionField = value;
+                    this.RaisePropertyChanged("AppealMedicineProvision");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public decimal AppealDrugsMedicine {
+            get {
+                return this.AppealDrugsMedicineField;
+            }
+            set {
+                if ((this.AppealDrugsMedicineField.Equals(value) != true)) {
+                    this.AppealDrugsMedicineField = value;
+                    this.RaisePropertyChanged("AppealDrugsMedicine");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OnkoProtection", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class OnkoProtection : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private decimal PretrialMedicalHelpField;
+        
+        private decimal PretrialDeadlineField;
+        
+        private decimal PretrialMedicineProvisionField;
+        
+        private decimal PretrialDedlineDrugMedicineField;
+        
+        private decimal PretrialNoDrugMedicineField;
+        
+        private decimal JudicalMedicalHelpField;
+        
+        private decimal JudicalDeadlineField;
+        
+        private decimal JudicalMedicineProvisionField;
+        
+        private decimal JudicalDedlineDrugMedicineField;
+        
+        private decimal JudicalNoDrugMedicineField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal PretrialMedicalHelp {
+            get {
+                return this.PretrialMedicalHelpField;
+            }
+            set {
+                if ((this.PretrialMedicalHelpField.Equals(value) != true)) {
+                    this.PretrialMedicalHelpField = value;
+                    this.RaisePropertyChanged("PretrialMedicalHelp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public decimal PretrialDeadline {
+            get {
+                return this.PretrialDeadlineField;
+            }
+            set {
+                if ((this.PretrialDeadlineField.Equals(value) != true)) {
+                    this.PretrialDeadlineField = value;
+                    this.RaisePropertyChanged("PretrialDeadline");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public decimal PretrialMedicineProvision {
+            get {
+                return this.PretrialMedicineProvisionField;
+            }
+            set {
+                if ((this.PretrialMedicineProvisionField.Equals(value) != true)) {
+                    this.PretrialMedicineProvisionField = value;
+                    this.RaisePropertyChanged("PretrialMedicineProvision");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public decimal PretrialDedlineDrugMedicine {
+            get {
+                return this.PretrialDedlineDrugMedicineField;
+            }
+            set {
+                if ((this.PretrialDedlineDrugMedicineField.Equals(value) != true)) {
+                    this.PretrialDedlineDrugMedicineField = value;
+                    this.RaisePropertyChanged("PretrialDedlineDrugMedicine");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public decimal PretrialNoDrugMedicine {
+            get {
+                return this.PretrialNoDrugMedicineField;
+            }
+            set {
+                if ((this.PretrialNoDrugMedicineField.Equals(value) != true)) {
+                    this.PretrialNoDrugMedicineField = value;
+                    this.RaisePropertyChanged("PretrialNoDrugMedicine");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public decimal JudicalMedicalHelp {
+            get {
+                return this.JudicalMedicalHelpField;
+            }
+            set {
+                if ((this.JudicalMedicalHelpField.Equals(value) != true)) {
+                    this.JudicalMedicalHelpField = value;
+                    this.RaisePropertyChanged("JudicalMedicalHelp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public decimal JudicalDeadline {
+            get {
+                return this.JudicalDeadlineField;
+            }
+            set {
+                if ((this.JudicalDeadlineField.Equals(value) != true)) {
+                    this.JudicalDeadlineField = value;
+                    this.RaisePropertyChanged("JudicalDeadline");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public decimal JudicalMedicineProvision {
+            get {
+                return this.JudicalMedicineProvisionField;
+            }
+            set {
+                if ((this.JudicalMedicineProvisionField.Equals(value) != true)) {
+                    this.JudicalMedicineProvisionField = value;
+                    this.RaisePropertyChanged("JudicalMedicineProvision");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        public decimal JudicalDedlineDrugMedicine {
+            get {
+                return this.JudicalDedlineDrugMedicineField;
+            }
+            set {
+                if ((this.JudicalDedlineDrugMedicineField.Equals(value) != true)) {
+                    this.JudicalDedlineDrugMedicineField = value;
+                    this.RaisePropertyChanged("JudicalDedlineDrugMedicine");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        public decimal JudicalNoDrugMedicine {
+            get {
+                return this.JudicalNoDrugMedicineField;
+            }
+            set {
+                if ((this.JudicalNoDrugMedicineField.Equals(value) != true)) {
+                    this.JudicalNoDrugMedicineField = value;
+                    this.RaisePropertyChanged("JudicalNoDrugMedicine");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OnkoMek", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class OnkoMek : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private decimal PresentedBillsField;
+        
+        private decimal AcceptedBillsField;
+        
+        private decimal RegistrationMekField;
+        
+        private decimal NotInProgramMekField;
+        
+        private decimal TarifMekField;
+        
+        private decimal LicenceMekField;
+        
+        private decimal RepeatMekField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal PresentedBills {
+            get {
+                return this.PresentedBillsField;
+            }
+            set {
+                if ((this.PresentedBillsField.Equals(value) != true)) {
+                    this.PresentedBillsField = value;
+                    this.RaisePropertyChanged("PresentedBills");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public decimal AcceptedBills {
+            get {
+                return this.AcceptedBillsField;
+            }
+            set {
+                if ((this.AcceptedBillsField.Equals(value) != true)) {
+                    this.AcceptedBillsField = value;
+                    this.RaisePropertyChanged("AcceptedBills");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public decimal RegistrationMek {
+            get {
+                return this.RegistrationMekField;
+            }
+            set {
+                if ((this.RegistrationMekField.Equals(value) != true)) {
+                    this.RegistrationMekField = value;
+                    this.RaisePropertyChanged("RegistrationMek");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public decimal NotInProgramMek {
+            get {
+                return this.NotInProgramMekField;
+            }
+            set {
+                if ((this.NotInProgramMekField.Equals(value) != true)) {
+                    this.NotInProgramMekField = value;
+                    this.RaisePropertyChanged("NotInProgramMek");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public decimal TarifMek {
+            get {
+                return this.TarifMekField;
+            }
+            set {
+                if ((this.TarifMekField.Equals(value) != true)) {
+                    this.TarifMekField = value;
+                    this.RaisePropertyChanged("TarifMek");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public decimal LicenceMek {
+            get {
+                return this.LicenceMekField;
+            }
+            set {
+                if ((this.LicenceMekField.Equals(value) != true)) {
+                    this.LicenceMekField = value;
+                    this.RaisePropertyChanged("LicenceMek");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public decimal RepeatMek {
+            get {
+                return this.RepeatMekField;
+            }
+            set {
+                if ((this.RepeatMekField.Equals(value) != true)) {
+                    this.RepeatMekField = value;
+                    this.RaisePropertyChanged("RepeatMek");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OnkoMee", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class OnkoMee : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private decimal ComplaintField;
+        
+        private decimal AntitumorField;
+        
+        private decimal PlanHospField;
+        
+        private decimal ViolationConditionField;
+        
+        private decimal ViolationOnkoFirstField;
+        
+        private decimal ViolationHistoField;
+        
+        private decimal ViolationOnkoDiagnosticField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal Complaint {
+            get {
+                return this.ComplaintField;
+            }
+            set {
+                if ((this.ComplaintField.Equals(value) != true)) {
+                    this.ComplaintField = value;
+                    this.RaisePropertyChanged("Complaint");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public decimal Antitumor {
+            get {
+                return this.AntitumorField;
+            }
+            set {
+                if ((this.AntitumorField.Equals(value) != true)) {
+                    this.AntitumorField = value;
+                    this.RaisePropertyChanged("Antitumor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public decimal PlanHosp {
+            get {
+                return this.PlanHospField;
+            }
+            set {
+                if ((this.PlanHospField.Equals(value) != true)) {
+                    this.PlanHospField = value;
+                    this.RaisePropertyChanged("PlanHosp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public decimal ViolationCondition {
+            get {
+                return this.ViolationConditionField;
+            }
+            set {
+                if ((this.ViolationConditionField.Equals(value) != true)) {
+                    this.ViolationConditionField = value;
+                    this.RaisePropertyChanged("ViolationCondition");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public decimal ViolationOnkoFirst {
+            get {
+                return this.ViolationOnkoFirstField;
+            }
+            set {
+                if ((this.ViolationOnkoFirstField.Equals(value) != true)) {
+                    this.ViolationOnkoFirstField = value;
+                    this.RaisePropertyChanged("ViolationOnkoFirst");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public decimal ViolationHisto {
+            get {
+                return this.ViolationHistoField;
+            }
+            set {
+                if ((this.ViolationHistoField.Equals(value) != true)) {
+                    this.ViolationHistoField = value;
+                    this.RaisePropertyChanged("ViolationHisto");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public decimal ViolationOnkoDiagnostic {
+            get {
+                return this.ViolationOnkoDiagnosticField;
+            }
+            set {
+                if ((this.ViolationOnkoDiagnosticField.Equals(value) != true)) {
+                    this.ViolationOnkoDiagnosticField = value;
+                    this.RaisePropertyChanged("ViolationOnkoDiagnostic");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OnkoEkmp", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class OnkoEkmp : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private decimal EkmpComplaintField;
+        
+        private decimal EkmpFromMeeField;
+        
+        private decimal DeathEkmpField;
+        
+        private decimal ThematicEkmpField;
+        
+        private decimal CountOnkoField;
+        
+        private decimal NoProfilOnkoField;
+        
+        private decimal UnreasonEkmpField;
+        
+        private decimal DispEkmpField;
+        
+        private decimal RecommendationEkmpField;
+        
+        private decimal PrematureField;
+        
+        private decimal ViolationMoEmkpField;
+        
+        private decimal FailureField;
+        
+        private decimal PaymentField;
+        
+        private decimal OtherViolationField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal EkmpComplaint {
+            get {
+                return this.EkmpComplaintField;
+            }
+            set {
+                if ((this.EkmpComplaintField.Equals(value) != true)) {
+                    this.EkmpComplaintField = value;
+                    this.RaisePropertyChanged("EkmpComplaint");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal EkmpFromMee {
+            get {
+                return this.EkmpFromMeeField;
+            }
+            set {
+                if ((this.EkmpFromMeeField.Equals(value) != true)) {
+                    this.EkmpFromMeeField = value;
+                    this.RaisePropertyChanged("EkmpFromMee");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public decimal DeathEkmp {
+            get {
+                return this.DeathEkmpField;
+            }
+            set {
+                if ((this.DeathEkmpField.Equals(value) != true)) {
+                    this.DeathEkmpField = value;
+                    this.RaisePropertyChanged("DeathEkmp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public decimal ThematicEkmp {
+            get {
+                return this.ThematicEkmpField;
+            }
+            set {
+                if ((this.ThematicEkmpField.Equals(value) != true)) {
+                    this.ThematicEkmpField = value;
+                    this.RaisePropertyChanged("ThematicEkmp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public decimal CountOnko {
+            get {
+                return this.CountOnkoField;
+            }
+            set {
+                if ((this.CountOnkoField.Equals(value) != true)) {
+                    this.CountOnkoField = value;
+                    this.RaisePropertyChanged("CountOnko");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public decimal NoProfilOnko {
+            get {
+                return this.NoProfilOnkoField;
+            }
+            set {
+                if ((this.NoProfilOnkoField.Equals(value) != true)) {
+                    this.NoProfilOnkoField = value;
+                    this.RaisePropertyChanged("NoProfilOnko");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public decimal UnreasonEkmp {
+            get {
+                return this.UnreasonEkmpField;
+            }
+            set {
+                if ((this.UnreasonEkmpField.Equals(value) != true)) {
+                    this.UnreasonEkmpField = value;
+                    this.RaisePropertyChanged("UnreasonEkmp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public decimal DispEkmp {
+            get {
+                return this.DispEkmpField;
+            }
+            set {
+                if ((this.DispEkmpField.Equals(value) != true)) {
+                    this.DispEkmpField = value;
+                    this.RaisePropertyChanged("DispEkmp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        public decimal RecommendationEkmp {
+            get {
+                return this.RecommendationEkmpField;
+            }
+            set {
+                if ((this.RecommendationEkmpField.Equals(value) != true)) {
+                    this.RecommendationEkmpField = value;
+                    this.RaisePropertyChanged("RecommendationEkmp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        public decimal Premature {
+            get {
+                return this.PrematureField;
+            }
+            set {
+                if ((this.PrematureField.Equals(value) != true)) {
+                    this.PrematureField = value;
+                    this.RaisePropertyChanged("Premature");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        public decimal ViolationMoEmkp {
+            get {
+                return this.ViolationMoEmkpField;
+            }
+            set {
+                if ((this.ViolationMoEmkpField.Equals(value) != true)) {
+                    this.ViolationMoEmkpField = value;
+                    this.RaisePropertyChanged("ViolationMoEmkp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        public decimal Failure {
+            get {
+                return this.FailureField;
+            }
+            set {
+                if ((this.FailureField.Equals(value) != true)) {
+                    this.FailureField = value;
+                    this.RaisePropertyChanged("Failure");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
+        public decimal Payment {
+            get {
+                return this.PaymentField;
+            }
+            set {
+                if ((this.PaymentField.Equals(value) != true)) {
+                    this.PaymentField = value;
+                    this.RaisePropertyChanged("Payment");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
+        public decimal OtherViolation {
+            get {
+                return this.OtherViolationField;
+            }
+            set {
+                if ((this.OtherViolationField.Equals(value) != true)) {
+                    this.OtherViolationField = value;
+                    this.RaisePropertyChanged("OtherViolation");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OnkoFinance", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class OnkoFinance : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private decimal SumMekField;
+        
+        private decimal SumDispMeeField;
+        
+        private decimal SumMeeField;
+        
+        private decimal SumDispEkmpField;
+        
+        private decimal SumNoProfilEkmpField;
+        
+        private decimal SumUnreasonEkmpField;
+        
+        private decimal SumRecommendationEkmpField;
+        
+        private decimal SumPrematureEkmpField;
+        
+        private decimal SumFailureEkmpField;
+        
+        private decimal SumPaymentEkmpField;
+        
+        private decimal SumOtherEkmpField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal SumMek {
+            get {
+                return this.SumMekField;
+            }
+            set {
+                if ((this.SumMekField.Equals(value) != true)) {
+                    this.SumMekField = value;
+                    this.RaisePropertyChanged("SumMek");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public decimal SumDispMee {
+            get {
+                return this.SumDispMeeField;
+            }
+            set {
+                if ((this.SumDispMeeField.Equals(value) != true)) {
+                    this.SumDispMeeField = value;
+                    this.RaisePropertyChanged("SumDispMee");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public decimal SumMee {
+            get {
+                return this.SumMeeField;
+            }
+            set {
+                if ((this.SumMeeField.Equals(value) != true)) {
+                    this.SumMeeField = value;
+                    this.RaisePropertyChanged("SumMee");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public decimal SumDispEkmp {
+            get {
+                return this.SumDispEkmpField;
+            }
+            set {
+                if ((this.SumDispEkmpField.Equals(value) != true)) {
+                    this.SumDispEkmpField = value;
+                    this.RaisePropertyChanged("SumDispEkmp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public decimal SumNoProfilEkmp {
+            get {
+                return this.SumNoProfilEkmpField;
+            }
+            set {
+                if ((this.SumNoProfilEkmpField.Equals(value) != true)) {
+                    this.SumNoProfilEkmpField = value;
+                    this.RaisePropertyChanged("SumNoProfilEkmp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public decimal SumUnreasonEkmp {
+            get {
+                return this.SumUnreasonEkmpField;
+            }
+            set {
+                if ((this.SumUnreasonEkmpField.Equals(value) != true)) {
+                    this.SumUnreasonEkmpField = value;
+                    this.RaisePropertyChanged("SumUnreasonEkmp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public decimal SumRecommendationEkmp {
+            get {
+                return this.SumRecommendationEkmpField;
+            }
+            set {
+                if ((this.SumRecommendationEkmpField.Equals(value) != true)) {
+                    this.SumRecommendationEkmpField = value;
+                    this.RaisePropertyChanged("SumRecommendationEkmp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public decimal SumPrematureEkmp {
+            get {
+                return this.SumPrematureEkmpField;
+            }
+            set {
+                if ((this.SumPrematureEkmpField.Equals(value) != true)) {
+                    this.SumPrematureEkmpField = value;
+                    this.RaisePropertyChanged("SumPrematureEkmp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        public decimal SumFailureEkmp {
+            get {
+                return this.SumFailureEkmpField;
+            }
+            set {
+                if ((this.SumFailureEkmpField.Equals(value) != true)) {
+                    this.SumFailureEkmpField = value;
+                    this.RaisePropertyChanged("SumFailureEkmp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        public decimal SumPaymentEkmp {
+            get {
+                return this.SumPaymentEkmpField;
+            }
+            set {
+                if ((this.SumPaymentEkmpField.Equals(value) != true)) {
+                    this.SumPaymentEkmpField = value;
+                    this.RaisePropertyChanged("SumPaymentEkmp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        public decimal SumOtherEkmp {
+            get {
+                return this.SumOtherEkmpField;
+            }
+            set {
+                if ((this.SumOtherEkmpField.Equals(value) != true)) {
+                    this.SumOtherEkmpField = value;
+                    this.RaisePropertyChanged("SumOtherEkmp");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateLetal", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ConsolidateLetal : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.LetalData DataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Filial {
+            get {
+                return this.FilialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
+                    this.FilialField = value;
+                    this.RaisePropertyChanged("Filial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public KmsReportClient.External.LetalData Data {
+            get {
+                return this.DataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataField, value) != true)) {
+                    this.DataField = value;
+                    this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="LetalData", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class LetalData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private decimal r1Field;
+        
+        private decimal r1_1Field;
+        
+        private decimal r1_2Field;
+        
+        private decimal r121Field;
+        
+        private decimal r2Field;
+        
+        private decimal r3Field;
+        
+        private decimal r31Field;
+        
+        private decimal r311Field;
+        
+        private decimal r3111Field;
+        
+        private decimal r3112Field;
+        
+        private decimal r3113Field;
+        
+        private decimal r3114Field;
+        
+        private decimal r32Field;
+        
+        private decimal r33Field;
+        
+        private decimal r4Field;
+        
+        private decimal r5Field;
+        
+        private decimal r6Field;
+        
+        private decimal r7Field;
+        
+        private decimal r8Field;
+        
+        private decimal r9Field;
+        
+        private decimal r10Field;
+        
+        private decimal r11Field;
+        
+        private decimal r12Field;
+        
+        private decimal r13Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal r1 {
+            get {
+                return this.r1Field;
+            }
+            set {
+                if ((this.r1Field.Equals(value) != true)) {
+                    this.r1Field = value;
+                    this.RaisePropertyChanged("r1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal r1_1 {
+            get {
+                return this.r1_1Field;
+            }
+            set {
+                if ((this.r1_1Field.Equals(value) != true)) {
+                    this.r1_1Field = value;
+                    this.RaisePropertyChanged("r1_1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal r1_2 {
+            get {
+                return this.r1_2Field;
+            }
+            set {
+                if ((this.r1_2Field.Equals(value) != true)) {
+                    this.r1_2Field = value;
+                    this.RaisePropertyChanged("r1_2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public decimal r121 {
+            get {
+                return this.r121Field;
+            }
+            set {
+                if ((this.r121Field.Equals(value) != true)) {
+                    this.r121Field = value;
+                    this.RaisePropertyChanged("r121");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public decimal r2 {
+            get {
+                return this.r2Field;
+            }
+            set {
+                if ((this.r2Field.Equals(value) != true)) {
+                    this.r2Field = value;
+                    this.RaisePropertyChanged("r2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public decimal r3 {
+            get {
+                return this.r3Field;
+            }
+            set {
+                if ((this.r3Field.Equals(value) != true)) {
+                    this.r3Field = value;
+                    this.RaisePropertyChanged("r3");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public decimal r31 {
+            get {
+                return this.r31Field;
+            }
+            set {
+                if ((this.r31Field.Equals(value) != true)) {
+                    this.r31Field = value;
+                    this.RaisePropertyChanged("r31");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public decimal r311 {
+            get {
+                return this.r311Field;
+            }
+            set {
+                if ((this.r311Field.Equals(value) != true)) {
+                    this.r311Field = value;
+                    this.RaisePropertyChanged("r311");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        public decimal r3111 {
+            get {
+                return this.r3111Field;
+            }
+            set {
+                if ((this.r3111Field.Equals(value) != true)) {
+                    this.r3111Field = value;
+                    this.RaisePropertyChanged("r3111");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        public decimal r3112 {
+            get {
+                return this.r3112Field;
+            }
+            set {
+                if ((this.r3112Field.Equals(value) != true)) {
+                    this.r3112Field = value;
+                    this.RaisePropertyChanged("r3112");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        public decimal r3113 {
+            get {
+                return this.r3113Field;
+            }
+            set {
+                if ((this.r3113Field.Equals(value) != true)) {
+                    this.r3113Field = value;
+                    this.RaisePropertyChanged("r3113");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        public decimal r3114 {
+            get {
+                return this.r3114Field;
+            }
+            set {
+                if ((this.r3114Field.Equals(value) != true)) {
+                    this.r3114Field = value;
+                    this.RaisePropertyChanged("r3114");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
+        public decimal r32 {
+            get {
+                return this.r32Field;
+            }
+            set {
+                if ((this.r32Field.Equals(value) != true)) {
+                    this.r32Field = value;
+                    this.RaisePropertyChanged("r32");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
+        public decimal r33 {
+            get {
+                return this.r33Field;
+            }
+            set {
+                if ((this.r33Field.Equals(value) != true)) {
+                    this.r33Field = value;
+                    this.RaisePropertyChanged("r33");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
+        public decimal r4 {
+            get {
+                return this.r4Field;
+            }
+            set {
+                if ((this.r4Field.Equals(value) != true)) {
+                    this.r4Field = value;
+                    this.RaisePropertyChanged("r4");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
+        public decimal r5 {
+            get {
+                return this.r5Field;
+            }
+            set {
+                if ((this.r5Field.Equals(value) != true)) {
+                    this.r5Field = value;
+                    this.RaisePropertyChanged("r5");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
+        public decimal r6 {
+            get {
+                return this.r6Field;
+            }
+            set {
+                if ((this.r6Field.Equals(value) != true)) {
+                    this.r6Field = value;
+                    this.RaisePropertyChanged("r6");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
+        public decimal r7 {
+            get {
+                return this.r7Field;
+            }
+            set {
+                if ((this.r7Field.Equals(value) != true)) {
+                    this.r7Field = value;
+                    this.RaisePropertyChanged("r7");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=18)]
+        public decimal r8 {
+            get {
+                return this.r8Field;
+            }
+            set {
+                if ((this.r8Field.Equals(value) != true)) {
+                    this.r8Field = value;
+                    this.RaisePropertyChanged("r8");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=19)]
+        public decimal r9 {
+            get {
+                return this.r9Field;
+            }
+            set {
+                if ((this.r9Field.Equals(value) != true)) {
+                    this.r9Field = value;
+                    this.RaisePropertyChanged("r9");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=20)]
+        public decimal r10 {
+            get {
+                return this.r10Field;
+            }
+            set {
+                if ((this.r10Field.Equals(value) != true)) {
+                    this.r10Field = value;
+                    this.RaisePropertyChanged("r10");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=21)]
+        public decimal r11 {
+            get {
+                return this.r11Field;
+            }
+            set {
+                if ((this.r11Field.Equals(value) != true)) {
+                    this.r11Field = value;
+                    this.RaisePropertyChanged("r11");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=22)]
+        public decimal r12 {
+            get {
+                return this.r12Field;
+            }
+            set {
+                if ((this.r12Field.Equals(value) != true)) {
+                    this.r12Field = value;
+                    this.RaisePropertyChanged("r12");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=23)]
+        public decimal r13 {
+            get {
+                return this.r13Field;
+            }
+            set {
+                if ((this.r13Field.Equals(value) != true)) {
+                    this.r13Field = value;
+                    this.RaisePropertyChanged("r13");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Consolidate294", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class Consolidate294 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.Dispanserization[] Disp13ListField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.Dispanserization[] Disp12ListField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.Dispanserization[] Disp2ListField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.DispensaryObservation[] DispensaryObservationListField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.PhoneQuestionary[] PhoneQuestionaryListField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.InsuranceRepresentative[] InsuranceRepresentativeListField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.Treatment[] TreatmentListField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.Efficiency[] EfficiencyListField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public KmsReportClient.External.Dispanserization[] Disp13List {
+            get {
+                return this.Disp13ListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Disp13ListField, value) != true)) {
+                    this.Disp13ListField = value;
+                    this.RaisePropertyChanged("Disp13List");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public KmsReportClient.External.Dispanserization[] Disp12List {
+            get {
+                return this.Disp12ListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Disp12ListField, value) != true)) {
+                    this.Disp12ListField = value;
+                    this.RaisePropertyChanged("Disp12List");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public KmsReportClient.External.Dispanserization[] Disp2List {
+            get {
+                return this.Disp2ListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Disp2ListField, value) != true)) {
+                    this.Disp2ListField = value;
+                    this.RaisePropertyChanged("Disp2List");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public KmsReportClient.External.DispensaryObservation[] DispensaryObservationList {
+            get {
+                return this.DispensaryObservationListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DispensaryObservationListField, value) != true)) {
+                    this.DispensaryObservationListField = value;
+                    this.RaisePropertyChanged("DispensaryObservationList");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public KmsReportClient.External.PhoneQuestionary[] PhoneQuestionaryList {
+            get {
+                return this.PhoneQuestionaryListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PhoneQuestionaryListField, value) != true)) {
+                    this.PhoneQuestionaryListField = value;
+                    this.RaisePropertyChanged("PhoneQuestionaryList");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public KmsReportClient.External.InsuranceRepresentative[] InsuranceRepresentativeList {
+            get {
+                return this.InsuranceRepresentativeListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsuranceRepresentativeListField, value) != true)) {
+                    this.InsuranceRepresentativeListField = value;
+                    this.RaisePropertyChanged("InsuranceRepresentativeList");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public KmsReportClient.External.Treatment[] TreatmentList {
+            get {
+                return this.TreatmentListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TreatmentListField, value) != true)) {
+                    this.TreatmentListField = value;
+                    this.RaisePropertyChanged("TreatmentList");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public KmsReportClient.External.Efficiency[] EfficiencyList {
+            get {
+                return this.EfficiencyListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EfficiencyListField, value) != true)) {
+                    this.EfficiencyListField = value;
+                    this.RaisePropertyChanged("EfficiencyList");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Dispanserization", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class Dispanserization : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MonthField;
+        
+        private int CountPeoplelMoField;
+        
+        private int CountPeopleInformField;
+        
+        private int CountPeopleRepeatInformField;
+        
+        private int SmsField;
+        
+        private int PostField;
+        
+        private int PhoneField;
+        
+        private int MessangersField;
+        
+        private int EMailField;
+        
+        private int AddressField;
+        
+        private int AnotherTypeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Filial {
+            get {
+                return this.FilialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
+                    this.FilialField = value;
+                    this.RaisePropertyChanged("Filial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Month {
+            get {
+                return this.MonthField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MonthField, value) != true)) {
+                    this.MonthField = value;
+                    this.RaisePropertyChanged("Month");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int CountPeoplelMo {
+            get {
+                return this.CountPeoplelMoField;
+            }
+            set {
+                if ((this.CountPeoplelMoField.Equals(value) != true)) {
+                    this.CountPeoplelMoField = value;
+                    this.RaisePropertyChanged("CountPeoplelMo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int CountPeopleInform {
+            get {
+                return this.CountPeopleInformField;
+            }
+            set {
+                if ((this.CountPeopleInformField.Equals(value) != true)) {
+                    this.CountPeopleInformField = value;
+                    this.RaisePropertyChanged("CountPeopleInform");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public int CountPeopleRepeatInform {
+            get {
+                return this.CountPeopleRepeatInformField;
+            }
+            set {
+                if ((this.CountPeopleRepeatInformField.Equals(value) != true)) {
+                    this.CountPeopleRepeatInformField = value;
+                    this.RaisePropertyChanged("CountPeopleRepeatInform");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public int Sms {
+            get {
+                return this.SmsField;
+            }
+            set {
+                if ((this.SmsField.Equals(value) != true)) {
+                    this.SmsField = value;
+                    this.RaisePropertyChanged("Sms");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public int Post {
+            get {
+                return this.PostField;
+            }
+            set {
+                if ((this.PostField.Equals(value) != true)) {
+                    this.PostField = value;
+                    this.RaisePropertyChanged("Post");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public int Phone {
+            get {
+                return this.PhoneField;
+            }
+            set {
+                if ((this.PhoneField.Equals(value) != true)) {
+                    this.PhoneField = value;
+                    this.RaisePropertyChanged("Phone");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        public int Messangers {
+            get {
+                return this.MessangersField;
+            }
+            set {
+                if ((this.MessangersField.Equals(value) != true)) {
+                    this.MessangersField = value;
+                    this.RaisePropertyChanged("Messangers");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        public int EMail {
+            get {
+                return this.EMailField;
+            }
+            set {
+                if ((this.EMailField.Equals(value) != true)) {
+                    this.EMailField = value;
+                    this.RaisePropertyChanged("EMail");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        public int Address {
+            get {
+                return this.AddressField;
+            }
+            set {
+                if ((this.AddressField.Equals(value) != true)) {
+                    this.AddressField = value;
+                    this.RaisePropertyChanged("Address");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        public int AnotherType {
+            get {
+                return this.AnotherTypeField;
+            }
+            set {
+                if ((this.AnotherTypeField.Equals(value) != true)) {
+                    this.AnotherTypeField = value;
+                    this.RaisePropertyChanged("AnotherType");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DispensaryObservation", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class DispensaryObservation : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MonthField;
+        
+        private int CountPeopleInformField;
+        
+        private int OncoField;
+        
+        private int EndoField;
+        
+        private int BronchoField;
+        
+        private int BloodCirculatoryField;
+        
+        private int NotInfectionField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Filial {
+            get {
+                return this.FilialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
+                    this.FilialField = value;
+                    this.RaisePropertyChanged("Filial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Month {
+            get {
+                return this.MonthField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MonthField, value) != true)) {
+                    this.MonthField = value;
+                    this.RaisePropertyChanged("Month");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int CountPeopleInform {
+            get {
+                return this.CountPeopleInformField;
+            }
+            set {
+                if ((this.CountPeopleInformField.Equals(value) != true)) {
+                    this.CountPeopleInformField = value;
+                    this.RaisePropertyChanged("CountPeopleInform");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int Onco {
+            get {
+                return this.OncoField;
+            }
+            set {
+                if ((this.OncoField.Equals(value) != true)) {
+                    this.OncoField = value;
+                    this.RaisePropertyChanged("Onco");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public int Endo {
+            get {
+                return this.EndoField;
+            }
+            set {
+                if ((this.EndoField.Equals(value) != true)) {
+                    this.EndoField = value;
+                    this.RaisePropertyChanged("Endo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public int Broncho {
+            get {
+                return this.BronchoField;
+            }
+            set {
+                if ((this.BronchoField.Equals(value) != true)) {
+                    this.BronchoField = value;
+                    this.RaisePropertyChanged("Broncho");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public int BloodCirculatory {
+            get {
+                return this.BloodCirculatoryField;
+            }
+            set {
+                if ((this.BloodCirculatoryField.Equals(value) != true)) {
+                    this.BloodCirculatoryField = value;
+                    this.RaisePropertyChanged("BloodCirculatory");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public int NotInfection {
+            get {
+                return this.NotInfectionField;
+            }
+            set {
+                if ((this.NotInfectionField.Equals(value) != true)) {
+                    this.NotInfectionField = value;
+                    this.RaisePropertyChanged("NotInfection");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PhoneQuestionary", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class PhoneQuestionary : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MonthField;
+        
+        private int ProfField;
+        
+        private int DispField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Filial {
+            get {
+                return this.FilialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
+                    this.FilialField = value;
+                    this.RaisePropertyChanged("Filial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Month {
+            get {
+                return this.MonthField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MonthField, value) != true)) {
+                    this.MonthField = value;
+                    this.RaisePropertyChanged("Month");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Prof {
+            get {
+                return this.ProfField;
+            }
+            set {
+                if ((this.ProfField.Equals(value) != true)) {
+                    this.ProfField = value;
+                    this.RaisePropertyChanged("Prof");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int Disp {
+            get {
+                return this.DispField;
+            }
+            set {
+                if ((this.DispField.Equals(value) != true)) {
+                    this.DispField = value;
+                    this.RaisePropertyChanged("Disp");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InsuranceRepresentative", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class InsuranceRepresentative : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MonthField;
+        
+        private int FirstLevelField;
+        
+        private int FirstLevelTrainingField;
+        
+        private int SecondLevelField;
+        
+        private int SecondLevelTrainingField;
+        
+        private int ThirdLevelField;
+        
+        private int ThirdLevelTrainingField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Filial {
+            get {
+                return this.FilialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
+                    this.FilialField = value;
+                    this.RaisePropertyChanged("Filial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Month {
+            get {
+                return this.MonthField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MonthField, value) != true)) {
+                    this.MonthField = value;
+                    this.RaisePropertyChanged("Month");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int FirstLevel {
+            get {
+                return this.FirstLevelField;
+            }
+            set {
+                if ((this.FirstLevelField.Equals(value) != true)) {
+                    this.FirstLevelField = value;
+                    this.RaisePropertyChanged("FirstLevel");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int FirstLevelTraining {
+            get {
+                return this.FirstLevelTrainingField;
+            }
+            set {
+                if ((this.FirstLevelTrainingField.Equals(value) != true)) {
+                    this.FirstLevelTrainingField = value;
+                    this.RaisePropertyChanged("FirstLevelTraining");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public int SecondLevel {
+            get {
+                return this.SecondLevelField;
+            }
+            set {
+                if ((this.SecondLevelField.Equals(value) != true)) {
+                    this.SecondLevelField = value;
+                    this.RaisePropertyChanged("SecondLevel");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public int SecondLevelTraining {
+            get {
+                return this.SecondLevelTrainingField;
+            }
+            set {
+                if ((this.SecondLevelTrainingField.Equals(value) != true)) {
+                    this.SecondLevelTrainingField = value;
+                    this.RaisePropertyChanged("SecondLevelTraining");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public int ThirdLevel {
+            get {
+                return this.ThirdLevelField;
+            }
+            set {
+                if ((this.ThirdLevelField.Equals(value) != true)) {
+                    this.ThirdLevelField = value;
+                    this.RaisePropertyChanged("ThirdLevel");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public int ThirdLevelTraining {
+            get {
+                return this.ThirdLevelTrainingField;
+            }
+            set {
+                if ((this.ThirdLevelTrainingField.Equals(value) != true)) {
+                    this.ThirdLevelTrainingField = value;
+                    this.RaisePropertyChanged("ThirdLevelTraining");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Treatment", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class Treatment : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MonthField;
+        
+        private int OralField;
+        
+        private int OralSecondField;
+        
+        private int OralThirdField;
+        
+        private int SecondLevelTrainingField;
+        
+        private int ThirdLevelField;
+        
+        private int ThirdLevelTrainingField;
+        
+        private int WrittenField;
+        
+        private int WrittenSecondField;
+        
+        private int WrittenThirdField;
+        
+        private int WrittenDoctorField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Filial {
+            get {
+                return this.FilialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
+                    this.FilialField = value;
+                    this.RaisePropertyChanged("Filial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Month {
+            get {
+                return this.MonthField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MonthField, value) != true)) {
+                    this.MonthField = value;
+                    this.RaisePropertyChanged("Month");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Oral {
+            get {
+                return this.OralField;
+            }
+            set {
+                if ((this.OralField.Equals(value) != true)) {
+                    this.OralField = value;
+                    this.RaisePropertyChanged("Oral");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int OralSecond {
+            get {
+                return this.OralSecondField;
+            }
+            set {
+                if ((this.OralSecondField.Equals(value) != true)) {
+                    this.OralSecondField = value;
+                    this.RaisePropertyChanged("OralSecond");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int OralThird {
+            get {
+                return this.OralThirdField;
+            }
+            set {
+                if ((this.OralThirdField.Equals(value) != true)) {
+                    this.OralThirdField = value;
+                    this.RaisePropertyChanged("OralThird");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int SecondLevelTraining {
+            get {
+                return this.SecondLevelTrainingField;
+            }
+            set {
+                if ((this.SecondLevelTrainingField.Equals(value) != true)) {
+                    this.SecondLevelTrainingField = value;
+                    this.RaisePropertyChanged("SecondLevelTraining");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int ThirdLevel {
+            get {
+                return this.ThirdLevelField;
+            }
+            set {
+                if ((this.ThirdLevelField.Equals(value) != true)) {
+                    this.ThirdLevelField = value;
+                    this.RaisePropertyChanged("ThirdLevel");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int ThirdLevelTraining {
+            get {
+                return this.ThirdLevelTrainingField;
+            }
+            set {
+                if ((this.ThirdLevelTrainingField.Equals(value) != true)) {
+                    this.ThirdLevelTrainingField = value;
+                    this.RaisePropertyChanged("ThirdLevelTraining");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Written {
+            get {
+                return this.WrittenField;
+            }
+            set {
+                if ((this.WrittenField.Equals(value) != true)) {
+                    this.WrittenField = value;
+                    this.RaisePropertyChanged("Written");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int WrittenSecond {
+            get {
+                return this.WrittenSecondField;
+            }
+            set {
+                if ((this.WrittenSecondField.Equals(value) != true)) {
+                    this.WrittenSecondField = value;
+                    this.RaisePropertyChanged("WrittenSecond");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int WrittenThird {
+            get {
+                return this.WrittenThirdField;
+            }
+            set {
+                if ((this.WrittenThirdField.Equals(value) != true)) {
+                    this.WrittenThirdField = value;
+                    this.RaisePropertyChanged("WrittenThird");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        public int WrittenDoctor {
+            get {
+                return this.WrittenDoctorField;
+            }
+            set {
+                if ((this.WrittenDoctorField.Equals(value) != true)) {
+                    this.WrittenDoctorField = value;
+                    this.RaisePropertyChanged("WrittenDoctor");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Efficiency", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class Efficiency : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MonthField;
+        
+        private int Disp13InformField;
+        
+        private int Disp12InformField;
+        
+        private int AimedDisp2Field;
+        
+        private int Disp2Field;
+        
+        private int SubjectToDispField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Filial {
+            get {
+                return this.FilialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
+                    this.FilialField = value;
+                    this.RaisePropertyChanged("Filial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Month {
+            get {
+                return this.MonthField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MonthField, value) != true)) {
+                    this.MonthField = value;
+                    this.RaisePropertyChanged("Month");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int Disp13Inform {
+            get {
+                return this.Disp13InformField;
+            }
+            set {
+                if ((this.Disp13InformField.Equals(value) != true)) {
+                    this.Disp13InformField = value;
+                    this.RaisePropertyChanged("Disp13Inform");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int Disp12Inform {
+            get {
+                return this.Disp12InformField;
+            }
+            set {
+                if ((this.Disp12InformField.Equals(value) != true)) {
+                    this.Disp12InformField = value;
+                    this.RaisePropertyChanged("Disp12Inform");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public int AimedDisp2 {
+            get {
+                return this.AimedDisp2Field;
+            }
+            set {
+                if ((this.AimedDisp2Field.Equals(value) != true)) {
+                    this.AimedDisp2Field = value;
+                    this.RaisePropertyChanged("AimedDisp2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public int Disp2 {
+            get {
+                return this.Disp2Field;
+            }
+            set {
+                if ((this.Disp2Field.Equals(value) != true)) {
+                    this.Disp2Field = value;
+                    this.RaisePropertyChanged("Disp2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public int SubjectToDisp {
+            get {
+                return this.SubjectToDispField;
+            }
+            set {
+                if ((this.SubjectToDispField.Equals(value) != true)) {
+                    this.SubjectToDispField = value;
+                    this.RaisePropertyChanged("SubjectToDisp");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ZpzForWebSite", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ZpzForWebSite : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.ZpzTreatment[] TreatmentsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.ZpzTreatment[] ComplaintsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.ZpzStatistics[] ProtectionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.Expertise[] ExpertisesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.ZpzStatistics[] SpecialistsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.ZpzStatistics[] ComplacenceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.ZpzStatistics[] InformationsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Filial {
+            get {
+                return this.FilialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
+                    this.FilialField = value;
+                    this.RaisePropertyChanged("Filial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public KmsReportClient.External.ZpzTreatment[] Treatments {
+            get {
+                return this.TreatmentsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TreatmentsField, value) != true)) {
+                    this.TreatmentsField = value;
+                    this.RaisePropertyChanged("Treatments");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public KmsReportClient.External.ZpzTreatment[] Complaints {
+            get {
+                return this.ComplaintsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ComplaintsField, value) != true)) {
+                    this.ComplaintsField = value;
+                    this.RaisePropertyChanged("Complaints");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public KmsReportClient.External.ZpzStatistics[] Protections {
+            get {
+                return this.ProtectionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProtectionsField, value) != true)) {
+                    this.ProtectionsField = value;
+                    this.RaisePropertyChanged("Protections");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public KmsReportClient.External.Expertise[] Expertises {
+            get {
+                return this.ExpertisesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExpertisesField, value) != true)) {
+                    this.ExpertisesField = value;
+                    this.RaisePropertyChanged("Expertises");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public KmsReportClient.External.ZpzStatistics[] Specialists {
+            get {
+                return this.SpecialistsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SpecialistsField, value) != true)) {
+                    this.SpecialistsField = value;
+                    this.RaisePropertyChanged("Specialists");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public KmsReportClient.External.ZpzStatistics[] Complacence {
+            get {
+                return this.ComplacenceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ComplacenceField, value) != true)) {
+                    this.ComplacenceField = value;
+                    this.RaisePropertyChanged("Complacence");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public KmsReportClient.External.ZpzStatistics[] Informations {
+            get {
+                return this.InformationsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InformationsField, value) != true)) {
+                    this.InformationsField = value;
+                    this.RaisePropertyChanged("Informations");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ZpzTreatment", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ZpzTreatment : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RowField;
+        
+        private int OralField;
+        
+        private int WrittenField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Row {
+            get {
+                return this.RowField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RowField, value) != true)) {
+                    this.RowField = value;
+                    this.RaisePropertyChanged("Row");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public int Oral {
+            get {
+                return this.OralField;
+            }
+            set {
+                if ((this.OralField.Equals(value) != true)) {
+                    this.OralField = value;
+                    this.RaisePropertyChanged("Oral");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int Written {
+            get {
+                return this.WrittenField;
+            }
+            set {
+                if ((this.WrittenField.Equals(value) != true)) {
+                    this.WrittenField = value;
+                    this.RaisePropertyChanged("Written");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ZpzStatistics", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ZpzStatistics : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RowField;
+        
+        private decimal CountField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Row {
+            get {
+                return this.RowField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RowField, value) != true)) {
+                    this.RowField = value;
+                    this.RaisePropertyChanged("Row");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public decimal Count {
+            get {
+                return this.CountField;
+            }
+            set {
+                if ((this.CountField.Equals(value) != true)) {
+                    this.CountField = value;
+                    this.RaisePropertyChanged("Count");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Expertise", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class Expertise : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RowField;
+        
+        private int TargetField;
+        
+        private int PlanField;
+        
+        private int ViolationField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Row {
+            get {
+                return this.RowField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RowField, value) != true)) {
+                    this.RowField = value;
+                    this.RaisePropertyChanged("Row");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Target {
+            get {
+                return this.TargetField;
+            }
+            set {
+                if ((this.TargetField.Equals(value) != true)) {
+                    this.TargetField = value;
+                    this.RaisePropertyChanged("Target");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int Plan {
+            get {
+                return this.PlanField;
+            }
+            set {
+                if ((this.PlanField.Equals(value) != true)) {
+                    this.PlanField = value;
+                    this.RaisePropertyChanged("Plan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int Violation {
+            get {
+                return this.ViolationField;
+            }
+            set {
+                if ((this.ViolationField.Equals(value) != true)) {
+                    this.ViolationField = value;
+                    this.RaisePropertyChanged("Violation");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://kms-oms.ru/", ConfigurationName="External.EndpointSoap")]
     public interface EndpointSoap {
-        
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportCpnpM", ReplyAction="*")]
-        KmsReportClient.External.CreateReportCpnpMResponse CreateReportCpnpM(KmsReportClient.External.CreateReportCpnpMRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportCpnpM", ReplyAction="*")]
-        System.Threading.Tasks.Task<KmsReportClient.External.CreateReportCpnpMResponse> CreateReportCpnpMAsync(KmsReportClient.External.CreateReportCpnpMRequest request);
-        
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportCardio", ReplyAction="*")]
-        KmsReportClient.External.CreateReportCardioResponse CreateReportCardio(KmsReportClient.External.CreateReportCardioRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportCardio", ReplyAction="*")]
-        System.Threading.Tasks.Task<KmsReportClient.External.CreateReportCardioResponse> CreateReportCardioAsync(KmsReportClient.External.CreateReportCardioRequest request);
-        
-        // CODEGEN: Контракт генерации сообщений с именем CreateReport262T1Result из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReport262T1", ReplyAction="*")]
-        KmsReportClient.External.CreateReport262T1Response CreateReport262T1(KmsReportClient.External.CreateReport262T1Request request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReport262T1", ReplyAction="*")]
-        System.Threading.Tasks.Task<KmsReportClient.External.CreateReport262T1Response> CreateReport262T1Async(KmsReportClient.External.CreateReport262T1Request request);
-        
-        // CODEGEN: Контракт генерации сообщений с именем yymmSt из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReport262T2", ReplyAction="*")]
-        KmsReportClient.External.CreateReport262T2Response CreateReport262T2(KmsReportClient.External.CreateReport262T2Request request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReport262T2", ReplyAction="*")]
-        System.Threading.Tasks.Task<KmsReportClient.External.CreateReport262T2Response> CreateReport262T2Async(KmsReportClient.External.CreateReport262T2Request request);
-        
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReport262T3", ReplyAction="*")]
-        KmsReportClient.External.CreateReport262T3Response CreateReport262T3(KmsReportClient.External.CreateReport262T3Request request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReport262T3", ReplyAction="*")]
-        System.Threading.Tasks.Task<KmsReportClient.External.CreateReport262T3Response> CreateReport262T3Async(KmsReportClient.External.CreateReport262T3Request request);
-        
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportControlPgZpz", ReplyAction="*")]
-        KmsReportClient.External.CreateReportControlPgZpzResponse CreateReportControlPgZpz(KmsReportClient.External.CreateReportControlPgZpzRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportControlPgZpz", ReplyAction="*")]
-        System.Threading.Tasks.Task<KmsReportClient.External.CreateReportControlPgZpzResponse> CreateReportControlPgZpzAsync(KmsReportClient.External.CreateReportControlPgZpzRequest request);
-        
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidateOnko", ReplyAction="*")]
-        KmsReportClient.External.CreateConsolidateOnkoResponse CreateConsolidateOnko(KmsReportClient.External.CreateConsolidateOnkoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidateOnko", ReplyAction="*")]
-        System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateOnkoResponse> CreateConsolidateOnkoAsync(KmsReportClient.External.CreateConsolidateOnkoRequest request);
-        
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidateCadri", ReplyAction="*")]
-        KmsReportClient.External.CreateConsolidateCadriResponse CreateConsolidateCadri(KmsReportClient.External.CreateConsolidateCadriRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidateCadri", ReplyAction="*")]
-        System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateCadriResponse> CreateConsolidateCadriAsync(KmsReportClient.External.CreateConsolidateCadriRequest request);
-        
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidateLetal", ReplyAction="*")]
-        KmsReportClient.External.CreateConsolidateLetalResponse CreateConsolidateLetal(KmsReportClient.External.CreateConsolidateLetalRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidateLetal", ReplyAction="*")]
-        System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateLetalResponse> CreateConsolidateLetalAsync(KmsReportClient.External.CreateConsolidateLetalRequest request);
-        
-        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateDynamicReport", ReplyAction="*")]
-        KmsReportClient.External.CreateDynamicReportResponse CreateDynamicReport(KmsReportClient.External.CreateDynamicReportRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateDynamicReport", ReplyAction="*")]
-        System.Threading.Tasks.Task<KmsReportClient.External.CreateDynamicReportResponse> CreateDynamicReportAsync(KmsReportClient.External.CreateDynamicReportRequest request);
-        
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidate294", ReplyAction="*")]
-        KmsReportClient.External.CreateConsolidate294Response CreateConsolidate294(KmsReportClient.External.CreateConsolidate294Request request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidate294", ReplyAction="*")]
-        System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidate294Response> CreateConsolidate294Async(KmsReportClient.External.CreateConsolidate294Request request);
-        
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateZpzForWebSite", ReplyAction="*")]
-        KmsReportClient.External.CreateZpzForWebSiteResponse CreateZpzForWebSite(KmsReportClient.External.CreateZpzForWebSiteRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateZpzForWebSite", ReplyAction="*")]
-        System.Threading.Tasks.Task<KmsReportClient.External.CreateZpzForWebSiteResponse> CreateZpzForWebSiteAsync(KmsReportClient.External.CreateZpzForWebSiteRequest request);
         
         // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
         [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ConsolidateProposalCollect", ReplyAction="*")]
@@ -20693,834 +20172,83 @@ namespace KmsReportClient.External {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportVSS", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.CreateReportVSSResponse> CreateReportVSSAsync(KmsReportClient.External.CreateReportVSSRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CreateReportCpnpMRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCpnpM", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.CreateReportCpnpMRequestBody Body;
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportCpnpM", ReplyAction="*")]
+        KmsReportClient.External.CreateReportCpnpMResponse CreateReportCpnpM(KmsReportClient.External.CreateReportCpnpMRequest request);
         
-        public CreateReportCpnpMRequest() {
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportCpnpM", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateReportCpnpMResponse> CreateReportCpnpMAsync(KmsReportClient.External.CreateReportCpnpMRequest request);
         
-        public CreateReportCpnpMRequest(KmsReportClient.External.CreateReportCpnpMRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class CreateReportCpnpMRequestBody {
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportCardio", ReplyAction="*")]
+        KmsReportClient.External.CreateReportCardioResponse CreateReportCardio(KmsReportClient.External.CreateReportCardioRequest request);
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string yymm;
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportCardio", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateReportCardioResponse> CreateReportCardioAsync(KmsReportClient.External.CreateReportCardioRequest request);
         
-        public CreateReportCpnpMRequestBody() {
-        }
+        // CODEGEN: Контракт генерации сообщений с именем CreateReport262T1Result из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReport262T1", ReplyAction="*")]
+        KmsReportClient.External.CreateReport262T1Response CreateReport262T1(KmsReportClient.External.CreateReport262T1Request request);
         
-        public CreateReportCpnpMRequestBody(string yymm) {
-            this.yymm = yymm;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CreateReportCpnpMResponse {
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReport262T1", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateReport262T1Response> CreateReport262T1Async(KmsReportClient.External.CreateReport262T1Request request);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCpnpMResponse", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.CreateReportCpnpMResponseBody Body;
+        // CODEGEN: Контракт генерации сообщений с именем yymmSt из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReport262T2", ReplyAction="*")]
+        KmsReportClient.External.CreateReport262T2Response CreateReport262T2(KmsReportClient.External.CreateReport262T2Request request);
         
-        public CreateReportCpnpMResponse() {
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReport262T2", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateReport262T2Response> CreateReport262T2Async(KmsReportClient.External.CreateReport262T2Request request);
         
-        public CreateReportCpnpMResponse(KmsReportClient.External.CreateReportCpnpMResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class CreateReportCpnpMResponseBody {
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReport262T3", ReplyAction="*")]
+        KmsReportClient.External.CreateReport262T3Response CreateReport262T3(KmsReportClient.External.CreateReport262T3Request request);
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public KmsReportClient.External.ConsolidateCpnpM[] CreateReportCpnpMResult;
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReport262T3", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateReport262T3Response> CreateReport262T3Async(KmsReportClient.External.CreateReport262T3Request request);
         
-        public CreateReportCpnpMResponseBody() {
-        }
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportControlPgZpz", ReplyAction="*")]
+        KmsReportClient.External.CreateReportControlPgZpzResponse CreateReportControlPgZpz(KmsReportClient.External.CreateReportControlPgZpzRequest request);
         
-        public CreateReportCpnpMResponseBody(KmsReportClient.External.ConsolidateCpnpM[] CreateReportCpnpMResult) {
-            this.CreateReportCpnpMResult = CreateReportCpnpMResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CreateReportCardioRequest {
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportControlPgZpz", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateReportControlPgZpzResponse> CreateReportControlPgZpzAsync(KmsReportClient.External.CreateReportControlPgZpzRequest request);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCardio", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.CreateReportCardioRequestBody Body;
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidateOnko", ReplyAction="*")]
+        KmsReportClient.External.CreateConsolidateOnkoResponse CreateConsolidateOnko(KmsReportClient.External.CreateConsolidateOnkoRequest request);
         
-        public CreateReportCardioRequest() {
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidateOnko", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateOnkoResponse> CreateConsolidateOnkoAsync(KmsReportClient.External.CreateConsolidateOnkoRequest request);
         
-        public CreateReportCardioRequest(KmsReportClient.External.CreateReportCardioRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class CreateReportCardioRequestBody {
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidateLetal", ReplyAction="*")]
+        KmsReportClient.External.CreateConsolidateLetalResponse CreateConsolidateLetal(KmsReportClient.External.CreateConsolidateLetalRequest request);
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string yymm;
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidateLetal", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateLetalResponse> CreateConsolidateLetalAsync(KmsReportClient.External.CreateConsolidateLetalRequest request);
         
-        public CreateReportCardioRequestBody() {
-        }
+        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateDynamicReport", ReplyAction="*")]
+        KmsReportClient.External.CreateDynamicReportResponse CreateDynamicReport(KmsReportClient.External.CreateDynamicReportRequest request);
         
-        public CreateReportCardioRequestBody(string yymm) {
-            this.yymm = yymm;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CreateReportCardioResponse {
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateDynamicReport", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateDynamicReportResponse> CreateDynamicReportAsync(KmsReportClient.External.CreateDynamicReportRequest request);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCardioResponse", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.CreateReportCardioResponseBody Body;
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidate294", ReplyAction="*")]
+        KmsReportClient.External.CreateConsolidate294Response CreateConsolidate294(KmsReportClient.External.CreateConsolidate294Request request);
         
-        public CreateReportCardioResponse() {
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidate294", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidate294Response> CreateConsolidate294Async(KmsReportClient.External.CreateConsolidate294Request request);
         
-        public CreateReportCardioResponse(KmsReportClient.External.CreateReportCardioResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class CreateReportCardioResponseBody {
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateZpzForWebSite", ReplyAction="*")]
+        KmsReportClient.External.CreateZpzForWebSiteResponse CreateZpzForWebSite(KmsReportClient.External.CreateZpzForWebSiteRequest request);
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public KmsReportClient.External.ConsolidateCardio[] CreateReportCardioResult;
-        
-        public CreateReportCardioResponseBody() {
-        }
-        
-        public CreateReportCardioResponseBody(KmsReportClient.External.ConsolidateCardio[] CreateReportCardioResult) {
-            this.CreateReportCardioResult = CreateReportCardioResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CreateReport262T1Request {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReport262T1", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.CreateReport262T1RequestBody Body;
-        
-        public CreateReport262T1Request() {
-        }
-        
-        public CreateReport262T1Request(KmsReportClient.External.CreateReport262T1RequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class CreateReport262T1RequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int year;
-        
-        public CreateReport262T1RequestBody() {
-        }
-        
-        public CreateReport262T1RequestBody(int year) {
-            this.year = year;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CreateReport262T1Response {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReport262T1Response", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.CreateReport262T1ResponseBody Body;
-        
-        public CreateReport262T1Response() {
-        }
-        
-        public CreateReport262T1Response(KmsReportClient.External.CreateReport262T1ResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class CreateReport262T1ResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public KmsReportClient.External.CReport262Table1[] CreateReport262T1Result;
-        
-        public CreateReport262T1ResponseBody() {
-        }
-        
-        public CreateReport262T1ResponseBody(KmsReportClient.External.CReport262Table1[] CreateReport262T1Result) {
-            this.CreateReport262T1Result = CreateReport262T1Result;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CreateReport262T2Request {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReport262T2", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.CreateReport262T2RequestBody Body;
-        
-        public CreateReport262T2Request() {
-        }
-        
-        public CreateReport262T2Request(KmsReportClient.External.CreateReport262T2RequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class CreateReport262T2RequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string yymmSt;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string yymmEnd;
-        
-        public CreateReport262T2RequestBody() {
-        }
-        
-        public CreateReport262T2RequestBody(string yymmSt, string yymmEnd) {
-            this.yymmSt = yymmSt;
-            this.yymmEnd = yymmEnd;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CreateReport262T2Response {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReport262T2Response", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.CreateReport262T2ResponseBody Body;
-        
-        public CreateReport262T2Response() {
-        }
-        
-        public CreateReport262T2Response(KmsReportClient.External.CreateReport262T2ResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class CreateReport262T2ResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public KmsReportClient.External.CReport262Table2[] CreateReport262T2Result;
-        
-        public CreateReport262T2ResponseBody() {
-        }
-        
-        public CreateReport262T2ResponseBody(KmsReportClient.External.CReport262Table2[] CreateReport262T2Result) {
-            this.CreateReport262T2Result = CreateReport262T2Result;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CreateReport262T3Request {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReport262T3", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.CreateReport262T3RequestBody Body;
-        
-        public CreateReport262T3Request() {
-        }
-        
-        public CreateReport262T3Request(KmsReportClient.External.CreateReport262T3RequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class CreateReport262T3RequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string yymm;
-        
-        public CreateReport262T3RequestBody() {
-        }
-        
-        public CreateReport262T3RequestBody(string yymm) {
-            this.yymm = yymm;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CreateReport262T3Response {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReport262T3Response", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.CreateReport262T3ResponseBody Body;
-        
-        public CreateReport262T3Response() {
-        }
-        
-        public CreateReport262T3Response(KmsReportClient.External.CreateReport262T3ResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class CreateReport262T3ResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public KmsReportClient.External.CReport262Table3[] CreateReport262T3Result;
-        
-        public CreateReport262T3ResponseBody() {
-        }
-        
-        public CreateReport262T3ResponseBody(KmsReportClient.External.CReport262Table3[] CreateReport262T3Result) {
-            this.CreateReport262T3Result = CreateReport262T3Result;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CreateReportControlPgZpzRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportControlPgZpz", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.CreateReportControlPgZpzRequestBody Body;
-        
-        public CreateReportControlPgZpzRequest() {
-        }
-        
-        public CreateReportControlPgZpzRequest(KmsReportClient.External.CreateReportControlPgZpzRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class CreateReportControlPgZpzRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string yymm;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public bool isMonthly;
-        
-        public CreateReportControlPgZpzRequestBody() {
-        }
-        
-        public CreateReportControlPgZpzRequestBody(string yymm, bool isMonthly) {
-            this.yymm = yymm;
-            this.isMonthly = isMonthly;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CreateReportControlPgZpzResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportControlPgZpzResponse", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.CreateReportControlPgZpzResponseBody Body;
-        
-        public CreateReportControlPgZpzResponse() {
-        }
-        
-        public CreateReportControlPgZpzResponse(KmsReportClient.External.CreateReportControlPgZpzResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class CreateReportControlPgZpzResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public KmsReportClient.External.CReportPg[] CreateReportControlPgZpzResult;
-        
-        public CreateReportControlPgZpzResponseBody() {
-        }
-        
-        public CreateReportControlPgZpzResponseBody(KmsReportClient.External.CReportPg[] CreateReportControlPgZpzResult) {
-            this.CreateReportControlPgZpzResult = CreateReportControlPgZpzResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CreateConsolidateOnkoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidateOnko", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.CreateConsolidateOnkoRequestBody Body;
-        
-        public CreateConsolidateOnkoRequest() {
-        }
-        
-        public CreateConsolidateOnkoRequest(KmsReportClient.External.CreateConsolidateOnkoRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class CreateConsolidateOnkoRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string yymm;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public bool isMonthly;
-        
-        public CreateConsolidateOnkoRequestBody() {
-        }
-        
-        public CreateConsolidateOnkoRequestBody(string yymm, bool isMonthly) {
-            this.yymm = yymm;
-            this.isMonthly = isMonthly;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CreateConsolidateOnkoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidateOnkoResponse", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.CreateConsolidateOnkoResponseBody Body;
-        
-        public CreateConsolidateOnkoResponse() {
-        }
-        
-        public CreateConsolidateOnkoResponse(KmsReportClient.External.CreateConsolidateOnkoResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class CreateConsolidateOnkoResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public KmsReportClient.External.ConsolidateOnko[] CreateConsolidateOnkoResult;
-        
-        public CreateConsolidateOnkoResponseBody() {
-        }
-        
-        public CreateConsolidateOnkoResponseBody(KmsReportClient.External.ConsolidateOnko[] CreateConsolidateOnkoResult) {
-            this.CreateConsolidateOnkoResult = CreateConsolidateOnkoResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CreateConsolidateCadriRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidateCadri", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.CreateConsolidateCadriRequestBody Body;
-        
-        public CreateConsolidateCadriRequest() {
-        }
-        
-        public CreateConsolidateCadriRequest(KmsReportClient.External.CreateConsolidateCadriRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class CreateConsolidateCadriRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string yymm;
-        
-        public CreateConsolidateCadriRequestBody() {
-        }
-        
-        public CreateConsolidateCadriRequestBody(string yymm) {
-            this.yymm = yymm;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CreateConsolidateCadriResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidateCadriResponse", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.CreateConsolidateCadriResponseBody Body;
-        
-        public CreateConsolidateCadriResponse() {
-        }
-        
-        public CreateConsolidateCadriResponse(KmsReportClient.External.CreateConsolidateCadriResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class CreateConsolidateCadriResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public KmsReportClient.External.ConsolidateCadri[] CreateConsolidateCadriResult;
-        
-        public CreateConsolidateCadriResponseBody() {
-        }
-        
-        public CreateConsolidateCadriResponseBody(KmsReportClient.External.ConsolidateCadri[] CreateConsolidateCadriResult) {
-            this.CreateConsolidateCadriResult = CreateConsolidateCadriResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CreateConsolidateLetalRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidateLetal", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.CreateConsolidateLetalRequestBody Body;
-        
-        public CreateConsolidateLetalRequest() {
-        }
-        
-        public CreateConsolidateLetalRequest(KmsReportClient.External.CreateConsolidateLetalRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class CreateConsolidateLetalRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string yymm;
-        
-        public CreateConsolidateLetalRequestBody() {
-        }
-        
-        public CreateConsolidateLetalRequestBody(string yymm) {
-            this.yymm = yymm;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CreateConsolidateLetalResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidateLetalResponse", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.CreateConsolidateLetalResponseBody Body;
-        
-        public CreateConsolidateLetalResponse() {
-        }
-        
-        public CreateConsolidateLetalResponse(KmsReportClient.External.CreateConsolidateLetalResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class CreateConsolidateLetalResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public KmsReportClient.External.ConsolidateLetal[] CreateConsolidateLetalResult;
-        
-        public CreateConsolidateLetalResponseBody() {
-        }
-        
-        public CreateConsolidateLetalResponseBody(KmsReportClient.External.ConsolidateLetal[] CreateConsolidateLetalResult) {
-            this.CreateConsolidateLetalResult = CreateConsolidateLetalResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CreateDynamicReportRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateDynamicReport", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.CreateDynamicReportRequestBody Body;
-        
-        public CreateDynamicReportRequest() {
-        }
-        
-        public CreateDynamicReportRequest(KmsReportClient.External.CreateDynamicReportRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class CreateDynamicReportRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public KmsReportClient.External.ReportDynamicDto report;
-        
-        public CreateDynamicReportRequestBody() {
-        }
-        
-        public CreateDynamicReportRequestBody(KmsReportClient.External.ReportDynamicDto report) {
-            this.report = report;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CreateDynamicReportResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateDynamicReportResponse", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.CreateDynamicReportResponseBody Body;
-        
-        public CreateDynamicReportResponse() {
-        }
-        
-        public CreateDynamicReportResponse(KmsReportClient.External.CreateDynamicReportResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class CreateDynamicReportResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public KmsReportClient.External.Report_Dynamic CreateDynamicReportResult;
-        
-        public CreateDynamicReportResponseBody() {
-        }
-        
-        public CreateDynamicReportResponseBody(KmsReportClient.External.Report_Dynamic CreateDynamicReportResult) {
-            this.CreateDynamicReportResult = CreateDynamicReportResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CreateConsolidate294Request {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidate294", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.CreateConsolidate294RequestBody Body;
-        
-        public CreateConsolidate294Request() {
-        }
-        
-        public CreateConsolidate294Request(KmsReportClient.External.CreateConsolidate294RequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class CreateConsolidate294RequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string yymm;
-        
-        public CreateConsolidate294RequestBody() {
-        }
-        
-        public CreateConsolidate294RequestBody(string yymm) {
-            this.yymm = yymm;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CreateConsolidate294Response {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidate294Response", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.CreateConsolidate294ResponseBody Body;
-        
-        public CreateConsolidate294Response() {
-        }
-        
-        public CreateConsolidate294Response(KmsReportClient.External.CreateConsolidate294ResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class CreateConsolidate294ResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public KmsReportClient.External.Consolidate294 CreateConsolidate294Result;
-        
-        public CreateConsolidate294ResponseBody() {
-        }
-        
-        public CreateConsolidate294ResponseBody(KmsReportClient.External.Consolidate294 CreateConsolidate294Result) {
-            this.CreateConsolidate294Result = CreateConsolidate294Result;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CreateZpzForWebSiteRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateZpzForWebSite", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.CreateZpzForWebSiteRequestBody Body;
-        
-        public CreateZpzForWebSiteRequest() {
-        }
-        
-        public CreateZpzForWebSiteRequest(KmsReportClient.External.CreateZpzForWebSiteRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class CreateZpzForWebSiteRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string yymm;
-        
-        public CreateZpzForWebSiteRequestBody() {
-        }
-        
-        public CreateZpzForWebSiteRequestBody(string yymm) {
-            this.yymm = yymm;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CreateZpzForWebSiteResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateZpzForWebSiteResponse", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.CreateZpzForWebSiteResponseBody Body;
-        
-        public CreateZpzForWebSiteResponse() {
-        }
-        
-        public CreateZpzForWebSiteResponse(KmsReportClient.External.CreateZpzForWebSiteResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class CreateZpzForWebSiteResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public KmsReportClient.External.ZpzForWebSite[] CreateZpzForWebSiteResult;
-        
-        public CreateZpzForWebSiteResponseBody() {
-        }
-        
-        public CreateZpzForWebSiteResponseBody(KmsReportClient.External.ZpzForWebSite[] CreateZpzForWebSiteResult) {
-            this.CreateZpzForWebSiteResult = CreateZpzForWebSiteResult;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateZpzForWebSite", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateZpzForWebSiteResponse> CreateZpzForWebSiteAsync(KmsReportClient.External.CreateZpzForWebSiteRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -25522,6 +24250,766 @@ namespace KmsReportClient.External {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateReportCpnpMRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCpnpM", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateReportCpnpMRequestBody Body;
+        
+        public CreateReportCpnpMRequest() {
+        }
+        
+        public CreateReportCpnpMRequest(KmsReportClient.External.CreateReportCpnpMRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateReportCpnpMRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string yymm;
+        
+        public CreateReportCpnpMRequestBody() {
+        }
+        
+        public CreateReportCpnpMRequestBody(string yymm) {
+            this.yymm = yymm;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateReportCpnpMResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCpnpMResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateReportCpnpMResponseBody Body;
+        
+        public CreateReportCpnpMResponse() {
+        }
+        
+        public CreateReportCpnpMResponse(KmsReportClient.External.CreateReportCpnpMResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateReportCpnpMResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.ConsolidateCpnpM[] CreateReportCpnpMResult;
+        
+        public CreateReportCpnpMResponseBody() {
+        }
+        
+        public CreateReportCpnpMResponseBody(KmsReportClient.External.ConsolidateCpnpM[] CreateReportCpnpMResult) {
+            this.CreateReportCpnpMResult = CreateReportCpnpMResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateReportCardioRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCardio", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateReportCardioRequestBody Body;
+        
+        public CreateReportCardioRequest() {
+        }
+        
+        public CreateReportCardioRequest(KmsReportClient.External.CreateReportCardioRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateReportCardioRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string yymm;
+        
+        public CreateReportCardioRequestBody() {
+        }
+        
+        public CreateReportCardioRequestBody(string yymm) {
+            this.yymm = yymm;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateReportCardioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCardioResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateReportCardioResponseBody Body;
+        
+        public CreateReportCardioResponse() {
+        }
+        
+        public CreateReportCardioResponse(KmsReportClient.External.CreateReportCardioResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateReportCardioResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.ConsolidateCardio[] CreateReportCardioResult;
+        
+        public CreateReportCardioResponseBody() {
+        }
+        
+        public CreateReportCardioResponseBody(KmsReportClient.External.ConsolidateCardio[] CreateReportCardioResult) {
+            this.CreateReportCardioResult = CreateReportCardioResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateReport262T1Request {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReport262T1", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateReport262T1RequestBody Body;
+        
+        public CreateReport262T1Request() {
+        }
+        
+        public CreateReport262T1Request(KmsReportClient.External.CreateReport262T1RequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateReport262T1RequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int year;
+        
+        public CreateReport262T1RequestBody() {
+        }
+        
+        public CreateReport262T1RequestBody(int year) {
+            this.year = year;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateReport262T1Response {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReport262T1Response", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateReport262T1ResponseBody Body;
+        
+        public CreateReport262T1Response() {
+        }
+        
+        public CreateReport262T1Response(KmsReportClient.External.CreateReport262T1ResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateReport262T1ResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.CReport262Table1[] CreateReport262T1Result;
+        
+        public CreateReport262T1ResponseBody() {
+        }
+        
+        public CreateReport262T1ResponseBody(KmsReportClient.External.CReport262Table1[] CreateReport262T1Result) {
+            this.CreateReport262T1Result = CreateReport262T1Result;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateReport262T2Request {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReport262T2", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateReport262T2RequestBody Body;
+        
+        public CreateReport262T2Request() {
+        }
+        
+        public CreateReport262T2Request(KmsReportClient.External.CreateReport262T2RequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateReport262T2RequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string yymmSt;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string yymmEnd;
+        
+        public CreateReport262T2RequestBody() {
+        }
+        
+        public CreateReport262T2RequestBody(string yymmSt, string yymmEnd) {
+            this.yymmSt = yymmSt;
+            this.yymmEnd = yymmEnd;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateReport262T2Response {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReport262T2Response", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateReport262T2ResponseBody Body;
+        
+        public CreateReport262T2Response() {
+        }
+        
+        public CreateReport262T2Response(KmsReportClient.External.CreateReport262T2ResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateReport262T2ResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.CReport262Table2[] CreateReport262T2Result;
+        
+        public CreateReport262T2ResponseBody() {
+        }
+        
+        public CreateReport262T2ResponseBody(KmsReportClient.External.CReport262Table2[] CreateReport262T2Result) {
+            this.CreateReport262T2Result = CreateReport262T2Result;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateReport262T3Request {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReport262T3", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateReport262T3RequestBody Body;
+        
+        public CreateReport262T3Request() {
+        }
+        
+        public CreateReport262T3Request(KmsReportClient.External.CreateReport262T3RequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateReport262T3RequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string yymm;
+        
+        public CreateReport262T3RequestBody() {
+        }
+        
+        public CreateReport262T3RequestBody(string yymm) {
+            this.yymm = yymm;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateReport262T3Response {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReport262T3Response", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateReport262T3ResponseBody Body;
+        
+        public CreateReport262T3Response() {
+        }
+        
+        public CreateReport262T3Response(KmsReportClient.External.CreateReport262T3ResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateReport262T3ResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.CReport262Table3[] CreateReport262T3Result;
+        
+        public CreateReport262T3ResponseBody() {
+        }
+        
+        public CreateReport262T3ResponseBody(KmsReportClient.External.CReport262Table3[] CreateReport262T3Result) {
+            this.CreateReport262T3Result = CreateReport262T3Result;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateReportControlPgZpzRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportControlPgZpz", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateReportControlPgZpzRequestBody Body;
+        
+        public CreateReportControlPgZpzRequest() {
+        }
+        
+        public CreateReportControlPgZpzRequest(KmsReportClient.External.CreateReportControlPgZpzRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateReportControlPgZpzRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string yymm;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public bool isMonthly;
+        
+        public CreateReportControlPgZpzRequestBody() {
+        }
+        
+        public CreateReportControlPgZpzRequestBody(string yymm, bool isMonthly) {
+            this.yymm = yymm;
+            this.isMonthly = isMonthly;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateReportControlPgZpzResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportControlPgZpzResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateReportControlPgZpzResponseBody Body;
+        
+        public CreateReportControlPgZpzResponse() {
+        }
+        
+        public CreateReportControlPgZpzResponse(KmsReportClient.External.CreateReportControlPgZpzResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateReportControlPgZpzResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.CReportPg[] CreateReportControlPgZpzResult;
+        
+        public CreateReportControlPgZpzResponseBody() {
+        }
+        
+        public CreateReportControlPgZpzResponseBody(KmsReportClient.External.CReportPg[] CreateReportControlPgZpzResult) {
+            this.CreateReportControlPgZpzResult = CreateReportControlPgZpzResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateConsolidateOnkoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidateOnko", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateConsolidateOnkoRequestBody Body;
+        
+        public CreateConsolidateOnkoRequest() {
+        }
+        
+        public CreateConsolidateOnkoRequest(KmsReportClient.External.CreateConsolidateOnkoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateConsolidateOnkoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string yymm;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public bool isMonthly;
+        
+        public CreateConsolidateOnkoRequestBody() {
+        }
+        
+        public CreateConsolidateOnkoRequestBody(string yymm, bool isMonthly) {
+            this.yymm = yymm;
+            this.isMonthly = isMonthly;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateConsolidateOnkoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidateOnkoResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateConsolidateOnkoResponseBody Body;
+        
+        public CreateConsolidateOnkoResponse() {
+        }
+        
+        public CreateConsolidateOnkoResponse(KmsReportClient.External.CreateConsolidateOnkoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateConsolidateOnkoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.ConsolidateOnko[] CreateConsolidateOnkoResult;
+        
+        public CreateConsolidateOnkoResponseBody() {
+        }
+        
+        public CreateConsolidateOnkoResponseBody(KmsReportClient.External.ConsolidateOnko[] CreateConsolidateOnkoResult) {
+            this.CreateConsolidateOnkoResult = CreateConsolidateOnkoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateConsolidateLetalRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidateLetal", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateConsolidateLetalRequestBody Body;
+        
+        public CreateConsolidateLetalRequest() {
+        }
+        
+        public CreateConsolidateLetalRequest(KmsReportClient.External.CreateConsolidateLetalRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateConsolidateLetalRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string yymm;
+        
+        public CreateConsolidateLetalRequestBody() {
+        }
+        
+        public CreateConsolidateLetalRequestBody(string yymm) {
+            this.yymm = yymm;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateConsolidateLetalResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidateLetalResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateConsolidateLetalResponseBody Body;
+        
+        public CreateConsolidateLetalResponse() {
+        }
+        
+        public CreateConsolidateLetalResponse(KmsReportClient.External.CreateConsolidateLetalResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateConsolidateLetalResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.ConsolidateLetal[] CreateConsolidateLetalResult;
+        
+        public CreateConsolidateLetalResponseBody() {
+        }
+        
+        public CreateConsolidateLetalResponseBody(KmsReportClient.External.ConsolidateLetal[] CreateConsolidateLetalResult) {
+            this.CreateConsolidateLetalResult = CreateConsolidateLetalResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateDynamicReportRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateDynamicReport", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateDynamicReportRequestBody Body;
+        
+        public CreateDynamicReportRequest() {
+        }
+        
+        public CreateDynamicReportRequest(KmsReportClient.External.CreateDynamicReportRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateDynamicReportRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.ReportDynamicDto report;
+        
+        public CreateDynamicReportRequestBody() {
+        }
+        
+        public CreateDynamicReportRequestBody(KmsReportClient.External.ReportDynamicDto report) {
+            this.report = report;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateDynamicReportResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateDynamicReportResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateDynamicReportResponseBody Body;
+        
+        public CreateDynamicReportResponse() {
+        }
+        
+        public CreateDynamicReportResponse(KmsReportClient.External.CreateDynamicReportResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateDynamicReportResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.Report_Dynamic CreateDynamicReportResult;
+        
+        public CreateDynamicReportResponseBody() {
+        }
+        
+        public CreateDynamicReportResponseBody(KmsReportClient.External.Report_Dynamic CreateDynamicReportResult) {
+            this.CreateDynamicReportResult = CreateDynamicReportResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateConsolidate294Request {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidate294", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateConsolidate294RequestBody Body;
+        
+        public CreateConsolidate294Request() {
+        }
+        
+        public CreateConsolidate294Request(KmsReportClient.External.CreateConsolidate294RequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateConsolidate294RequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string yymm;
+        
+        public CreateConsolidate294RequestBody() {
+        }
+        
+        public CreateConsolidate294RequestBody(string yymm) {
+            this.yymm = yymm;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateConsolidate294Response {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidate294Response", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateConsolidate294ResponseBody Body;
+        
+        public CreateConsolidate294Response() {
+        }
+        
+        public CreateConsolidate294Response(KmsReportClient.External.CreateConsolidate294ResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateConsolidate294ResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.Consolidate294 CreateConsolidate294Result;
+        
+        public CreateConsolidate294ResponseBody() {
+        }
+        
+        public CreateConsolidate294ResponseBody(KmsReportClient.External.Consolidate294 CreateConsolidate294Result) {
+            this.CreateConsolidate294Result = CreateConsolidate294Result;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateZpzForWebSiteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateZpzForWebSite", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateZpzForWebSiteRequestBody Body;
+        
+        public CreateZpzForWebSiteRequest() {
+        }
+        
+        public CreateZpzForWebSiteRequest(KmsReportClient.External.CreateZpzForWebSiteRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateZpzForWebSiteRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string yymm;
+        
+        public CreateZpzForWebSiteRequestBody() {
+        }
+        
+        public CreateZpzForWebSiteRequestBody(string yymm) {
+            this.yymm = yymm;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateZpzForWebSiteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateZpzForWebSiteResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateZpzForWebSiteResponseBody Body;
+        
+        public CreateZpzForWebSiteResponse() {
+        }
+        
+        public CreateZpzForWebSiteResponse(KmsReportClient.External.CreateZpzForWebSiteResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateZpzForWebSiteResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.ZpzForWebSite[] CreateZpzForWebSiteResult;
+        
+        public CreateZpzForWebSiteResponseBody() {
+        }
+        
+        public CreateZpzForWebSiteResponseBody(KmsReportClient.External.ZpzForWebSite[] CreateZpzForWebSiteResult) {
+            this.CreateZpzForWebSiteResult = CreateZpzForWebSiteResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface EndpointSoapChannel : KmsReportClient.External.EndpointSoap, System.ServiceModel.IClientChannel {
     }
@@ -25547,312 +25035,6 @@ namespace KmsReportClient.External {
         
         public EndpointSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        KmsReportClient.External.CreateReportCpnpMResponse KmsReportClient.External.EndpointSoap.CreateReportCpnpM(KmsReportClient.External.CreateReportCpnpMRequest request) {
-            return base.Channel.CreateReportCpnpM(request);
-        }
-        
-        public KmsReportClient.External.ConsolidateCpnpM[] CreateReportCpnpM(string yymm) {
-            KmsReportClient.External.CreateReportCpnpMRequest inValue = new KmsReportClient.External.CreateReportCpnpMRequest();
-            inValue.Body = new KmsReportClient.External.CreateReportCpnpMRequestBody();
-            inValue.Body.yymm = yymm;
-            KmsReportClient.External.CreateReportCpnpMResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateReportCpnpM(inValue);
-            return retVal.Body.CreateReportCpnpMResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<KmsReportClient.External.CreateReportCpnpMResponse> KmsReportClient.External.EndpointSoap.CreateReportCpnpMAsync(KmsReportClient.External.CreateReportCpnpMRequest request) {
-            return base.Channel.CreateReportCpnpMAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<KmsReportClient.External.CreateReportCpnpMResponse> CreateReportCpnpMAsync(string yymm) {
-            KmsReportClient.External.CreateReportCpnpMRequest inValue = new KmsReportClient.External.CreateReportCpnpMRequest();
-            inValue.Body = new KmsReportClient.External.CreateReportCpnpMRequestBody();
-            inValue.Body.yymm = yymm;
-            return ((KmsReportClient.External.EndpointSoap)(this)).CreateReportCpnpMAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        KmsReportClient.External.CreateReportCardioResponse KmsReportClient.External.EndpointSoap.CreateReportCardio(KmsReportClient.External.CreateReportCardioRequest request) {
-            return base.Channel.CreateReportCardio(request);
-        }
-        
-        public KmsReportClient.External.ConsolidateCardio[] CreateReportCardio(string yymm) {
-            KmsReportClient.External.CreateReportCardioRequest inValue = new KmsReportClient.External.CreateReportCardioRequest();
-            inValue.Body = new KmsReportClient.External.CreateReportCardioRequestBody();
-            inValue.Body.yymm = yymm;
-            KmsReportClient.External.CreateReportCardioResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateReportCardio(inValue);
-            return retVal.Body.CreateReportCardioResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<KmsReportClient.External.CreateReportCardioResponse> KmsReportClient.External.EndpointSoap.CreateReportCardioAsync(KmsReportClient.External.CreateReportCardioRequest request) {
-            return base.Channel.CreateReportCardioAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<KmsReportClient.External.CreateReportCardioResponse> CreateReportCardioAsync(string yymm) {
-            KmsReportClient.External.CreateReportCardioRequest inValue = new KmsReportClient.External.CreateReportCardioRequest();
-            inValue.Body = new KmsReportClient.External.CreateReportCardioRequestBody();
-            inValue.Body.yymm = yymm;
-            return ((KmsReportClient.External.EndpointSoap)(this)).CreateReportCardioAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        KmsReportClient.External.CreateReport262T1Response KmsReportClient.External.EndpointSoap.CreateReport262T1(KmsReportClient.External.CreateReport262T1Request request) {
-            return base.Channel.CreateReport262T1(request);
-        }
-        
-        public KmsReportClient.External.CReport262Table1[] CreateReport262T1(int year) {
-            KmsReportClient.External.CreateReport262T1Request inValue = new KmsReportClient.External.CreateReport262T1Request();
-            inValue.Body = new KmsReportClient.External.CreateReport262T1RequestBody();
-            inValue.Body.year = year;
-            KmsReportClient.External.CreateReport262T1Response retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateReport262T1(inValue);
-            return retVal.Body.CreateReport262T1Result;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<KmsReportClient.External.CreateReport262T1Response> KmsReportClient.External.EndpointSoap.CreateReport262T1Async(KmsReportClient.External.CreateReport262T1Request request) {
-            return base.Channel.CreateReport262T1Async(request);
-        }
-        
-        public System.Threading.Tasks.Task<KmsReportClient.External.CreateReport262T1Response> CreateReport262T1Async(int year) {
-            KmsReportClient.External.CreateReport262T1Request inValue = new KmsReportClient.External.CreateReport262T1Request();
-            inValue.Body = new KmsReportClient.External.CreateReport262T1RequestBody();
-            inValue.Body.year = year;
-            return ((KmsReportClient.External.EndpointSoap)(this)).CreateReport262T1Async(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        KmsReportClient.External.CreateReport262T2Response KmsReportClient.External.EndpointSoap.CreateReport262T2(KmsReportClient.External.CreateReport262T2Request request) {
-            return base.Channel.CreateReport262T2(request);
-        }
-        
-        public KmsReportClient.External.CReport262Table2[] CreateReport262T2(string yymmSt, string yymmEnd) {
-            KmsReportClient.External.CreateReport262T2Request inValue = new KmsReportClient.External.CreateReport262T2Request();
-            inValue.Body = new KmsReportClient.External.CreateReport262T2RequestBody();
-            inValue.Body.yymmSt = yymmSt;
-            inValue.Body.yymmEnd = yymmEnd;
-            KmsReportClient.External.CreateReport262T2Response retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateReport262T2(inValue);
-            return retVal.Body.CreateReport262T2Result;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<KmsReportClient.External.CreateReport262T2Response> KmsReportClient.External.EndpointSoap.CreateReport262T2Async(KmsReportClient.External.CreateReport262T2Request request) {
-            return base.Channel.CreateReport262T2Async(request);
-        }
-        
-        public System.Threading.Tasks.Task<KmsReportClient.External.CreateReport262T2Response> CreateReport262T2Async(string yymmSt, string yymmEnd) {
-            KmsReportClient.External.CreateReport262T2Request inValue = new KmsReportClient.External.CreateReport262T2Request();
-            inValue.Body = new KmsReportClient.External.CreateReport262T2RequestBody();
-            inValue.Body.yymmSt = yymmSt;
-            inValue.Body.yymmEnd = yymmEnd;
-            return ((KmsReportClient.External.EndpointSoap)(this)).CreateReport262T2Async(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        KmsReportClient.External.CreateReport262T3Response KmsReportClient.External.EndpointSoap.CreateReport262T3(KmsReportClient.External.CreateReport262T3Request request) {
-            return base.Channel.CreateReport262T3(request);
-        }
-        
-        public KmsReportClient.External.CReport262Table3[] CreateReport262T3(string yymm) {
-            KmsReportClient.External.CreateReport262T3Request inValue = new KmsReportClient.External.CreateReport262T3Request();
-            inValue.Body = new KmsReportClient.External.CreateReport262T3RequestBody();
-            inValue.Body.yymm = yymm;
-            KmsReportClient.External.CreateReport262T3Response retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateReport262T3(inValue);
-            return retVal.Body.CreateReport262T3Result;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<KmsReportClient.External.CreateReport262T3Response> KmsReportClient.External.EndpointSoap.CreateReport262T3Async(KmsReportClient.External.CreateReport262T3Request request) {
-            return base.Channel.CreateReport262T3Async(request);
-        }
-        
-        public System.Threading.Tasks.Task<KmsReportClient.External.CreateReport262T3Response> CreateReport262T3Async(string yymm) {
-            KmsReportClient.External.CreateReport262T3Request inValue = new KmsReportClient.External.CreateReport262T3Request();
-            inValue.Body = new KmsReportClient.External.CreateReport262T3RequestBody();
-            inValue.Body.yymm = yymm;
-            return ((KmsReportClient.External.EndpointSoap)(this)).CreateReport262T3Async(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        KmsReportClient.External.CreateReportControlPgZpzResponse KmsReportClient.External.EndpointSoap.CreateReportControlPgZpz(KmsReportClient.External.CreateReportControlPgZpzRequest request) {
-            return base.Channel.CreateReportControlPgZpz(request);
-        }
-        
-        public KmsReportClient.External.CReportPg[] CreateReportControlPgZpz(string yymm, bool isMonthly) {
-            KmsReportClient.External.CreateReportControlPgZpzRequest inValue = new KmsReportClient.External.CreateReportControlPgZpzRequest();
-            inValue.Body = new KmsReportClient.External.CreateReportControlPgZpzRequestBody();
-            inValue.Body.yymm = yymm;
-            inValue.Body.isMonthly = isMonthly;
-            KmsReportClient.External.CreateReportControlPgZpzResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateReportControlPgZpz(inValue);
-            return retVal.Body.CreateReportControlPgZpzResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<KmsReportClient.External.CreateReportControlPgZpzResponse> KmsReportClient.External.EndpointSoap.CreateReportControlPgZpzAsync(KmsReportClient.External.CreateReportControlPgZpzRequest request) {
-            return base.Channel.CreateReportControlPgZpzAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<KmsReportClient.External.CreateReportControlPgZpzResponse> CreateReportControlPgZpzAsync(string yymm, bool isMonthly) {
-            KmsReportClient.External.CreateReportControlPgZpzRequest inValue = new KmsReportClient.External.CreateReportControlPgZpzRequest();
-            inValue.Body = new KmsReportClient.External.CreateReportControlPgZpzRequestBody();
-            inValue.Body.yymm = yymm;
-            inValue.Body.isMonthly = isMonthly;
-            return ((KmsReportClient.External.EndpointSoap)(this)).CreateReportControlPgZpzAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        KmsReportClient.External.CreateConsolidateOnkoResponse KmsReportClient.External.EndpointSoap.CreateConsolidateOnko(KmsReportClient.External.CreateConsolidateOnkoRequest request) {
-            return base.Channel.CreateConsolidateOnko(request);
-        }
-        
-        public KmsReportClient.External.ConsolidateOnko[] CreateConsolidateOnko(string yymm, bool isMonthly) {
-            KmsReportClient.External.CreateConsolidateOnkoRequest inValue = new KmsReportClient.External.CreateConsolidateOnkoRequest();
-            inValue.Body = new KmsReportClient.External.CreateConsolidateOnkoRequestBody();
-            inValue.Body.yymm = yymm;
-            inValue.Body.isMonthly = isMonthly;
-            KmsReportClient.External.CreateConsolidateOnkoResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateConsolidateOnko(inValue);
-            return retVal.Body.CreateConsolidateOnkoResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateOnkoResponse> KmsReportClient.External.EndpointSoap.CreateConsolidateOnkoAsync(KmsReportClient.External.CreateConsolidateOnkoRequest request) {
-            return base.Channel.CreateConsolidateOnkoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateOnkoResponse> CreateConsolidateOnkoAsync(string yymm, bool isMonthly) {
-            KmsReportClient.External.CreateConsolidateOnkoRequest inValue = new KmsReportClient.External.CreateConsolidateOnkoRequest();
-            inValue.Body = new KmsReportClient.External.CreateConsolidateOnkoRequestBody();
-            inValue.Body.yymm = yymm;
-            inValue.Body.isMonthly = isMonthly;
-            return ((KmsReportClient.External.EndpointSoap)(this)).CreateConsolidateOnkoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        KmsReportClient.External.CreateConsolidateCadriResponse KmsReportClient.External.EndpointSoap.CreateConsolidateCadri(KmsReportClient.External.CreateConsolidateCadriRequest request) {
-            return base.Channel.CreateConsolidateCadri(request);
-        }
-        
-        public KmsReportClient.External.ConsolidateCadri[] CreateConsolidateCadri(string yymm) {
-            KmsReportClient.External.CreateConsolidateCadriRequest inValue = new KmsReportClient.External.CreateConsolidateCadriRequest();
-            inValue.Body = new KmsReportClient.External.CreateConsolidateCadriRequestBody();
-            inValue.Body.yymm = yymm;
-            KmsReportClient.External.CreateConsolidateCadriResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateConsolidateCadri(inValue);
-            return retVal.Body.CreateConsolidateCadriResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateCadriResponse> KmsReportClient.External.EndpointSoap.CreateConsolidateCadriAsync(KmsReportClient.External.CreateConsolidateCadriRequest request) {
-            return base.Channel.CreateConsolidateCadriAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateCadriResponse> CreateConsolidateCadriAsync(string yymm) {
-            KmsReportClient.External.CreateConsolidateCadriRequest inValue = new KmsReportClient.External.CreateConsolidateCadriRequest();
-            inValue.Body = new KmsReportClient.External.CreateConsolidateCadriRequestBody();
-            inValue.Body.yymm = yymm;
-            return ((KmsReportClient.External.EndpointSoap)(this)).CreateConsolidateCadriAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        KmsReportClient.External.CreateConsolidateLetalResponse KmsReportClient.External.EndpointSoap.CreateConsolidateLetal(KmsReportClient.External.CreateConsolidateLetalRequest request) {
-            return base.Channel.CreateConsolidateLetal(request);
-        }
-        
-        public KmsReportClient.External.ConsolidateLetal[] CreateConsolidateLetal(string yymm) {
-            KmsReportClient.External.CreateConsolidateLetalRequest inValue = new KmsReportClient.External.CreateConsolidateLetalRequest();
-            inValue.Body = new KmsReportClient.External.CreateConsolidateLetalRequestBody();
-            inValue.Body.yymm = yymm;
-            KmsReportClient.External.CreateConsolidateLetalResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateConsolidateLetal(inValue);
-            return retVal.Body.CreateConsolidateLetalResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateLetalResponse> KmsReportClient.External.EndpointSoap.CreateConsolidateLetalAsync(KmsReportClient.External.CreateConsolidateLetalRequest request) {
-            return base.Channel.CreateConsolidateLetalAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateLetalResponse> CreateConsolidateLetalAsync(string yymm) {
-            KmsReportClient.External.CreateConsolidateLetalRequest inValue = new KmsReportClient.External.CreateConsolidateLetalRequest();
-            inValue.Body = new KmsReportClient.External.CreateConsolidateLetalRequestBody();
-            inValue.Body.yymm = yymm;
-            return ((KmsReportClient.External.EndpointSoap)(this)).CreateConsolidateLetalAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        KmsReportClient.External.CreateDynamicReportResponse KmsReportClient.External.EndpointSoap.CreateDynamicReport(KmsReportClient.External.CreateDynamicReportRequest request) {
-            return base.Channel.CreateDynamicReport(request);
-        }
-        
-        public KmsReportClient.External.Report_Dynamic CreateDynamicReport(KmsReportClient.External.ReportDynamicDto report) {
-            KmsReportClient.External.CreateDynamicReportRequest inValue = new KmsReportClient.External.CreateDynamicReportRequest();
-            inValue.Body = new KmsReportClient.External.CreateDynamicReportRequestBody();
-            inValue.Body.report = report;
-            KmsReportClient.External.CreateDynamicReportResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateDynamicReport(inValue);
-            return retVal.Body.CreateDynamicReportResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<KmsReportClient.External.CreateDynamicReportResponse> KmsReportClient.External.EndpointSoap.CreateDynamicReportAsync(KmsReportClient.External.CreateDynamicReportRequest request) {
-            return base.Channel.CreateDynamicReportAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<KmsReportClient.External.CreateDynamicReportResponse> CreateDynamicReportAsync(KmsReportClient.External.ReportDynamicDto report) {
-            KmsReportClient.External.CreateDynamicReportRequest inValue = new KmsReportClient.External.CreateDynamicReportRequest();
-            inValue.Body = new KmsReportClient.External.CreateDynamicReportRequestBody();
-            inValue.Body.report = report;
-            return ((KmsReportClient.External.EndpointSoap)(this)).CreateDynamicReportAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        KmsReportClient.External.CreateConsolidate294Response KmsReportClient.External.EndpointSoap.CreateConsolidate294(KmsReportClient.External.CreateConsolidate294Request request) {
-            return base.Channel.CreateConsolidate294(request);
-        }
-        
-        public KmsReportClient.External.Consolidate294 CreateConsolidate294(string yymm) {
-            KmsReportClient.External.CreateConsolidate294Request inValue = new KmsReportClient.External.CreateConsolidate294Request();
-            inValue.Body = new KmsReportClient.External.CreateConsolidate294RequestBody();
-            inValue.Body.yymm = yymm;
-            KmsReportClient.External.CreateConsolidate294Response retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateConsolidate294(inValue);
-            return retVal.Body.CreateConsolidate294Result;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidate294Response> KmsReportClient.External.EndpointSoap.CreateConsolidate294Async(KmsReportClient.External.CreateConsolidate294Request request) {
-            return base.Channel.CreateConsolidate294Async(request);
-        }
-        
-        public System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidate294Response> CreateConsolidate294Async(string yymm) {
-            KmsReportClient.External.CreateConsolidate294Request inValue = new KmsReportClient.External.CreateConsolidate294Request();
-            inValue.Body = new KmsReportClient.External.CreateConsolidate294RequestBody();
-            inValue.Body.yymm = yymm;
-            return ((KmsReportClient.External.EndpointSoap)(this)).CreateConsolidate294Async(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        KmsReportClient.External.CreateZpzForWebSiteResponse KmsReportClient.External.EndpointSoap.CreateZpzForWebSite(KmsReportClient.External.CreateZpzForWebSiteRequest request) {
-            return base.Channel.CreateZpzForWebSite(request);
-        }
-        
-        public KmsReportClient.External.ZpzForWebSite[] CreateZpzForWebSite(string yymm) {
-            KmsReportClient.External.CreateZpzForWebSiteRequest inValue = new KmsReportClient.External.CreateZpzForWebSiteRequest();
-            inValue.Body = new KmsReportClient.External.CreateZpzForWebSiteRequestBody();
-            inValue.Body.yymm = yymm;
-            KmsReportClient.External.CreateZpzForWebSiteResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateZpzForWebSite(inValue);
-            return retVal.Body.CreateZpzForWebSiteResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<KmsReportClient.External.CreateZpzForWebSiteResponse> KmsReportClient.External.EndpointSoap.CreateZpzForWebSiteAsync(KmsReportClient.External.CreateZpzForWebSiteRequest request) {
-            return base.Channel.CreateZpzForWebSiteAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<KmsReportClient.External.CreateZpzForWebSiteResponse> CreateZpzForWebSiteAsync(string yymm) {
-            KmsReportClient.External.CreateZpzForWebSiteRequest inValue = new KmsReportClient.External.CreateZpzForWebSiteRequest();
-            inValue.Body = new KmsReportClient.External.CreateZpzForWebSiteRequestBody();
-            inValue.Body.yymm = yymm;
-            return ((KmsReportClient.External.EndpointSoap)(this)).CreateZpzForWebSiteAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -27432,6 +26614,287 @@ namespace KmsReportClient.External {
             inValue.Body = new KmsReportClient.External.CreateReportVSSRequestBody();
             inValue.Body.yymm = yymm;
             return ((KmsReportClient.External.EndpointSoap)(this)).CreateReportVSSAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.CreateReportCpnpMResponse KmsReportClient.External.EndpointSoap.CreateReportCpnpM(KmsReportClient.External.CreateReportCpnpMRequest request) {
+            return base.Channel.CreateReportCpnpM(request);
+        }
+        
+        public KmsReportClient.External.ConsolidateCpnpM[] CreateReportCpnpM(string yymm) {
+            KmsReportClient.External.CreateReportCpnpMRequest inValue = new KmsReportClient.External.CreateReportCpnpMRequest();
+            inValue.Body = new KmsReportClient.External.CreateReportCpnpMRequestBody();
+            inValue.Body.yymm = yymm;
+            KmsReportClient.External.CreateReportCpnpMResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateReportCpnpM(inValue);
+            return retVal.Body.CreateReportCpnpMResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateReportCpnpMResponse> KmsReportClient.External.EndpointSoap.CreateReportCpnpMAsync(KmsReportClient.External.CreateReportCpnpMRequest request) {
+            return base.Channel.CreateReportCpnpMAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.CreateReportCpnpMResponse> CreateReportCpnpMAsync(string yymm) {
+            KmsReportClient.External.CreateReportCpnpMRequest inValue = new KmsReportClient.External.CreateReportCpnpMRequest();
+            inValue.Body = new KmsReportClient.External.CreateReportCpnpMRequestBody();
+            inValue.Body.yymm = yymm;
+            return ((KmsReportClient.External.EndpointSoap)(this)).CreateReportCpnpMAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.CreateReportCardioResponse KmsReportClient.External.EndpointSoap.CreateReportCardio(KmsReportClient.External.CreateReportCardioRequest request) {
+            return base.Channel.CreateReportCardio(request);
+        }
+        
+        public KmsReportClient.External.ConsolidateCardio[] CreateReportCardio(string yymm) {
+            KmsReportClient.External.CreateReportCardioRequest inValue = new KmsReportClient.External.CreateReportCardioRequest();
+            inValue.Body = new KmsReportClient.External.CreateReportCardioRequestBody();
+            inValue.Body.yymm = yymm;
+            KmsReportClient.External.CreateReportCardioResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateReportCardio(inValue);
+            return retVal.Body.CreateReportCardioResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateReportCardioResponse> KmsReportClient.External.EndpointSoap.CreateReportCardioAsync(KmsReportClient.External.CreateReportCardioRequest request) {
+            return base.Channel.CreateReportCardioAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.CreateReportCardioResponse> CreateReportCardioAsync(string yymm) {
+            KmsReportClient.External.CreateReportCardioRequest inValue = new KmsReportClient.External.CreateReportCardioRequest();
+            inValue.Body = new KmsReportClient.External.CreateReportCardioRequestBody();
+            inValue.Body.yymm = yymm;
+            return ((KmsReportClient.External.EndpointSoap)(this)).CreateReportCardioAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.CreateReport262T1Response KmsReportClient.External.EndpointSoap.CreateReport262T1(KmsReportClient.External.CreateReport262T1Request request) {
+            return base.Channel.CreateReport262T1(request);
+        }
+        
+        public KmsReportClient.External.CReport262Table1[] CreateReport262T1(int year) {
+            KmsReportClient.External.CreateReport262T1Request inValue = new KmsReportClient.External.CreateReport262T1Request();
+            inValue.Body = new KmsReportClient.External.CreateReport262T1RequestBody();
+            inValue.Body.year = year;
+            KmsReportClient.External.CreateReport262T1Response retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateReport262T1(inValue);
+            return retVal.Body.CreateReport262T1Result;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateReport262T1Response> KmsReportClient.External.EndpointSoap.CreateReport262T1Async(KmsReportClient.External.CreateReport262T1Request request) {
+            return base.Channel.CreateReport262T1Async(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.CreateReport262T1Response> CreateReport262T1Async(int year) {
+            KmsReportClient.External.CreateReport262T1Request inValue = new KmsReportClient.External.CreateReport262T1Request();
+            inValue.Body = new KmsReportClient.External.CreateReport262T1RequestBody();
+            inValue.Body.year = year;
+            return ((KmsReportClient.External.EndpointSoap)(this)).CreateReport262T1Async(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.CreateReport262T2Response KmsReportClient.External.EndpointSoap.CreateReport262T2(KmsReportClient.External.CreateReport262T2Request request) {
+            return base.Channel.CreateReport262T2(request);
+        }
+        
+        public KmsReportClient.External.CReport262Table2[] CreateReport262T2(string yymmSt, string yymmEnd) {
+            KmsReportClient.External.CreateReport262T2Request inValue = new KmsReportClient.External.CreateReport262T2Request();
+            inValue.Body = new KmsReportClient.External.CreateReport262T2RequestBody();
+            inValue.Body.yymmSt = yymmSt;
+            inValue.Body.yymmEnd = yymmEnd;
+            KmsReportClient.External.CreateReport262T2Response retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateReport262T2(inValue);
+            return retVal.Body.CreateReport262T2Result;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateReport262T2Response> KmsReportClient.External.EndpointSoap.CreateReport262T2Async(KmsReportClient.External.CreateReport262T2Request request) {
+            return base.Channel.CreateReport262T2Async(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.CreateReport262T2Response> CreateReport262T2Async(string yymmSt, string yymmEnd) {
+            KmsReportClient.External.CreateReport262T2Request inValue = new KmsReportClient.External.CreateReport262T2Request();
+            inValue.Body = new KmsReportClient.External.CreateReport262T2RequestBody();
+            inValue.Body.yymmSt = yymmSt;
+            inValue.Body.yymmEnd = yymmEnd;
+            return ((KmsReportClient.External.EndpointSoap)(this)).CreateReport262T2Async(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.CreateReport262T3Response KmsReportClient.External.EndpointSoap.CreateReport262T3(KmsReportClient.External.CreateReport262T3Request request) {
+            return base.Channel.CreateReport262T3(request);
+        }
+        
+        public KmsReportClient.External.CReport262Table3[] CreateReport262T3(string yymm) {
+            KmsReportClient.External.CreateReport262T3Request inValue = new KmsReportClient.External.CreateReport262T3Request();
+            inValue.Body = new KmsReportClient.External.CreateReport262T3RequestBody();
+            inValue.Body.yymm = yymm;
+            KmsReportClient.External.CreateReport262T3Response retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateReport262T3(inValue);
+            return retVal.Body.CreateReport262T3Result;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateReport262T3Response> KmsReportClient.External.EndpointSoap.CreateReport262T3Async(KmsReportClient.External.CreateReport262T3Request request) {
+            return base.Channel.CreateReport262T3Async(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.CreateReport262T3Response> CreateReport262T3Async(string yymm) {
+            KmsReportClient.External.CreateReport262T3Request inValue = new KmsReportClient.External.CreateReport262T3Request();
+            inValue.Body = new KmsReportClient.External.CreateReport262T3RequestBody();
+            inValue.Body.yymm = yymm;
+            return ((KmsReportClient.External.EndpointSoap)(this)).CreateReport262T3Async(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.CreateReportControlPgZpzResponse KmsReportClient.External.EndpointSoap.CreateReportControlPgZpz(KmsReportClient.External.CreateReportControlPgZpzRequest request) {
+            return base.Channel.CreateReportControlPgZpz(request);
+        }
+        
+        public KmsReportClient.External.CReportPg[] CreateReportControlPgZpz(string yymm, bool isMonthly) {
+            KmsReportClient.External.CreateReportControlPgZpzRequest inValue = new KmsReportClient.External.CreateReportControlPgZpzRequest();
+            inValue.Body = new KmsReportClient.External.CreateReportControlPgZpzRequestBody();
+            inValue.Body.yymm = yymm;
+            inValue.Body.isMonthly = isMonthly;
+            KmsReportClient.External.CreateReportControlPgZpzResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateReportControlPgZpz(inValue);
+            return retVal.Body.CreateReportControlPgZpzResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateReportControlPgZpzResponse> KmsReportClient.External.EndpointSoap.CreateReportControlPgZpzAsync(KmsReportClient.External.CreateReportControlPgZpzRequest request) {
+            return base.Channel.CreateReportControlPgZpzAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.CreateReportControlPgZpzResponse> CreateReportControlPgZpzAsync(string yymm, bool isMonthly) {
+            KmsReportClient.External.CreateReportControlPgZpzRequest inValue = new KmsReportClient.External.CreateReportControlPgZpzRequest();
+            inValue.Body = new KmsReportClient.External.CreateReportControlPgZpzRequestBody();
+            inValue.Body.yymm = yymm;
+            inValue.Body.isMonthly = isMonthly;
+            return ((KmsReportClient.External.EndpointSoap)(this)).CreateReportControlPgZpzAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.CreateConsolidateOnkoResponse KmsReportClient.External.EndpointSoap.CreateConsolidateOnko(KmsReportClient.External.CreateConsolidateOnkoRequest request) {
+            return base.Channel.CreateConsolidateOnko(request);
+        }
+        
+        public KmsReportClient.External.ConsolidateOnko[] CreateConsolidateOnko(string yymm, bool isMonthly) {
+            KmsReportClient.External.CreateConsolidateOnkoRequest inValue = new KmsReportClient.External.CreateConsolidateOnkoRequest();
+            inValue.Body = new KmsReportClient.External.CreateConsolidateOnkoRequestBody();
+            inValue.Body.yymm = yymm;
+            inValue.Body.isMonthly = isMonthly;
+            KmsReportClient.External.CreateConsolidateOnkoResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateConsolidateOnko(inValue);
+            return retVal.Body.CreateConsolidateOnkoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateOnkoResponse> KmsReportClient.External.EndpointSoap.CreateConsolidateOnkoAsync(KmsReportClient.External.CreateConsolidateOnkoRequest request) {
+            return base.Channel.CreateConsolidateOnkoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateOnkoResponse> CreateConsolidateOnkoAsync(string yymm, bool isMonthly) {
+            KmsReportClient.External.CreateConsolidateOnkoRequest inValue = new KmsReportClient.External.CreateConsolidateOnkoRequest();
+            inValue.Body = new KmsReportClient.External.CreateConsolidateOnkoRequestBody();
+            inValue.Body.yymm = yymm;
+            inValue.Body.isMonthly = isMonthly;
+            return ((KmsReportClient.External.EndpointSoap)(this)).CreateConsolidateOnkoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.CreateConsolidateLetalResponse KmsReportClient.External.EndpointSoap.CreateConsolidateLetal(KmsReportClient.External.CreateConsolidateLetalRequest request) {
+            return base.Channel.CreateConsolidateLetal(request);
+        }
+        
+        public KmsReportClient.External.ConsolidateLetal[] CreateConsolidateLetal(string yymm) {
+            KmsReportClient.External.CreateConsolidateLetalRequest inValue = new KmsReportClient.External.CreateConsolidateLetalRequest();
+            inValue.Body = new KmsReportClient.External.CreateConsolidateLetalRequestBody();
+            inValue.Body.yymm = yymm;
+            KmsReportClient.External.CreateConsolidateLetalResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateConsolidateLetal(inValue);
+            return retVal.Body.CreateConsolidateLetalResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateLetalResponse> KmsReportClient.External.EndpointSoap.CreateConsolidateLetalAsync(KmsReportClient.External.CreateConsolidateLetalRequest request) {
+            return base.Channel.CreateConsolidateLetalAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateLetalResponse> CreateConsolidateLetalAsync(string yymm) {
+            KmsReportClient.External.CreateConsolidateLetalRequest inValue = new KmsReportClient.External.CreateConsolidateLetalRequest();
+            inValue.Body = new KmsReportClient.External.CreateConsolidateLetalRequestBody();
+            inValue.Body.yymm = yymm;
+            return ((KmsReportClient.External.EndpointSoap)(this)).CreateConsolidateLetalAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.CreateDynamicReportResponse KmsReportClient.External.EndpointSoap.CreateDynamicReport(KmsReportClient.External.CreateDynamicReportRequest request) {
+            return base.Channel.CreateDynamicReport(request);
+        }
+        
+        public KmsReportClient.External.Report_Dynamic CreateDynamicReport(KmsReportClient.External.ReportDynamicDto report) {
+            KmsReportClient.External.CreateDynamicReportRequest inValue = new KmsReportClient.External.CreateDynamicReportRequest();
+            inValue.Body = new KmsReportClient.External.CreateDynamicReportRequestBody();
+            inValue.Body.report = report;
+            KmsReportClient.External.CreateDynamicReportResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateDynamicReport(inValue);
+            return retVal.Body.CreateDynamicReportResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateDynamicReportResponse> KmsReportClient.External.EndpointSoap.CreateDynamicReportAsync(KmsReportClient.External.CreateDynamicReportRequest request) {
+            return base.Channel.CreateDynamicReportAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.CreateDynamicReportResponse> CreateDynamicReportAsync(KmsReportClient.External.ReportDynamicDto report) {
+            KmsReportClient.External.CreateDynamicReportRequest inValue = new KmsReportClient.External.CreateDynamicReportRequest();
+            inValue.Body = new KmsReportClient.External.CreateDynamicReportRequestBody();
+            inValue.Body.report = report;
+            return ((KmsReportClient.External.EndpointSoap)(this)).CreateDynamicReportAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.CreateConsolidate294Response KmsReportClient.External.EndpointSoap.CreateConsolidate294(KmsReportClient.External.CreateConsolidate294Request request) {
+            return base.Channel.CreateConsolidate294(request);
+        }
+        
+        public KmsReportClient.External.Consolidate294 CreateConsolidate294(string yymm) {
+            KmsReportClient.External.CreateConsolidate294Request inValue = new KmsReportClient.External.CreateConsolidate294Request();
+            inValue.Body = new KmsReportClient.External.CreateConsolidate294RequestBody();
+            inValue.Body.yymm = yymm;
+            KmsReportClient.External.CreateConsolidate294Response retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateConsolidate294(inValue);
+            return retVal.Body.CreateConsolidate294Result;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidate294Response> KmsReportClient.External.EndpointSoap.CreateConsolidate294Async(KmsReportClient.External.CreateConsolidate294Request request) {
+            return base.Channel.CreateConsolidate294Async(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidate294Response> CreateConsolidate294Async(string yymm) {
+            KmsReportClient.External.CreateConsolidate294Request inValue = new KmsReportClient.External.CreateConsolidate294Request();
+            inValue.Body = new KmsReportClient.External.CreateConsolidate294RequestBody();
+            inValue.Body.yymm = yymm;
+            return ((KmsReportClient.External.EndpointSoap)(this)).CreateConsolidate294Async(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.CreateZpzForWebSiteResponse KmsReportClient.External.EndpointSoap.CreateZpzForWebSite(KmsReportClient.External.CreateZpzForWebSiteRequest request) {
+            return base.Channel.CreateZpzForWebSite(request);
+        }
+        
+        public KmsReportClient.External.ZpzForWebSite[] CreateZpzForWebSite(string yymm) {
+            KmsReportClient.External.CreateZpzForWebSiteRequest inValue = new KmsReportClient.External.CreateZpzForWebSiteRequest();
+            inValue.Body = new KmsReportClient.External.CreateZpzForWebSiteRequestBody();
+            inValue.Body.yymm = yymm;
+            KmsReportClient.External.CreateZpzForWebSiteResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateZpzForWebSite(inValue);
+            return retVal.Body.CreateZpzForWebSiteResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateZpzForWebSiteResponse> KmsReportClient.External.EndpointSoap.CreateZpzForWebSiteAsync(KmsReportClient.External.CreateZpzForWebSiteRequest request) {
+            return base.Channel.CreateZpzForWebSiteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.CreateZpzForWebSiteResponse> CreateZpzForWebSiteAsync(string yymm) {
+            KmsReportClient.External.CreateZpzForWebSiteRequest inValue = new KmsReportClient.External.CreateZpzForWebSiteRequest();
+            inValue.Body = new KmsReportClient.External.CreateZpzForWebSiteRequestBody();
+            inValue.Body.yymm = yymm;
+            return ((KmsReportClient.External.EndpointSoap)(this)).CreateZpzForWebSiteAsync(inValue);
         }
     }
 }

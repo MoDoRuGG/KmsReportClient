@@ -60,8 +60,6 @@ namespace KmsReportClient.Model.Enums
         disp,
         [Description(GlobalConst.TempFolder + "letal.xlsx")]
         letal,
-        [Description(GlobalConst.TempFolder + "cadri.xlsx")]
-        cadri,
         [Description(GlobalConst.TempFolder + "consOped.xlsx")]
         consOped,
         [Description(GlobalConst.TempFolder + "IR.xlsx")]
@@ -90,8 +88,7 @@ namespace KmsReportClient.Model.Enums
         consOpedFinance2,
         [Description(GlobalConst.TempFolder + "consProposal.xlsx")]
         consProposal,
-        //добавляем кадры
         [Description(GlobalConst.TempFolder + "cadre.xlsx")]
-        kadry,
+        cadre,
     }
 }
