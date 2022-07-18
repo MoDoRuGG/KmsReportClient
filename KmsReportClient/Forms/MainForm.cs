@@ -1363,6 +1363,19 @@ namespace KmsReportClient.Forms
 
         }
 
+        private void Open_ReleaseChangelogForm()
+        {
+            using var releaseChangelogForm = new ReleaseChangelogForm();
+            releaseChangelogForm.ShowDialog();
+        }
+
+        private void MenuChangelog_Click(object sender, EventArgs e) =>
+            Open_ReleaseChangelogForm();
+            
+                
+            
+
+
 
         private void MenuCheckPoUpdate_Click(object sender, EventArgs e) =>
             CheckUpdateApplication(false);
@@ -1877,11 +1890,6 @@ namespace KmsReportClient.Forms
         {
             (_processor as ReportIizlProcessor2022).SetCalculateCellsValue();
         }
-
-        //private void DgwReportPCadre_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    (_processor as ReportCadreProcessor).SetCalculateCellsValue();
-        //}
 
         private void свод2ToolStripMenuItem_Click(object sender, EventArgs e)
         {

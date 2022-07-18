@@ -120,7 +120,7 @@
             this.SpravItem = new System.Windows.Forms.ToolStripMenuItem();
             this.электронныеАдресаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.планРезультативностиЭкспертнойДеятельностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuChangelog = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.TsslVersion = new System.Windows.Forms.ToolStripStatusLabel();
             this.ReportTree = new System.Windows.Forms.TreeView();
@@ -297,7 +297,7 @@
             this.MenuHelp,
             this.Con,
             this.SpravItem,
-            this.оПрограммеToolStripMenuItem});
+            this.MenuChangelog});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(950, 24);
@@ -660,11 +660,12 @@
             this.планРезультативностиЭкспертнойДеятельностиToolStripMenuItem.Text = "План результативности экспертной деятельности";
             this.планРезультативностиЭкспертнойДеятельностиToolStripMenuItem.Click += new System.EventHandler(this.планРезультативностиЭкспертнойДеятельностиToolStripMenuItem_Click);
             // 
-            // оПрограммеToolStripMenuItem
+            // MenuChangelog
             // 
-            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
-            this.оПрограммеToolStripMenuItem.Text = "О программе";
+            this.MenuChangelog.Name = "MenuChangelog";
+            this.MenuChangelog.Size = new System.Drawing.Size(94, 20);
+            this.MenuChangelog.Text = "Посмотреть изменения в новой версии";
+            this.MenuChangelog.Click += new System.EventHandler(this.MenuChangelog_Click);
             // 
             // statusStrip1
             // 
@@ -2663,7 +2664,7 @@
         private System.Windows.Forms.ToolStripMenuItem свод2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отчётОПредложенияхToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сводToolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MenuChangelog;
     }
 }
 

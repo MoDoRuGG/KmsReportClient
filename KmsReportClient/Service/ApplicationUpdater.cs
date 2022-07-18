@@ -68,6 +68,7 @@ namespace KmsReportClient.Service
                 {
                     DownloadExcelTemplate(file.Name);
                 }
+                var versionRemoteT = updateXml.Version;
                 var versionRemote = Convert.ToDouble(updateXml.Version.Replace(".", ""));
 
                 if (versionRemote > currentVersion)
@@ -83,7 +84,7 @@ namespace KmsReportClient.Service
 
                     var message = $"Обновление до версии {versionRemote}";
                     Log.Info(message);
-                    MessageBox.Show(@"Приложение будет автоматически обновлено и перезапущено!", @"Внимание",
+                    MessageBox.Show(@$"Приложение будет автоматически обновлено до версии {versionRemoteT} и перезапущено!", @"Внимание",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
@@ -97,12 +98,12 @@ namespace KmsReportClient.Service
                   
 
                     _ftpProcessor.DownloadFileFromWs(ApplicationName, "", "", _client);
-                    Process.Start("updater.exe", $"{TempApplicationName} {ApplicationName}");
+                    Process.Start("Updater.exe", $"{TempApplicationName} {ApplicationName}");
                     Process.GetCurrentProcess().Kill();
                 }
                 else
                 {
-                    Log.Info($"Обновление не требуется. Актуальная версия пиложения: {currentVersion}");
+                    Log.Info($"Обновление не требуется. Актуальная версия приложения: {currentVersion}");
                     if (!idApplicationStart)
                     {
                         var message = $"Текущая версия приложения: {Application.ProductVersion}. Обновлений нет!";
