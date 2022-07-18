@@ -32,7 +32,7 @@ namespace KmsReportClient.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // label1 
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(30, 30);
