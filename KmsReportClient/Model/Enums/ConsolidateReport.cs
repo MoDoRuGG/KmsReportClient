@@ -17,7 +17,6 @@
         Cardio,
         Disp,
         Letal,
-        Cadri,
         ConsolidateOped,
         ConsolidateVSS,
         ConsolidateOpedQ,

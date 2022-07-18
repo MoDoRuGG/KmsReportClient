@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ООО Капитал МС")]
 [assembly: AssemblyProduct("KmsReportClient")]
-[assembly: AssemblyCopyright("Есипов Илья Викторович")]
+[assembly: AssemblyCopyright("Дибров С.Г., Перелыгин А.О.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -31,5 +31,5 @@ using System.Runtime.InteropServices;
 // Можно задать все значения или принять номер сборки и номер редакции по умолчанию.
 // используя "*", как показано ниже:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.1.6.64")]
-[assembly: AssemblyFileVersion("1.1.6.64")]
+[assembly: AssemblyVersion("1.1.7.00")]
+[assembly: AssemblyFileVersion("1.1.7.00")]

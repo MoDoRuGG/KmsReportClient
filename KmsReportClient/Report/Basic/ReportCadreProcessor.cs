@@ -301,7 +301,7 @@ namespace KmsReportClient.Report.Basic
         }
         public override void ToExcel(string filename, string filialName)
         {
-            var excel = new ExceCadreCreator(filename, ExcelForm.kadry, Report.Yymm, filialName, Client, FilialCode);
+            var excel = new ExceCadreCreator(filename, ExcelForm.cadre, Report.Yymm, filialName, Client, FilialCode);
             excel.CreateReport(Report, null);
         }
         public override string ValidReport() { return ""; }
