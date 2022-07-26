@@ -59,6 +59,23 @@ namespace KmsReportClient.Forms
 
             switch (_report)
             {
+
+                case ConsolidateReport.ConsolidateCadreT1:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать свод по отчету Кадры Отдел ЗПЗ и ЭКМП";
+                    saveFileDialog1.FileName = "Свод по отчету Кадры Отдел ЗПЗ и ЭКМП";
+                    break;
+                case ConsolidateReport.ConsolidateCadreT2:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать свод по отчету Кадры ОИ и ЭКМП";
+                    saveFileDialog1.FileName = "Свод по отчету Кадры ОИ и ЭКМП";
+                    break;
                 case ConsolidateReport.Consolidate262T1:
                     labelStart.Text = "Год";
                     panelSt.Visible = false;
@@ -298,6 +315,13 @@ namespace KmsReportClient.Forms
 
                 switch (_report)
                 {
+                    case ConsolidateReport.ConsolidateCadreT1:
+                        CreateReportCadreT1();
+                        break;
+                    case ConsolidateReport.ConsolidateCadreT2:
+                        CreateReportCadreT2();
+                        break;
+
                     case ConsolidateReport.Consolidate262T1:
                         CreateReport262T1();
                         break;
@@ -738,6 +762,73 @@ namespace KmsReportClient.Forms
             dataYear = dataYear.OrderBy(x => x.Filial).ToArray();
 
             var excel = new ExcelConsolidate262T2Creator(saveFileDialog1.FileName, "", _filialName);
+            excel.CreateReport(dataMonths, dataYear);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+        }
+
+        private void CreateReportCadreT2()
+        {
+            string yymm = GetYymm(cmbStart.Text, Convert.ToInt32(nudStart.Value)).ToString();
+            var dataMonths = _client.CreateReportCadreTable2(yymm);
+            if (dataMonths.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            foreach (var d in dataMonths)
+            {
+                d.Filial = _regions.Single(x => x.Key == d.Filial).Value;
+            }
+
+            dataMonths = dataMonths.OrderBy(x => x.Filial).ToArray();
+
+            string statPeriod = yymm.Substring(0, 2) + "01";
+            var dataYear = _client.CreateReportCadreTable2(yymm);
+            foreach (var d in dataYear)
+            {
+                d.Filial = _regions.Single(x => x.Key == d.Filial).Value;
+            }
+
+            dataYear = dataYear.OrderBy(x => x.Filial).ToArray();
+
+            var excel = new ExcelConsolidateCadreT2Creator(saveFileDialog1.FileName, "", _filialName);
+            excel.CreateReport(dataMonths, dataYear);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+        }
+
+
+        private void CreateReportCadreT1()
+        {
+            string yymm = GetYymm(cmbStart.Text, Convert.ToInt32(nudStart.Value)).ToString();
+            var dataMonths = _client.CreateReportCadreTable1(yymm);
+            if (dataMonths.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            foreach (var d in dataMonths)
+            {
+                d.Filial = _regions.Single(x => x.Key == d.Filial).Value;
+            }
+
+            dataMonths = dataMonths.OrderBy(x => x.Filial).ToArray();
+
+            string statPeriod = yymm.Substring(0, 2) + "01";
+            var dataYear = _client.CreateReportCadreTable1(yymm);
+            foreach (var d in dataYear)
+            {
+                d.Filial = _regions.Single(x => x.Key == d.Filial).Value;
+            }
+
+            dataYear = dataYear.OrderBy(x => x.Filial).ToArray();
+
+            var excel = new ExcelConsolidateCadreT1Creator(saveFileDialog1.FileName, "", _filialName);
             excel.CreateReport(dataMonths, dataYear);
 
             GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);

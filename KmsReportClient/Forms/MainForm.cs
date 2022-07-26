@@ -1439,6 +1439,12 @@ namespace KmsReportClient.Forms
         }
 
 
+        private void отделЗПЗИЭКМПToolStripMenuItem_Click(object sender, EventArgs e) =>
+            OpenConsolidateReportForm(ConsolidateReport.ConsolidateCadreT1);
+
+        private void оИИЗПЗToolStripMenuItem_Click(object sender, EventArgs e) =>
+            OpenConsolidateReportForm(ConsolidateReport.ConsolidateCadreT2);
+
         private void СводКТаблице1ToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.Consolidate262T1);
 

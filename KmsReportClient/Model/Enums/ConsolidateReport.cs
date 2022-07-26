@@ -2,6 +2,8 @@
 {
     public enum ConsolidateReport
     {
+        ConsolidateCadreT1,
+        ConsolidateCadreT2,
         Consolidate262T1,
         Consolidate262T2,
         Consolidate262T3,

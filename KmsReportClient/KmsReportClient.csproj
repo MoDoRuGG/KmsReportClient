@@ -133,6 +133,8 @@
     <Compile Include="Excel\Creator\Base\ExcelPgQCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelProposalCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelVacCreator.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateCadreTable2Creator.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateCadreTable1Creator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsoldateCPNPQ2Creator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsoldatePropasalCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidate262T1Creator.cs" />
@@ -413,6 +415,12 @@
     <None Include="Connected Services\External\KmsReportClient.External.CreateReport262T3Response.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateReportCadreTable1Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateReportCadreTable2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateReportCardioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -435,6 +443,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateZpzForWebSiteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CReportCadreTable1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CReportCadreTable2.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.DownloadDllFileResponse.datasource">

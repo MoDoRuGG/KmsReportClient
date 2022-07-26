@@ -8,12 +8,14 @@ namespace KmsReportClient.Excel.Collector
         private readonly IExcelCollector _f262Table3Collector = new F262Table3ExcelCollector();
         private readonly IExcelCollector _pgExcelCollector = new PgExcelCollector();
         private readonly IExcelCollector _pgQExcelCollector = new PgQExcelCollector();
+        //private readonly IExcelCollector _cadreExcelCollector = new CadreExcelCollector();
 
         public IExcelCollector GetExcelCollector(string reportType) =>
             reportType switch {
                 ReportGlobalConst.Report262 => _f262Table3Collector,
                 ReportGlobalConst.ReportPgQ => _pgQExcelCollector,
                 ReportGlobalConst.ReportPg => _pgExcelCollector,
+                //ReportGlobalConst.ReportCadre => _cadreExcelCollector,
                 _ => throw new Exception("Can't find excelCollector for this reportType")
             };
     }
