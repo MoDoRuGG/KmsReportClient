@@ -24,7 +24,7 @@ namespace KmsReportClient.DgvHeaderGenerator
             this.objDataGrid = objDataGrid;
             objFormat = new StringFormat();
             objFormat.Alignment = StringAlignment.Center;
-            objFormat.LineAlignment = StringAlignment.Center;
+            objFormat.LineAlignment = StringAlignment.Far;
 
             Type dgvType = objDataGrid.GetType();
             PropertyInfo pi = dgvType.GetProperty("DoubleBuffered",
@@ -37,6 +37,7 @@ namespace KmsReportClient.DgvHeaderGenerator
             objDataGrid.ColumnAdded += objDataGrid_ColumnAdded;
             objDataGrid.ColumnWidthChanged += objDataGrid_ColumnWidthChanged;
             objHeaderTree = objStackedHeaderGenerator.GenerateStackedHeader(objDataGrid);
+            
         }
 
         public StackedHeaderDecorator(IStackedHeaderGenerator objStackedHeaderGenerator, DataGridView objDataGrid)
@@ -45,13 +46,15 @@ namespace KmsReportClient.DgvHeaderGenerator
             this.objStackedHeaderGenerator = objStackedHeaderGenerator;
         }
 
+            
         void objDataGrid_ColumnWidthChanged(object sender, DataGridViewColumnEventArgs e)
-        {
+        {  
             Refresh();
         }
 
         void objDataGrid_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
         {
+            
             RegenerateHeaders();
             Refresh();
         }
@@ -67,8 +70,18 @@ namespace KmsReportClient.DgvHeaderGenerator
             iNoOfLevels = NoOfLevels(objHeaderTree);
             objGraphics = e.Graphics;
             objDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            objDataGrid.ColumnHeadersHeight = iNoOfLevels * 30;
-            if (null != objHeaderTree)
+            
+            if (objDataGrid.Parent.Name == "PageCadre")  
+                { 
+                    objDataGrid.ColumnHeadersHeight = 145; 
+                    objDataGrid.DefaultCellStyle.BackColor = Color.FromArgb(253,233,217);
+                }
+            else
+            {
+                objDataGrid.ColumnHeadersHeight = iNoOfLevels * 20;
+            }
+
+                if (null != objHeaderTree)
             {
                 RenderColumnHeaders();
             }
@@ -94,11 +107,12 @@ namespace KmsReportClient.DgvHeaderGenerator
         {
             objGraphics.FillRectangle(new SolidBrush(objDataGrid.ColumnHeadersDefaultCellStyle.BackColor),
                                       new Rectangle(objDataGrid.DisplayRectangle.X, objDataGrid.DisplayRectangle.Y,
-                                                    objDataGrid.DisplayRectangle.Width, objDataGrid.ColumnHeadersHeight));
+                                                    objDataGrid.DisplayRectangle.Width, objDataGrid.ColumnHeadersHeight)) ;
 
             foreach (Header objChild in objHeaderTree.Children)
             {
-                objChild.Measure(objDataGrid, 0, objDataGrid.ColumnHeadersHeight / iNoOfLevels);
+      
+                objChild.Measure(objDataGrid, 0, objDataGrid.ColumnHeadersHeight / iNoOfLevels +3);
                 objChild.AcceptRenderer(this);
             }
         }
@@ -131,6 +145,7 @@ namespace KmsReportClient.DgvHeaderGenerator
                                        r1,
                                        objFormat);
                 objGraphics.ResetClip();
+                Refresh();
             }
             else
             {
@@ -167,6 +182,7 @@ namespace KmsReportClient.DgvHeaderGenerator
                                        r1, objFormat);
                 objGraphics.ResetClip();
             }
+        
         }
 
         private int NoOfLevels(Header header)

@@ -2443,6 +2443,56 @@
           <s:element minOccurs="1" maxOccurs="1" name="SumViolationUnderage" type="s:decimal" />
         </s:sequence>
       </s:complexType>
+      <s:element name="CreateReportCadreTable1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateReportCadreTable1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateReportCadreTable1Result" type="tns:ArrayOfCReportCadreTable1" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCReportCadreTable1">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CReportCadreTable1" nillable="true" type="tns:CReportCadreTable1" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CReportCadreTable1">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ReportCadreDataDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateReportCadreTable2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateReportCadreTable2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateReportCadreTable2Result" type="tns:ArrayOfCReportCadreTable2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCReportCadreTable2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CReportCadreTable2" nillable="true" type="tns:CReportCadreTable2" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CReportCadreTable2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ReportCadreDataDto" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="CreateReport262T1">
         <s:complexType>
           <s:sequence>
@@ -3411,6 +3461,18 @@
   <wsdl:message name="CreateReportCardioSoapOut">
     <wsdl:part name="parameters" element="tns:CreateReportCardioResponse" />
   </wsdl:message>
+  <wsdl:message name="CreateReportCadreTable1SoapIn">
+    <wsdl:part name="parameters" element="tns:CreateReportCadreTable1" />
+  </wsdl:message>
+  <wsdl:message name="CreateReportCadreTable1SoapOut">
+    <wsdl:part name="parameters" element="tns:CreateReportCadreTable1Response" />
+  </wsdl:message>
+  <wsdl:message name="CreateReportCadreTable2SoapIn">
+    <wsdl:part name="parameters" element="tns:CreateReportCadreTable2" />
+  </wsdl:message>
+  <wsdl:message name="CreateReportCadreTable2SoapOut">
+    <wsdl:part name="parameters" element="tns:CreateReportCadreTable2Response" />
+  </wsdl:message>
   <wsdl:message name="CreateReport262T1SoapIn">
     <wsdl:part name="parameters" element="tns:CreateReport262T1" />
   </wsdl:message>
@@ -3729,6 +3791,14 @@
     <wsdl:operation name="CreateReportCardio">
       <wsdl:input message="tns:CreateReportCardioSoapIn" />
       <wsdl:output message="tns:CreateReportCardioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateReportCadreTable1">
+      <wsdl:input message="tns:CreateReportCadreTable1SoapIn" />
+      <wsdl:output message="tns:CreateReportCadreTable1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateReportCadreTable2">
+      <wsdl:input message="tns:CreateReportCadreTable2SoapIn" />
+      <wsdl:output message="tns:CreateReportCadreTable2SoapOut" />
     </wsdl:operation>
     <wsdl:operation name="CreateReport262T1">
       <wsdl:input message="tns:CreateReport262T1SoapIn" />
@@ -4356,6 +4426,24 @@
     </wsdl:operation>
     <wsdl:operation name="CreateReportCardio">
       <soap:operation soapAction="http://kms-oms.ru/CreateReportCardio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateReportCadreTable1">
+      <soap:operation soapAction="http://kms-oms.ru/CreateReportCadreTable1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateReportCadreTable2">
+      <soap:operation soapAction="http://kms-oms.ru/CreateReportCadreTable2" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -5034,6 +5122,24 @@
     </wsdl:operation>
     <wsdl:operation name="CreateReportCardio">
       <soap12:operation soapAction="http://kms-oms.ru/CreateReportCardio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateReportCadreTable1">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateReportCadreTable1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateReportCadreTable2">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateReportCadreTable2" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

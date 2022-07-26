@@ -25,6 +25,12 @@ namespace KmsReportClient.Model.Enums
 
         [Description(GlobalConst.TempFolder + "cons262t1.xlsx")]
         C262T1,
+        
+        [Description(GlobalConst.TempFolder + "consCadreT1.xlsx")]
+        CCadreT1,
+
+        [Description(GlobalConst.TempFolder + "consCadreT2.xlsx")]
+        CCadreT2,
 
         [Description(GlobalConst.TempFolder + "cons262t2.xlsx")]
         C262T2,
