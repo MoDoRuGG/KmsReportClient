@@ -77,7 +77,7 @@ namespace KmsReportClient.Excel.Collector
                 {
                     for (int clmn = 1 + clmnInc; clmn <= lastClmn; clmn++)
                     {
-                        Console.WriteLine($"page={pageIndex} row={row} clmn={clmn}");
+                        //Console.WriteLine($"page={pageIndex} row={row} clmn={clmn}");
                         data.Add(new DynamicDataDto
                         {
                             Position = GetPosition(pageIndex, clmn - 1, row - 6),

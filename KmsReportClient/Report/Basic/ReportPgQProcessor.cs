@@ -511,7 +511,7 @@ namespace KmsReportClient.Report.Basic
                 dgvReport.Columns.Add(dgvColumn);
             }
 
-            Console.WriteLine("Кол-во столбцов="+dgvReport.Columns.Count);
+            //Console.WriteLine("Кол-во столбцов="+dgvReport.Columns.Count);
         }
 
         private void CreateDgvCommonColumns(DataGridView dgvReport, int widthFirstColumn, string mainHeader)

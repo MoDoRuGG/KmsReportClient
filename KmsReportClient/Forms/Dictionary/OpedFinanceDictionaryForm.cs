@@ -62,7 +62,7 @@ namespace KmsReportClient.Forms.Dictionary
 
             });
 
-            Console.WriteLine(CultureInfo.CurrentCulture.Name);
+            //Console.WriteLine(CultureInfo.CurrentCulture.Name);
             foreach (var month in GlobalConst.MonthsWithNumber)
             {
                 dgvDictionary.Columns.Add(new DataGridViewTextBoxColumn

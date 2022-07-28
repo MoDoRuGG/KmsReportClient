@@ -267,7 +267,7 @@ namespace KmsReportClient.Report.Basic
             foreach (var theme in ThemesList.Select(x => x.Key))
             {
                 Report.ReportDataList[i++] = new ReportCadreDto { Theme = theme };
-                Console.WriteLine(FilialName);
+                //Console.WriteLine(FilialName);
             }
         }
         public override bool IsVisibleBtnDownloadExcel() => false;

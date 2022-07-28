@@ -119,7 +119,7 @@ namespace KmsReportClient.Excel.Creator
                 {
                     var data = _data.Where(x => PositionSupport.GetPage(x.Position) == p - 1).ToList();
                     SetData(ObjWorkSheet, data, startRow, i - 1,checkRow);
-                    Console.WriteLine(startRow);
+                    //Console.WriteLine(startRow);
 
                 }
 

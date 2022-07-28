@@ -49,8 +49,8 @@ namespace KmsReportClient.Excel.Creator.Base
                     {
                         var dataList = themeData.Data?.Where(x => x.Code.ToLower().StartsWith($"{prefix.ToLower()}-{suffix.ToLower()}")).OrderBy(x => x.Code);
                        
-                         Console.WriteLine($"{dataList.Count()} количество");
-                         Console.WriteLine($"{prefix.ToLower()}-{suffix.ToLower()}");
+                         //Console.WriteLine($"{dataList.Count()} количество");
+                         //Console.WriteLine($"{prefix.ToLower()}-{suffix.ToLower()}");
                     
 
 

@@ -214,7 +214,7 @@ namespace KmsReportClient.Report.Basic
                 foreach (DataGridViewRow row in Dgv.Rows)
                 {
                     var rowNum = row.Cells[0].Value.ToString();
-                    Console.WriteLine(rowNum);
+                    //Console.WriteLine(rowNum);
 
                     var data = Report.ReportDataList.SingleOrDefault(x => x.RowNum.ToString() == rowNum);
                     if (form == "Свод")

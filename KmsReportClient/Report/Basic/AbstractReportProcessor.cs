@@ -146,7 +146,7 @@ namespace KmsReportClient.Report.Basic
 
                         if (!Dgv.Columns[Dgv.Rows[row].Cells[cell].ColumnIndex].Name.Contains("Row") && Dgv.Rows[row].Cells[cell].Value.ToString() != "x")
                         {
-                            Console.WriteLine($"{GetCurrentTheme()} {Report.IdType}");
+                            //Console.WriteLine($"{GetCurrentTheme()} {Report.IdType}");
                             if ((Report.IdType == "PG" || Report.IdType == "PG_Q") && (GetCurrentTheme() == "Таблица 5" || GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 8"))
                             {
                                 if (Dgv.Rows[row].Cells[cell].ColumnIndex == 2 || Dgv.Rows[row].Cells[cell].ColumnIndex == 3 || Dgv.Rows[row].Cells[cell].ColumnIndex == 4 || Dgv.Rows[row].Cells[cell].ColumnIndex == 6)
@@ -165,7 +165,7 @@ namespace KmsReportClient.Report.Basic
                                 //if(Report.IdType != "PG_Q" &&  !(GetCurrentTheme() == "Таблица 1Л" || GetCurrentTheme() == "Таблица 2Л"))
                                 //{
 
-                                Console.WriteLine($"{Dgv.Rows[row].Cells[cell].ColumnIndex} {Dgv.Rows[row].Cells[cell].Value}");
+                                //Console.WriteLine($"{Dgv.Rows[row].Cells[cell].ColumnIndex} {Dgv.Rows[row].Cells[cell].Value}");
                                 if ((GetCurrentTheme() == "Таблица 1Л" || GetCurrentTheme() == "Таблица 2Л"))
                                 {
                                     if (Dgv.Rows[row].Cells[cell].ColumnIndex != 6)

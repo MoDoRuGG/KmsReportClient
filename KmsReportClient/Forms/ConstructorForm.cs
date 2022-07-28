@@ -202,8 +202,8 @@ namespace KmsReportClient.Forms
             _currentPage = CbxPage.SelectedItem.ToString();
             _currentPageIndex = CbxPage.SelectedIndex;
 
-            Console.WriteLine(_currentPageIndex);
-            Console.WriteLine(_currentPage);
+            //Console.WriteLine(_currentPageIndex);
+            //Console.WriteLine(_currentPage);
 
             var page = _report.Page.ElementAt(_currentPageIndex).Key;
             TbxTabDesc.Text = page.Description;

@@ -328,7 +328,7 @@ namespace KmsReportClient.Forms
                 filialCode = CurrentUser.FilialCode;
 
             }
-            Console.WriteLine($"yymm={_yymm} currentReportName={_currentReportName} Филиал={filialCode}");
+            //Console.WriteLine($"yymm={_yymm} currentReportName={_currentReportName} Филиал={filialCode}");
 
             if (isNeedCreateReport)
             {
@@ -436,7 +436,8 @@ namespace KmsReportClient.Forms
         {
             var waitingForm = new WaitingForm();
             waitingForm.Show();
-            Application.DoEvents();
+            //Application.DoEvents();      -- надо разобраться, почему падает после эвента
+            
 
             var yymmExp = YymmUtils.ConvertPeriodToYymm(_yymm);
             var inReport = _processor.CollectReportFromWs(yymmExp);
@@ -468,12 +469,20 @@ namespace KmsReportClient.Forms
 
             SetReportInterface();
 
-            if (CurrentUser.IsMain && inReport == null)
-            {
-                MessageBox.Show("Филиал еще не вносил данные по выбранному периоду", "Информация",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+
+            //if (CurrentUser.IsMain && inReport == null)
+            //{
+            //    var dialogResult = MessageBox.Show("Филиал еще не вносил данные по выбранному периоду",
+            //        "Информация",
+            //        MessageBoxButtons.OK,
+            //        MessageBoxIcon.Information,
+            //        MessageBoxDefaultButton.Button1,
+            //        MessageBoxOptions.ServiceNotification
+            //        );
+            //}
+            // ВРЕМЕННО УБИРАЮ ИНФ.ОКНО О ПУСТОМ ОТЧЕТЕ --- НУЖНО РАЗОБРАТЬСЯ!!!
         }
+
 
         private void DgvReportOped_CellValueChanged1(object sender, DataGridViewCellEventArgs e)
         {
@@ -629,7 +638,7 @@ namespace KmsReportClient.Forms
                 Log.Error(ex, "Ошибка сохранения отчета в Базе данных");
                 MessageBox.Show("Ошибка сохранения отчета в Базе данных: " + ex, "Ошибка", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-                Console.WriteLine(ex.StackTrace);
+                //Console.WriteLine(ex.StackTrace);
             }
         }
 
