@@ -73,8 +73,8 @@ namespace KmsReportClient.Forms
                     nudSingle.Visible = false;
                     panelEnd.Visible = false;
                     panelRegion.Visible = false;
-                    btnDo.Text = "Сформировать свод по отчету Кадры ОИ и ЭКМП";
-                    saveFileDialog1.FileName = "Свод по отчету Кадры ОИ и ЭКМП";
+                    btnDo.Text = "Сформировать свод по отчету Кадры ОИ и ЗПЗ";
+                    saveFileDialog1.FileName = "Свод по отчету Кадры ОИ и ЗПЗ";
                     break;
                 case ConsolidateReport.Consolidate262T1:
                     labelStart.Text = "Год";
@@ -311,7 +311,7 @@ namespace KmsReportClient.Forms
             {
                 var waitingForm = new WaitingForm();
                 waitingForm.Show();
-                Application.DoEvents();
+                //Application.DoEvents();
 
                 switch (_report)
                 {

@@ -37,7 +37,7 @@ namespace KmsReportClient.Forms
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(30, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(350, 130);
+            this.label1.Size = new System.Drawing.Size(500, 140);
             this.label1.TabIndex = 0;
             this.label1.Text = System.IO.File.ReadAllText(ChLogFile);
             // 
@@ -45,7 +45,7 @@ namespace KmsReportClient.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 10F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 200);
+            this.ClientSize = new System.Drawing.Size(550, 200);
             this.Controls.Add(this.label1);
             this.Name = "ReleaseChangelogForm";
             this.Text = "Список изменений";
