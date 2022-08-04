@@ -145,7 +145,6 @@ namespace KmsReportClient.DgvHeaderGenerator
                                        r1,
                                        objFormat);
                 objGraphics.ResetClip();
-                Refresh();
             }
             else
             {
