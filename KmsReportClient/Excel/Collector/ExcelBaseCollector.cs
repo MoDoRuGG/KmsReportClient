@@ -18,7 +18,6 @@ namespace KmsReportClient.Excel.Collector
         {
             ObjExcel = new Application();
             ObjWorkBook = ObjExcel.Workbooks.Open(filename);
-            //asdasd
 
             try
             {
@@ -69,19 +68,19 @@ namespace KmsReportClient.Excel.Collector
         protected Dictionary<string, int> FindColumnIndexies(string[] columns, int rowNum)
         {
             var dictionary = new Dictionary<string, int>();
-            int i = 1;
+            int colNum = 1;
             foreach (var column in columns)
             {
                 bool isFindIndex = false;
                 while (!isFindIndex)
                 {
-                    string text = ObjWorkSheet.Cells[rowNum, i].Text;
+                    string text = ObjWorkSheet.Cells[rowNum, colNum].Text;
                     if (text == column)
                     {
-                        dictionary.Add(column, i);
+                        dictionary.Add(column, colNum);
                         isFindIndex = true;
                     }
-                    i++;
+                    colNum++;
                 }
             }
             return dictionary;

@@ -436,7 +436,6 @@ namespace KmsReportClient.Forms
         {
             var waitingForm = new WaitingForm();
             waitingForm.Show();
-            //Application.DoEvents();      -- надо разобраться, почему падает после эвента
             
 
             var yymmExp = YymmUtils.ConvertPeriodToYymm(_yymm);
@@ -466,21 +465,18 @@ namespace KmsReportClient.Forms
 
 
             waitingForm.Close();
-
             SetReportInterface();
 
-
-            //if (CurrentUser.IsMain && inReport == null)
-            //{
-            //    var dialogResult = MessageBox.Show("Филиал еще не вносил данные по выбранному периоду",
-            //        "Информация",
-            //        MessageBoxButtons.OK,
-            //        MessageBoxIcon.Information,
-            //        MessageBoxDefaultButton.Button1,
-            //        MessageBoxOptions.ServiceNotification
-            //        );
-            //}
-            // ВРЕМЕННО УБИРАЮ ИНФ.ОКНО О ПУСТОМ ОТЧЕТЕ --- НУЖНО РАЗОБРАТЬСЯ!!!
+            if (CurrentUser.IsMain && inReport == null)
+            {
+                var dialogResult = MessageBox.Show("Филиал еще не вносил данные по выбранному периоду",
+                    "Информация",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.ServiceNotification
+                    );
+            }
         }
 
 
@@ -884,7 +880,7 @@ namespace KmsReportClient.Forms
             catch (Exception ex)
             {
                 Log.Error(ex, "Error collecting report data from excel");
-                MessageBox.Show("Ошибка получения данных из Excel" + ex.Message, "Ошибка", MessageBoxButtons.OK,
+                MessageBox.Show("Ошибка получения данных из Excel " + ex.Message, "Ошибка", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
         }
@@ -915,7 +911,7 @@ namespace KmsReportClient.Forms
             catch (Exception ex)
             {
                 Log.Error(ex, "Error collecting report data from excel");
-                MessageBox.Show("Ошибка получения данных из Excel" + ex.Message, "Ошибка", MessageBoxButtons.OK,
+                MessageBox.Show("Ошибка получения данных из Excel " + ex.Message, "Ошибка", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
         }

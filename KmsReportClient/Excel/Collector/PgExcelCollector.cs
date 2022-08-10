@@ -13,7 +13,7 @@ namespace KmsReportClient.Excel.Collector
         private readonly string[] _columnsTable1 = { "2", "8", "9" };
         private readonly string[] _columnsTable2 = { "2", "5", "7", "8", "9", "10", "11" };
         private readonly string[] _columnsTable3 = { "2", "5", "7", "8", "9", "10", "11" };
-        private readonly string[] _columnsTable4 = { "2", "4" };
+        private readonly string[] _columnsTable4 = { "2", "5" };
         private readonly string[] _columnsTable5 = { "2", "4", "5", "6", "7", "8", "9" };
         private readonly string[] _columnsTable6 = { "2", "4", "5", "6", "7", "8", "9", "11", "12", "13", "14", "15", "16" };
         private readonly string[] _columnsTable8 = { "2", "4", "5", "6", "7", "8", "9", "11", "12", "13", "14", "15", "16" };
@@ -87,7 +87,7 @@ namespace KmsReportClient.Excel.Collector
                     var data = new ReportPgDataDto
                     {
                         Code = ObjWorkSheet.Cells[i, dictionary["2"]].Text,
-                        CountSmo = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["4"]].Text)
+                        CountSmo = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["5"]].Text)
                     };
                     list.Add(data);
                 }
