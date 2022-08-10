@@ -649,26 +649,33 @@ namespace KmsReportClient.Forms
                 return;
             }
 
-            try
+            if (_processor.Report.IdEmployee != 0)
             {
-                saveFileDialog1.FileName = ChkbFilter.Checked
-                    ? $"Сводный_отчет_{_processor.SmallName}_{_processor.Report.Yymm}.xlsx"
-                    : GetFileName(".xlsx");
-                string reportFilialName = CurrentUser.IsMain && ChkbFilter.Checked ? "ООО \"Капитал МС\"" :
-                    _processor.FilialName;
-
-                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                try
                 {
-                    _processor.MapReportFromDgv(_processor.GetCurrentTheme());
-                    _processor.ToExcel(saveFileDialog1.FileName, reportFilialName);
-                    OpenFileOrDirectory(saveFileDialog1.FileName);
+                    saveFileDialog1.FileName = ChkbFilter.Checked
+                        ? $"Сводный_отчет_{_processor.SmallName}_{_processor.Report.Yymm}.xlsx"
+                        : GetFileName(".xlsx");
+                    string reportFilialName = CurrentUser.IsMain && ChkbFilter.Checked ? "ООО \"Капитал МС\"" :
+                        _processor.FilialName;
+
+                    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        _processor.MapReportFromDgv(_processor.GetCurrentTheme());
+                        _processor.ToExcel(saveFileDialog1.FileName, reportFilialName);
+                        OpenFileOrDirectory(saveFileDialog1.FileName);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log.Error(ex, "Ошибка выгрузки документа в Excel");
+                    MessageBox.Show("Ошибка выгрузки документа в Excel: " + ex, "Ошибка", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex)
+            else
             {
-                Log.Error(ex, "Ошибка выгрузки документа в Excel");
-                MessageBox.Show("Ошибка выгрузки документа в Excel: " + ex, "Ошибка", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                MessageBox.Show("Вы пытаетесь выгрузить в Excel отчет, данных по которому нет в базе. Выберите другой отчетный период.", "Ошибка выгрузки в Excel", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

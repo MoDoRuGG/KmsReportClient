@@ -10,7 +10,7 @@ namespace KmsReportClient.Forms
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private const string ChLogFile = GlobalConst.TempFolder + "changelog.txt";
+        private const string ChLogFile = @"Template\changelog.txt";
 
         /// <summary>
         /// Clean up any resources being used.
@@ -51,6 +51,11 @@ namespace KmsReportClient.Forms
             this.Text = "Список изменений";
             this.ResumeLayout(false);
             this.PerformLayout();
+            this.AutoScroll = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MinimizeBox = false;
+            this.MaximizeBox = false;
 
         }
 
