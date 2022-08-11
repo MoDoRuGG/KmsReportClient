@@ -1679,44 +1679,52 @@ namespace KmsReportClient.Forms
             var page = _dynamicReportProcessor.Report.Page.ElementAt(CmbQuery.SelectedIndex).Value;
 
 
-            var currentColumn = page.Columns.Where(x => !x.IsGroup).FirstOrDefault(x => Convert.ToInt32(x.Index) == colIndex);
-            if (currentColumn == null)
+            try
             {
-                foreach (var item in page.Columns.Where(x => x.IsGroup))
+                var currentColumn = page.Columns.Where(x => !x.IsGroup).FirstOrDefault(x => Convert.ToInt32(x.Index) == colIndex);
+                if (currentColumn == null)
                 {
-                    if (item.Columns.FirstOrDefault(x => Convert.ToInt32(x.Index) == colIndex) != null)
+                    foreach (var item in page.Columns.Where(x => x.IsGroup))
                     {
-                        currentColumn = item.Columns.FirstOrDefault(x => Convert.ToInt32(x.Index) == colIndex);
+                        if (item.Columns.FirstOrDefault(x => Convert.ToInt32(x.Index) == colIndex) != null)
+                        {
+                            currentColumn = item.Columns.FirstOrDefault(x => Convert.ToInt32(x.Index) == colIndex);
+
+                        }
+                    }
+                }
+
+                var currentRow = page.Rows.FirstOrDefault(x => Convert.ToInt32(x.Index) == rowIndex);
+                string message = string.Empty;
+
+                if (currentColumn != null)
+                {
+                    if (!string.IsNullOrEmpty(currentColumn.Description))
+                    {
+                        message += String.Format($"Столбец:{currentColumn.Description.Trim()}") + Environment.NewLine;
 
                     }
                 }
-            }
 
-            var currentRow = page.Rows.FirstOrDefault(x => Convert.ToInt32(x.Index) == rowIndex);
-            string message = string.Empty;
 
-            if (currentColumn != null)
-            {
-                if (!string.IsNullOrEmpty(currentColumn.Description))
+                if (currentRow != null)
                 {
-                    message += String.Format($"Столбец:{currentColumn.Description.Trim()}") + Environment.NewLine;
+                    if (!string.IsNullOrEmpty(currentRow.Description))
+                    {
+                        message += String.Format($"Строка:{currentRow.Description.Trim()}");
 
+                    }
                 }
+
+                TbxEmentInfo.Text = message;
+
             }
-
-
-            if (currentRow != null)
+            catch (Exception ex)
             {
-                if (!string.IsNullOrEmpty(currentRow.Description))
-                {
-                    message += String.Format($"Строка:{currentRow.Description.Trim()}");
-
-                }
+                Log.Error(ex, "Error submiting report");
+                //MessageBox.Show("Ошибка сдачи отчета:" + ex.Message, "Ошибка!", MessageBoxButtons.OK,
+                //    MessageBoxIcon.Error);
             }
-
-            TbxEmentInfo.Text = message;
-
-
 
 
 
