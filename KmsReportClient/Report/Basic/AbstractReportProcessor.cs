@@ -267,10 +267,7 @@ namespace KmsReportClient.Report.Basic
                         row5.Cells["TotalPlanCel"].Value = GlobalUtils.TryParseDecimal(row5.Cells["Total"].Value) + GlobalUtils.TryParseDecimal(row5.Cells["TotalPlan"].Value); // Итого цел + план
 
                     }
-
-
                 }
-
             }
             catch (Exception ex)
             {
