@@ -169,7 +169,7 @@ namespace KmsReportClient.Report.Basic
             try
             {
                 Dgv.Rows[0].Cells[3].Value = Math.Round(GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[6].Value) + GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[9].Value) +
-                                                        GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[12].Value) + GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[27].Value), 2);
+                                                        GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[12].Value), 2);
             }
             catch (Exception ex)
             {
@@ -179,7 +179,7 @@ namespace KmsReportClient.Report.Basic
             try
             {
                 Dgv.Rows[0].Cells[2].Value = Math.Round(GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[5].Value) + GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[8].Value) +
-                                                        GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[11].Value) + GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[26].Value), 2);
+                                                        GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[11].Value), 2);
             }
             catch (Exception ex)
             {
@@ -189,7 +189,7 @@ namespace KmsReportClient.Report.Basic
             try
             {
                 Dgv.Rows[0].Cells[1].Value = Math.Round(GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[4].Value) + GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[7].Value) +
-                                                        GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[10].Value) + GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[25].Value), 2);
+                                                        GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[10].Value), 2);
             }
             catch (Exception ex)
             {
