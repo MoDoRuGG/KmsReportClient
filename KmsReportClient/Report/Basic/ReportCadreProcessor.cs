@@ -253,6 +253,7 @@ namespace KmsReportClient.Report.Basic
                 Report.ReportDataList[i++] = new ReportCadreDto { Theme = theme };
                 //Console.WriteLine(FilialName);
             }
+            SetFormula();
         }
         public override bool IsVisibleBtnDownloadExcel() => false;
 
@@ -271,6 +272,7 @@ namespace KmsReportClient.Report.Basic
         }
         public override void SaveToDb()
         {
+            SetFormula();
             var request = new SaveReportRequest
             {
                 Body = new SaveReportRequestBody
@@ -289,7 +291,7 @@ namespace KmsReportClient.Report.Basic
         public override void ToExcel(string filename, string filialName)
         {
 
-                var excel = new ExceCadreCreator(filename, ExcelForm.cadre, Report.Yymm, filialName, Client, FilialCode);
+                var excel = new ExcelCadreCreator(filename, ExcelForm.cadre, Report.Yymm, filialName, Client, FilialCode);
                 excel.CreateReport(Report, null);
         }
         public override string ValidReport() { return ""; }
@@ -391,18 +393,18 @@ namespace KmsReportClient.Report.Basic
             reportCadre.Data = new ReportCadreDataDto
             {
                 Id = GlobalUtils.TryParseInt(row.Cells[0].Value),
-                count_itog_state = GlobalUtils.TryParseInt(row.Cells[1].Value),
-                count_itog_fact = GlobalUtils.TryParseInt(row.Cells[2].Value),
-                count_itog_vacancy = GlobalUtils.TryParseInt(row.Cells[3].Value),
-                count_leader_state = GlobalUtils.TryParseInt(row.Cells[4].Value),
-                count_leader_fact = GlobalUtils.TryParseInt(row.Cells[5].Value),
-                count_leader_vacancy = GlobalUtils.TryParseInt(row.Cells[6].Value),
-                count_deputy_leader_state = GlobalUtils.TryParseInt(row.Cells[7].Value),
-                count_deputy_leader_fact = GlobalUtils.TryParseInt(row.Cells[8].Value),
-                count_deputy_leader_vacancy = GlobalUtils.TryParseInt(row.Cells[9].Value),
-                count_expert_doctor_state = GlobalUtils.TryParseInt(row.Cells[10].Value),
-                count_expert_doctor_fact = GlobalUtils.TryParseInt(row.Cells[11].Value),
-                count_expert_doctor_vacancy = GlobalUtils.TryParseInt(row.Cells[12].Value),
+                count_itog_state = GlobalUtils.TryParseDecimal(row.Cells[1].Value),
+                count_itog_fact = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
+                count_itog_vacancy = GlobalUtils.TryParseDecimal(row.Cells[3].Value),
+                count_leader_state = GlobalUtils.TryParseDecimal(row.Cells[4].Value),
+                count_leader_fact = GlobalUtils.TryParseDecimal(row.Cells[5].Value),
+                count_leader_vacancy = GlobalUtils.TryParseDecimal(row.Cells[6].Value),
+                count_deputy_leader_state = GlobalUtils.TryParseDecimal(row.Cells[7].Value),
+                count_deputy_leader_fact = GlobalUtils.TryParseDecimal(row.Cells[8].Value),
+                count_deputy_leader_vacancy = GlobalUtils.TryParseDecimal(row.Cells[9].Value),
+                count_expert_doctor_state = GlobalUtils.TryParseDecimal(row.Cells[10].Value),
+                count_expert_doctor_fact = GlobalUtils.TryParseDecimal(row.Cells[11].Value),
+                count_expert_doctor_vacancy = GlobalUtils.TryParseDecimal(row.Cells[12].Value),
                 count_grf15 = GlobalUtils.TryParseInt(row.Cells[13].Value),
                 count_grf16 = GlobalUtils.TryParseInt(row.Cells[14].Value),
                 count_grf17 = GlobalUtils.TryParseInt(row.Cells[15].Value),
@@ -415,9 +417,9 @@ namespace KmsReportClient.Report.Basic
                 count_grf24 = GlobalUtils.TryParseInt(row.Cells[22].Value),
                 count_grf25 = GlobalUtils.TryParseInt(row.Cells[23].Value),
                 count_grf26 = GlobalUtils.TryParseInt(row.Cells[24].Value),
-                count_specialist_state = GlobalUtils.TryParseInt(row.Cells[25].Value),
-                count_specialist_fact = GlobalUtils.TryParseInt(row.Cells[26].Value),
-                count_specialist_vacancy = GlobalUtils.TryParseInt(row.Cells[27].Value),
+                count_specialist_state = GlobalUtils.TryParseDecimal(row.Cells[25].Value),
+                count_specialist_fact = GlobalUtils.TryParseDecimal(row.Cells[26].Value),
+                count_specialist_vacancy = GlobalUtils.TryParseDecimal(row.Cells[27].Value),
             };
         }
     }

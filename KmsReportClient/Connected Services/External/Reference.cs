@@ -1655,35 +1655,35 @@ namespace KmsReportClient.External {
         
         private int IdField;
         
-        private int count_itog_stateField;
+        private decimal count_itog_stateField;
         
-        private int count_itog_factField;
+        private decimal count_itog_factField;
         
-        private int count_itog_vacancyField;
+        private decimal count_itog_vacancyField;
         
-        private int count_leader_stateField;
+        private decimal count_leader_stateField;
         
-        private int count_leader_factField;
+        private decimal count_leader_factField;
         
-        private int count_leader_vacancyField;
+        private decimal count_leader_vacancyField;
         
-        private int count_deputy_leader_stateField;
+        private decimal count_deputy_leader_stateField;
         
-        private int count_deputy_leader_factField;
+        private decimal count_deputy_leader_factField;
         
-        private int count_deputy_leader_vacancyField;
+        private decimal count_deputy_leader_vacancyField;
         
-        private int count_expert_doctor_stateField;
+        private decimal count_expert_doctor_stateField;
         
-        private int count_expert_doctor_factField;
+        private decimal count_expert_doctor_factField;
         
-        private int count_expert_doctor_vacancyField;
+        private decimal count_expert_doctor_vacancyField;
         
-        private int count_specialist_stateField;
+        private decimal count_specialist_stateField;
         
-        private int count_specialist_factField;
+        private decimal count_specialist_factField;
         
-        private int count_specialist_vacancyField;
+        private decimal count_specialist_vacancyField;
         
         private int count_grf15Field;
         
@@ -1733,7 +1733,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int count_itog_state {
+        public decimal count_itog_state {
             get {
                 return this.count_itog_stateField;
             }
@@ -1746,7 +1746,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public int count_itog_fact {
+        public decimal count_itog_fact {
             get {
                 return this.count_itog_factField;
             }
@@ -1759,7 +1759,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public int count_itog_vacancy {
+        public decimal count_itog_vacancy {
             get {
                 return this.count_itog_vacancyField;
             }
@@ -1772,7 +1772,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public int count_leader_state {
+        public decimal count_leader_state {
             get {
                 return this.count_leader_stateField;
             }
@@ -1785,7 +1785,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public int count_leader_fact {
+        public decimal count_leader_fact {
             get {
                 return this.count_leader_factField;
             }
@@ -1798,7 +1798,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public int count_leader_vacancy {
+        public decimal count_leader_vacancy {
             get {
                 return this.count_leader_vacancyField;
             }
@@ -1811,7 +1811,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public int count_deputy_leader_state {
+        public decimal count_deputy_leader_state {
             get {
                 return this.count_deputy_leader_stateField;
             }
@@ -1824,7 +1824,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public int count_deputy_leader_fact {
+        public decimal count_deputy_leader_fact {
             get {
                 return this.count_deputy_leader_factField;
             }
@@ -1837,7 +1837,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
-        public int count_deputy_leader_vacancy {
+        public decimal count_deputy_leader_vacancy {
             get {
                 return this.count_deputy_leader_vacancyField;
             }
@@ -1850,7 +1850,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
-        public int count_expert_doctor_state {
+        public decimal count_expert_doctor_state {
             get {
                 return this.count_expert_doctor_stateField;
             }
@@ -1863,7 +1863,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
-        public int count_expert_doctor_fact {
+        public decimal count_expert_doctor_fact {
             get {
                 return this.count_expert_doctor_factField;
             }
@@ -1876,7 +1876,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
-        public int count_expert_doctor_vacancy {
+        public decimal count_expert_doctor_vacancy {
             get {
                 return this.count_expert_doctor_vacancyField;
             }
@@ -1889,7 +1889,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
-        public int count_specialist_state {
+        public decimal count_specialist_state {
             get {
                 return this.count_specialist_stateField;
             }
@@ -1902,7 +1902,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
-        public int count_specialist_fact {
+        public decimal count_specialist_fact {
             get {
                 return this.count_specialist_factField;
             }
@@ -1915,7 +1915,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
-        public int count_specialist_vacancy {
+        public decimal count_specialist_vacancy {
             get {
                 return this.count_specialist_vacancyField;
             }
@@ -9645,35 +9645,35 @@ namespace KmsReportClient.External {
         
         private System.Nullable<int> RowNumField;
         
-        private System.Nullable<int> count_itog_stateField;
+        private System.Nullable<decimal> count_itog_stateField;
         
-        private System.Nullable<int> count_itog_factField;
+        private System.Nullable<decimal> count_itog_factField;
         
-        private System.Nullable<int> count_itog_vacancyField;
+        private System.Nullable<decimal> count_itog_vacancyField;
         
-        private System.Nullable<int> count_leader_stateField;
+        private System.Nullable<decimal> count_leader_stateField;
         
-        private System.Nullable<int> count_leader_factField;
+        private System.Nullable<decimal> count_leader_factField;
         
-        private System.Nullable<int> count_leader_vacancyField;
+        private System.Nullable<decimal> count_leader_vacancyField;
         
-        private System.Nullable<int> count_deputy_leader_stateField;
+        private System.Nullable<decimal> count_deputy_leader_stateField;
         
-        private System.Nullable<int> count_deputy_leader_factField;
+        private System.Nullable<decimal> count_deputy_leader_factField;
         
-        private System.Nullable<int> count_deputy_leader_vacancyField;
+        private System.Nullable<decimal> count_deputy_leader_vacancyField;
         
-        private System.Nullable<int> count_expert_doctor_stateField;
+        private System.Nullable<decimal> count_expert_doctor_stateField;
         
-        private System.Nullable<int> count_expert_doctor_factField;
+        private System.Nullable<decimal> count_expert_doctor_factField;
         
-        private System.Nullable<int> count_expert_doctor_vacancyField;
+        private System.Nullable<decimal> count_expert_doctor_vacancyField;
         
-        private System.Nullable<int> count_specialist_stateField;
+        private System.Nullable<decimal> count_specialist_stateField;
         
-        private System.Nullable<int> count_specialist_factField;
+        private System.Nullable<decimal> count_specialist_factField;
         
-        private System.Nullable<int> count_specialist_vacancyField;
+        private System.Nullable<decimal> count_specialist_vacancyField;
         
         private System.Nullable<int> count_grf15Field;
         
@@ -9752,7 +9752,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.Nullable<int> count_itog_state {
+        public System.Nullable<decimal> count_itog_state {
             get {
                 return this.count_itog_stateField;
             }
@@ -9765,7 +9765,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public System.Nullable<int> count_itog_fact {
+        public System.Nullable<decimal> count_itog_fact {
             get {
                 return this.count_itog_factField;
             }
@@ -9778,7 +9778,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public System.Nullable<int> count_itog_vacancy {
+        public System.Nullable<decimal> count_itog_vacancy {
             get {
                 return this.count_itog_vacancyField;
             }
@@ -9791,7 +9791,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public System.Nullable<int> count_leader_state {
+        public System.Nullable<decimal> count_leader_state {
             get {
                 return this.count_leader_stateField;
             }
@@ -9804,7 +9804,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public System.Nullable<int> count_leader_fact {
+        public System.Nullable<decimal> count_leader_fact {
             get {
                 return this.count_leader_factField;
             }
@@ -9817,7 +9817,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public System.Nullable<int> count_leader_vacancy {
+        public System.Nullable<decimal> count_leader_vacancy {
             get {
                 return this.count_leader_vacancyField;
             }
@@ -9830,7 +9830,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
-        public System.Nullable<int> count_deputy_leader_state {
+        public System.Nullable<decimal> count_deputy_leader_state {
             get {
                 return this.count_deputy_leader_stateField;
             }
@@ -9843,7 +9843,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
-        public System.Nullable<int> count_deputy_leader_fact {
+        public System.Nullable<decimal> count_deputy_leader_fact {
             get {
                 return this.count_deputy_leader_factField;
             }
@@ -9856,7 +9856,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
-        public System.Nullable<int> count_deputy_leader_vacancy {
+        public System.Nullable<decimal> count_deputy_leader_vacancy {
             get {
                 return this.count_deputy_leader_vacancyField;
             }
@@ -9869,7 +9869,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
-        public System.Nullable<int> count_expert_doctor_state {
+        public System.Nullable<decimal> count_expert_doctor_state {
             get {
                 return this.count_expert_doctor_stateField;
             }
@@ -9882,7 +9882,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
-        public System.Nullable<int> count_expert_doctor_fact {
+        public System.Nullable<decimal> count_expert_doctor_fact {
             get {
                 return this.count_expert_doctor_factField;
             }
@@ -9895,7 +9895,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
-        public System.Nullable<int> count_expert_doctor_vacancy {
+        public System.Nullable<decimal> count_expert_doctor_vacancy {
             get {
                 return this.count_expert_doctor_vacancyField;
             }
@@ -9908,7 +9908,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
-        public System.Nullable<int> count_specialist_state {
+        public System.Nullable<decimal> count_specialist_state {
             get {
                 return this.count_specialist_stateField;
             }
@@ -9921,7 +9921,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
-        public System.Nullable<int> count_specialist_fact {
+        public System.Nullable<decimal> count_specialist_fact {
             get {
                 return this.count_specialist_factField;
             }
@@ -9934,7 +9934,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
-        public System.Nullable<int> count_specialist_vacancy {
+        public System.Nullable<decimal> count_specialist_vacancy {
             get {
                 return this.count_specialist_vacancyField;
             }

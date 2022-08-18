@@ -9,14 +9,14 @@ using Microsoft.Office.Interop.Excel;
 
 namespace KmsReportClient.Excel.Creator.Base
 {
-    public class ExceCadreCreator : ExcelBaseCreator<ReportCadre>
+    public class ExcelCadreCreator : ExcelBaseCreator<ReportCadre>
     {
 
         private EndpointSoap _client;
 
         private string _regionCode;
 
-        public ExceCadreCreator(
+        public ExcelCadreCreator(
           string filename,
           ExcelForm reportName,
           string header,
@@ -24,17 +24,12 @@ namespace KmsReportClient.Excel.Creator.Base
         {
             _client = client;
             _regionCode = regionCode;
-
-
-
         }
 
 
 
         protected override void FillReport(ReportCadre report, ReportCadre yearReport)
         {
-            //if (report.IdFlow != 0)
-            //{
                 int sheet = 1;
 
                 foreach (var theme in report.ReportDataList)
@@ -70,34 +65,8 @@ namespace KmsReportClient.Excel.Creator.Base
                     ObjWorkSheet.Cells[7, 28] = theme.Data.count_specialist_fact;
                     ObjWorkSheet.Cells[7, 29] = theme.Data.count_specialist_vacancy;
 
-
-
-
-
-
-                    //var yearThemeData = _client.GetCadreYearData(new GetCadreYearDataRequest(new GetIRYearDataRequestBody
-                    //{
-                    //    fillial = _regionCode,
-                    //    theme = theme.Theme,
-                    //    yymm = report.Yymm
-                    //})).Body.GetIRYearDataResult;
-
-                    //if (yearThemeData != null)
-                    //{
-
-                    //    ObjWorkSheet.Cells[4, 9].Value = yearThemeData.Informed;
-                    //    ObjWorkSheet.Cells[4, 11].Value = yearThemeData.CountPast;
-                    //    ObjWorkSheet.Cells[4, 12].Value = yearThemeData.CountRegistry;
-                    //}
-
                     sheet++;
                 }
-            //}
-            //else
-            //{
-            //    return; 
-            //}
-
         }
     }
 }

@@ -360,21 +360,21 @@
       <s:complexType name="ReportCadreDataDto">
         <s:sequence>
           <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_itog_state" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_itog_fact" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_itog_vacancy" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_leader_state" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_leader_fact" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_leader_vacancy" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_deputy_leader_state" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_deputy_leader_fact" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_deputy_leader_vacancy" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_expert_doctor_state" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_expert_doctor_fact" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_expert_doctor_vacancy" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_specialist_state" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_specialist_fact" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_specialist_vacancy" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_itog_state" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_itog_fact" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_itog_vacancy" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_leader_state" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_leader_fact" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_leader_vacancy" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_deputy_leader_state" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_deputy_leader_fact" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_deputy_leader_vacancy" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_expert_doctor_state" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_expert_doctor_fact" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_expert_doctor_vacancy" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_specialist_state" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_specialist_fact" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_specialist_vacancy" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="count_grf15" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="count_grf16" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="count_grf17" type="s:int" />
@@ -947,21 +947,21 @@
           <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="Id_Report_Data" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="RowNum" nillable="true" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_itog_state" nillable="true" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_itog_fact" nillable="true" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_itog_vacancy" nillable="true" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_leader_state" nillable="true" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_leader_fact" nillable="true" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_leader_vacancy" nillable="true" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_deputy_leader_state" nillable="true" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_deputy_leader_fact" nillable="true" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_deputy_leader_vacancy" nillable="true" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_expert_doctor_state" nillable="true" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_expert_doctor_fact" nillable="true" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_expert_doctor_vacancy" nillable="true" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_specialist_state" nillable="true" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_specialist_fact" nillable="true" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_specialist_vacancy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_itog_state" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_itog_fact" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_itog_vacancy" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_leader_state" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_leader_fact" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_leader_vacancy" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_deputy_leader_state" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_deputy_leader_fact" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_deputy_leader_vacancy" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_expert_doctor_state" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_expert_doctor_fact" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_expert_doctor_vacancy" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_specialist_state" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_specialist_fact" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_specialist_vacancy" nillable="true" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="count_grf15" nillable="true" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="count_grf16" nillable="true" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="count_grf17" nillable="true" type="s:int" />
