@@ -71,12 +71,16 @@ namespace KmsReportClient.Report.Basic
         public abstract AbstractReport CollectReportFromWs(string yymm);
         public abstract void FillDataGridView(string form);
         public abstract void SaveToDb();
-        public abstract void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status);
+        public abstract void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status, DataSource datasource);
         public abstract void ToExcel(string filename, string filialName);
         public abstract string ValidReport();
         public abstract bool IsVisibleBtnDownloadExcel();
+        public abstract bool IsVisibleBtnHandle();
         public abstract void InitReport();
         public abstract void MapForAutoFill(AbstractReport report);
+        public abstract void SaveReportDataSourceHandle();
+        public abstract void SaveReportDataSourceExcel();
+
 
         public virtual void CalculateCells()
         {
@@ -368,6 +372,11 @@ namespace KmsReportClient.Report.Basic
                 info += $"Пользователь: {GetUser(Report.UserToCo)}; " + Environment.NewLine;
             }
 
+            if (Report.IdType == "PG")
+            { 
+                info += "Данные вносились вручную: " + (Report.DataSource.ToString() != "Handle" ? "Нет; " : "Да; ") + Environment.NewLine;
+            }
+
             if (Report.RefuseUser != 0 && Report.RefuseDate != null)
             {
                 info += $"Дата возврата отчета на доработку: {Report.RefuseDate.Value.ToShortDateString()} ";
@@ -415,6 +424,21 @@ namespace KmsReportClient.Report.Basic
             catch (Exception ex)
             {
                 log.Error(ex, "Ошибка удаления скана в БД");
+                throw;
+            }
+        }
+
+
+        public void ChangeDataSource(DataSource datasource)
+        {
+            try
+            {
+                Client.ChangeDataSource(Report.IdFlow, CurrentUser.IdUser, datasource);
+                Dgv.ReadOnly = datasource == DataSource.New;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Ошибка при попытке загрузить отчет из Excel");
                 throw;
             }
         }

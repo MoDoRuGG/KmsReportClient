@@ -119,6 +119,10 @@ namespace KmsReportClient.Report.Basic
                 Dgv.Rows.Add(dgvRow);
             }
         }
+        public override void SaveReportDataSourceExcel()
+        { }
+        public override void SaveReportDataSourceHandle()
+        { }
 
         private void FillInfAgreeReport(DataGridView dgvReport, string form)
         {
@@ -205,7 +209,7 @@ namespace KmsReportClient.Report.Basic
             Report.Status = response.Status;
         }
 
-        public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status)
+        public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status, DataSource datasource)
         {
             var array = new ArrayOfString();
             array.AddRange(filialList);
@@ -225,6 +229,8 @@ namespace KmsReportClient.Report.Basic
         }
 
         public override bool IsVisibleBtnDownloadExcel() => false;
+
+        public override bool IsVisibleBtnHandle() => false;
 
         public override string ValidReport()
         {

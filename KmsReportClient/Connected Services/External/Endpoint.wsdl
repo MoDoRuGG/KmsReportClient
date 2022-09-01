@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://kms-oms.ru/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://kms-oms.ru/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://localhost:8091/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://localhost:8091/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
-    <s:schema elementFormDefault="qualified" targetNamespace="http://kms-oms.ru/">
+    <s:schema elementFormDefault="qualified" targetNamespace="http://localhost:8091/">
       <s:element name="ConsolidateProposalCollect">
         <s:complexType>
           <s:sequence>
@@ -444,6 +444,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Scan2" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Scan3" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="Status" type="tns:ReportStatus" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataSource" type="tns:DataSource" />
         </s:sequence>
       </s:complexType>
       <s:simpleType name="ReportStatus">
@@ -454,6 +455,13 @@
           <s:enumeration value="Submit" />
           <s:enumeration value="Refuse" />
           <s:enumeration value="Done" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="DataSource">
+        <s:restriction base="s:string">
+          <s:enumeration value="New" />
+          <s:enumeration value="Excel" />
+          <s:enumeration value="Handle" />
         </s:restriction>
       </s:simpleType>
       <s:element name="GetFSSMonitoringPGData">
@@ -648,9 +656,9 @@
           <s:element minOccurs="0" maxOccurs="1" name="Comment" type="tns:ArrayOfComment" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Dynamic_Flow" type="tns:ArrayOfReport_Dynamic_Flow" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Dynamic" type="tns:Report_Dynamic" />
-          <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:ArrayOfReport_Flow" />
           <s:element minOccurs="0" maxOccurs="1" name="Scans_Bases" type="tns:ArrayOfScans_Base" />
           <s:element minOccurs="0" maxOccurs="1" name="Scans_Bases1" type="tns:ArrayOfScans_Base" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:ArrayOfReport_Flow" />
           <s:element minOccurs="0" maxOccurs="1" name="Region1" type="tns:Region" />
         </s:sequence>
       </s:complexType>
@@ -678,7 +686,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="YymmEnd" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Responsible_Employees" type="tns:ArrayOfResponsible_Employee" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Datas" type="tns:ArrayOfReport_Data" />
-          <s:element minOccurs="0" maxOccurs="1" name="Report_Flows" type="tns:ArrayOfReport_Flow" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:ArrayOfReport_Flow" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfReport_Data">
@@ -706,8 +714,8 @@
           <s:element minOccurs="0" maxOccurs="1" name="Report_OpedFinances" type="tns:ArrayOfReport_OpedFinance" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Iilzs" type="tns:ArrayOfReport_Iilz" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Cadre" type="tns:ArrayOfReport_Cadre" />
-          <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:Report_Flow" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Type" type="tns:Report_Type" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:Report_Flow" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfReport_f262">
@@ -998,9 +1006,10 @@
           <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Scan2" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Scan3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataSource" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:ArrayOfReport_Data" />
           <s:element minOccurs="0" maxOccurs="1" name="Comment" type="tns:ArrayOfComment" />
-          <s:element minOccurs="0" maxOccurs="1" name="Scans_Bases" type="tns:ArrayOfScans_Base" />
+          <s:element minOccurs="0" maxOccurs="1" name="Scans_Base" type="tns:ArrayOfScans_Base" />
           <s:element minOccurs="0" maxOccurs="1" name="Employee" type="tns:Employee" />
           <s:element minOccurs="0" maxOccurs="1" name="Region" type="tns:Region" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Type" type="tns:Report_Type" />
@@ -1054,6 +1063,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Employee" type="tns:ArrayOfEmployee" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Dynamic_Flow" type="tns:ArrayOfReport_Dynamic_Flow" />
           <s:element minOccurs="0" maxOccurs="1" name="OpedFinancePlans" type="tns:ArrayOfOpedFinancePlan" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:ArrayOfReport_Flow" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfEmployee">
@@ -1472,6 +1482,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="DateEditCo" nillable="true" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="DateIsDone" nillable="true" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="Status" type="tns:ReportStatus" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataSource" type="tns:DataSource" />
         </s:sequence>
       </s:complexType>
       <s:element name="SaveScan">
@@ -1704,6 +1715,18 @@
       <s:element name="ChangeStatusResponse">
         <s:complexType />
       </s:element>
+      <s:element name="ChangeDataSource">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idReport" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idUser" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="datasource" type="tns:DataSource" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeDataSourceResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="CollectSummaryReport">
         <s:complexType>
           <s:sequence>
@@ -1712,6 +1735,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="yymmEnd" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="status" type="tns:ReportStatus" />
             <s:element minOccurs="1" maxOccurs="1" name="reportType" type="tns:ReportType" />
+            <s:element minOccurs="1" maxOccurs="1" name="datasource" type="tns:DataSource" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1771,6 +1795,42 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="SaveReportResult" type="tns:AbstractReport" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveReportDataSourceHandle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:AbstractReport" />
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idUser" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="filialCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="reportType" type="tns:ReportType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveReportDataSourceHandleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveReportDataSourceHandleResult" type="tns:AbstractReport" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveReportDataSourceExcel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:AbstractReport" />
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idUser" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="filialCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="reportType" type="tns:ReportType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveReportDataSourceExcelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveReportDataSourceExcelResult" type="tns:AbstractReport" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -3323,6 +3383,12 @@
   <wsdl:message name="ChangeStatusSoapOut">
     <wsdl:part name="parameters" element="tns:ChangeStatusResponse" />
   </wsdl:message>
+  <wsdl:message name="ChangeDataSourceSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeDataSource" />
+  </wsdl:message>
+  <wsdl:message name="ChangeDataSourceSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeDataSourceResponse" />
+  </wsdl:message>
   <wsdl:message name="CollectSummaryReportSoapIn">
     <wsdl:part name="parameters" element="tns:CollectSummaryReport" />
   </wsdl:message>
@@ -3340,6 +3406,18 @@
   </wsdl:message>
   <wsdl:message name="SaveReportSoapOut">
     <wsdl:part name="parameters" element="tns:SaveReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveReportDataSourceHandleSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveReportDataSourceHandle" />
+  </wsdl:message>
+  <wsdl:message name="SaveReportDataSourceHandleSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveReportDataSourceHandleResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveReportDataSourceExcelSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveReportDataSourceExcel" />
+  </wsdl:message>
+  <wsdl:message name="SaveReportDataSourceExcelSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveReportDataSourceExcelResponse" />
   </wsdl:message>
   <wsdl:message name="SendNotificationSoapIn">
     <wsdl:part name="parameters" element="tns:SendNotification" />
@@ -3700,6 +3778,10 @@
       <wsdl:input message="tns:ChangeStatusSoapIn" />
       <wsdl:output message="tns:ChangeStatusSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="ChangeDataSource">
+      <wsdl:input message="tns:ChangeDataSourceSoapIn" />
+      <wsdl:output message="tns:ChangeDataSourceSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="CollectSummaryReport">
       <wsdl:input message="tns:CollectSummaryReportSoapIn" />
       <wsdl:output message="tns:CollectSummaryReportSoapOut" />
@@ -3711,6 +3793,14 @@
     <wsdl:operation name="SaveReport">
       <wsdl:input message="tns:SaveReportSoapIn" />
       <wsdl:output message="tns:SaveReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveReportDataSourceHandle">
+      <wsdl:input message="tns:SaveReportDataSourceHandleSoapIn" />
+      <wsdl:output message="tns:SaveReportDataSourceHandleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveReportDataSourceExcel">
+      <wsdl:input message="tns:SaveReportDataSourceExcelSoapIn" />
+      <wsdl:output message="tns:SaveReportDataSourceExcelSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="SendNotification">
       <wsdl:input message="tns:SendNotificationSoapIn" />
@@ -3840,7 +3930,7 @@
   <wsdl:binding name="EndpointSoap" type="tns:EndpointSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="ConsolidateProposalCollect">
-      <soap:operation soapAction="http://kms-oms.ru/ConsolidateProposalCollect" style="document" />
+      <soap:operation soapAction="http://localhost:8091/ConsolidateProposalCollect" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3849,7 +3939,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetCheckFFOMS2022CommonData">
-      <soap:operation soapAction="http://kms-oms.ru/GetCheckFFOMS2022CommonData" style="document" />
+      <soap:operation soapAction="http://localhost:8091/GetCheckFFOMS2022CommonData" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3858,7 +3948,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetOpedFinanceList">
-      <soap:operation soapAction="http://kms-oms.ru/GetOpedFinanceList" style="document" />
+      <soap:operation soapAction="http://localhost:8091/GetOpedFinanceList" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3867,7 +3957,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ConsolidateOpedFinance2">
-      <soap:operation soapAction="http://kms-oms.ru/ConsolidateOpedFinance2" style="document" />
+      <soap:operation soapAction="http://localhost:8091/ConsolidateOpedFinance2" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3876,7 +3966,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ConsolidateOpedFinance1">
-      <soap:operation soapAction="http://kms-oms.ru/ConsolidateOpedFinance1" style="document" />
+      <soap:operation soapAction="http://localhost:8091/ConsolidateOpedFinance1" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3885,7 +3975,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SaveOpedFinanceList">
-      <soap:operation soapAction="http://kms-oms.ru/SaveOpedFinanceList" style="document" />
+      <soap:operation soapAction="http://localhost:8091/SaveOpedFinanceList" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3894,7 +3984,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ConsolidateOpedQCollect">
-      <soap:operation soapAction="http://kms-oms.ru/ConsolidateOpedQCollect" style="document" />
+      <soap:operation soapAction="http://localhost:8091/ConsolidateOpedQCollect" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3903,7 +3993,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ConsolidateCPNP2QCollect">
-      <soap:operation soapAction="http://kms-oms.ru/ConsolidateCPNP2QCollect" style="document" />
+      <soap:operation soapAction="http://localhost:8091/ConsolidateCPNP2QCollect" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3912,7 +4002,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetScans">
-      <soap:operation soapAction="http://kms-oms.ru/GetScans" style="document" />
+      <soap:operation soapAction="http://localhost:8091/GetScans" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3921,7 +4011,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetEmails">
-      <soap:operation soapAction="http://kms-oms.ru/GetEmails" style="document" />
+      <soap:operation soapAction="http://localhost:8091/GetEmails" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3930,7 +4020,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetYearOpedData">
-      <soap:operation soapAction="http://kms-oms.ru/GetYearOpedData" style="document" />
+      <soap:operation soapAction="http://localhost:8091/GetYearOpedData" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3939,7 +4029,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetIRYearData">
-      <soap:operation soapAction="http://kms-oms.ru/GetIRYearData" style="document" />
+      <soap:operation soapAction="http://localhost:8091/GetIRYearData" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3948,7 +4038,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetCadreYearData">
-      <soap:operation soapAction="http://kms-oms.ru/GetCadreYearData" style="document" />
+      <soap:operation soapAction="http://localhost:8091/GetCadreYearData" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3957,7 +4047,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetVacYearData">
-      <soap:operation soapAction="http://kms-oms.ru/GetVacYearData" style="document" />
+      <soap:operation soapAction="http://localhost:8091/GetVacYearData" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3966,7 +4056,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetFSSMonitoringPGData">
-      <soap:operation soapAction="http://kms-oms.ru/GetFSSMonitoringPGData" style="document" />
+      <soap:operation soapAction="http://localhost:8091/GetFSSMonitoringPGData" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3975,7 +4065,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SendEmail">
-      <soap:operation soapAction="http://kms-oms.ru/SendEmail" style="document" />
+      <soap:operation soapAction="http://localhost:8091/SendEmail" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3984,7 +4074,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="AddEmail">
-      <soap:operation soapAction="http://kms-oms.ru/AddEmail" style="document" />
+      <soap:operation soapAction="http://localhost:8091/AddEmail" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3993,7 +4083,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="EditEmail">
-      <soap:operation soapAction="http://kms-oms.ru/EditEmail" style="document" />
+      <soap:operation soapAction="http://localhost:8091/EditEmail" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4002,7 +4092,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeleteEmail">
-      <soap:operation soapAction="http://kms-oms.ru/DeleteEmail" style="document" />
+      <soap:operation soapAction="http://localhost:8091/DeleteEmail" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4011,7 +4101,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ChangeDynamicReportStatus">
-      <soap:operation soapAction="http://kms-oms.ru/ChangeDynamicReportStatus" style="document" />
+      <soap:operation soapAction="http://localhost:8091/ChangeDynamicReportStatus" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4020,7 +4110,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SaveDynamicReport">
-      <soap:operation soapAction="http://kms-oms.ru/SaveDynamicReport" style="document" />
+      <soap:operation soapAction="http://localhost:8091/SaveDynamicReport" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4029,7 +4119,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetReportDynamicFlows">
-      <soap:operation soapAction="http://kms-oms.ru/GetReportDynamicFlows" style="document" />
+      <soap:operation soapAction="http://localhost:8091/GetReportDynamicFlows" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4038,7 +4128,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetScansDynamic">
-      <soap:operation soapAction="http://kms-oms.ru/GetScansDynamic" style="document" />
+      <soap:operation soapAction="http://localhost:8091/GetScansDynamic" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4047,7 +4137,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SaveDynamicScan">
-      <soap:operation soapAction="http://kms-oms.ru/SaveDynamicScan" style="document" />
+      <soap:operation soapAction="http://localhost:8091/SaveDynamicScan" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4056,7 +4146,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeleteDynamicScan">
-      <soap:operation soapAction="http://kms-oms.ru/DeleteDynamicScan" style="document" />
+      <soap:operation soapAction="http://localhost:8091/DeleteDynamicScan" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4065,7 +4155,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetReportDynamicById">
-      <soap:operation soapAction="http://kms-oms.ru/GetReportDynamicById" style="document" />
+      <soap:operation soapAction="http://localhost:8091/GetReportDynamicById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4074,7 +4164,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetReportDynamicFlowById">
-      <soap:operation soapAction="http://kms-oms.ru/GetReportDynamicFlowById" style="document" />
+      <soap:operation soapAction="http://localhost:8091/GetReportDynamicFlowById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4083,7 +4173,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="WebReportOped">
-      <soap:operation soapAction="http://kms-oms.ru/WebReportOped" style="document" />
+      <soap:operation soapAction="http://localhost:8091/WebReportOped" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4092,7 +4182,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="WebReportInfrormationResponse">
-      <soap:operation soapAction="http://kms-oms.ru/WebReportInfrormationResponse" style="document" />
+      <soap:operation soapAction="http://localhost:8091/WebReportInfrormationResponse" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4101,7 +4191,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="WebReportVaccination">
-      <soap:operation soapAction="http://kms-oms.ru/WebReportVaccination" style="document" />
+      <soap:operation soapAction="http://localhost:8091/WebReportVaccination" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4110,7 +4200,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="WebReportFSSMonitroing">
-      <soap:operation soapAction="http://kms-oms.ru/WebReportFSSMonitroing" style="document" />
+      <soap:operation soapAction="http://localhost:8091/WebReportFSSMonitroing" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4119,7 +4209,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="WebReportProposal">
-      <soap:operation soapAction="http://kms-oms.ru/WebReportProposal" style="document" />
+      <soap:operation soapAction="http://localhost:8091/WebReportProposal" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4128,7 +4218,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="WebReportOpedFinance">
-      <soap:operation soapAction="http://kms-oms.ru/WebReportOpedFinance" style="document" />
+      <soap:operation soapAction="http://localhost:8091/WebReportOpedFinance" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4137,7 +4227,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="WebReportCadre">
-      <soap:operation soapAction="http://kms-oms.ru/WebReportCadre" style="document" />
+      <soap:operation soapAction="http://localhost:8091/WebReportCadre" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4146,7 +4236,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetReportRegionData">
-      <soap:operation soapAction="http://kms-oms.ru/GetReportRegionData" style="document" />
+      <soap:operation soapAction="http://localhost:8091/GetReportRegionData" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4155,7 +4245,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetDynamicReports">
-      <soap:operation soapAction="http://kms-oms.ru/GetDynamicReports" style="document" />
+      <soap:operation soapAction="http://localhost:8091/GetDynamicReports" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4164,7 +4254,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetDynamicReportXml">
-      <soap:operation soapAction="http://kms-oms.ru/GetDynamicReportXml" style="document" />
+      <soap:operation soapAction="http://localhost:8091/GetDynamicReportXml" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4173,7 +4263,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SaveDynamicFlowData">
-      <soap:operation soapAction="http://kms-oms.ru/SaveDynamicFlowData" style="document" />
+      <soap:operation soapAction="http://localhost:8091/SaveDynamicFlowData" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4182,7 +4272,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetFlows">
-      <soap:operation soapAction="http://kms-oms.ru/GetFlows" style="document" />
+      <soap:operation soapAction="http://localhost:8091/GetFlows" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4191,7 +4281,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SaveScan">
-      <soap:operation soapAction="http://kms-oms.ru/SaveScan" style="document" />
+      <soap:operation soapAction="http://localhost:8091/SaveScan" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4200,7 +4290,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeleteScan">
-      <soap:operation soapAction="http://kms-oms.ru/DeleteScan" style="document" />
+      <soap:operation soapAction="http://localhost:8091/DeleteScan" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4209,7 +4299,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateReportDisp">
-      <soap:operation soapAction="http://kms-oms.ru/CreateReportDisp" style="document" />
+      <soap:operation soapAction="http://localhost:8091/CreateReportDisp" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4218,7 +4308,16 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ChangeStatus">
-      <soap:operation soapAction="http://kms-oms.ru/ChangeStatus" style="document" />
+      <soap:operation soapAction="http://localhost:8091/ChangeStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeDataSource">
+      <soap:operation soapAction="http://localhost:8091/ChangeDataSource" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4227,7 +4326,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CollectSummaryReport">
-      <soap:operation soapAction="http://kms-oms.ru/CollectSummaryReport" style="document" />
+      <soap:operation soapAction="http://localhost:8091/CollectSummaryReport" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4236,7 +4335,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetReport">
-      <soap:operation soapAction="http://kms-oms.ru/GetReport" style="document" />
+      <soap:operation soapAction="http://localhost:8091/GetReport" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4245,7 +4344,25 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SaveReport">
-      <soap:operation soapAction="http://kms-oms.ru/SaveReport" style="document" />
+      <soap:operation soapAction="http://localhost:8091/SaveReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveReportDataSourceHandle">
+      <soap:operation soapAction="http://localhost:8091/SaveReportDataSourceHandle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveReportDataSourceExcel">
+      <soap:operation soapAction="http://localhost:8091/SaveReportDataSourceExcel" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4254,7 +4371,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SendNotification">
-      <soap:operation soapAction="http://kms-oms.ru/SendNotification" style="document" />
+      <soap:operation soapAction="http://localhost:8091/SendNotification" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4263,7 +4380,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetComments">
-      <soap:operation soapAction="http://kms-oms.ru/GetComments" style="document" />
+      <soap:operation soapAction="http://localhost:8091/GetComments" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4272,7 +4389,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="IsReportHasComments">
-      <soap:operation soapAction="http://kms-oms.ru/IsReportHasComments" style="document" />
+      <soap:operation soapAction="http://localhost:8091/IsReportHasComments" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4281,7 +4398,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="AddComment">
-      <soap:operation soapAction="http://kms-oms.ru/AddComment" style="document" />
+      <soap:operation soapAction="http://localhost:8091/AddComment" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4290,7 +4407,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetReportsWithUnreadComments">
-      <soap:operation soapAction="http://kms-oms.ru/GetReportsWithUnreadComments" style="document" />
+      <soap:operation soapAction="http://localhost:8091/GetReportsWithUnreadComments" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4299,7 +4416,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CheckPasswordNew">
-      <soap:operation soapAction="http://kms-oms.ru/CheckPasswordNew" style="document" />
+      <soap:operation soapAction="http://localhost:8091/CheckPasswordNew" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4308,7 +4425,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CollectClientContext">
-      <soap:operation soapAction="http://kms-oms.ru/CollectClientContext" style="document" />
+      <soap:operation soapAction="http://localhost:8091/CollectClientContext" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4317,7 +4434,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SaveUser">
-      <soap:operation soapAction="http://kms-oms.ru/SaveUser" style="document" />
+      <soap:operation soapAction="http://localhost:8091/SaveUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4326,7 +4443,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="EditFilial">
-      <soap:operation soapAction="http://kms-oms.ru/EditFilial" style="document" />
+      <soap:operation soapAction="http://localhost:8091/EditFilial" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4335,7 +4452,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UploadFile">
-      <soap:operation soapAction="http://kms-oms.ru/UploadFile" style="document" />
+      <soap:operation soapAction="http://localhost:8091/UploadFile" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4344,7 +4461,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DownloadFile">
-      <soap:operation soapAction="http://kms-oms.ru/DownloadFile" style="document" />
+      <soap:operation soapAction="http://localhost:8091/DownloadFile" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4353,7 +4470,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DownloadDllFile">
-      <soap:operation soapAction="http://kms-oms.ru/DownloadDllFile" style="document" />
+      <soap:operation soapAction="http://localhost:8091/DownloadDllFile" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4362,7 +4479,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetDllFileNames">
-      <soap:operation soapAction="http://kms-oms.ru/GetDllFileNames" style="document" />
+      <soap:operation soapAction="http://localhost:8091/GetDllFileNames" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4371,7 +4488,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UploadXmlDynamicFile">
-      <soap:operation soapAction="http://kms-oms.ru/UploadXmlDynamicFile" style="document" />
+      <soap:operation soapAction="http://localhost:8091/UploadXmlDynamicFile" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4380,7 +4497,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="MethodForSendingChildModel">
-      <soap:operation soapAction="http://kms-oms.ru/MethodForSendingChildModel" style="document" />
+      <soap:operation soapAction="http://localhost:8091/MethodForSendingChildModel" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4389,7 +4506,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateReportCpnp">
-      <soap:operation soapAction="http://kms-oms.ru/CreateReportCpnp" style="document" />
+      <soap:operation soapAction="http://localhost:8091/CreateReportCpnp" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4398,7 +4515,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateReportCOped">
-      <soap:operation soapAction="http://kms-oms.ru/CreateReportCOped" style="document" />
+      <soap:operation soapAction="http://localhost:8091/CreateReportCOped" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4407,7 +4524,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateReportVSS">
-      <soap:operation soapAction="http://kms-oms.ru/CreateReportVSS" style="document" />
+      <soap:operation soapAction="http://localhost:8091/CreateReportVSS" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4416,7 +4533,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateReportCpnpM">
-      <soap:operation soapAction="http://kms-oms.ru/CreateReportCpnpM" style="document" />
+      <soap:operation soapAction="http://localhost:8091/CreateReportCpnpM" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4425,7 +4542,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateReportCardio">
-      <soap:operation soapAction="http://kms-oms.ru/CreateReportCardio" style="document" />
+      <soap:operation soapAction="http://localhost:8091/CreateReportCardio" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4434,7 +4551,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateReportCadreTable1">
-      <soap:operation soapAction="http://kms-oms.ru/CreateReportCadreTable1" style="document" />
+      <soap:operation soapAction="http://localhost:8091/CreateReportCadreTable1" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4443,7 +4560,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateReportCadreTable2">
-      <soap:operation soapAction="http://kms-oms.ru/CreateReportCadreTable2" style="document" />
+      <soap:operation soapAction="http://localhost:8091/CreateReportCadreTable2" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4452,7 +4569,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateReport262T1">
-      <soap:operation soapAction="http://kms-oms.ru/CreateReport262T1" style="document" />
+      <soap:operation soapAction="http://localhost:8091/CreateReport262T1" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4461,7 +4578,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateReport262T2">
-      <soap:operation soapAction="http://kms-oms.ru/CreateReport262T2" style="document" />
+      <soap:operation soapAction="http://localhost:8091/CreateReport262T2" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4470,7 +4587,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateReport262T3">
-      <soap:operation soapAction="http://kms-oms.ru/CreateReport262T3" style="document" />
+      <soap:operation soapAction="http://localhost:8091/CreateReport262T3" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4479,7 +4596,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateReportControlPgZpz">
-      <soap:operation soapAction="http://kms-oms.ru/CreateReportControlPgZpz" style="document" />
+      <soap:operation soapAction="http://localhost:8091/CreateReportControlPgZpz" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4488,7 +4605,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateConsolidateOnko">
-      <soap:operation soapAction="http://kms-oms.ru/CreateConsolidateOnko" style="document" />
+      <soap:operation soapAction="http://localhost:8091/CreateConsolidateOnko" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4497,7 +4614,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateConsolidateLetal">
-      <soap:operation soapAction="http://kms-oms.ru/CreateConsolidateLetal" style="document" />
+      <soap:operation soapAction="http://localhost:8091/CreateConsolidateLetal" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4506,7 +4623,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateDynamicReport">
-      <soap:operation soapAction="http://kms-oms.ru/CreateDynamicReport" style="document" />
+      <soap:operation soapAction="http://localhost:8091/CreateDynamicReport" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4515,7 +4632,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateConsolidate294">
-      <soap:operation soapAction="http://kms-oms.ru/CreateConsolidate294" style="document" />
+      <soap:operation soapAction="http://localhost:8091/CreateConsolidate294" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4524,7 +4641,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateZpzForWebSite">
-      <soap:operation soapAction="http://kms-oms.ru/CreateZpzForWebSite" style="document" />
+      <soap:operation soapAction="http://localhost:8091/CreateZpzForWebSite" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4536,7 +4653,7 @@
   <wsdl:binding name="EndpointSoap12" type="tns:EndpointSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="ConsolidateProposalCollect">
-      <soap12:operation soapAction="http://kms-oms.ru/ConsolidateProposalCollect" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/ConsolidateProposalCollect" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4545,7 +4662,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetCheckFFOMS2022CommonData">
-      <soap12:operation soapAction="http://kms-oms.ru/GetCheckFFOMS2022CommonData" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/GetCheckFFOMS2022CommonData" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4554,7 +4671,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetOpedFinanceList">
-      <soap12:operation soapAction="http://kms-oms.ru/GetOpedFinanceList" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/GetOpedFinanceList" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4563,7 +4680,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ConsolidateOpedFinance2">
-      <soap12:operation soapAction="http://kms-oms.ru/ConsolidateOpedFinance2" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/ConsolidateOpedFinance2" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4572,7 +4689,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ConsolidateOpedFinance1">
-      <soap12:operation soapAction="http://kms-oms.ru/ConsolidateOpedFinance1" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/ConsolidateOpedFinance1" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4581,7 +4698,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SaveOpedFinanceList">
-      <soap12:operation soapAction="http://kms-oms.ru/SaveOpedFinanceList" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/SaveOpedFinanceList" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4590,7 +4707,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ConsolidateOpedQCollect">
-      <soap12:operation soapAction="http://kms-oms.ru/ConsolidateOpedQCollect" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/ConsolidateOpedQCollect" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4599,7 +4716,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ConsolidateCPNP2QCollect">
-      <soap12:operation soapAction="http://kms-oms.ru/ConsolidateCPNP2QCollect" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/ConsolidateCPNP2QCollect" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4608,7 +4725,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetScans">
-      <soap12:operation soapAction="http://kms-oms.ru/GetScans" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/GetScans" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4617,7 +4734,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetEmails">
-      <soap12:operation soapAction="http://kms-oms.ru/GetEmails" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/GetEmails" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4626,7 +4743,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetYearOpedData">
-      <soap12:operation soapAction="http://kms-oms.ru/GetYearOpedData" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/GetYearOpedData" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4635,7 +4752,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetIRYearData">
-      <soap12:operation soapAction="http://kms-oms.ru/GetIRYearData" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/GetIRYearData" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4644,7 +4761,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetCadreYearData">
-      <soap12:operation soapAction="http://kms-oms.ru/GetCadreYearData" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/GetCadreYearData" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4653,7 +4770,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetVacYearData">
-      <soap12:operation soapAction="http://kms-oms.ru/GetVacYearData" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/GetVacYearData" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4662,7 +4779,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetFSSMonitoringPGData">
-      <soap12:operation soapAction="http://kms-oms.ru/GetFSSMonitoringPGData" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/GetFSSMonitoringPGData" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4671,7 +4788,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SendEmail">
-      <soap12:operation soapAction="http://kms-oms.ru/SendEmail" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/SendEmail" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4680,7 +4797,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="AddEmail">
-      <soap12:operation soapAction="http://kms-oms.ru/AddEmail" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/AddEmail" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4689,7 +4806,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="EditEmail">
-      <soap12:operation soapAction="http://kms-oms.ru/EditEmail" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/EditEmail" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4698,7 +4815,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeleteEmail">
-      <soap12:operation soapAction="http://kms-oms.ru/DeleteEmail" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/DeleteEmail" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4707,7 +4824,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ChangeDynamicReportStatus">
-      <soap12:operation soapAction="http://kms-oms.ru/ChangeDynamicReportStatus" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/ChangeDynamicReportStatus" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4716,7 +4833,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SaveDynamicReport">
-      <soap12:operation soapAction="http://kms-oms.ru/SaveDynamicReport" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/SaveDynamicReport" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4725,7 +4842,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetReportDynamicFlows">
-      <soap12:operation soapAction="http://kms-oms.ru/GetReportDynamicFlows" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/GetReportDynamicFlows" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4734,7 +4851,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetScansDynamic">
-      <soap12:operation soapAction="http://kms-oms.ru/GetScansDynamic" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/GetScansDynamic" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4743,7 +4860,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SaveDynamicScan">
-      <soap12:operation soapAction="http://kms-oms.ru/SaveDynamicScan" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/SaveDynamicScan" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4752,7 +4869,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeleteDynamicScan">
-      <soap12:operation soapAction="http://kms-oms.ru/DeleteDynamicScan" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/DeleteDynamicScan" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4761,7 +4878,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetReportDynamicById">
-      <soap12:operation soapAction="http://kms-oms.ru/GetReportDynamicById" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/GetReportDynamicById" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4770,7 +4887,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetReportDynamicFlowById">
-      <soap12:operation soapAction="http://kms-oms.ru/GetReportDynamicFlowById" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/GetReportDynamicFlowById" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4779,7 +4896,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="WebReportOped">
-      <soap12:operation soapAction="http://kms-oms.ru/WebReportOped" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/WebReportOped" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4788,7 +4905,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="WebReportInfrormationResponse">
-      <soap12:operation soapAction="http://kms-oms.ru/WebReportInfrormationResponse" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/WebReportInfrormationResponse" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4797,7 +4914,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="WebReportVaccination">
-      <soap12:operation soapAction="http://kms-oms.ru/WebReportVaccination" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/WebReportVaccination" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4806,7 +4923,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="WebReportFSSMonitroing">
-      <soap12:operation soapAction="http://kms-oms.ru/WebReportFSSMonitroing" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/WebReportFSSMonitroing" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4815,7 +4932,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="WebReportProposal">
-      <soap12:operation soapAction="http://kms-oms.ru/WebReportProposal" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/WebReportProposal" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4824,7 +4941,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="WebReportOpedFinance">
-      <soap12:operation soapAction="http://kms-oms.ru/WebReportOpedFinance" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/WebReportOpedFinance" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4833,7 +4950,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="WebReportCadre">
-      <soap12:operation soapAction="http://kms-oms.ru/WebReportCadre" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/WebReportCadre" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4842,7 +4959,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetReportRegionData">
-      <soap12:operation soapAction="http://kms-oms.ru/GetReportRegionData" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/GetReportRegionData" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4851,7 +4968,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetDynamicReports">
-      <soap12:operation soapAction="http://kms-oms.ru/GetDynamicReports" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/GetDynamicReports" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4860,7 +4977,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetDynamicReportXml">
-      <soap12:operation soapAction="http://kms-oms.ru/GetDynamicReportXml" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/GetDynamicReportXml" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4869,7 +4986,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SaveDynamicFlowData">
-      <soap12:operation soapAction="http://kms-oms.ru/SaveDynamicFlowData" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/SaveDynamicFlowData" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4878,7 +4995,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetFlows">
-      <soap12:operation soapAction="http://kms-oms.ru/GetFlows" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/GetFlows" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4887,7 +5004,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SaveScan">
-      <soap12:operation soapAction="http://kms-oms.ru/SaveScan" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/SaveScan" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4896,7 +5013,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeleteScan">
-      <soap12:operation soapAction="http://kms-oms.ru/DeleteScan" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/DeleteScan" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4905,7 +5022,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateReportDisp">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateReportDisp" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/CreateReportDisp" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4914,7 +5031,16 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ChangeStatus">
-      <soap12:operation soapAction="http://kms-oms.ru/ChangeStatus" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/ChangeStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeDataSource">
+      <soap12:operation soapAction="http://localhost:8091/ChangeDataSource" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4923,7 +5049,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CollectSummaryReport">
-      <soap12:operation soapAction="http://kms-oms.ru/CollectSummaryReport" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/CollectSummaryReport" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4932,7 +5058,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetReport">
-      <soap12:operation soapAction="http://kms-oms.ru/GetReport" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/GetReport" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4941,7 +5067,25 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SaveReport">
-      <soap12:operation soapAction="http://kms-oms.ru/SaveReport" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/SaveReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveReportDataSourceHandle">
+      <soap12:operation soapAction="http://localhost:8091/SaveReportDataSourceHandle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveReportDataSourceExcel">
+      <soap12:operation soapAction="http://localhost:8091/SaveReportDataSourceExcel" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4950,7 +5094,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SendNotification">
-      <soap12:operation soapAction="http://kms-oms.ru/SendNotification" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/SendNotification" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4959,7 +5103,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetComments">
-      <soap12:operation soapAction="http://kms-oms.ru/GetComments" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/GetComments" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4968,7 +5112,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="IsReportHasComments">
-      <soap12:operation soapAction="http://kms-oms.ru/IsReportHasComments" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/IsReportHasComments" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4977,7 +5121,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="AddComment">
-      <soap12:operation soapAction="http://kms-oms.ru/AddComment" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/AddComment" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4986,7 +5130,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetReportsWithUnreadComments">
-      <soap12:operation soapAction="http://kms-oms.ru/GetReportsWithUnreadComments" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/GetReportsWithUnreadComments" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4995,7 +5139,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CheckPasswordNew">
-      <soap12:operation soapAction="http://kms-oms.ru/CheckPasswordNew" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/CheckPasswordNew" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5004,7 +5148,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CollectClientContext">
-      <soap12:operation soapAction="http://kms-oms.ru/CollectClientContext" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/CollectClientContext" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5013,7 +5157,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="SaveUser">
-      <soap12:operation soapAction="http://kms-oms.ru/SaveUser" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/SaveUser" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5022,7 +5166,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="EditFilial">
-      <soap12:operation soapAction="http://kms-oms.ru/EditFilial" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/EditFilial" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5031,7 +5175,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UploadFile">
-      <soap12:operation soapAction="http://kms-oms.ru/UploadFile" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/UploadFile" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5040,7 +5184,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DownloadFile">
-      <soap12:operation soapAction="http://kms-oms.ru/DownloadFile" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/DownloadFile" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5049,7 +5193,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DownloadDllFile">
-      <soap12:operation soapAction="http://kms-oms.ru/DownloadDllFile" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/DownloadDllFile" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5058,7 +5202,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetDllFileNames">
-      <soap12:operation soapAction="http://kms-oms.ru/GetDllFileNames" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/GetDllFileNames" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5067,7 +5211,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UploadXmlDynamicFile">
-      <soap12:operation soapAction="http://kms-oms.ru/UploadXmlDynamicFile" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/UploadXmlDynamicFile" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5076,7 +5220,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="MethodForSendingChildModel">
-      <soap12:operation soapAction="http://kms-oms.ru/MethodForSendingChildModel" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/MethodForSendingChildModel" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5085,7 +5229,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateReportCpnp">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateReportCpnp" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/CreateReportCpnp" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5094,7 +5238,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateReportCOped">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateReportCOped" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/CreateReportCOped" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5103,7 +5247,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateReportVSS">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateReportVSS" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/CreateReportVSS" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5112,7 +5256,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateReportCpnpM">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateReportCpnpM" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/CreateReportCpnpM" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5121,7 +5265,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateReportCardio">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateReportCardio" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/CreateReportCardio" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5130,7 +5274,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateReportCadreTable1">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateReportCadreTable1" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/CreateReportCadreTable1" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5139,7 +5283,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateReportCadreTable2">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateReportCadreTable2" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/CreateReportCadreTable2" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5148,7 +5292,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateReport262T1">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateReport262T1" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/CreateReport262T1" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5157,7 +5301,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateReport262T2">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateReport262T2" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/CreateReport262T2" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5166,7 +5310,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateReport262T3">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateReport262T3" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/CreateReport262T3" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5175,7 +5319,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateReportControlPgZpz">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateReportControlPgZpz" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/CreateReportControlPgZpz" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5184,7 +5328,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateConsolidateOnko">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateConsolidateOnko" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/CreateConsolidateOnko" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5193,7 +5337,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateConsolidateLetal">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateConsolidateLetal" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/CreateConsolidateLetal" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5202,7 +5346,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateDynamicReport">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateDynamicReport" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/CreateDynamicReport" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5211,7 +5355,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateConsolidate294">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateConsolidate294" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/CreateConsolidate294" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5220,7 +5364,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateZpzForWebSite">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateZpzForWebSite" style="document" />
+      <soap12:operation soapAction="http://localhost:8091/CreateZpzForWebSite" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5231,10 +5375,10 @@
   </wsdl:binding>
   <wsdl:service name="Endpoint">
     <wsdl:port name="EndpointSoap" binding="tns:EndpointSoap">
-      <soap:address location="http://localhost:8091/Endpoint.asmx" />
+      <soap:address location="http://localhost:8091/endpoint.asmx" />
     </wsdl:port>
     <wsdl:port name="EndpointSoap12" binding="tns:EndpointSoap12">
-      <soap12:address location="http://localhost:8091/Endpoint.asmx" />
+      <soap12:address location="http://localhost:8091/endpoint.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

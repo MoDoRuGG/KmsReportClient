@@ -87,7 +87,7 @@ namespace KmsReportClient.Report.Basic
                 SetCalculateValue();
             }
         }
-        public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status)
+        public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status, DataSource datasource)
         {
 
         }
@@ -95,15 +95,19 @@ namespace KmsReportClient.Report.Basic
         {
             Report = new ReportOped { ReportDataList = new ReportOpedDto[] { }, IdType = IdReportType };
         }
-        public override bool IsVisibleBtnDownloadExcel()
-        {
-            return false;
+        public override bool IsVisibleBtnDownloadExcel() => false;
 
-        }
+        public override bool IsVisibleBtnHandle() => false;
+
         public override void MapForAutoFill(AbstractReport report)
         {
 
         }
+
+        public override void SaveReportDataSourceExcel()
+        { }
+        public override void SaveReportDataSourceHandle()
+        { }
         public override void SaveToDb()
         {
             var request = new SaveReportRequest

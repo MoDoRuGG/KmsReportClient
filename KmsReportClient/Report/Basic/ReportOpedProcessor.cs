@@ -241,21 +241,23 @@ namespace KmsReportClient.Report.Basic
         }
 
 
-        public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status)
+        public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status, DataSource datasource)
         {
 
         }
-
+        public override void SaveReportDataSourceExcel()
+        { }
+        public override void SaveReportDataSourceHandle()
+        { }
         public override void InitReport()
         {
             Report = new ReportOped { ReportDataList = new ReportOpedDto[] { }, IdType = IdReportType };
 
         }
 
-        public override bool IsVisibleBtnDownloadExcel()
-        {
-            return false;
-        }
+        public override bool IsVisibleBtnDownloadExcel() => false;
+       
+        public override bool IsVisibleBtnHandle() => false;
 
         public override void MapForAutoFill(AbstractReport report)
         {
