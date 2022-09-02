@@ -15,7 +15,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateProposal", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateProposal", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ConsolidateProposal : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -152,7 +152,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CheckFFOMS2022CommonData", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CheckFFOMS2022CommonData", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class CheckFFOMS2022CommonData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -241,7 +241,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OpedFinancePlanDictionaryItem", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OpedFinancePlanDictionaryItem", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class OpedFinancePlanDictionaryItem : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -332,7 +332,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateOpedFinance_2", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateOpedFinance_2", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ConsolidateOpedFinance_2 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -753,7 +753,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateOpedFinance_1", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateOpedFinance_1", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ConsolidateOpedFinance_1 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -980,7 +980,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateOpedQ", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateOpedQ", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ConsolidateOpedQ : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -1131,7 +1131,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateCPNP_Q_2", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateCPNP_Q_2", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ConsolidateCPNP_Q_2 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -1206,7 +1206,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportScanModel", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportScanModel", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportScanModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -1328,7 +1328,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="KmsReportDictionary", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="KmsReportDictionary", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class KmsReportDictionary : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -1421,7 +1421,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportOpedDto", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportOpedDto", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportOpedDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -1542,7 +1542,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportInfrormationResponseDataDto", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportInfrormationResponseDataDto", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportInfrormationResponseDataDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -1646,7 +1646,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportCadreDataDto", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportCadreDataDto", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportCadreDataDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -2095,7 +2095,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AbstractReport", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AbstractReport", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportOped))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportInfrormationResponse))]
@@ -2425,7 +2425,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportOped", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportOped", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportOped : KmsReportClient.External.AbstractReport {
         
@@ -2448,7 +2448,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportInfrormationResponse", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportInfrormationResponse", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportInfrormationResponse : KmsReportClient.External.AbstractReport {
         
@@ -2471,7 +2471,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportFSSMonitroing", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportFSSMonitroing", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportFSSMonitroing : KmsReportClient.External.AbstractReport {
         
@@ -2509,7 +2509,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportProposal", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportProposal", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportProposal : KmsReportClient.External.AbstractReport {
         
@@ -2607,7 +2607,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportOpedFinance", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportOpedFinance", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportOpedFinance : KmsReportClient.External.AbstractReport {
         
@@ -2645,7 +2645,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportCadre", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportCadre", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportCadre : KmsReportClient.External.AbstractReport {
         
@@ -2668,7 +2668,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report262", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report262", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Report262 : KmsReportClient.External.AbstractReport {
         
@@ -2691,7 +2691,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report294", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report294", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Report294 : KmsReportClient.External.AbstractReport {
         
@@ -2714,7 +2714,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportIizl", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportIizl", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportIizl : KmsReportClient.External.AbstractReport {
         
@@ -2737,7 +2737,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportPg", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportPg", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportPg : KmsReportClient.External.AbstractReport {
         
@@ -2760,7 +2760,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportVaccination", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportVaccination", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportVaccination : KmsReportClient.External.AbstractReport {
         
@@ -2946,7 +2946,7 @@ namespace KmsReportClient.External {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportStatus", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportStatus", Namespace="http://kms-oms.ru/")]
     public enum ReportStatus : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -2969,7 +2969,7 @@ namespace KmsReportClient.External {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DataSource", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DataSource", Namespace="http://kms-oms.ru/")]
     public enum DataSource : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -2984,7 +2984,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportInfrormationResponseDto", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportInfrormationResponseDto", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportInfrormationResponseDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -3045,7 +3045,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FSSMonitroingData", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FSSMonitroingData", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class FSSMonitroingData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -3150,7 +3150,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportOpedFinanceData", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportOpedFinanceData", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportOpedFinanceData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -3226,7 +3226,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportCadreDto", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportCadreDto", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportCadreDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -3287,7 +3287,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report262Dto", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report262Dto", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Report262Dto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -3364,7 +3364,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report262DataDto", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report262DataDto", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Report262DataDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -3543,7 +3543,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report262Table3Data", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report262Table3Data", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Report262Table3Data : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -3768,7 +3768,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report294Dto", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report294Dto", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Report294Dto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -3829,7 +3829,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report294DataDto", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report294DataDto", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Report294DataDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -4069,7 +4069,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportIizlDto", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportIizlDto", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportIizlDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -4160,7 +4160,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportIizlDataDto", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportIizlDataDto", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportIizlDataDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -4311,7 +4311,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportPgDto", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportPgDto", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportPgDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -4372,7 +4372,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportPgDataDto", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportPgDataDto", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportPgDataDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -4687,7 +4687,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FSSMonitoringPgDataDto", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FSSMonitoringPgDataDto", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class FSSMonitoringPgDataDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -4777,14 +4777,14 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfString", Namespace="http://localhost:8091/", ItemName="string")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfString", Namespace="http://kms-oms.ru/", ItemName="string")]
     [System.SerializableAttribute()]
     public class ArrayOfString : System.Collections.Generic.List<string> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportDynamicDto", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportDynamicDto", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportDynamicDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -4936,7 +4936,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report_Dynamic", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report_Dynamic", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Report_Dynamic : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -5105,7 +5105,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Employee", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Employee", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Employee : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -5436,7 +5436,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report_Dynamic_Flow", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report_Dynamic_Flow", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Report_Dynamic_Flow : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -5637,7 +5637,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Region", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Region", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Region : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -5842,7 +5842,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Scan_Dynamic", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Scan_Dynamic", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Scan_Dynamic : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -5933,7 +5933,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report_Dynamic_Data", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report_Dynamic_Data", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Report_Dynamic_Data : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -6040,7 +6040,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Responsible_Employee", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Responsible_Employee", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Responsible_Employee : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -6163,7 +6163,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Comment", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Comment", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Comment : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -6315,7 +6315,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Scans_Base", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Scans_Base", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Scans_Base : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -6498,7 +6498,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report_Flow", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report_Flow", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Report_Flow : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -6931,7 +6931,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report_Type", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report_Type", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Report_Type : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -7087,7 +7087,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report_Data", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report_Data", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Report_Data : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -7432,7 +7432,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report_f262", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report_f262", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Report_f262 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -7657,7 +7657,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report262_Table3", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report262_Table3", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Report262_Table3 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -7928,7 +7928,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report_f294", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report_f294", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Report_f294 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -8214,7 +8214,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report_Pg", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report_Pg", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Report_Pg : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -8575,7 +8575,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report_InfrormationResponse", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report_InfrormationResponse", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Report_InfrormationResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -8710,7 +8710,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report_Oped", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report_Oped", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Report_Oped : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -8877,7 +8877,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report_Vaccination", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report_Vaccination", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Report_Vaccination : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -9102,7 +9102,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FSSMonitroing", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FSSMonitroing", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class FSSMonitroing : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -9223,7 +9223,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report_Proposal", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report_Proposal", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Report_Proposal : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -9374,7 +9374,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report_OpedFinance", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report_OpedFinance", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Report_OpedFinance : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -9496,7 +9496,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report_Iilz", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report_Iilz", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Report_Iilz : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -9693,7 +9693,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report_Cadre", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report_Cadre", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Report_Cadre : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -10188,7 +10188,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OpedFinancePlan", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OpedFinancePlan", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class OpedFinancePlan : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -10295,7 +10295,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportDynamicFlowDto", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportDynamicFlowDto", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportDynamicFlowDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -10415,7 +10415,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportDynamicScanModel", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportDynamicScanModel", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportDynamicScanModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -10490,7 +10490,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DynamicDataDto", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DynamicDataDto", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class DynamicDataDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -10566,7 +10566,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GetDynamicReportResponse", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GetDynamicReportResponse", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class GetDynamicReportResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -10626,7 +10626,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportFlowDto", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportFlowDto", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportFlowDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -10794,7 +10794,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateDisp", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateDisp", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ConsolidateDisp : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -10935,7 +10935,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DispComplaint", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DispComplaint", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class DispComplaint : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -11204,7 +11204,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DispProtection", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DispProtection", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class DispProtection : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -11473,7 +11473,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DispMek", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DispMek", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class DispMek : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -11742,7 +11742,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DispMee", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DispMee", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class DispMee : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -12071,7 +12071,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DispEkmp", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DispEkmp", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class DispEkmp : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -12700,7 +12700,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DispFinance", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DispFinance", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class DispFinance : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -13193,7 +13193,7 @@ namespace KmsReportClient.External {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportType", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportType", Namespace="http://kms-oms.ru/")]
     public enum ReportType : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -13241,7 +13241,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="NotificationRequest", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="NotificationRequest", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class NotificationRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -13381,7 +13381,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportComment", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportComment", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportComment : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -13457,7 +13457,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="UnreadComment", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UnreadComment", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class UnreadComment : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -13533,7 +13533,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ClientContext", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ClientContext", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ClientContext : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -13642,7 +13642,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HeadCompany", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HeadCompany", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class HeadCompany : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -13735,7 +13735,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateCpnp", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateCpnp", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ConsolidateCpnp : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -13840,7 +13840,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateOped", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateOped", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ConsolidateOped : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -13917,7 +13917,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OpedData", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OpedData", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class OpedData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -14006,7 +14006,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateVSS", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateVSS", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ConsolidateVSS : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -14096,7 +14096,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateCpnpM", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateCpnpM", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ConsolidateCpnpM : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -14171,7 +14171,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateCardio", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateCardio", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ConsolidateCardio : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -14280,7 +14280,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CardioComplaint", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CardioComplaint", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class CardioComplaint : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -14369,7 +14369,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CardioProtection", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CardioProtection", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class CardioProtection : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -14458,7 +14458,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CardioMeeEkmp", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CardioMeeEkmp", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class CardioMeeEkmp : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -15072,7 +15072,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CardioFinance", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CardioFinance", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class CardioFinance : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -15311,7 +15311,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CReportCadreTable1", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CReportCadreTable1", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class CReportCadreTable1 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -15372,7 +15372,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CReportCadreTable2", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CReportCadreTable2", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class CReportCadreTable2 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -15433,7 +15433,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CReport262Table1", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CReport262Table1", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class CReport262Table1 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -15510,7 +15510,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CReport262Table1Row", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CReport262Table1Row", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class CReport262Table1Row : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -15570,7 +15570,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CReport262Table2", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CReport262Table2", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class CReport262Table2 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -15631,7 +15631,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CReport262Table3", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CReport262Table3", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class CReport262Table3 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -15692,7 +15692,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CReportPg", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CReportPg", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class CReportPg : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -15801,7 +15801,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PgExpertise", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PgExpertise", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class PgExpertise : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -16100,7 +16100,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PgNormative", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PgNormative", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class PgNormative : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -16429,7 +16429,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PgFinance", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PgFinance", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class PgFinance : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -16533,7 +16533,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PgPersonnel", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PgPersonnel", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class PgPersonnel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -16817,7 +16817,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateOnko", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateOnko", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ConsolidateOnko : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -16958,7 +16958,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OnkoComplaint", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OnkoComplaint", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class OnkoComplaint : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -17107,7 +17107,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OnkoProtection", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OnkoProtection", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class OnkoProtection : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -17286,7 +17286,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OnkoMek", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OnkoMek", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class OnkoMek : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -17420,7 +17420,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OnkoMee", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OnkoMee", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class OnkoMee : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -17554,7 +17554,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OnkoEkmp", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OnkoEkmp", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class OnkoEkmp : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -17793,7 +17793,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OnkoFinance", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OnkoFinance", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class OnkoFinance : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -17987,7 +17987,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateLetal", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateLetal", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ConsolidateLetal : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -18048,7 +18048,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="LetalData", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="LetalData", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class LetalData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -18437,7 +18437,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Consolidate294", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Consolidate294", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Consolidate294 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -18594,7 +18594,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Dispanserization", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Dispanserization", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Dispanserization : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -18805,7 +18805,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DispensaryObservation", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DispensaryObservation", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class DispensaryObservation : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -18956,7 +18956,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PhoneQuestionary", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PhoneQuestionary", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class PhoneQuestionary : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -19047,7 +19047,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="InsuranceRepresentative", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InsuranceRepresentative", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class InsuranceRepresentative : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -19198,7 +19198,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Treatment", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Treatment", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Treatment : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -19409,7 +19409,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Efficiency", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Efficiency", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Efficiency : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -19545,7 +19545,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ZpzForWebSite", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ZpzForWebSite", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ZpzForWebSite : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -19702,7 +19702,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ZpzTreatment", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ZpzTreatment", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ZpzTreatment : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -19777,7 +19777,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ZpzStatistics", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ZpzStatistics", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ZpzStatistics : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -19837,7 +19837,7 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Expertise", Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Expertise", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Expertise : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -19926,562 +19926,561 @@ namespace KmsReportClient.External {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://localhost:8091/", ConfigurationName="External.EndpointSoap")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://kms-oms.ru/", ConfigurationName="External.EndpointSoap")]
     public interface EndpointSoap {
         
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/ConsolidateProposalCollect", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ConsolidateProposalCollect", ReplyAction="*")]
         KmsReportClient.External.ConsolidateProposalCollectResponse ConsolidateProposalCollect(KmsReportClient.External.ConsolidateProposalCollectRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/ConsolidateProposalCollect", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ConsolidateProposalCollect", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.ConsolidateProposalCollectResponse> ConsolidateProposalCollectAsync(KmsReportClient.External.ConsolidateProposalCollectRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем year из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetCheckFFOMS2022CommonData", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем year из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetCheckFFOMS2022CommonData", ReplyAction="*")]
         KmsReportClient.External.GetCheckFFOMS2022CommonDataResponse GetCheckFFOMS2022CommonData(KmsReportClient.External.GetCheckFFOMS2022CommonDataRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetCheckFFOMS2022CommonData", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetCheckFFOMS2022CommonData", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.GetCheckFFOMS2022CommonDataResponse> GetCheckFFOMS2022CommonDataAsync(KmsReportClient.External.GetCheckFFOMS2022CommonDataRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем year из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetOpedFinanceList", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем year из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetOpedFinanceList", ReplyAction="*")]
         KmsReportClient.External.GetOpedFinanceListResponse GetOpedFinanceList(KmsReportClient.External.GetOpedFinanceListRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetOpedFinanceList", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetOpedFinanceList", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.GetOpedFinanceListResponse> GetOpedFinanceListAsync(KmsReportClient.External.GetOpedFinanceListRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем year из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/ConsolidateOpedFinance2", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем year из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ConsolidateOpedFinance2", ReplyAction="*")]
         KmsReportClient.External.ConsolidateOpedFinance2Response ConsolidateOpedFinance2(KmsReportClient.External.ConsolidateOpedFinance2Request request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/ConsolidateOpedFinance2", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ConsolidateOpedFinance2", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.ConsolidateOpedFinance2Response> ConsolidateOpedFinance2Async(KmsReportClient.External.ConsolidateOpedFinance2Request request);
         
-        // CODEGEN: Контракт генерации сообщений с именем year из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/ConsolidateOpedFinance1", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем year из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ConsolidateOpedFinance1", ReplyAction="*")]
         KmsReportClient.External.ConsolidateOpedFinance1Response ConsolidateOpedFinance1(KmsReportClient.External.ConsolidateOpedFinance1Request request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/ConsolidateOpedFinance1", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ConsolidateOpedFinance1", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.ConsolidateOpedFinance1Response> ConsolidateOpedFinance1Async(KmsReportClient.External.ConsolidateOpedFinance1Request request);
         
-        // CODEGEN: Контракт генерации сообщений с именем plans из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/SaveOpedFinanceList", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем plans из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveOpedFinanceList", ReplyAction="*")]
         KmsReportClient.External.SaveOpedFinanceListResponse SaveOpedFinanceList(KmsReportClient.External.SaveOpedFinanceListRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/SaveOpedFinanceList", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveOpedFinanceList", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.SaveOpedFinanceListResponse> SaveOpedFinanceListAsync(KmsReportClient.External.SaveOpedFinanceListRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/ConsolidateOpedQCollect", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ConsolidateOpedQCollect", ReplyAction="*")]
         KmsReportClient.External.ConsolidateOpedQCollectResponse ConsolidateOpedQCollect(KmsReportClient.External.ConsolidateOpedQCollectRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/ConsolidateOpedQCollect", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ConsolidateOpedQCollect", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.ConsolidateOpedQCollectResponse> ConsolidateOpedQCollectAsync(KmsReportClient.External.ConsolidateOpedQCollectRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/ConsolidateCPNP2QCollect", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ConsolidateCPNP2QCollect", ReplyAction="*")]
         KmsReportClient.External.ConsolidateCPNP2QCollectResponse ConsolidateCPNP2QCollect(KmsReportClient.External.ConsolidateCPNP2QCollectRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/ConsolidateCPNP2QCollect", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ConsolidateCPNP2QCollect", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.ConsolidateCPNP2QCollectResponse> ConsolidateCPNP2QCollectAsync(KmsReportClient.External.ConsolidateCPNP2QCollectRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем GetScansResult из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetScans", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем GetScansResult из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetScans", ReplyAction="*")]
         KmsReportClient.External.GetScansResponse GetScans(KmsReportClient.External.GetScansRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetScans", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetScans", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.GetScansResponse> GetScansAsync(KmsReportClient.External.GetScansRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем GetEmailsResult из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetEmails", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем GetEmailsResult из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetEmails", ReplyAction="*")]
         KmsReportClient.External.GetEmailsResponse GetEmails(KmsReportClient.External.GetEmailsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetEmails", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetEmails", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.GetEmailsResponse> GetEmailsAsync(KmsReportClient.External.GetEmailsRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetYearOpedData", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetYearOpedData", ReplyAction="*")]
         KmsReportClient.External.GetYearOpedDataResponse GetYearOpedData(KmsReportClient.External.GetYearOpedDataRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetYearOpedData", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetYearOpedData", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.GetYearOpedDataResponse> GetYearOpedDataAsync(KmsReportClient.External.GetYearOpedDataRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetIRYearData", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetIRYearData", ReplyAction="*")]
         KmsReportClient.External.GetIRYearDataResponse GetIRYearData(KmsReportClient.External.GetIRYearDataRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetIRYearData", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetIRYearData", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.GetIRYearDataResponse> GetIRYearDataAsync(KmsReportClient.External.GetIRYearDataRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetCadreYearData", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetCadreYearData", ReplyAction="*")]
         KmsReportClient.External.GetCadreYearDataResponse GetCadreYearData(KmsReportClient.External.GetCadreYearDataRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetCadreYearData", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetCadreYearData", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.GetCadreYearDataResponse> GetCadreYearDataAsync(KmsReportClient.External.GetCadreYearDataRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetVacYearData", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetVacYearData", ReplyAction="*")]
         KmsReportClient.External.GetVacYearDataResponse GetVacYearData(KmsReportClient.External.GetVacYearDataRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetVacYearData", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetVacYearData", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.GetVacYearDataResponse> GetVacYearDataAsync(KmsReportClient.External.GetVacYearDataRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetFSSMonitoringPGData", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetFSSMonitoringPGData", ReplyAction="*")]
         KmsReportClient.External.GetFSSMonitoringPGDataResponse GetFSSMonitoringPGData(KmsReportClient.External.GetFSSMonitoringPGDataRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetFSSMonitoringPGData", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetFSSMonitoringPGData", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.GetFSSMonitoringPGDataResponse> GetFSSMonitoringPGDataAsync(KmsReportClient.External.GetFSSMonitoringPGDataRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем emails из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/SendEmail", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем emails из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SendEmail", ReplyAction="*")]
         KmsReportClient.External.SendEmailResponse SendEmail(KmsReportClient.External.SendEmailRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/SendEmail", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SendEmail", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.SendEmailResponse> SendEmailAsync(KmsReportClient.External.SendEmailRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем email из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/AddEmail", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем email из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/AddEmail", ReplyAction="*")]
         KmsReportClient.External.AddEmailResponse AddEmail(KmsReportClient.External.AddEmailRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/AddEmail", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/AddEmail", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.AddEmailResponse> AddEmailAsync(KmsReportClient.External.AddEmailRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем email из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/EditEmail", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем email из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/EditEmail", ReplyAction="*")]
         KmsReportClient.External.EditEmailResponse EditEmail(KmsReportClient.External.EditEmailRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/EditEmail", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/EditEmail", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.EditEmailResponse> EditEmailAsync(KmsReportClient.External.EditEmailRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/DeleteEmail", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/DeleteEmail", ReplyAction="*")]
         void DeleteEmail(int emailId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/DeleteEmail", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/DeleteEmail", ReplyAction="*")]
         System.Threading.Tasks.Task DeleteEmailAsync(int emailId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/ChangeDynamicReportStatus", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ChangeDynamicReportStatus", ReplyAction="*")]
         void ChangeDynamicReportStatus(int idFlow, KmsReportClient.External.ReportStatus status);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/ChangeDynamicReportStatus", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ChangeDynamicReportStatus", ReplyAction="*")]
         System.Threading.Tasks.Task ChangeDynamicReportStatusAsync(int idFlow, KmsReportClient.External.ReportStatus status);
         
-        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/SaveDynamicReport", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveDynamicReport", ReplyAction="*")]
         KmsReportClient.External.SaveDynamicReportResponse SaveDynamicReport(KmsReportClient.External.SaveDynamicReportRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/SaveDynamicReport", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveDynamicReport", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.SaveDynamicReportResponse> SaveDynamicReportAsync(KmsReportClient.External.SaveDynamicReportRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем GetReportDynamicFlowsResult из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetReportDynamicFlows", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем GetReportDynamicFlowsResult из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetReportDynamicFlows", ReplyAction="*")]
         KmsReportClient.External.GetReportDynamicFlowsResponse GetReportDynamicFlows(KmsReportClient.External.GetReportDynamicFlowsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetReportDynamicFlows", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetReportDynamicFlows", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.GetReportDynamicFlowsResponse> GetReportDynamicFlowsAsync(KmsReportClient.External.GetReportDynamicFlowsRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем GetScansDynamicResult из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetScansDynamic", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем GetScansDynamicResult из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetScansDynamic", ReplyAction="*")]
         KmsReportClient.External.GetScansDynamicResponse GetScansDynamic(KmsReportClient.External.GetScansDynamicRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetScansDynamic", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetScansDynamic", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.GetScansDynamicResponse> GetScansDynamicAsync(KmsReportClient.External.GetScansDynamicRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем fileName из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/SaveDynamicScan", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем fileName из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveDynamicScan", ReplyAction="*")]
         KmsReportClient.External.SaveDynamicScanResponse SaveDynamicScan(KmsReportClient.External.SaveDynamicScanRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/SaveDynamicScan", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveDynamicScan", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.SaveDynamicScanResponse> SaveDynamicScanAsync(KmsReportClient.External.SaveDynamicScanRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/DeleteDynamicScan", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/DeleteDynamicScan", ReplyAction="*")]
         void DeleteDynamicScan(int idDynamicScan);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/DeleteDynamicScan", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/DeleteDynamicScan", ReplyAction="*")]
         System.Threading.Tasks.Task DeleteDynamicScanAsync(int idDynamicScan);
         
-        // CODEGEN: Контракт генерации сообщений с именем GetReportDynamicByIdResult из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetReportDynamicById", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем GetReportDynamicByIdResult из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetReportDynamicById", ReplyAction="*")]
         KmsReportClient.External.GetReportDynamicByIdResponse GetReportDynamicById(KmsReportClient.External.GetReportDynamicByIdRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetReportDynamicById", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetReportDynamicById", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.GetReportDynamicByIdResponse> GetReportDynamicByIdAsync(KmsReportClient.External.GetReportDynamicByIdRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем GetReportDynamicFlowByIdResult из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetReportDynamicFlowById", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем GetReportDynamicFlowByIdResult из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetReportDynamicFlowById", ReplyAction="*")]
         KmsReportClient.External.GetReportDynamicFlowByIdResponse GetReportDynamicFlowById(KmsReportClient.External.GetReportDynamicFlowByIdRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetReportDynamicFlowById", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetReportDynamicFlowById", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.GetReportDynamicFlowByIdResponse> GetReportDynamicFlowByIdAsync(KmsReportClient.External.GetReportDynamicFlowByIdRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/WebReportOped", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/WebReportOped", ReplyAction="*")]
         KmsReportClient.External.WebReportOpedResponse WebReportOped(KmsReportClient.External.WebReportOpedRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/WebReportOped", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/WebReportOped", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.WebReportOpedResponse> WebReportOpedAsync(KmsReportClient.External.WebReportOpedRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/WebReportInfrormationResponse", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/WebReportInfrormationResponse", ReplyAction="*")]
         KmsReportClient.External.WebReportInfrormationResponseResponse WebReportInfrormationResponse(KmsReportClient.External.WebReportInfrormationResponseRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/WebReportInfrormationResponse", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/WebReportInfrormationResponse", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.WebReportInfrormationResponseResponse> WebReportInfrormationResponseAsync(KmsReportClient.External.WebReportInfrormationResponseRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/WebReportVaccination", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/WebReportVaccination", ReplyAction="*")]
         KmsReportClient.External.WebReportVaccinationResponse WebReportVaccination(KmsReportClient.External.WebReportVaccinationRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/WebReportVaccination", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/WebReportVaccination", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.WebReportVaccinationResponse> WebReportVaccinationAsync(KmsReportClient.External.WebReportVaccinationRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/WebReportFSSMonitroing", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/WebReportFSSMonitroing", ReplyAction="*")]
         KmsReportClient.External.WebReportFSSMonitroingResponse WebReportFSSMonitroing(KmsReportClient.External.WebReportFSSMonitroingRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/WebReportFSSMonitroing", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/WebReportFSSMonitroing", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.WebReportFSSMonitroingResponse> WebReportFSSMonitroingAsync(KmsReportClient.External.WebReportFSSMonitroingRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/WebReportProposal", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/WebReportProposal", ReplyAction="*")]
         KmsReportClient.External.WebReportProposalResponse WebReportProposal(KmsReportClient.External.WebReportProposalRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/WebReportProposal", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/WebReportProposal", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.WebReportProposalResponse> WebReportProposalAsync(KmsReportClient.External.WebReportProposalRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/WebReportOpedFinance", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/WebReportOpedFinance", ReplyAction="*")]
         KmsReportClient.External.WebReportOpedFinanceResponse WebReportOpedFinance(KmsReportClient.External.WebReportOpedFinanceRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/WebReportOpedFinance", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/WebReportOpedFinance", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.WebReportOpedFinanceResponse> WebReportOpedFinanceAsync(KmsReportClient.External.WebReportOpedFinanceRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/WebReportCadre", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/WebReportCadre", ReplyAction="*")]
         KmsReportClient.External.WebReportCadreResponse WebReportCadre(KmsReportClient.External.WebReportCadreRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/WebReportCadre", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/WebReportCadre", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.WebReportCadreResponse> WebReportCadreAsync(KmsReportClient.External.WebReportCadreRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем GetReportRegionDataResult из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetReportRegionData", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем GetReportRegionDataResult из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetReportRegionData", ReplyAction="*")]
         KmsReportClient.External.GetReportRegionDataResponse GetReportRegionData(KmsReportClient.External.GetReportRegionDataRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetReportRegionData", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetReportRegionData", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.GetReportRegionDataResponse> GetReportRegionDataAsync(KmsReportClient.External.GetReportRegionDataRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем GetDynamicReportsResult из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetDynamicReports", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем GetDynamicReportsResult из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetDynamicReports", ReplyAction="*")]
         KmsReportClient.External.GetDynamicReportsResponse GetDynamicReports(KmsReportClient.External.GetDynamicReportsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetDynamicReports", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetDynamicReports", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.GetDynamicReportsResponse> GetDynamicReportsAsync(KmsReportClient.External.GetDynamicReportsRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем GetDynamicReportXmlResult из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetDynamicReportXml", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем GetDynamicReportXmlResult из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetDynamicReportXml", ReplyAction="*")]
         KmsReportClient.External.GetDynamicReportXmlResponse GetDynamicReportXml(KmsReportClient.External.GetDynamicReportXmlRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetDynamicReportXml", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetDynamicReportXml", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.GetDynamicReportXmlResponse> GetDynamicReportXmlAsync(KmsReportClient.External.GetDynamicReportXmlRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем data из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/SaveDynamicFlowData", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем data из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveDynamicFlowData", ReplyAction="*")]
         KmsReportClient.External.SaveDynamicFlowDataResponse SaveDynamicFlowData(KmsReportClient.External.SaveDynamicFlowDataRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/SaveDynamicFlowData", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveDynamicFlowData", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.SaveDynamicFlowDataResponse> SaveDynamicFlowDataAsync(KmsReportClient.External.SaveDynamicFlowDataRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем filialCode из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetFlows", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем filialCode из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetFlows", ReplyAction="*")]
         KmsReportClient.External.GetFlowsResponse GetFlows(KmsReportClient.External.GetFlowsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetFlows", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetFlows", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.GetFlowsResponse> GetFlowsAsync(KmsReportClient.External.GetFlowsRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем uri из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/SaveScan", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем uri из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveScan", ReplyAction="*")]
         KmsReportClient.External.SaveScanResponse SaveScan(KmsReportClient.External.SaveScanRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/SaveScan", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveScan", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.SaveScanResponse> SaveScanAsync(KmsReportClient.External.SaveScanRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/DeleteScan", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/DeleteScan", ReplyAction="*")]
         void DeleteScan(int idReport, int idUser, int num);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/DeleteScan", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/DeleteScan", ReplyAction="*")]
         System.Threading.Tasks.Task DeleteScanAsync(int idReport, int idUser, int num);
         
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateReportDisp", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportDisp", ReplyAction="*")]
         KmsReportClient.External.CreateReportDispResponse CreateReportDisp(KmsReportClient.External.CreateReportDispRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateReportDisp", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportDisp", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.CreateReportDispResponse> CreateReportDispAsync(KmsReportClient.External.CreateReportDispRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/ChangeStatus", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ChangeStatus", ReplyAction="*")]
         void ChangeStatus(int idReport, int idUser, KmsReportClient.External.ReportStatus status);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/ChangeStatus", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ChangeStatus", ReplyAction="*")]
         System.Threading.Tasks.Task ChangeStatusAsync(int idReport, int idUser, KmsReportClient.External.ReportStatus status);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/ChangeDataSource", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ChangeDataSource", ReplyAction="*")]
         void ChangeDataSource(int idReport, int idUser, KmsReportClient.External.DataSource datasource);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/ChangeDataSource", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ChangeDataSource", ReplyAction="*")]
         System.Threading.Tasks.Task ChangeDataSourceAsync(int idReport, int idUser, KmsReportClient.External.DataSource datasource);
         
-        // CODEGEN: Контракт генерации сообщений с именем filials из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CollectSummaryReport", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем filials из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CollectSummaryReport", ReplyAction="*")]
         KmsReportClient.External.CollectSummaryReportResponse CollectSummaryReport(KmsReportClient.External.CollectSummaryReportRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CollectSummaryReport", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CollectSummaryReport", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.CollectSummaryReportResponse> CollectSummaryReportAsync(KmsReportClient.External.CollectSummaryReportRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем filialCode из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetReport", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем filialCode из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetReport", ReplyAction="*")]
         KmsReportClient.External.GetReportResponse GetReport(KmsReportClient.External.GetReportRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetReport", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetReport", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.GetReportResponse> GetReportAsync(KmsReportClient.External.GetReportRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/SaveReport", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveReport", ReplyAction="*")]
         KmsReportClient.External.SaveReportResponse SaveReport(KmsReportClient.External.SaveReportRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/SaveReport", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveReport", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.SaveReportResponse> SaveReportAsync(KmsReportClient.External.SaveReportRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/SaveReportDataSourceHandle", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveReportDataSourceHandle", ReplyAction="*")]
         KmsReportClient.External.SaveReportDataSourceHandleResponse SaveReportDataSourceHandle(KmsReportClient.External.SaveReportDataSourceHandleRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/SaveReportDataSourceHandle", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveReportDataSourceHandle", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.SaveReportDataSourceHandleResponse> SaveReportDataSourceHandleAsync(KmsReportClient.External.SaveReportDataSourceHandleRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/SaveReportDataSourceExcel", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveReportDataSourceExcel", ReplyAction="*")]
         KmsReportClient.External.SaveReportDataSourceExcelResponse SaveReportDataSourceExcel(KmsReportClient.External.SaveReportDataSourceExcelRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/SaveReportDataSourceExcel", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveReportDataSourceExcel", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.SaveReportDataSourceExcelResponse> SaveReportDataSourceExcelAsync(KmsReportClient.External.SaveReportDataSourceExcelRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем request из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/SendNotification", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем request из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SendNotification", ReplyAction="*")]
         KmsReportClient.External.SendNotificationResponse SendNotification(KmsReportClient.External.SendNotificationRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/SendNotification", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SendNotification", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.SendNotificationResponse> SendNotificationAsync(KmsReportClient.External.SendNotificationRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем filialCode из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetComments", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем filialCode из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetComments", ReplyAction="*")]
         KmsReportClient.External.GetCommentsResponse GetComments(KmsReportClient.External.GetCommentsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetComments", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetComments", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.GetCommentsResponse> GetCommentsAsync(KmsReportClient.External.GetCommentsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/IsReportHasComments", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/IsReportHasComments", ReplyAction="*")]
         bool IsReportHasComments(int idReport);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/IsReportHasComments", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/IsReportHasComments", ReplyAction="*")]
         System.Threading.Tasks.Task<bool> IsReportHasCommentsAsync(int idReport);
         
-        // CODEGEN: Контракт генерации сообщений с именем comment из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/AddComment", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем comment из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/AddComment", ReplyAction="*")]
         KmsReportClient.External.AddCommentResponse AddComment(KmsReportClient.External.AddCommentRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/AddComment", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/AddComment", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.AddCommentResponse> AddCommentAsync(KmsReportClient.External.AddCommentRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем filialCode из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetReportsWithUnreadComments", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем filialCode из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetReportsWithUnreadComments", ReplyAction="*")]
         KmsReportClient.External.GetReportsWithUnreadCommentsResponse GetReportsWithUnreadComments(KmsReportClient.External.GetReportsWithUnreadCommentsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetReportsWithUnreadComments", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetReportsWithUnreadComments", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.GetReportsWithUnreadCommentsResponse> GetReportsWithUnreadCommentsAsync(KmsReportClient.External.GetReportsWithUnreadCommentsRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем id из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CheckPasswordNew", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем id из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CheckPasswordNew", ReplyAction="*")]
         KmsReportClient.External.CheckPasswordNewResponse CheckPasswordNew(KmsReportClient.External.CheckPasswordNewRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CheckPasswordNew", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CheckPasswordNew", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.CheckPasswordNewResponse> CheckPasswordNewAsync(KmsReportClient.External.CheckPasswordNewRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем CollectClientContextResult из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CollectClientContext", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем CollectClientContextResult из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CollectClientContext", ReplyAction="*")]
         KmsReportClient.External.CollectClientContextResponse CollectClientContext(KmsReportClient.External.CollectClientContextRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CollectClientContext", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CollectClientContext", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.CollectClientContextResponse> CollectClientContextAsync(KmsReportClient.External.CollectClientContextRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем filialCode из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/SaveUser", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем filialCode из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveUser", ReplyAction="*")]
         KmsReportClient.External.SaveUserResponse SaveUser(KmsReportClient.External.SaveUserRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/SaveUser", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveUser", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.SaveUserResponse> SaveUserAsync(KmsReportClient.External.SaveUserRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем filialCode из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/EditFilial", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем filialCode из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/EditFilial", ReplyAction="*")]
         KmsReportClient.External.EditFilialResponse EditFilial(KmsReportClient.External.EditFilialRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/EditFilial", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/EditFilial", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.EditFilialResponse> EditFilialAsync(KmsReportClient.External.EditFilialRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем bytes из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/UploadFile", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем bytes из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/UploadFile", ReplyAction="*")]
         KmsReportClient.External.UploadFileResponse UploadFile(KmsReportClient.External.UploadFileRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/UploadFile", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/UploadFile", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.UploadFileResponse> UploadFileAsync(KmsReportClient.External.UploadFileRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем fileName из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/DownloadFile", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем fileName из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/DownloadFile", ReplyAction="*")]
         KmsReportClient.External.DownloadFileResponse DownloadFile(KmsReportClient.External.DownloadFileRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/DownloadFile", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/DownloadFile", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.DownloadFileResponse> DownloadFileAsync(KmsReportClient.External.DownloadFileRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем fileName из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/DownloadDllFile", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем fileName из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/DownloadDllFile", ReplyAction="*")]
         KmsReportClient.External.DownloadDllFileResponse DownloadDllFile(KmsReportClient.External.DownloadDllFileRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/DownloadDllFile", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/DownloadDllFile", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.DownloadDllFileResponse> DownloadDllFileAsync(KmsReportClient.External.DownloadDllFileRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем GetDllFileNamesResult из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetDllFileNames", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем GetDllFileNamesResult из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetDllFileNames", ReplyAction="*")]
         KmsReportClient.External.GetDllFileNamesResponse GetDllFileNames(KmsReportClient.External.GetDllFileNamesRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/GetDllFileNames", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetDllFileNames", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.GetDllFileNamesResponse> GetDllFileNamesAsync(KmsReportClient.External.GetDllFileNamesRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем bytes из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/UploadXmlDynamicFile", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем bytes из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/UploadXmlDynamicFile", ReplyAction="*")]
         KmsReportClient.External.UploadXmlDynamicFileResponse UploadXmlDynamicFile(KmsReportClient.External.UploadXmlDynamicFileRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/UploadXmlDynamicFile", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/UploadXmlDynamicFile", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.UploadXmlDynamicFileResponse> UploadXmlDynamicFileAsync(KmsReportClient.External.UploadXmlDynamicFileRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем f262 из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/MethodForSendingChildModel", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем f262 из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/MethodForSendingChildModel", ReplyAction="*")]
         KmsReportClient.External.MethodForSendingChildModelResponse MethodForSendingChildModel(KmsReportClient.External.MethodForSendingChildModelRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/MethodForSendingChildModel", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/MethodForSendingChildModel", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.MethodForSendingChildModelResponse> MethodForSendingChildModelAsync(KmsReportClient.External.MethodForSendingChildModelRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateReportCpnp", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportCpnp", ReplyAction="*")]
         KmsReportClient.External.CreateReportCpnpResponse CreateReportCpnp(KmsReportClient.External.CreateReportCpnpRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateReportCpnp", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportCpnp", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.CreateReportCpnpResponse> CreateReportCpnpAsync(KmsReportClient.External.CreateReportCpnpRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем yymmStart из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateReportCOped", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем yymmStart из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportCOped", ReplyAction="*")]
         KmsReportClient.External.CreateReportCOpedResponse CreateReportCOped(KmsReportClient.External.CreateReportCOpedRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateReportCOped", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportCOped", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.CreateReportCOpedResponse> CreateReportCOpedAsync(KmsReportClient.External.CreateReportCOpedRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateReportVSS", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportVSS", ReplyAction="*")]
         KmsReportClient.External.CreateReportVSSResponse CreateReportVSS(KmsReportClient.External.CreateReportVSSRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateReportVSS", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportVSS", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.CreateReportVSSResponse> CreateReportVSSAsync(KmsReportClient.External.CreateReportVSSRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateReportCpnpM", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportCpnpM", ReplyAction="*")]
         KmsReportClient.External.CreateReportCpnpMResponse CreateReportCpnpM(KmsReportClient.External.CreateReportCpnpMRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateReportCpnpM", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportCpnpM", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.CreateReportCpnpMResponse> CreateReportCpnpMAsync(KmsReportClient.External.CreateReportCpnpMRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateReportCardio", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportCardio", ReplyAction="*")]
         KmsReportClient.External.CreateReportCardioResponse CreateReportCardio(KmsReportClient.External.CreateReportCardioRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateReportCardio", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportCardio", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.CreateReportCardioResponse> CreateReportCardioAsync(KmsReportClient.External.CreateReportCardioRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateReportCadreTable1", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportCadreTable1", ReplyAction="*")]
         KmsReportClient.External.CreateReportCadreTable1Response CreateReportCadreTable1(KmsReportClient.External.CreateReportCadreTable1Request request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateReportCadreTable1", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportCadreTable1", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.CreateReportCadreTable1Response> CreateReportCadreTable1Async(KmsReportClient.External.CreateReportCadreTable1Request request);
         
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateReportCadreTable2", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportCadreTable2", ReplyAction="*")]
         KmsReportClient.External.CreateReportCadreTable2Response CreateReportCadreTable2(KmsReportClient.External.CreateReportCadreTable2Request request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateReportCadreTable2", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportCadreTable2", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.CreateReportCadreTable2Response> CreateReportCadreTable2Async(KmsReportClient.External.CreateReportCadreTable2Request request);
         
-        // CODEGEN: Контракт генерации сообщений с именем CreateReport262T1Result из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateReport262T1", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем CreateReport262T1Result из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReport262T1", ReplyAction="*")]
         KmsReportClient.External.CreateReport262T1Response CreateReport262T1(KmsReportClient.External.CreateReport262T1Request request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateReport262T1", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReport262T1", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.CreateReport262T1Response> CreateReport262T1Async(KmsReportClient.External.CreateReport262T1Request request);
         
-        // CODEGEN: Контракт генерации сообщений с именем yymmSt из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateReport262T2", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем yymmSt из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReport262T2", ReplyAction="*")]
         KmsReportClient.External.CreateReport262T2Response CreateReport262T2(KmsReportClient.External.CreateReport262T2Request request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateReport262T2", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReport262T2", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.CreateReport262T2Response> CreateReport262T2Async(KmsReportClient.External.CreateReport262T2Request request);
         
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateReport262T3", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReport262T3", ReplyAction="*")]
         KmsReportClient.External.CreateReport262T3Response CreateReport262T3(KmsReportClient.External.CreateReport262T3Request request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateReport262T3", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReport262T3", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.CreateReport262T3Response> CreateReport262T3Async(KmsReportClient.External.CreateReport262T3Request request);
         
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateReportControlPgZpz", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportControlPgZpz", ReplyAction="*")]
         KmsReportClient.External.CreateReportControlPgZpzResponse CreateReportControlPgZpz(KmsReportClient.External.CreateReportControlPgZpzRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateReportControlPgZpz", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportControlPgZpz", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.CreateReportControlPgZpzResponse> CreateReportControlPgZpzAsync(KmsReportClient.External.CreateReportControlPgZpzRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateConsolidateOnko", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidateOnko", ReplyAction="*")]
         KmsReportClient.External.CreateConsolidateOnkoResponse CreateConsolidateOnko(KmsReportClient.External.CreateConsolidateOnkoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateConsolidateOnko", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidateOnko", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateOnkoResponse> CreateConsolidateOnkoAsync(KmsReportClient.External.CreateConsolidateOnkoRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateConsolidateLetal", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidateLetal", ReplyAction="*")]
         KmsReportClient.External.CreateConsolidateLetalResponse CreateConsolidateLetal(KmsReportClient.External.CreateConsolidateLetalRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateConsolidateLetal", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidateLetal", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateLetalResponse> CreateConsolidateLetalAsync(KmsReportClient.External.CreateConsolidateLetalRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateDynamicReport", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateDynamicReport", ReplyAction="*")]
         KmsReportClient.External.CreateDynamicReportResponse CreateDynamicReport(KmsReportClient.External.CreateDynamicReportRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateDynamicReport", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateDynamicReport", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.CreateDynamicReportResponse> CreateDynamicReportAsync(KmsReportClient.External.CreateDynamicReportRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateConsolidate294", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidate294", ReplyAction="*")]
         KmsReportClient.External.CreateConsolidate294Response CreateConsolidate294(KmsReportClient.External.CreateConsolidate294Request request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateConsolidate294", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidate294", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidate294Response> CreateConsolidate294Async(KmsReportClient.External.CreateConsolidate294Request request);
         
-        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://localhost:8091/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateZpzForWebSite", ReplyAction="*")]
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateZpzForWebSite", ReplyAction="*")]
         KmsReportClient.External.CreateZpzForWebSiteResponse CreateZpzForWebSite(KmsReportClient.External.CreateZpzForWebSiteRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8091/CreateZpzForWebSite", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateZpzForWebSite", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.CreateZpzForWebSiteResponse> CreateZpzForWebSiteAsync(KmsReportClient.External.CreateZpzForWebSiteRequest request);
-        object SaveReportDataSourceHandle(SaveReportDataSourceExcelRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -20490,7 +20489,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ConsolidateProposalCollectRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsolidateProposalCollect", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsolidateProposalCollect", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.ConsolidateProposalCollectRequestBody Body;
         
         public ConsolidateProposalCollectRequest() {
@@ -20504,7 +20503,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class ConsolidateProposalCollectRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -20524,7 +20523,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ConsolidateProposalCollectResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsolidateProposalCollectResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsolidateProposalCollectResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.ConsolidateProposalCollectResponseBody Body;
         
         public ConsolidateProposalCollectResponse() {
@@ -20538,7 +20537,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class ConsolidateProposalCollectResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -20558,7 +20557,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetCheckFFOMS2022CommonDataRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCheckFFOMS2022CommonData", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCheckFFOMS2022CommonData", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetCheckFFOMS2022CommonDataRequestBody Body;
         
         public GetCheckFFOMS2022CommonDataRequest() {
@@ -20572,7 +20571,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetCheckFFOMS2022CommonDataRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -20596,7 +20595,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetCheckFFOMS2022CommonDataResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCheckFFOMS2022CommonDataResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCheckFFOMS2022CommonDataResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetCheckFFOMS2022CommonDataResponseBody Body;
         
         public GetCheckFFOMS2022CommonDataResponse() {
@@ -20610,7 +20609,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetCheckFFOMS2022CommonDataResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -20630,7 +20629,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetOpedFinanceListRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetOpedFinanceList", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetOpedFinanceList", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetOpedFinanceListRequestBody Body;
         
         public GetOpedFinanceListRequest() {
@@ -20644,7 +20643,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetOpedFinanceListRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -20664,7 +20663,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetOpedFinanceListResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetOpedFinanceListResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetOpedFinanceListResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetOpedFinanceListResponseBody Body;
         
         public GetOpedFinanceListResponse() {
@@ -20678,7 +20677,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetOpedFinanceListResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -20698,7 +20697,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ConsolidateOpedFinance2Request {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsolidateOpedFinance2", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsolidateOpedFinance2", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.ConsolidateOpedFinance2RequestBody Body;
         
         public ConsolidateOpedFinance2Request() {
@@ -20712,7 +20711,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class ConsolidateOpedFinance2RequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -20732,7 +20731,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ConsolidateOpedFinance2Response {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsolidateOpedFinance2Response", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsolidateOpedFinance2Response", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.ConsolidateOpedFinance2ResponseBody Body;
         
         public ConsolidateOpedFinance2Response() {
@@ -20746,7 +20745,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class ConsolidateOpedFinance2ResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -20766,7 +20765,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ConsolidateOpedFinance1Request {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsolidateOpedFinance1", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsolidateOpedFinance1", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.ConsolidateOpedFinance1RequestBody Body;
         
         public ConsolidateOpedFinance1Request() {
@@ -20780,7 +20779,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class ConsolidateOpedFinance1RequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -20800,7 +20799,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ConsolidateOpedFinance1Response {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsolidateOpedFinance1Response", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsolidateOpedFinance1Response", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.ConsolidateOpedFinance1ResponseBody Body;
         
         public ConsolidateOpedFinance1Response() {
@@ -20814,7 +20813,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class ConsolidateOpedFinance1ResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -20834,7 +20833,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SaveOpedFinanceListRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveOpedFinanceList", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveOpedFinanceList", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.SaveOpedFinanceListRequestBody Body;
         
         public SaveOpedFinanceListRequest() {
@@ -20848,7 +20847,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class SaveOpedFinanceListRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -20868,7 +20867,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SaveOpedFinanceListResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveOpedFinanceListResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveOpedFinanceListResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.SaveOpedFinanceListResponseBody Body;
         
         public SaveOpedFinanceListResponse() {
@@ -20895,7 +20894,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ConsolidateOpedQCollectRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsolidateOpedQCollect", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsolidateOpedQCollect", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.ConsolidateOpedQCollectRequestBody Body;
         
         public ConsolidateOpedQCollectRequest() {
@@ -20909,7 +20908,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class ConsolidateOpedQCollectRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -20929,7 +20928,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ConsolidateOpedQCollectResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsolidateOpedQCollectResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsolidateOpedQCollectResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.ConsolidateOpedQCollectResponseBody Body;
         
         public ConsolidateOpedQCollectResponse() {
@@ -20943,7 +20942,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class ConsolidateOpedQCollectResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -20963,7 +20962,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ConsolidateCPNP2QCollectRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsolidateCPNP2QCollect", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsolidateCPNP2QCollect", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.ConsolidateCPNP2QCollectRequestBody Body;
         
         public ConsolidateCPNP2QCollectRequest() {
@@ -20977,7 +20976,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class ConsolidateCPNP2QCollectRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -20997,7 +20996,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ConsolidateCPNP2QCollectResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsolidateCPNP2QCollectResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsolidateCPNP2QCollectResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.ConsolidateCPNP2QCollectResponseBody Body;
         
         public ConsolidateCPNP2QCollectResponse() {
@@ -21011,7 +21010,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class ConsolidateCPNP2QCollectResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -21031,7 +21030,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetScansRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetScans", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetScans", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetScansRequestBody Body;
         
         public GetScansRequest() {
@@ -21045,7 +21044,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetScansRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
@@ -21065,7 +21064,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetScansResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetScansResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetScansResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetScansResponseBody Body;
         
         public GetScansResponse() {
@@ -21079,7 +21078,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetScansResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -21099,7 +21098,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetEmailsRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetEmails", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetEmails", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetEmailsRequestBody Body;
         
         public GetEmailsRequest() {
@@ -21126,7 +21125,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetEmailsResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetEmailsResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetEmailsResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetEmailsResponseBody Body;
         
         public GetEmailsResponse() {
@@ -21140,7 +21139,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetEmailsResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -21160,7 +21159,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetYearOpedDataRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetYearOpedData", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetYearOpedData", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetYearOpedDataRequestBody Body;
         
         public GetYearOpedDataRequest() {
@@ -21174,7 +21173,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetYearOpedDataRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -21198,7 +21197,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetYearOpedDataResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetYearOpedDataResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetYearOpedDataResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetYearOpedDataResponseBody Body;
         
         public GetYearOpedDataResponse() {
@@ -21212,7 +21211,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetYearOpedDataResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -21232,7 +21231,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetIRYearDataRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetIRYearData", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetIRYearData", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetIRYearDataRequestBody Body;
         
         public GetIRYearDataRequest() {
@@ -21246,7 +21245,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetIRYearDataRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -21274,7 +21273,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetIRYearDataResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetIRYearDataResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetIRYearDataResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetIRYearDataResponseBody Body;
         
         public GetIRYearDataResponse() {
@@ -21288,7 +21287,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetIRYearDataResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -21308,7 +21307,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetCadreYearDataRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCadreYearData", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCadreYearData", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetCadreYearDataRequestBody Body;
         
         public GetCadreYearDataRequest() {
@@ -21322,7 +21321,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetCadreYearDataRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -21350,7 +21349,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetCadreYearDataResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCadreYearDataResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCadreYearDataResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetCadreYearDataResponseBody Body;
         
         public GetCadreYearDataResponse() {
@@ -21364,7 +21363,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetCadreYearDataResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -21384,7 +21383,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetVacYearDataRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetVacYearData", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetVacYearData", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetVacYearDataRequestBody Body;
         
         public GetVacYearDataRequest() {
@@ -21398,7 +21397,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetVacYearDataRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -21422,7 +21421,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetVacYearDataResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetVacYearDataResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetVacYearDataResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetVacYearDataResponseBody Body;
         
         public GetVacYearDataResponse() {
@@ -21436,7 +21435,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetVacYearDataResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -21456,7 +21455,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetFSSMonitoringPGDataRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetFSSMonitoringPGData", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetFSSMonitoringPGData", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetFSSMonitoringPGDataRequestBody Body;
         
         public GetFSSMonitoringPGDataRequest() {
@@ -21470,7 +21469,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetFSSMonitoringPGDataRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -21494,7 +21493,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetFSSMonitoringPGDataResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetFSSMonitoringPGDataResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetFSSMonitoringPGDataResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetFSSMonitoringPGDataResponseBody Body;
         
         public GetFSSMonitoringPGDataResponse() {
@@ -21508,7 +21507,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetFSSMonitoringPGDataResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -21528,7 +21527,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SendEmailRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SendEmail", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SendEmail", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.SendEmailRequestBody Body;
         
         public SendEmailRequest() {
@@ -21542,7 +21541,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class SendEmailRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -21570,7 +21569,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SendEmailResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SendEmailResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SendEmailResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.SendEmailResponseBody Body;
         
         public SendEmailResponse() {
@@ -21597,7 +21596,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class AddEmailRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddEmail", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddEmail", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.AddEmailRequestBody Body;
         
         public AddEmailRequest() {
@@ -21611,7 +21610,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class AddEmailRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -21635,7 +21634,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class AddEmailResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddEmailResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddEmailResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.AddEmailResponseBody Body;
         
         public AddEmailResponse() {
@@ -21662,7 +21661,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class EditEmailRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="EditEmail", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="EditEmail", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.EditEmailRequestBody Body;
         
         public EditEmailRequest() {
@@ -21676,7 +21675,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class EditEmailRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
@@ -21704,7 +21703,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class EditEmailResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="EditEmailResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="EditEmailResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.EditEmailResponseBody Body;
         
         public EditEmailResponse() {
@@ -21731,7 +21730,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SaveDynamicReportRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveDynamicReport", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveDynamicReport", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.SaveDynamicReportRequestBody Body;
         
         public SaveDynamicReportRequest() {
@@ -21745,7 +21744,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class SaveDynamicReportRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -21765,7 +21764,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SaveDynamicReportResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveDynamicReportResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveDynamicReportResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.SaveDynamicReportResponseBody Body;
         
         public SaveDynamicReportResponse() {
@@ -21779,7 +21778,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class SaveDynamicReportResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -21799,7 +21798,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetReportDynamicFlowsRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReportDynamicFlows", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReportDynamicFlows", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetReportDynamicFlowsRequestBody Body;
         
         public GetReportDynamicFlowsRequest() {
@@ -21813,7 +21812,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetReportDynamicFlowsRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
@@ -21833,7 +21832,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetReportDynamicFlowsResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReportDynamicFlowsResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReportDynamicFlowsResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetReportDynamicFlowsResponseBody Body;
         
         public GetReportDynamicFlowsResponse() {
@@ -21847,7 +21846,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetReportDynamicFlowsResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -21867,7 +21866,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetScansDynamicRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetScansDynamic", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetScansDynamic", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetScansDynamicRequestBody Body;
         
         public GetScansDynamicRequest() {
@@ -21881,7 +21880,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetScansDynamicRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
@@ -21901,7 +21900,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetScansDynamicResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetScansDynamicResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetScansDynamicResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetScansDynamicResponseBody Body;
         
         public GetScansDynamicResponse() {
@@ -21915,7 +21914,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetScansDynamicResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -21935,7 +21934,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SaveDynamicScanRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveDynamicScan", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveDynamicScan", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.SaveDynamicScanRequestBody Body;
         
         public SaveDynamicScanRequest() {
@@ -21949,7 +21948,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class SaveDynamicScanRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
@@ -21973,7 +21972,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SaveDynamicScanResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveDynamicScanResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveDynamicScanResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.SaveDynamicScanResponseBody Body;
         
         public SaveDynamicScanResponse() {
@@ -22000,7 +21999,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetReportDynamicByIdRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReportDynamicById", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReportDynamicById", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetReportDynamicByIdRequestBody Body;
         
         public GetReportDynamicByIdRequest() {
@@ -22014,7 +22013,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetReportDynamicByIdRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
@@ -22034,7 +22033,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetReportDynamicByIdResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReportDynamicByIdResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReportDynamicByIdResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetReportDynamicByIdResponseBody Body;
         
         public GetReportDynamicByIdResponse() {
@@ -22048,7 +22047,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetReportDynamicByIdResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -22068,7 +22067,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetReportDynamicFlowByIdRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReportDynamicFlowById", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReportDynamicFlowById", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetReportDynamicFlowByIdRequestBody Body;
         
         public GetReportDynamicFlowByIdRequest() {
@@ -22082,7 +22081,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetReportDynamicFlowByIdRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
@@ -22102,7 +22101,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetReportDynamicFlowByIdResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReportDynamicFlowByIdResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReportDynamicFlowByIdResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetReportDynamicFlowByIdResponseBody Body;
         
         public GetReportDynamicFlowByIdResponse() {
@@ -22116,7 +22115,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetReportDynamicFlowByIdResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -22136,7 +22135,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class WebReportOpedRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportOped", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportOped", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.WebReportOpedRequestBody Body;
         
         public WebReportOpedRequest() {
@@ -22150,7 +22149,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class WebReportOpedRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -22170,7 +22169,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class WebReportOpedResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportOpedResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportOpedResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.WebReportOpedResponseBody Body;
         
         public WebReportOpedResponse() {
@@ -22197,7 +22196,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class WebReportInfrormationResponseRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportInfrormationResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportInfrormationResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.WebReportInfrormationResponseRequestBody Body;
         
         public WebReportInfrormationResponseRequest() {
@@ -22211,7 +22210,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class WebReportInfrormationResponseRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -22231,7 +22230,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class WebReportInfrormationResponseResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportInfrormationResponseResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportInfrormationResponseResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.WebReportInfrormationResponseResponseBody Body;
         
         public WebReportInfrormationResponseResponse() {
@@ -22258,7 +22257,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class WebReportVaccinationRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportVaccination", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportVaccination", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.WebReportVaccinationRequestBody Body;
         
         public WebReportVaccinationRequest() {
@@ -22272,7 +22271,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class WebReportVaccinationRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -22292,7 +22291,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class WebReportVaccinationResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportVaccinationResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportVaccinationResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.WebReportVaccinationResponseBody Body;
         
         public WebReportVaccinationResponse() {
@@ -22319,7 +22318,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class WebReportFSSMonitroingRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportFSSMonitroing", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportFSSMonitroing", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.WebReportFSSMonitroingRequestBody Body;
         
         public WebReportFSSMonitroingRequest() {
@@ -22333,7 +22332,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class WebReportFSSMonitroingRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -22353,7 +22352,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class WebReportFSSMonitroingResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportFSSMonitroingResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportFSSMonitroingResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.WebReportFSSMonitroingResponseBody Body;
         
         public WebReportFSSMonitroingResponse() {
@@ -22380,7 +22379,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class WebReportProposalRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportProposal", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportProposal", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.WebReportProposalRequestBody Body;
         
         public WebReportProposalRequest() {
@@ -22394,7 +22393,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class WebReportProposalRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -22414,7 +22413,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class WebReportProposalResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportProposalResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportProposalResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.WebReportProposalResponseBody Body;
         
         public WebReportProposalResponse() {
@@ -22441,7 +22440,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class WebReportOpedFinanceRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportOpedFinance", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportOpedFinance", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.WebReportOpedFinanceRequestBody Body;
         
         public WebReportOpedFinanceRequest() {
@@ -22455,7 +22454,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class WebReportOpedFinanceRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -22475,7 +22474,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class WebReportOpedFinanceResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportOpedFinanceResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportOpedFinanceResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.WebReportOpedFinanceResponseBody Body;
         
         public WebReportOpedFinanceResponse() {
@@ -22502,7 +22501,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class WebReportCadreRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportCadre", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportCadre", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.WebReportCadreRequestBody Body;
         
         public WebReportCadreRequest() {
@@ -22516,7 +22515,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class WebReportCadreRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -22536,7 +22535,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class WebReportCadreResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportCadreResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportCadreResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.WebReportCadreResponseBody Body;
         
         public WebReportCadreResponse() {
@@ -22563,7 +22562,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetReportRegionDataRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReportRegionData", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReportRegionData", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetReportRegionDataRequestBody Body;
         
         public GetReportRegionDataRequest() {
@@ -22577,7 +22576,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetReportRegionDataRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
@@ -22597,7 +22596,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetReportRegionDataResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReportRegionDataResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReportRegionDataResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetReportRegionDataResponseBody Body;
         
         public GetReportRegionDataResponse() {
@@ -22611,7 +22610,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetReportRegionDataResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -22631,7 +22630,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetDynamicReportsRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDynamicReports", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDynamicReports", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetDynamicReportsRequestBody Body;
         
         public GetDynamicReportsRequest() {
@@ -22658,7 +22657,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetDynamicReportsResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDynamicReportsResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDynamicReportsResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetDynamicReportsResponseBody Body;
         
         public GetDynamicReportsResponse() {
@@ -22672,7 +22671,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetDynamicReportsResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -22692,7 +22691,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetDynamicReportXmlRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDynamicReportXml", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDynamicReportXml", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetDynamicReportXmlRequestBody Body;
         
         public GetDynamicReportXmlRequest() {
@@ -22706,7 +22705,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetDynamicReportXmlRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
@@ -22726,7 +22725,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetDynamicReportXmlResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDynamicReportXmlResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDynamicReportXmlResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetDynamicReportXmlResponseBody Body;
         
         public GetDynamicReportXmlResponse() {
@@ -22740,7 +22739,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetDynamicReportXmlResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -22760,7 +22759,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SaveDynamicFlowDataRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveDynamicFlowData", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveDynamicFlowData", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.SaveDynamicFlowDataRequestBody Body;
         
         public SaveDynamicFlowDataRequest() {
@@ -22774,7 +22773,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class SaveDynamicFlowDataRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -22806,7 +22805,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SaveDynamicFlowDataResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveDynamicFlowDataResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveDynamicFlowDataResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.SaveDynamicFlowDataResponseBody Body;
         
         public SaveDynamicFlowDataResponse() {
@@ -22820,7 +22819,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class SaveDynamicFlowDataResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
@@ -22840,7 +22839,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetFlowsRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetFlows", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetFlows", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetFlowsRequestBody Body;
         
         public GetFlowsRequest() {
@@ -22854,7 +22853,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetFlowsRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -22882,7 +22881,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetFlowsResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetFlowsResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetFlowsResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetFlowsResponseBody Body;
         
         public GetFlowsResponse() {
@@ -22896,7 +22895,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetFlowsResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -22916,7 +22915,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SaveScanRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveScan", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveScan", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.SaveScanRequestBody Body;
         
         public SaveScanRequest() {
@@ -22930,7 +22929,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class SaveScanRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
@@ -22962,7 +22961,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SaveScanResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveScanResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveScanResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.SaveScanResponseBody Body;
         
         public SaveScanResponse() {
@@ -22989,7 +22988,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateReportDispRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportDisp", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportDisp", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateReportDispRequestBody Body;
         
         public CreateReportDispRequest() {
@@ -23003,7 +23002,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateReportDispRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -23023,7 +23022,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateReportDispResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportDispResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportDispResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateReportDispResponseBody Body;
         
         public CreateReportDispResponse() {
@@ -23037,7 +23036,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateReportDispResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -23057,7 +23056,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CollectSummaryReportRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CollectSummaryReport", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CollectSummaryReport", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CollectSummaryReportRequestBody Body;
         
         public CollectSummaryReportRequest() {
@@ -23071,7 +23070,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CollectSummaryReportRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -23111,7 +23110,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CollectSummaryReportResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CollectSummaryReportResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CollectSummaryReportResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CollectSummaryReportResponseBody Body;
         
         public CollectSummaryReportResponse() {
@@ -23125,7 +23124,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CollectSummaryReportResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -23145,7 +23144,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetReportRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReport", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReport", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetReportRequestBody Body;
         
         public GetReportRequest() {
@@ -23159,7 +23158,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetReportRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -23187,7 +23186,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetReportResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReportResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReportResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetReportResponseBody Body;
         
         public GetReportResponse() {
@@ -23201,7 +23200,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetReportResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -23221,7 +23220,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SaveReportRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveReport", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveReport", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.SaveReportRequestBody Body;
         
         public SaveReportRequest() {
@@ -23235,7 +23234,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class SaveReportRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -23271,7 +23270,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SaveReportResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveReportResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveReportResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.SaveReportResponseBody Body;
         
         public SaveReportResponse() {
@@ -23285,7 +23284,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class SaveReportResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -23305,7 +23304,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SaveReportDataSourceHandleRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveReportDataSourceHandle", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveReportDataSourceHandle", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.SaveReportDataSourceHandleRequestBody Body;
         
         public SaveReportDataSourceHandleRequest() {
@@ -23319,7 +23318,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class SaveReportDataSourceHandleRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -23355,7 +23354,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SaveReportDataSourceHandleResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveReportDataSourceHandleResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveReportDataSourceHandleResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.SaveReportDataSourceHandleResponseBody Body;
         
         public SaveReportDataSourceHandleResponse() {
@@ -23369,7 +23368,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class SaveReportDataSourceHandleResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -23389,7 +23388,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SaveReportDataSourceExcelRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveReportDataSourceExcel", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveReportDataSourceExcel", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.SaveReportDataSourceExcelRequestBody Body;
         
         public SaveReportDataSourceExcelRequest() {
@@ -23403,7 +23402,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class SaveReportDataSourceExcelRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -23439,7 +23438,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SaveReportDataSourceExcelResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveReportDataSourceExcelResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveReportDataSourceExcelResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.SaveReportDataSourceExcelResponseBody Body;
         
         public SaveReportDataSourceExcelResponse() {
@@ -23453,7 +23452,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class SaveReportDataSourceExcelResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -23473,7 +23472,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SendNotificationRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SendNotification", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SendNotification", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.SendNotificationRequestBody Body;
         
         public SendNotificationRequest() {
@@ -23487,7 +23486,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class SendNotificationRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -23507,7 +23506,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SendNotificationResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SendNotificationResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SendNotificationResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.SendNotificationResponseBody Body;
         
         public SendNotificationResponse() {
@@ -23521,7 +23520,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class SendNotificationResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -23541,7 +23540,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetCommentsRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetComments", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetComments", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetCommentsRequestBody Body;
         
         public GetCommentsRequest() {
@@ -23555,7 +23554,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetCommentsRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
@@ -23579,7 +23578,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetCommentsResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCommentsResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCommentsResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetCommentsResponseBody Body;
         
         public GetCommentsResponse() {
@@ -23593,7 +23592,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetCommentsResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -23613,7 +23612,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class AddCommentRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddComment", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddComment", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.AddCommentRequestBody Body;
         
         public AddCommentRequest() {
@@ -23627,7 +23626,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class AddCommentRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
@@ -23655,7 +23654,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class AddCommentResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddCommentResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddCommentResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.AddCommentResponseBody Body;
         
         public AddCommentResponse() {
@@ -23682,7 +23681,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetReportsWithUnreadCommentsRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReportsWithUnreadComments", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReportsWithUnreadComments", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetReportsWithUnreadCommentsRequestBody Body;
         
         public GetReportsWithUnreadCommentsRequest() {
@@ -23696,7 +23695,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetReportsWithUnreadCommentsRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -23716,7 +23715,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetReportsWithUnreadCommentsResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReportsWithUnreadCommentsResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReportsWithUnreadCommentsResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetReportsWithUnreadCommentsResponseBody Body;
         
         public GetReportsWithUnreadCommentsResponse() {
@@ -23730,7 +23729,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetReportsWithUnreadCommentsResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -23750,7 +23749,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CheckPasswordNewRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CheckPasswordNew", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CheckPasswordNew", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CheckPasswordNewRequestBody Body;
         
         public CheckPasswordNewRequest() {
@@ -23764,7 +23763,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CheckPasswordNewRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -23788,7 +23787,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CheckPasswordNewResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CheckPasswordNewResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CheckPasswordNewResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CheckPasswordNewResponseBody Body;
         
         public CheckPasswordNewResponse() {
@@ -23802,7 +23801,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CheckPasswordNewResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -23822,7 +23821,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CollectClientContextRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CollectClientContext", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CollectClientContext", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CollectClientContextRequestBody Body;
         
         public CollectClientContextRequest() {
@@ -23849,7 +23848,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CollectClientContextResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CollectClientContextResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CollectClientContextResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CollectClientContextResponseBody Body;
         
         public CollectClientContextResponse() {
@@ -23863,7 +23862,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CollectClientContextResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -23883,7 +23882,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SaveUserRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveUser", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveUser", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.SaveUserRequestBody Body;
         
         public SaveUserRequest() {
@@ -23897,7 +23896,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class SaveUserRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -23937,7 +23936,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SaveUserResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveUserResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveUserResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.SaveUserResponseBody Body;
         
         public SaveUserResponse() {
@@ -23964,7 +23963,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class EditFilialRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="EditFilial", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="EditFilial", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.EditFilialRequestBody Body;
         
         public EditFilialRequest() {
@@ -23978,7 +23977,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class EditFilialRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -24014,7 +24013,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class EditFilialResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="EditFilialResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="EditFilialResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.EditFilialResponseBody Body;
         
         public EditFilialResponse() {
@@ -24041,7 +24040,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class UploadFileRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="UploadFile", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UploadFile", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.UploadFileRequestBody Body;
         
         public UploadFileRequest() {
@@ -24055,7 +24054,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class UploadFileRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -24083,7 +24082,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class UploadFileResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="UploadFileResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UploadFileResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.UploadFileResponseBody Body;
         
         public UploadFileResponse() {
@@ -24110,7 +24109,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class DownloadFileRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="DownloadFile", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DownloadFile", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.DownloadFileRequestBody Body;
         
         public DownloadFileRequest() {
@@ -24124,7 +24123,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class DownloadFileRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -24148,7 +24147,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class DownloadFileResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="DownloadFileResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DownloadFileResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.DownloadFileResponseBody Body;
         
         public DownloadFileResponse() {
@@ -24162,7 +24161,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class DownloadFileResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -24182,7 +24181,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class DownloadDllFileRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="DownloadDllFile", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DownloadDllFile", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.DownloadDllFileRequestBody Body;
         
         public DownloadDllFileRequest() {
@@ -24196,7 +24195,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class DownloadDllFileRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -24216,7 +24215,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class DownloadDllFileResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="DownloadDllFileResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DownloadDllFileResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.DownloadDllFileResponseBody Body;
         
         public DownloadDllFileResponse() {
@@ -24230,7 +24229,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class DownloadDllFileResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -24250,7 +24249,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetDllFileNamesRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDllFileNames", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDllFileNames", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetDllFileNamesRequestBody Body;
         
         public GetDllFileNamesRequest() {
@@ -24277,7 +24276,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetDllFileNamesResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDllFileNamesResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDllFileNamesResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.GetDllFileNamesResponseBody Body;
         
         public GetDllFileNamesResponse() {
@@ -24291,7 +24290,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class GetDllFileNamesResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -24311,7 +24310,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class UploadXmlDynamicFileRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="UploadXmlDynamicFile", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UploadXmlDynamicFile", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.UploadXmlDynamicFileRequestBody Body;
         
         public UploadXmlDynamicFileRequest() {
@@ -24325,7 +24324,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class UploadXmlDynamicFileRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -24349,7 +24348,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class UploadXmlDynamicFileResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="UploadXmlDynamicFileResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UploadXmlDynamicFileResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.UploadXmlDynamicFileResponseBody Body;
         
         public UploadXmlDynamicFileResponse() {
@@ -24376,7 +24375,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class MethodForSendingChildModelRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="MethodForSendingChildModel", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="MethodForSendingChildModel", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.MethodForSendingChildModelRequestBody Body;
         
         public MethodForSendingChildModelRequest() {
@@ -24390,7 +24389,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class MethodForSendingChildModelRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -24422,7 +24421,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class MethodForSendingChildModelResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="MethodForSendingChildModelResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="MethodForSendingChildModelResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.MethodForSendingChildModelResponseBody Body;
         
         public MethodForSendingChildModelResponse() {
@@ -24449,7 +24448,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateReportCpnpRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCpnp", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCpnp", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateReportCpnpRequestBody Body;
         
         public CreateReportCpnpRequest() {
@@ -24463,7 +24462,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateReportCpnpRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -24483,7 +24482,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateReportCpnpResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCpnpResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCpnpResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateReportCpnpResponseBody Body;
         
         public CreateReportCpnpResponse() {
@@ -24497,7 +24496,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateReportCpnpResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -24517,7 +24516,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateReportCOpedRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCOped", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCOped", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateReportCOpedRequestBody Body;
         
         public CreateReportCOpedRequest() {
@@ -24531,7 +24530,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateReportCOpedRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -24559,7 +24558,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateReportCOpedResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCOpedResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCOpedResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateReportCOpedResponseBody Body;
         
         public CreateReportCOpedResponse() {
@@ -24573,7 +24572,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateReportCOpedResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -24593,7 +24592,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateReportVSSRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportVSS", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportVSS", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateReportVSSRequestBody Body;
         
         public CreateReportVSSRequest() {
@@ -24607,7 +24606,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateReportVSSRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -24627,7 +24626,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateReportVSSResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportVSSResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportVSSResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateReportVSSResponseBody Body;
         
         public CreateReportVSSResponse() {
@@ -24641,7 +24640,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateReportVSSResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -24661,7 +24660,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateReportCpnpMRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCpnpM", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCpnpM", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateReportCpnpMRequestBody Body;
         
         public CreateReportCpnpMRequest() {
@@ -24675,7 +24674,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateReportCpnpMRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -24695,7 +24694,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateReportCpnpMResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCpnpMResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCpnpMResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateReportCpnpMResponseBody Body;
         
         public CreateReportCpnpMResponse() {
@@ -24709,7 +24708,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateReportCpnpMResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -24729,7 +24728,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateReportCardioRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCardio", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCardio", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateReportCardioRequestBody Body;
         
         public CreateReportCardioRequest() {
@@ -24743,7 +24742,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateReportCardioRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -24763,7 +24762,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateReportCardioResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCardioResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCardioResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateReportCardioResponseBody Body;
         
         public CreateReportCardioResponse() {
@@ -24777,7 +24776,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateReportCardioResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -24797,7 +24796,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateReportCadreTable1Request {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCadreTable1", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCadreTable1", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateReportCadreTable1RequestBody Body;
         
         public CreateReportCadreTable1Request() {
@@ -24811,7 +24810,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateReportCadreTable1RequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -24831,7 +24830,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateReportCadreTable1Response {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCadreTable1Response", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCadreTable1Response", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateReportCadreTable1ResponseBody Body;
         
         public CreateReportCadreTable1Response() {
@@ -24845,7 +24844,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateReportCadreTable1ResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -24865,7 +24864,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateReportCadreTable2Request {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCadreTable2", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCadreTable2", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateReportCadreTable2RequestBody Body;
         
         public CreateReportCadreTable2Request() {
@@ -24879,7 +24878,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateReportCadreTable2RequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -24899,7 +24898,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateReportCadreTable2Response {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCadreTable2Response", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportCadreTable2Response", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateReportCadreTable2ResponseBody Body;
         
         public CreateReportCadreTable2Response() {
@@ -24913,7 +24912,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateReportCadreTable2ResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -24933,7 +24932,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateReport262T1Request {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReport262T1", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReport262T1", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateReport262T1RequestBody Body;
         
         public CreateReport262T1Request() {
@@ -24947,7 +24946,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateReport262T1RequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
@@ -24967,7 +24966,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateReport262T1Response {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReport262T1Response", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReport262T1Response", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateReport262T1ResponseBody Body;
         
         public CreateReport262T1Response() {
@@ -24981,7 +24980,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateReport262T1ResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -25001,7 +25000,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateReport262T2Request {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReport262T2", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReport262T2", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateReport262T2RequestBody Body;
         
         public CreateReport262T2Request() {
@@ -25015,7 +25014,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateReport262T2RequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -25039,7 +25038,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateReport262T2Response {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReport262T2Response", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReport262T2Response", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateReport262T2ResponseBody Body;
         
         public CreateReport262T2Response() {
@@ -25053,7 +25052,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateReport262T2ResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -25073,7 +25072,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateReport262T3Request {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReport262T3", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReport262T3", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateReport262T3RequestBody Body;
         
         public CreateReport262T3Request() {
@@ -25087,7 +25086,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateReport262T3RequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -25107,7 +25106,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateReport262T3Response {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReport262T3Response", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReport262T3Response", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateReport262T3ResponseBody Body;
         
         public CreateReport262T3Response() {
@@ -25121,7 +25120,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateReport262T3ResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -25141,7 +25140,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateReportControlPgZpzRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportControlPgZpz", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportControlPgZpz", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateReportControlPgZpzRequestBody Body;
         
         public CreateReportControlPgZpzRequest() {
@@ -25155,7 +25154,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateReportControlPgZpzRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -25179,7 +25178,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateReportControlPgZpzResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportControlPgZpzResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReportControlPgZpzResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateReportControlPgZpzResponseBody Body;
         
         public CreateReportControlPgZpzResponse() {
@@ -25193,7 +25192,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateReportControlPgZpzResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -25213,7 +25212,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateConsolidateOnkoRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidateOnko", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidateOnko", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateConsolidateOnkoRequestBody Body;
         
         public CreateConsolidateOnkoRequest() {
@@ -25227,7 +25226,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateConsolidateOnkoRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -25251,7 +25250,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateConsolidateOnkoResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidateOnkoResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidateOnkoResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateConsolidateOnkoResponseBody Body;
         
         public CreateConsolidateOnkoResponse() {
@@ -25265,7 +25264,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateConsolidateOnkoResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -25285,7 +25284,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateConsolidateLetalRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidateLetal", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidateLetal", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateConsolidateLetalRequestBody Body;
         
         public CreateConsolidateLetalRequest() {
@@ -25299,7 +25298,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateConsolidateLetalRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -25319,7 +25318,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateConsolidateLetalResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidateLetalResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidateLetalResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateConsolidateLetalResponseBody Body;
         
         public CreateConsolidateLetalResponse() {
@@ -25333,7 +25332,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateConsolidateLetalResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -25353,7 +25352,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateDynamicReportRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateDynamicReport", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateDynamicReport", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateDynamicReportRequestBody Body;
         
         public CreateDynamicReportRequest() {
@@ -25367,7 +25366,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateDynamicReportRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -25387,7 +25386,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateDynamicReportResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateDynamicReportResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateDynamicReportResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateDynamicReportResponseBody Body;
         
         public CreateDynamicReportResponse() {
@@ -25401,7 +25400,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateDynamicReportResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -25421,7 +25420,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateConsolidate294Request {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidate294", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidate294", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateConsolidate294RequestBody Body;
         
         public CreateConsolidate294Request() {
@@ -25435,7 +25434,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateConsolidate294RequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -25455,7 +25454,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateConsolidate294Response {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidate294Response", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidate294Response", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateConsolidate294ResponseBody Body;
         
         public CreateConsolidate294Response() {
@@ -25469,7 +25468,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateConsolidate294ResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -25489,7 +25488,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateZpzForWebSiteRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateZpzForWebSite", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateZpzForWebSite", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateZpzForWebSiteRequestBody Body;
         
         public CreateZpzForWebSiteRequest() {
@@ -25503,7 +25502,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateZpzForWebSiteRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -25523,7 +25522,7 @@ namespace KmsReportClient.External {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateZpzForWebSiteResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateZpzForWebSiteResponse", Namespace="http://localhost:8091/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateZpzForWebSiteResponse", Namespace="http://kms-oms.ru/", Order=0)]
         public KmsReportClient.External.CreateZpzForWebSiteResponseBody Body;
         
         public CreateZpzForWebSiteResponse() {
@@ -25537,7 +25536,7 @@ namespace KmsReportClient.External {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost:8091/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
     public partial class CreateZpzForWebSiteResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -27563,7 +27562,5 @@ namespace KmsReportClient.External {
             inValue.Body.yymm = yymm;
             return ((KmsReportClient.External.EndpointSoap)(this)).CreateZpzForWebSiteAsync(inValue);
         }
-
-        public object SaveReportDataSourceHandle(SaveReportDataSourceExcelRequest request) => throw new NotImplementedException();
     }
 }
