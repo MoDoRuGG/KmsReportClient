@@ -126,6 +126,11 @@ namespace KmsReportClient.Report.Basic
             { "Таблица 2Л",""}
         };
 
+        public override void SaveReportDataSourceExcel()
+        { }
+        public override void SaveReportDataSourceHandle()
+        { }
+
         public ReportPgQProcessor(EndpointSoap inClient, List<KmsReportDictionary> reportsDictionary, DataGridView dgv, ComboBox cmb, TextBox txtb, TabPage page) :
             base(inClient, dgv, cmb, txtb, page,
                 XmlFormTemplate.PgQ.GetDescription(),
@@ -146,7 +151,6 @@ namespace KmsReportClient.Report.Basic
                 Report.ReportDataList[i++] = new ReportPgDto { Theme = theme };
             }
         }
-
         public override AbstractReport CollectReportFromWs(string yymm)
         {
             var request = new GetReportRequest
@@ -244,6 +248,8 @@ namespace KmsReportClient.Report.Basic
         }
 
         public override bool IsVisibleBtnDownloadExcel() => true;
+        public override bool IsVisibleBtnHandle() => false;
+
 
         public override string ValidReport()
         {
@@ -425,7 +431,7 @@ namespace KmsReportClient.Report.Basic
             Report.Status = response.Status;
         }
 
-        public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status)
+        public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status, DataSource datasource)
         {
             var array = new ArrayOfString();
             array.AddRange(filialList);

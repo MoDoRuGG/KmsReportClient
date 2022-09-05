@@ -2154,6 +2154,8 @@ namespace KmsReportClient.External {
         
         private KmsReportClient.External.ReportStatus StatusField;
         
+        private KmsReportClient.External.DataSource DataSourceField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -2394,6 +2396,19 @@ namespace KmsReportClient.External {
                 if ((this.StatusField.Equals(value) != true)) {
                     this.StatusField = value;
                     this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=18)]
+        public KmsReportClient.External.DataSource DataSource {
+            get {
+                return this.DataSourceField;
+            }
+            set {
+                if ((this.DataSourceField.Equals(value) != true)) {
+                    this.DataSourceField = value;
+                    this.RaisePropertyChanged("DataSource");
                 }
             }
         }
@@ -2951,6 +2966,20 @@ namespace KmsReportClient.External {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Done = 5,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DataSource", Namespace="http://kms-oms.ru/")]
+    public enum DataSource : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        New = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Excel = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Handle = 2,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5127,13 +5156,13 @@ namespace KmsReportClient.External {
         private KmsReportClient.External.Report_Dynamic Report_DynamicField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.Report_Flow[] Report_FlowField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private KmsReportClient.External.Scans_Base[] Scans_BasesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private KmsReportClient.External.Scans_Base[] Scans_Bases1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.Report_Flow[] Report_FlowField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private KmsReportClient.External.Region Region1Field;
@@ -5344,19 +5373,6 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
-        public KmsReportClient.External.Report_Flow[] Report_Flow {
-            get {
-                return this.Report_FlowField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Report_FlowField, value) != true)) {
-                    this.Report_FlowField = value;
-                    this.RaisePropertyChanged("Report_Flow");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=16)]
         public KmsReportClient.External.Scans_Base[] Scans_Bases {
             get {
                 return this.Scans_BasesField;
@@ -5369,7 +5385,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=17)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=16)]
         public KmsReportClient.External.Scans_Base[] Scans_Bases1 {
             get {
                 return this.Scans_Bases1Field;
@@ -5378,6 +5394,19 @@ namespace KmsReportClient.External {
                 if ((object.ReferenceEquals(this.Scans_Bases1Field, value) != true)) {
                     this.Scans_Bases1Field = value;
                     this.RaisePropertyChanged("Scans_Bases1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=17)]
+        public KmsReportClient.External.Report_Flow[] Report_Flow {
+            get {
+                return this.Report_FlowField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Report_FlowField, value) != true)) {
+                    this.Report_FlowField = value;
+                    this.RaisePropertyChanged("Report_Flow");
                 }
             }
         }
@@ -5645,6 +5674,9 @@ namespace KmsReportClient.External {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private KmsReportClient.External.OpedFinancePlan[] OpedFinancePlansField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.Report_Flow[] Report_FlowField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -5781,6 +5813,19 @@ namespace KmsReportClient.External {
                 if ((object.ReferenceEquals(this.OpedFinancePlansField, value) != true)) {
                     this.OpedFinancePlansField = value;
                     this.RaisePropertyChanged("OpedFinancePlans");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        public KmsReportClient.External.Report_Flow[] Report_Flow {
+            get {
+                return this.Report_FlowField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Report_FlowField, value) != true)) {
+                    this.Report_FlowField = value;
+                    this.RaisePropertyChanged("Report_Flow");
                 }
             }
         }
@@ -6270,6 +6315,189 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Scans_Base", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class Scans_Base : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int Id_ScanField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string File_NameField;
+        
+        private int Usr_addedField;
+        
+        private System.DateTime Dte_addedField;
+        
+        private System.Nullable<int> Usr_updateField;
+        
+        private System.Nullable<System.DateTime> Dte_updateField;
+        
+        private int Id_flowField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.Employee EmployeeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.Employee Employee1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.Report_Flow Report_FlowField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id_Scan {
+            get {
+                return this.Id_ScanField;
+            }
+            set {
+                if ((this.Id_ScanField.Equals(value) != true)) {
+                    this.Id_ScanField = value;
+                    this.RaisePropertyChanged("Id_Scan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string File_Name {
+            get {
+                return this.File_NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.File_NameField, value) != true)) {
+                    this.File_NameField = value;
+                    this.RaisePropertyChanged("File_Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int Usr_added {
+            get {
+                return this.Usr_addedField;
+            }
+            set {
+                if ((this.Usr_addedField.Equals(value) != true)) {
+                    this.Usr_addedField = value;
+                    this.RaisePropertyChanged("Usr_added");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public System.DateTime Dte_added {
+            get {
+                return this.Dte_addedField;
+            }
+            set {
+                if ((this.Dte_addedField.Equals(value) != true)) {
+                    this.Dte_addedField = value;
+                    this.RaisePropertyChanged("Dte_added");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public System.Nullable<int> Usr_update {
+            get {
+                return this.Usr_updateField;
+            }
+            set {
+                if ((this.Usr_updateField.Equals(value) != true)) {
+                    this.Usr_updateField = value;
+                    this.RaisePropertyChanged("Usr_update");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public System.Nullable<System.DateTime> Dte_update {
+            get {
+                return this.Dte_updateField;
+            }
+            set {
+                if ((this.Dte_updateField.Equals(value) != true)) {
+                    this.Dte_updateField = value;
+                    this.RaisePropertyChanged("Dte_update");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public int Id_flow {
+            get {
+                return this.Id_flowField;
+            }
+            set {
+                if ((this.Id_flowField.Equals(value) != true)) {
+                    this.Id_flowField = value;
+                    this.RaisePropertyChanged("Id_flow");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public KmsReportClient.External.Employee Employee {
+            get {
+                return this.EmployeeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmployeeField, value) != true)) {
+                    this.EmployeeField = value;
+                    this.RaisePropertyChanged("Employee");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public KmsReportClient.External.Employee Employee1 {
+            get {
+                return this.Employee1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Employee1Field, value) != true)) {
+                    this.Employee1Field = value;
+                    this.RaisePropertyChanged("Employee1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public KmsReportClient.External.Report_Flow Report_Flow {
+            get {
+                return this.Report_FlowField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Report_FlowField, value) != true)) {
+                    this.Report_FlowField = value;
+                    this.RaisePropertyChanged("Report_Flow");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Report_Flow", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class Report_Flow : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -6323,13 +6551,16 @@ namespace KmsReportClient.External {
         private string Scan3Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DataSourceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private KmsReportClient.External.Report_Data[] Report_DataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private KmsReportClient.External.Comment[] CommentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.Scans_Base[] Scans_BasesField;
+        private KmsReportClient.External.Scans_Base[] Scans_BaseField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private KmsReportClient.External.Employee EmployeeField;
@@ -6598,6 +6829,19 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=19)]
+        public string DataSource {
+            get {
+                return this.DataSourceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataSourceField, value) != true)) {
+                    this.DataSourceField = value;
+                    this.RaisePropertyChanged("DataSource");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=20)]
         public KmsReportClient.External.Report_Data[] Report_Data {
             get {
                 return this.Report_DataField;
@@ -6610,7 +6854,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=20)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=21)]
         public KmsReportClient.External.Comment[] Comment {
             get {
                 return this.CommentField;
@@ -6623,20 +6867,20 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=21)]
-        public KmsReportClient.External.Scans_Base[] Scans_Bases {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=22)]
+        public KmsReportClient.External.Scans_Base[] Scans_Base {
             get {
-                return this.Scans_BasesField;
+                return this.Scans_BaseField;
             }
             set {
-                if ((object.ReferenceEquals(this.Scans_BasesField, value) != true)) {
-                    this.Scans_BasesField = value;
-                    this.RaisePropertyChanged("Scans_Bases");
+                if ((object.ReferenceEquals(this.Scans_BaseField, value) != true)) {
+                    this.Scans_BaseField = value;
+                    this.RaisePropertyChanged("Scans_Base");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=22)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=23)]
         public KmsReportClient.External.Employee Employee {
             get {
                 return this.EmployeeField;
@@ -6649,7 +6893,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=23)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=24)]
         public KmsReportClient.External.Region Region {
             get {
                 return this.RegionField;
@@ -6662,7 +6906,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=24)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=25)]
         public KmsReportClient.External.Report_Type Report_Type {
             get {
                 return this.Report_TypeField;
@@ -6671,189 +6915,6 @@ namespace KmsReportClient.External {
                 if ((object.ReferenceEquals(this.Report_TypeField, value) != true)) {
                     this.Report_TypeField = value;
                     this.RaisePropertyChanged("Report_Type");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Scans_Base", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class Scans_Base : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int Id_ScanField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string File_NameField;
-        
-        private int Usr_addedField;
-        
-        private System.DateTime Dte_addedField;
-        
-        private System.Nullable<int> Usr_updateField;
-        
-        private System.Nullable<System.DateTime> Dte_updateField;
-        
-        private int Id_flowField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.Employee EmployeeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.Employee Employee1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.Report_Flow Report_FlowField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int Id_Scan {
-            get {
-                return this.Id_ScanField;
-            }
-            set {
-                if ((this.Id_ScanField.Equals(value) != true)) {
-                    this.Id_ScanField = value;
-                    this.RaisePropertyChanged("Id_Scan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string File_Name {
-            get {
-                return this.File_NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.File_NameField, value) != true)) {
-                    this.File_NameField = value;
-                    this.RaisePropertyChanged("File_Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public int Usr_added {
-            get {
-                return this.Usr_addedField;
-            }
-            set {
-                if ((this.Usr_addedField.Equals(value) != true)) {
-                    this.Usr_addedField = value;
-                    this.RaisePropertyChanged("Usr_added");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public System.DateTime Dte_added {
-            get {
-                return this.Dte_addedField;
-            }
-            set {
-                if ((this.Dte_addedField.Equals(value) != true)) {
-                    this.Dte_addedField = value;
-                    this.RaisePropertyChanged("Dte_added");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public System.Nullable<int> Usr_update {
-            get {
-                return this.Usr_updateField;
-            }
-            set {
-                if ((this.Usr_updateField.Equals(value) != true)) {
-                    this.Usr_updateField = value;
-                    this.RaisePropertyChanged("Usr_update");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public System.Nullable<System.DateTime> Dte_update {
-            get {
-                return this.Dte_updateField;
-            }
-            set {
-                if ((this.Dte_updateField.Equals(value) != true)) {
-                    this.Dte_updateField = value;
-                    this.RaisePropertyChanged("Dte_update");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public int Id_flow {
-            get {
-                return this.Id_flowField;
-            }
-            set {
-                if ((this.Id_flowField.Equals(value) != true)) {
-                    this.Id_flowField = value;
-                    this.RaisePropertyChanged("Id_flow");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public KmsReportClient.External.Employee Employee {
-            get {
-                return this.EmployeeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmployeeField, value) != true)) {
-                    this.EmployeeField = value;
-                    this.RaisePropertyChanged("Employee");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
-        public KmsReportClient.External.Employee Employee1 {
-            get {
-                return this.Employee1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Employee1Field, value) != true)) {
-                    this.Employee1Field = value;
-                    this.RaisePropertyChanged("Employee1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
-        public KmsReportClient.External.Report_Flow Report_Flow {
-            get {
-                return this.Report_FlowField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Report_FlowField, value) != true)) {
-                    this.Report_FlowField = value;
-                    this.RaisePropertyChanged("Report_Flow");
                 }
             }
         }
@@ -6898,7 +6959,7 @@ namespace KmsReportClient.External {
         private KmsReportClient.External.Report_Data[] Report_DatasField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.Report_Flow[] Report_FlowsField;
+        private KmsReportClient.External.Report_Flow[] Report_FlowField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -7002,14 +7063,14 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public KmsReportClient.External.Report_Flow[] Report_Flows {
+        public KmsReportClient.External.Report_Flow[] Report_Flow {
             get {
-                return this.Report_FlowsField;
+                return this.Report_FlowField;
             }
             set {
-                if ((object.ReferenceEquals(this.Report_FlowsField, value) != true)) {
-                    this.Report_FlowsField = value;
-                    this.RaisePropertyChanged("Report_Flows");
+                if ((object.ReferenceEquals(this.Report_FlowField, value) != true)) {
+                    this.Report_FlowField = value;
+                    this.RaisePropertyChanged("Report_Flow");
                 }
             }
         }
@@ -7084,10 +7145,10 @@ namespace KmsReportClient.External {
         private KmsReportClient.External.Report_Cadre[] Report_CadreField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.Report_Flow Report_FlowField;
+        private KmsReportClient.External.Report_Type Report_TypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.Report_Type Report_TypeField;
+        private KmsReportClient.External.Report_Flow Report_FlowField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -7334,19 +7395,6 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=18)]
-        public KmsReportClient.External.Report_Flow Report_Flow {
-            get {
-                return this.Report_FlowField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Report_FlowField, value) != true)) {
-                    this.Report_FlowField = value;
-                    this.RaisePropertyChanged("Report_Flow");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=19)]
         public KmsReportClient.External.Report_Type Report_Type {
             get {
                 return this.Report_TypeField;
@@ -7355,6 +7403,19 @@ namespace KmsReportClient.External {
                 if ((object.ReferenceEquals(this.Report_TypeField, value) != true)) {
                     this.Report_TypeField = value;
                     this.RaisePropertyChanged("Report_Type");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=19)]
+        public KmsReportClient.External.Report_Flow Report_Flow {
+            get {
+                return this.Report_FlowField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Report_FlowField, value) != true)) {
+                    this.Report_FlowField = value;
+                    this.RaisePropertyChanged("Report_Flow");
                 }
             }
         }
@@ -10592,6 +10653,8 @@ namespace KmsReportClient.External {
         
         private KmsReportClient.External.ReportStatus StatusField;
         
+        private KmsReportClient.External.DataSource DataSourceField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -10702,6 +10765,19 @@ namespace KmsReportClient.External {
                 if ((this.StatusField.Equals(value) != true)) {
                     this.StatusField = value;
                     this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        public KmsReportClient.External.DataSource DataSource {
+            get {
+                return this.DataSourceField;
+            }
+            set {
+                if ((this.DataSourceField.Equals(value) != true)) {
+                    this.DataSourceField = value;
+                    this.RaisePropertyChanged("DataSource");
                 }
             }
         }
@@ -20149,6 +20225,12 @@ namespace KmsReportClient.External {
         [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ChangeStatus", ReplyAction="*")]
         System.Threading.Tasks.Task ChangeStatusAsync(int idReport, int idUser, KmsReportClient.External.ReportStatus status);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ChangeDataSource", ReplyAction="*")]
+        void ChangeDataSource(int idReport, int idUser, KmsReportClient.External.DataSource datasource);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ChangeDataSource", ReplyAction="*")]
+        System.Threading.Tasks.Task ChangeDataSourceAsync(int idReport, int idUser, KmsReportClient.External.DataSource datasource);
+        
         // CODEGEN: Контракт генерации сообщений с именем filials из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
         [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CollectSummaryReport", ReplyAction="*")]
         KmsReportClient.External.CollectSummaryReportResponse CollectSummaryReport(KmsReportClient.External.CollectSummaryReportRequest request);
@@ -20169,6 +20251,20 @@ namespace KmsReportClient.External {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveReport", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.SaveReportResponse> SaveReportAsync(KmsReportClient.External.SaveReportRequest request);
+        
+        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveReportDataSourceHandle", ReplyAction="*")]
+        KmsReportClient.External.SaveReportDataSourceHandleResponse SaveReportDataSourceHandle(KmsReportClient.External.SaveReportDataSourceHandleRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveReportDataSourceHandle", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.SaveReportDataSourceHandleResponse> SaveReportDataSourceHandleAsync(KmsReportClient.External.SaveReportDataSourceHandleRequest request);
+        
+        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveReportDataSourceExcel", ReplyAction="*")]
+        KmsReportClient.External.SaveReportDataSourceExcelResponse SaveReportDataSourceExcel(KmsReportClient.External.SaveReportDataSourceExcelRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveReportDataSourceExcel", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.SaveReportDataSourceExcelResponse> SaveReportDataSourceExcelAsync(KmsReportClient.External.SaveReportDataSourceExcelRequest request);
         
         // CODEGEN: Контракт генерации сообщений с именем request из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
         [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SendNotification", ReplyAction="*")]
@@ -22992,15 +23088,19 @@ namespace KmsReportClient.External {
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
         public KmsReportClient.External.ReportType reportType;
         
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public KmsReportClient.External.DataSource datasource;
+        
         public CollectSummaryReportRequestBody() {
         }
         
-        public CollectSummaryReportRequestBody(KmsReportClient.External.ArrayOfString filials, string yymmStart, string yymmEnd, KmsReportClient.External.ReportStatus status, KmsReportClient.External.ReportType reportType) {
+        public CollectSummaryReportRequestBody(KmsReportClient.External.ArrayOfString filials, string yymmStart, string yymmEnd, KmsReportClient.External.ReportStatus status, KmsReportClient.External.ReportType reportType, KmsReportClient.External.DataSource datasource) {
             this.filials = filials;
             this.yymmStart = yymmStart;
             this.yymmEnd = yymmEnd;
             this.status = status;
             this.reportType = reportType;
+            this.datasource = datasource;
         }
     }
     
@@ -23195,6 +23295,174 @@ namespace KmsReportClient.External {
         
         public SaveReportResponseBody(KmsReportClient.External.AbstractReport SaveReportResult) {
             this.SaveReportResult = SaveReportResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SaveReportDataSourceHandleRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveReportDataSourceHandle", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.SaveReportDataSourceHandleRequestBody Body;
+        
+        public SaveReportDataSourceHandleRequest() {
+        }
+        
+        public SaveReportDataSourceHandleRequest(KmsReportClient.External.SaveReportDataSourceHandleRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class SaveReportDataSourceHandleRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.AbstractReport report;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string yymm;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int idUser;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string filialCode;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public KmsReportClient.External.ReportType reportType;
+        
+        public SaveReportDataSourceHandleRequestBody() {
+        }
+        
+        public SaveReportDataSourceHandleRequestBody(KmsReportClient.External.AbstractReport report, string yymm, int idUser, string filialCode, KmsReportClient.External.ReportType reportType) {
+            this.report = report;
+            this.yymm = yymm;
+            this.idUser = idUser;
+            this.filialCode = filialCode;
+            this.reportType = reportType;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SaveReportDataSourceHandleResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveReportDataSourceHandleResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.SaveReportDataSourceHandleResponseBody Body;
+        
+        public SaveReportDataSourceHandleResponse() {
+        }
+        
+        public SaveReportDataSourceHandleResponse(KmsReportClient.External.SaveReportDataSourceHandleResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class SaveReportDataSourceHandleResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.AbstractReport SaveReportDataSourceHandleResult;
+        
+        public SaveReportDataSourceHandleResponseBody() {
+        }
+        
+        public SaveReportDataSourceHandleResponseBody(KmsReportClient.External.AbstractReport SaveReportDataSourceHandleResult) {
+            this.SaveReportDataSourceHandleResult = SaveReportDataSourceHandleResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SaveReportDataSourceExcelRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveReportDataSourceExcel", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.SaveReportDataSourceExcelRequestBody Body;
+        
+        public SaveReportDataSourceExcelRequest() {
+        }
+        
+        public SaveReportDataSourceExcelRequest(KmsReportClient.External.SaveReportDataSourceExcelRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class SaveReportDataSourceExcelRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.AbstractReport report;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string yymm;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int idUser;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string filialCode;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public KmsReportClient.External.ReportType reportType;
+        
+        public SaveReportDataSourceExcelRequestBody() {
+        }
+        
+        public SaveReportDataSourceExcelRequestBody(KmsReportClient.External.AbstractReport report, string yymm, int idUser, string filialCode, KmsReportClient.External.ReportType reportType) {
+            this.report = report;
+            this.yymm = yymm;
+            this.idUser = idUser;
+            this.filialCode = filialCode;
+            this.reportType = reportType;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SaveReportDataSourceExcelResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveReportDataSourceExcelResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.SaveReportDataSourceExcelResponseBody Body;
+        
+        public SaveReportDataSourceExcelResponse() {
+        }
+        
+        public SaveReportDataSourceExcelResponse(KmsReportClient.External.SaveReportDataSourceExcelResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class SaveReportDataSourceExcelResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.AbstractReport SaveReportDataSourceExcelResult;
+        
+        public SaveReportDataSourceExcelResponseBody() {
+        }
+        
+        public SaveReportDataSourceExcelResponseBody(KmsReportClient.External.AbstractReport SaveReportDataSourceExcelResult) {
+            this.SaveReportDataSourceExcelResult = SaveReportDataSourceExcelResult;
         }
     }
     
@@ -26326,12 +26594,20 @@ namespace KmsReportClient.External {
             return base.Channel.ChangeStatusAsync(idReport, idUser, status);
         }
         
+        public void ChangeDataSource(int idReport, int idUser, KmsReportClient.External.DataSource datasource) {
+            base.Channel.ChangeDataSource(idReport, idUser, datasource);
+        }
+        
+        public System.Threading.Tasks.Task ChangeDataSourceAsync(int idReport, int idUser, KmsReportClient.External.DataSource datasource) {
+            return base.Channel.ChangeDataSourceAsync(idReport, idUser, datasource);
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         KmsReportClient.External.CollectSummaryReportResponse KmsReportClient.External.EndpointSoap.CollectSummaryReport(KmsReportClient.External.CollectSummaryReportRequest request) {
             return base.Channel.CollectSummaryReport(request);
         }
         
-        public KmsReportClient.External.AbstractReport CollectSummaryReport(KmsReportClient.External.ArrayOfString filials, string yymmStart, string yymmEnd, KmsReportClient.External.ReportStatus status, KmsReportClient.External.ReportType reportType) {
+        public KmsReportClient.External.AbstractReport CollectSummaryReport(KmsReportClient.External.ArrayOfString filials, string yymmStart, string yymmEnd, KmsReportClient.External.ReportStatus status, KmsReportClient.External.ReportType reportType, KmsReportClient.External.DataSource datasource) {
             KmsReportClient.External.CollectSummaryReportRequest inValue = new KmsReportClient.External.CollectSummaryReportRequest();
             inValue.Body = new KmsReportClient.External.CollectSummaryReportRequestBody();
             inValue.Body.filials = filials;
@@ -26339,6 +26615,7 @@ namespace KmsReportClient.External {
             inValue.Body.yymmEnd = yymmEnd;
             inValue.Body.status = status;
             inValue.Body.reportType = reportType;
+            inValue.Body.datasource = datasource;
             KmsReportClient.External.CollectSummaryReportResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).CollectSummaryReport(inValue);
             return retVal.Body.CollectSummaryReportResult;
         }
@@ -26348,7 +26625,7 @@ namespace KmsReportClient.External {
             return base.Channel.CollectSummaryReportAsync(request);
         }
         
-        public System.Threading.Tasks.Task<KmsReportClient.External.CollectSummaryReportResponse> CollectSummaryReportAsync(KmsReportClient.External.ArrayOfString filials, string yymmStart, string yymmEnd, KmsReportClient.External.ReportStatus status, KmsReportClient.External.ReportType reportType) {
+        public System.Threading.Tasks.Task<KmsReportClient.External.CollectSummaryReportResponse> CollectSummaryReportAsync(KmsReportClient.External.ArrayOfString filials, string yymmStart, string yymmEnd, KmsReportClient.External.ReportStatus status, KmsReportClient.External.ReportType reportType, KmsReportClient.External.DataSource datasource) {
             KmsReportClient.External.CollectSummaryReportRequest inValue = new KmsReportClient.External.CollectSummaryReportRequest();
             inValue.Body = new KmsReportClient.External.CollectSummaryReportRequestBody();
             inValue.Body.filials = filials;
@@ -26356,6 +26633,7 @@ namespace KmsReportClient.External {
             inValue.Body.yymmEnd = yymmEnd;
             inValue.Body.status = status;
             inValue.Body.reportType = reportType;
+            inValue.Body.datasource = datasource;
             return ((KmsReportClient.External.EndpointSoap)(this)).CollectSummaryReportAsync(inValue);
         }
         
@@ -26419,6 +26697,72 @@ namespace KmsReportClient.External {
             inValue.Body.filialCode = filialCode;
             inValue.Body.reportType = reportType;
             return ((KmsReportClient.External.EndpointSoap)(this)).SaveReportAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.SaveReportDataSourceHandleResponse KmsReportClient.External.EndpointSoap.SaveReportDataSourceHandle(KmsReportClient.External.SaveReportDataSourceHandleRequest request) {
+            return base.Channel.SaveReportDataSourceHandle(request);
+        }
+        
+        public KmsReportClient.External.AbstractReport SaveReportDataSourceHandle(KmsReportClient.External.AbstractReport report, string yymm, int idUser, string filialCode, KmsReportClient.External.ReportType reportType) {
+            KmsReportClient.External.SaveReportDataSourceHandleRequest inValue = new KmsReportClient.External.SaveReportDataSourceHandleRequest();
+            inValue.Body = new KmsReportClient.External.SaveReportDataSourceHandleRequestBody();
+            inValue.Body.report = report;
+            inValue.Body.yymm = yymm;
+            inValue.Body.idUser = idUser;
+            inValue.Body.filialCode = filialCode;
+            inValue.Body.reportType = reportType;
+            KmsReportClient.External.SaveReportDataSourceHandleResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).SaveReportDataSourceHandle(inValue);
+            return retVal.Body.SaveReportDataSourceHandleResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.SaveReportDataSourceHandleResponse> KmsReportClient.External.EndpointSoap.SaveReportDataSourceHandleAsync(KmsReportClient.External.SaveReportDataSourceHandleRequest request) {
+            return base.Channel.SaveReportDataSourceHandleAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.SaveReportDataSourceHandleResponse> SaveReportDataSourceHandleAsync(KmsReportClient.External.AbstractReport report, string yymm, int idUser, string filialCode, KmsReportClient.External.ReportType reportType) {
+            KmsReportClient.External.SaveReportDataSourceHandleRequest inValue = new KmsReportClient.External.SaveReportDataSourceHandleRequest();
+            inValue.Body = new KmsReportClient.External.SaveReportDataSourceHandleRequestBody();
+            inValue.Body.report = report;
+            inValue.Body.yymm = yymm;
+            inValue.Body.idUser = idUser;
+            inValue.Body.filialCode = filialCode;
+            inValue.Body.reportType = reportType;
+            return ((KmsReportClient.External.EndpointSoap)(this)).SaveReportDataSourceHandleAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.SaveReportDataSourceExcelResponse KmsReportClient.External.EndpointSoap.SaveReportDataSourceExcel(KmsReportClient.External.SaveReportDataSourceExcelRequest request) {
+            return base.Channel.SaveReportDataSourceExcel(request);
+        }
+        
+        public KmsReportClient.External.AbstractReport SaveReportDataSourceExcel(KmsReportClient.External.AbstractReport report, string yymm, int idUser, string filialCode, KmsReportClient.External.ReportType reportType) {
+            KmsReportClient.External.SaveReportDataSourceExcelRequest inValue = new KmsReportClient.External.SaveReportDataSourceExcelRequest();
+            inValue.Body = new KmsReportClient.External.SaveReportDataSourceExcelRequestBody();
+            inValue.Body.report = report;
+            inValue.Body.yymm = yymm;
+            inValue.Body.idUser = idUser;
+            inValue.Body.filialCode = filialCode;
+            inValue.Body.reportType = reportType;
+            KmsReportClient.External.SaveReportDataSourceExcelResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).SaveReportDataSourceExcel(inValue);
+            return retVal.Body.SaveReportDataSourceExcelResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.SaveReportDataSourceExcelResponse> KmsReportClient.External.EndpointSoap.SaveReportDataSourceExcelAsync(KmsReportClient.External.SaveReportDataSourceExcelRequest request) {
+            return base.Channel.SaveReportDataSourceExcelAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.SaveReportDataSourceExcelResponse> SaveReportDataSourceExcelAsync(KmsReportClient.External.AbstractReport report, string yymm, int idUser, string filialCode, KmsReportClient.External.ReportType reportType) {
+            KmsReportClient.External.SaveReportDataSourceExcelRequest inValue = new KmsReportClient.External.SaveReportDataSourceExcelRequest();
+            inValue.Body = new KmsReportClient.External.SaveReportDataSourceExcelRequestBody();
+            inValue.Body.report = report;
+            inValue.Body.yymm = yymm;
+            inValue.Body.idUser = idUser;
+            inValue.Body.filialCode = filialCode;
+            inValue.Body.reportType = reportType;
+            return ((KmsReportClient.External.EndpointSoap)(this)).SaveReportDataSourceExcelAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

@@ -444,6 +444,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Scan2" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Scan3" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="Status" type="tns:ReportStatus" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataSource" type="tns:DataSource" />
         </s:sequence>
       </s:complexType>
       <s:simpleType name="ReportStatus">
@@ -454,6 +455,13 @@
           <s:enumeration value="Submit" />
           <s:enumeration value="Refuse" />
           <s:enumeration value="Done" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="DataSource">
+        <s:restriction base="s:string">
+          <s:enumeration value="New" />
+          <s:enumeration value="Excel" />
+          <s:enumeration value="Handle" />
         </s:restriction>
       </s:simpleType>
       <s:element name="GetFSSMonitoringPGData">
@@ -648,9 +656,9 @@
           <s:element minOccurs="0" maxOccurs="1" name="Comment" type="tns:ArrayOfComment" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Dynamic_Flow" type="tns:ArrayOfReport_Dynamic_Flow" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Dynamic" type="tns:Report_Dynamic" />
-          <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:ArrayOfReport_Flow" />
           <s:element minOccurs="0" maxOccurs="1" name="Scans_Bases" type="tns:ArrayOfScans_Base" />
           <s:element minOccurs="0" maxOccurs="1" name="Scans_Bases1" type="tns:ArrayOfScans_Base" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:ArrayOfReport_Flow" />
           <s:element minOccurs="0" maxOccurs="1" name="Region1" type="tns:Region" />
         </s:sequence>
       </s:complexType>
@@ -678,7 +686,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="YymmEnd" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Responsible_Employees" type="tns:ArrayOfResponsible_Employee" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Datas" type="tns:ArrayOfReport_Data" />
-          <s:element minOccurs="0" maxOccurs="1" name="Report_Flows" type="tns:ArrayOfReport_Flow" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:ArrayOfReport_Flow" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfReport_Data">
@@ -706,8 +714,8 @@
           <s:element minOccurs="0" maxOccurs="1" name="Report_OpedFinances" type="tns:ArrayOfReport_OpedFinance" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Iilzs" type="tns:ArrayOfReport_Iilz" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Cadre" type="tns:ArrayOfReport_Cadre" />
-          <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:Report_Flow" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Type" type="tns:Report_Type" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:Report_Flow" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfReport_f262">
@@ -998,9 +1006,10 @@
           <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Scan2" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Scan3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataSource" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:ArrayOfReport_Data" />
           <s:element minOccurs="0" maxOccurs="1" name="Comment" type="tns:ArrayOfComment" />
-          <s:element minOccurs="0" maxOccurs="1" name="Scans_Bases" type="tns:ArrayOfScans_Base" />
+          <s:element minOccurs="0" maxOccurs="1" name="Scans_Base" type="tns:ArrayOfScans_Base" />
           <s:element minOccurs="0" maxOccurs="1" name="Employee" type="tns:Employee" />
           <s:element minOccurs="0" maxOccurs="1" name="Region" type="tns:Region" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Type" type="tns:Report_Type" />
@@ -1054,6 +1063,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Employee" type="tns:ArrayOfEmployee" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Dynamic_Flow" type="tns:ArrayOfReport_Dynamic_Flow" />
           <s:element minOccurs="0" maxOccurs="1" name="OpedFinancePlans" type="tns:ArrayOfOpedFinancePlan" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:ArrayOfReport_Flow" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfEmployee">
@@ -1472,6 +1482,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="DateEditCo" nillable="true" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="DateIsDone" nillable="true" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="Status" type="tns:ReportStatus" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataSource" type="tns:DataSource" />
         </s:sequence>
       </s:complexType>
       <s:element name="SaveScan">
@@ -1704,6 +1715,18 @@
       <s:element name="ChangeStatusResponse">
         <s:complexType />
       </s:element>
+      <s:element name="ChangeDataSource">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idReport" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idUser" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="datasource" type="tns:DataSource" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeDataSourceResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="CollectSummaryReport">
         <s:complexType>
           <s:sequence>
@@ -1712,6 +1735,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="yymmEnd" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="status" type="tns:ReportStatus" />
             <s:element minOccurs="1" maxOccurs="1" name="reportType" type="tns:ReportType" />
+            <s:element minOccurs="1" maxOccurs="1" name="datasource" type="tns:DataSource" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1771,6 +1795,42 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="SaveReportResult" type="tns:AbstractReport" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveReportDataSourceHandle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:AbstractReport" />
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idUser" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="filialCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="reportType" type="tns:ReportType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveReportDataSourceHandleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveReportDataSourceHandleResult" type="tns:AbstractReport" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveReportDataSourceExcel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:AbstractReport" />
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idUser" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="filialCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="reportType" type="tns:ReportType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveReportDataSourceExcelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveReportDataSourceExcelResult" type="tns:AbstractReport" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -3323,6 +3383,12 @@
   <wsdl:message name="ChangeStatusSoapOut">
     <wsdl:part name="parameters" element="tns:ChangeStatusResponse" />
   </wsdl:message>
+  <wsdl:message name="ChangeDataSourceSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeDataSource" />
+  </wsdl:message>
+  <wsdl:message name="ChangeDataSourceSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeDataSourceResponse" />
+  </wsdl:message>
   <wsdl:message name="CollectSummaryReportSoapIn">
     <wsdl:part name="parameters" element="tns:CollectSummaryReport" />
   </wsdl:message>
@@ -3340,6 +3406,18 @@
   </wsdl:message>
   <wsdl:message name="SaveReportSoapOut">
     <wsdl:part name="parameters" element="tns:SaveReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveReportDataSourceHandleSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveReportDataSourceHandle" />
+  </wsdl:message>
+  <wsdl:message name="SaveReportDataSourceHandleSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveReportDataSourceHandleResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveReportDataSourceExcelSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveReportDataSourceExcel" />
+  </wsdl:message>
+  <wsdl:message name="SaveReportDataSourceExcelSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveReportDataSourceExcelResponse" />
   </wsdl:message>
   <wsdl:message name="SendNotificationSoapIn">
     <wsdl:part name="parameters" element="tns:SendNotification" />
@@ -3700,6 +3778,10 @@
       <wsdl:input message="tns:ChangeStatusSoapIn" />
       <wsdl:output message="tns:ChangeStatusSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="ChangeDataSource">
+      <wsdl:input message="tns:ChangeDataSourceSoapIn" />
+      <wsdl:output message="tns:ChangeDataSourceSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="CollectSummaryReport">
       <wsdl:input message="tns:CollectSummaryReportSoapIn" />
       <wsdl:output message="tns:CollectSummaryReportSoapOut" />
@@ -3711,6 +3793,14 @@
     <wsdl:operation name="SaveReport">
       <wsdl:input message="tns:SaveReportSoapIn" />
       <wsdl:output message="tns:SaveReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveReportDataSourceHandle">
+      <wsdl:input message="tns:SaveReportDataSourceHandleSoapIn" />
+      <wsdl:output message="tns:SaveReportDataSourceHandleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveReportDataSourceExcel">
+      <wsdl:input message="tns:SaveReportDataSourceExcelSoapIn" />
+      <wsdl:output message="tns:SaveReportDataSourceExcelSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="SendNotification">
       <wsdl:input message="tns:SendNotificationSoapIn" />
@@ -4226,6 +4316,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ChangeDataSource">
+      <soap:operation soapAction="http://kms-oms.ru/ChangeDataSource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CollectSummaryReport">
       <soap:operation soapAction="http://kms-oms.ru/CollectSummaryReport" style="document" />
       <wsdl:input>
@@ -4246,6 +4345,24 @@
     </wsdl:operation>
     <wsdl:operation name="SaveReport">
       <soap:operation soapAction="http://kms-oms.ru/SaveReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveReportDataSourceHandle">
+      <soap:operation soapAction="http://kms-oms.ru/SaveReportDataSourceHandle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveReportDataSourceExcel">
+      <soap:operation soapAction="http://kms-oms.ru/SaveReportDataSourceExcel" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4922,6 +5039,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ChangeDataSource">
+      <soap12:operation soapAction="http://kms-oms.ru/ChangeDataSource" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CollectSummaryReport">
       <soap12:operation soapAction="http://kms-oms.ru/CollectSummaryReport" style="document" />
       <wsdl:input>
@@ -4942,6 +5068,24 @@
     </wsdl:operation>
     <wsdl:operation name="SaveReport">
       <soap12:operation soapAction="http://kms-oms.ru/SaveReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveReportDataSourceHandle">
+      <soap12:operation soapAction="http://kms-oms.ru/SaveReportDataSourceHandle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveReportDataSourceExcel">
+      <soap12:operation soapAction="http://kms-oms.ru/SaveReportDataSourceExcel" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5231,10 +5375,10 @@
   </wsdl:binding>
   <wsdl:service name="Endpoint">
     <wsdl:port name="EndpointSoap" binding="tns:EndpointSoap">
-      <soap:address location="http://localhost:8091/Endpoint.asmx" />
+      <soap:address location="http://localhost:8091/endpoint.asmx" />
     </wsdl:port>
     <wsdl:port name="EndpointSoap12" binding="tns:EndpointSoap12">
-      <soap12:address location="http://localhost:8091/Endpoint.asmx" />
+      <soap12:address location="http://localhost:8091/endpoint.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

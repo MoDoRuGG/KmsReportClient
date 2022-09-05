@@ -59,6 +59,13 @@ namespace KmsReportClient.Global
            
         };
 
+        public static List<KmsReportDictionary> UploadList = new List<KmsReportDictionary> {
+            new KmsReportDictionary {Key = "New", Value = "Новый отчет"},
+            new KmsReportDictionary {Key = "Excel", Value = "Загружен из Excel"},
+            new KmsReportDictionary {Key = "Handle", Value = "Редактирован вручную"}
+
+        };
+
         public static ReportStatus[] SuccessStatuses = { ReportStatus.Done, ReportStatus.Submit };
     }
 }

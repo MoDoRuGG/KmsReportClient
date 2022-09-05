@@ -180,6 +180,13 @@ namespace KmsReportClient.Report.Basic
                 FillDgwForms5(Dgv, form);
             }
 
+
+            if (Report.DataSource != DataSource.Handle)
+            {
+                Dgv.DefaultCellStyle.BackColor = Color.LightGray;
+            }
+            else
+            { Dgv.DefaultCellStyle.BackColor = Color.Azure; }
             SetTotalColumn();
         }
 
@@ -213,6 +220,8 @@ namespace KmsReportClient.Report.Basic
         }
 
         public override bool IsVisibleBtnDownloadExcel() => true;
+
+        public override bool IsVisibleBtnHandle() => true;
 
         public override string ValidReport()
         {
@@ -336,6 +345,7 @@ namespace KmsReportClient.Report.Basic
             var request = new SaveReportRequest
             {
                 Body = new SaveReportRequestBody
+                
                 {
                     filialCode = CurrentUser.FilialCode,
                     idUser = CurrentUser.IdUser,
@@ -347,9 +357,53 @@ namespace KmsReportClient.Report.Basic
             var response = Client.SaveReport(request).Body.SaveReportResult as ReportPg;
             Report.IdFlow = response.IdFlow;
             Report.Status = response.Status;
+            Report.DataSource = response.DataSource;
+            
         }
 
-        public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status)
+        public override void SaveReportDataSourceExcel()
+        {
+            var request = new SaveReportDataSourceExcelRequest
+            {
+                Body = new SaveReportDataSourceExcelRequestBody
+
+                {
+                    report = Report,
+                    filialCode = CurrentUser.FilialCode,
+                    idUser = CurrentUser.IdUser,
+                    yymm = Report.Yymm,
+                    reportType = ReportType.Pg
+                }
+            };
+            var response = Client.SaveReportDataSourceExcel(request).Body.SaveReportDataSourceExcelResult as ReportPg;
+            Report.IdFlow = response.IdFlow;
+            Report.Status = response.Status;
+            Report.DataSource = response.DataSource;
+
+        }
+
+        public override void SaveReportDataSourceHandle()
+        {
+            var request = new SaveReportDataSourceHandleRequest
+            {
+                Body = new SaveReportDataSourceHandleRequestBody
+
+                {
+                    report = Report,
+                    filialCode = CurrentUser.FilialCode,
+                    idUser = CurrentUser.IdUser,
+                    yymm = Report.Yymm,
+                    reportType = ReportType.Pg
+                }
+            };
+            var response = Client.SaveReportDataSourceHandle(request).Body.SaveReportDataSourceHandleResult as ReportPg;
+            Report.IdFlow = response.IdFlow;
+            Report.Status = response.Status;
+            Report.DataSource = response.DataSource;
+
+        }
+
+        public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status, DataSource datasource)
         {
             var array = new ArrayOfString();
             array.AddRange(filialList);
@@ -414,6 +468,7 @@ namespace KmsReportClient.Report.Basic
                     Dgv.Rows[rowIndex].ReadOnly = true;
                     Dgv.Rows[rowIndex].DefaultCellStyle.BackColor = Color.LightCyan;
                 }
+
             }
         }
 
@@ -466,6 +521,7 @@ namespace KmsReportClient.Report.Basic
                 }
             };
             dgvReport.Columns.Add(column);
+
         }
 
         private void FillThemesForms2(DataGridView dgvReport, string form)
@@ -763,6 +819,9 @@ namespace KmsReportClient.Report.Basic
                 row.Cells[6].Value = PgDgvUtils.GetRowText(isExclusionsRow, null, 0, data.CountStac);
                 row.Cells[7].Value = PgDgvUtils.GetRowText(isExclusionsRow, null, 0, data.CountStacVmp);
             }
+
         }
+
     }
+
 }

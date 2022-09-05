@@ -124,7 +124,7 @@ namespace KmsReportClient.Report.Basic
             SetFormula();
 
         }
-        public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status)
+        public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status, DataSource datasource)
         {
 
         }
@@ -136,10 +136,11 @@ namespace KmsReportClient.Report.Basic
                 Report.Data[i] = new FSSMonitroingData();
             }
         }
-        public override bool IsVisibleBtnDownloadExcel()
-        {
-            return true;
-        }
+        public override bool IsVisibleBtnDownloadExcel() => true;
+
+        public override bool IsVisibleBtnHandle() => false;
+
+
         public override void MapForAutoFill(AbstractReport report)
         {
             if (report == null)
@@ -151,6 +152,12 @@ namespace KmsReportClient.Report.Basic
             Report.IdReportData = inReport.IdReportData;
             Report.Data = inReport.Data;
         }
+
+        public override void SaveReportDataSourceExcel()
+        { }
+        public override void SaveReportDataSourceHandle()
+        { }
+
         public override void SaveToDb()
         {
 

@@ -297,7 +297,12 @@ namespace KmsReportClient.Report.Basic
             Report.Status = response.Status;
         }
 
-        public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status)
+        public override void SaveReportDataSourceExcel()
+        { }
+        public override void SaveReportDataSourceHandle()
+        { }
+
+        public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status, DataSource datasource)
         {
             var array = new ArrayOfString();
             array.AddRange(filialList);
@@ -319,6 +324,11 @@ namespace KmsReportClient.Report.Basic
         }
 
         public override bool IsVisibleBtnDownloadExcel() => Cmb.Text == "Таблица 3";
+
+        public override bool IsVisibleBtnHandle()
+        {
+            return false;
+        }
 
         public override string ValidReport()
         {

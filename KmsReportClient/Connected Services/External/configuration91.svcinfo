@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="pdLNswFqDn50CZXa9ciI/98gVUtOobTTCQm59e4yDak=">
+<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="Gcaw42WxSHcURq2k4J2ec5RoW6UEXJcCDBwiKQ96YXo=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="EndpointSoap">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="EndpointSoap" contract="External.EndpointSoap" bindingType="basicHttpBinding" address="http://localhost:8091/Endpoint.asmx" bindingConfiguration="EndpointSoap">
+    <endpoint name="EndpointSoap" contract="External.EndpointSoap" bindingType="basicHttpBinding" address="http://localhost:8091/endpoint.asmx" bindingConfiguration="EndpointSoap">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8091/Endpoint.asmx</serializedValue>
+          <serializedValue>http://localhost:8091/endpoint.asmx</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

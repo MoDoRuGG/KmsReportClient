@@ -87,7 +87,10 @@ namespace KmsReportClient.Report.Basic
 
 
         }
-
+        public override void SaveReportDataSourceExcel()
+        { }
+        public override void SaveReportDataSourceHandle()
+        { }
         public override AbstractReport CollectReportFromWs(string yymm)
         {
             var request = new GetReportRequest
@@ -191,7 +194,7 @@ namespace KmsReportClient.Report.Basic
             }
 
 
-        public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status)
+        public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status, DataSource datasource)
         {
 
         }
@@ -205,6 +208,8 @@ namespace KmsReportClient.Report.Basic
             }
         }
         public override bool IsVisibleBtnDownloadExcel() => true;
+
+        public override bool IsVisibleBtnHandle() => false;
 
         public override void MapForAutoFill(AbstractReport report)
         {

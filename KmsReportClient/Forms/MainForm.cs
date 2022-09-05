@@ -123,8 +123,9 @@ namespace KmsReportClient.Forms
         {
             MenuDownload.Visible = false;
             BtnCommentReport.Visible = false;
-            BtnFromExcel.Visible = false;
-            separatorExcel.Visible = false;
+            BtnUploaded.Visible = false;
+            BtnHandle.Visible = false;
+            separatorExcel.Visible = true;
             PanelFilter.Enabled = true;
 
             TbControl.TabPages.Remove(PageIizl);
@@ -436,7 +437,7 @@ namespace KmsReportClient.Forms
         {
             var waitingForm = new WaitingForm();
             waitingForm.Show();
-            
+
 
             var yymmExp = YymmUtils.ConvertPeriodToYymm(_yymm);
             var inReport = _processor.CollectReportFromWs(yymmExp);
@@ -497,8 +498,12 @@ namespace KmsReportClient.Forms
             BtnSaveToDb.Enabled = isEnabled;
 
             BtnSubmit.Enabled = _processor.Report.Status != ReportStatus.Done;
-            BtnFromExcel.Visible = _processor.IsVisibleBtnDownloadExcel();
-
+            BtnUploaded.Visible = _processor.IsVisibleBtnDownloadExcel();
+            BtnHandle.Visible = _processor.IsVisibleBtnHandle();
+            if (_processor.Report.IdType == "PG")
+            { 
+                DgwReportPg.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
+            }
             TxtbInfo.Text = _processor.GetReportInfo();
             BtnCommentReport.Visible = true;
             BtnCommentReport.DisplayStyle = CheckComment()
@@ -636,6 +641,42 @@ namespace KmsReportClient.Forms
                     MessageBoxIcon.Error);
                 //Console.WriteLine(ex.StackTrace);
             }
+        }
+
+        private void SaveReportToDB_DataSourceToExcel()
+        {
+            if (string.IsNullOrEmpty(_currentReport))
+            {
+                return;
+            }
+
+            if (_processor.Report.DataSource != DataSource.Excel)
+            {
+                _processor.Report.DataSource = DataSource.Excel;
+            }
+            _processor.SaveReportDataSourceExcel();
+            DgwReportPg.ReadOnly = true;
+            _processor.SaveToDb();
+        }
+
+        private void SaveReportToDB_DataSourceToHandle()
+        {
+            string theme = _processor.GetCurrentTheme();
+            if (string.IsNullOrEmpty(_currentReport))
+            {
+                return;
+            }
+
+            if (_processor.Report.DataSource != DataSource.Handle)
+            {
+                _processor.Report.DataSource = DataSource.Handle;
+            }
+
+            _processor.SaveReportDataSourceHandle();
+            DgwReportPg.ReadOnly = false;
+            _processor.FillDataGridView(theme);
+            _processor.SaveToDb();
+
         }
 
         private void UploadToExcel()
@@ -789,13 +830,17 @@ namespace KmsReportClient.Forms
                 ? enumStatus
                 : ReportStatus.Saved;
 
+            DataSource datasource = Enum.TryParse(CmbFilterType.SelectedValue.ToString(), out DataSource enumdatasource)
+                ? enumdatasource
+                : DataSource.New;
+
             try
             {
                 var waitingForm = new WaitingForm();
                 waitingForm.Show();
                 Application.DoEvents();
 
-                _processor.FindReports(filialList, yymmStart, yymmEnd, status);
+                _processor.FindReports(filialList, yymmStart, yymmEnd, status, datasource);
                 _processor.FillDataGridView(_processor.GetCurrentTheme());
                 waitingForm.Close();
             }
@@ -837,7 +882,8 @@ namespace KmsReportClient.Forms
 
             if (!CurrentUser.IsMain)
             {
-                BtnFromExcel.Visible = _processor.IsVisibleBtnDownloadExcel();
+                BtnUploaded.Visible = _processor.IsVisibleBtnDownloadExcel();
+                BtnHandle.Visible = _processor.IsVisibleBtnHandle();
                 dgw.AllowUserToDeleteRows = _processor.IsVisibleBtnDownloadExcel();
                 separatorExcel.Visible = _processor.IsVisibleBtnDownloadExcel();
             }
@@ -854,13 +900,14 @@ namespace KmsReportClient.Forms
             form.ShowDialog();
         }
 
-        private void CollectReportDataFromExcel()
+
+        private void CollectReportDataUploaded()
         {
             if (string.IsNullOrEmpty(_currentReport))
             {
                 return;
             }
-
+            _processor.Report.DataSource = DataSource.Excel;
             openFileDialog1.Filter = "Excel | *.xls; *.xlsx";
             string theme = _processor.GetCurrentTheme();
             if (openFileDialog1.ShowDialog() != DialogResult.OK)
@@ -885,7 +932,7 @@ namespace KmsReportClient.Forms
             }
         }
 
-        private void CollectDynamicReportDataFromExcel()
+        private void CollectDynamicReportDataUploaded()
         {
 
             var tag = ReportTree.SelectedNode.Tag as ReportNodeTag;
@@ -1261,20 +1308,29 @@ namespace KmsReportClient.Forms
         private void BtnAutoFill_Click(object sender, EventArgs e) =>
             AutoFillReportFromPrevious();
 
-        private void BtnFromExcel_Click(object sender, EventArgs e)
+        private void BtnUploaded_Click(object sender, EventArgs e)
         {
             if (!_isQuery)
             {
-                CollectReportDataFromExcel();
+                CollectReportDataUploaded();
+                SaveReportToDB_DataSourceToExcel();
             }
             else
             {
-                CollectDynamicReportDataFromExcel();
+                CollectDynamicReportDataUploaded();
 
             }
+      
 
         }
 
+        private void BtnHandle_Click(object sender, EventArgs e)
+        {
+            if (!_isQuery)
+            {
+                SaveReportToDB_DataSourceToHandle(); 
+            }
+        }
 
         private void ReportTree_AfterSelect(object sender, TreeViewEventArgs e)
         {
@@ -1383,9 +1439,9 @@ namespace KmsReportClient.Forms
 
         private void MenuChangelog_Click(object sender, EventArgs e) =>
             Open_ReleaseChangelogForm();
-            
-                
-            
+
+
+
 
 
 
@@ -1403,7 +1459,6 @@ namespace KmsReportClient.Forms
                 UploadToExcel();
             }
         }
-
 
         private void MenuExit_Click(object sender, EventArgs e) =>
             Close();
@@ -1572,7 +1627,8 @@ namespace KmsReportClient.Forms
                     ReportTree.Nodes.Clear();
                     _reportView.CreateTreeViewQuery(SelecetedYear);
                     if (!CurrentUser.IsMain)
-                        BtnFromExcel.Visible = true;
+                        BtnUploaded.Visible = true;
+                        BtnHandle.Visible = true;
                     TbControl.TabPages.Remove(Page262);
                     TbControl.TabPages.Remove(Page294);
                     TbControl.TabPages.Remove(PageIizl);

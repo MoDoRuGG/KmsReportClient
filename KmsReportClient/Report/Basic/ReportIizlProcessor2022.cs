@@ -70,7 +70,10 @@ namespace KmsReportClient.Report.Basic
                 }
             }
         }
-
+        public override void SaveReportDataSourceExcel()
+        { }
+        public override void SaveReportDataSourceHandle()
+        { }
         private void FillDgv(DataGridView dgvReport, string form)
         {
             var reportIizlDto = Report.ReportDataList.SingleOrDefault(x => x.Theme.ToLower() == form.ToLower());
@@ -201,7 +204,7 @@ namespace KmsReportClient.Report.Basic
         }
 
 
-        public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status)
+        public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status, DataSource datasource)
         {
 
         }
@@ -218,10 +221,11 @@ namespace KmsReportClient.Report.Basic
                 Report.ReportDataList[i++] = new ReportIizlDto { Theme = theme, Data = rows };
             }
         }
-        public override bool IsVisibleBtnDownloadExcel()
-        {
-            return false;
-        }
+        public override bool IsVisibleBtnDownloadExcel() => false;
+
+        public override bool IsVisibleBtnHandle() => false;
+
+
         public override void MapForAutoFill(AbstractReport report)
         {
             if (report == null)

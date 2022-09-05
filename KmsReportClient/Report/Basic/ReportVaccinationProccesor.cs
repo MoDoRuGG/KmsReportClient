@@ -102,6 +102,11 @@ namespace KmsReportClient.Report.Basic
            
         }
 
+        public override void SaveReportDataSourceExcel()
+        { }
+        public override void SaveReportDataSourceHandle()
+        { }
+
         public void SetFormulaMonth()
         {
             try
@@ -148,7 +153,7 @@ namespace KmsReportClient.Report.Basic
             //Всего вообще
             Dgv.Rows[0].Cells[14].Value = GlobalUtils.TryParseInt(Dgv.Rows[0].Cells[15].Value) + GlobalUtils.TryParseInt(Dgv.Rows[0].Cells[21].Value);
         }
-        public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status)
+        public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status, DataSource datasource)
         {
 
         }
@@ -157,10 +162,11 @@ namespace KmsReportClient.Report.Basic
             Report = new ReportVaccination { IdType = IdReportType };
 
         }
-        public override bool IsVisibleBtnDownloadExcel()
-        {
-            return true;
-        }
+        public override bool IsVisibleBtnDownloadExcel() => true;
+
+        public override bool IsVisibleBtnHandle() => false;
+
+
         public override void MapForAutoFill(AbstractReport report)
         {
 

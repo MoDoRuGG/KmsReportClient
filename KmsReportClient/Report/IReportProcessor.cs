@@ -21,10 +21,13 @@ namespace KmsReportClient.Report
         void MapReportFromDgv(string form);
         void FillDataGridView(string form);
         void SaveToDb();
-        void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status);
+        void SaveReportDataSourceHandle();
+        void SaveReportDataSourceExcel();
+        void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status, DataSource datasource);
         void ToExcel(string filename, string filialName);
         string ValidReport();
         bool IsVisibleBtnDownloadExcel();
+        bool IsVisibleBtnHandle();
 
         void InitReport();
         void SetReadonlyForDgv(bool isReadonly);
@@ -36,6 +39,7 @@ namespace KmsReportClient.Report
         void SaveScan(string inUri,int num);
         void DeleteScan(int num);
         void ChangeStatus(ReportStatus status);
+        void ChangeDataSource(DataSource datasource);
         void DeserializeReport(string yymm);
         void MapForAutoFill(AbstractReport report);
         void CallculateCells();

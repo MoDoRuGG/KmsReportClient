@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <discovery xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.xmlsoap.org/disco/">
-  <contractRef ref="http://localhost:8091/Endpoint.asmx?wsdl" docRef="http://localhost:8091/Endpoint.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
-  <soap address="http://localhost:8091/Endpoint.asmx" xmlns:q1="http://kms-oms.ru/" binding="q1:EndpointSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
-  <soap address="http://localhost:8091/Endpoint.asmx" xmlns:q2="http://kms-oms.ru/" binding="q2:EndpointSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <contractRef ref="http://localhost:8091/endpoint.asmx?wsdl" docRef="http://localhost:8091/endpoint.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://localhost:8091/endpoint.asmx" xmlns:q1="http://kms-oms.ru/" binding="q1:EndpointSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://localhost:8091/endpoint.asmx" xmlns:q2="http://kms-oms.ru/" binding="q2:EndpointSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
 </discovery>

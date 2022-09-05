@@ -319,6 +319,10 @@
     <Compile Include="Support\PgDgvUtils.cs" />
     <Compile Include="Support\PositionSupport.cs" />
     <Compile Include="Support\YymmUtils.cs" />
+    <None Include="Connected Services\External\endpoint.wsdl" />
+    <None Include="Connected Services\External\KmsReportClient.External.AbstractReport.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.AddCommentResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -334,10 +338,16 @@
     <None Include="Connected Services\External\KmsReportClient.External.CheckPasswordNewResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.ClientContext.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.CollectClientContextResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CollectSummaryReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.Consolidate294.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.ConsolidateCardio.datasource">
@@ -445,13 +455,28 @@
     <None Include="Connected Services\External\KmsReportClient.External.CreateZpzForWebSiteResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CReport262Table1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CReport262Table2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CReport262Table3.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.CReportCadreTable1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CReportCadreTable2.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CReportPg.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.DownloadDllFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.DownloadFileResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.DynamicDataDto.datasource">
@@ -532,6 +557,9 @@
     <None Include="Connected Services\External\KmsReportClient.External.GetYearOpedDataResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.KmsReportDictionary.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.MethodForSendingChildModelResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -541,6 +569,9 @@
     <None Include="Connected Services\External\KmsReportClient.External.ReportCadreDataDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.ReportComment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.ReportDynamicDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -548,6 +579,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.ReportDynamicScanModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.ReportFlowDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.ReportInfrormationResponseDataDto.datasource">
@@ -577,6 +611,12 @@
     <None Include="Connected Services\External\KmsReportClient.External.SaveOpedFinanceListResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.SaveReportDataSourceExcelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.SaveReportDataSourceHandleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.SaveReportResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -593,6 +633,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.UnreadComment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.UploadFileResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.UploadXmlDynamicFileResponse.datasource">
@@ -619,50 +662,14 @@
     <None Include="Connected Services\External\KmsReportClient.External.WebReportVaccinationResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="KmsReportClient_TemporaryKey.pfx" />
-    <None Include="Resources\w256h2561372777059DatabaseActive.png" />
-    <None Include="Connected Services\External\Endpoint.disco" />
-    <None Include="Connected Services\External\configuration91.svcinfo" />
-    <None Include="Connected Services\External\configuration.svcinfo" />
-    <None Include="Connected Services\External\KmsReportClient.External.AbstractReport.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\External\KmsReportClient.External.ClientContext.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\External\KmsReportClient.External.Consolidate294.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\External\KmsReportClient.External.CReport262Table1.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\External\KmsReportClient.External.CReport262Table2.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\External\KmsReportClient.External.CReport262Table3.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\External\KmsReportClient.External.CReportPg.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\External\KmsReportClient.External.DownloadFileResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\External\KmsReportClient.External.KmsReportDictionary.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\External\KmsReportClient.External.ReportComment.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\External\KmsReportClient.External.ReportFlowDto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\External\KmsReportClient.External.UploadFileResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\External\KmsReportClient.External.ZpzForWebSite.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="KmsReportClient_TemporaryKey.pfx" />
+    <None Include="Resources\w256h2561372777059DatabaseActive.png" />
+    <None Include="Connected Services\External\endpoint.disco" />
+    <None Include="Connected Services\External\configuration91.svcinfo" />
+    <None Include="Connected Services\External\configuration.svcinfo" />
     <None Include="Connected Services\External\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -743,7 +750,6 @@
     <Content Include="NLog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Connected Services\External\Endpoint.wsdl" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -772,9 +778,6 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\External\" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1</ProductName>
@@ -791,6 +794,9 @@
     <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.2.9.6\analyzers\dotnet\cs\Microsoft.NetCore.CSharp.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.6\analyzers\dotnet\cs\Microsoft.NetFramework.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.6\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\External\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -109,6 +109,9 @@
             this.свод2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчётОПредложенияхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сводToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.кадрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.отделЗПЗИЭКМПToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оИИЗПЗToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serviceMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.рассылкаУведомленийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuHelp = new System.Windows.Forms.ToolStripMenuItem();
@@ -139,7 +142,8 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.BtnCommentReport = new System.Windows.Forms.ToolStripButton();
             this.separatorExcel = new System.Windows.Forms.ToolStripSeparator();
-            this.BtnFromExcel = new System.Windows.Forms.ToolStripButton();
+            this.BtnUploaded = new System.Windows.Forms.ToolStripButton();
+            this.BtnHandle = new System.Windows.Forms.ToolStripButton();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -234,9 +238,7 @@
             this.TxtbInfo = new System.Windows.Forms.TextBox();
             this.PageElement = new System.Windows.Forms.TabPage();
             this.TbxEmentInfo = new System.Windows.Forms.TextBox();
-            this.кадрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.отделЗПЗИЭКМПToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.оИИЗПЗToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -357,21 +359,21 @@
             // сводКТаблице1ToolStripMenuItem
             // 
             this.сводКТаблице1ToolStripMenuItem.Name = "сводКТаблице1ToolStripMenuItem";
-            this.сводКТаблице1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сводКТаблице1ToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.сводКТаблице1ToolStripMenuItem.Text = "Свод к таблице 1";
             this.сводКТаблице1ToolStripMenuItem.Click += new System.EventHandler(this.СводКТаблице1ToolStripMenuItem_Click);
             // 
             // сводКТаблице2ToolStripMenuItem
             // 
             this.сводКТаблице2ToolStripMenuItem.Name = "сводКТаблице2ToolStripMenuItem";
-            this.сводКТаблице2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сводКТаблице2ToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.сводКТаблице2ToolStripMenuItem.Text = "Свод к таблице 2";
             this.сводКТаблице2ToolStripMenuItem.Click += new System.EventHandler(this.СводКТаблице2ToolStripMenuItem_Click);
             // 
             // сводКТаблице3ToolStripMenuItem
             // 
             this.сводКТаблице3ToolStripMenuItem.Name = "сводКТаблице3ToolStripMenuItem";
-            this.сводКТаблице3ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сводКТаблице3ToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.сводКТаблице3ToolStripMenuItem.Text = "Свод к таблице 3";
             this.сводКТаблице3ToolStripMenuItem.Click += new System.EventHandler(this.СводКТаблице3ToolStripMenuItem_Click);
             // 
@@ -577,6 +579,29 @@
             this.сводToolStripMenuItem3.Text = "Свод";
             this.сводToolStripMenuItem3.Click += new System.EventHandler(this.сводToolStripMenuItem3_Click);
             // 
+            // кадрыToolStripMenuItem
+            // 
+            this.кадрыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.отделЗПЗИЭКМПToolStripMenuItem,
+            this.оИИЗПЗToolStripMenuItem});
+            this.кадрыToolStripMenuItem.Name = "кадрыToolStripMenuItem";
+            this.кадрыToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.кадрыToolStripMenuItem.Text = "Кадры";
+            // 
+            // отделЗПЗИЭКМПToolStripMenuItem
+            // 
+            this.отделЗПЗИЭКМПToolStripMenuItem.Name = "отделЗПЗИЭКМПToolStripMenuItem";
+            this.отделЗПЗИЭКМПToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.отделЗПЗИЭКМПToolStripMenuItem.Text = "Отдел ЗПЗ и ЭКМП";
+            this.отделЗПЗИЭКМПToolStripMenuItem.Click += new System.EventHandler(this.отделЗПЗИЭКМПToolStripMenuItem_Click);
+            // 
+            // оИИЗПЗToolStripMenuItem
+            // 
+            this.оИИЗПЗToolStripMenuItem.Name = "оИИЗПЗToolStripMenuItem";
+            this.оИИЗПЗToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.оИИЗПЗToolStripMenuItem.Text = "ОИ и ЗПЗ";
+            this.оИИЗПЗToolStripMenuItem.Click += new System.EventHandler(this.оИИЗПЗToolStripMenuItem_Click);
+            // 
             // serviceMenu
             // 
             this.serviceMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -717,7 +742,9 @@
             this.toolStripSeparator1,
             this.BtnCommentReport,
             this.separatorExcel,
-            this.BtnFromExcel});
+            this.BtnUploaded,
+            this.BtnHandle,
+            this.toolStripSeparator2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(727, 31);
@@ -855,15 +882,25 @@
             this.separatorExcel.Name = "separatorExcel";
             this.separatorExcel.Size = new System.Drawing.Size(6, 31);
             // 
-            // BtnFromExcel
+            // BtnUploaded
             // 
-            this.BtnFromExcel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.BtnFromExcel.Image = ((System.Drawing.Image)(resources.GetObject("BtnFromExcel.Image")));
-            this.BtnFromExcel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnFromExcel.Name = "BtnFromExcel";
-            this.BtnFromExcel.Size = new System.Drawing.Size(145, 28);
-            this.BtnFromExcel.Text = "Загрузить форму из Excel";
-            this.BtnFromExcel.Click += new System.EventHandler(this.BtnFromExcel_Click);
+            this.BtnUploaded.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.BtnUploaded.Image = ((System.Drawing.Image)(resources.GetObject("BtnUploaded.Image")));
+            this.BtnUploaded.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnUploaded.Name = "BtnUploaded";
+            this.BtnUploaded.Size = new System.Drawing.Size(145, 28);
+            this.BtnUploaded.Text = "Загрузить форму из Excel";
+            this.BtnUploaded.Click += new System.EventHandler(this.BtnUploaded_Click);
+            // 
+            // BtnHandle
+            // 
+            this.BtnHandle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.BtnHandle.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnHandle.Name = "BtnHandle";
+            this.BtnHandle.Size = new System.Drawing.Size(150, 17);
+            this.BtnHandle.Text = "Заполнить отчет вручную";
+            this.BtnHandle.ToolTipText = "Заполнить отчет вручную";
+            this.BtnHandle.Click += new System.EventHandler(this.BtnHandle_Click);
             // 
             // saveFileDialog1
             // 
@@ -2412,28 +2449,10 @@
             this.TbxEmentInfo.Size = new System.Drawing.Size(713, 58);
             this.TbxEmentInfo.TabIndex = 8;
             // 
-            // кадрыToolStripMenuItem
+            // toolStripSeparator2
             // 
-            this.кадрыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.отделЗПЗИЭКМПToolStripMenuItem,
-            this.оИИЗПЗToolStripMenuItem});
-            this.кадрыToolStripMenuItem.Name = "кадрыToolStripMenuItem";
-            this.кадрыToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.кадрыToolStripMenuItem.Text = "Кадры";
-            // 
-            // отделЗПЗИЭКМПToolStripMenuItem
-            // 
-            this.отделЗПЗИЭКМПToolStripMenuItem.Name = "отделЗПЗИЭКМПToolStripMenuItem";
-            this.отделЗПЗИЭКМПToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.отделЗПЗИЭКМПToolStripMenuItem.Text = "Отдел ЗПЗ и ЭКМП";
-            this.отделЗПЗИЭКМПToolStripMenuItem.Click += new System.EventHandler(this.отделЗПЗИЭКМПToolStripMenuItem_Click);
-            // 
-            // оИИЗПЗToolStripMenuItem
-            // 
-            this.оИИЗПЗToolStripMenuItem.Name = "оИИЗПЗToolStripMenuItem";
-            this.оИИЗПЗToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.оИИЗПЗToolStripMenuItem.Text = "ОИ и ЗПЗ";
-            this.оИИЗПЗToolStripMenuItem.Click += new System.EventHandler(this.оИИЗПЗToolStripMenuItem_Click);
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 6);
             // 
             // MainForm
             // 
@@ -2582,7 +2601,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton BtnCommentReport;
         private System.Windows.Forms.ToolStripSeparator separatorExcel;
-        private System.Windows.Forms.ToolStripButton BtnFromExcel;
+        private System.Windows.Forms.ToolStripButton BtnUploaded;
         private System.Windows.Forms.ToolStripMenuItem consolidateMenu;
         private System.Windows.Forms.ToolStripMenuItem форма262ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сводКТаблице1ToolStripMenuItem;
@@ -2695,6 +2714,8 @@
         private System.Windows.Forms.ToolStripMenuItem кадрыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отделЗПЗИЭКМПToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оИИЗПЗToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton BtnHandle;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     }
 }
 

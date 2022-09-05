@@ -91,7 +91,10 @@ namespace KmsReportClient.Report.Basic
             var inTheme = inReport.ReportDataList.Single(x => x.Theme == Cmb.Text);
             Report.ReportDataList[index] = inTheme;
         }
-
+        public override void SaveReportDataSourceExcel()
+        { }
+        public override void SaveReportDataSourceHandle()
+        { }
         public override void FillDataGridView(string form)
         {
             if (forms1.Contains(form))
@@ -129,7 +132,7 @@ namespace KmsReportClient.Report.Basic
             }
         }
 
-        public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status)
+        public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status, DataSource datasource)
         {
             var array = new ArrayOfString();
             array.AddRange(filialList);
@@ -177,6 +180,8 @@ namespace KmsReportClient.Report.Basic
         }
 
         public override bool IsVisibleBtnDownloadExcel() => false;
+
+        public override bool IsVisibleBtnHandle() => false;
 
         public override string ValidReport()
         {
