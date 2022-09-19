@@ -501,7 +501,7 @@ namespace KmsReportClient.Forms
             BtnUploaded.Visible = _processor.IsVisibleBtnDownloadExcel();
             BtnHandle.Visible = _processor.IsVisibleBtnHandle();
             if (_processor.Report.IdType == "PG")
-            { 
+            {
                 DgwReportPg.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
             }
             TxtbInfo.Text = _processor.GetReportInfo();
@@ -681,12 +681,17 @@ namespace KmsReportClient.Forms
 
         private void UploadToExcel()
         {
-            if (string.IsNullOrEmpty(_currentReport))
+            bool emptyReport = string.IsNullOrEmpty(_currentReport);
+            if (emptyReport)
             {
                 return;
             }
 
-            if (_processor.Report.IdEmployee != 0)
+            if (_processor.Report.IdEmployee == 0 && _processor.Report.Status.ToString() != "Saved")
+            {
+                MessageBox.Show("Вы пытаетесь выгрузить в Excel отчет, данных по которому нет в базе. Выберите другой отчетный период.", "Ошибка выгрузки в Excel", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
             {
                 try
                 {
@@ -710,10 +715,7 @@ namespace KmsReportClient.Forms
                         MessageBoxIcon.Error);
                 }
             }
-            else
-            {
-                MessageBox.Show("Вы пытаетесь выгрузить в Excel отчет, данных по которому нет в базе. Выберите другой отчетный период.", "Ошибка выгрузки в Excel", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
         }
 
         private void UploadToExcelDynamicReport()
@@ -1320,7 +1322,7 @@ namespace KmsReportClient.Forms
                 CollectDynamicReportDataUploaded();
 
             }
-      
+
 
         }
 
@@ -1328,7 +1330,7 @@ namespace KmsReportClient.Forms
         {
             if (!_isQuery)
             {
-                SaveReportToDB_DataSourceToHandle(); 
+                SaveReportToDB_DataSourceToHandle();
             }
         }
 
@@ -1628,7 +1630,7 @@ namespace KmsReportClient.Forms
                     _reportView.CreateTreeViewQuery(SelecetedYear);
                     if (!CurrentUser.IsMain)
                         BtnUploaded.Visible = true;
-                        BtnHandle.Visible = true;
+                    BtnHandle.Visible = true;
                     TbControl.TabPages.Remove(Page262);
                     TbControl.TabPages.Remove(Page294);
                     TbControl.TabPages.Remove(PageIizl);
@@ -1685,10 +1687,10 @@ namespace KmsReportClient.Forms
             {
 
                 _dynamicReportProcessor.TuneProverkaTfomsTables(CmbQuery.Text.Substring(CmbQuery.Text.Length - 4, 4),
-                   CurrentUser.IsMain && ReportTree.SelectedNode.Level == 2 ?  CurrentUser.Regions.FirstOrDefault(x => x.Value == ReportTree.SelectedNode.Text).Key  : CurrentUser.FilialCode);
+                   CurrentUser.IsMain && ReportTree.SelectedNode.Level == 2 ? CurrentUser.Regions.FirstOrDefault(x => x.Value == ReportTree.SelectedNode.Text).Key : CurrentUser.FilialCode);
                 //_dynamicReportProcessor.SetFFOMSCheck2022LetalData(CmbQuery.Text.Substring(CmbQuery.Text.Length - 4, 4), CurrentUser.Regions.FirstOrDefault(x => x.Value == ReportTree.SelectedNode.Text).Key);
             }
-           
+
 
         }
 
@@ -1852,7 +1854,7 @@ namespace KmsReportClient.Forms
         {
             ChangeIndexComboBox(DgvOtclkInfrorm, CbxOtclkInfrorm, TxtOtclkInfrorm);
         }
-        
+
         private void CmbPageCadre_SelectedIndexChanged(object sender, EventArgs e)
         {
             ChangeIndexComboBox(DgvCadre, CmbCadre, TxtbCadre);
