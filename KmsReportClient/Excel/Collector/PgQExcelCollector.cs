@@ -217,7 +217,7 @@ namespace KmsReportClient.Excel.Collector
                     var data = new ReportPgDataDto
                     {
                         Code = ObjWorkSheet.Cells[i, dictionary["2"]].Text,
-                        CountSmo = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["5"]].Text)
+                        CountSmo = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["4"]].Text)
                     };
                     list.Add(data);
                 }
