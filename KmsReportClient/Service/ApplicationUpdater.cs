@@ -103,6 +103,18 @@ namespace KmsReportClient.Service
                 }
                 else
                 {
+                    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    //добавление сюда позволит подтягивать новые версии шаблонов, без необходимости выпуска обнов (протестируем)//
+                    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    foreach (var file in updateXml.RemoteFiles.Where(f => f.IsNeedDownload))
+                    {
+                        if (file.Name == XmlFormTemplate.TextMail.GetDescription() && File.Exists(TemplatesFolder + file.Name))
+                        {
+                            continue;
+                        }
+                        DownloadExcelTemplate(file.Name);
+                    }
+                    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
                     Log.Info($"Обновление не требуется. Актуальная версия приложения: {currentVersion}");
                     if (!idApplicationStart)
                     {
