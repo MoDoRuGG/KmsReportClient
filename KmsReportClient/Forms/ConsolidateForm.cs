@@ -780,19 +780,33 @@ namespace KmsReportClient.Forms
 
             foreach (var d in dataMonths)
             {
-                d.Filial = _regions.Single(x => x.Key == d.Filial).Value;
+                if (d.Filial == "RU")
+                {
+                    continue;
+                }
+                else
+                {
+                    d.Filial = _regions.Single(j => j.Key == d.Filial).Value;
+                }
             }
 
-            dataMonths = dataMonths.OrderBy(x => x.Filial).ToArray();
+            dataMonths = dataMonths.OrderBy(x => x.Filial).Skip(1).ToArray();
 
             string statPeriod = yymm.Substring(0, 2) + "01";
             var dataYear = _client.CreateReportCadreTable2(yymm);
             foreach (var d in dataYear)
             {
-                d.Filial = _regions.Single(x => x.Key == d.Filial).Value;
+                if (d.Filial == "RU")
+                {
+                    continue;
+                }
+                else
+                {
+                    d.Filial = _regions.Single(j => j.Key == d.Filial).Value;
+                }
             }
 
-            dataYear = dataYear.OrderBy(x => x.Filial).ToArray();
+            dataYear = dataYear.OrderBy(x => x.Filial).Skip(1).ToArray();
 
             var excel = new ExcelConsolidateCadreT2Creator(saveFileDialog1.FileName, "", _filialName);
             excel.CreateReport(dataMonths, dataYear);
@@ -814,19 +828,35 @@ namespace KmsReportClient.Forms
 
             foreach (var d in dataMonths)
             {
-                d.Filial = _regions.Single(x => x.Key == d.Filial).Value;
+                if (d.Filial == "RU")
+                { 
+                    continue; 
+                }
+                else 
+                {
+                    d.Filial = _regions.Single(j => j.Key == d.Filial).Value; 
+                }
             }
 
-            dataMonths = dataMonths.OrderBy(x => x.Filial).ToArray();
+            dataMonths = dataMonths.OrderBy(x => x.Filial).Skip(1).ToArray();
+            
+            
 
             string statPeriod = yymm.Substring(0, 2) + "01";
             var dataYear = _client.CreateReportCadreTable1(yymm);
             foreach (var d in dataYear)
             {
-                d.Filial = _regions.Single(x => x.Key == d.Filial).Value;
+                if (d.Filial == "RU")
+                {
+                    continue;
+                }
+                else
+                {
+                    d.Filial = _regions.Single(k => k.Key == d.Filial).Value;
+                }
             }
 
-            dataYear = dataYear.OrderBy(x => x.Filial).ToArray();
+            dataYear = dataYear.OrderBy(x => x.Filial).Skip(1).ToArray();
 
             var excel = new ExcelConsolidateCadreT1Creator(saveFileDialog1.FileName, "", _filialName);
             excel.CreateReport(dataMonths, dataYear);
