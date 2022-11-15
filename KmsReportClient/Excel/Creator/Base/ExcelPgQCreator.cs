@@ -19,13 +19,13 @@ namespace KmsReportClient.Excel.Creator.Base
             new ReportDictionary {TableName = "Таблица 4", StartRow = 7, EndRow = 11, Index = 4},
             new ReportDictionary {TableName = "Таблица 5", StartRow = 7, EndRow = 34, Index = 5},
             new ReportDictionary {TableName = "Таблица 6", StartRow = 7, EndRow = 49, Index = 6},
-            new ReportDictionary {TableName = "Таблица 8", StartRow = 7, EndRow = 72, Index = 8},
-            new ReportDictionary {TableName = "Таблица 10", StartRow = 7, EndRow = 49, Index = 10},
-            new ReportDictionary {TableName = "Таблица 11", StartRow = 7, EndRow = 27, Index = 11},
-            new ReportDictionary {TableName = "Таблица 12", StartRow = 7, EndRow = 24, Index = 12},
-            new ReportDictionary {TableName = "Таблица 13", StartRow = 7, EndRow = 21, Index = 13},
-            new ReportDictionary {TableName = "Таблица 1Л", StartRow = 5, EndRow = 28, Index = 14},
-            new ReportDictionary {TableName = "Таблица 2Л", StartRow = 5, EndRow = 30, Index = 15},
+            new ReportDictionary {TableName = "Таблица 8", StartRow = 7, EndRow = 72, Index = 7},
+            new ReportDictionary {TableName = "Таблица 10", StartRow = 7, EndRow = 49, Index = 8},
+            new ReportDictionary {TableName = "Таблица 11", StartRow = 7, EndRow = 27, Index = 9},
+            new ReportDictionary {TableName = "Таблица 12", StartRow = 7, EndRow = 24, Index = 10},
+            new ReportDictionary {TableName = "Таблица 13", StartRow = 7, EndRow = 21, Index = 11},
+            new ReportDictionary {TableName = "Таблица 1Л", StartRow = 5, EndRow = 28, Index = 12},
+            new ReportDictionary {TableName = "Таблица 2Л", StartRow = 5, EndRow = 30, Index = 13},
         };
 
         public ExcelPgQCreator(
