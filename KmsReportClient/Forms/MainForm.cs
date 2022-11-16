@@ -687,7 +687,7 @@ namespace KmsReportClient.Forms
                 return;
             }
 
-            if (_processor.Report.IdEmployee == 0 && _processor.Report.Status.ToString() != "Saved")
+            if (_processor.Report.IdEmployee != 0)
             {
                 MessageBox.Show("Вы пытаетесь выгрузить в Excel отчет, данных по которому нет в базе. Выберите другой отчетный период.", "Ошибка выгрузки в Excel", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

@@ -144,6 +144,7 @@
             this.separatorExcel = new System.Windows.Forms.ToolStripSeparator();
             this.BtnUploaded = new System.Windows.Forms.ToolStripButton();
             this.BtnHandle = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -238,7 +239,6 @@
             this.TxtbInfo = new System.Windows.Forms.TextBox();
             this.PageElement = new System.Windows.Forms.TabPage();
             this.TbxEmentInfo = new System.Windows.Forms.TextBox();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -901,6 +901,11 @@
             this.BtnHandle.Text = "Заполнить отчет вручную";
             this.BtnHandle.ToolTipText = "Заполнить отчет вручную";
             this.BtnHandle.Click += new System.EventHandler(this.BtnHandle_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 6);
             // 
             // saveFileDialog1
             // 
@@ -2448,11 +2453,6 @@
             this.TbxEmentInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.TbxEmentInfo.Size = new System.Drawing.Size(713, 58);
             this.TbxEmentInfo.TabIndex = 8;
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 6);
             // 
             // MainForm
             // 
