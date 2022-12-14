@@ -28,7 +28,7 @@ namespace KmsReportClient.Report.Basic
 
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
 
-        private string[] _columns = new string[]
+         private string[] _columns = new string[]
         {
             "№ п/п",
             "Показатель",
@@ -321,13 +321,16 @@ namespace KmsReportClient.Report.Basic
                 if (_FSSMonitoringPGDataResult != null)
                 {
 
-                  
+                    // ПО ЗАПРОСУ ГУЖЕНКО перевожу все на суммирование, без подтягивания данных ПГ
+                    
                     FSSMonitoringPgDataDto dto = _FSSMonitoringPGDataResult.FirstOrDefault(x => x.RowNum == row.Key);
-                    if (dto != null)
+                    if (row.Key != "2.2.4ИНФ") { row.Value.Cells[4].Value = GlobalUtils.TryParseDecimal(row.Value.Cells[2].Value) + GlobalUtils.TryParseDecimal(row.Value.Cells[3].Value); }
+                    // if (dto != null)
+                    else
                     {
                         if (GlobalUtils.TryParseDecimal(dto.Total) == 0.00m) // Если по ПГ нам ничего не пришло, то можно суммировать
                         {
-                            row.Value.Cells[4].Value = GlobalUtils.TryParseDecimal(row.Value.Cells[2].Value) + GlobalUtils.TryParseDecimal(row.Value.Cells[3].Value);
+                            
                         }
                         else
                         {
