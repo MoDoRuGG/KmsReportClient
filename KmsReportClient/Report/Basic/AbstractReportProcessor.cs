@@ -177,6 +177,9 @@ namespace KmsReportClient.Report.Basic
                                         valueCel += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value);
 
                                     }
+                                    // Потребовали, чтобы в 6й колонке была сумма 2-5. Попробуем плюсануть тут.
+                                    else if (GetCurrentTheme() == "Таблица 1Л" && row != Dgv.Rows.Count-1 && row != Dgv.Rows.Count-2)
+                                    { Dgv.Rows[row].Cells[cell].Value = valueCel; };
                                 }
                                 else if (GetCurrentTheme() == "Таблица 12")
                                 {
