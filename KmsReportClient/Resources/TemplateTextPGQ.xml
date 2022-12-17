@@ -1724,7 +1724,7 @@
         из них:
       </ROW_TEXT>
       <ROW_NUM>1.1</ROW_NUM>
-      <EXCLUSION>true</EXCLUSION>
+      <EXCLUSION>false</EXCLUSION>
     </ROW>
     <ROW>
       <ROW_TEXT>    специалисты, осуществляющие МЭК</ROW_TEXT>
@@ -1742,7 +1742,7 @@
         в том числе:
       </ROW_TEXT>
       <ROW_NUM>1.1.3</ROW_NUM>
-      <EXCLUSION>true</EXCLUSION>
+      <EXCLUSION>false</EXCLUSION>
     </ROW>
     <ROW>
       <ROW_TEXT>      эксперты качества медицинской помощи, включенные в территориальный реестр данного субъекта Российской Федерации</ROW_TEXT>
@@ -1783,7 +1783,7 @@
         в том числе:
       </ROW_TEXT>
       <ROW_NUM>3</ROW_NUM>
-      <EXCLUSION>true</EXCLUSION>
+      <EXCLUSION>false</EXCLUSION>
     </ROW>
     <ROW>
       <ROW_TEXT>  высшую</ROW_TEXT>
