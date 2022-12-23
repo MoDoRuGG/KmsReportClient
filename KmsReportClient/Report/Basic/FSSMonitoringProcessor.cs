@@ -265,7 +265,7 @@ namespace KmsReportClient.Report.Basic
                     continue;
 
                 dataList.Add(new FSSMonitroingData
-                {
+                { 
                     RowNum = row.Cells[0].Value.ToString(),
                     ExpertWithEducation = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
                     ExpertWithoutEducation = GlobalUtils.TryParseDecimal(row.Cells[3].Value),
@@ -324,7 +324,7 @@ namespace KmsReportClient.Report.Basic
                     // ПО ЗАПРОСУ ГУЖЕНКО перевожу все на суммирование, без подтягивания данных ПГ
                     
                     FSSMonitoringPgDataDto dto = _FSSMonitoringPGDataResult.FirstOrDefault(x => x.RowNum == row.Key);
-                    if (row.Key != "2.2.4ИНФ") { row.Value.Cells[4].Value = GlobalUtils.TryParseDecimal(row.Value.Cells[2].Value) + GlobalUtils.TryParseDecimal(row.Value.Cells[3].Value); }
+                    if (row.Key != "2.2.4ИНФ" || row.Key != "2.1.8ИНФ") { row.Value.Cells[4].Value = GlobalUtils.TryParseDecimal(row.Value.Cells[2].Value) + GlobalUtils.TryParseDecimal(row.Value.Cells[3].Value); }
                     // if (dto != null)
                     else
                     {
