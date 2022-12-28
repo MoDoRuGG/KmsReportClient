@@ -135,6 +135,7 @@ namespace KmsReportClient.Forms
             TbControl.TabPages.Remove(PagePg);
             TbControl.TabPages.Remove(PageQuery);
             TbControl.TabPages.Remove(PageOped);
+            TbControl.TabPages.Remove(PageOpedU);
             TbControl.TabPages.Remove(PageOpedQ);
             TbControl.TabPages.Remove(PageOtclkInfrorm);
             TbControl.TabPages.Remove(tabVac);
@@ -167,6 +168,7 @@ namespace KmsReportClient.Forms
                         {PagePgQ, ReportGlobalConst.ReportPgQ},
                         {PageQuery, ReportGlobalConst.ReportPgQ},
                         {PageOped, ReportGlobalConst.ReportOped},
+                        {PageOpedU, ReportGlobalConst.ReportOpedU},
                         {PageOtclkInfrorm, ReportGlobalConst.ReportOtklik},
                         {PageOpedQ, ReportGlobalConst.ReportOpedQ},
                         {tabVac, ReportGlobalConst.ReportVac},
@@ -203,6 +205,10 @@ namespace KmsReportClient.Forms
                  {
                     ReportGlobalConst.ReportOped,
                     new ReportOpedProcessor(_client, _reportsDictionary, DgvReportOped, CbxOped, TxtbOped, PageOped)
+                },
+                 { 
+                    ReportGlobalConst.ReportOpedU,
+                    new ReportOpedUProcessor(_client, _reportsDictionary, DgvReportOpedU, CbxOpedU, TxtbOpedU, PageOpedU)
                 },
                   {
                     ReportGlobalConst.ReportOpedQ,
@@ -465,7 +471,7 @@ namespace KmsReportClient.Forms
             _processor.SetReadonlyForDgv(SuccessStatuses.Contains(_processor.Report.Status));
 
 
-            waitingForm.Close();
+             waitingForm.Close();
             SetReportInterface();
 
             if (CurrentUser.IsMain && inReport == null)
@@ -482,6 +488,11 @@ namespace KmsReportClient.Forms
 
 
         private void DgvReportOped_CellValueChanged1(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void DgvReportOpedU_CellValueChanged1(object sender, DataGridViewCellEventArgs e)
         {
             throw new NotImplementedException();
         }
@@ -1634,6 +1645,7 @@ namespace KmsReportClient.Forms
                     TbControl.TabPages.Remove(PageQuery);
                     TbControl.TabPages.Remove(PageOtclkInfrorm);
                     TbControl.TabPages.Remove(PageOped);
+                    TbControl.TabPages.Remove(PageOpedU);
                     TbControl.TabPages.Remove(PageOpedQ);
                     TbControl.TabPages.Remove(PageProposal);
                     TbControl.TabPages.Remove(tpOpedFinance);
@@ -1814,7 +1826,18 @@ namespace KmsReportClient.Forms
 
         }
 
+        private void DgvReportOpedU_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void DgvReportOped_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+        }
+        
+        private void DgvReportOpedU_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
 
 
@@ -1824,8 +1847,18 @@ namespace KmsReportClient.Forms
         {
             _processor.CallculateCells();
         }
+        
+        private void DgvReportOpedU_KeyDown(object sender, KeyEventArgs e)
+        {
+            _processor.CallculateCells();
+        }
 
         private void DgvReportOped_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+        
+        private void DgvReportOpedU_KeyPress(object sender, KeyPressEventArgs e)
         {
 
         }
@@ -1834,15 +1867,29 @@ namespace KmsReportClient.Forms
         {
             _processor.CallculateCells();
         }
+        
+        private void DgvReportOpedU_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            _processor.CallculateCells();
+        }
 
         private void сводToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenConsolidateReportForm(ConsolidateReport.ConsolidateOped);
         }
+        
+        private void сводUToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenConsolidateReportForm(ConsolidateReport.ConsolidateOpedU);
+        }
 
         private void CbxOped_SelectedIndexChanged(object sender, EventArgs e)
         {
             ChangeIndexComboBox(DgvReportOped, CbxOped, TxtbOped);
+        }
+        private void CbxOpedU_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ChangeIndexComboBox(DgvReportOpedU, CbxOpedU, TxtbOpedU);
         }
 
         private void CbxOtclkInfrorm_SelectedIndexChanged(object sender, EventArgs e)

@@ -9,6 +9,7 @@
         public const string ReportPgQ = "PG_Q";
         public const string ReportQuery = "Query";
         public const string ReportOped = "foped";
+        public const string ReportOpedU = "fopedU";
         public const string ReportOtklik = "fcr";
         public const string ReportOpedQ = "opedQ";
         public const string ReportVac = "vac";

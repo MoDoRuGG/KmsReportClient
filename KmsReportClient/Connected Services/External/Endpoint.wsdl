@@ -316,6 +316,44 @@
           <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="GetYearOpedUData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filiall" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYearOpedUDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetYearOpedUDataResult" type="tns:ArrayOfReportOpedUDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfReportOpedUDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReportOpedUDto" nillable="true" type="tns:ReportOpedUDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReportOpedUDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="App" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ks" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ds" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Smp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AppOnco" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KsOnco" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DsOnco" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SmpOnco" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AppLeth" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KsLeth" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DsLeth" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SmpLeth" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="GetIRYearData">
         <s:complexType>
           <s:sequence>
@@ -714,6 +752,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Report_OpedFinances" type="tns:ArrayOfReport_OpedFinance" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Iilzs" type="tns:ArrayOfReport_Iilz" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Cadre" type="tns:ArrayOfReport_Cadre" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_OpedU" type="tns:ArrayOfReport_OpedU" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Type" type="tns:Report_Type" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:Report_Flow" />
         </s:sequence>
@@ -985,6 +1024,32 @@
           <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:Report_Data" />
         </s:sequence>
       </s:complexType>
+      <s:complexType name="ArrayOfReport_OpedU">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Report_OpedU" nillable="true" type="tns:Report_OpedU" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Report_OpedU">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="App" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ks" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ds" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Smp" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_Report_Data" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AppOnco" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KsOnco" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DsOnco" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SmpOnco" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AppLeth" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KsLeth" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DsLeth" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SmpLeth" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:Report_Data" />
+        </s:sequence>
+      </s:complexType>
       <s:complexType name="Report_Flow">
         <s:sequence>
           <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
@@ -1211,6 +1276,25 @@
         </s:complexContent>
       </s:complexType>
       <s:element name="WebReportOpedResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="WebReportOpedU">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:ReportOpedU" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReportOpedU">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AbstractReport">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ReportDataList" type="tns:ArrayOfReportOpedUDto" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="WebReportOpedUResponse">
         <s:complexType />
       </s:element>
       <s:element name="WebReportInfrormationResponse">
@@ -1748,6 +1832,7 @@
           <s:enumeration value="Pg" />
           <s:enumeration value="PgQ" />
           <s:enumeration value="Oped" />
+          <s:enumeration value="OpedU" />
           <s:enumeration value="OpedQ" />
           <s:enumeration value="IR" />
           <s:enumeration value="Vac" />
@@ -2343,6 +2428,50 @@
           <s:element minOccurs="1" maxOccurs="1" name="ks" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="ds" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="smp" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateReportCOpedU">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymmStart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yymmEnd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="regions" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateReportCOpedUResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateReportCOpedUResult" type="tns:ArrayOfConsolidateOpedU" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfConsolidateOpedU">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsolidateOpedU" nillable="true" type="tns:ConsolidateOpedU" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConsolidateOpedU">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mee" type="tns:OpedUData" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ekmp" type="tns:OpedUData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OpedUData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="app" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ks" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ds" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="smp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="appOnco" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ksOnco" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="dsOnco" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="smpOnco" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="appLeth" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ksLeth" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="dsLeth" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="smpLeth" type="s:decimal" />
         </s:sequence>
       </s:complexType>
       <s:element name="CreateReportVSS">
@@ -3191,6 +3320,12 @@
   <wsdl:message name="GetYearOpedDataSoapOut">
     <wsdl:part name="parameters" element="tns:GetYearOpedDataResponse" />
   </wsdl:message>
+  <wsdl:message name="GetYearOpedUDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetYearOpedUData" />
+  </wsdl:message>
+  <wsdl:message name="GetYearOpedUDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetYearOpedUDataResponse" />
+  </wsdl:message>
   <wsdl:message name="GetIRYearDataSoapIn">
     <wsdl:part name="parameters" element="tns:GetIRYearData" />
   </wsdl:message>
@@ -3292,6 +3427,12 @@
   </wsdl:message>
   <wsdl:message name="WebReportOpedSoapOut">
     <wsdl:part name="parameters" element="tns:WebReportOpedResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebReportOpedUSoapIn">
+    <wsdl:part name="parameters" element="tns:WebReportOpedU" />
+  </wsdl:message>
+  <wsdl:message name="WebReportOpedUSoapOut">
+    <wsdl:part name="parameters" element="tns:WebReportOpedUResponse" />
   </wsdl:message>
   <wsdl:message name="WebReportInfrormationResponseSoapIn">
     <wsdl:part name="parameters" element="tns:WebReportInfrormationResponse" />
@@ -3521,6 +3662,12 @@
   <wsdl:message name="CreateReportCOpedSoapOut">
     <wsdl:part name="parameters" element="tns:CreateReportCOpedResponse" />
   </wsdl:message>
+  <wsdl:message name="CreateReportCOpedUSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateReportCOpedU" />
+  </wsdl:message>
+  <wsdl:message name="CreateReportCOpedUSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateReportCOpedUResponse" />
+  </wsdl:message>
   <wsdl:message name="CreateReportVSSSoapIn">
     <wsdl:part name="parameters" element="tns:CreateReportVSS" />
   </wsdl:message>
@@ -3650,6 +3797,10 @@
       <wsdl:input message="tns:GetYearOpedDataSoapIn" />
       <wsdl:output message="tns:GetYearOpedDataSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetYearOpedUData">
+      <wsdl:input message="tns:GetYearOpedUDataSoapIn" />
+      <wsdl:output message="tns:GetYearOpedUDataSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetIRYearData">
       <wsdl:input message="tns:GetIRYearDataSoapIn" />
       <wsdl:output message="tns:GetIRYearDataSoapOut" />
@@ -3717,6 +3868,10 @@
     <wsdl:operation name="WebReportOped">
       <wsdl:input message="tns:WebReportOpedSoapIn" />
       <wsdl:output message="tns:WebReportOpedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebReportOpedU">
+      <wsdl:input message="tns:WebReportOpedUSoapIn" />
+      <wsdl:output message="tns:WebReportOpedUSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="WebReportInfrormationResponse">
       <wsdl:input message="tns:WebReportInfrormationResponseSoapIn" />
@@ -3869,6 +4024,10 @@
     <wsdl:operation name="CreateReportCOped">
       <wsdl:input message="tns:CreateReportCOpedSoapIn" />
       <wsdl:output message="tns:CreateReportCOpedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateReportCOpedU">
+      <wsdl:input message="tns:CreateReportCOpedUSoapIn" />
+      <wsdl:output message="tns:CreateReportCOpedUSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="CreateReportVSS">
       <wsdl:input message="tns:CreateReportVSSSoapIn" />
@@ -4028,6 +4187,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetYearOpedUData">
+      <soap:operation soapAction="http://kms-oms.ru/GetYearOpedUData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetIRYearData">
       <soap:operation soapAction="http://kms-oms.ru/GetIRYearData" style="document" />
       <wsdl:input>
@@ -4174,6 +4342,15 @@
     </wsdl:operation>
     <wsdl:operation name="WebReportOped">
       <soap:operation soapAction="http://kms-oms.ru/WebReportOped" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebReportOpedU">
+      <soap:operation soapAction="http://kms-oms.ru/WebReportOpedU" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4523,6 +4700,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CreateReportCOpedU">
+      <soap:operation soapAction="http://kms-oms.ru/CreateReportCOpedU" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateReportVSS">
       <soap:operation soapAction="http://kms-oms.ru/CreateReportVSS" style="document" />
       <wsdl:input>
@@ -4751,6 +4937,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetYearOpedUData">
+      <soap12:operation soapAction="http://kms-oms.ru/GetYearOpedUData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetIRYearData">
       <soap12:operation soapAction="http://kms-oms.ru/GetIRYearData" style="document" />
       <wsdl:input>
@@ -4897,6 +5092,15 @@
     </wsdl:operation>
     <wsdl:operation name="WebReportOped">
       <soap12:operation soapAction="http://kms-oms.ru/WebReportOped" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebReportOpedU">
+      <soap12:operation soapAction="http://kms-oms.ru/WebReportOpedU" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5239,6 +5443,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateReportCOped">
       <soap12:operation soapAction="http://kms-oms.ru/CreateReportCOped" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateReportCOpedU">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateReportCOpedU" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

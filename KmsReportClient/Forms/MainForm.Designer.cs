@@ -74,6 +74,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -202,6 +205,10 @@
             this.TxtbOped = new System.Windows.Forms.TextBox();
             this.CbxOped = new System.Windows.Forms.ComboBox();
             this.DgvReportOped = new System.Windows.Forms.DataGridView();
+            this.PageOpedU = new System.Windows.Forms.TabPage();
+            this.TxtbOpedU = new System.Windows.Forms.TextBox();
+            this.CbxOpedU = new System.Windows.Forms.ComboBox();
+            this.DgvReportOpedU = new System.Windows.Forms.DataGridView();
             this.PageOtclkInfrorm = new System.Windows.Forms.TabPage();
             this.TxtOtclkInfrorm = new System.Windows.Forms.TextBox();
             this.CbxOtclkInfrorm = new System.Windows.Forms.ComboBox();
@@ -271,6 +278,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.DgvQuery)).BeginInit();
             this.PageOped.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReportOped)).BeginInit();
+            this.PageOpedU.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvReportOpedU)).BeginInit();
             this.PageOtclkInfrorm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvOtclkInfrorm)).BeginInit();
             this.PageOpedQ.SuspendLayout();
@@ -1277,6 +1286,7 @@
             this.TbControl.Controls.Add(this.PagePg);
             this.TbControl.Controls.Add(this.PageQuery);
             this.TbControl.Controls.Add(this.PageOped);
+            this.TbControl.Controls.Add(this.PageOpedU);
             this.TbControl.Controls.Add(this.PageOtclkInfrorm);
             this.TbControl.Controls.Add(this.PageOpedQ);
             this.TbControl.Controls.Add(this.tabVac);
@@ -1811,6 +1821,80 @@
             this.DgvReportOped.TabIndex = 12;
             this.DgvReportOped.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.DgvReportOped_CellBeginEdit);
             this.DgvReportOped.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DgvReportOped_KeyPress);
+            // 
+            // PageOpedU
+            // 
+            this.PageOpedU.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.PageOpedU.Controls.Add(this.TxtbOpedU);
+            this.PageOpedU.Controls.Add(this.CbxOpedU);
+            this.PageOpedU.Controls.Add(this.DgvReportOpedU);
+            this.PageOpedU.Location = new System.Drawing.Point(4, 36);
+            this.PageOpedU.Name = "PageOpedU";
+            this.PageOpedU.Padding = new System.Windows.Forms.Padding(3);
+            this.PageOpedU.Size = new System.Drawing.Size(712, 330);
+            this.PageOpedU.TabIndex = 7;
+            // 
+            // TxtbOpedU
+            // 
+            this.TxtbOpedU.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtbOpedU.Location = new System.Drawing.Point(115, 5);
+            this.TxtbOpedU.Multiline = true;
+            this.TxtbOpedU.Name = "TxtbOpedU";
+            this.TxtbOpedU.ReadOnly = true;
+            this.TxtbOpedU.Size = new System.Drawing.Size(593, 39);
+            this.TxtbOpedU.TabIndex = 14;
+            // 
+            // CbxOpedU
+            // 
+            this.CbxOpedU.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbxOpedU.FormattingEnabled = true;
+            this.CbxOpedU.Location = new System.Drawing.Point(9, 5);
+            this.CbxOpedU.Name = "CbxOpedU";
+            this.CbxOpedU.Size = new System.Drawing.Size(100, 21);
+            this.CbxOpedU.TabIndex = 13;
+            this.CbxOpedU.SelectedIndexChanged += new System.EventHandler(this.CbxOpedU_SelectedIndexChanged);
+            // 
+            // DgvReportOpedU
+            // 
+            this.DgvReportOpedU.AllowUserToAddRows = false;
+            this.DgvReportOpedU.AllowUserToDeleteRows = false;
+            this.DgvReportOpedU.AllowUserToResizeColumns = false;
+            this.DgvReportOpedU.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DgvReportOpedU.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            dataGridViewCellStyle47.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle47.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle47.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvReportOpedU.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
+            this.DgvReportOpedU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle48.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle48.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle48.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvReportOpedU.DefaultCellStyle = dataGridViewCellStyle48;
+            this.DgvReportOpedU.Location = new System.Drawing.Point(5, 50);
+            this.DgvReportOpedU.Name = "DgvReportOpedU";
+            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle49.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle49.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle49.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvReportOpedU.RowHeadersDefaultCellStyle = dataGridViewCellStyle49;
+            this.DgvReportOpedU.Size = new System.Drawing.Size(703, 276);
+            this.DgvReportOpedU.TabIndex = 12;
+            this.DgvReportOpedU.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.DgvReportOpedU_CellBeginEdit);
+            this.DgvReportOpedU.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DgvReportOpedU_KeyPress);
             // 
             // PageOtclkInfrorm
             // 
@@ -2515,6 +2599,9 @@
             this.PageOped.ResumeLayout(false);
             this.PageOped.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReportOped)).EndInit();
+            this.PageOpedU.ResumeLayout(false);
+            this.PageOpedU.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvReportOpedU)).EndInit();
             this.PageOtclkInfrorm.ResumeLayout(false);
             this.PageOtclkInfrorm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvOtclkInfrorm)).EndInit();
@@ -2669,6 +2756,10 @@
         private System.Windows.Forms.TextBox TxtbOped;
         private System.Windows.Forms.ComboBox CbxOped;
         private System.Windows.Forms.DataGridView DgvReportOped;
+        private System.Windows.Forms.TabPage PageOpedU;
+        private System.Windows.Forms.TextBox TxtbOpedU;
+        private System.Windows.Forms.ComboBox CbxOpedU;
+        private System.Windows.Forms.DataGridView DgvReportOpedU;
         private System.Windows.Forms.ToolStripMenuItem формаОПЭДToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сводToolStripMenuItem;
         private System.Windows.Forms.TabPage PageOtclkInfrorm;

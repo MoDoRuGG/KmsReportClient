@@ -22,6 +22,9 @@ namespace KmsReportClient.Model.Enums
 
         [Description(GlobalConst.TempFolder + "oped.xlsx")]
         Oped,
+        
+        [Description(GlobalConst.TempFolder + "opedU.xlsx")]
+        OpedU,
 
         [Description(GlobalConst.TempFolder + "cons262t1.xlsx")]
         C262T1,
@@ -67,7 +70,9 @@ namespace KmsReportClient.Model.Enums
         [Description(GlobalConst.TempFolder + "letal.xlsx")]
         letal,
         [Description(GlobalConst.TempFolder + "consOped.xlsx")]
-        consOped,
+        consOped,        
+        [Description(GlobalConst.TempFolder + "consOpedU.xlsx")]
+        consOpedU,
         [Description(GlobalConst.TempFolder + "IR.xlsx")]
         IR,
         [Description(GlobalConst.TempFolder + "opedQ.xlsx")]

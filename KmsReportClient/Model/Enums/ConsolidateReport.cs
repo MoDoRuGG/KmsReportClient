@@ -20,6 +20,7 @@
         Disp,
         Letal,
         ConsolidateOped,
+        ConsolidateOpedU,
         ConsolidateVSS,
         ConsolidateOpedQ,
         Proposal,

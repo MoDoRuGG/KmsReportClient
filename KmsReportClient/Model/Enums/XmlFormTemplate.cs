@@ -13,6 +13,7 @@ namespace KmsReportClient.Model.Enums
         [Description("TemplateTextPG.xml")] Pg,
         [Description("TemplateTextFOped.xml")] Oped,
         [Description("TemplateTextFOpedQ.xml")] OpedQ,
+        [Description("TemplateTextFOpedU.xml")] OpedU,
         [Description("TemplateTextFCR.xml")] FCR,
         [Description("TemplateTextVac.xml")] Vac,
         [Description("TemplateFSSMonitoring.xml")] MFSS,
