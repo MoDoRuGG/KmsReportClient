@@ -126,11 +126,13 @@
     <Compile Include="Excel\Creator\Base\ExceIRCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelIizl2022Creator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelMFSSCreator.cs" />
-    <Compile Include="Excel\Creator\Base\ExcelOpedCreatorU.cs" />
     <Compile Include="Excel\Creator\Base\ExcelOpedCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelOpedFinanceCreator.cs" />
+    <Compile Include="Excel\Creator\Base\ExcelOpedUCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelOpedQCreator.cs" />
+    <Compile Include="Excel\Creator\Base\ExcelZpzCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelPgCreator.cs" />
+    <Compile Include="Excel\Creator\Base\ExcelZpzQCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelPgQCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelProposalCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelVacCreator.cs" />
@@ -147,7 +149,6 @@
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateDisp.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateFull294Creator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateLetal.cs" />
-    <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateOpedUCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateOpedCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateOpedQCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateOpenFinance1.cs" />
@@ -274,6 +275,8 @@
     <Compile Include="Report\Basic\ReportOpedProcessor.cs" />
     <Compile Include="Report\Basic\ReportInfrormationResponseProcessor.cs" />
     <Compile Include="Report\Basic\ReportOpedQProcessor.cs" />
+    <Compile Include="Report\Basic\ReportZpzQProcessor.cs" />
+    <Compile Include="Report\Basic\ReportZpzProcessor.cs" />
     <Compile Include="Report\Basic\ReportPgProcessor.cs" />
     <Compile Include="Report\Basic\ReportProposalProcessor.cs" />
     <Compile Include="Report\Basic\ReportVaccinationProccesor.cs" />
@@ -319,6 +322,7 @@
     <Compile Include="Support\GlobalUtils.cs" />
     <Compile Include="Model\XML\UpdateXml.cs" />
     <Compile Include="Support\ListViewUtils.cs" />
+    <Compile Include="Support\ZpzDgvUtils.cs" />
     <Compile Include="Support\PgDgvUtils.cs" />
     <Compile Include="Support\PositionSupport.cs" />
     <Compile Include="Support\YymmUtils.cs" />
@@ -398,9 +402,6 @@
     <None Include="Connected Services\External\KmsReportClient.External.ConsolidateOpedQCollectResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\External\KmsReportClient.External.ConsolidateOpedU.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\External\KmsReportClient.External.ConsolidateProposal.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -444,9 +445,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateReportCOpedResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\External\KmsReportClient.External.CreateReportCOpedUResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateReportCpnpMResponse.datasource">

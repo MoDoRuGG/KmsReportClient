@@ -125,6 +125,30 @@ namespace KmsReportClient.Report.Basic
                 }
             }
 
+            if (Report.IdType == "Zpz" || Report.IdType == "Zpz_Q")
+            {
+                if (GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 8")
+                {
+                    Dgv.Columns["Total"].HeaderText = "Итого цел";
+
+                    Dgv.Columns.Add("TotalPlan", "Итого план");
+                    Dgv.Columns["TotalPlan"].DisplayIndex = 9;
+
+                    Dgv.Columns["TotalPlan"].ReadOnly = true;
+                    Dgv.Columns["TotalPlan"].DefaultCellStyle.BackColor = Color.LightGray;
+
+                    Dgv.Columns.Add("TotalPlanCel", "Итого");
+                    Dgv.Columns["TotalPlanCel"].DisplayIndex = 2;
+
+                    Dgv.Columns["TotalPlanCel"].ReadOnly = true;
+                    Dgv.Columns["TotalPlanCel"].DefaultCellStyle.BackColor = Color.Gray;
+
+
+
+
+                }
+            }
+
         }
 
         public void SetTotalColumn()
@@ -152,6 +176,19 @@ namespace KmsReportClient.Report.Basic
                         {
                             //Console.WriteLine($"{GetCurrentTheme()} {Report.IdType}");
                             if ((Report.IdType == "PG" || Report.IdType == "PG_Q") && (GetCurrentTheme() == "Таблица 5" || GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 8"))
+                            {
+                                if (Dgv.Rows[row].Cells[cell].ColumnIndex == 2 || Dgv.Rows[row].Cells[cell].ColumnIndex == 3 || Dgv.Rows[row].Cells[cell].ColumnIndex == 4 || Dgv.Rows[row].Cells[cell].ColumnIndex == 6)
+                                {
+                                    valueCel += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value);
+                                }
+                                else if (Dgv.Rows[row].Cells[cell].ColumnIndex == 8 || Dgv.Rows[row].Cells[cell].ColumnIndex == 9 || Dgv.Rows[row].Cells[cell].ColumnIndex == 10 || Dgv.Rows[row].Cells[cell].ColumnIndex == 12)
+                                {
+                                    valuePlan += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value);
+                                }
+
+                            }
+
+                            if ((Report.IdType == "Zpz" || Report.IdType == "Zpz_Q") && (GetCurrentTheme() == "Таблица 5" || GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 8"))
                             {
                                 if (Dgv.Rows[row].Cells[cell].ColumnIndex == 2 || Dgv.Rows[row].Cells[cell].ColumnIndex == 3 || Dgv.Rows[row].Cells[cell].ColumnIndex == 4 || Dgv.Rows[row].Cells[cell].ColumnIndex == 6)
                                 {
@@ -205,6 +242,22 @@ namespace KmsReportClient.Report.Basic
 
                     //Тот, кто это видит прошу меня простить))
                     if ((Report.IdType == "PG" || Report.IdType == "PG_Q") && (GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 8"))
+                    {
+                        //Dgv.Rows[row].Cells[columnCount - 1].Value = valueCel; //Целевые
+                        //Dgv.Rows[row].Cells[columnCount].Value = valuePlan; // Плановые
+
+                        Dgv.Rows[row].Cells["Total"].Value = valueCel; //Целевые
+                        Dgv.Rows[row].Cells["TotalPlan"].Value = valuePlan; // Плановые
+
+                        Dgv.Rows[row].Cells["TotalPlanCel"].Value = valuePlan + valueCel; // Итого цел + план
+
+                    }
+                    else
+                    {
+                        Dgv.Rows[row].Cells[columnCount].Value = valueCel; //Целевые
+                    }
+
+                    if ((Report.IdType == "Zpz" || Report.IdType == "Zpz_Q") && (GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 8"))
                     {
                         //Dgv.Rows[row].Cells[columnCount - 1].Value = valueCel; //Целевые
                         //Dgv.Rows[row].Cells[columnCount].Value = valuePlan; // Плановые
@@ -275,6 +328,58 @@ namespace KmsReportClient.Report.Basic
 
                     }
                 }
+                
+                if ((Report.IdType == "Zpz" || Report.IdType == "Zpz_Q") && (GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 8" || GetCurrentTheme() == "Таблица 5" || GetCurrentTheme() == "Таблица 10"))
+                {
+                    var row6 = Dgv.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[1].Value.ToString() == "6");
+                    if (row6 != null)
+                    {
+                        var rowsForCalcluate6Total = Dgv.Rows.Cast<DataGridViewRow>().Where(x => rowFor6Row.Contains(x.Cells[1].Value.ToString()));
+
+                        row6.Cells["Total"].Value = rowsForCalcluate6Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["Total"].Value));
+                        row6.Cells["TotalPlan"].Value = rowsForCalcluate6Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["TotalPlan"].Value));
+
+                        row6.Cells["TotalPlanCel"].Value = GlobalUtils.TryParseDecimal(row6.Cells["Total"].Value) + GlobalUtils.TryParseDecimal(row6.Cells["TotalPlan"].Value); // Итого цел + план
+
+                    }
+
+                    if (Report.IdType == "Zpz_Q" && GetCurrentTheme() == "Таблица 6")
+                    {
+                        //string[] rowFor5Row = { "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8" };
+                        string[] rowFor5Row = { "5" };
+                        var row5 = Dgv.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[1].Value.ToString() == "5");
+                        var rowsForCalcluate5Total = Dgv.Rows.Cast<DataGridViewRow>().Where(x => rowFor5Row.Contains(x.Cells[1].Value.ToString()));
+                        row5.Cells["Total"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["Total"].Value));
+                        row5.Cells["TotalPlan"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["TotalPlan"].Value));
+
+                        row5.Cells["TotalPlanCel"].Value = GlobalUtils.TryParseDecimal(row5.Cells["Total"].Value) + GlobalUtils.TryParseDecimal(row5.Cells["TotalPlan"].Value); // Итого цел + план
+
+                    }
+
+                    if (Report.IdType == "Zpz_Q" && GetCurrentTheme() == "Таблица 5")
+                    {
+                        string[] rowFor4Row = { "4.1", "4.2", "4.3", "4.4", "4.5", "4.6" };
+                        var row4 = Dgv.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[1].Value.ToString() == "4");
+                        var rowsForCalcluate5Total = Dgv.Rows.Cast<DataGridViewRow>().Where(x => rowFor4Row.Contains(x.Cells[1].Value.ToString()));
+                        row4.Cells["Total"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["Total"].Value));
+                        row4.Cells["TotalPlan"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["TotalPlan"].Value));
+
+                        row4.Cells["TotalPlanCel"].Value = GlobalUtils.TryParseDecimal(row4.Cells["Total"].Value) + GlobalUtils.TryParseDecimal(row4.Cells["TotalPlan"].Value); // Итого цел + план
+
+                    }
+
+                    if ((Report.IdType == "Zpz_Q" || Report.IdType == "Zpz") && GetCurrentTheme() == "Таблица 10")
+                    {
+                        string[] rowFor5Row = { "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8" };
+                        var row5 = Dgv.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[1].Value.ToString() == "5");
+                        var rowsForCalcluate5Total = Dgv.Rows.Cast<DataGridViewRow>().Where(x => rowFor5Row.Contains(x.Cells[1].Value.ToString()));
+                        row5.Cells["Total"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["Total"].Value));
+                        row5.Cells["TotalPlan"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["TotalPlan"].Value));
+
+                        row5.Cells["TotalPlanCel"].Value = GlobalUtils.TryParseDecimal(row5.Cells["Total"].Value) + GlobalUtils.TryParseDecimal(row5.Cells["TotalPlan"].Value); // Итого цел + план
+
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -317,7 +422,7 @@ namespace KmsReportClient.Report.Basic
 
             CreateDgvForForm(form, table);
 
-            if (Report.IdType == "PG" || Report.IdType == "PG_Q" || Report.IdType == "foped")
+            if (Report.IdType == "PG" || Report.IdType == "PG_Q" || Report.IdType == "foped" || Report.IdType == "Zpz_Q" || Report.IdType == "Zpz")
                 CreateTotalColumn();
 
         }
@@ -375,7 +480,7 @@ namespace KmsReportClient.Report.Basic
                 info += $"Пользователь: {GetUser(Report.UserToCo)}; " + Environment.NewLine;
             }
 
-            if (Report.IdType == "PG")
+            if (Report.IdType == "PG" || Report.IdType == "Zpz")
             { 
                 info += "Данные вносились вручную: " + (Report.DataSource.ToString() != "Handle" ? "Нет; " : "Да; ") + Environment.NewLine;
             }
