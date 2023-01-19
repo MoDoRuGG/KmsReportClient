@@ -2671,6 +2671,36 @@
           <s:element minOccurs="1" maxOccurs="1" name="SumViolationUnderage" type="s:decimal" />
         </s:sequence>
       </s:complexType>
+      <s:element name="CreateReportOpedUnplanned">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateReportOpedUnplannedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateReportOpedUnplannedResult" type="tns:ArrayOfCReportOpedUnplanned" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCReportOpedUnplanned">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CReportOpedUnplanned" nillable="true" type="tns:CReportOpedUnplanned" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CReportOpedUnplanned">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="App" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ks" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ds" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Smp" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="CreateReportCadreTable1">
         <s:complexType>
           <s:sequence>
@@ -3719,6 +3749,12 @@
   <wsdl:message name="CreateReportCardioSoapOut">
     <wsdl:part name="parameters" element="tns:CreateReportCardioResponse" />
   </wsdl:message>
+  <wsdl:message name="CreateReportOpedUnplannedSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateReportOpedUnplanned" />
+  </wsdl:message>
+  <wsdl:message name="CreateReportOpedUnplannedSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateReportOpedUnplannedResponse" />
+  </wsdl:message>
   <wsdl:message name="CreateReportCadreTable1SoapIn">
     <wsdl:part name="parameters" element="tns:CreateReportCadreTable1" />
   </wsdl:message>
@@ -4069,6 +4105,10 @@
     <wsdl:operation name="CreateReportCardio">
       <wsdl:input message="tns:CreateReportCardioSoapIn" />
       <wsdl:output message="tns:CreateReportCardioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateReportOpedUnplanned">
+      <wsdl:input message="tns:CreateReportOpedUnplannedSoapIn" />
+      <wsdl:output message="tns:CreateReportOpedUnplannedSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="CreateReportCadreTable1">
       <wsdl:input message="tns:CreateReportCadreTable1SoapIn" />
@@ -4749,6 +4789,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateReportCardio">
       <soap:operation soapAction="http://kms-oms.ru/CreateReportCardio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateReportOpedUnplanned">
+      <soap:operation soapAction="http://kms-oms.ru/CreateReportOpedUnplanned" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -5490,6 +5539,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateReportCardio">
       <soap12:operation soapAction="http://kms-oms.ru/CreateReportCardio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateReportOpedUnplanned">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateReportOpedUnplanned" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

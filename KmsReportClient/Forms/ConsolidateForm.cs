@@ -59,7 +59,14 @@ namespace KmsReportClient.Forms
 
             switch (_report)
             {
-
+                case ConsolidateReport.ConsolidateOpedUnplanned:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать свод по отчету Внеплановый ОПЭД";
+                    saveFileDialog1.FileName = "Свод по отчету Внеплановый ОПЭД";
+                    break;
                 case ConsolidateReport.ConsolidateCadreT1:
                     labelStart.Text = "Период";
                     nudSingle.Visible = false;
@@ -320,6 +327,9 @@ namespace KmsReportClient.Forms
                         break;
                     case ConsolidateReport.ConsolidateCadreT2:
                         CreateReportCadreT2();
+                        break;
+                    case ConsolidateReport.ConsolidateOpedUnplanned:
+                        CreateReportOpedUnplanned();
                         break;
 
                     case ConsolidateReport.Consolidate262T1:
@@ -859,6 +869,56 @@ namespace KmsReportClient.Forms
             dataYear = dataYear.OrderBy(x => x.Filial).Skip(1).ToArray();
 
             var excel = new ExcelConsolidateCadreT1Creator(saveFileDialog1.FileName, "", _filialName);
+            excel.CreateReport(dataMonths, dataYear);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+        }
+
+
+        private void CreateReportOpedUnplanned()
+        {
+            string yymm = GetYymm(cmbStart.Text, Convert.ToInt32(nudStart.Value)).ToString();
+            var dataMonths = _client.CreateReportOpedUnplanned(yymm);
+            if (dataMonths.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            foreach (var d in dataMonths)
+            {
+                if (d.Filial == "RU")
+                {
+                    continue;
+                }
+                else
+                {
+                    d.Filial = _regions.Single(j => j.Key == d.Filial).Value;
+                }
+            }
+
+            dataMonths = dataMonths.OrderBy(x => x.Filial).ToArray();
+
+
+
+            string statPeriod = yymm.Substring(0, 2) + "01";
+            var dataYear = _client.CreateReportOpedUnplanned(yymm);
+            foreach (var d in dataYear)
+            {
+                if (d.Filial == "RU")
+                {
+                    continue;
+                }
+                else
+                {
+                    d.Filial = _regions.Single(k => k.Key == d.Filial).Value;
+                }
+            }
+
+            dataYear = dataYear.OrderBy(x => x.Filial).ToArray();
+
+            var excel = new ExcelConsolidateOpedUnplannedCreator(saveFileDialog1.FileName, "", _filialName);
             excel.CreateReport(dataMonths, dataYear);
 
             GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);

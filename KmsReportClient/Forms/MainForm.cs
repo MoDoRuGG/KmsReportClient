@@ -1904,7 +1904,7 @@ namespace KmsReportClient.Forms
         
         private void сводUToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenConsolidateReportForm(ConsolidateReport.ConsolidateOpedU);
+            OpenConsolidateReportForm(ConsolidateReport.ConsolidateOpedUnplanned);
         }
 
         private void CbxOped_SelectedIndexChanged(object sender, EventArgs e)
@@ -1991,6 +1991,11 @@ namespace KmsReportClient.Forms
         private void сводToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             OpenConsolidateReportForm(ConsolidateReport.ConsolidateOpedQ);
+        }
+
+        private void сводToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            OpenConsolidateReportForm(ConsolidateReport.ConsolidateOpedUnplanned);
         }
 
         private void dgvProposal_CellEndEdit(object sender, DataGridViewCellEventArgs e)

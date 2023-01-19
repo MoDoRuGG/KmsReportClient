@@ -132,7 +132,7 @@ namespace KmsReportClient.Report.Basic
                     Dgv.Columns["Total"].HeaderText = "Итого цел";
 
                     Dgv.Columns.Add("TotalPlan", "Итого план");
-                    Dgv.Columns["TotalPlan"].DisplayIndex = 9;
+                    Dgv.Columns["TotalPlan"].DisplayIndex = 5;
 
                     Dgv.Columns["TotalPlan"].ReadOnly = true;
                     Dgv.Columns["TotalPlan"].DefaultCellStyle.BackColor = Color.LightGray;

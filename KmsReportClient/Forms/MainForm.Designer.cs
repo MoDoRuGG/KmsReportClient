@@ -119,11 +119,14 @@ namespace KmsReportClient.Forms
             this.сводToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.оПЭДКвартальныйToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сводToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.сводToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПЭДФинансыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.свод1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.свод2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сводToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчётОПредложенияхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сводToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.сводToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.кадрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отделЗПЗИЭКМПToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оИИЗПЗToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -568,7 +571,8 @@ namespace KmsReportClient.Forms
             // оПЭДКвартальныйToolStripMenuItem
             // 
             this.оПЭДКвартальныйToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.сводToolStripMenuItem2});
+            this.сводToolStripMenuItem2,
+            this.сводToolStripMenuItem4});
             this.оПЭДКвартальныйToolStripMenuItem.Name = "оПЭДКвартальныйToolStripMenuItem";
             this.оПЭДКвартальныйToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.оПЭДКвартальныйToolStripMenuItem.Text = "ОПЭД внеплановый";
@@ -579,6 +583,13 @@ namespace KmsReportClient.Forms
             this.сводToolStripMenuItem2.Size = new System.Drawing.Size(101, 22);
             this.сводToolStripMenuItem2.Text = "Свод";
             this.сводToolStripMenuItem2.Click += new System.EventHandler(this.сводToolStripMenuItem2_Click);
+            // 
+            // сводToolStripMenuItem4
+            // 
+            this.сводToolStripMenuItem4.Name = "сводToolStripMenuItem4";
+            this.сводToolStripMenuItem4.Size = new System.Drawing.Size(101, 22);
+            this.сводToolStripMenuItem4.Text = "Отчет о выполнении";
+            this.сводToolStripMenuItem4.Click += new System.EventHandler(this.сводToolStripMenuItem4_Click);
             // 
             // оПЭДФинансыToolStripMenuItem
             // 
@@ -3057,6 +3068,7 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.ToolStripMenuItem сводToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem оПЭДКвартальныйToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сводToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem сводToolStripMenuItem4;
         private System.Windows.Forms.TabPage PageProposal;
         private System.Windows.Forms.TextBox tbProposal;
         private System.Windows.Forms.ComboBox cbProposal;
