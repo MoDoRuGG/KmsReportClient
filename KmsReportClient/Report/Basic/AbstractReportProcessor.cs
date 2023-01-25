@@ -109,11 +109,6 @@ namespace KmsReportClient.Report.Basic
                     Dgv.Columns["TotalPlan"].ReadOnly = true;
                     Dgv.Columns["TotalPlan"].DefaultCellStyle.BackColor = Color.LightGray;
 
-
-
-
-
-
                     Dgv.Columns.Add("TotalPlanCel", "Итого");
                     Dgv.Columns["TotalPlanCel"].DisplayIndex = 2;
 
@@ -125,37 +120,10 @@ namespace KmsReportClient.Report.Basic
 
                 }
             }
-
-            if (Report.IdType == "Zpz" || Report.IdType == "Zpz_Q")
-            {
-                if (GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 8")
-                {
-                    Dgv.Columns["Total"].HeaderText = "Итого цел";
-
-                    Dgv.Columns.Add("TotalPlan", "Итого план");
-                    Dgv.Columns["TotalPlan"].DisplayIndex = 5;
-
-                    Dgv.Columns["TotalPlan"].ReadOnly = true;
-                    Dgv.Columns["TotalPlan"].DefaultCellStyle.BackColor = Color.LightGray;
-
-                    Dgv.Columns.Add("TotalPlanCel", "Итого");
-                    Dgv.Columns["TotalPlanCel"].DisplayIndex = 2;
-
-                    Dgv.Columns["TotalPlanCel"].ReadOnly = true;
-                    Dgv.Columns["TotalPlanCel"].DefaultCellStyle.BackColor = Color.Gray;
-
-
-
-
-                }
-            }
-
         }
 
         public void SetTotalColumn()
         {
-
-
             try
             {
                 int columnCount = Dgv.Columns.Count - 1;
@@ -164,9 +132,6 @@ namespace KmsReportClient.Report.Basic
                     Dgv.Rows[row].Cells[columnCount].Value = 0;
                     decimal valueCel = 0.00M;
                     decimal valuePlan = 0.00M;
-
-
-
 
                     for (int cell = 1; cell < Dgv.Rows[row].Cells.Count - 1; cell++)
                     {
@@ -178,19 +143,6 @@ namespace KmsReportClient.Report.Basic
                             //Console.WriteLine($"{GetCurrentTheme()} {Report.IdType}");
                             if ((Report.IdType == "PG" || Report.IdType == "PG_Q") && (GetCurrentTheme() == "Таблица 5" || GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 8"))
                             {
-                                if (Dgv.Rows[row].Cells[cell].ColumnIndex == 2 || Dgv.Rows[row].Cells[cell].ColumnIndex == 3 || Dgv.Rows[row].Cells[cell].ColumnIndex == 4 || Dgv.Rows[row].Cells[cell].ColumnIndex == 5 || Dgv.Rows[row].Cells[cell].ColumnIndex == 6)
-                                {
-                                    valueCel += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value);
-                                }
-                                else if (Dgv.Rows[row].Cells[cell].ColumnIndex == 8 || Dgv.Rows[row].Cells[cell].ColumnIndex == 9 || Dgv.Rows[row].Cells[cell].ColumnIndex == 10 || Dgv.Rows[row].Cells[cell].ColumnIndex == 12)
-                                {
-                                    valuePlan += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value);
-                                }
-
-                            }
-
-                            else if ((Report.IdType == "Zpz" || Report.IdType == "Zpz_Q") && (GetCurrentTheme() == "Таблица 5" || GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 8"))
-                            {
                                 if (Dgv.Rows[row].Cells[cell].ColumnIndex == 2 || Dgv.Rows[row].Cells[cell].ColumnIndex == 3 || Dgv.Rows[row].Cells[cell].ColumnIndex == 4 || Dgv.Rows[row].Cells[cell].ColumnIndex == 6)
                                 {
                                     valueCel += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value);
@@ -199,15 +151,11 @@ namespace KmsReportClient.Report.Basic
                                 {
                                     valuePlan += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value);
                                 }
-
+                                /// НА ДАННОМ ЭТАПЕ ПРОБЕГАЕМ ДЛЯ КАЖДОЙ СТРОКИ ОТЧЕТА ПО ЯЧЕЙКАМ и СУММИРУЕМ ЗНАЧЕНИЯ ДЛЯ ЦЕЛЕВЫХ (2-3-4-6) И ПЛАНОВЫХ (8-9-10-12), ПОКА ПРОСТО В ПЕРЕМЕННЫЕ valueCel и valuePlan /// 
                             }
 
                             else
                             {
-                                //if(Report.IdType != "PG_Q" &&  !(GetCurrentTheme() == "Таблица 1Л" || GetCurrentTheme() == "Таблица 2Л"))
-                                //{
-
-                                //Console.WriteLine($"{Dgv.Rows[row].Cells[cell].ColumnIndex} {Dgv.Rows[row].Cells[cell].Value}");
                                 if ((GetCurrentTheme() == "Таблица 1Л" || GetCurrentTheme() == "Таблица 2Л"))
                                 {
                                     if (Dgv.Rows[row].Cells[cell].ColumnIndex != 6)
@@ -224,60 +172,31 @@ namespace KmsReportClient.Report.Basic
                                     if (Dgv.Rows[row].Cells[cell].ColumnIndex != 3)
                                     {
                                         valueCel += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value);
-
                                     }
                                 }
                                 else
                                 {
                                     valueCel += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value);
-
                                 }
-
-
-                                //}
                             }
-
                         }
-
                     }
 
                     //Тот, кто это видит прошу меня простить))
-                    if ((Report.IdType == "PG" || Report.IdType == "PG_Q") && (GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 8"))
+                    if ((Report.IdType == "PG" || Report.IdType == "PG_Q") && (GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 8" || GetCurrentTheme() == "Таблица 10"))
                     {
-                        //Dgv.Rows[row].Cells[columnCount - 1].Value = valueCel; //Целевые
-                        //Dgv.Rows[row].Cells[columnCount].Value = valuePlan; // Плановые
-
                         Dgv.Rows[row].Cells["Total"].Value = valueCel; //Целевые
                         Dgv.Rows[row].Cells["TotalPlan"].Value = valuePlan; // Плановые
-
                         Dgv.Rows[row].Cells["TotalPlanCel"].Value = valuePlan + valueCel; // Итого цел + план
-
+                        // Пишем в DGV значения и сумму
                     }
                     else
                     {
                         Dgv.Rows[row].Cells[columnCount].Value = valueCel; //Целевые
                     }
-
-                    if ((Report.IdType == "Zpz" || Report.IdType == "Zpz_Q") && (GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 8"))
-                    {
-                        //Dgv.Rows[row].Cells[columnCount - 1].Value = valueCel; //Целевые
-                        //Dgv.Rows[row].Cells[columnCount].Value = valuePlan; // Плановые
-
-                        Dgv.Rows[row].Cells["Total"].Value = valueCel; //Целевые
-                        Dgv.Rows[row].Cells["TotalPlan"].Value = valuePlan; // Плановые
-
-                        Dgv.Rows[row].Cells["TotalPlanCel"].Value = valuePlan + valueCel; // Итого цел + план
-
-                    }
-                    else
-                    {
-                        Dgv.Rows[row].Cells[columnCount].Value = valueCel; //Целевые
-                    }
-
                 }
 
-
-                string[] rowFor6Row = { "6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7", "6.8", "6.9", "6.10" };
+                string[] rowFor6Row = { "6", "6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7", "6.8", "6.9", "6.10" };
                 if ((Report.IdType == "PG" || Report.IdType == "PG_Q") && (GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 8" || GetCurrentTheme() == "Таблица 5" || GetCurrentTheme() == "Таблица 10"))
                 {
                     var row6 = Dgv.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[1].Value.ToString() == "6");
@@ -289,109 +208,69 @@ namespace KmsReportClient.Report.Basic
                         row6.Cells["TotalPlan"].Value = rowsForCalcluate6Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["TotalPlan"].Value));
 
                         row6.Cells["TotalPlanCel"].Value = GlobalUtils.TryParseDecimal(row6.Cells["Total"].Value) + GlobalUtils.TryParseDecimal(row6.Cells["TotalPlan"].Value); // Итого цел + план
-
                     }
 
-                    if (Report.IdType == "PG" && GetCurrentTheme() == "Таблица 6")
-                    {
-                        //string[] rowFor5Row = { "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8" };
-                        string[] rowFor5Row = { "5" };
-                        var row5 = Dgv.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[1].Value.ToString() == "5");
-                        var rowsForCalcluate5Total = Dgv.Rows.Cast<DataGridViewRow>().Where(x => rowFor5Row.Contains(x.Cells[1].Value.ToString()));
-                        row5.Cells["Total"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["Total"].Value));
-                        row5.Cells["TotalPlan"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["TotalPlan"].Value));
+                    //    if (Report.IdType == "PG" && GetCurrentTheme() == "Таблица 6")
+                    //    {
+                    //        string[] rowFor5Row = { "5", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8" };
+                    //        foreach (string rowi in rowFor5Row)
+                    //        {
+                    //            var row5 = Dgv.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[1].Value.ToString() == rowi);
+                    //            var rowsForCalcluate5Total = Dgv.Rows.Cast<DataGridViewRow>().Where(x => rowFor5Row.Contains(x.Cells[1].Value.ToString()));
+                    //            row5.Cells["Total"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["Total"].Value));
+                    //            row5.Cells["TotalPlan"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["TotalPlan"].Value));
 
-                        row5.Cells["TotalPlanCel"].Value = GlobalUtils.TryParseDecimal(row5.Cells["Total"].Value) + GlobalUtils.TryParseDecimal(row5.Cells["TotalPlan"].Value); // Итого цел + план
+                    //            row5.Cells["TotalPlanCel"].Value = GlobalUtils.TryParseDecimal(row5.Cells["Total"].Value) + GlobalUtils.TryParseDecimal(row5.Cells["TotalPlan"].Value); // Итого цел + план
+                    //        }
+                    //    }
+                    //    else if (Report.IdType == "PG_Q" && GetCurrentTheme() == "Таблица 6")
+                    //    {
+                    //        string[] rowFor5Row = { "5", "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8" };
+                    //        var row5 = Dgv.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[1].Value.ToString() == "5");
+                    //        var rowsForCalcluate5Total = Dgv.Rows.Cast<DataGridViewRow>().Where(x => rowFor5Row.Contains(x.Cells[1].Value.ToString()));
+                    //        row5.Cells["Total"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["Total"].Value));
+                    //        row5.Cells["TotalPlan"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["TotalPlan"].Value));
+                    //        row5.Cells["TotalPlanCel"].Value = GlobalUtils.TryParseDecimal(row5.Cells["Total"].Value) + GlobalUtils.TryParseDecimal(row5.Cells["TotalPlan"].Value); // Итого цел + план
 
-                    }
-                    else if (Report.IdType == "PG_Q" && GetCurrentTheme() == "Таблица 6")
-                    {
-                        //string[] rowFor5Row = { "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8" };
-                        string[] rowFor5Row = { "5" };
-                        var row5 = Dgv.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[1].Value.ToString() == "5");
-                        var rowsForCalcluate5Total = Dgv.Rows.Cast<DataGridViewRow>().Where(x => rowFor5Row.Contains(x.Cells[1].Value.ToString()));
-                        row5.Cells["Total"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["Total"].Value));
-                        row5.Cells["TotalPlan"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["TotalPlan"].Value));
+                    //    }
 
-                        row5.Cells["TotalPlanCel"].Value = GlobalUtils.TryParseDecimal(row5.Cells["Total"].Value) + GlobalUtils.TryParseDecimal(row5.Cells["TotalPlan"].Value); // Итого цел + план
+                    //    if (Report.IdType == "PG_Q" && GetCurrentTheme() == "Таблица 5")
+                    //    {
+                    //        string[] rowFor4Row = { "4.1", "4.2", "4.3", "4.4", "4.5", "4.6" };
+                    //        var row4 = Dgv.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[1].Value.ToString() == "4");
+                    //        var rowsForCalcluate5Total = Dgv.Rows.Cast<DataGridViewRow>().Where(x => rowFor4Row.Contains(x.Cells[1].Value.ToString()));
+                    //        row4.Cells["Total"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["Total"].Value));
+                    //        row4.Cells["TotalPlan"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["TotalPlan"].Value));
 
-                    }
+                    //        row4.Cells["TotalPlanCel"].Value = GlobalUtils.TryParseDecimal(row4.Cells["Total"].Value) + GlobalUtils.TryParseDecimal(row4.Cells["TotalPlan"].Value); // Итого цел + план
 
-                    if (Report.IdType == "PG_Q" && GetCurrentTheme() == "Таблица 5")
-                    {
-                        string[] rowFor4Row = { "4.1", "4.2", "4.3", "4.4", "4.5", "4.6" };
-                        var row4 = Dgv.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[1].Value.ToString() == "4");
-                        var rowsForCalcluate5Total = Dgv.Rows.Cast<DataGridViewRow>().Where(x => rowFor4Row.Contains(x.Cells[1].Value.ToString()));
-                        row4.Cells["Total"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["Total"].Value));
-                        row4.Cells["TotalPlan"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["TotalPlan"].Value));
-
-                        row4.Cells["TotalPlanCel"].Value = GlobalUtils.TryParseDecimal(row4.Cells["Total"].Value) + GlobalUtils.TryParseDecimal(row4.Cells["TotalPlan"].Value); // Итого цел + план
-
-                    }
+                    //    }
 
                     if ((Report.IdType == "PG_Q" || Report.IdType == "PG") && GetCurrentTheme() == "Таблица 10")
                     {
-                        string[] rowFor5Row = { "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8" };
-                        var row5 = Dgv.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[1].Value.ToString() == "5");
-                        var rowsForCalcluate5Total = Dgv.Rows.Cast<DataGridViewRow>().Where(x => rowFor5Row.Contains(x.Cells[1].Value.ToString()));
-                        row5.Cells["Total"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["Total"].Value));
-                        row5.Cells["TotalPlan"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["TotalPlan"].Value));
+                        try
+                        {
+                            string[] rowFor4Row = { "4.1", "4.2", "4.3", "4.4" };
+                            var row4 = Dgv.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[1].Value.ToString() == "4");
+                            var rowsForCalcluate4Total = Dgv.Rows.Cast<DataGridViewRow>().Where(x => rowFor4Row.Contains(x.Cells[1].Value.ToString()));
+                            row4.Cells["Total"].Value = rowsForCalcluate4Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["Total"].Value));
+                            row4.Cells["TotalPlan"].Value = rowsForCalcluate4Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["TotalPlan"].Value));
 
-                        row5.Cells["TotalPlanCel"].Value = GlobalUtils.TryParseDecimal(row5.Cells["Total"].Value) + GlobalUtils.TryParseDecimal(row5.Cells["TotalPlan"].Value); // Итого цел + план
+                            row4.Cells["TotalPlanCel"].Value = GlobalUtils.TryParseDecimal(row4.Cells["Total"].Value) + GlobalUtils.TryParseDecimal(row4.Cells["TotalPlan"].Value); // Итого цел + план
+                        }
 
-                    }
-                }
+                        finally
+                        {
+                            string[] rowFor5Row = { "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8" };
+                            var row5 = Dgv.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[1].Value.ToString() == "5");
+                            var rowsForCalcluate5Total = Dgv.Rows.Cast<DataGridViewRow>().Where(x => rowFor5Row.Contains(x.Cells[1].Value.ToString()));
+                            row5.Cells["Total"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["Total"].Value));
+                            row5.Cells["TotalPlan"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["TotalPlan"].Value));
 
-                if ((Report.IdType == "Zpz" || Report.IdType == "Zpz_Q") && (GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 8" || GetCurrentTheme() == "Таблица 5" || GetCurrentTheme() == "Таблица 10"))
-                {
-                    var row6 = Dgv.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[1].Value.ToString() == "6");
-                    if (row6 != null)
-                    {
-                        var rowsForCalcluate6Total = Dgv.Rows.Cast<DataGridViewRow>().Where(x => rowFor6Row.Contains(x.Cells[1].Value.ToString()));
-
-                        row6.Cells["Total"].Value = rowsForCalcluate6Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["Total"].Value));
-                        row6.Cells["TotalPlan"].Value = rowsForCalcluate6Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["TotalPlan"].Value));
-
-                        row6.Cells["TotalPlanCel"].Value = GlobalUtils.TryParseDecimal(row6.Cells["Total"].Value) + GlobalUtils.TryParseDecimal(row6.Cells["TotalPlan"].Value); // Итого цел + план
-
+                            row5.Cells["TotalPlanCel"].Value = GlobalUtils.TryParseDecimal(row5.Cells["Total"].Value) + GlobalUtils.TryParseDecimal(row5.Cells["TotalPlan"].Value); // Итого цел + план
+                        }
                     }
 
-                    if (Report.IdType == "Zpz_Q" && GetCurrentTheme() == "Таблица 6")
-                    {
-                        //string[] rowFor5Row = { "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8" };
-                        string[] rowFor5Row = { "5" };
-                        var row5 = Dgv.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[1].Value.ToString() == "5");
-                        var rowsForCalcluate5Total = Dgv.Rows.Cast<DataGridViewRow>().Where(x => rowFor5Row.Contains(x.Cells[1].Value.ToString()));
-                        row5.Cells["Total"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["Total"].Value));
-                        row5.Cells["TotalPlan"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["TotalPlan"].Value));
-
-                        row5.Cells["TotalPlanCel"].Value = GlobalUtils.TryParseDecimal(row5.Cells["Total"].Value) + GlobalUtils.TryParseDecimal(row5.Cells["TotalPlan"].Value); // Итого цел + план
-
-                    }
-
-                    if (Report.IdType == "Zpz_Q" && GetCurrentTheme() == "Таблица 5")
-                    {
-                        string[] rowFor4Row = { "4.1", "4.2", "4.3", "4.4", "4.5", "4.6" };
-                        var row4 = Dgv.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[1].Value.ToString() == "4");
-                        var rowsForCalcluate5Total = Dgv.Rows.Cast<DataGridViewRow>().Where(x => rowFor4Row.Contains(x.Cells[1].Value.ToString()));
-                        row4.Cells["Total"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["Total"].Value));
-                        row4.Cells["TotalPlan"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["TotalPlan"].Value));
-
-                        row4.Cells["TotalPlanCel"].Value = GlobalUtils.TryParseDecimal(row4.Cells["Total"].Value) + GlobalUtils.TryParseDecimal(row4.Cells["TotalPlan"].Value); // Итого цел + план
-
-                    }
-
-                    if ((Report.IdType == "Zpz_Q" || Report.IdType == "Zpz") && GetCurrentTheme() == "Таблица 10")
-                    {
-                        string[] rowFor5Row = { "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8" };
-                        var row5 = Dgv.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[1].Value.ToString() == "5");
-                        var rowsForCalcluate5Total = Dgv.Rows.Cast<DataGridViewRow>().Where(x => rowFor5Row.Contains(x.Cells[1].Value.ToString()));
-                        row5.Cells["Total"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["Total"].Value));
-                        row5.Cells["TotalPlan"].Value = rowsForCalcluate5Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["TotalPlan"].Value));
-
-                        row5.Cells["TotalPlanCel"].Value = GlobalUtils.TryParseDecimal(row5.Cells["Total"].Value) + GlobalUtils.TryParseDecimal(row5.Cells["TotalPlan"].Value); // Итого цел + план
-
-                    }
                 }
             }
             catch (Exception ex)
