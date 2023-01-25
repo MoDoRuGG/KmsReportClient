@@ -197,8 +197,9 @@ namespace KmsReportClient.Report.Basic
                 }
 
                 string[] rowFor6Row = { "6", "6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7", "6.8", "6.9", "6.10" };
-                if ((Report.IdType == "PG" || Report.IdType == "PG_Q") && (GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 8" || GetCurrentTheme() == "Таблица 5" || GetCurrentTheme() == "Таблица 10"))
-                {
+                if ((Report.IdType == "PG" && (GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 8" || GetCurrentTheme() == "Таблица 5" || GetCurrentTheme() == "Таблица 10")) ||
+                    (Report.IdType == "PG_Q" && (GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 5" || GetCurrentTheme() == "Таблица 10")))
+                    {
                     var row6 = Dgv.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[1].Value.ToString() == "6");
                     if (row6 != null)
                     {
