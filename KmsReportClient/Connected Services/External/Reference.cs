@@ -5051,6 +5051,8 @@ namespace KmsReportClient.External {
         
         private decimal CountSmoAnotherField;
         
+        private decimal CountAssignmentField;
+        
         private decimal CountInsuredField;
         
         private decimal CountInsuredRepresentativeField;
@@ -5133,6 +5135,19 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public decimal CountAssignment {
+            get {
+                return this.CountAssignmentField;
+            }
+            set {
+                if ((this.CountAssignmentField.Equals(value) != true)) {
+                    this.CountAssignmentField = value;
+                    this.RaisePropertyChanged("CountAssignment");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
         public decimal CountInsured {
             get {
                 return this.CountInsuredField;
@@ -5145,7 +5160,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
         public decimal CountInsuredRepresentative {
             get {
                 return this.CountInsuredRepresentativeField;
@@ -5158,7 +5173,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
         public decimal CountTfoms {
             get {
                 return this.CountTfomsField;
@@ -5171,7 +5186,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
         public decimal CountProsecutor {
             get {
                 return this.CountProsecutorField;
@@ -5184,7 +5199,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
         public decimal CountOutOfSmo {
             get {
                 return this.CountOutOfSmoField;
@@ -5197,7 +5212,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
         public decimal CountAmbulatory {
             get {
                 return this.CountAmbulatoryField;
@@ -5210,7 +5225,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
         public decimal CountDs {
             get {
                 return this.CountDsField;
@@ -5223,7 +5238,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
         public decimal CountDsVmp {
             get {
                 return this.CountDsVmpField;
@@ -5236,7 +5251,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
         public decimal CountStac {
             get {
                 return this.CountStacField;
@@ -5249,7 +5264,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
         public decimal CountStacVmp {
             get {
                 return this.CountStacVmpField;
@@ -5262,7 +5277,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
         public decimal CountOutOfSmoAnother {
             get {
                 return this.CountOutOfSmoAnotherField;
@@ -5275,7 +5290,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
         public decimal CountAmbulatoryAnother {
             get {
                 return this.CountAmbulatoryAnotherField;
@@ -5288,7 +5303,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
         public decimal CountDsAnother {
             get {
                 return this.CountDsAnotherField;
@@ -5301,7 +5316,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
         public decimal CountDsVmpAnother {
             get {
                 return this.CountDsVmpAnotherField;
@@ -5314,7 +5329,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=18)]
         public decimal CountStacAnother {
             get {
                 return this.CountStacAnotherField;
@@ -5327,7 +5342,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=18)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=19)]
         public decimal CountStacVmpAnother {
             get {
                 return this.CountStacVmpAnotherField;
@@ -11222,6 +11237,8 @@ namespace KmsReportClient.External {
         
         private System.Nullable<decimal> CountStacVmpAnotherField;
         
+        private System.Nullable<decimal> CountAssignmentField;
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private KmsReportClient.External.Report_Data Report_DataField;
         
@@ -11508,7 +11525,20 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=21)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=21)]
+        public System.Nullable<decimal> CountAssignment {
+            get {
+                return this.CountAssignmentField;
+            }
+            set {
+                if ((this.CountAssignmentField.Equals(value) != true)) {
+                    this.CountAssignmentField = value;
+                    this.RaisePropertyChanged("CountAssignment");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=22)]
         public KmsReportClient.External.Report_Data Report_Data {
             get {
                 return this.Report_DataField;

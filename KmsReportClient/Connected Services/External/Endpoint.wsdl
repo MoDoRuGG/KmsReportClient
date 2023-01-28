@@ -1079,6 +1079,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="CountDsVmpAnother" nillable="true" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountStacAnother" nillable="true" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountStacVmpAnother" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountAssignment" nillable="true" type="s:decimal" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:Report_Data" />
         </s:sequence>
       </s:complexType>
@@ -2428,6 +2429,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="CountSmo" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountSmoAnother" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountAssignment" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountInsured" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountInsuredRepresentative" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountTfoms" type="s:decimal" />

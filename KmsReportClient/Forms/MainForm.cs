@@ -1506,7 +1506,7 @@ namespace KmsReportClient.Forms
     ChangeIndexComboBox(DgwReportZpzQ, CmbZpzQ, TxtbZpzQ);
 
         private void CmbZpz_SelectedIndexChanged_1(object sender, EventArgs e) =>
-            ChangeIndexComboBox(DgwReportPg, CmbPg, TxtbPg);
+            ChangeIndexComboBox(DgwReportZpz, CmbZpz, TxtbZpz);
 
         private void BtnPlus_Click(object sender, EventArgs e) =>
              AddValueInTextBox();
