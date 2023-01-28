@@ -1858,12 +1858,12 @@
       </s:element>
       <s:simpleType name="ReportType">
         <s:restriction base="s:string">
+          <s:enumeration value="Zpz" />
           <s:enumeration value="F262" />
           <s:enumeration value="F294" />
           <s:enumeration value="Iizl" />
           <s:enumeration value="Iizl2022" />
           <s:enumeration value="Pg" />
-          <s:enumeration value="Zpz" />
           <s:enumeration value="PgQ" />
           <s:enumeration value="ZpzQ" />
           <s:enumeration value="Oped" />

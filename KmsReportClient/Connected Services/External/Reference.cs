@@ -14572,22 +14572,22 @@ namespace KmsReportClient.External {
     public enum ReportType : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        F262 = 0,
+        Zpz = 0,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        F294 = 1,
+        F262 = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Iizl = 2,
+        F294 = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Iizl2022 = 3,
+        Iizl = 3,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Pg = 4,
+        Iizl2022 = 4,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Zpz = 5,
+        Pg = 5,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         PgQ = 6,
