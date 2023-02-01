@@ -701,7 +701,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="bin\Debug\Template\changelog.txt" />
     <Content Include="logo.ico" />
     <None Include="Resources\Screenshot_1.jpg" />
     <None Include="Resources\KapitalLogo.png" />
