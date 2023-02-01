@@ -49,7 +49,7 @@ namespace KmsReportClient.Excel.Creator.Base
                 {
                     continue;
                 }
-                ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets[dict.Index];
+                ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets.get_Item(dict.TableName);
                 var data = themeData.Data;
                 switch (themeData.Theme)
                 {
