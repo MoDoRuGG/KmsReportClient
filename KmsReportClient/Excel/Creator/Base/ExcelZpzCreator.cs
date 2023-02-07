@@ -78,6 +78,8 @@ namespace KmsReportClient.Excel.Creator.Base
                     if (rowData != null)
                     {
                         ObjWorkSheet.Cells[i, columnIndex] = rowData.CountSmo;
+                        if (form == "Таблица 10")
+                        ObjWorkSheet.Cells[i, columnIndex+1] = rowData.CountSmo;
                     }
                 }
             }
@@ -85,7 +87,6 @@ namespace KmsReportClient.Excel.Creator.Base
 
         private void FillTable1(ReportZpzDataDto[] data, int startRowIndex, int endRowIndex, string form)
         {
-            var columnIndex = 7;
             for (int i = startRowIndex; i <= endRowIndex; i++)
             {
                 string rowNum = ObjWorkSheet.Cells[i, 2].Text;
@@ -94,9 +95,17 @@ namespace KmsReportClient.Excel.Creator.Base
                     var rowData = data?.SingleOrDefault(x => x.Code == rowNum);
                     if (rowData != null)
                     {
-                        if (ObjWorkSheet.Cells[i, columnIndex].Text != "X")
+                        if (ObjWorkSheet.Cells[i, 8].Text != "X")
                         {
-                            ObjWorkSheet.Cells[i, columnIndex] = rowData.CountSmo;
+                            ObjWorkSheet.Cells[i, 8] = rowData.CountSmo;
+                        }
+                        if (ObjWorkSheet.Cells[i, 9].Text != "X")
+                        {
+                            ObjWorkSheet.Cells[i, 9] = rowData.CountSmoAnother;
+                        }
+                        if (ObjWorkSheet.Cells[i, 10].Text != "X")
+                        {
+                            ObjWorkSheet.Cells[i, 10] = rowData.CountAssignment;
                         }
                     }
                 }
