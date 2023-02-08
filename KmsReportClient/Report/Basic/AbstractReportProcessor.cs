@@ -121,7 +121,7 @@ namespace KmsReportClient.Report.Basic
                 }
             }
         }
-
+        
         public void SetTotalColumn()
         {
             try
@@ -195,8 +195,8 @@ namespace KmsReportClient.Report.Basic
                         Dgv.Rows[row].Cells[columnCount].Value = valueCel; //Целевые
                     }
                 }
-
-                string[] rowFor6Row = { "6", "6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7", "6.8", "6.9", "6.10" };
+                
+                string[] rowFor6Row = { "6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7", "6.8", "6.9", "6.10" }; 
                 if ((Report.IdType == "PG" && (GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 8" || GetCurrentTheme() == "Таблица 5" || GetCurrentTheme() == "Таблица 10")) ||
                     (Report.IdType == "PG_Q"))
                 {
@@ -210,6 +210,15 @@ namespace KmsReportClient.Report.Basic
 
                         row6.Cells["TotalPlanCel"].Value = GlobalUtils.TryParseDecimal(row6.Cells["Total"].Value) + GlobalUtils.TryParseDecimal(row6.Cells["TotalPlan"].Value); // Итого цел + план
                     }
+                    else 
+                    {
+                        var rowsForCalcluate6Total = Dgv.Rows.Cast<DataGridViewRow>().Where(x => "6".Contains(x.Cells[1].Value.ToString()));
+
+                        row6.Cells["Total"].Value = rowsForCalcluate6Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["Total"].Value));
+                        row6.Cells["TotalPlan"].Value = rowsForCalcluate6Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["TotalPlan"].Value));
+
+                        row6.Cells["TotalPlanCel"].Value = GlobalUtils.TryParseDecimal(row6.Cells["Total"].Value) + GlobalUtils.TryParseDecimal(row6.Cells["TotalPlan"].Value); // Итого цел + план
+                    };
                     /// ПОДСЧЕТ ИТОГОВЫХ СТРОК ДЛЯ ТАБЛИЦЫ 10 - 13 
                     if ((Report.IdType == "PG_Q" || Report.IdType == "PG") && (GetCurrentTheme() == "Таблица 10" || GetCurrentTheme() == "Таблица 13"))
                     {
