@@ -176,13 +176,18 @@ namespace KmsReportClient.Report.Basic
                                 }
                                 else
                                 {
-                                    valueCel += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value);
+                                    if (Report.IdType == "Zpz" && GetCurrentTheme() == "Таблица 1")
+                                    {
+                                        if (Dgv.Rows[row].Cells[cell].ColumnIndex != 4) { valueCel += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value); }
+                                    }
+                                    else { valueCel += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value); }
                                 }
                             }
                         }
                     }
 
-                    //Тот, кто это видит прошу меня простить))
+                    // Разраб до меня сделал так, переделывать не стали, работает и ладно.
+                    //// Тот, кто это видит прошу меня простить.
                     if ((Report.IdType == "PG" || Report.IdType == "PG_Q") && (GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 8"))
                     {
                         Dgv.Rows[row].Cells["Total"].Value = valueCel; //Целевые
