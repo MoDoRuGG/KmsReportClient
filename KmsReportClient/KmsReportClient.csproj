@@ -129,6 +129,7 @@
     <Compile Include="Excel\Creator\Base\ExcelCadreCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExceIRCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelIizl2022Creator.cs" />
+    <Compile Include="Excel\Creator\Base\ExcelMVCRCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelMFSSCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelOpedCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelOpedFinanceCreator.cs" />
@@ -271,6 +272,7 @@
     <Compile Include="Model\XML\TemplateDynamicReport.cs" />
     <Compile Include="Model\XML\TemplateForm.cs" />
     <Compile Include="Model\XML\TemplateTextMail.cs" />
+    <Compile Include="Report\Basic\MonitoringVCRProcessor.cs" />
     <Compile Include="Report\Basic\ReportCadreProcessor.cs" />
     <Compile Include="Report\Basic\DynamicReportProcessor.cs" />
     <Compile Include="Report\Basic\FSSMonitoringProcessor.cs" />
@@ -542,6 +544,9 @@
     <None Include="Connected Services\External\KmsReportClient.External.GetIRYearDataResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.GetMonitoringVCRPGDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.GetOpedFinanceListResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -582,6 +587,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.MethodForSendingChildModelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.MonitoringVCRPgDataDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.OpedFinancePlanDictionaryItem.datasource">
@@ -672,6 +680,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.WebReportInfrormationResponseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.WebReportMonitoringVCRResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.WebReportOpedFinanceResponse.datasource">

@@ -140,6 +140,7 @@ namespace KmsReportClient.Forms
             TbControl.TabPages.Remove(PageOtclkInfrorm);
             TbControl.TabPages.Remove(tabVac);
             TbControl.TabPages.Remove(PageFssMonitoring);
+            TbControl.TabPages.Remove(PageMonitoringVCR);
             TbControl.TabPages.Remove(PageIizl);
             TbControl.TabPages.Remove(PageProposal);
             TbControl.TabPages.Remove(tpOpedFinance);
@@ -178,6 +179,7 @@ namespace KmsReportClient.Forms
                         {PageOpedQ, ReportGlobalConst.ReportOpedQ},
                         {tabVac, ReportGlobalConst.ReportVac},
                         {PageFssMonitoring, ReportGlobalConst.FSSMonitoring},
+                        {PageMonitoringVCR, ReportGlobalConst.MonitoringVCR},
                         {PageProposal, ReportGlobalConst.ReportProposal},
                         {tpOpedFinance, ReportGlobalConst.ReportOpedFinance},
                         {tpIizl2022, ReportGlobalConst.ReportIizl2022},
@@ -238,6 +240,10 @@ namespace KmsReportClient.Forms
                   {
                     ReportGlobalConst.FSSMonitoring,
                     new FSSMonitoringProcessor(_client, _reportsDictionary, dgvFssM, cbFssM, tbFssM, PageFssMonitoring)
+                },
+                                  {
+                    ReportGlobalConst.MonitoringVCR,
+                    new MonitoringVCRProcessor(_client, _reportsDictionary, dgvMonitoringVCR, cbMonitoringVCR, tbMonitoringVCR, PageMonitoringVCR)
                 },
 
                   {
@@ -1674,7 +1680,8 @@ namespace KmsReportClient.Forms
                     TbControl.TabPages.Remove(PageProposal);
                     TbControl.TabPages.Remove(tpOpedFinance);
                     TbControl.TabPages.Remove(tpIizl2022);
-
+                    TbControl.TabPages.Remove(PageFssMonitoring);
+                    TbControl.TabPages.Remove(PageMonitoringVCR);
                     break;
             }
         }
@@ -1980,6 +1987,17 @@ namespace KmsReportClient.Forms
         private void dgvFssM_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             (_processor as FSSMonitoringProcessor).SetFormula();
+
+        }
+
+        private void dgvMonitoringVCR_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+
+        }
+
+        private void dgvMonitoringVCR_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as MonitoringVCRProcessor).SetFormula();
 
         }
 

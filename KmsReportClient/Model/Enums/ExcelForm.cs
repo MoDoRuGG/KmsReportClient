@@ -87,6 +87,8 @@ namespace KmsReportClient.Model.Enums
         Vac,
         [Description(GlobalConst.TempFolder + "mfss.xlsx")]
         MFSS,
+        [Description(GlobalConst.TempFolder + "mvcr.xlsx")]
+        MVCR,
         [Description(GlobalConst.TempFolder + "consVSS.xlsx")]
         consVSS,
         [Description(GlobalConst.TempFolder + "consOpedQ.xlsx")]

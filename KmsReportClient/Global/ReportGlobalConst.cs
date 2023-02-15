@@ -17,6 +17,7 @@
         public const string ReportOpedQ = "opedQ";
         public const string ReportVac = "vac";
         public const string FSSMonitoring = "mfss";
+        public const string MonitoringVCR = "mvcr";
         public const string ReportProposal = "proposal";
         public const string ReportOpedFinance = "oped_fin";
         public const string ReportIizl2022 = "iizl2022";

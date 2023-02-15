@@ -89,6 +89,10 @@ namespace KmsReportClient.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle62 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle63 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -256,6 +260,10 @@ namespace KmsReportClient.Forms
             this.tbFssM = new System.Windows.Forms.TextBox();
             this.cbFssM = new System.Windows.Forms.ComboBox();
             this.dgvFssM = new System.Windows.Forms.DataGridView();
+            this.PageMonitoringVCR = new System.Windows.Forms.TabPage();
+            this.tbMonitoringVCR = new System.Windows.Forms.TextBox();
+            this.cbMonitoringVCR = new System.Windows.Forms.ComboBox();
+            this.dgvMonitoringVCR = new System.Windows.Forms.DataGridView();
             this.PageProposal = new System.Windows.Forms.TabPage();
             this.tbProposal = new System.Windows.Forms.TextBox();
             this.cbProposal = new System.Windows.Forms.ComboBox();
@@ -323,6 +331,8 @@ namespace KmsReportClient.Forms
             ((System.ComponentModel.ISupportInitialize)(this.DgvCadre)).BeginInit();
             this.PageFssMonitoring.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFssM)).BeginInit();
+            this.PageMonitoringVCR.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMonitoringVCR)).BeginInit();
             this.PageProposal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProposal)).BeginInit();
             this.tpOpedFinance.SuspendLayout();
@@ -2529,6 +2539,82 @@ namespace KmsReportClient.Forms
             this.dgvFssM.Size = new System.Drawing.Size(703, 276);
             this.dgvFssM.TabIndex = 24;
             this.dgvFssM.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFssM_CellEndEdit);
+
+            // 
+            // PageMonitoringVCR
+            // 
+            this.PageMonitoringVCR.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.PageMonitoringVCR.Controls.Add(this.tbMonitoringVCR);
+            this.PageMonitoringVCR.Controls.Add(this.cbMonitoringVCR);
+            this.PageMonitoringVCR.Controls.Add(this.dgvMonitoringVCR);
+            this.PageMonitoringVCR.Location = new System.Drawing.Point(4, 36);
+            this.PageMonitoringVCR.Name = "PageMonitoringVCR";
+            this.PageMonitoringVCR.Padding = new System.Windows.Forms.Padding(3);
+            this.PageMonitoringVCR.Size = new System.Drawing.Size(712, 330);
+            this.PageMonitoringVCR.TabIndex = 11;
+            this.PageMonitoringVCR.Text = "tabPage1";
+            // 
+            // tbMonitoringVCR
+            // 
+            this.tbMonitoringVCR.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbMonitoringVCR.Location = new System.Drawing.Point(115, 5);
+            this.tbMonitoringVCR.Multiline = true;
+            this.tbMonitoringVCR.Name = "tbMonitoringVCR";
+            this.tbMonitoringVCR.ReadOnly = true;
+            this.tbMonitoringVCR.Size = new System.Drawing.Size(593, 39);
+            this.tbMonitoringVCR.TabIndex = 26;
+            // 
+            // cbMonitoringVCR
+            // 
+            this.cbMonitoringVCR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMonitoringVCR.FormattingEnabled = true;
+            this.cbMonitoringVCR.Location = new System.Drawing.Point(9, 5);
+            this.cbMonitoringVCR.Name = "cbMonitoringVCR";
+            this.cbMonitoringVCR.Size = new System.Drawing.Size(100, 21);
+            this.cbMonitoringVCR.TabIndex = 25;
+            // 
+            // dgvMonitoringVCR
+            // 
+            this.dgvMonitoringVCR.AllowUserToAddRows = false;
+            this.dgvMonitoringVCR.AllowUserToDeleteRows = false;
+            this.dgvMonitoringVCR.AllowUserToResizeColumns = false;
+            this.dgvMonitoringVCR.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvMonitoringVCR.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            dataGridViewCellStyle60.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle60.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle60.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle60.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle60.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle60.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMonitoringVCR.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle60;
+            this.dgvMonitoringVCR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle61.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle61.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle61.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle61.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle61.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle61.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle61.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMonitoringVCR.DefaultCellStyle = dataGridViewCellStyle61;
+            this.dgvMonitoringVCR.Location = new System.Drawing.Point(5, 50);
+            this.dgvMonitoringVCR.Name = "dgvMonitoringVCR";
+            dataGridViewCellStyle62.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle62.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle62.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle62.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle62.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle62.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle62.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMonitoringVCR.RowHeadersDefaultCellStyle = dataGridViewCellStyle62;
+            this.dgvMonitoringVCR.Size = new System.Drawing.Size(703, 276);
+            this.dgvMonitoringVCR.TabIndex = 24;
+            this.dgvMonitoringVCR.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonitoringVCR_CellEndEdit);
+
+
             // 
             // PageProposal
             // 
@@ -2891,6 +2977,9 @@ namespace KmsReportClient.Forms
             this.PageFssMonitoring.ResumeLayout(false);
             this.PageFssMonitoring.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFssM)).EndInit();
+            this.PageMonitoringVCR.ResumeLayout(false);
+            this.PageMonitoringVCR.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMonitoringVCR)).EndInit();
             this.PageProposal.ResumeLayout(false);
             this.PageProposal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProposal)).EndInit();
@@ -3065,6 +3154,10 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.ComboBox cbFssM;
         private System.Windows.Forms.DataGridView dgvFssM;
         private System.Windows.Forms.ToolStripMenuItem мониторингВССToolStripMenuItem;
+        private System.Windows.Forms.TabPage PageMonitoringVCR;
+        private System.Windows.Forms.TextBox tbMonitoringVCR;
+        private System.Windows.Forms.ComboBox cbMonitoringVCR;
+        private System.Windows.Forms.DataGridView dgvMonitoringVCR;
         private System.Windows.Forms.ToolStripMenuItem сводToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem оПЭДКвартальныйToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сводToolStripMenuItem2;
