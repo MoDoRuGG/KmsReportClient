@@ -70,12 +70,16 @@ namespace KmsReportClient.DgvHeaderGenerator
             iNoOfLevels = NoOfLevels(objHeaderTree);
             objGraphics = e.Graphics;
             objDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            
-            if (objDataGrid.Parent.Name == "PageCadre")  
-                { 
-                    objDataGrid.ColumnHeadersHeight = 145; 
-                    objDataGrid.DefaultCellStyle.BackColor = Color.FromArgb(253,233,217);
-                }
+
+            if (objDataGrid.Parent.Name == "PageCadre")
+            {
+                objDataGrid.ColumnHeadersHeight = 145;
+                objDataGrid.DefaultCellStyle.BackColor = Color.FromArgb(253, 233, 217);
+            }
+            else if (objDataGrid.Parent.Name == "PageMonitoringVCR")
+            {
+                objDataGrid.ColumnHeadersHeight = 145;
+            }
             else
             {
                 objDataGrid.ColumnHeadersHeight = iNoOfLevels * 20;

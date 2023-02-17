@@ -608,7 +608,7 @@ namespace KmsReportClient.Forms
             this.свод2ToolStripMenuItem});
             this.оПЭДФинансыToolStripMenuItem.Name = "оПЭДФинансыToolStripMenuItem";
             this.оПЭДФинансыToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.оПЭДФинансыToolStripMenuItem.Text = "ОПЭД Финансы";
+            this.оПЭДФинансыToolStripMenuItem.Text = "ОПЭД Доходы";
             // 
             // свод1ToolStripMenuItem
             // 

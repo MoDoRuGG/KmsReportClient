@@ -26,7 +26,7 @@ namespace KmsReportClient.Excel.Creator.Base
             ObjWorkSheet.Cells[8, 5] = YymmUtils.GetMonth(report.Yymm.Substring(2, 2)) + " 20" + report.Yymm.Substring(0, 2);
             ObjWorkSheet.Cells[9, 4] = FilialName;
 
-            for (int i = 14; i <= 33; i++)
+            for (int i = 14; i <= 37; i++)
             {
                 string rowNum = Convert.ToString(ObjWorkSheet.Cells[i, 1].Value);
                 var data = _rows.FirstOrDefault(x => x.Key == rowNum);
