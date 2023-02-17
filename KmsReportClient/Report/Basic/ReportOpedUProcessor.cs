@@ -24,11 +24,13 @@ namespace KmsReportClient.Report.Basic
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
 
         private string[] columns = new string[] {
-            "АПП",
-            "Стационар",
-            "Стационарозамещающая помощь",
-            "Скорая медицинская помощь",
-            "Примечания" };
+            "АПП\r\n\r\n",
+            "Стационар\r\n\r\n",
+            "Стационарозамещающая помощь\r\n\r\n",
+            "Скорая медицинская помощь\r\n\r\n",
+            "Примечания (количество экспертиз, находящихся в работе)\r\n",
+            "Примечания (количество экспертиз, не проведенных по уважительным причинам - причины указать)\r\n"
+            };
         //private ReportOpedUDto[] firstValueYear = new ReportOpedUDto[] { };
 
         //List<CellModel> beforeJunyNormativ = new List<CellModel>()
@@ -233,11 +235,13 @@ namespace KmsReportClient.Report.Basic
                         //row.Cells[12].Value = (int)data.DsLeth;
                         //row.Cells[13].Value = (int)data.SmpLeth;
                         row.Cells[6].Value = data.Notes;
+                        row.Cells[7].Value = data.NotesGoodReason;
 
                     }
                 }
 
                 SetCalculateValue();
+                ColoringBadPercent();
             }
         }
 
@@ -384,11 +388,15 @@ namespace KmsReportClient.Report.Basic
                         //SmpLeth = GlobalUtils.TryParseInt(row.Cells[13].Value),
                         Notes = row.Cells[6].Value?.ToString() ?? ""
                     };
+
+
                     reportDto.Add(data);
                 }
             }
 
             Report.ReportDataList = reportDto.ToArray();
+
+
 
         }
 
@@ -432,6 +440,23 @@ namespace KmsReportClient.Report.Basic
             }
         }
 
+
+        private void ColoringBadPercent()
+        {
+            foreach (int row in _calcRows)
+            {
+                for (int i = 2; i < Dgv.Rows[row].Cells.Count - 1; i++)
+                {
+                    if (Dgv.Rows[row].Cells[i].Value != null)
+                    {
+                        if (Dgv.Rows[row].Cells[i].Value.ToString() != "100")
+                        { 
+                            Dgv.Rows[row].Cells[i].Style.BackColor = Color.LightCoral;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

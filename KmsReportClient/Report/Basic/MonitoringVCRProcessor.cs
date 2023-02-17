@@ -10,6 +10,7 @@ using KmsReportClient.DgvHeaderGenerator;
 using KmsReportClient.Excel.Creator.Base;
 using KmsReportClient.External;
 using KmsReportClient.Global;
+using KmsReportClient.Model;
 using KmsReportClient.Model.Enums;
 using KmsReportClient.Model.XML;
 using KmsReportClient.Support;
@@ -20,7 +21,7 @@ namespace KmsReportClient.Report.Basic
     public class MonitoringVCRProcessor : AbstractReportProcessor<ReportMonitoringVCR>
     {
         StackedHeaderDecorator DgvRender;
-        string[] _notSaveCells = new string[] { "1", "2.1", "2.2" };
+        string[] _notSaveCells = new string[] { "1", "2", "2.1", "2.2" };
 
         Dictionary<string, DataGridViewRow> _rows;
 
@@ -248,6 +249,8 @@ namespace KmsReportClient.Report.Basic
 
             }
             Dgv.Columns[0].ReadOnly = Dgv.Columns[1].ReadOnly = true;
+            Dgv.Columns[4].ReadOnly = Dgv.Columns[1].ReadOnly = true;
+            Dgv.Columns[4].DefaultCellStyle.BackColor = Color.DarkGray;
         }
 
         protected override void FillReport(string form)
@@ -284,13 +287,13 @@ namespace KmsReportClient.Report.Basic
                     continue;
                 }
 
-                //if (row.Key == "2")
-                //{
-                //    row.Value.Cells[2].Value = _rows.Where(x => x.Key == "2.1" || x.Key == "2.2").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-                //    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "2.1" || x.Key == "2.2").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
-                  
+                if (row.Key == "2")
+                {
+                    row.Value.Cells[2].Value = _rows.Where(x => x.Key == "2.1" || x.Key == "2.2").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "2.1" || x.Key == "2.2").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
 
-                //}
+
+                }
 
 
                 if (row.Key == "2.1")
@@ -319,11 +322,11 @@ namespace KmsReportClient.Report.Basic
                     // ПО ЗАПРОСУ ГУЖЕНКО перевожу все на суммирование, без подтягивания данных ПГ
                     
                     MonitoringVCRPgDataDto dto = _MonitoringVCRPGDataResult.FirstOrDefault(x => x.RowNum == row.Key);
-                    //if (row.Key != "2.2.4ИНФ" && row.Key != "2.1.8ИНФ") { row.Value.Cells[4].Value = GlobalUtils.TryParseDecimal(row.Value.Cells[2].Value) + GlobalUtils.TryParseDecimal(row.Value.Cells[3].Value); }
-                    //// выше игнорируем суммирование по 2.2.4ИНФ и 2.1.8ИНФ и применяем для всего остального
-                    //// if (dto != null)
-                    //else
-                    //{
+                    if (row.Key != "2.2.4ИНФ" && row.Key != "2.1.8ИНФ") { row.Value.Cells[4].Value = GlobalUtils.TryParseDecimal(row.Value.Cells[2].Value) + GlobalUtils.TryParseDecimal(row.Value.Cells[3].Value); }
+                    // выше игнорируем суммирование по 2.2.4ИНФ и 2.1.8ИНФ и применяем для всего остального
+                    // if (dto != null)
+                    else
+                    {
                         if (GlobalUtils.TryParseDecimal(dto.Total) == 0.00m) // Если по ПГ нам ничего не пришло, то можно суммировать
                         {
                             
@@ -344,7 +347,7 @@ namespace KmsReportClient.Report.Basic
                             //}
 
 
-                       // }
+                        }
 
                     }
                 }
