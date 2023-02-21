@@ -91,6 +91,8 @@ namespace KmsReportClient.Model.Enums
         MVCR,
         [Description(GlobalConst.TempFolder + "consVSS.xlsx")]
         consVSS,
+        [Description(GlobalConst.TempFolder + "consVCR.xlsx")]
+        consVCR,
         [Description(GlobalConst.TempFolder + "consOpedQ.xlsx")]
         consOpedQ,
         [Description(GlobalConst.TempFolder + "proposal.xlsx")]

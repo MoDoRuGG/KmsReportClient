@@ -159,6 +159,7 @@
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateOpedQCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateOpenFinance1.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateOpenFinance2.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateVCRCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateVSSCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateYear294Creator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsZpzWebSite.cs" />
@@ -415,6 +416,9 @@
     <None Include="Connected Services\External\KmsReportClient.External.ConsolidateProposalCollectResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.ConsolidateVCR.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.ConsolidateVSS.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -464,6 +468,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateReportOpedUnplannedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateReportVCRResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateReportVSSResponse.datasource">

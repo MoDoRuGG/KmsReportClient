@@ -121,6 +121,8 @@ namespace KmsReportClient.Forms
             this.сводToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.мониторингВССToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сводToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.мониторингВСС2023ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сводToolStripMenuItemVCR = new System.Windows.Forms.ToolStripMenuItem();
             this.оПЭДКвартальныйToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сводToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.сводToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -390,6 +392,7 @@ namespace KmsReportClient.Forms
             this.формаПГToolStripMenuItem,
             this.формаОПЭДToolStripMenuItem,
             this.мониторингВССToolStripMenuItem,
+            this.мониторингВСС2023ToolStripMenuItem,
             this.оПЭДКвартальныйToolStripMenuItem,
             this.оПЭДФинансыToolStripMenuItem,
             this.отчётОПредложенияхToolStripMenuItem,
@@ -577,6 +580,21 @@ namespace KmsReportClient.Forms
             this.сводToolStripMenuItem1.Size = new System.Drawing.Size(101, 22);
             this.сводToolStripMenuItem1.Text = "Свод";
             this.сводToolStripMenuItem1.Click += new System.EventHandler(this.сводToolStripMenuItem1_Click);
+            // 
+            // мониторингВСС2023ToolStripMenuItem
+            // 
+            this.мониторингВСС2023ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.сводToolStripMenuItemVCR});
+            this.мониторингВСС2023ToolStripMenuItem.Name = "мониторингВСС2023ToolStripMenuItem";
+            this.мониторингВСС2023ToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.мониторингВСС2023ToolStripMenuItem.Text = "Мониторинг ВСС 2023";
+            // 
+            // сводToolStripMenuItemVCR
+            // 
+            this.сводToolStripMenuItemVCR.Name = "сводToolStripMenuItemVCR";
+            this.сводToolStripMenuItemVCR.Size = new System.Drawing.Size(101, 22);
+            this.сводToolStripMenuItemVCR.Text = "Свод";
+            this.сводToolStripMenuItemVCR.Click += new System.EventHandler(this.сводToolStripMenuItemVCR_Click);
             // 
             // оПЭДКвартальныйToolStripMenuItem
             // 
@@ -3154,14 +3172,17 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.ComboBox cbFssM;
         private System.Windows.Forms.DataGridView dgvFssM;
         private System.Windows.Forms.ToolStripMenuItem мониторингВССToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сводToolStripMenuItem1;
         private System.Windows.Forms.TabPage PageMonitoringVCR;
         private System.Windows.Forms.TextBox tbMonitoringVCR;
         private System.Windows.Forms.ComboBox cbMonitoringVCR;
         private System.Windows.Forms.DataGridView dgvMonitoringVCR;
-        private System.Windows.Forms.ToolStripMenuItem сводToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem мониторингВСС2023ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сводToolStripMenuItemVCR;
         private System.Windows.Forms.ToolStripMenuItem оПЭДКвартальныйToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сводToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem сводToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem сводToolStripMenuItem4;              
+
         private System.Windows.Forms.TabPage PageProposal;
         private System.Windows.Forms.TextBox tbProposal;
         private System.Windows.Forms.ComboBox cbProposal;

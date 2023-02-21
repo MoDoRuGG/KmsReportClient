@@ -239,6 +239,16 @@ namespace KmsReportClient.Forms
                     saveFileDialog1.FileName = "Cводный отчет Мониторинг ВСС";
                     break;
 
+                case ConsolidateReport.ConsolidateVCR:
+                    labelStart.Text = "Период";
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    nudSingle.Visible = false;
+                    cmbStart.DataSource = GlobalConst.Months;
+                    btnDo.Text = "Сформировать сводный отчёт Мониторинг ВСС 2023";
+                    saveFileDialog1.FileName = "Cводный отчет Мониторинг ВСС 2023";
+                    break;
+
                 case ConsolidateReport.ConsolidateOpedQ:
                     labelStart.Text = "Период";
                     nudSingle.Visible = false;
@@ -383,6 +393,9 @@ namespace KmsReportClient.Forms
                         break;
                     case ConsolidateReport.ConsolidateVSS:
                         CreateCVSS();
+                        break;
+                    case ConsolidateReport.ConsolidateVCR:
+                        CreateCVCR();
                         break;
                     case ConsolidateReport.ConsolidateOpedQ:
                         CreateCOpedQ();
@@ -529,6 +542,32 @@ namespace KmsReportClient.Forms
             }
 
             var excel = new ExcelConsolidateVSSCreator(saveFileDialog1.FileName, "", _filialName, mm);
+
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+        }
+
+        private void CreateCVCR()
+        {
+            string yymm = GetYymm(cmbStart.Text, Convert.ToInt32(nudStart.Value)).ToString();
+
+
+
+
+            string mm = YymmUtils.GetMonth(yymm.Substring(2));
+
+            var data = _client.CreateReportVCR(yymm);
+
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var excel = new ExcelConsolidateVCRCreator(saveFileDialog1.FileName, "", _filialName, mm);
 
             excel.CreateReport(data, null);
 

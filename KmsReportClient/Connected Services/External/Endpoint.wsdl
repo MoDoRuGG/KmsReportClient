@@ -2,6 +2,73 @@
 <wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://kms-oms.ru/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://kms-oms.ru/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://kms-oms.ru/">
+      <s:element name="CreateZpzForWebSite">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateZpzForWebSiteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateZpzForWebSiteResult" type="tns:ArrayOfZpzForWebSite" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfZpzForWebSite">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZpzForWebSite" nillable="true" type="tns:ZpzForWebSite" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZpzForWebSite">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Treatments" type="tns:ArrayOfZpzTreatment" />
+          <s:element minOccurs="0" maxOccurs="1" name="Complaints" type="tns:ArrayOfZpzTreatment" />
+          <s:element minOccurs="0" maxOccurs="1" name="Protections" type="tns:ArrayOfZpzStatistics" />
+          <s:element minOccurs="0" maxOccurs="1" name="Expertises" type="tns:ArrayOfExpertise" />
+          <s:element minOccurs="0" maxOccurs="1" name="Specialists" type="tns:ArrayOfZpzStatistics" />
+          <s:element minOccurs="0" maxOccurs="1" name="Complacence" type="tns:ArrayOfZpzStatistics" />
+          <s:element minOccurs="0" maxOccurs="1" name="Informations" type="tns:ArrayOfZpzStatistics" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfZpzTreatment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZpzTreatment" nillable="true" type="tns:ZpzTreatment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZpzTreatment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Row" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Oral" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Written" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfZpzStatistics">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZpzStatistics" nillable="true" type="tns:ZpzStatistics" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZpzStatistics">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Row" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfExpertise">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Expertise" nillable="true" type="tns:Expertise" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Expertise">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Row" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Target" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Plan" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Violation" type="s:int" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="ConsolidateProposalCollect">
         <s:complexType>
           <s:sequence>
@@ -2623,6 +2690,33 @@
           <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:decimal" />
         </s:sequence>
       </s:complexType>
+      <s:element name="CreateReportVCR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateReportVCRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateReportVCRResult" type="tns:ArrayOfConsolidateVCR" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfConsolidateVCR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsolidateVCR" nillable="true" type="tns:ConsolidateVCR" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConsolidateVCR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertWithEducation" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertWithoutEducation" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="CreateReportCpnpM">
         <s:complexType>
           <s:sequence>
@@ -3338,75 +3432,14 @@
           <s:element minOccurs="1" maxOccurs="1" name="SubjectToDisp" type="s:int" />
         </s:sequence>
       </s:complexType>
-      <s:element name="CreateZpzForWebSite">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CreateZpzForWebSiteResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CreateZpzForWebSiteResult" type="tns:ArrayOfZpzForWebSite" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfZpzForWebSite">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="ZpzForWebSite" nillable="true" type="tns:ZpzForWebSite" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ZpzForWebSite">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Treatments" type="tns:ArrayOfZpzTreatment" />
-          <s:element minOccurs="0" maxOccurs="1" name="Complaints" type="tns:ArrayOfZpzTreatment" />
-          <s:element minOccurs="0" maxOccurs="1" name="Protections" type="tns:ArrayOfZpzStatistics" />
-          <s:element minOccurs="0" maxOccurs="1" name="Expertises" type="tns:ArrayOfExpertise" />
-          <s:element minOccurs="0" maxOccurs="1" name="Specialists" type="tns:ArrayOfZpzStatistics" />
-          <s:element minOccurs="0" maxOccurs="1" name="Complacence" type="tns:ArrayOfZpzStatistics" />
-          <s:element minOccurs="0" maxOccurs="1" name="Informations" type="tns:ArrayOfZpzStatistics" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfZpzTreatment">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="ZpzTreatment" nillable="true" type="tns:ZpzTreatment" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ZpzTreatment">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Row" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Oral" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Written" type="s:int" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfZpzStatistics">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="ZpzStatistics" nillable="true" type="tns:ZpzStatistics" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ZpzStatistics">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Row" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:decimal" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfExpertise">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Expertise" nillable="true" type="tns:Expertise" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="Expertise">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Row" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Target" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Plan" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Violation" type="s:int" />
-        </s:sequence>
-      </s:complexType>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="CreateZpzForWebSiteSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateZpzForWebSite" />
+  </wsdl:message>
+  <wsdl:message name="CreateZpzForWebSiteSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateZpzForWebSiteResponse" />
+  </wsdl:message>
   <wsdl:message name="ConsolidateProposalCollectSoapIn">
     <wsdl:part name="parameters" element="tns:ConsolidateProposalCollect" />
   </wsdl:message>
@@ -3833,6 +3866,12 @@
   <wsdl:message name="CreateReportVSSSoapOut">
     <wsdl:part name="parameters" element="tns:CreateReportVSSResponse" />
   </wsdl:message>
+  <wsdl:message name="CreateReportVCRSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateReportVCR" />
+  </wsdl:message>
+  <wsdl:message name="CreateReportVCRSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateReportVCRResponse" />
+  </wsdl:message>
   <wsdl:message name="CreateReportCpnpMSoapIn">
     <wsdl:part name="parameters" element="tns:CreateReportCpnpM" />
   </wsdl:message>
@@ -3911,13 +3950,11 @@
   <wsdl:message name="CreateConsolidate294SoapOut">
     <wsdl:part name="parameters" element="tns:CreateConsolidate294Response" />
   </wsdl:message>
-  <wsdl:message name="CreateZpzForWebSiteSoapIn">
-    <wsdl:part name="parameters" element="tns:CreateZpzForWebSite" />
-  </wsdl:message>
-  <wsdl:message name="CreateZpzForWebSiteSoapOut">
-    <wsdl:part name="parameters" element="tns:CreateZpzForWebSiteResponse" />
-  </wsdl:message>
   <wsdl:portType name="EndpointSoap">
+    <wsdl:operation name="CreateZpzForWebSite">
+      <wsdl:input message="tns:CreateZpzForWebSiteSoapIn" />
+      <wsdl:output message="tns:CreateZpzForWebSiteSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="ConsolidateProposalCollect">
       <wsdl:input message="tns:ConsolidateProposalCollectSoapIn" />
       <wsdl:output message="tns:ConsolidateProposalCollectSoapOut" />
@@ -4202,6 +4239,10 @@
       <wsdl:input message="tns:CreateReportVSSSoapIn" />
       <wsdl:output message="tns:CreateReportVSSSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="CreateReportVCR">
+      <wsdl:input message="tns:CreateReportVCRSoapIn" />
+      <wsdl:output message="tns:CreateReportVCRSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="CreateReportCpnpM">
       <wsdl:input message="tns:CreateReportCpnpMSoapIn" />
       <wsdl:output message="tns:CreateReportCpnpMSoapOut" />
@@ -4254,13 +4295,18 @@
       <wsdl:input message="tns:CreateConsolidate294SoapIn" />
       <wsdl:output message="tns:CreateConsolidate294SoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="CreateZpzForWebSite">
-      <wsdl:input message="tns:CreateZpzForWebSiteSoapIn" />
-      <wsdl:output message="tns:CreateZpzForWebSiteSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="EndpointSoap" type="tns:EndpointSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateZpzForWebSite">
+      <soap:operation soapAction="http://kms-oms.ru/CreateZpzForWebSite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ConsolidateProposalCollect">
       <soap:operation soapAction="http://kms-oms.ru/ConsolidateProposalCollect" style="document" />
       <wsdl:input>
@@ -4900,6 +4946,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CreateReportVCR">
+      <soap:operation soapAction="http://kms-oms.ru/CreateReportVCR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateReportCpnpM">
       <soap:operation soapAction="http://kms-oms.ru/CreateReportCpnpM" style="document" />
       <wsdl:input>
@@ -5017,18 +5072,18 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateZpzForWebSite">
-      <soap:operation soapAction="http://kms-oms.ru/CreateZpzForWebSite" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="EndpointSoap12" type="tns:EndpointSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateZpzForWebSite">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateZpzForWebSite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ConsolidateProposalCollect">
       <soap12:operation soapAction="http://kms-oms.ru/ConsolidateProposalCollect" style="document" />
       <wsdl:input>
@@ -5668,6 +5723,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CreateReportVCR">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateReportVCR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateReportCpnpM">
       <soap12:operation soapAction="http://kms-oms.ru/CreateReportCpnpM" style="document" />
       <wsdl:input>
@@ -5778,15 +5842,6 @@
     </wsdl:operation>
     <wsdl:operation name="CreateConsolidate294">
       <soap12:operation soapAction="http://kms-oms.ru/CreateConsolidate294" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateZpzForWebSite">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateZpzForWebSite" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

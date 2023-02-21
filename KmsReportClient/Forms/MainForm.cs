@@ -1990,6 +1990,11 @@ namespace KmsReportClient.Forms
 
         }
 
+        private void сводToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            OpenConsolidateReportForm(ConsolidateReport.ConsolidateVSS);
+        }
+
         private void dgvMonitoringVCR_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
 
@@ -2001,9 +2006,10 @@ namespace KmsReportClient.Forms
 
         }
 
-        private void сводToolStripMenuItem1_Click(object sender, EventArgs e)
+
+        private void сводToolStripMenuItemVCR_Click(object sender, EventArgs e)
         {
-            OpenConsolidateReportForm(ConsolidateReport.ConsolidateVSS);
+            OpenConsolidateReportForm(ConsolidateReport.ConsolidateVCR);
         }
 
         private void сводToolStripMenuItem2_Click(object sender, EventArgs e)

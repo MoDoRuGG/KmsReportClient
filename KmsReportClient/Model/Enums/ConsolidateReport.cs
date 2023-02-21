@@ -22,6 +22,7 @@
         ConsolidateOped,
         ConsolidateOpedUnplanned,
         ConsolidateVSS,
+        ConsolidateVCR,
         ConsolidateOpedQ,
         Proposal,
         ConsolidateCPNP2Q,
