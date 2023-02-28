@@ -23,13 +23,13 @@ namespace KmsReportClient.Excel.Creator.Consolidate
 
             int ind = 0;
 
-            while (ind < 252 && currentIndex < 380)
+            while (ind < 252 && currentIndex < 420)
             {
 
 
                 
 
-                for (int i = currentIndex; i <= currentIndex + 8; i++)
+                for (int i = currentIndex; i <= currentIndex + 9; i++)
                 {
                     //.Filial = _regions.Single(j => j.Key == d.Filial).Value;
                     //string exRowNum = Convert.ToString(ObjWorkSheet.Cells[i, 2].Value);
@@ -41,12 +41,13 @@ namespace KmsReportClient.Excel.Creator.Consolidate
                         ObjWorkSheet.Cells[i, 6] = report[ind].Ds;
                         ObjWorkSheet.Cells[i, 7] = report[ind].Smp;
                         ObjWorkSheet.Cells[i, 8] = report[ind].Notes;
+                        ObjWorkSheet.Cells[i, 9] = report[ind].NotesGoodReason;
                         ind++;
                     }
                     
                    
                 }
-                currentIndex = currentIndex + 9;
+                currentIndex = currentIndex + 10;
             }
         }
     }
