@@ -555,8 +555,8 @@
       </s:complexType>
       <s:simpleType name="ReportStatus">
         <s:restriction base="s:string">
-          <s:enumeration value="New" />
           <s:enumeration value="Saved" />
+          <s:enumeration value="New" />
           <s:enumeration value="Scan" />
           <s:enumeration value="Submit" />
           <s:enumeration value="Refuse" />
@@ -2005,11 +2005,12 @@
       </s:element>
       <s:simpleType name="ReportType">
         <s:restriction base="s:string">
+          <s:enumeration value="OpedFinance" />
+          <s:enumeration value="Pg" />
           <s:enumeration value="F262" />
           <s:enumeration value="F294" />
           <s:enumeration value="Iizl" />
           <s:enumeration value="Iizl2022" />
-          <s:enumeration value="Pg" />
           <s:enumeration value="Zpz" />
           <s:enumeration value="PgQ" />
           <s:enumeration value="ZpzQ" />
@@ -2021,7 +2022,6 @@
           <s:enumeration value="MFSS" />
           <s:enumeration value="MVCR" />
           <s:enumeration value="Proposal" />
-          <s:enumeration value="OpedFinance" />
           <s:enumeration value="Cadre" />
         </s:restriction>
       </s:simpleType>

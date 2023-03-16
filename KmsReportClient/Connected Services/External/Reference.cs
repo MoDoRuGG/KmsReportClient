@@ -3676,10 +3676,10 @@ namespace KmsReportClient.External {
     public enum ReportStatus : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        New = 0,
+        Saved = 0,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Saved = 1,
+        New = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Scan = 2,
@@ -15357,55 +15357,55 @@ namespace KmsReportClient.External {
     public enum ReportType : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        F262 = 0,
+        OpedFinance = 0,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        F294 = 1,
+        Pg = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Iizl = 2,
+        F262 = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Iizl2022 = 3,
+        F294 = 3,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Pg = 4,
+        Iizl = 4,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Zpz = 5,
+        Iizl2022 = 5,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        PgQ = 6,
+        Zpz = 6,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ZpzQ = 7,
+        PgQ = 7,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Oped = 8,
+        ZpzQ = 8,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        OpedU = 9,
+        Oped = 9,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        OpedQ = 10,
+        OpedU = 10,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        IR = 11,
+        OpedQ = 11,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Vac = 12,
+        IR = 12,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        MFSS = 13,
+        Vac = 13,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        MVCR = 14,
+        MFSS = 14,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Proposal = 15,
+        MVCR = 15,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        OpedFinance = 16,
+        Proposal = 16,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Cadre = 17,
