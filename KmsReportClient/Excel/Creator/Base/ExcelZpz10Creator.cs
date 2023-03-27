@@ -13,14 +13,6 @@ namespace KmsReportClient.Excel.Creator.Base
     class ExcelZpz10Creator : ExcelBaseCreator<ReportZpz>
     {
         private readonly List<ReportDictionary> _zpzDictionaries = new List<ReportDictionary> {
-
-<<<<<<< HEAD
-=======
-            new ReportDictionary {TableName = "Таблица 1", StartRow = 12, EndRow = 99, Index = 1},
-            new ReportDictionary {TableName = "Таблица 2", StartRow = 7, EndRow = 27, Index = 2},
-            new ReportDictionary {TableName = "Таблица 3", StartRow = 7, EndRow = 51, Index = 3},
-            new ReportDictionary {TableName = "Таблица 4", StartRow = 7, EndRow = 13, Index = 4},
->>>>>>> feature/zpz_t10
             new ReportDictionary {TableName = "Таблица 10", StartRow = 7, EndRow = 58, Index = 5}  
         };
 

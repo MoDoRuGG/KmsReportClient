@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.ServiceModel.Channels;
 using System.Windows.Forms;
 using KmsReportClient.Excel.Creator.Base;
 using KmsReportClient.External;
@@ -18,17 +17,16 @@ namespace KmsReportClient.Report.Basic
     {
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
 
-        private readonly string[] _forms1 = { "Таблица 10"};
-
+        private readonly string[] _forms1 = { "Таблица 10" };
 
         private readonly string[][] _headers = {
-            new[] 
+            new[]
             { "Всего" }, //10
         };
 
         private readonly Dictionary<string, string> _headersMap = new Dictionary<string, string>
         {
-            { "Таблица 10", "Численность проинформированных застрахованных лиц" },        
+            { "Таблица 10", "Численность проинформированных застрахованных лиц" },
         };
 
         public ReportZpz10Processor(EndpointSoap inClient, List<KmsReportDictionary> reportsDictionary, DataGridView dgv, ComboBox cmb, TextBox txtb, TabPage page) :
@@ -120,17 +118,13 @@ namespace KmsReportClient.Report.Basic
         public override string ValidReport()
         {
             string message = "";
-            
+
             if (message.Length > 0)
             {
                 message = "Форма ЗПЗ. " + Environment.NewLine + message;
             }
             return message;
         }
-
-        public override bool IsVisibleBtnDownloadExcel() => true;
-
-        public override bool IsVisibleBtnHandle() => true;
 
         public override void ToExcel(string filename, string filialName)
         {
@@ -144,7 +138,7 @@ namespace KmsReportClient.Report.Basic
             var request = new SaveReportRequest
             {
                 Body = new SaveReportRequestBody
-                
+
                 {
                     filialCode = CurrentUser.FilialCode,
                     idUser = CurrentUser.IdUser,
@@ -157,7 +151,7 @@ namespace KmsReportClient.Report.Basic
             Report.IdFlow = response.IdFlow;
             Report.Status = response.Status;
             Report.DataSource = response.DataSource;
-            
+
         }
 
         public override void SaveReportDataSourceExcel()
@@ -251,6 +245,7 @@ namespace KmsReportClient.Report.Basic
                     bool isNeedExcludeSum = exclusionCells?.Contains(i.ToString()) ?? false;
                     var cell = new DataGridViewTextBoxCell
                     {
+                        Value = row.Exclusion || isNeedExcludeSum ? "x" : "0"
                     };
                     dgvRow.Cells.Add(cell);
 
@@ -324,23 +319,27 @@ namespace KmsReportClient.Report.Basic
 
         private void FillThemesForms1(DataGridView dgvReport, string form)
         {
+            var reportZpzDto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
+            if (reportZpzDto == null)
             {
                 return;
             }
 
-                                let rowNum = row.Cells[1].Value.ToString().Trim()
-                                where !IsNotNeedFillRow(form, rowNum)
-                                select new ReportZpzDataDto
-                                {
-                                    Code = rowNum,
-                                    CountSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
-                                    CountSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[3].Value)
-                                }).ToArray();
+            reportZpzDto.Data = (from DataGridViewRow row in dgvReport.Rows
+                                 let rowNum = row.Cells[1].Value.ToString().Trim()
+                                 where !IsNotNeedFillRow(form, rowNum)
+                                 select new ReportZpzDataDto
+                                 {
+                                     Code = rowNum,
+                                     CountSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
+                                     CountSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[3].Value)
+                                 }).ToArray();
         }
-
 
         private void FillDgwForms1(DataGridView dgvReport, string form)
         {
+            var reportZpzDto = Report.ReportDataList?.Single(x => x.Theme == form);
+            if (reportZpzDto?.Data == null || reportZpzDto.Data.Length == 0)
             {
                 return;
             }
@@ -351,6 +350,7 @@ namespace KmsReportClient.Report.Basic
                 var rowNum = row.Cells[1].Value.ToString().Trim();
                 bool isExclusionsRow = rows.Single(x => x.Num == rowNum).Exclusion;
 
+                var data = reportZpzDto.Data.SingleOrDefault(x => x.Code == rowNum);
                 if (data != null)
                 {
                     row.Cells[2].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, null, 0, data.CountSmo);
