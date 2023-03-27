@@ -18,17 +18,17 @@ namespace KmsReportClient.Report.Basic
     {
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
 
-        private readonly string[] _forms1 = { "Таблица 10" };
+        private readonly string[] _forms1 = { "Таблица 10"};
 
 
         private readonly string[][] _headers = {
-            new[]
+            new[] 
             { "Всего" }, //10
         };
 
         private readonly Dictionary<string, string> _headersMap = new Dictionary<string, string>
         {
-            { "Таблица 10", "Численность проинформированных застрахованных лиц" },
+            { "Таблица 10", "Численность проинформированных застрахованных лиц" },        
         };
 
         public ReportZpz10Processor(EndpointSoap inClient, List<KmsReportDictionary> reportsDictionary, DataGridView dgv, ComboBox cmb, TextBox txtb, TabPage page) :
@@ -113,9 +113,14 @@ namespace KmsReportClient.Report.Basic
             }
         }
 
+        public override bool IsVisibleBtnDownloadExcel() => true;
+
+        public override bool IsVisibleBtnHandle() => true;
+
         public override string ValidReport()
         {
             string message = "";
+            
             if (message.Length > 0)
             {
                 message = "Форма ЗПЗ. " + Environment.NewLine + message;
@@ -246,7 +251,6 @@ namespace KmsReportClient.Report.Basic
                     bool isNeedExcludeSum = exclusionCells?.Contains(i.ToString()) ?? false;
                     var cell = new DataGridViewTextBoxCell
                     {
-                        Value = row.Exclusion || isNeedExcludeSum ? "X" : "0"
                     };
                     dgvRow.Cells.Add(cell);
 
@@ -320,13 +324,10 @@ namespace KmsReportClient.Report.Basic
 
         private void FillThemesForms1(DataGridView dgvReport, string form)
         {
-            var reportZpz10Dto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
-            if (reportZpz10Dto == null)
             {
                 return;
             }
 
-            reportZpz10Dto.Data = (from DataGridViewRow row in dgvReport.Rows
                                 let rowNum = row.Cells[1].Value.ToString().Trim()
                                 where !IsNotNeedFillRow(form, rowNum)
                                 select new ReportZpzDataDto
@@ -340,8 +341,6 @@ namespace KmsReportClient.Report.Basic
 
         private void FillDgwForms1(DataGridView dgvReport, string form)
         {
-            var reportZpz10Dto = Report.ReportDataList?.Single(x => x.Theme == form);
-            if (reportZpz10Dto?.Data == null || reportZpz10Dto.Data.Length == 0)
             {
                 return;
             }
@@ -352,7 +351,6 @@ namespace KmsReportClient.Report.Basic
                 var rowNum = row.Cells[1].Value.ToString().Trim();
                 bool isExclusionsRow = rows.Single(x => x.Num == rowNum).Exclusion;
 
-                var data = reportZpz10Dto.Data.SingleOrDefault(x => x.Code == rowNum);
                 if (data != null)
                 {
                     row.Cells[2].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, null, 0, data.CountSmo);
