@@ -23,6 +23,9 @@ namespace KmsReportClient.Model.Enums
         [Description(GlobalConst.TempFolder + "zpzq.xlsx")]
         ZpzQ,
 
+        [Description(GlobalConst.TempFolder + "zpz10.xlsx")]
+        Zpz10,
+
         [Description(GlobalConst.TempFolder + "zpz.xlsx")]
         Zpz,
 

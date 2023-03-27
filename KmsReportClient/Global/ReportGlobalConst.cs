@@ -22,6 +22,7 @@
         public const string ReportOpedFinance = "oped_fin";
         public const string ReportIizl2022 = "iizl2022";
         public const string ReportCadre = "cadre";
-        
+        public const string ReportZpz10 = "Zpz10";
+
     }
 }

@@ -135,6 +135,7 @@
     <Compile Include="Excel\Creator\Base\ExcelOpedFinanceCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelOpedUCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelOpedQCreator.cs" />
+    <Compile Include="Excel\Creator\Base\ExcelZpz10Creator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelZpzCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelPgCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelZpzQCreator.cs" />
@@ -283,6 +284,7 @@
     <Compile Include="Report\Basic\ReportOpedProcessor.cs" />
     <Compile Include="Report\Basic\ReportInfrormationResponseProcessor.cs" />
     <Compile Include="Report\Basic\ReportOpedQProcessor.cs" />
+    <Compile Include="Report\Basic\ReportZpz10Processor.cs" />
     <Compile Include="Report\Basic\ReportZpzQProcessor.cs" />
     <Compile Include="Report\Basic\ReportZpzProcessor.cs" />
     <Compile Include="Report\Basic\ReportPgProcessor.cs" />

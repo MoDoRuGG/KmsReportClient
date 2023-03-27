@@ -463,7 +463,7 @@ namespace KmsReportClient.Report.Basic
 
             CreateDgvForForm(form, table);
 
-            if (Report.IdType == "PG" || Report.IdType == "PG_Q" || Report.IdType == "foped" || Report.IdType == "Zpz_Q" || Report.IdType == "Zpz")
+            if (Report.IdType == "PG" || Report.IdType == "PG_Q" || Report.IdType == "foped" || Report.IdType == "Zpz_Q" || Report.IdType == "Zpz" || Report.IdType == "Zpz10")
                 CreateTotalColumn();
 
         }

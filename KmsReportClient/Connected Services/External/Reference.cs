@@ -16634,6 +16634,9 @@ namespace KmsReportClient.External {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Infomaterial = 18,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Zpz10 = 19,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -27068,7 +27071,7 @@ namespace KmsReportClient.External {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
         public KmsReportClient.External.ReportZpz zpz;
-        
+
         public MethodForSendingChildModelRequestBody() {
         }
         

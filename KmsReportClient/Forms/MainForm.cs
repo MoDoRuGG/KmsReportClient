@@ -148,6 +148,7 @@ namespace KmsReportClient.Forms
             TbControl.TabPages.Remove(PageCadre);
             TbControl.TabPages.Remove(PageZpz);
             TbControl.TabPages.Remove(PageZpzQ);
+            TbControl.TabPages.Remove(PageZpz10);
 
             if (CurrentUser.IsMain)
             {
@@ -184,6 +185,7 @@ namespace KmsReportClient.Forms
                         {tpOpedFinance, ReportGlobalConst.ReportOpedFinance},
                         {tpIizl2022, ReportGlobalConst.ReportIizl2022},
                         {PageCadre, ReportGlobalConst.ReportCadre},
+                        {PageZpz10, ReportGlobalConst.ReportZpz10},
             };
 
         private Dictionary<string, IReportProcessor> CreateProcessorMap() =>
@@ -212,6 +214,10 @@ namespace KmsReportClient.Forms
                 {
                     ReportGlobalConst.ReportZpz,
                     new ReportZpzProcessor(_client, _reportsDictionary, DgwReportZpz, CmbZpz, TxtbZpz, PageZpz)
+                },
+                {
+                    ReportGlobalConst.ReportZpz10,
+                    new ReportZpz10Processor(_client, _reportsDictionary, DgwReportZpz10, CmbZpz10, TxtbZpz10, PageZpz10)
                 },
                 {
                     ReportGlobalConst.ReportZpzQ,
@@ -429,13 +435,7 @@ namespace KmsReportClient.Forms
                 _dynamicReportProcessor.data = data;
                 _dynamicReportProcessor.SetReportDynamicFlow(reportTag.idFlow);
                 _dynamicReportProcessor.FillThemeData(DgvQuery);
-
             }
-
-
-
-
-
         }
 
         private void NotifyAboutEnabledFilter()
@@ -530,10 +530,11 @@ namespace KmsReportClient.Forms
             BtnSubmit.Enabled = _processor.Report.Status != ReportStatus.Done;
             BtnUploaded.Visible = _processor.IsVisibleBtnDownloadExcel();
             BtnHandle.Visible = _processor.IsVisibleBtnHandle();
-            if (_processor.Report.IdType == "PG" || _processor.Report.IdType == "Zpz")
+            if (_processor.Report.IdType == "PG" || _processor.Report.IdType == "Zpz" || _processor.Report.IdType == "Zpz10")
             {
                 DgwReportPg.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
                 DgwReportZpz.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
+                DgwReportZpz10.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
             }
             TxtbInfo.Text = _processor.GetReportInfo();
             BtnCommentReport.Visible = true;
@@ -688,6 +689,7 @@ namespace KmsReportClient.Forms
             _processor.SaveReportDataSourceExcel();
             DgwReportPg.ReadOnly = true;
             DgwReportZpz.ReadOnly = true;
+            DgwReportZpz10.ReadOnly = true;
             _processor.SaveToDb();
         }
 
@@ -707,6 +709,7 @@ namespace KmsReportClient.Forms
             _processor.SaveReportDataSourceHandle();
             DgwReportPg.ReadOnly = false;
             DgwReportZpz.ReadOnly = false;
+            DgwReportZpz10.ReadOnly = false;
             _processor.FillDataGridView(theme);
             _processor.SaveToDb();
 
@@ -1509,10 +1512,13 @@ namespace KmsReportClient.Forms
             ChangeIndexComboBox(DgwReportPg, CmbPg, TxtbPg);
 
         private void CmbZpz_SelectedIndexChanged(object sender, EventArgs e) =>
-    ChangeIndexComboBox(DgwReportZpzQ, CmbZpzQ, TxtbZpzQ);
+        ChangeIndexComboBox(DgwReportZpzQ, CmbZpzQ, TxtbZpzQ);
 
         private void CmbZpz_SelectedIndexChanged_1(object sender, EventArgs e) =>
             ChangeIndexComboBox(DgwReportZpz, CmbZpz, TxtbZpz);
+
+        private void CmbZpz10_SelectedIndexChanged(object sender, EventArgs e) =>
+        ChangeIndexComboBox(DgwReportZpz10, CmbZpz10, TxtbZpz10);
 
         private void BtnPlus_Click(object sender, EventArgs e) =>
              AddValueInTextBox();
@@ -1671,6 +1677,7 @@ namespace KmsReportClient.Forms
                     TbControl.TabPages.Remove(PagePg);
                     TbControl.TabPages.Remove(PagePgQ);
                     TbControl.TabPages.Remove(PageZpz);
+                    TbControl.TabPages.Remove(PageZpz10);
                     TbControl.TabPages.Remove(PageZpzQ);
                     TbControl.TabPages.Remove(PageQuery);
                     TbControl.TabPages.Remove(PageOtclkInfrorm);

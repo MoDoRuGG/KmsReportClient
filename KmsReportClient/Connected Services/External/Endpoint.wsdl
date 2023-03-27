@@ -2187,6 +2187,7 @@
           <s:enumeration value="OpedFinance" />
           <s:enumeration value="Cadre" />
           <s:enumeration value="Infomaterial" />
+          <s:enumeration value="Zpz10" />
         </s:restriction>
       </s:simpleType>
       <s:element name="CollectSummaryReportResponse">
