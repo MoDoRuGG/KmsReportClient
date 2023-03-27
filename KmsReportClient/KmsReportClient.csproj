@@ -686,6 +686,9 @@
     <None Include="Connected Services\External\KmsReportClient.External.WebReportFSSMonitroingResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.WebReportInfomaterialResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.WebReportInfrormationResponseResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

@@ -2,6 +2,137 @@
 <wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://kms-oms.ru/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://kms-oms.ru/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://kms-oms.ru/">
+      <s:element name="CreateConsolidate294">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateConsolidate294Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateConsolidate294Result" type="tns:Consolidate294" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Consolidate294">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Disp13List" type="tns:ArrayOfDispanserization" />
+          <s:element minOccurs="0" maxOccurs="1" name="Disp12List" type="tns:ArrayOfDispanserization" />
+          <s:element minOccurs="0" maxOccurs="1" name="Disp2List" type="tns:ArrayOfDispanserization" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispensaryObservationList" type="tns:ArrayOfDispensaryObservation" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneQuestionaryList" type="tns:ArrayOfPhoneQuestionary" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsuranceRepresentativeList" type="tns:ArrayOfInsuranceRepresentative" />
+          <s:element minOccurs="0" maxOccurs="1" name="TreatmentList" type="tns:ArrayOfTreatment" />
+          <s:element minOccurs="0" maxOccurs="1" name="EfficiencyList" type="tns:ArrayOfEfficiency" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDispanserization">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Dispanserization" nillable="true" type="tns:Dispanserization" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Dispanserization">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Month" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountPeoplelMo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountPeopleInform" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountPeopleRepeatInform" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Sms" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Post" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Phone" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Messangers" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EMail" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Address" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AnotherType" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDispensaryObservation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DispensaryObservation" nillable="true" type="tns:DispensaryObservation" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DispensaryObservation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Month" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountPeopleInform" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Onco" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Endo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Broncho" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BloodCirculatory" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotInfection" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPhoneQuestionary">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PhoneQuestionary" nillable="true" type="tns:PhoneQuestionary" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PhoneQuestionary">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Month" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Prof" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Disp" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInsuranceRepresentative">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InsuranceRepresentative" nillable="true" type="tns:InsuranceRepresentative" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InsuranceRepresentative">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Month" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FirstLevel" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FirstLevelTraining" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SecondLevel" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SecondLevelTraining" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ThirdLevel" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ThirdLevelTraining" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTreatment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Treatment" nillable="true" type="tns:Treatment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Treatment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Month" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Oral" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OralSecond" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OralThird" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SecondLevelTraining" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ThirdLevel" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ThirdLevelTraining" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Written" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="WrittenSecond" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="WrittenThird" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="WrittenDoctor" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEfficiency">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Efficiency" nillable="true" type="tns:Efficiency" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Efficiency">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Month" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Disp13Inform" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Disp12Inform" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AimedDisp2" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Disp2" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SubjectToDisp" type="s:int" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="CreateZpzForWebSite">
         <s:complexType>
           <s:sequence>
@@ -555,8 +686,8 @@
       </s:complexType>
       <s:simpleType name="ReportStatus">
         <s:restriction base="s:string">
-          <s:enumeration value="Saved" />
           <s:enumeration value="New" />
+          <s:enumeration value="Saved" />
           <s:enumeration value="Scan" />
           <s:enumeration value="Submit" />
           <s:enumeration value="Refuse" />
@@ -846,11 +977,11 @@
           <s:element minOccurs="0" maxOccurs="1" name="FSSMonitroings" type="tns:ArrayOfFSSMonitroing" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Proposals" type="tns:ArrayOfReport_Proposal" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_OpedFinances" type="tns:ArrayOfReport_OpedFinance" />
-          <s:element minOccurs="0" maxOccurs="1" name="Report_Iilzs" type="tns:ArrayOfReport_Iilz" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Cadre" type="tns:ArrayOfReport_Cadre" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Zpz" type="tns:ArrayOfReport_Zpz" />
           <s:element minOccurs="0" maxOccurs="1" name="MonitoringVCR" type="tns:ArrayOfMonitoringVCR" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_OpedU" type="tns:ArrayOfReport_OpedU" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Iilz" type="tns:ArrayOfReport_Iilz" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Type" type="tns:Report_Type" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:Report_Flow" />
         </s:sequence>
@@ -1062,26 +1193,6 @@
           <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:Report_Data" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="ArrayOfReport_Iilz">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Report_Iilz" nillable="true" type="tns:Report_Iilz" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="Report_Iilz">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Id_Report_Data" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Count_Pers_First" nillable="true" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Count_Pers_Repeat" nillable="true" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Count_Messages" nillable="true" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Total_Cost" nillable="true" type="s:decimal" />
-          <s:element minOccurs="0" maxOccurs="1" name="Accounting_Document" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="average_cost_per_message" nillable="true" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="average_cost_of_informing_1_PL" nillable="true" type="s:decimal" />
-          <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:Report_Data" />
-        </s:sequence>
-      </s:complexType>
       <s:complexType name="ArrayOfReport_Cadre">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="unbounded" name="Report_Cadre" nillable="true" type="tns:Report_Cadre" />
@@ -1193,6 +1304,26 @@
           <s:element minOccurs="1" maxOccurs="1" name="Id_Report_Data" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="NotesGoodReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:Report_Data" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReport_Iilz">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Report_Iilz" nillable="true" type="tns:Report_Iilz" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Report_Iilz">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_Report_Data" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Count_Pers_First" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Count_Pers_Repeat" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Count_Messages" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Total_Cost" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Accounting_Document" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="average_cost_per_message" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="average_cost_of_informing_1_PL" nillable="true" type="s:decimal" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:Report_Data" />
         </s:sequence>
       </s:complexType>
@@ -1607,6 +1738,38 @@
       <s:element name="WebReportOpedFinanceResponse">
         <s:complexType />
       </s:element>
+      <s:element name="WebReportInfomaterial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:ReportInfomaterial" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReportInfomaterial">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AbstractReport">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="IdReportData" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="ReportDataList" type="tns:ArrayOfReportInfomaterialData" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfReportInfomaterialData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReportInfomaterialData" nillable="true" type="tns:ReportInfomaterialData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReportInfomaterialData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CurrentCount" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="YearsAmount" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WebReportInfomaterialResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="WebReportCadre">
         <s:complexType>
           <s:sequence>
@@ -2005,12 +2168,11 @@
       </s:element>
       <s:simpleType name="ReportType">
         <s:restriction base="s:string">
-          <s:enumeration value="OpedFinance" />
-          <s:enumeration value="Pg" />
           <s:enumeration value="F262" />
           <s:enumeration value="F294" />
           <s:enumeration value="Iizl" />
           <s:enumeration value="Iizl2022" />
+          <s:enumeration value="Pg" />
           <s:enumeration value="Zpz" />
           <s:enumeration value="PgQ" />
           <s:enumeration value="ZpzQ" />
@@ -2022,7 +2184,9 @@
           <s:enumeration value="MFSS" />
           <s:enumeration value="MVCR" />
           <s:enumeration value="Proposal" />
+          <s:enumeration value="OpedFinance" />
           <s:enumeration value="Cadre" />
+          <s:enumeration value="Infomaterial" />
         </s:restriction>
       </s:simpleType>
       <s:element name="CollectSummaryReportResponse">
@@ -2349,7 +2513,7 @@
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="f262" type="tns:Report262" />
             <s:element minOccurs="0" maxOccurs="1" name="f294" type="tns:Report294" />
-            <s:element minOccurs="0" maxOccurs="1" name="iizl" type="tns:ReportIizl" />
+            <s:element minOccurs="0" maxOccurs="1" name="iilz" type="tns:ReportIizl" />
             <s:element minOccurs="0" maxOccurs="1" name="pg" type="tns:ReportPg" />
             <s:element minOccurs="0" maxOccurs="1" name="zpz" type="tns:ReportZpz" />
           </s:sequence>
@@ -3301,139 +3465,14 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="CreateConsolidate294">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CreateConsolidate294Response">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CreateConsolidate294Result" type="tns:Consolidate294" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="Consolidate294">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Disp13List" type="tns:ArrayOfDispanserization" />
-          <s:element minOccurs="0" maxOccurs="1" name="Disp12List" type="tns:ArrayOfDispanserization" />
-          <s:element minOccurs="0" maxOccurs="1" name="Disp2List" type="tns:ArrayOfDispanserization" />
-          <s:element minOccurs="0" maxOccurs="1" name="DispensaryObservationList" type="tns:ArrayOfDispensaryObservation" />
-          <s:element minOccurs="0" maxOccurs="1" name="PhoneQuestionaryList" type="tns:ArrayOfPhoneQuestionary" />
-          <s:element minOccurs="0" maxOccurs="1" name="InsuranceRepresentativeList" type="tns:ArrayOfInsuranceRepresentative" />
-          <s:element minOccurs="0" maxOccurs="1" name="TreatmentList" type="tns:ArrayOfTreatment" />
-          <s:element minOccurs="0" maxOccurs="1" name="EfficiencyList" type="tns:ArrayOfEfficiency" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfDispanserization">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Dispanserization" nillable="true" type="tns:Dispanserization" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="Dispanserization">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Month" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="CountPeoplelMo" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="CountPeopleInform" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="CountPeopleRepeatInform" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Sms" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Post" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Phone" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Messangers" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="EMail" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Address" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="AnotherType" type="s:int" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfDispensaryObservation">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="DispensaryObservation" nillable="true" type="tns:DispensaryObservation" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="DispensaryObservation">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Month" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="CountPeopleInform" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Onco" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Endo" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Broncho" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="BloodCirculatory" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotInfection" type="s:int" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfPhoneQuestionary">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="PhoneQuestionary" nillable="true" type="tns:PhoneQuestionary" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="PhoneQuestionary">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Month" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Prof" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Disp" type="s:int" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfInsuranceRepresentative">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="InsuranceRepresentative" nillable="true" type="tns:InsuranceRepresentative" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="InsuranceRepresentative">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Month" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="FirstLevel" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="FirstLevelTraining" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="SecondLevel" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="SecondLevelTraining" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="ThirdLevel" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="ThirdLevelTraining" type="s:int" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfTreatment">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Treatment" nillable="true" type="tns:Treatment" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="Treatment">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Month" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Oral" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="OralSecond" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="OralThird" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="SecondLevelTraining" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="ThirdLevel" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="ThirdLevelTraining" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Written" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="WrittenSecond" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="WrittenThird" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="WrittenDoctor" type="s:int" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfEfficiency">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Efficiency" nillable="true" type="tns:Efficiency" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="Efficiency">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Month" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Disp13Inform" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Disp12Inform" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="AimedDisp2" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Disp2" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="SubjectToDisp" type="s:int" />
-        </s:sequence>
-      </s:complexType>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="CreateConsolidate294SoapIn">
+    <wsdl:part name="parameters" element="tns:CreateConsolidate294" />
+  </wsdl:message>
+  <wsdl:message name="CreateConsolidate294SoapOut">
+    <wsdl:part name="parameters" element="tns:CreateConsolidate294Response" />
+  </wsdl:message>
   <wsdl:message name="CreateZpzForWebSiteSoapIn">
     <wsdl:part name="parameters" element="tns:CreateZpzForWebSite" />
   </wsdl:message>
@@ -3661,6 +3700,12 @@
   </wsdl:message>
   <wsdl:message name="WebReportOpedFinanceSoapOut">
     <wsdl:part name="parameters" element="tns:WebReportOpedFinanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebReportInfomaterialSoapIn">
+    <wsdl:part name="parameters" element="tns:WebReportInfomaterial" />
+  </wsdl:message>
+  <wsdl:message name="WebReportInfomaterialSoapOut">
+    <wsdl:part name="parameters" element="tns:WebReportInfomaterialResponse" />
   </wsdl:message>
   <wsdl:message name="WebReportCadreSoapIn">
     <wsdl:part name="parameters" element="tns:WebReportCadre" />
@@ -3944,13 +3989,11 @@
   <wsdl:message name="CreateDynamicReportSoapOut">
     <wsdl:part name="parameters" element="tns:CreateDynamicReportResponse" />
   </wsdl:message>
-  <wsdl:message name="CreateConsolidate294SoapIn">
-    <wsdl:part name="parameters" element="tns:CreateConsolidate294" />
-  </wsdl:message>
-  <wsdl:message name="CreateConsolidate294SoapOut">
-    <wsdl:part name="parameters" element="tns:CreateConsolidate294Response" />
-  </wsdl:message>
   <wsdl:portType name="EndpointSoap">
+    <wsdl:operation name="CreateConsolidate294">
+      <wsdl:input message="tns:CreateConsolidate294SoapIn" />
+      <wsdl:output message="tns:CreateConsolidate294SoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="CreateZpzForWebSite">
       <wsdl:input message="tns:CreateZpzForWebSiteSoapIn" />
       <wsdl:output message="tns:CreateZpzForWebSiteSoapOut" />
@@ -4102,6 +4145,10 @@
     <wsdl:operation name="WebReportOpedFinance">
       <wsdl:input message="tns:WebReportOpedFinanceSoapIn" />
       <wsdl:output message="tns:WebReportOpedFinanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebReportInfomaterial">
+      <wsdl:input message="tns:WebReportInfomaterialSoapIn" />
+      <wsdl:output message="tns:WebReportInfomaterialSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="WebReportCadre">
       <wsdl:input message="tns:WebReportCadreSoapIn" />
@@ -4291,13 +4338,18 @@
       <wsdl:input message="tns:CreateDynamicReportSoapIn" />
       <wsdl:output message="tns:CreateDynamicReportSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="CreateConsolidate294">
-      <wsdl:input message="tns:CreateConsolidate294SoapIn" />
-      <wsdl:output message="tns:CreateConsolidate294SoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="EndpointSoap" type="tns:EndpointSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateConsolidate294">
+      <soap:operation soapAction="http://kms-oms.ru/CreateConsolidate294" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateZpzForWebSite">
       <soap:operation soapAction="http://kms-oms.ru/CreateZpzForWebSite" style="document" />
       <wsdl:input>
@@ -4633,6 +4685,15 @@
     </wsdl:operation>
     <wsdl:operation name="WebReportOpedFinance">
       <soap:operation soapAction="http://kms-oms.ru/WebReportOpedFinance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebReportInfomaterial">
+      <soap:operation soapAction="http://kms-oms.ru/WebReportInfomaterial" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -5063,18 +5124,18 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateConsolidate294">
-      <soap:operation soapAction="http://kms-oms.ru/CreateConsolidate294" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="EndpointSoap12" type="tns:EndpointSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateConsolidate294">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateConsolidate294" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateZpzForWebSite">
       <soap12:operation soapAction="http://kms-oms.ru/CreateZpzForWebSite" style="document" />
       <wsdl:input>
@@ -5410,6 +5471,15 @@
     </wsdl:operation>
     <wsdl:operation name="WebReportOpedFinance">
       <soap12:operation soapAction="http://kms-oms.ru/WebReportOpedFinance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebReportInfomaterial">
+      <soap12:operation soapAction="http://kms-oms.ru/WebReportInfomaterial" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5833,15 +5903,6 @@
     </wsdl:operation>
     <wsdl:operation name="CreateDynamicReport">
       <soap12:operation soapAction="http://kms-oms.ru/CreateDynamicReport" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateConsolidate294">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateConsolidate294" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

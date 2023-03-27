@@ -114,12 +114,28 @@ namespace KmsReportClient.Report.Basic
 
                     Dgv.Columns["TotalPlanCel"].ReadOnly = true;
                     Dgv.Columns["TotalPlanCel"].DefaultCellStyle.BackColor = Color.Gray;
-
-
-
-
                 }
             }
+            if (Report.IdType == "Zpz" || Report.IdType == "Zpz_Q")
+            {
+                if (GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 7")
+                {
+                    Dgv.Columns["Total"].HeaderText = "Итого цел";
+
+                    Dgv.Columns.Add("TotalPlan", "Итого план");
+                    Dgv.Columns["TotalPlan"].DisplayIndex = 9;
+
+                    Dgv.Columns["TotalPlan"].ReadOnly = true;
+                    Dgv.Columns["TotalPlan"].DefaultCellStyle.BackColor = Color.LightGray;
+
+                    Dgv.Columns.Add("TotalPlanCel", "Итого");
+                    Dgv.Columns["TotalPlanCel"].DisplayIndex = 2;
+
+                    Dgv.Columns["TotalPlanCel"].ReadOnly = true;
+                    Dgv.Columns["TotalPlanCel"].DefaultCellStyle.BackColor = Color.Gray;
+                }
+            }
+
         }
         
         public void SetTotalColumn()
@@ -142,6 +158,18 @@ namespace KmsReportClient.Report.Basic
                         {
                             //Console.WriteLine($"{GetCurrentTheme()} {Report.IdType}");
                             if ((Report.IdType == "PG" || Report.IdType == "PG_Q") && (GetCurrentTheme() == "Таблица 5" || GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 8"))
+                            {
+                                if (Dgv.Rows[row].Cells[cell].ColumnIndex == 2 || Dgv.Rows[row].Cells[cell].ColumnIndex == 3 || Dgv.Rows[row].Cells[cell].ColumnIndex == 4 || Dgv.Rows[row].Cells[cell].ColumnIndex == 6)
+                                {
+                                    valueCel += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value);
+                                }
+                                else if (Dgv.Rows[row].Cells[cell].ColumnIndex == 8 || Dgv.Rows[row].Cells[cell].ColumnIndex == 9 || Dgv.Rows[row].Cells[cell].ColumnIndex == 10 || Dgv.Rows[row].Cells[cell].ColumnIndex == 12)
+                                {
+                                    valuePlan += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value);
+                                }
+                                /// НА ДАННОМ ЭТАПЕ ПРОБЕГАЕМ ДЛЯ КАЖДОЙ СТРОКИ ОТЧЕТА ПО ЯЧЕЙКАМ и СУММИРУЕМ ЗНАЧЕНИЯ ДЛЯ ЦЕЛЕВЫХ (2-3-4-6) И ПЛАНОВЫХ (8-9-10-12), ПОКА ПРОСТО В ПЕРЕМЕННЫЕ valueCel и valuePlan ///
+                            }
+                            else if ((Report.IdType == "Zpz" || Report.IdType == "Zpz_Q") && (GetCurrentTheme() == "Таблица 5" || GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 7"))
                             {
                                 if (Dgv.Rows[row].Cells[cell].ColumnIndex == 2 || Dgv.Rows[row].Cells[cell].ColumnIndex == 3 || Dgv.Rows[row].Cells[cell].ColumnIndex == 4 || Dgv.Rows[row].Cells[cell].ColumnIndex == 6)
                                 {
@@ -189,6 +217,13 @@ namespace KmsReportClient.Report.Basic
                     // Разраб до меня сделал так, переделывать не стали, работает и ладно.
                     //// Тот, кто это видит прошу меня простить.
                     if ((Report.IdType == "PG" || Report.IdType == "PG_Q") && (GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 8"))
+                    {
+                        Dgv.Rows[row].Cells["Total"].Value = valueCel; //Целевые
+                        Dgv.Rows[row].Cells["TotalPlan"].Value = valuePlan; // Плановые
+                        Dgv.Rows[row].Cells["TotalPlanCel"].Value = valuePlan + valueCel; // Итого цел + план
+                        // Пишем в DGV значения и сумму
+                    }
+                    else if ((Report.IdType == "Zpz" || Report.IdType == "Zpz_Q") && (GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 7"))
                     {
                         Dgv.Rows[row].Cells["Total"].Value = valueCel; //Целевые
                         Dgv.Rows[row].Cells["TotalPlan"].Value = valuePlan; // Плановые

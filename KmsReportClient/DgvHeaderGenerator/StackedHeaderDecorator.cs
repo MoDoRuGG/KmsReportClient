@@ -133,7 +133,7 @@ namespace KmsReportClient.DgvHeaderGenerator
                 r1.Y = objHeader.Y;
                 r1.Width += 1;
                 r1.X -= 1;
-                r1.Height = objHeader.Height;
+                r1.Height = objHeader.Height*2;
                 objGraphics.SetClip(r1);
 
                 if (r1.X + objDataGrid.Columns[objHeader.ColumnId].Width < objDataGrid.DisplayRectangle.Width)
@@ -168,7 +168,7 @@ namespace KmsReportClient.DgvHeaderGenerator
                 //Rectangle r1 = objDataGrid.GetCellDisplayRectangle(objHeader.Children[0].ColumnId, -1, true);
                 Rectangle r1 = objDataGrid.GetCellDisplayRectangle(objHeader.ColumnId, -1, true);
                 r1.Y = objHeader.Y;
-                r1.Height = objHeader.Height;
+                r1.Height = objHeader.Height*2;
                 r1.Width = objHeader.Width + 1;
                 if (r1.X < objDataGrid.RowHeadersWidth)
                 {
