@@ -27,8 +27,6 @@ namespace KmsReportClient.Report.Basic
         private readonly string[][] _headers = {
             new[] 
             { "Устные", "Письменные","По поручениям" }, //1
-            new[] 
-            { "Всего" }, //10
             new[]
             {
                 "разрешенные в досудебном порядке \r\n (гр.5)",
@@ -97,7 +95,7 @@ namespace KmsReportClient.Report.Basic
             { "Таблица 7", "Количество проведенных экспертиз качества медицинской помощи (далее - ЭКМП) (выявленных нарушений)" },
             { "Таблица 8", "Финансовые результаты" },
             { "Таблица 9", "Специалисты, участвующие в защите прав застрахованных лиц" },
-            { "Таблица 10", "Численность проинформированных застрахованных лиц" },        
+            //{ "Таблица 10", "Численность проинформированных застрахованных лиц" },        
         };
 
         public ReportZpzProcessor(EndpointSoap inClient, List<KmsReportDictionary> reportsDictionary, DataGridView dgv, ComboBox cmb, TextBox txtb, TabPage page) :
