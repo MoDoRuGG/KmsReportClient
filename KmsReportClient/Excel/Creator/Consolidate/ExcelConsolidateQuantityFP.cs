@@ -43,7 +43,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
                     {
                         ObjWorkSheet.Cells[rowIndex, columnIndex1++] = md.Fact;
                         ObjWorkSheet.Cells[rowIndex, columnIndex2++] = md.Plan;
-                        ObjWorkSheet.Cells[rowIndex, columnIndex3++] = md.Added-md.Plan;
+                        ObjWorkSheet.Cells[rowIndex, columnIndex3++] = md.Fact-md.Plan;
                     }
                 }
                 rowIndex += 1;

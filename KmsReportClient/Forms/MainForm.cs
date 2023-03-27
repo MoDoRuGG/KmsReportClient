@@ -2386,5 +2386,10 @@ namespace KmsReportClient.Forms
         {
             OpenConsolidateReportForm(ConsolidateReport.ConsPropsal);
         }
+
+        private void DgwReportIizl_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

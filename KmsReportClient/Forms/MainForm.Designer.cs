@@ -162,6 +162,10 @@ namespace KmsReportClient.Forms
             this.оИИЗПЗToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.численностьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сводПоВсемФилиаламToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.вновьЗСИУДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выполнениеПланаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сведенияЧисленностьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сводЗаКварталToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serviceMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.рассылкаУведомленийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuHelp = new System.Windows.Forms.ToolStripMenuItem();
@@ -343,10 +347,6 @@ namespace KmsReportClient.Forms
             this.TbPVPLoad = new System.Windows.Forms.TextBox();
             this.CmbPVPLoad = new System.Windows.Forms.ComboBox();
             this.DgvPVPLoad = new System.Windows.Forms.DataGridView();
-            this.вновьЗСИУДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выполнениеПланаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сведенияЧисленностьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сводЗаКварталToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -421,6 +421,8 @@ namespace KmsReportClient.Forms
             ((System.ComponentModel.ISupportInitialize)(this.DgvQuantity)).BeginInit();
             this.PageTarAllow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTarAllow)).BeginInit();
+            this.PagePVPLoad.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvPVPLoad)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -639,7 +641,7 @@ namespace KmsReportClient.Forms
             this.летальные2023ToolStripMenuItem});
             this.формаЗПЗToolStripMenuItem.Name = "формаЗПЗToolStripMenuItem";
             this.формаЗПЗToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.формаЗПЗToolStripMenuItem.Text = "Форма ЗПЗ 2023";
+            this.формаЗПЗToolStripMenuItem.Text = "Форма ЗПЗ 2024";
             // 
             // отчетДляСайта2023ToolStripMenuItem
             // 
@@ -652,21 +654,21 @@ namespace KmsReportClient.Forms
             // 
             this.контрольЗПЗ2023ToolStripMenuItem.Name = "контрольЗПЗ2023ToolStripMenuItem";
             this.контрольЗПЗ2023ToolStripMenuItem.Size = new System.Drawing.Size(275, 22);
-            this.контрольЗПЗ2023ToolStripMenuItem.Text = "Контроль ЗПЗ 2023(квартальная)";
+            this.контрольЗПЗ2023ToolStripMenuItem.Text = "Контроль ЗПЗ 2024(квартальная)";
             this.контрольЗПЗ2023ToolStripMenuItem.Click += new System.EventHandler(this.КонтрольЗПЗ2023ToolStripMenuItem_Click);
             // 
             // контрольЗПЗ2023FullToolStripMenuItem
             // 
             this.контрольЗПЗ2023FullToolStripMenuItem.Name = "контрольЗПЗ2023FullToolStripMenuItem";
             this.контрольЗПЗ2023FullToolStripMenuItem.Size = new System.Drawing.Size(275, 22);
-            this.контрольЗПЗ2023FullToolStripMenuItem.Text = "Контроль ЗПЗ 2023(свод за весь год)";
+            this.контрольЗПЗ2023FullToolStripMenuItem.Text = "Контроль ЗПЗ 2024(свод за весь год)";
             this.контрольЗПЗ2023FullToolStripMenuItem.Click += new System.EventHandler(this.КонтрольЗПЗ2023FullToolStripMenuItem_Click);
             // 
             // летальные2023ToolStripMenuItem
             // 
             this.летальные2023ToolStripMenuItem.Name = "летальные2023ToolStripMenuItem";
             this.летальные2023ToolStripMenuItem.Size = new System.Drawing.Size(275, 22);
-            this.летальные2023ToolStripMenuItem.Text = "Летальные 2023";
+            this.летальные2023ToolStripMenuItem.Text = "Летальные 2024";
             this.летальные2023ToolStripMenuItem.Click += new System.EventHandler(this.летальные2023ToolStripMenuItem_Click);
             // 
             // формаОПЭДToolStripMenuItem
@@ -832,6 +834,33 @@ namespace KmsReportClient.Forms
             this.сводПоВсемФилиаламToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.сводПоВсемФилиаламToolStripMenuItem.Text = "Свод по всем филиалам";
             this.сводПоВсемФилиаламToolStripMenuItem.Click += new System.EventHandler(this.сводПоВсемФилиаламToolStripMenuItem_Click);
+            // 
+            // вновьЗСИУДToolStripMenuItem
+            // 
+            this.вновьЗСИУДToolStripMenuItem.Name = "вновьЗСИУДToolStripMenuItem";
+            this.вновьЗСИУДToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.вновьЗСИУДToolStripMenuItem.Text = "Вновь ЗС и УД";
+            this.вновьЗСИУДToolStripMenuItem.Click += new System.EventHandler(this.вновьЗСИУДToolStripMenuItem_Click);
+            // 
+            // выполнениеПланаToolStripMenuItem
+            // 
+            this.выполнениеПланаToolStripMenuItem.Name = "выполнениеПланаToolStripMenuItem";
+            this.выполнениеПланаToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.выполнениеПланаToolStripMenuItem.Text = "Выполнение плана";
+            this.выполнениеПланаToolStripMenuItem.Click += new System.EventHandler(this.выполнениеПланаToolStripMenuItem_Click);
+            // 
+            // сведенияЧисленностьToolStripMenuItem
+            // 
+            this.сведенияЧисленностьToolStripMenuItem.Name = "сведенияЧисленностьToolStripMenuItem";
+            this.сведенияЧисленностьToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.сведенияЧисленностьToolStripMenuItem.Text = "Сведения численность";
+            this.сведенияЧисленностьToolStripMenuItem.Click += new System.EventHandler(this.сведенияЧисленностьToolStripMenuItem_Click);
+            // 
+            // сводЗаКварталToolStripMenuItem
+            // 
+            this.сводЗаКварталToolStripMenuItem.Name = "сводЗаКварталToolStripMenuItem";
+            this.сводЗаКварталToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.сводЗаКварталToolStripMenuItem.Text = "Свод за квартал";
             // 
             // serviceMenu
             // 
@@ -1404,8 +1433,9 @@ namespace KmsReportClient.Forms
             // 
             // TxtbFilials
             // 
-            this.TxtbFilials.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtbFilials.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)
+            ));
             this.TxtbFilials.Location = new System.Drawing.Point(214, 8);
             this.TxtbFilials.Name = "TxtbFilials";
             this.TxtbFilials.Size = new System.Drawing.Size(412, 20);
@@ -1517,8 +1547,8 @@ namespace KmsReportClient.Forms
             // 
             // TbControl
             // 
-            this.TbControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.TbControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TbControl.Controls.Add(this.PageIizl);
             this.TbControl.Controls.Add(this.Page262);
@@ -1569,7 +1599,7 @@ namespace KmsReportClient.Forms
             // 
             // TxtbIizl
             // 
-            this.TxtbIizl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.TxtbIizl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtbIizl.Location = new System.Drawing.Point(136, 7);
             this.TxtbIizl.Name = "TxtbIizl";
@@ -1591,8 +1621,8 @@ namespace KmsReportClient.Forms
             // 
             this.DgwReportIizl.AllowUserToAddRows = false;
             this.DgwReportIizl.AllowUserToDeleteRows = false;
-            this.DgwReportIizl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.DgwReportIizl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgwReportIizl.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1624,6 +1654,7 @@ namespace KmsReportClient.Forms
             this.DgwReportIizl.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DgwReportIizl.Size = new System.Drawing.Size(697, 292);
             this.DgwReportIizl.TabIndex = 0;
+            this.DgwReportIizl.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwReportIizl_CellContentClick);
             this.DgwReportIizl.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwReportIizl_CellEndEdit);
             // 
             // Page262
@@ -1643,8 +1674,8 @@ namespace KmsReportClient.Forms
             // 
             this.DgwReport262.AllowUserToAddRows = false;
             this.DgwReport262.AllowUserToDeleteRows = false;
-            this.DgwReport262.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.DgwReport262.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgwReport262.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
@@ -1679,7 +1710,7 @@ namespace KmsReportClient.Forms
             // 
             // Txtb262
             // 
-            this.Txtb262.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.Txtb262.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Txtb262.Location = new System.Drawing.Point(113, 7);
             this.Txtb262.Multiline = true;
@@ -1716,8 +1747,8 @@ namespace KmsReportClient.Forms
             this.DgwReport294.AllowUserToAddRows = false;
             this.DgwReport294.AllowUserToDeleteRows = false;
             this.DgwReport294.AllowUserToResizeColumns = false;
-            this.DgwReport294.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.DgwReport294.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgwReport294.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
@@ -1752,7 +1783,7 @@ namespace KmsReportClient.Forms
             // 
             // Txtb294
             // 
-            this.Txtb294.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.Txtb294.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Txtb294.Location = new System.Drawing.Point(113, 6);
             this.Txtb294.Multiline = true;
@@ -1789,8 +1820,8 @@ namespace KmsReportClient.Forms
             this.DgwReportPgQ.AllowUserToAddRows = false;
             this.DgwReportPgQ.AllowUserToDeleteRows = false;
             this.DgwReportPgQ.AllowUserToResizeColumns = false;
-            this.DgwReportPgQ.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.DgwReportPgQ.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgwReportPgQ.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
@@ -1825,7 +1856,7 @@ namespace KmsReportClient.Forms
             // 
             // TxtbPgQ
             // 
-            this.TxtbPgQ.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.TxtbPgQ.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtbPgQ.Location = new System.Drawing.Point(113, 6);
             this.TxtbPgQ.Multiline = true;
@@ -1862,8 +1893,8 @@ namespace KmsReportClient.Forms
             this.DgwReportPg.AllowUserToAddRows = false;
             this.DgwReportPg.AllowUserToDeleteRows = false;
             this.DgwReportPg.AllowUserToResizeColumns = false;
-            this.DgwReportPg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.DgwReportPg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgwReportPg.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
@@ -1898,7 +1929,7 @@ namespace KmsReportClient.Forms
             // 
             // TxtbPg
             // 
-            this.TxtbPg.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.TxtbPg.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtbPg.Location = new System.Drawing.Point(113, 6);
             this.TxtbPg.Multiline = true;
@@ -1931,7 +1962,7 @@ namespace KmsReportClient.Forms
             // 
             // TbxQuery
             // 
-            this.TbxQuery.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.TbxQuery.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TbxQuery.Location = new System.Drawing.Point(113, 6);
             this.TbxQuery.Multiline = true;
@@ -1956,8 +1987,8 @@ namespace KmsReportClient.Forms
             this.DgvQuery.AllowUserToDeleteRows = false;
             this.DgvQuery.AllowUserToResizeColumns = false;
             this.DgvQuery.AllowUserToResizeRows = false;
-            this.DgvQuery.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.DgvQuery.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvQuery.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DgvQuery.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
@@ -2010,7 +2041,7 @@ namespace KmsReportClient.Forms
             // 
             // TxtbOped
             // 
-            this.TxtbOped.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.TxtbOped.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtbOped.Location = new System.Drawing.Point(115, 5);
             this.TxtbOped.Multiline = true;
@@ -2034,8 +2065,8 @@ namespace KmsReportClient.Forms
             this.DgvReportOped.AllowUserToAddRows = false;
             this.DgvReportOped.AllowUserToDeleteRows = false;
             this.DgvReportOped.AllowUserToResizeColumns = false;
-            this.DgvReportOped.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.DgvReportOped.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvReportOped.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
@@ -2084,7 +2115,7 @@ namespace KmsReportClient.Forms
             // 
             // TxtbOpedU
             // 
-            this.TxtbOpedU.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.TxtbOpedU.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtbOpedU.Location = new System.Drawing.Point(115, 5);
             this.TxtbOpedU.Multiline = true;
@@ -2108,8 +2139,8 @@ namespace KmsReportClient.Forms
             this.DgvReportOpedU.AllowUserToAddRows = false;
             this.DgvReportOpedU.AllowUserToDeleteRows = false;
             this.DgvReportOpedU.AllowUserToResizeColumns = false;
-            this.DgvReportOpedU.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.DgvReportOpedU.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvReportOpedU.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
@@ -2159,7 +2190,7 @@ namespace KmsReportClient.Forms
             // 
             // TxtOtclkInfrorm
             // 
-            this.TxtOtclkInfrorm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.TxtOtclkInfrorm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtOtclkInfrorm.Location = new System.Drawing.Point(115, 5);
             this.TxtOtclkInfrorm.Multiline = true;
@@ -2183,8 +2214,8 @@ namespace KmsReportClient.Forms
             this.DgvOtclkInfrorm.AllowUserToAddRows = false;
             this.DgvOtclkInfrorm.AllowUserToDeleteRows = false;
             this.DgvOtclkInfrorm.AllowUserToResizeColumns = false;
-            this.DgvOtclkInfrorm.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.DgvOtclkInfrorm.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvOtclkInfrorm.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
@@ -2234,7 +2265,7 @@ namespace KmsReportClient.Forms
             // 
             // tbOpedQ
             // 
-            this.tbOpedQ.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tbOpedQ.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbOpedQ.Location = new System.Drawing.Point(115, 5);
             this.tbOpedQ.Multiline = true;
@@ -2257,8 +2288,8 @@ namespace KmsReportClient.Forms
             this.dgvOpedQ.AllowUserToAddRows = false;
             this.dgvOpedQ.AllowUserToDeleteRows = false;
             this.dgvOpedQ.AllowUserToResizeColumns = false;
-            this.dgvOpedQ.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvOpedQ.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvOpedQ.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
@@ -2307,7 +2338,7 @@ namespace KmsReportClient.Forms
             // 
             // tbVac
             // 
-            this.tbVac.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tbVac.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbVac.Location = new System.Drawing.Point(115, 5);
             this.tbVac.Multiline = true;
@@ -2330,8 +2361,8 @@ namespace KmsReportClient.Forms
             this.gVac.AllowUserToAddRows = false;
             this.gVac.AllowUserToDeleteRows = false;
             this.gVac.AllowUserToResizeColumns = false;
-            this.gVac.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.gVac.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gVac.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
@@ -2380,7 +2411,7 @@ namespace KmsReportClient.Forms
             // 
             // TxtbCadre
             // 
-            this.TxtbCadre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.TxtbCadre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtbCadre.Location = new System.Drawing.Point(115, 5);
             this.TxtbCadre.Multiline = true;
@@ -2404,23 +2435,22 @@ namespace KmsReportClient.Forms
             this.DgvCadre.AllowUserToAddRows = false;
             this.DgvCadre.AllowUserToDeleteRows = false;
             this.DgvCadre.AllowUserToResizeColumns = false;
-            this.DgvCadre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.DgvCadre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvCadre.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgvCadre.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle35;
-            this.DgvCadre.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvCadre.ColumnHeadersHeight = 180;
+            this.DgvCadre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -2430,7 +2460,7 @@ namespace KmsReportClient.Forms
             this.DgvCadre.Name = "DgvCadre";
             dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle37.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle37.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle37.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -2456,7 +2486,7 @@ namespace KmsReportClient.Forms
             // 
             // TxtbReqVCR
             // 
-            this.TxtbReqVCR.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.TxtbReqVCR.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtbReqVCR.Location = new System.Drawing.Point(115, 5);
             this.TxtbReqVCR.Multiline = true;
@@ -2480,8 +2510,8 @@ namespace KmsReportClient.Forms
             this.DgvReqVCR.AllowUserToAddRows = false;
             this.DgvReqVCR.AllowUserToDeleteRows = false;
             this.DgvReqVCR.AllowUserToResizeColumns = false;
-            this.DgvReqVCR.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.DgvReqVCR.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvReqVCR.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
@@ -2534,8 +2564,8 @@ namespace KmsReportClient.Forms
             this.DgwReportZpz.AllowUserToAddRows = false;
             this.DgwReportZpz.AllowUserToDeleteRows = false;
             this.DgwReportZpz.AllowUserToResizeColumns = false;
-            this.DgwReportZpz.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.DgwReportZpz.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgwReportZpz.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
@@ -2570,7 +2600,7 @@ namespace KmsReportClient.Forms
             // 
             // TxtbZpz
             // 
-            this.TxtbZpz.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.TxtbZpz.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtbZpz.Location = new System.Drawing.Point(113, 6);
             this.TxtbZpz.Multiline = true;
@@ -2607,8 +2637,8 @@ namespace KmsReportClient.Forms
             this.DgwReportZpzQ.AllowUserToAddRows = false;
             this.DgwReportZpzQ.AllowUserToDeleteRows = false;
             this.DgwReportZpzQ.AllowUserToResizeColumns = false;
-            this.DgwReportZpzQ.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.DgwReportZpzQ.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgwReportZpzQ.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
@@ -2644,7 +2674,7 @@ namespace KmsReportClient.Forms
             // 
             // TxtbZpzQ
             // 
-            this.TxtbZpzQ.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.TxtbZpzQ.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtbZpzQ.Location = new System.Drawing.Point(113, 6);
             this.TxtbZpzQ.Multiline = true;
@@ -2681,8 +2711,8 @@ namespace KmsReportClient.Forms
             this.DgwReportZpz10.AllowUserToAddRows = false;
             this.DgwReportZpz10.AllowUserToDeleteRows = false;
             this.DgwReportZpz10.AllowUserToResizeColumns = false;
-            this.DgwReportZpz10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.DgwReportZpz10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgwReportZpz10.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
@@ -2720,7 +2750,7 @@ namespace KmsReportClient.Forms
             // 
             // TxtbZpz10
             // 
-            this.TxtbZpz10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.TxtbZpz10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtbZpz10.Location = new System.Drawing.Point(113, 6);
             this.TxtbZpz10.Multiline = true;
@@ -2754,7 +2784,7 @@ namespace KmsReportClient.Forms
             // 
             // tbEffectiveness
             // 
-            this.tbEffectiveness.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tbEffectiveness.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbEffectiveness.Location = new System.Drawing.Point(118, 8);
             this.tbEffectiveness.Multiline = true;
@@ -2775,8 +2805,8 @@ namespace KmsReportClient.Forms
             // dgvEffectiveness
             // 
             this.dgvEffectiveness.AllowUserToResizeColumns = false;
-            this.dgvEffectiveness.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvEffectiveness.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEffectiveness.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
@@ -2826,7 +2856,7 @@ namespace KmsReportClient.Forms
             // 
             // tbFssM
             // 
-            this.tbFssM.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tbFssM.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbFssM.Location = new System.Drawing.Point(115, 5);
             this.tbFssM.Multiline = true;
@@ -2849,8 +2879,8 @@ namespace KmsReportClient.Forms
             this.dgvFssM.AllowUserToAddRows = false;
             this.dgvFssM.AllowUserToDeleteRows = false;
             this.dgvFssM.AllowUserToResizeColumns = false;
-            this.dgvFssM.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvFssM.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvFssM.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
@@ -2899,7 +2929,7 @@ namespace KmsReportClient.Forms
             // 
             // tbProposal
             // 
-            this.tbProposal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tbProposal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbProposal.Location = new System.Drawing.Point(115, 5);
             this.tbProposal.Multiline = true;
@@ -2922,8 +2952,8 @@ namespace KmsReportClient.Forms
             this.dgvProposal.AllowUserToAddRows = false;
             this.dgvProposal.AllowUserToDeleteRows = false;
             this.dgvProposal.AllowUserToResizeColumns = false;
-            this.dgvProposal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvProposal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvProposal.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
@@ -2972,7 +3002,7 @@ namespace KmsReportClient.Forms
             // 
             // tbOpedFinance
             // 
-            this.tbOpedFinance.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tbOpedFinance.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbOpedFinance.Location = new System.Drawing.Point(115, 5);
             this.tbOpedFinance.Multiline = true;
@@ -2995,8 +3025,8 @@ namespace KmsReportClient.Forms
             this.dgvOpedFinance.AllowUserToAddRows = false;
             this.dgvOpedFinance.AllowUserToDeleteRows = false;
             this.dgvOpedFinance.AllowUserToResizeColumns = false;
-            this.dgvOpedFinance.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvOpedFinance.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvOpedFinance.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
@@ -3045,7 +3075,7 @@ namespace KmsReportClient.Forms
             // 
             // tbOpedFinance3
             // 
-            this.tbOpedFinance3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tbOpedFinance3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbOpedFinance3.Location = new System.Drawing.Point(115, 5);
             this.tbOpedFinance3.Multiline = true;
@@ -3068,8 +3098,8 @@ namespace KmsReportClient.Forms
             this.dgvOpedFinance3.AllowUserToAddRows = false;
             this.dgvOpedFinance3.AllowUserToDeleteRows = false;
             this.dgvOpedFinance3.AllowUserToResizeColumns = false;
-            this.dgvOpedFinance3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvOpedFinance3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvOpedFinance3.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle62.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
@@ -3118,7 +3148,7 @@ namespace KmsReportClient.Forms
             // 
             // tbIizl2022
             // 
-            this.tbIizl2022.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tbIizl2022.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbIizl2022.Location = new System.Drawing.Point(115, 5);
             this.tbIizl2022.Multiline = true;
@@ -3142,8 +3172,8 @@ namespace KmsReportClient.Forms
             this.dgvIizl2022.AllowUserToAddRows = false;
             this.dgvIizl2022.AllowUserToDeleteRows = false;
             this.dgvIizl2022.AllowUserToResizeColumns = false;
-            this.dgvIizl2022.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvIizl2022.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvIizl2022.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle65.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
@@ -3248,8 +3278,8 @@ namespace KmsReportClient.Forms
             this.DgwReportZpzLethal.AllowUserToAddRows = false;
             this.DgwReportZpzLethal.AllowUserToDeleteRows = false;
             this.DgwReportZpzLethal.AllowUserToResizeColumns = false;
-            this.DgwReportZpzLethal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.DgwReportZpzLethal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgwReportZpzLethal.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
@@ -3278,7 +3308,7 @@ namespace KmsReportClient.Forms
             // 
             // TxtbZpzLethal
             // 
-            this.TxtbZpzLethal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.TxtbZpzLethal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtbZpzLethal.Location = new System.Drawing.Point(113, 6);
             this.TxtbZpzLethal.Multiline = true;
@@ -3340,7 +3370,7 @@ namespace KmsReportClient.Forms
             // 
             // tbMonitoringVCR
             // 
-            this.tbMonitoringVCR.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tbMonitoringVCR.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbMonitoringVCR.Location = new System.Drawing.Point(115, 5);
             this.tbMonitoringVCR.Multiline = true;
@@ -3363,8 +3393,8 @@ namespace KmsReportClient.Forms
             this.dgvMonitoringVCR.AllowUserToAddRows = false;
             this.dgvMonitoringVCR.AllowUserToDeleteRows = false;
             this.dgvMonitoringVCR.AllowUserToResizeColumns = false;
-            this.dgvMonitoringVCR.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvMonitoringVCR.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMonitoringVCR.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
@@ -3414,7 +3444,7 @@ namespace KmsReportClient.Forms
             // 
             // TxtbQuantity
             // 
-            this.TxtbQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.TxtbQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtbQuantity.Location = new System.Drawing.Point(115, 5);
             this.TxtbQuantity.Multiline = true;
@@ -3437,8 +3467,8 @@ namespace KmsReportClient.Forms
             this.DgvQuantity.AllowUserToAddRows = false;
             this.DgvQuantity.AllowUserToDeleteRows = false;
             this.DgvQuantity.AllowUserToResizeColumns = false;
-            this.DgvQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.DgvQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvQuantity.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle73.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
@@ -3488,7 +3518,7 @@ namespace KmsReportClient.Forms
             // 
             // TbTarAllow
             // 
-            this.TbTarAllow.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.TbTarAllow.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TbTarAllow.Location = new System.Drawing.Point(118, 8);
             this.TbTarAllow.Multiline = true;
@@ -3508,11 +3538,8 @@ namespace KmsReportClient.Forms
             // 
             // DgvTarAllow
             // 
-            this.DgvTarAllow.AllowUserToResizeColumns = true;
-            this.DgvTarAllow.AllowUserToAddRows = true;
-            this.DgvTarAllow.ColumnHeadersVisible = true;
-            this.DgvTarAllow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.DgvTarAllow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvTarAllow.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle76.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
@@ -3557,34 +3584,14 @@ namespace KmsReportClient.Forms
             this.PagePVPLoad.Name = "PagePVPLoad";
             this.PagePVPLoad.Padding = new System.Windows.Forms.Padding(3);
             this.PagePVPLoad.Size = new System.Drawing.Size(712, 330);
-            this.PagePVPLoad.TabIndex = 11;
+            this.PagePVPLoad.TabIndex = 3;
             this.PagePVPLoad.Text = "Нагрузка ПВП";
-            // 
-            // TbPVPLoad
-            // 
-            this.TbPVPLoad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TbPVPLoad.Location = new System.Drawing.Point(118, 8);
-            this.TbPVPLoad.Multiline = true;
-            this.TbPVPLoad.Name = "TbPVPLoad";
-            this.TbPVPLoad.ReadOnly = true;
-            this.TbPVPLoad.Size = new System.Drawing.Size(1099, 39);
-            this.TbPVPLoad.TabIndex = 30;
-            // 
-            // CmbPVPLoad
-            // 
-            this.CmbPVPLoad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbPVPLoad.FormattingEnabled = true;
-            this.CmbPVPLoad.Location = new System.Drawing.Point(9, 5);
-            this.CmbPVPLoad.Name = "CmbPVPLoad";
-            this.CmbPVPLoad.Size = new System.Drawing.Size(100, 21);
-            this.CmbPVPLoad.TabIndex = 31;
             // 
             // DgvPVPLoad
             // 
-            this.DgvPVPLoad.AllowUserToResizeColumns = true;
-            this.DgvPVPLoad.AllowUserToAddRows = true;
-            this.DgvPVPLoad.ColumnHeadersVisible = true;
+            this.DgvPVPLoad.AllowUserToAddRows = false;
+            this.DgvPVPLoad.AllowUserToDeleteRows = false;
+            this.DgvPVPLoad.AllowUserToResizeColumns = false;
             this.DgvPVPLoad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -3606,9 +3613,8 @@ namespace KmsReportClient.Forms
             dataGridViewCellStyle80.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle80.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgvPVPLoad.DefaultCellStyle = dataGridViewCellStyle80;
-            this.DgvPVPLoad.Location = new System.Drawing.Point(8, 53);
+            this.DgvPVPLoad.Location = new System.Drawing.Point(7, 51);
             this.DgvPVPLoad.Name = "DgvPVPLoad";
-            this.DgvPVPLoad.ScrollBars = ScrollBars.Both;
             dataGridViewCellStyle81.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle81.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle81.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -3617,37 +3623,30 @@ namespace KmsReportClient.Forms
             dataGridViewCellStyle81.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle81.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgvPVPLoad.RowHeadersDefaultCellStyle = dataGridViewCellStyle81;
-            this.DgvPVPLoad.Size = new System.Drawing.Size(1209, 500);
-            this.DgvPVPLoad.TabIndex = 24;
+            this.DgvPVPLoad.Size = new System.Drawing.Size(699, 272);
+            this.DgvPVPLoad.TabIndex = 8;
             this.DgvPVPLoad.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvPVPLoad_CellBeginEdit);
             this.DgvPVPLoad.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPVPLoad_CellEndEdit);
             // 
-            // вновьЗСИУДToolStripMenuItem
+            // TbPVPLoad
             // 
-            this.вновьЗСИУДToolStripMenuItem.Name = "вновьЗСИУДToolStripMenuItem";
-            this.вновьЗСИУДToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.вновьЗСИУДToolStripMenuItem.Text = "Вновь ЗС и УД";
-            this.вновьЗСИУДToolStripMenuItem.Click += new System.EventHandler(this.вновьЗСИУДToolStripMenuItem_Click);
+            this.TbPVPLoad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TbPVPLoad.Location = new System.Drawing.Point(113, 6);
+            this.TbPVPLoad.Multiline = true;
+            this.TbPVPLoad.Name = "TbPVPLoad";
+            this.TbPVPLoad.ReadOnly = true;
+            this.TbPVPLoad.Size = new System.Drawing.Size(593, 39);
+            this.TbPVPLoad.TabIndex = 7;
             // 
-            // выполнениеПланаToolStripMenuItem
+            // CmbPVPLoad
             // 
-            this.выполнениеПланаToolStripMenuItem.Name = "выполнениеПланаToolStripMenuItem";
-            this.выполнениеПланаToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.выполнениеПланаToolStripMenuItem.Text = "Выполнение плана";
-            this.выполнениеПланаToolStripMenuItem.Click += new System.EventHandler(this.выполнениеПланаToolStripMenuItem_Click);
-            // 
-            // сведенияЧисленностьToolStripMenuItem
-            // 
-            this.сведенияЧисленностьToolStripMenuItem.Name = "сведенияЧисленностьToolStripMenuItem";
-            this.сведенияЧисленностьToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.сведенияЧисленностьToolStripMenuItem.Text = "Сведения численность";
-            this.сведенияЧисленностьToolStripMenuItem.Click += new System.EventHandler(this.сведенияЧисленностьToolStripMenuItem_Click);
-            // 
-            // сводЗаКварталToolStripMenuItem
-            // 
-            this.сводЗаКварталToolStripMenuItem.Name = "сводЗаКварталToolStripMenuItem";
-            this.сводЗаКварталToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.сводЗаКварталToolStripMenuItem.Text = "Свод за квартал";
+            this.CmbPVPLoad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbPVPLoad.FormattingEnabled = true;
+            this.CmbPVPLoad.Location = new System.Drawing.Point(7, 6);
+            this.CmbPVPLoad.Name = "CmbPVPLoad";
+            this.CmbPVPLoad.Size = new System.Drawing.Size(100, 21);
+            this.CmbPVPLoad.TabIndex = 6;
             // 
             // MainForm
             // 
@@ -3662,7 +3661,7 @@ namespace KmsReportClient.Forms
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Сбор отчетности филиала";
-            this.Load += new System.EventHandler(this .MainForm_Load);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -3773,8 +3772,6 @@ namespace KmsReportClient.Forms
             this.PageTarAllow.ResumeLayout(false);
             this.PageTarAllow.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTarAllow)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
             this.PagePVPLoad.ResumeLayout(false);
             this.PagePVPLoad.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPVPLoad)).EndInit();

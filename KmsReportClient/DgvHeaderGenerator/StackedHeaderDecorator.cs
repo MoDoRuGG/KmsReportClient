@@ -37,7 +37,7 @@ namespace KmsReportClient.DgvHeaderGenerator
             objDataGrid.ColumnAdded += objDataGrid_ColumnAdded;
             objDataGrid.ColumnWidthChanged += objDataGrid_ColumnWidthChanged;
             objHeaderTree = objStackedHeaderGenerator.GenerateStackedHeader(objDataGrid);
-            
+
         }
 
         public StackedHeaderDecorator(IStackedHeaderGenerator objStackedHeaderGenerator, DataGridView objDataGrid)
@@ -46,15 +46,15 @@ namespace KmsReportClient.DgvHeaderGenerator
             this.objStackedHeaderGenerator = objStackedHeaderGenerator;
         }
 
-            
+
         void objDataGrid_ColumnWidthChanged(object sender, DataGridViewColumnEventArgs e)
-        {  
+        {
             Refresh();
         }
 
         void objDataGrid_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
         {
-            
+
             RegenerateHeaders();
             Refresh();
         }
@@ -69,33 +69,31 @@ namespace KmsReportClient.DgvHeaderGenerator
         {
             iNoOfLevels = NoOfLevels(objHeaderTree);
             objGraphics = e.Graphics;
-            //objDataGrid.AutoSize = true;
-            //objDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            objDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 
             //if (objDataGrid.Parent.Name == "PageCadre")
             //{
-            //    //objDataGrid.ColumnHeadersHeight = 160;
+            //    objDataGrid.ColumnHeadersHeight = 145;
             //    //objDataGrid.DefaultCellStyle.BackColor = Color.FromArgb(253, 233, 217);
             //}
+            //else if (objDataGrid.Parent.Name == "PageMonitoringVCR")
+            //{
+            //    objDataGrid.ColumnHeadersHeight = 145;
+            //}
+            //else if (objDataGrid.Parent.Name == "PageQuantity")
+            //{
+            //    objDataGrid.ColumnHeadersHeight = 163;
+            //}
             //else
-            if (objDataGrid.Parent.Name == "PageMonitoringVCR")
-            {
-                objDataGrid.AutoSize = true;
+            //{
                 objDataGrid.ColumnHeadersHeight = 145;
-            }
-            else if (objDataGrid.Parent.Name == "PageQuantity")
-            {
-                objDataGrid.ColumnHeadersHeight = 163;
-            }
-            else
-            {
-                objDataGrid.ColumnHeadersHeight = iNoOfLevels * 25;
-            }
+            //}
 
             if (null != objHeaderTree)
             {
                 RenderColumnHeaders();
             }
+            Refresh();
         }
 
         void objDataGrid_Scroll(object sender, ScrollEventArgs e)
@@ -118,12 +116,12 @@ namespace KmsReportClient.DgvHeaderGenerator
         {
             objGraphics.FillRectangle(new SolidBrush(objDataGrid.ColumnHeadersDefaultCellStyle.BackColor),
                                       new Rectangle(objDataGrid.DisplayRectangle.X, objDataGrid.DisplayRectangle.Y,
-                                                    objDataGrid.DisplayRectangle.Width, objDataGrid.ColumnHeadersHeight)) ;
+                                                    objDataGrid.DisplayRectangle.Width, objDataGrid.ColumnHeadersHeight));
 
             foreach (Header objChild in objHeaderTree.Children)
             {
 
-                objChild.Measure(objDataGrid, 3, objChild.Height+50);
+                objChild.Measure(objDataGrid, 0, objDataGrid.ColumnHeadersHeight /iNoOfLevels*20);
                 objChild.AcceptRenderer(this);
             }
         }
@@ -172,8 +170,8 @@ namespace KmsReportClient.DgvHeaderGenerator
                     return;
                 }
 
-                //Rectangle r1 = objDataGrid.GetCellDisplayRectangle(objHeader.Children[0].ColumnId, -1, true);
-                Rectangle r1 = objDataGrid.GetCellDisplayRectangle(objHeader.ColumnId, -1, true);
+                Rectangle r1 = objDataGrid.GetCellDisplayRectangle(objHeader.Children[0].ColumnId, -1, true);
+                //Rectangle r1 = objDataGrid.GetCellDisplayRectangle(objHeader.ColumnId, -1, true);
                 r1.Y = objHeader.Y;
                 r1.Height = objHeader.Height;
                 r1.Width = objHeader.Width + 1;
@@ -192,7 +190,7 @@ namespace KmsReportClient.DgvHeaderGenerator
                                        r1, objFormat);
                 objGraphics.ResetClip();
             }
-        
+
         }
 
         private int NoOfLevels(Header header)
