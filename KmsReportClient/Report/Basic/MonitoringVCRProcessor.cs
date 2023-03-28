@@ -21,7 +21,7 @@ namespace KmsReportClient.Report.Basic
     public class MonitoringVCRProcessor : AbstractReportProcessor<ReportMonitoringVCR>
     {
         StackedHeaderDecorator DgvRender;
-        string[] _notSaveCells = new string[] { "1", "2", "2.1", "2.2" };
+        string[] _notSaveCells = new string[] { "1","2.1", "2.2" };
 
         Dictionary<string, DataGridViewRow> _rows;
 

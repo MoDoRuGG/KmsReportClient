@@ -91,7 +91,9 @@ namespace KmsReportClient.Report.Basic
 
         public void CreateTotalColumn()
         {
-            Dgv.Columns.Add("Total", "Итого");
+            if (Report.IdType == "Zpz10") { Dgv.Columns.Add("Total", "С начала года"); }
+            else  { Dgv.Columns.Add("Total", "Итого"); }
+
             Dgv.Columns["Total"].ReadOnly = true;
             Dgv.Columns["Total"].DefaultCellStyle.BackColor = Color.LightGray;
 
@@ -463,7 +465,7 @@ namespace KmsReportClient.Report.Basic
 
             CreateDgvForForm(form, table);
 
-            if (Report.IdType == "PG" || Report.IdType == "PG_Q" || Report.IdType == "foped" || Report.IdType == "Zpz_Q" || Report.IdType == "Zpz" || Report.IdType == "Zpz10")
+            if (Report.IdType == "PG" || Report.IdType == "PG_Q" || Report.IdType == "foped" || Report.IdType == "Zpz_Q" || Report.IdType == "Zpz" /**|| Report.IdType == "Zpz10"**/)
                 CreateTotalColumn();
 
         }
