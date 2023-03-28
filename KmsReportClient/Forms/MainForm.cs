@@ -528,8 +528,11 @@ namespace KmsReportClient.Forms
             BtnSaveToDb.Enabled = isEnabled;
 
             BtnSubmit.Enabled = _processor.Report.Status != ReportStatus.Done;
-            BtnUploaded.Visible = _processor.IsVisibleBtnDownloadExcel();
-            BtnHandle.Visible = _processor.IsVisibleBtnHandle();
+            Console.WriteLine(!CurrentUser.IsMain);
+           
+                BtnUploaded.Visible = _processor.IsVisibleBtnDownloadExcel();
+                BtnHandle.Visible = _processor.IsVisibleBtnHandle();
+            
             if (_processor.Report.IdType == "PG" || _processor.Report.IdType == "Zpz" || _processor.Report.IdType == "Zpz10")
             {
                 DgwReportPg.ReadOnly = _processor.Report.DataSource != DataSource.Handle;

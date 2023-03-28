@@ -18,14 +18,14 @@ namespace KmsReportClient.Report.Basic
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
 
         private readonly string[] _forms9 = { "Таблица 9" };
-        private readonly string[] _forms3 = { "Таблица 1"};
-        private readonly string[] _forms1 = { "Таблица 10", "Таблица 4", "Таблица 8"};
+        private readonly string[] _forms3 = { "Таблица 1" };
+        private readonly string[] _forms1 = { "Таблица 10", "Таблица 4", "Таблица 8" };
         private readonly string[] _forms2 = { "Таблица 2", "Таблица 3" };
         private readonly string[] _forms67 = { "Таблица 6", "Таблица 7" };
-     
+
 
         private readonly string[][] _headers = {
-            new[] 
+            new[]
             { "Устные", "Письменные","По поручениям" }, //1
             new[]
             {
@@ -45,7 +45,7 @@ namespace KmsReportClient.Report.Basic
                 "разрешенные в судебном порядке, в т.ч. по лицам, обратившимся за защитой прав ЗЛ: \r\n СМО \r\n (гр.10)",
                 "разрешенные в судебном порядке, в т.ч. по лицам, обратившимся за защитой прав ЗЛ: \r\n Прокуратура \r\n (гр.11)"
             }, //3
-            new[] 
+            new[]
             { "Всего" }, //4
             new[]
             {
@@ -77,9 +77,9 @@ namespace KmsReportClient.Report.Basic
                 "плановая ЭКМП стационарно \r\n (гр.15)",
                 "плановая ЭКМП в том числе ВМП \r\n (гр.16)"
             }, //7
-            new[] 
+            new[]
             { "Всего" }, //8
-            new[] 
+            new[]
             { "штатные работники\r\n (гр.7)", "привлекаемые \r\nпо гражданско-правовому договору \r\n (гр.9)" }, //9
 
         };
@@ -220,6 +220,7 @@ namespace KmsReportClient.Report.Basic
             }
         }
 
+        
         public override bool IsVisibleBtnDownloadExcel() => true;
 
         public override bool IsVisibleBtnHandle() => true;

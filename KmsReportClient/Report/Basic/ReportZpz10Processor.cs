@@ -93,12 +93,7 @@ namespace KmsReportClient.Report.Basic
             }
 
 
-            if (Report.DataSource != DataSource.Handle)
-            {
-                Dgv.DefaultCellStyle.BackColor = Color.LightGray;
-            }
-            else
-            { Dgv.DefaultCellStyle.BackColor = Color.Azure; }
+            Dgv.DefaultCellStyle.BackColor = Color.Azure;
 
             SetFormula();
             //SetTotalColumn();
@@ -216,9 +211,9 @@ namespace KmsReportClient.Report.Basic
             }
         }
 
-        public override bool IsVisibleBtnDownloadExcel() => true;
+        public override bool IsVisibleBtnDownloadExcel() => false;
 
-        public override bool IsVisibleBtnHandle() => true;
+        public override bool IsVisibleBtnHandle() => false;
 
         public override string ValidReport()
         {
