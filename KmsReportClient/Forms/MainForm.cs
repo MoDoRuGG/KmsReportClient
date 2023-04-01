@@ -149,6 +149,7 @@ namespace KmsReportClient.Forms
             TbControl.TabPages.Remove(PageZpz);
             TbControl.TabPages.Remove(PageZpzQ);
             TbControl.TabPages.Remove(PageZpz10);
+            TbControl.TabPages.Remove(PageEffectiveness);
 
             if (CurrentUser.IsMain)
             {
@@ -186,6 +187,7 @@ namespace KmsReportClient.Forms
                         {tpIizl2022, ReportGlobalConst.ReportIizl2022},
                         {PageCadre, ReportGlobalConst.ReportCadre},
                         {PageZpz10, ReportGlobalConst.ReportZpz10},
+                        {PageEffectiveness, ReportGlobalConst.ReportEffectiveness},
             };
 
         private Dictionary<string, IReportProcessor> CreateProcessorMap() =>
@@ -234,6 +236,10 @@ namespace KmsReportClient.Forms
                   {
                     ReportGlobalConst.ReportOpedQ,
                     new ReportOpedQProcessor(_client, _reportsDictionary, dgvOpedQ, cmbOpedQ, tbOpedQ, PageOpedQ)
+                },
+                  {
+                    ReportGlobalConst.ReportEffectiveness,
+                    new ReportEffectivenessProcessor(_client, _reportsDictionary, dgvEffectiveness, cmbEffectiveness, tbEffectiveness, PageEffectiveness)
                 },
                   {
                     ReportGlobalConst.ReportOtklik,
@@ -1997,6 +2003,12 @@ namespace KmsReportClient.Forms
         private void dgvFssM_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             (_processor as FSSMonitoringProcessor).SetFormula();
+
+        }
+
+        private void dgvEffectiveness_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as ReportEffectivenessProcessor).SetFormula();
 
         }
 

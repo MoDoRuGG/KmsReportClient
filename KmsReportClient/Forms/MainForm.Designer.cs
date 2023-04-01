@@ -96,6 +96,9 @@ namespace KmsReportClient.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle65 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle66 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -290,6 +293,10 @@ namespace KmsReportClient.Forms
             this.TxtbInfo = new System.Windows.Forms.TextBox();
             this.PageElement = new System.Windows.Forms.TabPage();
             this.TbxEmentInfo = new System.Windows.Forms.TextBox();
+            this.tbEffectiveness = new System.Windows.Forms.TextBox();
+            this.PageEffectiveness = new System.Windows.Forms.TabPage();
+            this.dgvEffectiveness = new System.Windows.Forms.DataGridView();
+            this.cmbEffectiveness= new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -1369,6 +1376,10 @@ namespace KmsReportClient.Forms
             this.TbControl.Controls.Add(this.PageOpedQ);
             this.TbControl.Controls.Add(this.tabVac);
             this.TbControl.Controls.Add(this.PageCadre);
+            this.TbControl.Controls.Add(this.PageZpz);
+            this.TbControl.Controls.Add(this.PageZpzQ);
+            this.TbControl.Controls.Add(this.PageZpz10);
+            this.TbControl.Controls.Add(this.PageEffectiveness);
             this.TbControl.Controls.Add(this.PageFssMonitoring);
             this.TbControl.Controls.Add(this.PageProposal);
             this.TbControl.Controls.Add(this.tpOpedFinance);
@@ -2638,7 +2649,6 @@ namespace KmsReportClient.Forms
             this.dgvFssM.Size = new System.Drawing.Size(703, 276);
             this.dgvFssM.TabIndex = 24;
             this.dgvFssM.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFssM_CellEndEdit);
-
             // 
             // PageMonitoringVCR
             // 
@@ -2712,6 +2722,79 @@ namespace KmsReportClient.Forms
             this.dgvMonitoringVCR.Size = new System.Drawing.Size(703, 276);
             this.dgvMonitoringVCR.TabIndex = 24;
             this.dgvMonitoringVCR.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonitoringVCR_CellEndEdit);
+            // 
+            // PageEffectiveness
+            // 
+            this.PageEffectiveness.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.PageEffectiveness.Controls.Add(this.tbEffectiveness);
+            this.PageEffectiveness.Controls.Add(this.cmbEffectiveness);
+            this.PageEffectiveness.Controls.Add(this.dgvEffectiveness);
+            this.PageEffectiveness.Location = new System.Drawing.Point(4, 36);
+            this.PageEffectiveness.Name = "PageEffectiveness";
+            this.PageEffectiveness.Padding = new System.Windows.Forms.Padding(3);
+            this.PageEffectiveness.Size = new System.Drawing.Size(712, 330);
+            this.PageEffectiveness.TabIndex = 11;
+            this.PageEffectiveness.Text = "tabPage1";
+            // 
+            // tbEffectiveness
+            // 
+            this.tbEffectiveness.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbEffectiveness.Location = new System.Drawing.Point(115, 5);
+            this.tbEffectiveness.Multiline = true;
+            this.tbEffectiveness.Name = "tbEffectiveness";
+            this.tbEffectiveness.ReadOnly = true;
+            this.tbEffectiveness.Size = new System.Drawing.Size(593, 39);
+            this.tbEffectiveness.TabIndex = 26;
+            // 
+            // cmbEffectiveness
+            // 
+            this.cmbEffectiveness.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEffectiveness.FormattingEnabled = true;
+            this.cmbEffectiveness.Location = new System.Drawing.Point(9, 5);
+            this.cmbEffectiveness.Name = "cmbEffectiveness";
+            this.cmbEffectiveness.Size = new System.Drawing.Size(100, 21);
+            this.cmbEffectiveness.TabIndex = 25;
+            // 
+            // dgvEffectiveness
+            // 
+            this.dgvEffectiveness.AllowUserToAddRows = true;
+            this.dgvEffectiveness.AllowUserToDeleteRows = true;
+            this.dgvEffectiveness.AllowUserToResizeColumns = false;
+            this.dgvEffectiveness.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvEffectiveness.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            dataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            dataGridViewCellStyle67.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle67.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle67.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle67.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle67.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle67.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEffectiveness.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle67;
+            this.dgvEffectiveness.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle68.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle68.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle68.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle68.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle68.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle68.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEffectiveness.DefaultCellStyle = dataGridViewCellStyle68;
+            this.dgvEffectiveness.Location = new System.Drawing.Point(5, 50);
+            this.dgvEffectiveness.Name = "dgvEffectiveness";
+            dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle69.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle69.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle69.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle69.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle69.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle69.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEffectiveness.RowHeadersDefaultCellStyle = dataGridViewCellStyle69;
+            this.dgvEffectiveness.Size = new System.Drawing.Size(703, 276);
+            this.dgvEffectiveness.TabIndex = 24;
+            this.dgvEffectiveness.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEffectiveness_CellEndEdit);
 
 
             // 
@@ -3082,6 +3165,9 @@ namespace KmsReportClient.Forms
             this.PageMonitoringVCR.ResumeLayout(false);
             this.PageMonitoringVCR.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonitoringVCR)).EndInit();
+            this.PageEffectiveness.ResumeLayout(false);
+            this.PageEffectiveness.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEffectiveness)).EndInit();
             this.PageProposal.ResumeLayout(false);
             this.PageProposal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProposal)).EndInit();
@@ -3200,6 +3286,10 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.DataGridView DgwReportZpz;
         private System.Windows.Forms.TextBox TxtbZpz;
         private System.Windows.Forms.ComboBox CmbZpz;
+        private System.Windows.Forms.TabPage PageEffectiveness;
+        private System.Windows.Forms.DataGridView dgvEffectiveness;
+        private System.Windows.Forms.TextBox tbEffectiveness;
+        private System.Windows.Forms.ComboBox cmbEffectiveness;
         private System.Windows.Forms.TabPage PageZpz10;
         private System.Windows.Forms.DataGridView DgwReportZpz10;
         private System.Windows.Forms.TextBox TxtbZpz10;
