@@ -539,11 +539,10 @@ namespace KmsReportClient.Forms
                 BtnUploaded.Visible = _processor.IsVisibleBtnDownloadExcel();
                 BtnHandle.Visible = _processor.IsVisibleBtnHandle();
             
-            if (_processor.Report.IdType == "PG" || _processor.Report.IdType == "Zpz" || _processor.Report.IdType == "Zpz10")
+            if (_processor.Report.IdType == "PG" || _processor.Report.IdType == "Zpz")
             {
                 DgwReportPg.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
                 DgwReportZpz.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
-                DgwReportZpz10.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
             }
             TxtbInfo.Text = _processor.GetReportInfo();
             BtnCommentReport.Visible = true;
@@ -698,7 +697,7 @@ namespace KmsReportClient.Forms
             _processor.SaveReportDataSourceExcel();
             DgwReportPg.ReadOnly = true;
             DgwReportZpz.ReadOnly = true;
-            DgwReportZpz10.ReadOnly = true;
+            DgwReportZpz10.ReadOnly = false;
             _processor.SaveToDb();
         }
 
@@ -1910,6 +1909,27 @@ namespace KmsReportClient.Forms
 
         }
 
+        private void DgvReportZpz10_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            (_processor as ReportZpz10Processor).SetFormula();
+        }
+
+        private void DgvReportZpz10_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            (_processor as ReportZpz10Processor).SetFormula();
+        }
+
+
+        private void DgvReportZpz10_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as ReportZpz10Processor).SetFormula();
+        }
+
+        private void DgvReportZpz10_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as ReportZpz10Processor).SetFormula();
+        }
+
         private void DgvReportOped_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
             _processor.CallculateCells();
@@ -1969,6 +1989,11 @@ namespace KmsReportClient.Forms
             (_processor as ReportCadreProcessor).SetFormula();
         }
 
+        private void DgvEffectiveness_keyPress(object sender, KeyPressEventArgs e)
+        {
+            (_processor as ReportEffectivenessProcessor).SetFormula();
+        }
+
         private void DgvOtclkInfrorm_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             (_processor as ReportInfrormationResponseProcessor).SetFormula();
@@ -2008,7 +2033,7 @@ namespace KmsReportClient.Forms
 
         private void dgvEffectiveness_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            (_processor as ReportEffectivenessProcessor).SetFormula();
+            //(_processor as ReportEffectivenessProcessor).SetFormula();
 
         }
 

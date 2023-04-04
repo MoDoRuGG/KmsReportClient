@@ -191,7 +191,7 @@ namespace KmsReportClient.Report.Basic
                 {
                     row.DefaultCellStyle.BackColor = Color.LightGray;
                     
-                    row.ReadOnly = true;
+                    row.ReadOnly = false;
                     row.DefaultCellStyle.Font = new Font(Dgv.DefaultCellStyle.Font, FontStyle.Bold);
                 }
                 row.Cells[2].Style.BackColor = Color.LightGray;
@@ -235,6 +235,7 @@ namespace KmsReportClient.Report.Basic
 
         public override void SaveToDb()
         {
+            SetFormula();
             var request = new SaveReportRequest
             {
                 Body = new SaveReportRequestBody
@@ -324,17 +325,17 @@ namespace KmsReportClient.Report.Basic
             var currentHeaders = _headers[index];
             CreateDgvColumnsForTheme(Dgv, 400, _headersMap[form], currentHeaders);
 
-            int countRows = ThemeTextData.tables.Single(x => x.Name == form).RowsCount;
+            int countRows = ThemeTextData.Tables_fromxml.Single(x => x.TableName_fromxml == form).RowsCount_fromxml;
             foreach (var row in table)
             {
                 var dgvRow = new DataGridViewRow();
                 var cellName = new DataGridViewTextBoxCell
                 {
-                    Value = row.Name
+                    Value = row.RowText_fromxml
                 };
                 var cellNum = new DataGridViewTextBoxCell
                 {
-                    Value = row.Num
+                    Value = row.RowNum_fromxml
                 };
                 dgvRow.Cells.Add(cellName);
                 dgvRow.Cells.Add(cellNum);
@@ -419,6 +420,7 @@ namespace KmsReportClient.Report.Basic
                                      CountSmo = GlobalUtils.TryParseDecimal(row.Cells[3].Value),
                                      //CountSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[3].Value)
                                  }).ToArray();
+            SetFormula();
         }
 
         private void FillDgwForms1(DataGridView dgvReport, string form)
@@ -429,14 +431,14 @@ namespace KmsReportClient.Report.Basic
                 return;
             }
 
-            var rows = ThemeTextData.tables.Where(x => x.Name == form).SelectMany(x => x.Rows).ToList();
+            var rows = ThemeTextData.Tables_fromxml.Where(x => x.TableName_fromxml == form).SelectMany(x => x.Rows_fromxml).ToList();
 
 
 
             foreach (DataGridViewRow row in dgvReport.Rows)
             {
                 var rowNum = row.Cells[1].Value.ToString().Trim();
-                bool isExclusionsRow = rows.Single(x => x.Num == rowNum).Exclusion;
+                bool isExclusionsRow = rows.Single(x => x.RowNum_fromxml == rowNum).Exclusion_fromxml;
 
                 var data = reportZpzDto.Data.SingleOrDefault(x => x.Code == rowNum);
                 if (data != null)
@@ -458,6 +460,7 @@ namespace KmsReportClient.Report.Basic
 
                 }
             }
+            SetFormula();
         }
     }
 }

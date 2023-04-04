@@ -441,7 +441,7 @@ namespace KmsReportClient.Report.Basic
                 CreateDgvColumnsForTable1(Dgv);
                 foreach (var row in table)
                 {
-                    Dgv.Rows.Add(row.Name, row.Num, "человек", "0");
+                    Dgv.Rows.Add(row.RowText_fromxml, row.RowNum_fromxml, "человек", "0");
                 }
             }
             else if (form == "Таблица 2")
@@ -449,7 +449,7 @@ namespace KmsReportClient.Report.Basic
                 CreateDgvColumnsForTable2(Dgv);
                 foreach (var row in table)
                 {
-                    Dgv.Rows.Add(row.Name, "человек", "0", "0", "0", "0",
+                    Dgv.Rows.Add(row.RowText_fromxml, "человек", "0", "0", "0", "0",
                         "0", "0", "0");
                 }
             }

@@ -2032,6 +2032,10 @@ namespace KmsReportClient.Forms
             this.DgwReportZpz10.RowHeadersDefaultCellStyle = dataGridViewCellStyle66;
             this.DgwReportZpz10.Size = new System.Drawing.Size(699, 272);
             this.DgwReportZpz10.TabIndex = 8;
+            this.DgwReportZpz10.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.DgvReportZpz10_CellBeginEdit);
+            this.DgwReportZpz10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DgvReportZpz10_KeyPress);
+            this.DgwReportZpz10.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvReportZpz10_CellEndEdit);
+
             // 
             // TxtbZpz10
             // 
@@ -2795,6 +2799,7 @@ namespace KmsReportClient.Forms
             this.dgvEffectiveness.Size = new System.Drawing.Size(703, 276);
             this.dgvEffectiveness.TabIndex = 24;
             this.dgvEffectiveness.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEffectiveness_CellEndEdit);
+            this.dgvEffectiveness.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DgvEffectiveness_keyPress);
 
 
             // 

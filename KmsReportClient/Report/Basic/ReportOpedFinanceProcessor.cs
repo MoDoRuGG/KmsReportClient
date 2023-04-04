@@ -158,8 +158,8 @@ namespace KmsReportClient.Report.Basic
             foreach (var row in table)
             {
                 var dgvRow = new DataGridViewRow();
-                var N = new DataGridViewTextBoxCell { Value = row.Num };
-                var cellname = new DataGridViewTextBoxCell { Value = row.Name };
+                var N = new DataGridViewTextBoxCell { Value = row.RowNum_fromxml };
+                var cellname = new DataGridViewTextBoxCell { Value = row.RowText_fromxml };
                 dgvRow.Cells.Add(cellname);
                 dgvRow.Cells.Add(N);
                 int rowIndex = Dgv.Rows.Add(dgvRow);

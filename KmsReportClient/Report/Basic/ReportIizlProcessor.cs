@@ -35,8 +35,8 @@ namespace KmsReportClient.Report.Basic
             int i = 0;
             foreach (var theme in ThemesList.Select(x => x.Key))
             {
-                var themeData = ThemeTextData.tables.Single(x => x.Name == theme);
-                var rows = themeData.Rows.Select(x => new ReportIizlDataDto {Code = x.Num}).ToArray();
+                var themeData = ThemeTextData.Tables_fromxml.Single(x => x.TableName_fromxml == theme);
+                var rows = themeData.Rows_fromxml.Select(x => new ReportIizlDataDto {Code = x.RowNum_fromxml}).ToArray();
 
                 Report.ReportDataList[i++] = new ReportIizlDto {Theme = theme, Data = rows};
             }
@@ -93,16 +93,16 @@ namespace KmsReportClient.Report.Basic
                 CreateDgvInfAgreeColumns(Dgv);
             }
 
-            int countRows = ThemeTextData.tables.Single(x => x.Name == form).RowsCount;
+            int countRows = ThemeTextData.Tables_fromxml.Single(x => x.TableName_fromxml == form).RowsCount_fromxml;
             foreach (var row in table)
             {
                 var dgvRow = new DataGridViewRow();
-                var cellName = new DataGridViewTextBoxCell {Value = row.Name};
-                var cellNum = new DataGridViewTextBoxCell {Value = row.Num};
+                var cellName = new DataGridViewTextBoxCell {Value = row.RowText_fromxml};
+                var cellNum = new DataGridViewTextBoxCell {Value = row.RowNum_fromxml};
                 dgvRow.Cells.Add(cellName);
                 dgvRow.Cells.Add(cellNum);
 
-                var exclusionCells = row.ExclusionCells?.Split(',');
+                var exclusionCells = row.ExclusionCells_fromxml?.Split(',');
                 for (int i = 2; i < countRows; i++)
                 {
                     bool isNeedExcludeSum = exclusionCells?.Contains(i.ToString()) ?? false;

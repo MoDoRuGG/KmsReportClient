@@ -126,6 +126,7 @@
     <Compile Include="Excel\Collector\IExcelCollector.cs" />
     <Compile Include="Excel\Collector\ZpzExcelCollector.cs" />
     <Compile Include="Excel\Collector\PgExcelCollector.cs" />
+    <Compile Include="Excel\Collector\ZpzQExcelCollector.cs" />
     <Compile Include="Excel\Creator\Base\ExcelCadreCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExceIRCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelIizl2022Creator.cs" />

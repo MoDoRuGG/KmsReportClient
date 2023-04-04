@@ -8,6 +8,7 @@ namespace KmsReportClient.Excel.Collector
         private readonly IExcelCollector _f262Table3Collector = new F262Table3ExcelCollector();
         private readonly IExcelCollector _pgExcelCollector = new PgExcelCollector();
         private readonly IExcelCollector _pgQExcelCollector = new PgQExcelCollector();
+        private readonly IExcelCollector _zpzQExcelCollector = new ZpzQExcelCollector();
         private readonly IExcelCollector _zpzExcelCollector = new ZpzExcelCollector();
         private readonly IExcelCollector _zpz10ExcelCollector = new ZpzExcelCollector();
 
@@ -18,6 +19,7 @@ namespace KmsReportClient.Excel.Collector
                 ReportGlobalConst.ReportPg => _pgExcelCollector,
                 ReportGlobalConst.ReportZpz => _zpzExcelCollector,
                 ReportGlobalConst.ReportZpz10 => _zpz10ExcelCollector,
+                ReportGlobalConst.ReportZpzQ => _zpzQExcelCollector,
                 _ => throw new Exception("Can't find excelCollector for this reportType")
             };
     }

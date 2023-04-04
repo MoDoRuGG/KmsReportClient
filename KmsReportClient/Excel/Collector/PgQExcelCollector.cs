@@ -35,15 +35,15 @@ namespace KmsReportClient.Excel.Collector
         {
             var themeData = form switch {
                 "Таблица 1" => FillTable1(form),
-                "Таблица 11" => FillTable1(form),
+                "Таблица 11" => FillTable1(form),//9
                 "Таблица 12" => FillTable1(form),
                 "Таблица 2" => FillTable2(form),
                 "Таблица 3" => FillTable2(form),
                 "Таблица 4" => FillTable4(form),
-                "Таблица 10" => FillTable4(form),
+                "Таблица 10" => FillTable4(form),//8
                 "Таблица 13" => FillTable4(form),
-                "Таблица 6" => FillTable6(form),
-                "Таблица 8" => FillTable6(form),
+                "Таблица 6" => FillTable6(form),//6
+                "Таблица 8" => FillTable6(form),//7
                 "Таблица 1Л" => FillTableLetal(form),
                 "Таблица 2Л" => FillTableLetal(form),
                 _ => FillTable5()

@@ -40,7 +40,7 @@ namespace KmsReportClient.Report.Basic
             "ЭКМП;% выполнения",
             "ЭКМП;План по доходам",
             "ЭКМП;Факт",
-            "ЭКМП;% выполнения", 
+            "ЭКМП;% выполнения",
             },
         };
 
@@ -51,15 +51,15 @@ namespace KmsReportClient.Report.Basic
 
         public ReportEffectivenessProcessor
         (
-            EndpointSoap inClient, 
+            EndpointSoap inClient,
             List<KmsReportDictionary> reportsDictionary,
             DataGridView dgv,
             ComboBox cmb,
             TextBox txtb,
             TabPage page
-        ): 
+        ) :
         base
-        (   
+        (
             inClient, dgv, cmb, txtb, page,
             XmlFormTemplate.Effectiveness.GetDescription(),
             Log,
@@ -73,13 +73,13 @@ namespace KmsReportClient.Report.Basic
         public override void InitReport()
         {
             Report = new ReportEffectiveness { ReportDataList = new ReportEffectivenessDto[ThemesList.Count], IdType = IdReportType };
-            
+
             int i = 0;
             foreach (var theme in ThemesList.Select(x => x.Key))
             {
                 Report.ReportDataList[i++] = new ReportEffectivenessDto { Theme = theme };
             }
-            //SetFormula();
+            SetFormula();
         }
 
         public override AbstractReport CollectReportFromWs(string yymm)
@@ -114,40 +114,38 @@ namespace KmsReportClient.Report.Basic
 
         public override void FillDataGridView(string form)
         {
-            var reportEffectivenessDto = Report.ReportDataList?.Single(x => x.Theme == form);
-            if (reportEffectivenessDto.Data == null || reportEffectivenessDto.Data.Length == 0)
+            if (form == null)
             {
                 return;
             }
-
-            var rows = ThemeTextData.tables.Where(x => x.Name == form).SelectMany(x => x.Rows).ToList();
-            foreach (DataGridViewRow row in Dgv.Rows)
+            if (Report.ReportDataList != null && Report.ReportDataList.Length > 0 && Report.Status.ToString() != "New")
             {
-                var rowNum = row.Cells[0].Value.ToString().Trim();
-                var data = reportEffectivenessDto.Data.SingleOrDefault(x => x.CodeRowNum == rowNum);
-                if (data == null)
+                foreach (DataGridViewRow row in Dgv.Rows)
                 {
-                    continue;
+                    var rowNum = row.Cells[0].Value.ToString();
+                    var data = Report.ReportDataList.SingleOrDefault(x => x.CodeRowNum.ToString() == rowNum);
+                    if (data != null)
+                    {
+                        row.Cells[1].Value = data.full_name ?? " ";
+                        row.Cells[2].Value = data.expert_busyness;
+                        row.Cells[3].Value = data.expert_speciality ?? " ";
+                        row.Cells[4].Value = data.expertise_type ?? " ";
+                        row.Cells[5].Value = data.mee_quantity_plan;
+                        row.Cells[6].Value = data.mee_quantity_fact;
+                        row.Cells[7].Value = data.mee_quantity_percent;
+                        row.Cells[8].Value = data.mee_yeild_plan;
+                        row.Cells[9].Value = data.mee_yeild_fact;
+                        row.Cells[10].Value = data.mee_yeild_percent;
+                        row.Cells[11].Value = data.ekmp_quantity_plan;
+                        row.Cells[12].Value = data.ekmp_quantity_fact;
+                        row.Cells[13].Value = data.ekmp_quantity_percent;
+                        row.Cells[14].Value = data.ekmp_yeild_plan;
+                        row.Cells[15].Value = data.ekmp_yeild_fact;
+                        row.Cells[16].Value = data.ekmp_yeild_percent;
+                    }
                 }
-
-                row.Cells[1].Value = data.full_name;
-                row.Cells[2].Value = data.expert_busyness.ToString();
-                row.Cells[3].Value = data.expert_speciality;
-                row.Cells[4].Value = data.expertise_type;
-                row.Cells[5].Value = data.mee_quantity_plan.ToString();
-                row.Cells[6].Value = data.mee_quantity_fact.ToString();
-                row.Cells[7].Value = data.mee_quantity_percent.ToString();
-                row.Cells[8].Value = data.mee_yeild_plan.ToString();
-                row.Cells[9].Value = data.mee_yeild_fact.ToString();
-                row.Cells[10].Value = data.mee_yeild_percent.ToString();
-                row.Cells[11].Value = data.ekmp_quantity_plan.ToString();
-                row.Cells[12].Value = data.ekmp_quantity_fact.ToString();
-                row.Cells[13].Value = data.ekmp_quantity_percent.ToString();
-                row.Cells[14].Value = data.ekmp_yeild_plan.ToString();
-                row.Cells[15].Value = data.ekmp_yeild_fact.ToString();
-                row.Cells[16].Value = data.ekmp_yeild_percent.ToString(); 
+                SetFormula();
             }
-            //SetFormula();
         }
 
         protected override void FillReport(string form)
@@ -156,33 +154,32 @@ namespace KmsReportClient.Report.Basic
             {
                 return;
             }
-            var reportEffectivenessDto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
-            if (reportEffectivenessDto != null)
+            var reportDto = new List<ReportEffectivenessDto>();
+            foreach (DataGridViewRow row in Dgv.Rows)
             {
-                reportEffectivenessDto.Data = (from DataGridViewRow row in Dgv.Rows
-                                               let rowNum = row.Cells[0].Value.ToString().Trim()
-                                               select new ReportEffectivenessDataDto
-                                               {
-                                                   CodeRowNum = rowNum,  
-                                                   full_name = row.Cells[1].ToString(),
-                                                   expert_busyness = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
-                                                   expert_speciality = row.Cells[3].Value.ToString(),
-                                                   expertise_type = row.Cells[4].Value.ToString(),
-                                                   mee_quantity_plan = GlobalUtils.TryParseInt(row.Cells[5].Value),
-                                                   mee_quantity_fact = GlobalUtils.TryParseInt(row.Cells[6].Value),
-                                                   mee_quantity_percent = GlobalUtils.TryParseDecimal(row.Cells[7].Value),
-                                                   mee_yeild_plan = GlobalUtils.TryParseInt(row.Cells[8].Value),
-                                                   mee_yeild_fact = GlobalUtils.TryParseInt(row.Cells[9].Value),
-                                                   mee_yeild_percent = GlobalUtils.TryParseDecimal(row.Cells[10].Value),
-                                                   ekmp_quantity_plan = GlobalUtils.TryParseInt(row.Cells[11].Value),
-                                                   ekmp_quantity_fact = GlobalUtils.TryParseInt(row.Cells[12].Value),
-                                                   ekmp_quantity_percent = GlobalUtils.TryParseDecimal(row.Cells[13].Value),
-                                                   ekmp_yeild_plan = GlobalUtils.TryParseInt(row.Cells[14].Value),
-                                                   ekmp_yeild_fact = GlobalUtils.TryParseInt(row.Cells[15].Value),
-                                                   ekmp_yeild_percent = GlobalUtils.TryParseDecimal(row.Cells[16].Value),
-                                               }).ToArray();
+                var data = new ReportEffectivenessDto
+                {
+                    CodeRowNum = row.Cells[0].Value.ToString(),
+                    full_name = row.Cells[1].Value.ToString() ?? " ",
+                    expert_busyness = GlobalUtils.TryParseDecimal(row.Cells[2].Value ?? 0),
+                    expert_speciality = row.Cells[3].Value.ToString() ?? " ",
+                    expertise_type = row.Cells[4].Value.ToString() ?? " ",
+                    mee_quantity_plan = GlobalUtils.TryParseInt(row.Cells[5].Value ?? 0),
+                    mee_quantity_fact = GlobalUtils.TryParseInt(row.Cells[6].Value ?? 0),
+                    mee_quantity_percent = GlobalUtils.TryParseDecimal(row.Cells[7].Value ?? 0),
+                    mee_yeild_plan = GlobalUtils.TryParseInt(row.Cells[8].Value ?? 0),
+                    mee_yeild_fact = GlobalUtils.TryParseInt(row.Cells[9].Value ?? 0),
+                    mee_yeild_percent = GlobalUtils.TryParseDecimal(row.Cells[10].Value ?? 0),
+                    ekmp_quantity_plan = GlobalUtils.TryParseInt(row.Cells[11].Value ?? 0),
+                    ekmp_quantity_fact = GlobalUtils.TryParseInt(row.Cells[12].Value ?? 0),
+                    ekmp_quantity_percent = GlobalUtils.TryParseDecimal(row.Cells[13].Value ?? 0),
+                    ekmp_yeild_plan = GlobalUtils.TryParseInt(row.Cells[14].Value ?? 0),
+                    ekmp_yeild_fact = GlobalUtils.TryParseInt(row.Cells[15].Value ?? 0),
+                    ekmp_yeild_percent = GlobalUtils.TryParseDecimal(row.Cells[16].Value ?? 0),
+                };
+                reportDto.Add(data);
             }
-
+            Report.ReportDataList = reportDto.ToArray();
         }
 
         public override bool IsVisibleBtnDownloadExcel() => false;
@@ -200,7 +197,7 @@ namespace KmsReportClient.Report.Basic
 
         public override void SaveToDb()
         {
-            //SetFormula();
+            SetFormula();
             var request = new SaveReportRequest
             {
                 Body = new SaveReportRequestBody
@@ -251,27 +248,27 @@ namespace KmsReportClient.Report.Basic
             var currentHeaders = _headers[index];
             CreateDgvColumnsForTheme(Dgv, 50, _headersMap[form], currentHeaders);
 
-            int countRows = ThemeTextData.tables.Single(x => x.Name == form).RowsCount;
+            int countRows = ThemeTextData.Tables_fromxml.Single(x => x.TableName_fromxml == form).RowsCount_fromxml;
             foreach (var row in table)
             {
                 var dgvRow = new DataGridViewRow();
                 var cellName = new DataGridViewTextBoxCell
                 {
-                    Value = row.Name
+                    Value = row.RowText_fromxml
                 };
                 var cellNum = new DataGridViewTextBoxCell
                 {
-                    Value = row.Num
+                    Value = row.RowNum_fromxml
                 };
                 dgvRow.Cells.Add(cellName);
                 dgvRow.Cells.Add(cellNum);
-                var exclusionCells = row.ExclusionCells?.Split(',');
+                var exclusionCells = row.ExclusionCells_fromxml?.Split(',');
                 for (int i = 2; i < countRows; i++)
                 {
                     bool isNeedExcludeSum = exclusionCells?.Contains(i.ToString()) ?? false;
                     var cell = new DataGridViewTextBoxCell
                     {
-                        Value = row.Exclusion || isNeedExcludeSum ? "x" : "0"
+                        Value = row.Exclusion_fromxml || isNeedExcludeSum ? "x" : "0"
                     };
                     dgvRow.Cells.Add(cell);
 
@@ -282,7 +279,7 @@ namespace KmsReportClient.Report.Basic
                     }
                 }
                 int rowIndex = Dgv.Rows.Add(dgvRow);
-                if (row.Exclusion)
+                if (row.Exclusion_fromxml)
                 {
                     Dgv.Rows[rowIndex].ReadOnly = true;
                     Dgv.Rows[rowIndex].DefaultCellStyle.BackColor = Color.LightCyan;
@@ -331,17 +328,19 @@ namespace KmsReportClient.Report.Basic
 
         public void SetFormula()
         {
-
-            //try
+            //foreach (int row in Dgv.Rows)
             //{
-            //    Dgv.Rows[0].Cells[3].Value = Math.Round(GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[6].Value) + GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[9].Value) +
-            //                                            GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[12].Value), 2);
+            //        if (Dgv.Rows[row].Cells[2].Value == null)
+            //        { Dgv.Rows[row].Cells[2].Value = 0.0; }
+            //        if (Dgv.Rows[row].Cells[7].Value == null)
+            //        { Dgv.Rows[row].Cells[7].Value = 0.0; }
+            //        if (Dgv.Rows[row].Cells[10].Value == null)
+            //        { Dgv.Rows[row].Cells[10].Value = 0.0; }
+            //        if (Dgv.Rows[row].Cells[13].Value == null)
+            //        { Dgv.Rows[row].Cells[13].Value = 0.0; }
+            //        if (Dgv.Rows[row].Cells[16].Value == null)
+            //        { Dgv.Rows[row].Cells[16].Value = 0.0; }
             //}
-            //catch (Exception ex)
-            //{
-            //    Console.WriteLine(ex.Message);
-            //}
-
         }
     }
 }

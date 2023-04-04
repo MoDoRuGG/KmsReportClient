@@ -319,8 +319,8 @@ namespace KmsReportClient.Report.Basic
             {
 
                 var dgvRow = new DataGridViewRow();
-                var N = new DataGridViewTextBoxCell { Value = row.Num };
-                var cellname = new DataGridViewTextBoxCell { Value = row.Name };
+                var N = new DataGridViewTextBoxCell { Value = row.RowNum_fromxml };
+                var cellname = new DataGridViewTextBoxCell { Value = row.RowText_fromxml };
                 dgvRow.Cells.Add(N);
                 dgvRow.Cells.Add(cellname);
                 int rowIndex = Dgv.Rows.Add(dgvRow);
@@ -386,7 +386,8 @@ namespace KmsReportClient.Report.Basic
                         //KsLeth = GlobalUtils.TryParseInt(row.Cells[11].Value),
                         //DsLeth = GlobalUtils.TryParseInt(row.Cells[12].Value),
                         //SmpLeth = GlobalUtils.TryParseInt(row.Cells[13].Value),
-                        Notes = row.Cells[6].Value?.ToString() ?? ""
+                        Notes = row.Cells[6].Value?.ToString() ?? "",
+                        NotesGoodReason = row.Cells[7].Value?.ToString() ?? "",
                     };
 
 

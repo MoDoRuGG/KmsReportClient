@@ -456,9 +456,9 @@ namespace KmsReportClient.Report.Basic
                 form = "ОПЭД";
 
 
-            var table = ThemeTextData.tables
-                .Where(x => x.Name == form)
-                .SelectMany(x => x.Rows)
+            var table = ThemeTextData.Tables_fromxml
+                .Where(x => x.TableName_fromxml == form)
+                .SelectMany(x => x.Rows_fromxml)
                 .ToList();
 
 
@@ -478,8 +478,8 @@ namespace KmsReportClient.Report.Basic
         {
             try
             {
-                var result = ThemeTextData.tables
-               .Select(x => new KmsReportDictionary { Key = x.Name, Value = x.TableDescription })
+                var result = ThemeTextData.Tables_fromxml
+               .Select(x => new KmsReportDictionary { Key = x.TableName_fromxml, Value = x.TableDescription_fromxml })
                .ToList();
 
                 if (IdReportType == "foped")
@@ -687,11 +687,11 @@ namespace KmsReportClient.Report.Basic
         protected abstract void CreateDgvForForm(string form, List<TemplateRow> table);
 
         protected bool IsNotNeedFillRow(string form, string rowNum) =>
-            ThemeTextData.tables
-                .Where(x => x.Name == form)
-                .SelectMany(x => x.Rows)
-                .Single(x => x.Num == rowNum)
-                .Exclusion;
+            ThemeTextData.Tables_fromxml
+                .Where(x => x.TableName_fromxml == form)
+                .SelectMany(x => x.Rows_fromxml)
+                .Single(x => x.RowNum_fromxml == rowNum)
+                .Exclusion_fromxml;
 
         protected TemplateForm ReadTemplateXml(string filename)
         {

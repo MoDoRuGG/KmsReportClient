@@ -463,28 +463,28 @@ namespace KmsReportClient.Report.Basic
             var currentHeaders = _headers[index];
             CreateDgvColumnsForTheme(Dgv, 400, _headersMap[form], currentHeaders);
 
-            int countRows = ThemeTextData.tables.Single(x => x.Name == form).RowsCount;
+            int countRows = ThemeTextData.Tables_fromxml.Single(x => x.TableName_fromxml == form).RowsCount_fromxml;
             foreach (var row in table)
             {
                 var dgvRow = new DataGridViewRow();
                 var cellName = new DataGridViewTextBoxCell
                 {
-                    Value = row.Name
+                    Value = row.RowText_fromxml
                 };
                 var cellNum = new DataGridViewTextBoxCell
                 {
-                    Value = row.Num
+                    Value = row.RowNum_fromxml
                 };
                 dgvRow.Cells.Add(cellName);
                 dgvRow.Cells.Add(cellNum);
 
-                var exclusionCells = row.ExclusionCells?.Split(',');
+                var exclusionCells = row.ExclusionCells_fromxml?.Split(',');
                 for (int i = 2; i < countRows; i++)
                 {
                     bool isNeedExludeSum = exclusionCells?.Contains(i.ToString()) ?? false;
                     var cell = new DataGridViewTextBoxCell
                     {
-                        Value = row.Exclusion || isNeedExludeSum ? "x" : "0"
+                        Value = row.Exclusion_fromxml || isNeedExludeSum ? "x" : "0"
                     };
                     dgvRow.Cells.Add(cell);
 
@@ -495,7 +495,7 @@ namespace KmsReportClient.Report.Basic
                     }
                 }
                 int rowIndex = Dgv.Rows.Add(dgvRow);
-                if (row.Exclusion)
+                if (row.Exclusion_fromxml)
                 {
                     Dgv.Rows[rowIndex].ReadOnly = true;
                     Dgv.Rows[rowIndex].DefaultCellStyle.BackColor = Color.LightCyan;
@@ -694,11 +694,11 @@ namespace KmsReportClient.Report.Basic
                 return;
             }
 
-            var rows = ThemeTextData.tables.Where(x => x.Name == form).SelectMany(x => x.Rows).ToList();
+            var rows = ThemeTextData.Tables_fromxml.Where(x => x.TableName_fromxml == form).SelectMany(x => x.Rows_fromxml).ToList();
             foreach (DataGridViewRow row in dgvReport.Rows)
             {
                 var rowNum = row.Cells[1].Value.ToString().Trim();
-                bool isExclusionsRow = rows.Single(x => x.Num == rowNum).Exclusion;
+                bool isExclusionsRow = rows.Single(x => x.RowNum_fromxml == rowNum).Exclusion_fromxml;
 
                 var data = reportPgDto.Data.SingleOrDefault(x => x.Code == rowNum);
                 if (data != null)
@@ -717,12 +717,12 @@ namespace KmsReportClient.Report.Basic
                 return;
             }
 
-            var rows = ThemeTextData.tables.Where(x => x.Name == form).SelectMany(x => x.Rows).ToList();
+            var rows = ThemeTextData.Tables_fromxml.Where(x => x.TableName_fromxml == form).SelectMany(x => x.Rows_fromxml).ToList();
             foreach (DataGridViewRow row in dgvReport.Rows)
             {
                 var rowNum = row.Cells[1].Value.ToString().Trim();
-                var exclusionsCells = rows.Single(x => x.Num == rowNum).ExclusionCells?.Split(',');
-                bool isExclusionsRow = rows.Single(x => x.Num == rowNum).Exclusion;
+                var exclusionsCells = rows.Single(x => x.RowNum_fromxml == rowNum).ExclusionCells_fromxml?.Split(',');
+                bool isExclusionsRow = rows.Single(x => x.RowNum_fromxml == rowNum).Exclusion_fromxml;
 
                 var data = reportPgDto.Data.SingleOrDefault(x => x.Code == rowNum);
                 if (data != null)
@@ -745,11 +745,11 @@ namespace KmsReportClient.Report.Basic
                 return;
             }
 
-            var rows = ThemeTextData.tables.Where(x => x.Name == form).SelectMany(x => x.Rows).ToList();
+            var rows = ThemeTextData.Tables_fromxml.Where(x => x.TableName_fromxml == form).SelectMany(x => x.Rows_fromxml).ToList();
             foreach (DataGridViewRow row in dgvReport.Rows)
             {
                 var rowNum = row.Cells[1].Value.ToString().Trim();
-                bool isExclusionsRow = rows.Single(x => x.Num == rowNum).Exclusion;
+                bool isExclusionsRow = rows.Single(x => x.RowNum_fromxml == rowNum).Exclusion_fromxml;
                 var data = reportPgDto.Data.SingleOrDefault(x => x.Code == rowNum);
                 if (data != null)
                 {
@@ -767,12 +767,12 @@ namespace KmsReportClient.Report.Basic
                 return;
             }
 
-            var rows = ThemeTextData.tables.Where(x => x.Name == form).SelectMany(x => x.Rows).ToList();
+            var rows = ThemeTextData.Tables_fromxml.Where(x => x.TableName_fromxml == form).SelectMany(x => x.Rows_fromxml).ToList();
             foreach (DataGridViewRow row in dgvReport.Rows)
             {
                 var rowNum = row.Cells[1].Value.ToString().Trim();
-                var exclusionsCells = rows.Single(x => x.Num == rowNum).ExclusionCells?.Split(',');
-                bool isExclusionsRow = rows.Single(x => x.Num == rowNum).Exclusion;
+                var exclusionsCells = rows.Single(x => x.RowNum_fromxml == rowNum).ExclusionCells_fromxml?.Split(',');
+                bool isExclusionsRow = rows.Single(x => x.RowNum_fromxml == rowNum).Exclusion_fromxml;
 
                 var data = reportPgDto.Data.SingleOrDefault(x => x.Code == rowNum);
                 if (data == null)
@@ -804,12 +804,12 @@ namespace KmsReportClient.Report.Basic
                 return;
             }
 
-            var rows = ThemeTextData.tables.Where(x => x.Name == form).SelectMany(x => x.Rows).ToList();
+            var rows = ThemeTextData.Tables_fromxml.Where(x => x.TableName_fromxml == form).SelectMany(x => x.Rows_fromxml).ToList();
             foreach (DataGridViewRow row in dgvReport.Rows)
             {
                 var rowNum = row.Cells[1].Value.ToString().Trim();
                 var data = reportPgDto.Data.SingleOrDefault(x => x.Code == rowNum);
-                bool isExclusionsRow = rows.Single(x => x.Num == rowNum).Exclusion;
+                bool isExclusionsRow = rows.Single(x => x.RowNum_fromxml == rowNum).Exclusion_fromxml;
                 if (data == null)
                 {
                     continue;
@@ -836,14 +836,14 @@ namespace KmsReportClient.Report.Basic
                 return;
             }
 
-            var rows = ThemeTextData.tables.Where(x => x.Name == form).SelectMany(x => x.Rows).ToList();
+            var rows = ThemeTextData.Tables_fromxml.Where(x => x.TableName_fromxml == form).SelectMany(x => x.Rows_fromxml).ToList();
            
             foreach (DataGridViewRow row in dgvReport.Rows)
             {
                 var rowNum = row.Cells[1].Value.ToString().Trim();
                 var data = reportPgDto.Data.SingleOrDefault(x => x.Code == rowNum);
-                var exclusionsCells = rows.Single(x => x.Num == rowNum).ExclusionCells?.Split(',');
-                bool isExclusionsRow = rows.Single(x => x.Num == rowNum).Exclusion;
+                var exclusionsCells = rows.Single(x => x.RowNum_fromxml == rowNum).ExclusionCells_fromxml?.Split(',');
+                bool isExclusionsRow = rows.Single(x => x.RowNum_fromxml == rowNum).Exclusion_fromxml;
                 if (data == null)
                 {
                     continue;

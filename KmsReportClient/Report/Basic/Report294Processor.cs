@@ -322,12 +322,12 @@ namespace KmsReportClient.Report.Basic
                 CreateDgvColumnsForTheme(Dgv, 400, disiaseColumnsText);
             }
 
-            int countRows = ThemeTextData.tables.Single(x => x.Name == form).RowsCount;
+            int countRows = ThemeTextData.Tables_fromxml.Single(x => x.TableName_fromxml == form).RowsCount_fromxml;
             foreach (var row in table)
             {
                 var dgvRow = new DataGridViewRow();
-                var cellName = new DataGridViewTextBoxCell { Value = row.Name };
-                var cellNum = new DataGridViewTextBoxCell { Value = row.Num };
+                var cellName = new DataGridViewTextBoxCell { Value = row.RowText_fromxml };
+                var cellNum = new DataGridViewTextBoxCell { Value = row.RowNum_fromxml };
                 var cellPpl = new DataGridViewTextBoxCell { Value = "человек" };
                 dgvRow.Cells.Add(cellName);
                 dgvRow.Cells.Add(cellNum);
@@ -335,12 +335,12 @@ namespace KmsReportClient.Report.Basic
 
                 for (int i = 3; i < countRows; i++)
                 {
-                    var cell = new DataGridViewTextBoxCell { Value = row.Exclusion ? "x" : "0" };
+                    var cell = new DataGridViewTextBoxCell { Value = row.Exclusion_fromxml ? "x" : "0" };
                     dgvRow.Cells.Add(cell);
                 }
 
                 int rowIndex = Dgv.Rows.Add(dgvRow);
-                if (row.Exclusion)
+                if (row.Exclusion_fromxml)
                 {
                     Dgv.Rows[rowIndex].ReadOnly = true;
                     Dgv.Rows[rowIndex].DefaultCellStyle.BackColor = Color.LightCyan;
