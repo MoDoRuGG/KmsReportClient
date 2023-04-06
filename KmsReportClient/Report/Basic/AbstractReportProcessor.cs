@@ -171,7 +171,7 @@ namespace KmsReportClient.Report.Basic
                                 }
                                 /// НА ДАННОМ ЭТАПЕ ПРОБЕГАЕМ ДЛЯ КАЖДОЙ СТРОКИ ОТЧЕТА ПО ЯЧЕЙКАМ и СУММИРУЕМ ЗНАЧЕНИЯ ДЛЯ ЦЕЛЕВЫХ (2-3-4-6) И ПЛАНОВЫХ (8-9-10-12), ПОКА ПРОСТО В ПЕРЕМЕННЫЕ valueCel и valuePlan ///
                             }
-                            else if ((Report.IdType == "Zpz" || Report.IdType == "Zpz_Q") && (GetCurrentTheme() == "Таблица 5" || GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 7"))
+                            else if ((Report.IdType == "Zpz" || Report.IdType == "Zpz_Q") && (GetCurrentTheme() == "Таблица 5А" || GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 7"))
                             {
                                 if (Dgv.Rows[row].Cells[cell].ColumnIndex == 2 || Dgv.Rows[row].Cells[cell].ColumnIndex == 3 || Dgv.Rows[row].Cells[cell].ColumnIndex == 4 || Dgv.Rows[row].Cells[cell].ColumnIndex == 6)
                                 {

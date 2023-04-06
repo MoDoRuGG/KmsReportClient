@@ -418,7 +418,7 @@ namespace KmsReportClient.Report.Basic
                                  {
                                      Code = rowNum,
                                      CountSmo = GlobalUtils.TryParseDecimal(row.Cells[3].Value),
-                                     //CountSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[3].Value)
+                                     CountSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[2].Value)
                                  }).ToArray();
             SetFormula();
         }

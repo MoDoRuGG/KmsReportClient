@@ -12,20 +12,14 @@ namespace KmsReportClient.Excel.Creator.Base
 {
     class ExcelZpzQCreator : ExcelBaseCreator<ReportZpz>
     {
-        private readonly List<ReportDictionary> _pgDictionaries = new List<ReportDictionary> {
-            new ReportDictionary {TableName = "Таблица 1", StartRow = 12, EndRow = 70, Index = 1},
-            new ReportDictionary {TableName = "Таблица 2", StartRow = 7, EndRow = 28, Index = 2},
-            new ReportDictionary {TableName = "Таблица 3", StartRow = 7, EndRow = 35, Index = 3},
-            new ReportDictionary {TableName = "Таблица 4", StartRow = 7, EndRow = 11, Index = 4},
-            new ReportDictionary {TableName = "Таблица 5", StartRow = 7, EndRow = 34, Index = 5},
-            new ReportDictionary {TableName = "Таблица 6", StartRow = 7, EndRow = 49, Index = 6},
-            new ReportDictionary {TableName = "Таблица 8", StartRow = 7, EndRow = 72, Index = 7},
-            new ReportDictionary {TableName = "Таблица 10", StartRow = 7, EndRow = 49, Index = 8},
-            new ReportDictionary {TableName = "Таблица 11", StartRow = 7, EndRow = 27, Index = 9},
-            new ReportDictionary {TableName = "Таблица 12", StartRow = 7, EndRow = 24, Index = 10},
-            new ReportDictionary {TableName = "Таблица 13", StartRow = 7, EndRow = 21, Index = 11},
-            new ReportDictionary {TableName = "Таблица 1Л", StartRow = 5, EndRow = 28, Index = 12},
-            new ReportDictionary {TableName = "Таблица 2Л", StartRow = 5, EndRow = 30, Index = 13},
+        private readonly List<ReportDictionary> _zpzDictionaries = new List<ReportDictionary> {
+            new ReportDictionary {TableName = "Таблица 5А", StartRow = 6, EndRow = 313, Index = 1},
+            new ReportDictionary {TableName = "Таблица 6", StartRow = 7, EndRow = 187, Index = 2},
+            new ReportDictionary {TableName = "Таблица 7", StartRow = 7, EndRow = 407, Index = 3},
+            new ReportDictionary {TableName = "Таблица 8", StartRow = 5, EndRow = 459, Index = 4},
+            new ReportDictionary {TableName = "Таблица 9", StartRow = 6, EndRow = 38, Index = 5},
+            new ReportDictionary {TableName = "Таблица 1Л", StartRow = 5, EndRow = 28, Index = 6},
+            new ReportDictionary {TableName = "Таблица 2Л", StartRow = 5, EndRow = 30, Index = 9},
         };
 
         public ExcelZpzQCreator(
@@ -39,12 +33,12 @@ namespace KmsReportClient.Excel.Creator.Base
             string reportMonths = YymmUtils.GetMonth(report.Yymm.Substring(2, 2));
             string reportYear = report.Yymm.Substring(0, 2);
 
-            ObjWorkSheet.Cells[3, 1] = $"за {reportMonths} 20{reportYear} года";
-            ObjWorkSheet.Cells[4, 1] = FilialName;
+            //ObjWorkSheet.Cells[3, 1] = $"за {reportMonths} 20{reportYear} года";
+            //ObjWorkSheet.Cells[4, 1] = FilialName;
 
             foreach (var themeData in report.ReportDataList.OrderBy(x => x.Theme))
             {
-                var dict = _pgDictionaries.FirstOrDefault(x => x.TableName == themeData.Theme);
+                var dict = _zpzDictionaries.FirstOrDefault(x => x.TableName == themeData.Theme);
                 if (dict == null)
                 {
                     continue;
@@ -53,25 +47,17 @@ namespace KmsReportClient.Excel.Creator.Base
                 var data = themeData.Data;
                 switch (themeData.Theme)
                 {
-                    case "Таблица 1":
-                    case "Таблица 11":
-                    case "Таблица 12":
+                    case "Таблица 9":
                         FillTable1(data, dict.StartRow, dict.EndRow, themeData.Theme);
                         break;
-                    case "Таблица 2":
-                    case "Таблица 3":
-                        FillTable2(data, dict.StartRow, dict.EndRow);
-                        break;
-                    case "Таблица 4":
-                    case "Таблица 10":
-                    case "Таблица 13":
+                    case "Таблица 8":
                         FillTable4(data, dict.StartRow, dict.EndRow, themeData.Theme);
                         break;
                     case "Таблица 6":
-                    case "Таблица 8":
+                    case "Таблица 7":
                         FillTable6(data, dict.StartRow, dict.EndRow);
                         break;
-                    case "Таблица 5":
+                    case "Таблица 5А"    :
                         FillTable5(data, dict.StartRow, dict.EndRow);
                         break;
                     case "Таблица 1Л":
@@ -81,7 +67,7 @@ namespace KmsReportClient.Excel.Creator.Base
                 }
             }
 
-            ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets[13];
+            ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets[5];
             FinishZpz();
         }
 
@@ -89,21 +75,8 @@ namespace KmsReportClient.Excel.Creator.Base
         {
             int firstColumnIndex;
             int seconfColumnIndex;
-            switch (theme)
-            {
-                case "Таблица 1":
-                    firstColumnIndex = 8;
-                    seconfColumnIndex = 9;
-                    break;
-                case "Таблица 11":
-                    firstColumnIndex = 7;
-                    seconfColumnIndex = 9;
-                    break;
-                default:
-                    firstColumnIndex = 5;
-                    seconfColumnIndex = 6;
-                    break;
-            }
+            firstColumnIndex = 7;
+            seconfColumnIndex = 9;
 
             for (int i = startRowIndex; i <= endRowIndex; i++)
             {
@@ -120,53 +93,53 @@ namespace KmsReportClient.Excel.Creator.Base
             }
         }
 
-        private void FillTable2(ReportZpzDataDto[] data, int startRowIndex, int endRowIndex)
-        {
-            for (int i = startRowIndex; i <= endRowIndex; i++)
-            {
-                string rowNum = ObjWorkSheet.Cells[i, 2].Text;
-                if (!string.IsNullOrEmpty(rowNum))
-                {
-                    var rowData = data?.SingleOrDefault(x => x.Code == rowNum);
-                    if (rowData != null)
-                    {
-                        if (ObjWorkSheet.Cells[i, 5].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 5] = rowData.CountSmo;
-                        }
+        //private void FillTable2(ReportZpzDataDto[] data, int startRowIndex, int endRowIndex)
+        //{
+        //    for (int i = startRowIndex; i <= endRowIndex; i++)
+        //    {
+        //        string rowNum = ObjWorkSheet.Cells[i, 2].Text;
+        //        if (!string.IsNullOrEmpty(rowNum))
+        //        {
+        //            var rowData = data?.SingleOrDefault(x => x.Code == rowNum);
+        //            if (rowData != null)
+        //            {
+        //                if (ObjWorkSheet.Cells[i, 5].Text != "X")
+        //                {
+        //                    ObjWorkSheet.Cells[i, 5] = rowData.CountSmo;
+        //                }
 
-                        if (ObjWorkSheet.Cells[i, 7].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 7] = rowData.CountInsured;
-                        }
+        //                if (ObjWorkSheet.Cells[i, 7].Text != "X")
+        //                {
+        //                    ObjWorkSheet.Cells[i, 7] = rowData.CountInsured;
+        //                }
 
-                        if (ObjWorkSheet.Cells[i, 8].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 8] = rowData.CountInsuredRepresentative;
-                        }
+        //                if (ObjWorkSheet.Cells[i, 8].Text != "X")
+        //                {
+        //                    ObjWorkSheet.Cells[i, 8] = rowData.CountInsuredRepresentative;
+        //                }
 
-                        if (ObjWorkSheet.Cells[i, 9].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 9] = rowData.CountTfoms;
-                        }
+        //                if (ObjWorkSheet.Cells[i, 9].Text != "X")
+        //                {
+        //                    ObjWorkSheet.Cells[i, 9] = rowData.CountTfoms;
+        //                }
 
-                        if (ObjWorkSheet.Cells[i, 10].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 10] = rowData.CountSmoAnother;
-                        }
+        //                if (ObjWorkSheet.Cells[i, 10].Text != "X")
+        //                {
+        //                    ObjWorkSheet.Cells[i, 10] = rowData.CountSmoAnother;
+        //                }
 
-                        if (ObjWorkSheet.Cells[i, 11].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 11] = rowData.CountProsecutor;
-                        }
-                    }
-                }
-            }
-        }
+        //                if (ObjWorkSheet.Cells[i, 11].Text != "X")
+        //                {
+        //                    ObjWorkSheet.Cells[i, 11] = rowData.CountProsecutor;
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
 
         private void FillTable4(ReportZpzDataDto[] data, int startRowIndex, int endRowIndex, string form)
         {
-            int columnIndex = form == "Таблица 13" ? 4 : 5;
+            int columnIndex = 5;
             for (int i = startRowIndex; i <= endRowIndex; i++)
             {
                 string rowNum = ObjWorkSheet.Cells[i, 2].Text;
@@ -341,22 +314,22 @@ namespace KmsReportClient.Excel.Creator.Base
 
         private void FinishZpz()
         {
-            ObjWorkSheet.Cells[24, 3] = CurrentUser.Director;
-            ObjWorkSheet.Cells[27, 1] = "Дата: " + DateTime.Today.ToShortDateString();
+            ObjWorkSheet.Cells[41, 3] = CurrentUser.Director;
+            ObjWorkSheet.Cells[44, 1] = "Дата: " + DateTime.Today.ToShortDateString();
             if (!string.IsNullOrEmpty(CurrentUser.DirectorPhone))
             {
                 var code = GetPhoneCode(CurrentUser.DirectorPhone);
                 var number = GetPhoneNumber(CurrentUser.DirectorPhone);
-                ObjWorkSheet.Cells[27, 4] = $"+7 ({code}) {number}";
+                ObjWorkSheet.Cells[44, 4] = $"+7 ({code}) {number}";
             }
 
-            ObjWorkSheet.Cells[30, 3] = CurrentUser.UserName;
-            ObjWorkSheet.Cells[33, 1] = CurrentUser.Email ?? "";
+            ObjWorkSheet.Cells[47, 3] = CurrentUser.UserName;
+            ObjWorkSheet.Cells[50, 1] = CurrentUser.Email ?? "";
             if (!string.IsNullOrEmpty(CurrentUser.Phone))
             {
                 var code = GetPhoneCode(CurrentUser.Phone);
                 var number = GetPhoneNumber(CurrentUser.Phone);
-                ObjWorkSheet.Cells[33, 4] = $"+7 ({code}) {number}";
+                ObjWorkSheet.Cells[50, 4] = $"+7 ({code}) {number}";
             }
         }
 

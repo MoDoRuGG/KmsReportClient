@@ -72,7 +72,7 @@ namespace KmsReportClient.Excel.Creator.Base
                     var rowData = data?.SingleOrDefault(x => x.Code == rowNum);
                     if (rowData != null)
                     {
-                        ObjWorkSheet.Cells[i, columnIndex] = rowData.CountSmo;
+                        ObjWorkSheet.Cells[i, columnIndex] = rowData.CountSmoAnother;
                         if (form == "Таблица 10")
                         ObjWorkSheet.Cells[i, columnIndex+1] = rowData.CountSmo;
                     }

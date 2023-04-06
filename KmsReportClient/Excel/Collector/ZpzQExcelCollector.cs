@@ -12,7 +12,7 @@ namespace KmsReportClient.Excel.Collector
         private readonly string[] _columnsTable5A = { "2", "4", "5", "6", "7", "8", "9" };
         private readonly string[] _columnsTable6 = { "2", "4", "5", "6", "7", "8", "9", "11", "12", "13", "14", "15", "16" };
         private readonly string[] _columnsTable7 = { "2", "4", "5", "6", "7", "8", "9", "11", "12", "13", "14", "15", "16" };
-        private readonly string[] _columnsTable8 = { "2", "4" };
+        private readonly string[] _columnsTable8 = { "2", "5" };
         private readonly string[] _columnsTable9 = { "2", "7", "9" };
         private readonly string[] _columnsTableLetal1 = { "2", "3","4","5","6","7" };
 
@@ -45,7 +45,7 @@ namespace KmsReportClient.Excel.Collector
             return report;
         }
 
-        private ReportZpzDataDto[] FillTable1(string form)
+        private ReportZpzDataDto[] FillTable4(string form)
         {
             var list = new List<ReportZpzDataDto>();
             int countWorkSheet = ObjWorkBook.Worksheets.Count;
@@ -116,7 +116,7 @@ namespace KmsReportClient.Excel.Collector
             return list.ToArray();
         }
 
-        private ReportZpzDataDto[] FillTable4(string form)
+        private ReportZpzDataDto[] FillTable1(string form)
         {
             var list = new List<ReportZpzDataDto>();
             int countWorkSheet = ObjWorkBook.Worksheets.Count;
@@ -138,7 +138,7 @@ namespace KmsReportClient.Excel.Collector
                     var data = new ReportZpzDataDto
                     {
                         Code = ObjWorkSheet.Cells[i, dictionary["2"]].Text,
-                        CountSmo = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["4"]].Text)
+                        CountSmo = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["5"]].Text)
                     };
                     list.Add(data);
                 }
