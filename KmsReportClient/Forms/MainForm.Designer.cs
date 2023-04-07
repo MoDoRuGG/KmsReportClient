@@ -1887,6 +1887,7 @@ namespace KmsReportClient.Forms
             this.DgwReportZpzQ.RowHeadersDefaultCellStyle = dataGridViewCellStyle52;
             this.DgwReportZpzQ.Size = new System.Drawing.Size(699, 272);
             this.DgwReportZpzQ.TabIndex = 8;
+            this.DgwReportZpzQ.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvReportZpzQ_CellEndEdit);
             // 
             // TxtbZpzQ
             // 

@@ -68,6 +68,8 @@ namespace KmsReportClient.Report.Basic
             }, //2Л
             new[]
             {
+                "Дата сдачи формы ЗПЗ в ТФОМС",
+                "Всего",
                 "Количество оплаченных страховых случаев (по результатам МЭК ТФОМС) вне медицинской организации",
                 "Количество оплаченных страховых случаев (по результатам МЭК ТФОМС) амбулаторно",
                 "Количество оплаченных страховых случаев (по результатам МЭК ТФОМС) в дневном стационаре",
@@ -117,7 +119,7 @@ namespace KmsReportClient.Report.Basic
             { "Таблица 2", "Количество спорных случаев (сумма возмещения ущерба, причиненного застрахованным лицам)" },
             { "Таблица 3", "Виды обращений" },
             { "Таблица 4", "Количество исков в порядке регресса (сумма средств, полученных по регрессным искам)" },
-            { "Таблица 5А", "Количество счетов" },
+            { "Таблица 5А", "№ строки" },
             { "Таблица 6", "Количество проведенных медико-экономических экспертиз медицинской помощи (далее - МЭЭ) (выявленных нарушений)" },
             { "Таблица 7", "Количество проведенных экспертиз качества медицинской помощи (далее - ЭКМП) (выявленных нарушений)" },
             { "Таблица 8", "Финансовые результаты" },
@@ -189,29 +191,34 @@ namespace KmsReportClient.Report.Basic
             if (_forms1.Contains(form))
             {
                 FillDgwForms1(Dgv, form);
+                SetTotalColumn();
             }
             else if (_forms2.Contains(form))
             {
                 FillDgwForms2(Dgv, form);
+                SetTotalColumn();
             }
             else if (_forms3.Contains(form))
             {
                 FillDgwForms3(Dgv, form);
+                SetTotalColumn();
             }
             else if (_forms4.Contains(form))
             {
                 FillDgwForms4(Dgv, form);
+                SetTotalColumn();
             }
             else if (_forms6.Contains(form))
             {
                 FillDgwForms6(Dgv, form);
+                SetTotalColumn();
             }
             else
             {
                 FillDgwForms5(Dgv, form);
             }
 
-            SetTotalColumn();
+
         }
 
         protected override void FillReport(string form)
@@ -253,151 +260,151 @@ namespace KmsReportClient.Report.Basic
 
         public override string ValidReport()
         {
-            
+
             string message = "";
             string[] validForms = { "Таблица 2", "Таблица 3", "Таблица 4", "Таблица 6", "Таблица 7" };
             decimal t2Str11Gr3 = 0;
             decimal t2Str332Gr6 = 0;
             foreach (var data in Report.ReportDataList.Where(x => validForms.Contains(x.Theme)))
             {
-                if (data.Data == null)
-                {
-                    continue;
-                }
+                //    if (data.Data == null)
+                //    {
+                //        continue;
+                //    }
 
-                string localMessage = "";
-                if (data.Theme == "Таблица 2")
-                {
-                    t2Str11Gr3 = data.Data
-                        .Where(x => x.Code == "1.1")
-                        .Sum(x => x.CountSmo);
-                    t2Str332Gr6 = data.Data
-                        .Where(x => x.Code == "3.3.2")
-                        .Sum(x => x.CountInsured + x.CountInsuredRepresentative + x.CountSmoAnother +
-                                  x.CountTfoms + x.CountProsecutor);
-                }
-                else if (data.Theme == "Таблица 3")
-                {
-                    decimal t3Str1Gr3 = data.Data.Where(x => x.Code.Length == 3 || x.Code.Length == 4).Sum(x => x.CountSmo);
-                    decimal t3Str1Gr6 = data.Data
-                        .Where(x => x.Code.Length == 3 || x.Code.Length == 4)
-                        .Sum(x => x.CountInsured + x.CountInsuredRepresentative + x.CountSmoAnother +
-                                  x.CountTfoms + x.CountProsecutor);
-                    if (t2Str11Gr3 != t3Str1Gr3)
-                    {
-                        localMessage += $"Значение поля Таблица 2 стр.1.1 (=${t2Str11Gr3}) гр.5 должно быть равно значению поля Таблица 3 стр.1 гр.5 (=${t3Str1Gr3}) \r\n";
-                    }
-                    if (t2Str332Gr6 != t3Str1Gr6)
-                    {
-                        localMessage += $"Значение поля Таблица 2 стр.3.3.2 гр.6 (сумма гр.7-11 (=${t2Str332Gr6}) ) должно быть равно значению поля Таблица 3 стр.1 гр.6 (сумма гр.7-11 (=${t3Str1Gr6})) \r\n";
-                    }
-                    if (localMessage.Length > 0)
-                    {
-                        message += $"Таблица 3. \r\n {localMessage}";
-                    }
-                }
-                else if (data.Theme == "Таблица 4")
-                {
-                    decimal t4Gr2 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountSmo);
-                    decimal t4Another = data.Data.Where(x => x.Code.Length == 3).Sum(x => x.CountSmo);
-                    if (t4Gr2 < t4Another)
-                    {
-                        message += "Таблица 4. \r\n Значение стр.2 должно быть меньше суммы строк 2.1-2.3 \r\n";
-                    }
-                }
-                else if (data.Theme == "Таблица 6" || data.Theme == "Таблица 7")
-                {
-                    string lastSumRow = data.Theme == "Таблица 6" ? "2.5, 2.6" : "2.5";
+                //    string localMessage = "";
+                //    if (data.Theme == "Таблица 2")
+                //    {
+                //        t2Str11Gr3 = data.Data
+                //            .Where(x => x.Code == "1.1")
+                //            .Sum(x => x.CountSmo);
+                //        t2Str332Gr6 = data.Data
+                //            .Where(x => x.Code == "3.3.2")
+                //            .Sum(x => x.CountInsured + x.CountInsuredRepresentative + x.CountSmoAnother +
+                //                      x.CountTfoms + x.CountProsecutor);
+                //    }
+                //    else if (data.Theme == "Таблица 3")
+                //    {
+                //        decimal t3Str1Gr3 = data.Data.Where(x => x.Code.Length == 3 || x.Code.Length == 4).Sum(x => x.CountSmo);
+                //        decimal t3Str1Gr6 = data.Data
+                //            .Where(x => x.Code.Length == 3 || x.Code.Length == 4)
+                //            .Sum(x => x.CountInsured + x.CountInsuredRepresentative + x.CountSmoAnother +
+                //                      x.CountTfoms + x.CountProsecutor);
+                //        if (t2Str11Gr3 != t3Str1Gr3)
+                //        {
+                //            localMessage += $"Значение поля Таблица 2 стр.1.1 (=${t2Str11Gr3}) гр.5 должно быть равно значению поля Таблица 3 стр.1 гр.5 (=${t3Str1Gr3}) \r\n";
+                //        }
+                //        if (t2Str332Gr6 != t3Str1Gr6)
+                //        {
+                //            localMessage += $"Значение поля Таблица 2 стр.3.3.2 гр.6 (сумма гр.7-11 (=${t2Str332Gr6}) ) должно быть равно значению поля Таблица 3 стр.1 гр.6 (сумма гр.7-11 (=${t3Str1Gr6})) \r\n";
+                //        }
+                //        if (localMessage.Length > 0)
+                //        {
+                //            message += $"Таблица 3. \r\n {localMessage}";
+                //        }
+                //    }
+                //    else if (data.Theme == "Таблица 4")
+                //    {
+                //        decimal t4Gr2 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountSmo);
+                //        decimal t4Another = data.Data.Where(x => x.Code.Length == 3).Sum(x => x.CountSmo);
+                //        if (t4Gr2 < t4Another)
+                //        {
+                //            message += "Таблица 4. \r\n Значение стр.2 должно быть меньше суммы строк 2.1-2.3 \r\n";
+                //        }
+                //    }
+                //    else if (data.Theme == "Таблица 6" || data.Theme == "Таблица 7")
+                //    {
+                //string lastSumRow = data.Theme == "Таблица 6" ? "2.5, 2.6" : "2.5";
 
-                    decimal gr4 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountOutOfSmo);
-                    decimal gr4Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountOutOfSmo);
-                    decimal gr5 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountAmbulatory);
-                    decimal gr5Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountAmbulatory);
-                    decimal gr6 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountDs);
-                    decimal gr6Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountDs);
-                    decimal gr7 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountDsVmp);
-                    decimal gr7Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountDsVmp);
-                    decimal gr8 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountStac);
-                    decimal gr8Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountStac);
-                    decimal gr9 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountStacVmp);
-                    decimal gr9Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountStacVmp);
-                    decimal gr11 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountOutOfSmoAnother);
-                    decimal gr11Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountOutOfSmoAnother);
-                    decimal gr12 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountAmbulatoryAnother);
-                    decimal gr12Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountAmbulatoryAnother);
-                    decimal gr13 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountDsAnother);
-                    decimal gr13Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountDsAnother);
-                    decimal gr14 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountDsVmpAnother);
-                    decimal gr14Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountDsVmpAnother);
-                    decimal gr15 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountStacAnother);
-                    decimal gr15Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountStacAnother);
-                    decimal gr16 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountStacVmpAnother);
-                    decimal gr16Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountStacVmpAnother);
-                    if (gr4 < gr4Another)
-                    {
-                        localMessage += $"гр.4 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
-                    }
+                //decimal gr4 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountOutOfSmo);
+                //decimal gr4Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountOutOfSmo);
+                //decimal gr5 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountAmbulatory);
+                //decimal gr5Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountAmbulatory);
+                //decimal gr6 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountDs);
+                //decimal gr6Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountDs);
+                //decimal gr7 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountDsVmp);
+                //decimal gr7Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountDsVmp);
+                //decimal gr8 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountStac);
+                //decimal gr8Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountStac);
+                //decimal gr9 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountStacVmp);
+                //decimal gr9Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountStacVmp);
+                //decimal gr11 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountOutOfSmoAnother);
+                //decimal gr11Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountOutOfSmoAnother);
+                //decimal gr12 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountAmbulatoryAnother);
+                //decimal gr12Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountAmbulatoryAnother);
+                //decimal gr13 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountDsAnother);
+                //decimal gr13Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountDsAnother);
+                //decimal gr14 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountDsVmpAnother);
+                //decimal gr14Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountDsVmpAnother);
+                //decimal gr15 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountStacAnother);
+                //decimal gr15Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountStacAnother);
+                //decimal gr16 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountStacVmpAnother);
+                //decimal gr16Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountStacVmpAnother);
+                //if (gr4 < gr4Another)
+                //{
+                //    localMessage += $"гр.4 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
+                //}
 
-                    if (gr5 < gr5Another)
-                    {
-                        localMessage += $"гр.5 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
-                    }
+                //if (gr5 < gr5Another)
+                //{
+                //    localMessage += $"гр.5 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
+                //}
 
-                    if (gr6 < gr6Another)
-                    {
-                        localMessage += $"гр.6 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
-                    }
+                //if (gr6 < gr6Another)
+                //{
+                //    localMessage += $"гр.6 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
+                //}
 
-                    if (gr7 < gr7Another)
-                    {
-                        localMessage += $"гр.7 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
-                    }
+                //if (gr7 < gr7Another)
+                //{
+                //    localMessage += $"гр.7 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
+                //}
 
-                    if (gr8 < gr8Another)
-                    {
-                        localMessage += $"гр.8 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
-                    }
+                //if (gr8 < gr8Another)
+                //{
+                //    localMessage += $"гр.8 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
+                //}
 
-                    if (gr9 < gr9Another)
-                    {
-                        localMessage += $"гр.9 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
-                    }
+                //if (gr9 < gr9Another)
+                //{
+                //    localMessage += $"гр.9 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
+                //}
 
-                    if (gr11 < gr11Another)
-                    {
-                        localMessage += $"гр.11 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
-                    }
+                //if (gr11 < gr11Another)
+                //{
+                //    localMessage += $"гр.11 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
+                //}
 
-                    if (gr12 < gr12Another)
-                    {
-                        localMessage += $"гр.12 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
-                    }
+                //if (gr12 < gr12Another)
+                //{
+                //    localMessage += $"гр.12 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
+                //}
 
-                    if (gr13 < gr13Another)
-                    {
-                        localMessage += $"гр.13 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
-                    }
+                //if (gr13 < gr13Another)
+                //{
+                //    localMessage += $"гр.13 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
+                //}
 
-                    if (gr14 < gr14Another)
-                    {
-                        localMessage += $"гр.14 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
-                    }
+                //if (gr14 < gr14Another)
+                //{
+                //    localMessage += $"гр.14 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
+                //}
 
-                    if (gr15 < gr15Another)
-                    {
-                        localMessage += $"гр.15 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
-                    }
+                //if (gr15 < gr15Another)
+                //{
+                //    localMessage += $"гр.15 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
+                //}
 
-                    if (gr16 < gr16Another)
-                    {
-                        localMessage += $"гр.16 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
-                    }
+                //if (gr16 < gr16Another)
+                //{
+                //    localMessage += $"гр.16 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
+                //}
 
-                    if (localMessage.Length > 0)
-                    {
-                        message += $"{data.Theme}. \r\n {localMessage}";
-                    }
-                }
+                //if (localMessage.Length > 0)
+                //{
+                //    message += $"{data.Theme}. \r\n {localMessage}";
+                //}
+                //}
             }
             if (message.Length > 0)
             {
@@ -415,8 +422,10 @@ namespace KmsReportClient.Report.Basic
 
         public override void SaveToDb()
         {
+            SetFormula();
             var request = new SaveReportRequest
             {
+
                 Body = new SaveReportRequestBody
                 {
                     filialCode = CurrentUser.FilialCode,
@@ -457,8 +466,14 @@ namespace KmsReportClient.Report.Basic
             var formsList = ThemesList.Select(x => x.Key).OrderBy(x => x).ToList();
             var index = formsList.IndexOf(form);
             var currentHeaders = _headers[index];
-            CreateDgvColumnsForTheme(Dgv, 400, _headersMap[form], currentHeaders);
-
+            if (GetCurrentTheme() == "Таблица 5А")
+            {
+                CreateDgvColumnsForTheme(Dgv, 70, _headersMap[form], currentHeaders);
+            }
+            else
+            {
+                CreateDgvColumnsForTheme(Dgv, 400, _headersMap[form], currentHeaders);
+            }
             int countRows = ThemeTextData.Tables_fromxml.Single(x => x.TableName_fromxml == form).RowsCount_fromxml;
             foreach (var row in table)
             {
@@ -538,20 +553,23 @@ namespace KmsReportClient.Report.Basic
                 }
             };
             dgvReport.Columns.Add(column);
-            column = new DataGridViewTextBoxColumn
+            if (GetCurrentTheme() != "Таблица 5А")
             {
-                HeaderText = "№ строки",
-                Width = 70,
-                DataPropertyName = "NumRow",
-                Name = "NumRow",
-                ReadOnly = true,
-                SortMode = DataGridViewColumnSortMode.NotSortable,
-                DefaultCellStyle = new DataGridViewCellStyle
+                column = new DataGridViewTextBoxColumn
                 {
-                    BackColor = Color.Azure
-                }
-            };
-            dgvReport.Columns.Add(column);
+                    HeaderText = "№ строки",
+                    Width = 70,
+                    DataPropertyName = "NumRow",
+                    Name = "NumRow",
+                    ReadOnly = true,
+                    SortMode = DataGridViewColumnSortMode.NotSortable,
+                    DefaultCellStyle = new DataGridViewCellStyle
+                    {
+                        BackColor = Color.Azure
+                    }
+                };
+                dgvReport.Columns.Add(column);
+            }
         }
 
         private void FillThemesForms1(DataGridView dgvReport, string form)
@@ -563,14 +581,14 @@ namespace KmsReportClient.Report.Basic
             }
 
             reportZpzDto.Data = (from DataGridViewRow row in dgvReport.Rows
-                                let rowNum = row.Cells[1].Value.ToString().Trim()
-                                where !IsNotNeedFillRow(form, rowNum)
-                                select new ReportZpzDataDto
-                                {
-                                    Code = rowNum,
-                                    CountSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
-                                    CountSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[3].Value)
-                                }).ToArray();
+                                 let rowNum = row.Cells[1].Value.ToString().Trim()
+                                 where !IsNotNeedFillRow(form, rowNum)
+                                 select new ReportZpzDataDto
+                                 {
+                                     Code = rowNum,
+                                     CountSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
+                                     CountSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[3].Value)
+                                 }).ToArray();
         }
 
         private void FillThemesForms2(DataGridView dgvReport, string form)
@@ -579,18 +597,18 @@ namespace KmsReportClient.Report.Basic
             if (reportZpzDto != null)
             {
                 reportZpzDto.Data = (from DataGridViewRow row in dgvReport.Rows
-                                    let rowNum = row.Cells[1].Value.ToString().Trim()
-                                    where !IsNotNeedFillRow(form, rowNum)
-                                    select new ReportZpzDataDto
-                                    {
-                                        Code = rowNum,
-                                        CountSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
-                                        CountInsured = GlobalUtils.TryParseDecimal(row.Cells[3].Value),
-                                        CountInsuredRepresentative = GlobalUtils.TryParseDecimal(row.Cells[4].Value),
-                                        CountTfoms = GlobalUtils.TryParseDecimal(row.Cells[5].Value),
-                                        CountSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[6].Value),
-                                        CountProsecutor = GlobalUtils.TryParseDecimal(row.Cells[7].Value)
-                                    }).ToArray();
+                                     let rowNum = row.Cells[1].Value.ToString().Trim()
+                                     where !IsNotNeedFillRow(form, rowNum)
+                                     select new ReportZpzDataDto
+                                     {
+                                         Code = rowNum,
+                                         CountSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
+                                         CountInsured = GlobalUtils.TryParseDecimal(row.Cells[3].Value),
+                                         CountInsuredRepresentative = GlobalUtils.TryParseDecimal(row.Cells[4].Value),
+                                         CountTfoms = GlobalUtils.TryParseDecimal(row.Cells[5].Value),
+                                         CountSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[6].Value),
+                                         CountProsecutor = GlobalUtils.TryParseDecimal(row.Cells[7].Value)
+                                     }).ToArray();
             }
         }
 
@@ -600,13 +618,13 @@ namespace KmsReportClient.Report.Basic
             if (reportZpzDto != null)
             {
                 reportZpzDto.Data = (from DataGridViewRow row in dgvReport.Rows
-                                    let rowNum = row.Cells[1].Value.ToString().Trim()
-                                    where !IsNotNeedFillRow(form, rowNum)
-                                    select new ReportZpzDataDto
-                                    {
-                                        Code = rowNum,
-                                        CountSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value)
-                                    }).ToArray();
+                                     let rowNum = row.Cells[1].Value.ToString().Trim()
+                                     where !IsNotNeedFillRow(form, rowNum)
+                                     select new ReportZpzDataDto
+                                     {
+                                         Code = rowNum,
+                                         CountSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value)
+                                     }).ToArray();
             }
         }
 
@@ -616,48 +634,50 @@ namespace KmsReportClient.Report.Basic
             if (reportZpzDto != null)
             {
                 reportZpzDto.Data = (from DataGridViewRow row in dgvReport.Rows
-                                    let rowNum = row.Cells[1].Value.ToString().Trim()
-                                    where !IsNotNeedFillRow(form, rowNum)
-                                    select new ReportZpzDataDto
-                                    {
-                                        Code = rowNum,
-                                        CountOutOfSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
-                                        CountAmbulatory = GlobalUtils.TryParseDecimal(row.Cells[3].Value),
-                                        CountDs = GlobalUtils.TryParseDecimal(row.Cells[4].Value),
-                                        CountDsVmp = GlobalUtils.TryParseDecimal(row.Cells[5].Value),
-                                        CountStac = GlobalUtils.TryParseDecimal(row.Cells[6].Value),
-                                        CountStacVmp = GlobalUtils.TryParseDecimal(row.Cells[7].Value),
-                                        CountOutOfSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[8].Value),
-                                        CountAmbulatoryAnother = GlobalUtils.TryParseDecimal(row.Cells[9].Value),
-                                        CountDsAnother = GlobalUtils.TryParseDecimal(row.Cells[10].Value),
-                                        CountDsVmpAnother = GlobalUtils.TryParseDecimal(row.Cells[11].Value),
-                                        CountStacAnother = GlobalUtils.TryParseDecimal(row.Cells[12].Value),
-                                        CountStacVmpAnother = GlobalUtils.TryParseDecimal(row.Cells[13].Value)
-                                    }).ToArray();
+                                     let rowNum = row.Cells[1].Value.ToString().Trim()
+                                     where !IsNotNeedFillRow(form, rowNum)
+                                     select new ReportZpzDataDto
+                                     {
+                                         Code = rowNum,
+                                         CountOutOfSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
+                                         CountAmbulatory = GlobalUtils.TryParseDecimal(row.Cells[3].Value),
+                                         CountDs = GlobalUtils.TryParseDecimal(row.Cells[4].Value),
+                                         CountDsVmp = GlobalUtils.TryParseDecimal(row.Cells[5].Value),
+                                         CountStac = GlobalUtils.TryParseDecimal(row.Cells[6].Value),
+                                         CountStacVmp = GlobalUtils.TryParseDecimal(row.Cells[7].Value),
+                                         CountOutOfSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[8].Value),
+                                         CountAmbulatoryAnother = GlobalUtils.TryParseDecimal(row.Cells[9].Value),
+                                         CountDsAnother = GlobalUtils.TryParseDecimal(row.Cells[10].Value),
+                                         CountDsVmpAnother = GlobalUtils.TryParseDecimal(row.Cells[11].Value),
+                                         CountStacAnother = GlobalUtils.TryParseDecimal(row.Cells[12].Value),
+                                         CountStacVmpAnother = GlobalUtils.TryParseDecimal(row.Cells[13].Value)
+                                     }).ToArray();
             }
         }
 
 
 
-        private void FillThemesForms5(DataGridView dgvReport, string form)
+        private void FillThemesForms5(DataGridView dgvReport, string form) // в базу
         {
             var reportZpzDto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
             if (reportZpzDto != null)
             {
-                reportZpzDto.Data = (from DataGridViewRow row in dgvReport.Rows
-                                    let rowNum = row.Cells[1].Value.ToString().Trim()
-                                    where !IsNotNeedFillRow(form, rowNum)
-                                    select new ReportZpzDataDto
-                                    {
-                                        Code = rowNum,
-                                        CountOutOfSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
-                                        CountAmbulatory = GlobalUtils.TryParseDecimal(row.Cells[3].Value),
-                                        CountDs = GlobalUtils.TryParseDecimal(row.Cells[4].Value),
-                                        CountDsVmp = GlobalUtils.TryParseDecimal(row.Cells[5].Value),
-                                        CountStac = GlobalUtils.TryParseDecimal(row.Cells[6].Value),
-                                        CountStacVmp = GlobalUtils.TryParseDecimal(row.Cells[7].Value)
-                                    }).ToArray();
+
+                    reportZpzDto.Data = (from DataGridViewRow row in dgvReport.Rows
+                                         let rowNum = row.Cells[1].Value.ToString()
+                                         select new ReportZpzDataDto
+                                         {
+                                             Code = row.Cells[1].Value.ToString() ?? " ",
+                                             CountSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
+                                             CountSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[3].Value),
+                                             CountInsured = GlobalUtils.TryParseDecimal(row.Cells[4].Value),
+                                             CountInsuredRepresentative = GlobalUtils.TryParseDecimal(row.Cells[5].Value),
+                                             CountTfoms = GlobalUtils.TryParseDecimal(row.Cells[6].Value),
+                                             CountProsecutor = GlobalUtils.TryParseDecimal(row.Cells[7].Value),
+                                             CountOutOfSmo = GlobalUtils.TryParseDecimal(row.Cells[8].Value)
+                                         }).ToArray();
             }
+
         }
 
 
@@ -667,18 +687,18 @@ namespace KmsReportClient.Report.Basic
             if (reportZpzDto != null)
             {
                 reportZpzDto.Data = (from DataGridViewRow row in dgvReport.Rows
-                                    let rowNum = row.Cells[1].Value.ToString().Trim()
-                                    where !IsNotNeedFillRow(form, rowNum)
-                                    select new ReportZpzDataDto
-                                    {
-                                        Code = rowNum,                                       
-                                        CountAmbulatory = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
-                                        CountStac = GlobalUtils.TryParseDecimal(row.Cells[3].Value),
-                                        CountDs = GlobalUtils.TryParseDecimal(row.Cells[4].Value),                                                                          
-                                        CountOutOfSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[5].Value),
-                                        CountSmo = GlobalUtils.TryParseDecimal(row.Cells[6].Value),
+                                     let rowNum = row.Cells[1].Value.ToString().Trim()
+                                     where !IsNotNeedFillRow(form, rowNum)
+                                     select new ReportZpzDataDto
+                                     {
+                                         Code = rowNum,
+                                         CountAmbulatory = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
+                                         CountStac = GlobalUtils.TryParseDecimal(row.Cells[3].Value),
+                                         CountDs = GlobalUtils.TryParseDecimal(row.Cells[4].Value),
+                                         CountOutOfSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[5].Value),
+                                         CountSmo = GlobalUtils.TryParseDecimal(row.Cells[6].Value),
 
-                                    }).ToArray();
+                                     }).ToArray();
             }
         }
 
@@ -792,7 +812,7 @@ namespace KmsReportClient.Report.Basic
 
         }
 
-        private void FillDgwForms5(DataGridView dgvReport, string form)
+        private void FillDgwForms5(DataGridView dgvReport, string form) // в форму
         {
             var reportZpzDto = Report.ReportDataList.Single(x => x.Theme == form);
             if (reportZpzDto.Data == null || reportZpzDto.Data.Length == 0)
@@ -803,21 +823,22 @@ namespace KmsReportClient.Report.Basic
             var rows = ThemeTextData.Tables_fromxml.Where(x => x.TableName_fromxml == form).SelectMany(x => x.Rows_fromxml).ToList();
             foreach (DataGridViewRow row in dgvReport.Rows)
             {
-                var rowNum = row.Cells[1].Value.ToString().Trim();
-                var data = reportZpzDto.Data.SingleOrDefault(x => x.Code == rowNum);
-                bool isExclusionsRow = rows.Single(x => x.RowNum_fromxml == rowNum).Exclusion_fromxml;
+                var data = reportZpzDto.Data.SingleOrDefault();
+                bool isExclusionsRow = false;
                 if (data == null)
                 {
                     continue;
                 }
-
-                row.Cells[2].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, null, 0, data.CountOutOfSmo);
-                row.Cells[3].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, null, 0, data.CountAmbulatory);
-                row.Cells[4].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, null, 0, data.CountDs);
-                row.Cells[5].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, null, 0, data.CountDsVmp);
-                row.Cells[6].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, null, 0, data.CountStac);
-                row.Cells[7].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, null, 0, data.CountStacVmp);
+                row.Cells[1].Value = data.Code;
+                row.Cells[2].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, null, 0, data.CountSmo);
+                row.Cells[3].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, null, 0, data.CountSmoAnother);
+                row.Cells[4].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, null, 0, data.CountInsured);
+                row.Cells[5].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, null, 0, data.CountInsuredRepresentative);
+                row.Cells[6].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, null, 0, data.CountTfoms);
+                row.Cells[7].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, null, 0, data.CountProsecutor);
+                row.Cells[8].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, null, 0, data.CountOutOfSmo);
             }
+            SetFormula();
         }
 
         private void FillDgwForms6(DataGridView dgvReport, string form)
@@ -833,7 +854,7 @@ namespace KmsReportClient.Report.Basic
             }
 
             var rows = ThemeTextData.Tables_fromxml.Where(x => x.TableName_fromxml == form).SelectMany(x => x.Rows_fromxml).ToList();
-           
+
             foreach (DataGridViewRow row in dgvReport.Rows)
             {
                 var rowNum = row.Cells[1].Value.ToString().Trim();
@@ -850,12 +871,21 @@ namespace KmsReportClient.Report.Basic
                 row.Cells[4].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, exclusionsCells, 4, data.CountDs);
                 row.Cells[5].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, exclusionsCells, 5, data.CountOutOfSmoAnother);
                 row.Cells[6].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, exclusionsCells, 6, data.CountSmo);
-             
-                                    
             }
         }
 
-
-
+        public void SetFormula()
+        {
+            if (GetCurrentTheme() == "Таблица 5А")
+            {
+                foreach (DataGridViewRow row in Dgv.Rows)
+                {
+                    row.Cells[2].Value = GlobalUtils.TryParseDecimal(row.Cells[3].Value) +
+                                         GlobalUtils.TryParseDecimal(row.Cells[4].Value) +
+                                         GlobalUtils.TryParseDecimal(row.Cells[5].Value) +
+                                         GlobalUtils.TryParseDecimal(row.Cells[7].Value);
+                }
+            }
+        }
     }
 }

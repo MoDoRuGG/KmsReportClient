@@ -1925,6 +1925,11 @@ namespace KmsReportClient.Forms
             (_processor as ReportZpz10Processor).SetFormula();
         }
 
+        private void DgvReportZpzQ_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as ReportZpzQProcessor).SetFormula();
+        }
+
         private void DgvReportZpz10_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             (_processor as ReportZpz10Processor).SetFormula();

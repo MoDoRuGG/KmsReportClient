@@ -91,53 +91,55 @@ namespace KmsReportClient.Report.Basic
 
         public void CreateTotalColumn()
         {
-            if (Report.IdType == "Zpz10") { Dgv.Columns.Add("Total", "С начала года"); }
-            else  { Dgv.Columns.Add("Total", "Итого"); }
-
-            Dgv.Columns["Total"].ReadOnly = true;
-            Dgv.Columns["Total"].DefaultCellStyle.BackColor = Color.LightGray;
-
-            Dgv.Columns["Total"].DisplayIndex = 2;
-
-            if (Report.IdType == "PG" || Report.IdType == "PG_Q")
+            if (GetCurrentTheme() != "Таблица 5А")
             {
-                if (GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 8")
+                if (Report.IdType == "Zpz10") { Dgv.Columns.Add("Total", "С начала года"); }
+                else { Dgv.Columns.Add("Total", "Итого"); }
+
+                Dgv.Columns["Total"].ReadOnly = true;
+                Dgv.Columns["Total"].DefaultCellStyle.BackColor = Color.LightGray;
+
+                Dgv.Columns["Total"].DisplayIndex = 2;
+
+                if (Report.IdType == "PG" || Report.IdType == "PG_Q")
                 {
-                    Dgv.Columns["Total"].HeaderText = "Итого цел";
+                    if (GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 8")
+                    {
+                        Dgv.Columns["Total"].HeaderText = "Итого цел";
 
-                    Dgv.Columns.Add("TotalPlan", "Итого план");
-                    Dgv.Columns["TotalPlan"].DisplayIndex = 9;
+                        Dgv.Columns.Add("TotalPlan", "Итого план");
+                        Dgv.Columns["TotalPlan"].DisplayIndex = 9;
 
-                    Dgv.Columns["TotalPlan"].ReadOnly = true;
-                    Dgv.Columns["TotalPlan"].DefaultCellStyle.BackColor = Color.LightGray;
+                        Dgv.Columns["TotalPlan"].ReadOnly = true;
+                        Dgv.Columns["TotalPlan"].DefaultCellStyle.BackColor = Color.LightGray;
 
-                    Dgv.Columns.Add("TotalPlanCel", "Итого");
-                    Dgv.Columns["TotalPlanCel"].DisplayIndex = 2;
+                        Dgv.Columns.Add("TotalPlanCel", "Итого");
+                        Dgv.Columns["TotalPlanCel"].DisplayIndex = 2;
 
-                    Dgv.Columns["TotalPlanCel"].ReadOnly = true;
-                    Dgv.Columns["TotalPlanCel"].DefaultCellStyle.BackColor = Color.Gray;
+                        Dgv.Columns["TotalPlanCel"].ReadOnly = true;
+                        Dgv.Columns["TotalPlanCel"].DefaultCellStyle.BackColor = Color.Gray;
+                    }
+                }
+                if (Report.IdType == "Zpz" || Report.IdType == "Zpz_Q")
+                {
+                    if (GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 7")
+                    {
+                        Dgv.Columns["Total"].HeaderText = "Итого цел";
+
+                        Dgv.Columns.Add("TotalPlan", "Итого план");
+                        Dgv.Columns["TotalPlan"].DisplayIndex = 9;
+
+                        Dgv.Columns["TotalPlan"].ReadOnly = true;
+                        Dgv.Columns["TotalPlan"].DefaultCellStyle.BackColor = Color.LightGray;
+
+                        Dgv.Columns.Add("TotalPlanCel", "Итого");
+                        Dgv.Columns["TotalPlanCel"].DisplayIndex = 2;
+
+                        Dgv.Columns["TotalPlanCel"].ReadOnly = true;
+                        Dgv.Columns["TotalPlanCel"].DefaultCellStyle.BackColor = Color.Gray;
+                    }
                 }
             }
-            if (Report.IdType == "Zpz" || Report.IdType == "Zpz_Q")
-            {
-                if (GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 7")
-                {
-                    Dgv.Columns["Total"].HeaderText = "Итого цел";
-
-                    Dgv.Columns.Add("TotalPlan", "Итого план");
-                    Dgv.Columns["TotalPlan"].DisplayIndex = 9;
-
-                    Dgv.Columns["TotalPlan"].ReadOnly = true;
-                    Dgv.Columns["TotalPlan"].DefaultCellStyle.BackColor = Color.LightGray;
-
-                    Dgv.Columns.Add("TotalPlanCel", "Итого");
-                    Dgv.Columns["TotalPlanCel"].DisplayIndex = 2;
-
-                    Dgv.Columns["TotalPlanCel"].ReadOnly = true;
-                    Dgv.Columns["TotalPlanCel"].DefaultCellStyle.BackColor = Color.Gray;
-                }
-            }
-
         }
         
         public void SetTotalColumn()
