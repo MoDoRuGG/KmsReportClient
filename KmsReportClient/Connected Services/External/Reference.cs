@@ -2388,7 +2388,7 @@ namespace KmsReportClient.External {
         private KmsReportClient.External.Report262_Table3[] Report262_Table3Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.Report_ExpertEffectiveness[] Report_ExpertEffectivenessField;
+        private KmsReportClient.External.Report_Effectiveness[] Report_EffectivenessField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private KmsReportClient.External.Report_Flow Report_FlowField;
@@ -2693,14 +2693,14 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=22)]
-        public KmsReportClient.External.Report_ExpertEffectiveness[] Report_ExpertEffectiveness {
+        public KmsReportClient.External.Report_Effectiveness[] Report_Effectiveness {
             get {
-                return this.Report_ExpertEffectivenessField;
+                return this.Report_EffectivenessField;
             }
             set {
-                if ((object.ReferenceEquals(this.Report_ExpertEffectivenessField, value) != true)) {
-                    this.Report_ExpertEffectivenessField = value;
-                    this.RaisePropertyChanged("Report_ExpertEffectiveness");
+                if ((object.ReferenceEquals(this.Report_EffectivenessField, value) != true)) {
+                    this.Report_EffectivenessField = value;
+                    this.RaisePropertyChanged("Report_Effectiveness");
                 }
             }
         }
@@ -6420,9 +6420,9 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report_ExpertEffectiveness", Namespace="http://kms-oms.ru/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report_Effectiveness", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
-    public partial class Report_ExpertEffectiveness : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Report_Effectiveness : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -6432,12 +6432,9 @@ namespace KmsReportClient.External {
         private int Id_Report_DataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RowNumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string full_nameField;
         
-        private decimal expert_busynessField;
+        private System.Nullable<decimal> expert_busynessField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string expert_specialityField;
@@ -6445,29 +6442,32 @@ namespace KmsReportClient.External {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string expertise_typeField;
         
-        private int mee_quantity_planField;
+        private System.Nullable<decimal> mee_quantity_planField;
         
-        private int mee_quantity_factField;
+        private System.Nullable<decimal> mee_quantity_factField;
         
-        private decimal mee_quantity_percentField;
+        private System.Nullable<decimal> mee_quantity_percentField;
         
-        private int mee_yeild_planField;
+        private System.Nullable<decimal> mee_yeild_planField;
         
-        private int mee_yeild_factField;
+        private System.Nullable<decimal> mee_yeild_factField;
         
-        private decimal mee_yeild_percentField;
+        private System.Nullable<decimal> mee_yeild_percentField;
         
-        private int ekmp_quantity_planField;
+        private System.Nullable<decimal> ekmp_quantity_planField;
         
-        private int ekmp_quantity_factField;
+        private System.Nullable<decimal> ekmp_quantity_factField;
         
-        private decimal ekmp_quantity_percentField;
+        private System.Nullable<decimal> ekmp_quantity_percentField;
         
-        private int ekmp_yeild_planField;
+        private System.Nullable<decimal> ekmp_yeild_planField;
         
-        private int ekmp_yeild_factField;
+        private System.Nullable<decimal> ekmp_yeild_factField;
         
-        private decimal ekmp_yeild_percentField;
+        private System.Nullable<decimal> ekmp_yeild_percentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RowNumField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private KmsReportClient.External.Report_Data Report_DataField;
@@ -6509,19 +6509,6 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string RowNum {
-            get {
-                return this.RowNumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RowNumField, value) != true)) {
-                    this.RowNumField = value;
-                    this.RaisePropertyChanged("RowNum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
         public string full_name {
             get {
                 return this.full_nameField;
@@ -6534,8 +6521,8 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public decimal expert_busyness {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public System.Nullable<decimal> expert_busyness {
             get {
                 return this.expert_busynessField;
             }
@@ -6547,7 +6534,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
         public string expert_speciality {
             get {
                 return this.expert_specialityField;
@@ -6560,7 +6547,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
         public string expertise_type {
             get {
                 return this.expertise_typeField;
@@ -6573,8 +6560,8 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public int mee_quantity_plan {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public System.Nullable<decimal> mee_quantity_plan {
             get {
                 return this.mee_quantity_planField;
             }
@@ -6586,8 +6573,8 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public int mee_quantity_fact {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public System.Nullable<decimal> mee_quantity_fact {
             get {
                 return this.mee_quantity_factField;
             }
@@ -6599,8 +6586,8 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
-        public decimal mee_quantity_percent {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        public System.Nullable<decimal> mee_quantity_percent {
             get {
                 return this.mee_quantity_percentField;
             }
@@ -6612,8 +6599,8 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
-        public int mee_yeild_plan {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        public System.Nullable<decimal> mee_yeild_plan {
             get {
                 return this.mee_yeild_planField;
             }
@@ -6625,8 +6612,8 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
-        public int mee_yeild_fact {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        public System.Nullable<decimal> mee_yeild_fact {
             get {
                 return this.mee_yeild_factField;
             }
@@ -6638,8 +6625,8 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
-        public decimal mee_yeild_percent {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        public System.Nullable<decimal> mee_yeild_percent {
             get {
                 return this.mee_yeild_percentField;
             }
@@ -6651,8 +6638,8 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
-        public int ekmp_quantity_plan {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
+        public System.Nullable<decimal> ekmp_quantity_plan {
             get {
                 return this.ekmp_quantity_planField;
             }
@@ -6664,8 +6651,8 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
-        public int ekmp_quantity_fact {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
+        public System.Nullable<decimal> ekmp_quantity_fact {
             get {
                 return this.ekmp_quantity_factField;
             }
@@ -6677,8 +6664,8 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
-        public decimal ekmp_quantity_percent {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
+        public System.Nullable<decimal> ekmp_quantity_percent {
             get {
                 return this.ekmp_quantity_percentField;
             }
@@ -6690,8 +6677,8 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
-        public int ekmp_yeild_plan {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
+        public System.Nullable<decimal> ekmp_yeild_plan {
             get {
                 return this.ekmp_yeild_planField;
             }
@@ -6703,8 +6690,8 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
-        public int ekmp_yeild_fact {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
+        public System.Nullable<decimal> ekmp_yeild_fact {
             get {
                 return this.ekmp_yeild_factField;
             }
@@ -6716,8 +6703,8 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=18)]
-        public decimal ekmp_yeild_percent {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
+        public System.Nullable<decimal> ekmp_yeild_percent {
             get {
                 return this.ekmp_yeild_percentField;
             }
@@ -6725,6 +6712,19 @@ namespace KmsReportClient.External {
                 if ((this.ekmp_yeild_percentField.Equals(value) != true)) {
                     this.ekmp_yeild_percentField = value;
                     this.RaisePropertyChanged("ekmp_yeild_percent");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=18)]
+        public string RowNum {
+            get {
+                return this.RowNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RowNumField, value) != true)) {
+                    this.RowNumField = value;
+                    this.RaisePropertyChanged("RowNum");
                 }
             }
         }
@@ -14008,7 +14008,66 @@ namespace KmsReportClient.External {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        private int IdField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ThemeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.ReportEffectivenessDataDto[] DataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Theme {
+            get {
+                return this.ThemeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ThemeField, value) != true)) {
+                    this.ThemeField = value;
+                    this.RaisePropertyChanged("Theme");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public KmsReportClient.External.ReportEffectivenessDataDto[] Data {
+            get {
+                return this.DataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataField, value) != true)) {
+                    this.DataField = value;
+                    this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportEffectivenessDataDto", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportEffectivenessDataDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CodeRowNumField;
@@ -14024,32 +14083,29 @@ namespace KmsReportClient.External {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string expertise_typeField;
         
-        private int mee_quantity_planField;
+        private decimal mee_quantity_planField;
         
-        private int mee_quantity_factField;
+        private decimal mee_quantity_factField;
         
         private decimal mee_quantity_percentField;
         
-        private int mee_yeild_planField;
+        private decimal mee_yeild_planField;
         
-        private int mee_yeild_factField;
+        private decimal mee_yeild_factField;
         
         private decimal mee_yeild_percentField;
         
-        private int ekmp_quantity_planField;
+        private decimal ekmp_quantity_planField;
         
-        private int ekmp_quantity_factField;
+        private decimal ekmp_quantity_factField;
         
         private decimal ekmp_quantity_percentField;
         
-        private int ekmp_yeild_planField;
+        private decimal ekmp_yeild_planField;
         
-        private int ekmp_yeild_factField;
+        private decimal ekmp_yeild_factField;
         
         private decimal ekmp_yeild_percentField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ThemeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -14061,20 +14117,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
         public string CodeRowNum {
             get {
                 return this.CodeRowNumField;
@@ -14087,7 +14130,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
         public string full_name {
             get {
                 return this.full_nameField;
@@ -14100,7 +14143,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
         public decimal expert_busyness {
             get {
                 return this.expert_busynessField;
@@ -14113,7 +14156,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
         public string expert_speciality {
             get {
                 return this.expert_specialityField;
@@ -14126,7 +14169,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
         public string expertise_type {
             get {
                 return this.expertise_typeField;
@@ -14139,8 +14182,8 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public int mee_quantity_plan {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public decimal mee_quantity_plan {
             get {
                 return this.mee_quantity_planField;
             }
@@ -14152,8 +14195,8 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public int mee_quantity_fact {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public decimal mee_quantity_fact {
             get {
                 return this.mee_quantity_factField;
             }
@@ -14165,7 +14208,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
         public decimal mee_quantity_percent {
             get {
                 return this.mee_quantity_percentField;
@@ -14178,8 +14221,8 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
-        public int mee_yeild_plan {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        public decimal mee_yeild_plan {
             get {
                 return this.mee_yeild_planField;
             }
@@ -14191,8 +14234,8 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
-        public int mee_yeild_fact {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        public decimal mee_yeild_fact {
             get {
                 return this.mee_yeild_factField;
             }
@@ -14204,7 +14247,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
         public decimal mee_yeild_percent {
             get {
                 return this.mee_yeild_percentField;
@@ -14217,8 +14260,8 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
-        public int ekmp_quantity_plan {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        public decimal ekmp_quantity_plan {
             get {
                 return this.ekmp_quantity_planField;
             }
@@ -14230,8 +14273,8 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
-        public int ekmp_quantity_fact {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
+        public decimal ekmp_quantity_fact {
             get {
                 return this.ekmp_quantity_factField;
             }
@@ -14243,7 +14286,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
         public decimal ekmp_quantity_percent {
             get {
                 return this.ekmp_quantity_percentField;
@@ -14256,8 +14299,8 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
-        public int ekmp_yeild_plan {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
+        public decimal ekmp_yeild_plan {
             get {
                 return this.ekmp_yeild_planField;
             }
@@ -14269,8 +14312,8 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
-        public int ekmp_yeild_fact {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
+        public decimal ekmp_yeild_fact {
             get {
                 return this.ekmp_yeild_factField;
             }
@@ -14282,7 +14325,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
         public decimal ekmp_yeild_percent {
             get {
                 return this.ekmp_yeild_percentField;
@@ -14291,19 +14334,6 @@ namespace KmsReportClient.External {
                 if ((this.ekmp_yeild_percentField.Equals(value) != true)) {
                     this.ekmp_yeild_percentField = value;
                     this.RaisePropertyChanged("ekmp_yeild_percent");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=18)]
-        public string Theme {
-            get {
-                return this.ThemeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ThemeField, value) != true)) {
-                    this.ThemeField = value;
-                    this.RaisePropertyChanged("Theme");
                 }
             }
         }
