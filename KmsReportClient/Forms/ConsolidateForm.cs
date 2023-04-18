@@ -148,7 +148,15 @@ namespace KmsReportClient.Forms
                     panelRegion.Visible = false;
                     btnDo.Text = "Сформировать сводный отчет для контроля ЗПЗ (квартальный)";
                     saveFileDialog1.FileName = "Сводный отчет для контроля ЗПЗ (квартальный)";
-
+                    cmbStart.DataSource = GlobalConst.Periods;
+                    break;
+                case ConsolidateReport.ControlZpz2023Quarterly:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать сводный отчет для контроля ЗПЗ 2023(квартальный)";
+                    saveFileDialog1.FileName = "Сводный отчет для контроля ЗПЗ 2023(квартальный)";
                     cmbStart.DataSource = GlobalConst.Periods;
                     break;
                 case ConsolidateReport.Onko:
@@ -362,6 +370,9 @@ namespace KmsReportClient.Forms
                         break;
                     case ConsolidateReport.ControlZpzQuarterly:
                         CreateControlZpz(false);
+                        break;
+                    case ConsolidateReport.ControlZpz2023Quarterly:
+                        CreateControlZpz2023(false);
                         break;
                     case ConsolidateReport.ZpzWebSite:
                         CreateZpzWebSite();
@@ -679,6 +690,34 @@ namespace KmsReportClient.Forms
 
             string filename = saveFileDialog1.FileName;
             var excel = new ExcelControlZpzCreator(filename, "", _filialName, yymm);
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(filename);
+        }
+
+        private void CreateControlZpz2023(bool isMonthly)
+        {
+            string yymm = isMonthly ?
+                GetYymm(cmbStart.Text, Convert.ToInt32(nudStart.Value)).ToString() :
+                GetYymmQuarterly();
+
+            var data = _client.CreateReportControlZpz2023(yymm, isMonthly);
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            foreach (var d in data)
+            {
+                d.Filial = _regions.Single(x => x.Key == d.Filial).Value;
+            }
+
+            data = data.OrderBy(x => x.Filial).ToArray();
+
+            string filename = saveFileDialog1.FileName;
+            var excel = new ExcelControlZpz2023Creator(filename, "", _filialName, yymm);
             excel.CreateReport(data, null);
 
             GlobalUtils.OpenFileOrDirectory(filename);

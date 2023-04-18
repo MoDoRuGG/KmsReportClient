@@ -11,6 +11,7 @@
         ConsolidateFull294,
         ControlZpzMonthly,
         ControlZpzQuarterly,
+        ControlZpz2023Quarterly,
         ZpzWebSite,
         Onko,
         OnkoQuarterly,

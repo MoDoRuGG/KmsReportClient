@@ -2,6 +2,59 @@
 <wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://kms-oms.ru/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://kms-oms.ru/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://kms-oms.ru/">
+      <s:element name="CreateConsolidateLetal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateConsolidateLetalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateConsolidateLetalResult" type="tns:ArrayOfConsolidateLetal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfConsolidateLetal">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsolidateLetal" nillable="true" type="tns:ConsolidateLetal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConsolidateLetal">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:LetalData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LetalData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="r1" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="r1_1" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="r1_2" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="r121" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="r2" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="r3" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="r31" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="r311" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="r3111" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="r3112" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="r3113" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="r3114" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="r32" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="r33" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="r4" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="r5" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="r6" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="r7" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="r8" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="r9" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="r10" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="r11" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="r12" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="r13" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="CreateDynamicReport">
         <s:complexType>
           <s:sequence>
@@ -3417,6 +3470,195 @@
           <s:element minOccurs="1" maxOccurs="1" name="ExpertsOmsEkmpRemote" type="s:decimal" />
         </s:sequence>
       </s:complexType>
+      <s:element name="CreateReportControlZpz2023">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isMonthly" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateReportControlZpz2023Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateReportControlZpz2023Result" type="tns:ArrayOfCReportZpz2023" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCReportZpz2023">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CReportZpz2023" nillable="true" type="tns:CReportZpz2023" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CReportZpz2023">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Expertise" type="tns:ZpzExpertise2023" />
+          <s:element minOccurs="0" maxOccurs="1" name="Normative" type="tns:ZpzNormative2023" />
+          <s:element minOccurs="0" maxOccurs="1" name="Finance" type="tns:ZpzFinance2023" />
+          <s:element minOccurs="0" maxOccurs="1" name="Personnel" type="tns:ZpzPersonnel2023" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZpzExpertise2023">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Bills" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMee" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeComplaint" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeRepeat" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeOnco" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDs" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeLeth" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeInjured" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectedCase" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefects" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsPeriod" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsCondition" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsRepeat" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsOutOfDocums" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsUnpayable" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsBuyMedicament" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsOutOfLeth" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsWithoutDocums" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsIncorrectDocums" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsBadDocums" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsBadDate" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsBadData" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsOutOfProtocol" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpComplaint" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpLeth" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpByMek" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpByMee" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpUTheme" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpMulti" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpMultiLeth" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpMultiUtheme" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseDefectedBySmo" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpDefectedCase" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadDs" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadDsNotAffected" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadDsProlonger" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadDsDecline" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadDsInjured" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadDsLeth" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadMed" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpUnreglamentedMed" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpStopMed" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpContinuity" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpUnprofile" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpUnfounded" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpRepeat" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpDifference" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpUnfoundedMedicaments" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpUnfoundedReject" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpDisp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpRepeat2weeks" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpOutOfResults" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpDoubleHospital" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZpzNormative2023">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BillsOutMo" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MeeOutMoPlan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MeeOutMoTarget" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="BillsApp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MeeAppPlan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MeeAppTarget" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="BillsDayHosp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MeeDayHospPlan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MeeDayHospPlanVmp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MeeDayHospTarget" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MeeDayHospTargetVmp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="BillsHosp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MeeHospPlan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MeeHospPlanVmp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MeeHospTarget" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MeeHospTargetVmp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="EkmpOutMoPlan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="EkmpOutMoTarget" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="EkmpAppPlan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="EkmpAppTarget" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="EkmpDayHospPlan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="EkmpDayHospTarget" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="EkmpDayHospPlanVmp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="EkmpDayHospTargetVmp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="EkmpHospPlan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="EkmpHospTarget" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="EkmpHospPlanVmp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="EkmpHospTargetVmp" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZpzFinance2023">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SumPayment" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumNotPayment" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumMek" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumMee" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumEkmp" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZpzPersonnel2023">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SpecialistFullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SpecialistRemote" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="FullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Remote" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertsFullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertsRemote" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertsEkmpRegion" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertsEkmpRemote" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertisesFullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertisesRemote" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertisesPlanFullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertisesPlanRemote" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertisesPlanAppealFullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertisesPlanAppealRemote" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertisesPlanUnfoundedFullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertisesPlanUnfoundedRemote" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertisesUnplannedFullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertisesUnplannedRemote" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertisesUnplannedAppealFullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertisesUnplannedAppealRemote" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertisesUnplannedUnfoundedFullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertisesUnplannedUnfoundedRemote" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertisesThemeFullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertisesThemeRemote" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertisesThemeAppealFullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertisesThemeAppealRemote" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertisesThemeUnfoundedFullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertisesThemeUnfoundedRemote" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertisesMultiFullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertisesMultiRemote" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertisesMultiAppealFullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertisesMultiAppealRemote" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertisesMultiUnfoundedFullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertisesMultiUnfoundedRemote" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PreparedFullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PreparedRemote" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="QualFullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="QualRemote" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="QualHigherFullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="QualHigherRemote" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Qual1stFullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Qual1stRemote" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Qual2ndFullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Qual2ndRemote" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DegreeFullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DegreeRemote" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CandidateFullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CandidateRemote" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DoctorFullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DoctorRemote" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="InsRepresFullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="InsRepres1FullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="InsRepres1spFullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="InsRepres2FullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="InsRepres2spFullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="InsRepres3FullTime" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="InsRepres3spFullTime" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="CreateConsolidateOnko">
         <s:complexType>
           <s:sequence>
@@ -3529,61 +3771,14 @@
           <s:element minOccurs="1" maxOccurs="1" name="SumOtherEkmp" type="s:decimal" />
         </s:sequence>
       </s:complexType>
-      <s:element name="CreateConsolidateLetal">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CreateConsolidateLetalResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CreateConsolidateLetalResult" type="tns:ArrayOfConsolidateLetal" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfConsolidateLetal">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsolidateLetal" nillable="true" type="tns:ConsolidateLetal" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ConsolidateLetal">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:LetalData" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="LetalData">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="r1" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="r1_1" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="r1_2" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="r121" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="r2" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="r3" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="r31" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="r311" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="r3111" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="r3112" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="r3113" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="r3114" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="r32" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="r33" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="r4" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="r5" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="r6" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="r7" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="r8" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="r9" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="r10" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="r11" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="r12" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="r13" type="s:decimal" />
-        </s:sequence>
-      </s:complexType>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="CreateConsolidateLetalSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateConsolidateLetal" />
+  </wsdl:message>
+  <wsdl:message name="CreateConsolidateLetalSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateConsolidateLetalResponse" />
+  </wsdl:message>
   <wsdl:message name="CreateDynamicReportSoapIn">
     <wsdl:part name="parameters" element="tns:CreateDynamicReport" />
   </wsdl:message>
@@ -4100,19 +4295,23 @@
   <wsdl:message name="CreateReportControlPgZpzSoapOut">
     <wsdl:part name="parameters" element="tns:CreateReportControlPgZpzResponse" />
   </wsdl:message>
+  <wsdl:message name="CreateReportControlZpz2023SoapIn">
+    <wsdl:part name="parameters" element="tns:CreateReportControlZpz2023" />
+  </wsdl:message>
+  <wsdl:message name="CreateReportControlZpz2023SoapOut">
+    <wsdl:part name="parameters" element="tns:CreateReportControlZpz2023Response" />
+  </wsdl:message>
   <wsdl:message name="CreateConsolidateOnkoSoapIn">
     <wsdl:part name="parameters" element="tns:CreateConsolidateOnko" />
   </wsdl:message>
   <wsdl:message name="CreateConsolidateOnkoSoapOut">
     <wsdl:part name="parameters" element="tns:CreateConsolidateOnkoResponse" />
   </wsdl:message>
-  <wsdl:message name="CreateConsolidateLetalSoapIn">
-    <wsdl:part name="parameters" element="tns:CreateConsolidateLetal" />
-  </wsdl:message>
-  <wsdl:message name="CreateConsolidateLetalSoapOut">
-    <wsdl:part name="parameters" element="tns:CreateConsolidateLetalResponse" />
-  </wsdl:message>
   <wsdl:portType name="EndpointSoap">
+    <wsdl:operation name="CreateConsolidateLetal">
+      <wsdl:input message="tns:CreateConsolidateLetalSoapIn" />
+      <wsdl:output message="tns:CreateConsolidateLetalSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="CreateDynamicReport">
       <wsdl:input message="tns:CreateDynamicReportSoapIn" />
       <wsdl:output message="tns:CreateDynamicReportSoapOut" />
@@ -4457,17 +4656,26 @@
       <wsdl:input message="tns:CreateReportControlPgZpzSoapIn" />
       <wsdl:output message="tns:CreateReportControlPgZpzSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="CreateReportControlZpz2023">
+      <wsdl:input message="tns:CreateReportControlZpz2023SoapIn" />
+      <wsdl:output message="tns:CreateReportControlZpz2023SoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="CreateConsolidateOnko">
       <wsdl:input message="tns:CreateConsolidateOnkoSoapIn" />
       <wsdl:output message="tns:CreateConsolidateOnkoSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="CreateConsolidateLetal">
-      <wsdl:input message="tns:CreateConsolidateLetalSoapIn" />
-      <wsdl:output message="tns:CreateConsolidateLetalSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="EndpointSoap" type="tns:EndpointSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateConsolidateLetal">
+      <soap:operation soapAction="http://kms-oms.ru/CreateConsolidateLetal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateDynamicReport">
       <soap:operation soapAction="http://kms-oms.ru/CreateDynamicReport" style="document" />
       <wsdl:input>
@@ -5242,8 +5450,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateConsolidateOnko">
-      <soap:operation soapAction="http://kms-oms.ru/CreateConsolidateOnko" style="document" />
+    <wsdl:operation name="CreateReportControlZpz2023">
+      <soap:operation soapAction="http://kms-oms.ru/CreateReportControlZpz2023" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -5251,8 +5459,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateConsolidateLetal">
-      <soap:operation soapAction="http://kms-oms.ru/CreateConsolidateLetal" style="document" />
+    <wsdl:operation name="CreateConsolidateOnko">
+      <soap:operation soapAction="http://kms-oms.ru/CreateConsolidateOnko" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -5263,6 +5471,15 @@
   </wsdl:binding>
   <wsdl:binding name="EndpointSoap12" type="tns:EndpointSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateConsolidateLetal">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateConsolidateLetal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateDynamicReport">
       <soap12:operation soapAction="http://kms-oms.ru/CreateDynamicReport" style="document" />
       <wsdl:input>
@@ -6037,8 +6254,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateConsolidateOnko">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateConsolidateOnko" style="document" />
+    <wsdl:operation name="CreateReportControlZpz2023">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateReportControlZpz2023" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -6046,8 +6263,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateConsolidateLetal">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateConsolidateLetal" style="document" />
+    <wsdl:operation name="CreateConsolidateOnko">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateConsolidateOnko" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

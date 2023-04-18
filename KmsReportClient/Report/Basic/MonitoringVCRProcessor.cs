@@ -322,14 +322,11 @@ namespace KmsReportClient.Report.Basic
                     // ПО ЗАПРОСУ ГУЖЕНКО перевожу все на суммирование, без подтягивания данных ПГ
                     
                     MonitoringVCRPgDataDto dto = _MonitoringVCRPGDataResult.FirstOrDefault(x => x.RowNum == row.Key);
-                    if (row.Key != "2.2.4ИНФ" && row.Key != "2.1.8ИНФ") { row.Value.Cells[4].Value = GlobalUtils.TryParseDecimal(row.Value.Cells[2].Value) + GlobalUtils.TryParseDecimal(row.Value.Cells[3].Value); }
-                    // выше игнорируем суммирование по 2.2.4ИНФ и 2.1.8ИНФ и применяем для всего остального
-                    // if (dto != null)
-                    else
+                    if (dto != null)
                     {
                         if (GlobalUtils.TryParseDecimal(dto.Total) == 0.00m) // Если по ПГ нам ничего не пришло, то можно суммировать
                         {
-                            
+                            row.Value.Cells[4].Value = GlobalUtils.TryParseDecimal(row.Value.Cells[2].Value) + GlobalUtils.TryParseDecimal(row.Value.Cells[3].Value);
                         }
                         else
                         {

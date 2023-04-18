@@ -13,13 +13,13 @@ namespace KmsReportClient.Excel.Creator.Base
     class ExcelZpzQCreator : ExcelBaseCreator<ReportZpz>
     {
         private readonly List<ReportDictionary> _zpzDictionaries = new List<ReportDictionary> {
-            new ReportDictionary {TableName = "Таблица 5А", StartRow = 6, EndRow = 7, Index = 1},
+            new ReportDictionary {TableName = "Таблица 5А", StartRow = 6, EndRow = 6, Index = 1},
             new ReportDictionary {TableName = "Таблица 6", StartRow = 7, EndRow = 187, Index = 2},
             new ReportDictionary {TableName = "Таблица 7", StartRow = 7, EndRow = 407, Index = 3},
             new ReportDictionary {TableName = "Таблица 8", StartRow = 5, EndRow = 459, Index = 4},
             new ReportDictionary {TableName = "Таблица 9", StartRow = 6, EndRow = 38, Index = 5},
             new ReportDictionary {TableName = "Таблица 1Л", StartRow = 5, EndRow = 28, Index = 6},
-            new ReportDictionary {TableName = "Таблица 2Л", StartRow = 5, EndRow = 30, Index = 9},
+            new ReportDictionary {TableName = "Таблица 2Л", StartRow = 5, EndRow = 30, Index = 7},
         };
 
         public ExcelZpzQCreator(
@@ -38,11 +38,12 @@ namespace KmsReportClient.Excel.Creator.Base
 
             foreach (var themeData in report.ReportDataList.OrderBy(x => x.Theme))
             {
-                var dict = _zpzDictionaries.FirstOrDefault(x => x.TableName == themeData.Theme);
-                if (dict == null)
-                {
-                    continue;
-                }
+                //var dict = _zpzDictionaries.FirstOrDefault(x => x.TableName == themeData.Theme);
+                var dict = _zpzDictionaries.Single(x => x.TableName == themeData.Theme);
+                //if (dict == null)
+                //{
+                //    continue;
+                //}
                 ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets[dict.Index];
                 var data = themeData.Data;
                 switch (themeData.Theme)
@@ -55,19 +56,19 @@ namespace KmsReportClient.Excel.Creator.Base
                         break;
                     case "Таблица 6":
                     case "Таблица 7":
-                        FillTable6(data, dict.StartRow, dict.EndRow);
+                        FillTable6(data, dict.StartRow, dict.EndRow, themeData.Theme);
                         break;
                     case "Таблица 5А"    :
-                        FillTable5(data, dict.StartRow, dict.EndRow);
+                        FillTable5(data, dict.StartRow, dict.EndRow, themeData.Theme);
                         break;
                     case "Таблица 1Л":
                     case "Таблица 2Л":
-                        FillTableLetal(data, dict.StartRow, dict.EndRow);
+                        FillTableLetal(data, dict.StartRow, dict.EndRow, themeData.Theme);
                             break;
                 }
             }
 
-            ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets[5];
+            ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets[7];
             FinishZpz();
         }
 
@@ -154,7 +155,7 @@ namespace KmsReportClient.Excel.Creator.Base
             }
         }
 
-        private void FillTable6(ReportZpzDataDto[] data, int startRowIndex, int endRowIndex)
+        private void FillTable6(ReportZpzDataDto[] data, int startRowIndex, int endRowIndex, string form)
         {
             for (int i = startRowIndex; i <= endRowIndex; i++)
             {
@@ -228,7 +229,7 @@ namespace KmsReportClient.Excel.Creator.Base
             }
         }
 
-        private void FillTable5(ReportZpzDataDto[] data, int startRowIndex, int endRowIndex)
+        private void FillTable5(ReportZpzDataDto[] data, int startRowIndex, int endRowIndex, string form)
         {
             for (int i = startRowIndex; i <= endRowIndex; i++)
             {
@@ -272,7 +273,7 @@ namespace KmsReportClient.Excel.Creator.Base
             }
         }
 
-        private void FillTableLetal(ReportZpzDataDto[] data, int startRowIndex, int endRowIndex)
+        private void FillTableLetal(ReportZpzDataDto[] data, int startRowIndex, int endRowIndex, string form)
         {
             for (int i = startRowIndex; i <= endRowIndex; i++)
             {

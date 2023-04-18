@@ -112,8 +112,10 @@ namespace KmsReportClient.Forms
             this.суммарныйОтчетПоФилиалуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.итоговыйОтчетПоВсемФилиаламToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.формаПГToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.формаЗПЗToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.контрольЗПЗToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.контрольЗПЗежемесячнаяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.контрольЗПЗ2023ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетДляСайтаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.онкологияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.онкологияквартальныйToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -406,6 +408,7 @@ namespace KmsReportClient.Forms
             this.форма262ToolStripMenuItem,
             this.форма294ToolStripMenuItem,
             this.формаПГToolStripMenuItem,
+            this.формаЗПЗToolStripMenuItem,
             this.формаОПЭДToolStripMenuItem,
             this.мониторингВССToolStripMenuItem,
             this.мониторингВСС2023ToolStripMenuItem,
@@ -490,6 +493,14 @@ namespace KmsReportClient.Forms
             this.формаПГToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.формаПГToolStripMenuItem.Text = "Форма ПГ";
             // 
+            // формаЗПЗToolStripMenuItem
+            // 
+            this.формаЗПЗToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.контрольЗПЗ2023ToolStripMenuItem,});
+            this.формаЗПЗToolStripMenuItem.Name = "формаЗПЗToolStripMenuItem";
+            this.формаЗПЗToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.формаЗПЗToolStripMenuItem.Text = "Форма ЗПЗ 2023";
+            // 
             // контрольЗПЗToolStripMenuItem
             // 
             this.контрольЗПЗToolStripMenuItem.Name = "контрольЗПЗToolStripMenuItem";
@@ -503,6 +514,13 @@ namespace KmsReportClient.Forms
             this.контрольЗПЗежемесячнаяToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
             this.контрольЗПЗежемесячнаяToolStripMenuItem.Text = "Контроль ЗПЗ (квартальная)";
             this.контрольЗПЗежемесячнаяToolStripMenuItem.Click += new System.EventHandler(this.КонтрольЗПЗежемесячнаяToolStripMenuItem_Click);
+            // 
+            // контрольЗПЗ2023ToolStripMenuItem
+            // 
+            this.контрольЗПЗ2023ToolStripMenuItem.Name = "контрольЗПЗ2023ToolStripMenuItem";
+            this.контрольЗПЗ2023ToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.контрольЗПЗ2023ToolStripMenuItem.Text = "Контроль ЗПЗ 2023(квартальная)";
+            this.контрольЗПЗ2023ToolStripMenuItem.Click += new System.EventHandler(this.КонтрольЗПЗ2023ToolStripMenuItem_Click);
             // 
             // отчетДляСайтаToolStripMenuItem
             // 
@@ -3280,6 +3298,7 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.TextBox TxtbCadre;
         private System.Windows.Forms.ComboBox CmbCadre;
         private System.Windows.Forms.ToolStripMenuItem формаПГToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem формаЗПЗToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem контрольЗПЗToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem суммарныйОтчетПоФилиалуToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem итоговыйОтчетПоВсемФилиаламToolStripMenuItem;
@@ -3301,6 +3320,7 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.TextBox TxtbZpz10;
         private System.Windows.Forms.ComboBox CmbZpz10;
         private System.Windows.Forms.ToolStripMenuItem контрольЗПЗежемесячнаяToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem контрольЗПЗ2023ToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton BtnSaveToDb;
         private System.Windows.Forms.ToolStripMenuItem онкологияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem онкологияквартальныйToolStripMenuItem;

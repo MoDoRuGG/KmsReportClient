@@ -1586,6 +1586,9 @@ namespace KmsReportClient.Forms
         private void КонтрольЗПЗежемесячнаяToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.ControlZpzQuarterly);
 
+        private void КонтрольЗПЗ2023ToolStripMenuItem_Click(object sender, EventArgs e) =>
+            OpenConsolidateReportForm(ConsolidateReport.ControlZpz2023Quarterly);
+
         private void онкологияToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.Onko);
 

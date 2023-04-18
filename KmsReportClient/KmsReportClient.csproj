@@ -165,6 +165,7 @@
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateVSSCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateYear294Creator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsZpzWebSite.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelControlZpz2023Creator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelControlZpzCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelOnkoCreator.cs" />
     <Compile Include="Excel\Creator\DynamicReportExcelCreator.cs" />
@@ -459,6 +460,9 @@
     <None Include="Connected Services\External\KmsReportClient.External.CreateReportControlPgZpzResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateReportControlZpz2023Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateReportCOpedResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -502,6 +506,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CReportPg.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CReportZpz2023.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.DownloadDllFileResponse.datasource">
