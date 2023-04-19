@@ -207,6 +207,16 @@ namespace KmsReportClient.Forms
                     cmbStart.DataSource = GlobalConst.Periods;
                     break;
 
+                case ConsolidateReport.Letal2023:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать сводный отчет Летальные";
+                    saveFileDialog1.FileName = "Сводный отчет Летальные";
+                    cmbStart.DataSource = GlobalConst.Periods;
+                    break;
+
                 case ConsolidateReport.CnpnQuarterly:
                     labelStart.Text = "Период";
                     panelEnd.Visible = false;
@@ -397,6 +407,9 @@ namespace KmsReportClient.Forms
                         CreateCReportDisp();
                         break;
                     case ConsolidateReport.Letal:
+                        CreateCReportLetal();
+                        break;
+                    case ConsolidateReport.Letal2023:
                         CreateCReportLetal();
                         break;
                     case ConsolidateReport.ConsolidateOped:
@@ -1167,23 +1180,31 @@ namespace KmsReportClient.Forms
         {
             string yymm = GetYymmQuarterly();
 
-
-            var data = _client.CreateConsolidateLetal(yymm);
-
-
-            if (data.Length == 0)
+            if (Convert.ToInt32(yymm) < 2300)
             {
-                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                var data = _client.CreateConsolidateLetal(yymm);
+                if (data.Length == 0)
+                {
+                    MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                var excel = new ExcelConsolidateLetal(saveFileDialog1.FileName, "", _filialName);
+                excel.CreateReport(data, null);
             }
-
-            var excel = new ExcelConsolidateLetal(saveFileDialog1.FileName, "", _filialName);
-
-            excel.CreateReport(data, null);
-
+            else
+            {
+                var data = _client.CreateConsolidateLetal2023(yymm);
+                if (data.Length == 0)
+                {
+                    MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                var excel = new ExcelConsolidateLetal(saveFileDialog1.FileName, "", _filialName);
+                excel.CreateReport(data, null);
+            }
             GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
-
         }
 
 

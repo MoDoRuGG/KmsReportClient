@@ -25337,6 +25337,13 @@ namespace KmsReportClient.External {
         [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidateLetal", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateLetalResponse> CreateConsolidateLetalAsync(KmsReportClient.External.CreateConsolidateLetalRequest request);
         
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidateLetal2023", ReplyAction="*")]
+        KmsReportClient.External.CreateConsolidateLetal2023Response CreateConsolidateLetal2023(KmsReportClient.External.CreateConsolidateLetal2023Request request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidateLetal2023", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateLetal2023Response> CreateConsolidateLetal2023Async(KmsReportClient.External.CreateConsolidateLetal2023Request request);
+        
         // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
         [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateDynamicReport", ReplyAction="*")]
         KmsReportClient.External.CreateDynamicReportResponse CreateDynamicReport(KmsReportClient.External.CreateDynamicReportRequest request);
@@ -26012,6 +26019,74 @@ namespace KmsReportClient.External {
         
         public CreateConsolidateLetalResponseBody(KmsReportClient.External.ConsolidateLetal[] CreateConsolidateLetalResult) {
             this.CreateConsolidateLetalResult = CreateConsolidateLetalResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateConsolidateLetal2023Request {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidateLetal2023", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateConsolidateLetal2023RequestBody Body;
+        
+        public CreateConsolidateLetal2023Request() {
+        }
+        
+        public CreateConsolidateLetal2023Request(KmsReportClient.External.CreateConsolidateLetal2023RequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateConsolidateLetal2023RequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string yymm;
+        
+        public CreateConsolidateLetal2023RequestBody() {
+        }
+        
+        public CreateConsolidateLetal2023RequestBody(string yymm) {
+            this.yymm = yymm;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateConsolidateLetal2023Response {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidateLetal2023Response", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateConsolidateLetal2023ResponseBody Body;
+        
+        public CreateConsolidateLetal2023Response() {
+        }
+        
+        public CreateConsolidateLetal2023Response(KmsReportClient.External.CreateConsolidateLetal2023ResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateConsolidateLetal2023ResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.ConsolidateLetal[] CreateConsolidateLetal2023Result;
+        
+        public CreateConsolidateLetal2023ResponseBody() {
+        }
+        
+        public CreateConsolidateLetal2023ResponseBody(KmsReportClient.External.ConsolidateLetal[] CreateConsolidateLetal2023Result) {
+            this.CreateConsolidateLetal2023Result = CreateConsolidateLetal2023Result;
         }
     }
     
@@ -31687,6 +31762,31 @@ namespace KmsReportClient.External {
             inValue.Body = new KmsReportClient.External.CreateConsolidateLetalRequestBody();
             inValue.Body.yymm = yymm;
             return ((KmsReportClient.External.EndpointSoap)(this)).CreateConsolidateLetalAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.CreateConsolidateLetal2023Response KmsReportClient.External.EndpointSoap.CreateConsolidateLetal2023(KmsReportClient.External.CreateConsolidateLetal2023Request request) {
+            return base.Channel.CreateConsolidateLetal2023(request);
+        }
+        
+        public KmsReportClient.External.ConsolidateLetal[] CreateConsolidateLetal2023(string yymm) {
+            KmsReportClient.External.CreateConsolidateLetal2023Request inValue = new KmsReportClient.External.CreateConsolidateLetal2023Request();
+            inValue.Body = new KmsReportClient.External.CreateConsolidateLetal2023RequestBody();
+            inValue.Body.yymm = yymm;
+            KmsReportClient.External.CreateConsolidateLetal2023Response retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateConsolidateLetal2023(inValue);
+            return retVal.Body.CreateConsolidateLetal2023Result;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateLetal2023Response> KmsReportClient.External.EndpointSoap.CreateConsolidateLetal2023Async(KmsReportClient.External.CreateConsolidateLetal2023Request request) {
+            return base.Channel.CreateConsolidateLetal2023Async(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateLetal2023Response> CreateConsolidateLetal2023Async(string yymm) {
+            KmsReportClient.External.CreateConsolidateLetal2023Request inValue = new KmsReportClient.External.CreateConsolidateLetal2023Request();
+            inValue.Body = new KmsReportClient.External.CreateConsolidateLetal2023RequestBody();
+            inValue.Body.yymm = yymm;
+            return ((KmsReportClient.External.EndpointSoap)(this)).CreateConsolidateLetal2023Async(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

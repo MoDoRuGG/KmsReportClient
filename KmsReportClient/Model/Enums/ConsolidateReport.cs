@@ -20,6 +20,7 @@
         Cardio,
         Disp,
         Letal,
+        Letal2023,
         ConsolidateOped,
         ConsolidateOpedUnplanned,
         ConsolidateVSS,

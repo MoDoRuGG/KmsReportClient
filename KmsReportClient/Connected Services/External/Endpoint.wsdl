@@ -55,6 +55,20 @@
           <s:element minOccurs="1" maxOccurs="1" name="r13" type="s:decimal" />
         </s:sequence>
       </s:complexType>
+      <s:element name="CreateConsolidateLetal2023">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateConsolidateLetal2023Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateConsolidateLetal2023Result" type="tns:ArrayOfConsolidateLetal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="CreateDynamicReport">
         <s:complexType>
           <s:sequence>
@@ -3779,6 +3793,12 @@
   <wsdl:message name="CreateConsolidateLetalSoapOut">
     <wsdl:part name="parameters" element="tns:CreateConsolidateLetalResponse" />
   </wsdl:message>
+  <wsdl:message name="CreateConsolidateLetal2023SoapIn">
+    <wsdl:part name="parameters" element="tns:CreateConsolidateLetal2023" />
+  </wsdl:message>
+  <wsdl:message name="CreateConsolidateLetal2023SoapOut">
+    <wsdl:part name="parameters" element="tns:CreateConsolidateLetal2023Response" />
+  </wsdl:message>
   <wsdl:message name="CreateDynamicReportSoapIn">
     <wsdl:part name="parameters" element="tns:CreateDynamicReport" />
   </wsdl:message>
@@ -4312,6 +4332,10 @@
       <wsdl:input message="tns:CreateConsolidateLetalSoapIn" />
       <wsdl:output message="tns:CreateConsolidateLetalSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="CreateConsolidateLetal2023">
+      <wsdl:input message="tns:CreateConsolidateLetal2023SoapIn" />
+      <wsdl:output message="tns:CreateConsolidateLetal2023SoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="CreateDynamicReport">
       <wsdl:input message="tns:CreateDynamicReportSoapIn" />
       <wsdl:output message="tns:CreateDynamicReportSoapOut" />
@@ -4669,6 +4693,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="CreateConsolidateLetal">
       <soap:operation soapAction="http://kms-oms.ru/CreateConsolidateLetal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateConsolidateLetal2023">
+      <soap:operation soapAction="http://kms-oms.ru/CreateConsolidateLetal2023" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -5473,6 +5506,15 @@
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="CreateConsolidateLetal">
       <soap12:operation soapAction="http://kms-oms.ru/CreateConsolidateLetal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateConsolidateLetal2023">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateConsolidateLetal2023" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

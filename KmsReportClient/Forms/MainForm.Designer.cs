@@ -124,6 +124,7 @@ namespace KmsReportClient.Forms
             this.цПНПквартальныйToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.диспанцеризацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.летальныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.летальные2023ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.цПНП2квартальныйToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.формаОПЭДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сводToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -496,7 +497,9 @@ namespace KmsReportClient.Forms
             // формаЗПЗToolStripMenuItem
             // 
             this.формаЗПЗToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.контрольЗПЗ2023ToolStripMenuItem,});
+            this.контрольЗПЗ2023ToolStripMenuItem,
+            this.летальные2023ToolStripMenuItem,
+            });
             this.формаЗПЗToolStripMenuItem.Name = "формаЗПЗToolStripMenuItem";
             this.формаЗПЗToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.формаЗПЗToolStripMenuItem.Text = "Форма ЗПЗ 2023";
@@ -577,6 +580,13 @@ namespace KmsReportClient.Forms
             this.летальныеToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
             this.летальныеToolStripMenuItem.Text = "Летальные";
             this.летальныеToolStripMenuItem.Click += new System.EventHandler(this.летальныеToolStripMenuItem_Click);
+            // 
+            // летальные2023ToolStripMenuItem
+            // 
+            this.летальные2023ToolStripMenuItem.Name = "летальные2023ToolStripMenuItem";
+            this.летальные2023ToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.летальные2023ToolStripMenuItem.Text = "Летальные 2023";
+            this.летальные2023ToolStripMenuItem.Click += new System.EventHandler(this.летальные2023ToolStripMenuItem_Click);
             // 
             // цПНП2квартальныйToolStripMenuItem
             // 
@@ -3347,6 +3357,7 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.TextBox TbxEmentInfo;
         private System.Windows.Forms.ToolStripMenuItem редактироватьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem летальныеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem летальные2023ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SpravItem;
         private System.Windows.Forms.ToolStripMenuItem электронныеАдресаToolStripMenuItem;
         private System.Windows.Forms.TabPage PageOped;

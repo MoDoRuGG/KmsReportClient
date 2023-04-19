@@ -430,6 +430,9 @@
     <None Include="Connected Services\External\KmsReportClient.External.CreateConsolidate294Response.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateConsolidateLetal2023Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateConsolidateLetalResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

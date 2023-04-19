@@ -1854,6 +1854,11 @@ namespace KmsReportClient.Forms
             OpenConsolidateReportForm(ConsolidateReport.Letal);
         }
 
+        private void летальные2023ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenConsolidateReportForm(ConsolidateReport.Letal2023);
+        }
+
         private void справочникиToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
