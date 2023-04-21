@@ -71,6 +71,9 @@ namespace KmsReportClient.Model.Enums
         [Description(GlobalConst.TempFolder + "zpzWebSite.xlsx")]
         ZpzForWebSite,
 
+        [Description(GlobalConst.TempFolder + "zpzWebSite2023.xlsx")]
+        ZpzForWebSite2023,
+
         [Description(GlobalConst.TempFolder + "onko.xlsx")]
         Onko,
 

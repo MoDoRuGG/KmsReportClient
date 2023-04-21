@@ -17,7 +17,7 @@ namespace KmsReportClient.Forms
         private const string SummaryFilialName = "ООО «Капитал МС»";
         private const string SummaryFilialCode = "RU";
 
-        private static readonly ConsolidateReport[] FolderReports = { ConsolidateReport.ZpzWebSite };
+        private static readonly ConsolidateReport[] FolderReports = { ConsolidateReport.ZpzWebSite, ConsolidateReport.ZpzWebSite2023 };
 
         private readonly EndpointSoapClient _client;
         private readonly string _filialName;
@@ -130,7 +130,15 @@ namespace KmsReportClient.Forms
                     panelRegion.Visible = false;
                     btnDo.Text = "Сформировать отчет ЗПЗ для сайта";
                     saveFileDialog1.FileName = "Сводный отчет ЗПЗ для сайта";
-
+                    cmbStart.DataSource = GlobalConst.Periods;
+                    break;
+                case ConsolidateReport.ZpzWebSite2023:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать отчет ЗПЗ для сайта";
+                    saveFileDialog1.FileName = "Сводный отчет ЗПЗ для сайта";
                     cmbStart.DataSource = GlobalConst.Periods;
                     break;
                 case ConsolidateReport.ControlZpzMonthly:
@@ -346,7 +354,7 @@ namespace KmsReportClient.Forms
             {
                 var waitingForm = new WaitingForm();
                 waitingForm.Show();
-                //Application.DoEvents();
+                Application.DoEvents();
 
                 switch (_report)
                 {
@@ -386,6 +394,9 @@ namespace KmsReportClient.Forms
                         break;
                     case ConsolidateReport.ZpzWebSite:
                         CreateZpzWebSite();
+                        break;
+                    case ConsolidateReport.ZpzWebSite2023:
+                        CreateZpzWebSite2023();
                         break;
                     case ConsolidateReport.Onko:
                         CreateOnko(true);
@@ -607,13 +618,34 @@ namespace KmsReportClient.Forms
 
             foreach (var report in reports)
             {
-                string filename = folder + $"/Отчет_для_сайта_{report.Filial}_{yymm}.xlsx";
+                string filename = folder + $"\\Отчет_для_сайта_{report.Filial}_{yymm}.xlsx";
                 string filialName = _regions.Single(x => x.Key == report.Filial).ForeignKey;
                 CreateReport(filename, filialName, report);
             }
 
             var summaryReport = CollectSummaryReport(reports);
-            string summaryFilename = folder + $"/Отчет_для_сайта_суммарный_{yymm}.xlsx";
+            string summaryFilename = folder + $"\\Отчет_для_сайта_суммарный_{yymm}.xlsx";
+            CreateReport(summaryFilename, SummaryFilialName, summaryReport);
+
+            GlobalUtils.OpenFileOrDirectory(folder);
+        }
+
+        private void CreateZpzWebSite2023()
+        {
+            string yymm = GetYymmQuarterly();
+            string folder = folderBrowserDialog1.SelectedPath;
+
+            var reports = _client.CreateZpzForWebSite2023(yymm);
+
+            foreach (var report in reports)
+            {
+                string filename = folder + $"\\Отчет_для_сайта_{report.Filial}_{yymm}.xlsx";
+                string filialName = _regions.Single(x => x.Key == report.Filial).ForeignKey;
+                CreateReport(filename, filialName, report);
+            }
+
+            var summaryReport = CollectSummaryReport2023(reports);
+            string summaryFilename = folder + $"\\Отчет_для_сайта_суммарный_{yymm}.xlsx";
             CreateReport(summaryFilename, SummaryFilialName, summaryReport);
 
             GlobalUtils.OpenFileOrDirectory(folder);
@@ -674,9 +706,64 @@ namespace KmsReportClient.Forms
             };
         }
 
+        private ZpzForWebSite2023 CollectSummaryReport2023(ZpzForWebSite2023[] reports)
+        {
+            var treatments = reports.SelectMany(x => x.Treatments).GroupBy(x => x.Row).Select(x => new ZpzTreatment2023
+            {
+                Row = x.Key,
+                Oral = x.Sum(x => x.Oral),
+                Written = x.Sum(x => x.Written)
+            }).ToArray();
+            var complaints = reports.SelectMany(x => x.Complaints).GroupBy(x => x.Row).Select(x => new ZpzTreatment2023
+            {
+                Row = x.Key,
+                Oral = x.Sum(x => x.Oral),
+                Written = x.Sum(x => x.Written)
+            }).ToArray();
+            var protections = reports.SelectMany(x => x.Protections).GroupBy(x => x.Row).Select(x => new ZpzStatistics2023
+            {
+                Row = x.Key,
+                Count = x.Sum(x => x.Count)
+            }).ToArray();
+            var expertises = reports.SelectMany(x => x.Expertises).GroupBy(x => x.Row).Select(x => new Expertise2023
+            {
+                Row = x.Key,
+                Target = x.Sum(x => x.Target),
+                Plan = x.Sum(x => x.Plan),
+                Violation = x.Sum(x => x.Violation)
+            }).ToArray();
+            var specialists = reports.SelectMany(x => x.Specialists).GroupBy(x => x.Row).Select(x => new ZpzStatistics2023
+            {
+                Row = x.Key,
+                Count = x.Sum(x => x.Count)
+            }).ToArray();
+            var informations = reports.SelectMany(x => x.Informations).GroupBy(x => x.Row).Select(x => new ZpzStatistics2023
+            {
+                Row = x.Key,
+                Count = x.Sum(x => x.Count)
+            }).ToArray();
+
+            return new ZpzForWebSite2023
+            {
+                Filial = SummaryFilialCode,
+                Treatments = treatments,
+                Complaints = complaints,
+                Expertises = expertises,
+                Informations = informations,
+                Protections = protections,
+                Specialists = specialists
+            };
+        }
+
         private void CreateReport(string filename, string filialName, ZpzForWebSite report)
         {
             var excel = new ExcelConsZpzWebSite(filename, "", filialName);
+            excel.CreateReport(report, null);
+        }
+
+        private void CreateReport(string filename, string filialName, ZpzForWebSite2023 report)
+        {
+            var excel = new ExcelConsZpzWebSite2023(filename, "", filialName);
             excel.CreateReport(report, null);
         }
 
