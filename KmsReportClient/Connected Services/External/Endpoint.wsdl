@@ -918,6 +918,72 @@
           <s:element minOccurs="1" maxOccurs="1" name="Violation" type="s:int" />
         </s:sequence>
       </s:complexType>
+      <s:element name="CreateZpzForWebSite2023">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateZpzForWebSite2023Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateZpzForWebSite2023Result" type="tns:ArrayOfZpzForWebSite2023" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfZpzForWebSite2023">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZpzForWebSite2023" nillable="true" type="tns:ZpzForWebSite2023" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZpzForWebSite2023">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Treatments" type="tns:ArrayOfZpzTreatment2023" />
+          <s:element minOccurs="0" maxOccurs="1" name="Complaints" type="tns:ArrayOfZpzTreatment2023" />
+          <s:element minOccurs="0" maxOccurs="1" name="Protections" type="tns:ArrayOfZpzStatistics2023" />
+          <s:element minOccurs="0" maxOccurs="1" name="Expertises" type="tns:ArrayOfExpertise2023" />
+          <s:element minOccurs="0" maxOccurs="1" name="Specialists" type="tns:ArrayOfZpzStatistics2023" />
+          <s:element minOccurs="0" maxOccurs="1" name="Informations" type="tns:ArrayOfZpzStatistics2023" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfZpzTreatment2023">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZpzTreatment2023" nillable="true" type="tns:ZpzTreatment2023" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZpzTreatment2023">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Row" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Oral" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Written" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfZpzStatistics2023">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZpzStatistics2023" nillable="true" type="tns:ZpzStatistics2023" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZpzStatistics2023">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Row" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfExpertise2023">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Expertise2023" nillable="true" type="tns:Expertise2023" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Expertise2023">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Row" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Target" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Plan" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Violation" type="s:int" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="ConsolidateProposalCollect">
         <s:complexType>
           <s:sequence>
@@ -3797,6 +3863,12 @@
   <wsdl:message name="CreateZpzForWebSiteSoapOut">
     <wsdl:part name="parameters" element="tns:CreateZpzForWebSiteResponse" />
   </wsdl:message>
+  <wsdl:message name="CreateZpzForWebSite2023SoapIn">
+    <wsdl:part name="parameters" element="tns:CreateZpzForWebSite2023" />
+  </wsdl:message>
+  <wsdl:message name="CreateZpzForWebSite2023SoapOut">
+    <wsdl:part name="parameters" element="tns:CreateZpzForWebSite2023Response" />
+  </wsdl:message>
   <wsdl:message name="ConsolidateProposalCollectSoapIn">
     <wsdl:part name="parameters" element="tns:ConsolidateProposalCollect" />
   </wsdl:message>
@@ -4324,6 +4396,10 @@
       <wsdl:input message="tns:CreateZpzForWebSiteSoapIn" />
       <wsdl:output message="tns:CreateZpzForWebSiteSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="CreateZpzForWebSite2023">
+      <wsdl:input message="tns:CreateZpzForWebSite2023SoapIn" />
+      <wsdl:output message="tns:CreateZpzForWebSite2023SoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="ConsolidateProposalCollect">
       <wsdl:input message="tns:ConsolidateProposalCollectSoapIn" />
       <wsdl:output message="tns:ConsolidateProposalCollectSoapOut" />
@@ -4696,6 +4772,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateZpzForWebSite">
       <soap:operation soapAction="http://kms-oms.ru/CreateZpzForWebSite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateZpzForWebSite2023">
+      <soap:operation soapAction="http://kms-oms.ru/CreateZpzForWebSite2023" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -5500,6 +5585,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateZpzForWebSite">
       <soap12:operation soapAction="http://kms-oms.ru/CreateZpzForWebSite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateZpzForWebSite2023">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateZpzForWebSite2023" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
