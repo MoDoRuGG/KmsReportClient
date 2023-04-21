@@ -499,7 +499,7 @@ namespace KmsReportClient.Forms
             // 
             this.формаЗПЗToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.контрольЗПЗ2023ToolStripMenuItem,
-            this.отчетДляСайта2023ToolStripMenuItem,});
+            this.отчетДляСайта2023ToolStripMenuItem,
             this.контрольЗПЗ2023ToolStripMenuItem,
             this.летальные2023ToolStripMenuItem,
             });
