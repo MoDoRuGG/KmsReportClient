@@ -287,20 +287,13 @@ namespace KmsReportClient.Report.Basic
                     continue;
                 }
 
-                if (row.Key == "2")
-                {
-                    row.Value.Cells[2].Value = _rows.Where(x => x.Key == "2.1" || x.Key == "2.2").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "2.1" || x.Key == "2.2").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
-
-
-                }
-
 
                 if (row.Key == "2.1")
                 {
                     row.Value.Cells[2].Value = _rows.Where(x => x.Key == "2.1.1" || x.Key == "2.1.2" || x.Key == "2.1.3" || x.Key == "2.1.4" || x.Key == "2.1.5" || x.Key == "2.1.6" || x.Key == "2.1.7" || x.Key == "2.1.8" || x.Key == "2.1.9" || x.Key == "2.1.10").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "2.1.1" || x.Key == "2.1.2" || x.Key == "2.1.3" || x.Key == "2.1.4" || x.Key == "2.1.5" || x.Key == "2.1.6" || x.Key == "2.1.7" || x.Key == "2.1.8" || x.Key == "2.1.9" || x.Key == "2.1.10").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                    //row.Value.Cells[3].Value = _rows.Where(x => x.Key == "2.1.1" || x.Key == "2.1.2" || x.Key == "2.1.3" || x.Key == "2.1.4" || x.Key == "2.1.5" || x.Key == "2.1.6" || x.Key == "2.1.7" || x.Key == "2.1.8" || x.Key == "2.1.9" || x.Key == "2.1.10").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
                     row.Value.Cells[4].Value = _rows.Where(x => x.Key == "2.1.1" || x.Key == "2.1.2" || x.Key == "2.1.3" || x.Key == "2.1.4" || x.Key == "2.1.5" || x.Key == "2.1.6" || x.Key == "2.1.7" || x.Key == "2.1.8" || x.Key == "2.1.9" || x.Key == "2.1.10").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[4].Value));
+                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "2.1").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[4].Value) - GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
                     continue;
 
                 }
@@ -309,11 +302,14 @@ namespace KmsReportClient.Report.Basic
                 if (row.Key == "2.2")
                 {
                     row.Value.Cells[2].Value = _rows.Where(x => x.Key == "2.2.1" || x.Key == "2.2.2" || x.Key == "2.2.3" || x.Key == "2.2.4" || x.Key == "2.2.5" || x.Key == "2.2.6" || x.Key == "2.2.7" || x.Key == "2.2.8").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "2.2.1" || x.Key == "2.2.2" || x.Key == "2.2.3" || x.Key == "2.2.4" || x.Key == "2.2.5" || x.Key == "2.2.6" || x.Key == "2.2.7" || x.Key == "2.2.8").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                    //row.Value.Cells[3].Value = _rows.Where(x => x.Key == "2.2.1" || x.Key == "2.2.2" || x.Key == "2.2.3" || x.Key == "2.2.4" || x.Key == "2.2.5" || x.Key == "2.2.6" || x.Key == "2.2.7" || x.Key == "2.2.8").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
                     row.Value.Cells[4].Value = _rows.Where(x => x.Key == "2.2.1" || x.Key == "2.2.2" || x.Key == "2.2.3" || x.Key == "2.2.4" || x.Key == "2.2.5" || x.Key == "2.2.6" || x.Key == "2.2.7" || x.Key == "2.2.8").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[4].Value));
+                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "2.2").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[4].Value)- GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
                     continue;
 
                 }
+
+
 
 
                 if (_MonitoringVCRPGDataResult != null)
@@ -347,6 +343,14 @@ namespace KmsReportClient.Report.Basic
                         }
 
                     }
+                }
+
+                if (row.Key == "2")
+                {
+                    row.Value.Cells[2].Value = _rows.Where(x => x.Key == "2.1" || x.Key == "2.2").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "2").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[4].Value) - GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+
+
                 }
 
             }

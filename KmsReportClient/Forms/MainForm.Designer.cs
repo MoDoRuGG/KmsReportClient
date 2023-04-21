@@ -117,6 +117,7 @@ namespace KmsReportClient.Forms
             this.контрольЗПЗежемесячнаяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.контрольЗПЗ2023ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетДляСайтаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.отчетДляСайта2023ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.онкологияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.онкологияквартальныйToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сердечнососудистыеЗаболеванияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -498,6 +499,8 @@ namespace KmsReportClient.Forms
             // 
             this.формаЗПЗToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.контрольЗПЗ2023ToolStripMenuItem,
+            this.отчетДляСайта2023ToolStripMenuItem,});
+            this.контрольЗПЗ2023ToolStripMenuItem,
             this.летальные2023ToolStripMenuItem,
             });
             this.формаЗПЗToolStripMenuItem.Name = "формаЗПЗToolStripMenuItem";
@@ -531,6 +534,13 @@ namespace KmsReportClient.Forms
             this.отчетДляСайтаToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
             this.отчетДляСайтаToolStripMenuItem.Text = "Отчет для сайта";
             this.отчетДляСайтаToolStripMenuItem.Click += new System.EventHandler(this.ОтчетДляСайтаToolStripMenuItem_Click);
+            // 
+            // отчетДляСайта2023ToolStripMenuItem
+            // 
+            this.отчетДляСайта2023ToolStripMenuItem.Name = "отчетДляСайта2023ToolStripMenuItem";
+            this.отчетДляСайта2023ToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.отчетДляСайта2023ToolStripMenuItem.Text = "Отчет для сайта";
+            this.отчетДляСайта2023ToolStripMenuItem.Click += new System.EventHandler(this.ОтчетДляСайта2023ToolStripMenuItem_Click);
             // 
             // онкологияToolStripMenuItem
             // 
@@ -3313,6 +3323,7 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.ToolStripMenuItem суммарныйОтчетПоФилиалуToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem итоговыйОтчетПоВсемФилиаламToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отчетДляСайтаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem отчетДляСайта2023ToolStripMenuItem;
         private System.Windows.Forms.TabPage PagePg;
         private System.Windows.Forms.DataGridView DgwReportPg;
         private System.Windows.Forms.TextBox TxtbPg;

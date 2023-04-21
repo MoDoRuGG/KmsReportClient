@@ -13,6 +13,7 @@
         ControlZpzQuarterly,
         ControlZpz2023Quarterly,
         ZpzWebSite,
+        ZpzWebSite2023,
         Onko,
         OnkoQuarterly,
         CnpnQuarterly,
