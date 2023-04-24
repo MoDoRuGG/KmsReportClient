@@ -288,13 +288,6 @@ namespace KmsReportClient.Report.Basic
                     continue;
                 }
 
-                if (row.Key == "2")
-                {
-                    row.Value.Cells[2].Value = _rows.Where(x => x.Key == "2.1" || x.Key == "2.2").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-                    row.Value.Cells[4].Value = _rows.Where(x => x.Key == "2.1" || x.Key == "2.2").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[4].Value));
-                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "2").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[4].Value) - GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-
-                }
 
                 if (row.Key == "2.1")
                 {
@@ -327,6 +320,11 @@ namespace KmsReportClient.Report.Basic
                     {
                          row.Value.Cells[3].Value = GlobalUtils.TryParseDecimal(row.Value.Cells[4].Value) - GlobalUtils.TryParseDecimal(row.Value.Cells[2].Value);
                     }
+                }
+
+                if (row.Key == "2")
+                {
+                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "2").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[4].Value) - GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
                 }
             }
         }
