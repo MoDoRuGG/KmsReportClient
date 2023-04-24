@@ -2765,6 +2765,7 @@ namespace KmsReportClient.Forms
             this.dgvMonitoringVCR.Size = new System.Drawing.Size(703, 276);
             this.dgvMonitoringVCR.TabIndex = 24;
             this.dgvMonitoringVCR.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonitoringVCR_CellEndEdit);
+            this.dgvMonitoringVCR.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvMonitoringVCR_CellBeginEdit);
             // 
             // PageEffectiveness
             // 

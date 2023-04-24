@@ -273,6 +273,7 @@ namespace KmsReportClient.Report.Basic
             }
 
             Report.Data = dataList.ToArray();
+            SetFormula();
         }
 
         public void SetFormula()
@@ -287,6 +288,13 @@ namespace KmsReportClient.Report.Basic
                     continue;
                 }
 
+                if (row.Key == "2")
+                {
+                    row.Value.Cells[2].Value = _rows.Where(x => x.Key == "2.1" || x.Key == "2.2").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                    row.Value.Cells[4].Value = _rows.Where(x => x.Key == "2.1" || x.Key == "2.2").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[4].Value));
+                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "2").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[4].Value) - GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+
+                }
 
                 if (row.Key == "2.1")
                 {
@@ -314,45 +322,12 @@ namespace KmsReportClient.Report.Basic
 
                 if (_MonitoringVCRPGDataResult != null)
                 {
-
-                    // ПО ЗАПРОСУ ГУЖЕНКО перевожу все на суммирование, без подтягивания данных ПГ
-                    
                     MonitoringVCRPgDataDto dto = _MonitoringVCRPGDataResult.FirstOrDefault(x => x.RowNum == row.Key);
                     if (dto != null)
                     {
-                        if (GlobalUtils.TryParseDecimal(dto.Total) == 0.00m) // Если по ПГ нам ничего не пришло, то можно суммировать
-                        {
-                            row.Value.Cells[4].Value = GlobalUtils.TryParseDecimal(row.Value.Cells[2].Value) + GlobalUtils.TryParseDecimal(row.Value.Cells[3].Value);
-                        }
-                        else
-                        {
-                            if (GlobalUtils.TryParseDecimal(row.Value.Cells[2].Value) == 0.00m && GlobalUtils.TryParseDecimal(row.Value.Cells[3].Value) != 0.00m)
-                            {
-                                row.Value.Cells[2].Value = GlobalUtils.TryParseDecimal(row.Value.Cells[4].Value) - GlobalUtils.TryParseDecimal(row.Value.Cells[3].Value);
-                            }
-                            else if (GlobalUtils.TryParseDecimal(row.Value.Cells[3].Value) == 0.00m && GlobalUtils.TryParseDecimal(row.Value.Cells[2].Value) != 0.00m)
-                            {
-                                row.Value.Cells[3].Value = GlobalUtils.TryParseDecimal(row.Value.Cells[4].Value) - GlobalUtils.TryParseDecimal(row.Value.Cells[2].Value);
-                            }
-                            //else if (GlobalUtils.TryParseDecimal(row.Value.Cells[2].Value) != 0.00m && GlobalUtils.TryParseDecimal(row.Value.Cells[3].Value) != 0.00m && (GlobalUtils.TryParseDecimal(row.Value.Cells[2].Value) + GlobalUtils.TryParseDecimal(row.Value.Cells[3].Value) != GlobalUtils.TryParseDecimal(row.Value.Cells[4].Value)))
-                            //{
-                            //    row.Value.Cells[4].Value = GlobalUtils.TryParseDecimal(row.Value.Cells[2].Value) + GlobalUtils.TryParseDecimal(row.Value.Cells[3].Value);
-                            //}
-
-
-                        }
-
+                         row.Value.Cells[3].Value = GlobalUtils.TryParseDecimal(row.Value.Cells[4].Value) - GlobalUtils.TryParseDecimal(row.Value.Cells[2].Value);
                     }
                 }
-
-                if (row.Key == "2")
-                {
-                    row.Value.Cells[2].Value = _rows.Where(x => x.Key == "2.1" || x.Key == "2.2").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "2").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[4].Value) - GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-
-
-                }
-
             }
         }
     }

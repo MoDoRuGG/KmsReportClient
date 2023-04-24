@@ -1941,6 +1941,22 @@ namespace KmsReportClient.Forms
             (_processor as ReportZpzQProcessor).SetFormula();
         }
 
+        private void DgvReportMVCR_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            (_processor as MonitoringVCRProcessor).SetFormula();
+        }
+
+        private void DgvReportMVCR_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            (_processor as MonitoringVCRProcessor).SetFormula();
+        }
+
+
+        private void DgvReportMVCR_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as MonitoringVCRProcessor).SetFormula();
+        }
+
         private void DgvReportZpz10_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             (_processor as ReportZpz10Processor).SetFormula();
@@ -2060,10 +2076,16 @@ namespace KmsReportClient.Forms
 
         private void dgvMonitoringVCR_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
-
+            (_processor as MonitoringVCRProcessor).SetFormula();
         }
 
         private void dgvMonitoringVCR_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as MonitoringVCRProcessor).SetFormula();
+
+        }
+
+        private void dgvMonitoringVCR_KeyPress(object sender, DataGridViewCellEventArgs e)
         {
             (_processor as MonitoringVCRProcessor).SetFormula();
 
