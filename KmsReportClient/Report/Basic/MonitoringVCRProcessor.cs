@@ -15,6 +15,7 @@ using KmsReportClient.Model.Enums;
 using KmsReportClient.Model.XML;
 using KmsReportClient.Support;
 using NLog;
+using Org.BouncyCastle.Asn1.Crmf;
 
 namespace KmsReportClient.Report.Basic
 {
@@ -123,6 +124,7 @@ namespace KmsReportClient.Report.Basic
             }
 
             SetFormula();
+            ValidReport();
 
         }
         public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status, DataSource datasource)
@@ -188,7 +190,15 @@ namespace KmsReportClient.Report.Basic
         }
         public override string ValidReport()
         {
-            return "";
+            string message = "";
+            decimal control1 = 0,control2 = 0,control3 = 0;
+            control1 = _rows.Where(x => x.Key == "2").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+            control2 = _rows.Where(x => x.Key == "2.1").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+            control3 = _rows.Where(x => x.Key == "2.2").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+            if (control1 < control2 + control3)
+            { message += "Общее количество нарушений в строке '2' не может быть меньше суммы нарушений по строкам '2.1' и '2.2'"; }
+            return message;
+            
         }
         protected override void CreateDgvForForm(string form, List<TemplateRow> table)
         {
