@@ -8956,6 +8956,8 @@ namespace KmsReportClient.External {
         
         private int WrittenField;
         
+        private int AssignmentField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -9001,6 +9003,19 @@ namespace KmsReportClient.External {
                 if ((this.WrittenField.Equals(value) != true)) {
                     this.WrittenField = value;
                     this.RaisePropertyChanged("Written");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int Assignment {
+            get {
+                return this.AssignmentField;
+            }
+            set {
+                if ((this.AssignmentField.Equals(value) != true)) {
+                    this.AssignmentField = value;
+                    this.RaisePropertyChanged("Assignment");
                 }
             }
         }

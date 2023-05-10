@@ -972,6 +972,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Row" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="Oral" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="Written" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Assignment" type="s:int" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfZpzStatistics2023">

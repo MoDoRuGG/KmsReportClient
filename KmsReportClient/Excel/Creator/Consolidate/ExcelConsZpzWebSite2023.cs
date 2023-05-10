@@ -27,24 +27,26 @@ namespace KmsReportClient.Excel.Creator.Consolidate
             int currentIndex = 7;
             foreach (var treatment in report.Treatments)
             {
-                ObjWorkSheet.Cells[++currentIndex, 3] = treatment.Oral;
+                ObjWorkSheet.Cells[currentIndex, 3] = treatment.Oral;
                 ObjWorkSheet.Cells[currentIndex, 4] = treatment.Written;
+                ObjWorkSheet.Cells[currentIndex++, 5] = treatment.Assignment;
             }
         }
 
         private void FillComplaints(ZpzForWebSite2023 report)
         {
-            int currentIndex = 15;
+            int currentIndex = 12;
             foreach (var complaint in report.Complaints)
             {
-                ObjWorkSheet.Cells[++currentIndex, 3] = complaint.Oral;
+                ObjWorkSheet.Cells[currentIndex, 3] = complaint.Oral;
                 ObjWorkSheet.Cells[currentIndex, 4] = complaint.Written;
+                ObjWorkSheet.Cells[currentIndex++, 5] = complaint.Assignment;
             }
         }
 
         private void FillExpertises(ZpzForWebSite2023 report)
         {
-            int currentIndex = 31;
+            int currentIndex = 28;
             foreach (var expertise in report.Expertises)
             {
                 ObjWorkSheet.Cells[++currentIndex, 3] = expertise.Target;
@@ -56,7 +58,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
 
         private void FillProtections(ZpzForWebSite2023 report)
         {
-            int currentIndex = 44;
+            int currentIndex = 41;
             foreach (var protection in report.Protections)
             {
                 ObjWorkSheet.Cells[currentIndex++, 3] = protection.Count;
@@ -65,7 +67,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
 
         private void FillSpecialists(ZpzForWebSite2023 report)
         {
-            int currentIndex = 49;
+            int currentIndex = 46;
             foreach (var specialist in report.Specialists)
             {
                 ObjWorkSheet.Cells[currentIndex++, 3] = specialist.Count;
@@ -74,7 +76,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
 
         private void FillInformations(ZpzForWebSite2023 report)
         {
-            int currentIndex = 57;
+            int currentIndex = 54;
             foreach (var information in report.Informations)
             {
                 ObjWorkSheet.Cells[currentIndex++, 3] = information.Count;
