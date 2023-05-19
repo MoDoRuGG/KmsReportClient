@@ -712,13 +712,16 @@ namespace KmsReportClient.Forms
             {
                 Row = x.Key,
                 Oral = x.Sum(x => x.Oral),
-                Written = x.Sum(x => x.Written)
+                Written = x.Sum(x => x.Written),
+                Assignment = x.Sum(x => x.Assignment)
             }).ToArray();
             var complaints = reports.SelectMany(x => x.Complaints).GroupBy(x => x.Row).Select(x => new ZpzTreatment2023
             {
                 Row = x.Key,
                 Oral = x.Sum(x => x.Oral),
-                Written = x.Sum(x => x.Written)
+                Written = x.Sum(x => x.Written),
+                Assignment = x.Sum(x => x.Assignment)
+
             }).ToArray();
             var protections = reports.SelectMany(x => x.Protections).GroupBy(x => x.Row).Select(x => new ZpzStatistics2023
             {

@@ -29762,19 +29762,15 @@ namespace KmsReportClient.External {
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
         public KmsReportClient.External.ReportType reportType;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public KmsReportClient.External.DataSource datasource;
-        
         public CollectSummaryReportRequestBody() {
         }
         
-        public CollectSummaryReportRequestBody(KmsReportClient.External.ArrayOfString filials, string yymmStart, string yymmEnd, KmsReportClient.External.ReportStatus status, KmsReportClient.External.ReportType reportType, KmsReportClient.External.DataSource datasource) {
+        public CollectSummaryReportRequestBody(KmsReportClient.External.ArrayOfString filials, string yymmStart, string yymmEnd, KmsReportClient.External.ReportStatus status, KmsReportClient.External.ReportType reportType) {
             this.filials = filials;
             this.yymmStart = yymmStart;
             this.yymmEnd = yymmEnd;
             this.status = status;
             this.reportType = reportType;
-            this.datasource = datasource;
         }
     }
     
@@ -33532,7 +33528,7 @@ namespace KmsReportClient.External {
             return base.Channel.CollectSummaryReport(request);
         }
         
-        public KmsReportClient.External.AbstractReport CollectSummaryReport(KmsReportClient.External.ArrayOfString filials, string yymmStart, string yymmEnd, KmsReportClient.External.ReportStatus status, KmsReportClient.External.ReportType reportType, KmsReportClient.External.DataSource datasource) {
+        public KmsReportClient.External.AbstractReport CollectSummaryReport(KmsReportClient.External.ArrayOfString filials, string yymmStart, string yymmEnd, KmsReportClient.External.ReportStatus status, KmsReportClient.External.ReportType reportType) {
             KmsReportClient.External.CollectSummaryReportRequest inValue = new KmsReportClient.External.CollectSummaryReportRequest();
             inValue.Body = new KmsReportClient.External.CollectSummaryReportRequestBody();
             inValue.Body.filials = filials;
@@ -33540,7 +33536,6 @@ namespace KmsReportClient.External {
             inValue.Body.yymmEnd = yymmEnd;
             inValue.Body.status = status;
             inValue.Body.reportType = reportType;
-            inValue.Body.datasource = datasource;
             KmsReportClient.External.CollectSummaryReportResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).CollectSummaryReport(inValue);
             return retVal.Body.CollectSummaryReportResult;
         }
@@ -33550,7 +33545,7 @@ namespace KmsReportClient.External {
             return base.Channel.CollectSummaryReportAsync(request);
         }
         
-        public System.Threading.Tasks.Task<KmsReportClient.External.CollectSummaryReportResponse> CollectSummaryReportAsync(KmsReportClient.External.ArrayOfString filials, string yymmStart, string yymmEnd, KmsReportClient.External.ReportStatus status, KmsReportClient.External.ReportType reportType, KmsReportClient.External.DataSource datasource) {
+        public System.Threading.Tasks.Task<KmsReportClient.External.CollectSummaryReportResponse> CollectSummaryReportAsync(KmsReportClient.External.ArrayOfString filials, string yymmStart, string yymmEnd, KmsReportClient.External.ReportStatus status, KmsReportClient.External.ReportType reportType) {
             KmsReportClient.External.CollectSummaryReportRequest inValue = new KmsReportClient.External.CollectSummaryReportRequest();
             inValue.Body = new KmsReportClient.External.CollectSummaryReportRequestBody();
             inValue.Body.filials = filials;
@@ -33558,7 +33553,6 @@ namespace KmsReportClient.External {
             inValue.Body.yymmEnd = yymmEnd;
             inValue.Body.status = status;
             inValue.Body.reportType = reportType;
-            inValue.Body.datasource = datasource;
             return ((KmsReportClient.External.EndpointSoap)(this)).CollectSummaryReportAsync(inValue);
         }
         

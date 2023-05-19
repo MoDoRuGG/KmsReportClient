@@ -2402,7 +2402,6 @@
             <s:element minOccurs="0" maxOccurs="1" name="yymmEnd" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="status" type="tns:ReportStatus" />
             <s:element minOccurs="1" maxOccurs="1" name="reportType" type="tns:ReportType" />
-            <s:element minOccurs="1" maxOccurs="1" name="datasource" type="tns:DataSource" />
           </s:sequence>
         </s:complexType>
       </s:element>
