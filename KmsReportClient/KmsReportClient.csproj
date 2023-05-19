@@ -136,6 +136,7 @@
     <Compile Include="Excel\Creator\Base\ExcelOpedFinanceCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelOpedUCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelOpedQCreator.cs" />
+    <Compile Include="Excel\Creator\Base\ExcelZpzLethalCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelZpz10Creator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelZpzCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelPgCreator.cs" />
@@ -288,6 +289,7 @@
     <Compile Include="Report\Basic\ReportOpedProcessor.cs" />
     <Compile Include="Report\Basic\ReportInfrormationResponseProcessor.cs" />
     <Compile Include="Report\Basic\ReportOpedQProcessor.cs" />
+    <Compile Include="Report\Basic\ReportZpzLethalProcessor.cs" />
     <Compile Include="Report\Basic\ReportZpz10Processor.cs" />
     <Compile Include="Report\Basic\ReportZpzQProcessor.cs" />
     <Compile Include="Report\Basic\ReportZpzProcessor.cs" />
@@ -610,6 +612,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.GetZpz10YearDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.GetZpzLethalYearDataResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.KmsReportDictionary.datasource">

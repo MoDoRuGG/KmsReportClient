@@ -99,6 +99,9 @@ namespace KmsReportClient.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle72 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -233,12 +236,16 @@ namespace KmsReportClient.Forms
             this.TxtbZpzQ = new System.Windows.Forms.TextBox();
             this.CmbZpzQ = new System.Windows.Forms.ComboBox();
             this.PageZpz = new System.Windows.Forms.TabPage();
+            this.PageZpzLethal = new System.Windows.Forms.TabPage();
             this.PageZpz10 = new System.Windows.Forms.TabPage();
             this.DgwReportZpz = new System.Windows.Forms.DataGridView();
+            this.DgwReportZpzLethal = new System.Windows.Forms.DataGridView();
             this.DgwReportZpz10 = new System.Windows.Forms.DataGridView();
             this.TxtbZpz = new System.Windows.Forms.TextBox();
+            this.TxtbZpzLethal = new System.Windows.Forms.TextBox();
             this.TxtbZpz10 = new System.Windows.Forms.TextBox();
             this.CmbZpz = new System.Windows.Forms.ComboBox();
+            this.CmbZpzLethal = new System.Windows.Forms.ComboBox();
             this.CmbZpz10 = new System.Windows.Forms.ComboBox();
             this.PageQuery = new System.Windows.Forms.TabPage();
             this.TbxQuery = new System.Windows.Forms.TextBox();
@@ -335,6 +342,8 @@ namespace KmsReportClient.Forms
             ((System.ComponentModel.ISupportInitialize)(this.DgwReportZpzQ)).BeginInit();
             this.PageZpz.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgwReportZpz)).BeginInit();
+            this.PageZpzLethal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgwReportZpzLethal)).BeginInit();
             this.PageZpz10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgwReportZpz10)).BeginInit();
             this.PageQueryZpz.SuspendLayout();
@@ -1947,7 +1956,80 @@ namespace KmsReportClient.Forms
             this.CmbZpzQ.Size = new System.Drawing.Size(100, 21);
             this.CmbZpzQ.TabIndex = 6;
             this.CmbZpzQ.SelectedIndexChanged += new System.EventHandler(this.CmbZpz_SelectedIndexChanged);
+            //
+            // PageZpzLethal
             // 
+            this.PageZpzLethal.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.PageZpzLethal.Controls.Add(this.DgwReportZpzLethal);
+            this.PageZpzLethal.Controls.Add(this.TxtbZpzLethal);
+            this.PageZpzLethal.Controls.Add(this.CmbZpzLethal);
+            this.PageZpzLethal.Location = new System.Drawing.Point(4, 36);
+            this.PageZpzLethal.Name = "PageZpzLethal";
+            this.PageZpzLethal.Padding = new System.Windows.Forms.Padding(3);
+            this.PageZpzLethal.Size = new System.Drawing.Size(712, 330);
+            this.PageZpzLethal.TabIndex = 3;
+            this.PageZpzLethal.Text = "tabPage1";
+            // 
+            // DgwReportZpzLethal
+            // 
+            this.DgwReportZpzLethal.AllowUserToAddRows = false;
+            this.DgwReportZpzLethal.AllowUserToDeleteRows = false;
+            this.DgwReportZpzLethal.AllowUserToResizeColumns = false;
+            this.DgwReportZpzLethal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DgwReportZpzLethal.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            dataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            dataGridViewCellStyle70.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle70.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle70.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle70.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle70.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle70.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgwReportZpzLethal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle70;
+            this.DgwReportZpzLethal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle71.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle71.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle71.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle71.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle71.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle71.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwReportZpzLethal.DefaultCellStyle = dataGridViewCellStyle71;
+            this.DgwReportZpzLethal.Location = new System.Drawing.Point(7, 51);
+            this.DgwReportZpzLethal.Name = "DgwReportZpzLethal";
+            dataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle72.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle72.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle72.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle72.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle72.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle72.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgwReportZpzLethal.RowHeadersDefaultCellStyle = dataGridViewCellStyle72;
+            this.DgwReportZpzLethal.Size = new System.Drawing.Size(699, 272);
+            this.DgwReportZpzLethal.TabIndex = 8;
+            this.DgwReportZpzLethal.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvReportZpzLethal_CellEndEdit);
+            // 
+            // TxtbZpzLethal
+            // 
+            this.TxtbZpzLethal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtbZpzLethal.Location = new System.Drawing.Point(113, 6);
+            this.TxtbZpzLethal.Multiline = true;
+            this.TxtbZpzLethal.Name = "TxtbZpzLethal";
+            this.TxtbZpzLethal.ReadOnly = true;
+            this.TxtbZpzLethal.Size = new System.Drawing.Size(593, 39);
+            this.TxtbZpzLethal.TabIndex = 7;
+            // 
+            // CmbZpzLethal
+            // 
+            this.CmbZpzLethal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbZpzLethal.FormattingEnabled = true;
+            this.CmbZpzLethal.Location = new System.Drawing.Point(7, 6);
+            this.CmbZpzLethal.Name = "CmbZpzLethal";
+            this.CmbZpzLethal.Size = new System.Drawing.Size(100, 21);
+            this.CmbZpzLethal.TabIndex = 6;
+            this.CmbZpzLethal.SelectedIndexChanged += new System.EventHandler(this.CmbZpz_SelectedIndexChanged);// 
             // PageZpz
             // 
             this.PageZpz.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -3341,6 +3423,10 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.DataGridView DgwReportZpz10;
         private System.Windows.Forms.TextBox TxtbZpz10;
         private System.Windows.Forms.ComboBox CmbZpz10;
+        private System.Windows.Forms.TabPage PageZpzLethal;
+        private System.Windows.Forms.DataGridView DgwReportZpzLethal;
+        private System.Windows.Forms.TextBox TxtbZpzLethal;
+        private System.Windows.Forms.ComboBox CmbZpzLethal;
         private System.Windows.Forms.ToolStripMenuItem контрольЗПЗежемесячнаяToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem контрольЗПЗ2023ToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton BtnSaveToDb;

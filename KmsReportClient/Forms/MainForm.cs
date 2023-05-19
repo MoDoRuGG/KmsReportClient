@@ -149,6 +149,7 @@ namespace KmsReportClient.Forms
             TbControl.TabPages.Remove(PageZpz);
             TbControl.TabPages.Remove(PageZpzQ);
             TbControl.TabPages.Remove(PageZpz10);
+            TbControl.TabPages.Remove(PageZpzLethal);
             TbControl.TabPages.Remove(PageEffectiveness);
 
             if (CurrentUser.IsMain)
@@ -187,6 +188,7 @@ namespace KmsReportClient.Forms
                         {tpIizl2022, ReportGlobalConst.ReportIizl2022},
                         {PageCadre, ReportGlobalConst.ReportCadre},
                         {PageZpz10, ReportGlobalConst.ReportZpz10},
+                        {PageZpz10, ReportGlobalConst.ReportZpzLethal},
                         {PageEffectiveness, ReportGlobalConst.ReportEffectiveness},
             };
 
@@ -216,6 +218,10 @@ namespace KmsReportClient.Forms
                 {
                     ReportGlobalConst.ReportZpz,
                     new ReportZpzProcessor(_client, _reportsDictionary, DgwReportZpz, CmbZpz, TxtbZpz, PageZpz)
+                },
+                {
+                    ReportGlobalConst.ReportZpzLethal,
+                    new ReportZpzProcessor(_client, _reportsDictionary, DgwReportZpzLethal, CmbZpzLethal, TxtbZpzLethal, PageZpzLethal)
                 },
                 {
                     ReportGlobalConst.ReportZpz10,

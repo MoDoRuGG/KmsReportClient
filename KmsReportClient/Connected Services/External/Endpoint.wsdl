@@ -2,6 +2,118 @@
 <wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://kms-oms.ru/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://kms-oms.ru/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://kms-oms.ru/">
+      <s:element name="CreateConsolidateOnko">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isMonthly" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateConsolidateOnkoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateConsolidateOnkoResult" type="tns:ArrayOfConsolidateOnko" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfConsolidateOnko">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsolidateOnko" nillable="true" type="tns:ConsolidateOnko" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConsolidateOnko">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Complaint" type="tns:OnkoComplaint" />
+          <s:element minOccurs="0" maxOccurs="1" name="Protection" type="tns:OnkoProtection" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mek" type="tns:OnkoMek" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mee" type="tns:OnkoMee" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ekmp" type="tns:OnkoEkmp" />
+          <s:element minOccurs="0" maxOccurs="1" name="Finance" type="tns:OnkoFinance" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OnkoComplaint">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MedicalHelp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Dedlines" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MedicineProvision" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DedlineDrugMedicine" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="NoDrugMedicine" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AppealMedicalHelp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AppealMedicineProvision" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AppealDrugsMedicine" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OnkoProtection">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PretrialMedicalHelp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PretrialDeadline" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PretrialMedicineProvision" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PretrialDedlineDrugMedicine" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PretrialNoDrugMedicine" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="JudicalMedicalHelp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="JudicalDeadline" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="JudicalMedicineProvision" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="JudicalDedlineDrugMedicine" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="JudicalNoDrugMedicine" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OnkoMek">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PresentedBills" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AcceptedBills" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegistrationMek" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotInProgramMek" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TarifMek" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="LicenceMek" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="RepeatMek" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OnkoMee">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Complaint" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Antitumor" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlanHosp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ViolationCondition" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ViolationOnkoFirst" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ViolationHisto" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ViolationOnkoDiagnostic" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OnkoEkmp">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="EkmpComplaint" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="EkmpFromMee" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeathEkmp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ThematicEkmp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountOnko" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="NoProfilOnko" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnreasonEkmp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DispEkmp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="RecommendationEkmp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Premature" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ViolationMoEmkp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Failure" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Payment" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="OtherViolation" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OnkoFinance">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SumMek" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumDispMee" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumMee" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumDispEkmp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumNoProfilEkmp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumUnreasonEkmp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumRecommendationEkmp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumPrematureEkmp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumFailureEkmp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumPaymentEkmp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumOtherEkmp" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="CreateConsolidateLetal">
         <s:complexType>
           <s:sequence>
@@ -1418,6 +1530,23 @@
           <s:element minOccurs="1" maxOccurs="1" name="CountStacVmpAnother" type="s:decimal" />
         </s:sequence>
       </s:complexType>
+      <s:element name="GetZpzLethalYearData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="theme" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fillial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rowNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZpzLethalYearDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetZpzLethalYearDataResult" type="tns:ReportZpzDataDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetCadreYearData">
         <s:complexType>
           <s:sequence>
@@ -2428,6 +2557,7 @@
           <s:enumeration value="Infomaterial" />
           <s:enumeration value="Zpz10" />
           <s:enumeration value="Effective" />
+          <s:enumeration value="ZpzLethal" />
         </s:restriction>
       </s:simpleType>
       <s:element name="CollectSummaryReportResponse">
@@ -3739,120 +3869,14 @@
           <s:element minOccurs="1" maxOccurs="1" name="InsRepres3spFullTime" type="s:decimal" />
         </s:sequence>
       </s:complexType>
-      <s:element name="CreateConsolidateOnko">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="isMonthly" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CreateConsolidateOnkoResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CreateConsolidateOnkoResult" type="tns:ArrayOfConsolidateOnko" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfConsolidateOnko">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsolidateOnko" nillable="true" type="tns:ConsolidateOnko" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ConsolidateOnko">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Complaint" type="tns:OnkoComplaint" />
-          <s:element minOccurs="0" maxOccurs="1" name="Protection" type="tns:OnkoProtection" />
-          <s:element minOccurs="0" maxOccurs="1" name="Mek" type="tns:OnkoMek" />
-          <s:element minOccurs="0" maxOccurs="1" name="Mee" type="tns:OnkoMee" />
-          <s:element minOccurs="0" maxOccurs="1" name="Ekmp" type="tns:OnkoEkmp" />
-          <s:element minOccurs="0" maxOccurs="1" name="Finance" type="tns:OnkoFinance" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="OnkoComplaint">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="MedicalHelp" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="Dedlines" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="MedicineProvision" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="DedlineDrugMedicine" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="NoDrugMedicine" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="AppealMedicalHelp" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="AppealMedicineProvision" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="AppealDrugsMedicine" type="s:decimal" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="OnkoProtection">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="PretrialMedicalHelp" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="PretrialDeadline" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="PretrialMedicineProvision" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="PretrialDedlineDrugMedicine" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="PretrialNoDrugMedicine" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="JudicalMedicalHelp" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="JudicalDeadline" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="JudicalMedicineProvision" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="JudicalDedlineDrugMedicine" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="JudicalNoDrugMedicine" type="s:decimal" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="OnkoMek">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="PresentedBills" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="AcceptedBills" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="RegistrationMek" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="NotInProgramMek" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="TarifMek" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="LicenceMek" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="RepeatMek" type="s:decimal" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="OnkoMee">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="Complaint" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="Antitumor" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="PlanHosp" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="ViolationCondition" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="ViolationOnkoFirst" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="ViolationHisto" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="ViolationOnkoDiagnostic" type="s:decimal" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="OnkoEkmp">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="EkmpComplaint" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="EkmpFromMee" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="DeathEkmp" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="ThematicEkmp" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CountOnko" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="NoProfilOnko" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="UnreasonEkmp" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="DispEkmp" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="RecommendationEkmp" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="Premature" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="ViolationMoEmkp" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="Failure" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="Payment" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="OtherViolation" type="s:decimal" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="OnkoFinance">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="SumMek" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="SumDispMee" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="SumMee" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="SumDispEkmp" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="SumNoProfilEkmp" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="SumUnreasonEkmp" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="SumRecommendationEkmp" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="SumPrematureEkmp" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="SumFailureEkmp" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="SumPaymentEkmp" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="SumOtherEkmp" type="s:decimal" />
-        </s:sequence>
-      </s:complexType>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="CreateConsolidateOnkoSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateConsolidateOnko" />
+  </wsdl:message>
+  <wsdl:message name="CreateConsolidateOnkoSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateConsolidateOnkoResponse" />
+  </wsdl:message>
   <wsdl:message name="CreateConsolidateLetalSoapIn">
     <wsdl:part name="parameters" element="tns:CreateConsolidateLetal" />
   </wsdl:message>
@@ -3972,6 +3996,12 @@
   </wsdl:message>
   <wsdl:message name="GetZpz10YearDataSoapOut">
     <wsdl:part name="parameters" element="tns:GetZpz10YearDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetZpzLethalYearDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetZpzLethalYearData" />
+  </wsdl:message>
+  <wsdl:message name="GetZpzLethalYearDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetZpzLethalYearDataResponse" />
   </wsdl:message>
   <wsdl:message name="GetCadreYearDataSoapIn">
     <wsdl:part name="parameters" element="tns:GetCadreYearData" />
@@ -4393,13 +4423,11 @@
   <wsdl:message name="CreateReportControlZpz2023SoapOut">
     <wsdl:part name="parameters" element="tns:CreateReportControlZpz2023Response" />
   </wsdl:message>
-  <wsdl:message name="CreateConsolidateOnkoSoapIn">
-    <wsdl:part name="parameters" element="tns:CreateConsolidateOnko" />
-  </wsdl:message>
-  <wsdl:message name="CreateConsolidateOnkoSoapOut">
-    <wsdl:part name="parameters" element="tns:CreateConsolidateOnkoResponse" />
-  </wsdl:message>
   <wsdl:portType name="EndpointSoap">
+    <wsdl:operation name="CreateConsolidateOnko">
+      <wsdl:input message="tns:CreateConsolidateOnkoSoapIn" />
+      <wsdl:output message="tns:CreateConsolidateOnkoSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="CreateConsolidateLetal">
       <wsdl:input message="tns:CreateConsolidateLetalSoapIn" />
       <wsdl:output message="tns:CreateConsolidateLetalSoapOut" />
@@ -4479,6 +4507,10 @@
     <wsdl:operation name="GetZpz10YearData">
       <wsdl:input message="tns:GetZpz10YearDataSoapIn" />
       <wsdl:output message="tns:GetZpz10YearDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZpzLethalYearData">
+      <wsdl:input message="tns:GetZpzLethalYearDataSoapIn" />
+      <wsdl:output message="tns:GetZpzLethalYearDataSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetCadreYearData">
       <wsdl:input message="tns:GetCadreYearDataSoapIn" />
@@ -4760,13 +4792,18 @@
       <wsdl:input message="tns:CreateReportControlZpz2023SoapIn" />
       <wsdl:output message="tns:CreateReportControlZpz2023SoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="CreateConsolidateOnko">
-      <wsdl:input message="tns:CreateConsolidateOnkoSoapIn" />
-      <wsdl:output message="tns:CreateConsolidateOnkoSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="EndpointSoap" type="tns:EndpointSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateConsolidateOnko">
+      <soap:operation soapAction="http://kms-oms.ru/CreateConsolidateOnko" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateConsolidateLetal">
       <soap:operation soapAction="http://kms-oms.ru/CreateConsolidateLetal" style="document" />
       <wsdl:input>
@@ -4940,6 +4977,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetZpz10YearData">
       <soap:operation soapAction="http://kms-oms.ru/GetZpz10YearData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZpzLethalYearData">
+      <soap:operation soapAction="http://kms-oms.ru/GetZpzLethalYearData" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -5577,18 +5623,18 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateConsolidateOnko">
-      <soap:operation soapAction="http://kms-oms.ru/CreateConsolidateOnko" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="EndpointSoap12" type="tns:EndpointSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateConsolidateOnko">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateConsolidateOnko" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateConsolidateLetal">
       <soap12:operation soapAction="http://kms-oms.ru/CreateConsolidateLetal" style="document" />
       <wsdl:input>
@@ -5762,6 +5808,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetZpz10YearData">
       <soap12:operation soapAction="http://kms-oms.ru/GetZpz10YearData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZpzLethalYearData">
+      <soap12:operation soapAction="http://kms-oms.ru/GetZpzLethalYearData" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -6392,15 +6447,6 @@
     </wsdl:operation>
     <wsdl:operation name="CreateReportControlZpz2023">
       <soap12:operation soapAction="http://kms-oms.ru/CreateReportControlZpz2023" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateConsolidateOnko">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateConsolidateOnko" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
