@@ -448,7 +448,7 @@ namespace KmsReportClient.Report.Basic
         {
             Dgv.AutoGenerateColumns = false;
             Dgv.AllowUserToAddRows = false;
-            Dgv.AutoSize = false;
+            Dgv.AutoSize = true;
             Dgv.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             Dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             Dgv.Columns.Clear();
@@ -467,7 +467,7 @@ namespace KmsReportClient.Report.Basic
 
             CreateDgvForForm(form, table);
 
-            if (Report.IdType == "PG" || Report.IdType == "PG_Q" || Report.IdType == "foped" || Report.IdType == "Zpz_Q" || Report.IdType == "Zpz" /**|| Report.IdType == "Zpz10"**/)
+            if (Report.IdType == "PG" || Report.IdType == "PG_Q" || Report.IdType == "foped" || Report.IdType == "Zpz_Q" || Report.IdType == "Zpz" || Report.IdType == "ZpzLethal"/**|| Report.IdType == "Zpz10"**/)
                 CreateTotalColumn();
 
         }

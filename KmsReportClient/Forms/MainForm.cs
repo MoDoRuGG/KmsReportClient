@@ -188,7 +188,7 @@ namespace KmsReportClient.Forms
                         {tpIizl2022, ReportGlobalConst.ReportIizl2022},
                         {PageCadre, ReportGlobalConst.ReportCadre},
                         {PageZpz10, ReportGlobalConst.ReportZpz10},
-                        {PageZpz10, ReportGlobalConst.ReportZpzLethal},
+                        {PageZpzLethal, ReportGlobalConst.ReportZpzLethal},
                         {PageEffectiveness, ReportGlobalConst.ReportEffectiveness},
             };
 
@@ -221,7 +221,7 @@ namespace KmsReportClient.Forms
                 },
                 {
                     ReportGlobalConst.ReportZpzLethal,
-                    new ReportZpzProcessor(_client, _reportsDictionary, DgwReportZpzLethal, CmbZpzLethal, TxtbZpzLethal, PageZpzLethal)
+                    new ReportZpzLethalProcessor(_client, _reportsDictionary, DgwReportZpzLethal, CmbZpzLethal, TxtbZpzLethal, PageZpzLethal)
                 },
                 {
                     ReportGlobalConst.ReportZpz10,
@@ -1528,6 +1528,9 @@ namespace KmsReportClient.Forms
         private void CmbZpz_SelectedIndexChanged(object sender, EventArgs e) =>
         ChangeIndexComboBox(DgwReportZpzQ, CmbZpzQ, TxtbZpzQ);
 
+        private void CmbZpzLethal_SelectedIndexChanged(object sender, EventArgs e) =>
+        ChangeIndexComboBox(DgwReportZpzLethal, CmbZpzLethal, TxtbZpzLethal);
+
         private void CmbZpz_SelectedIndexChanged_1(object sender, EventArgs e) =>
             ChangeIndexComboBox(DgwReportZpz, CmbZpz, TxtbZpz);
 
@@ -1945,6 +1948,11 @@ namespace KmsReportClient.Forms
         private void DgvReportZpzQ_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             (_processor as ReportZpzQProcessor).SetFormula();
+        }
+
+        private void DgvReportZpzLethal_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as ReportZpzLethalProcessor).SetFormula();
         }
 
         private void DgvReportMVCR_KeyPress(object sender, KeyPressEventArgs e)
