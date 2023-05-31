@@ -46,7 +46,7 @@ namespace KmsReportClient.Excel.Creator.Base
             }
 
 
-            ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets[7];
+            ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets[2];
             FinishZpz();
         }
 

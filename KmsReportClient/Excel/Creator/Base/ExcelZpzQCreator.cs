@@ -18,8 +18,8 @@ namespace KmsReportClient.Excel.Creator.Base
             new ReportDictionary {TableName = "Таблица 7", StartRow = 7, EndRow = 407, Index = 3},
             new ReportDictionary {TableName = "Таблица 8", StartRow = 5, EndRow = 459, Index = 4},
             new ReportDictionary {TableName = "Таблица 9", StartRow = 6, EndRow = 38, Index = 5},
-            new ReportDictionary {TableName = "Таблица 1Л", StartRow = 5, EndRow = 28, Index = 6},
-            new ReportDictionary {TableName = "Таблица 2Л", StartRow = 5, EndRow = 30, Index = 7},
+            //new ReportDictionary {TableName = "Таблица 1Л", StartRow = 5, EndRow = 28, Index = 6},
+            //new ReportDictionary {TableName = "Таблица 2Л", StartRow = 5, EndRow = 30, Index = 7},
         };
 
         public ExcelZpzQCreator(
@@ -61,14 +61,14 @@ namespace KmsReportClient.Excel.Creator.Base
                     case "Таблица 5А"    :
                         FillTable5(data, dict.StartRow, dict.EndRow, themeData.Theme);
                         break;
-                    case "Таблица 1Л":
-                    case "Таблица 2Л":
-                        FillTableLetal(data, dict.StartRow, dict.EndRow, themeData.Theme);
-                            break;
+                    //case "Таблица 1Л":
+                    //case "Таблица 2Л":
+                    //    FillTableLetal(data, dict.StartRow, dict.EndRow, themeData.Theme);
+                    //        break;
                 }
             }
 
-            ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets[7];
+            ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets[5];
             FinishZpz();
         }
 
@@ -273,45 +273,45 @@ namespace KmsReportClient.Excel.Creator.Base
             }
         }
 
-        private void FillTableLetal(ReportZpzDataDto[] data, int startRowIndex, int endRowIndex, string form)
-        {
-            for (int i = startRowIndex; i <= endRowIndex; i++)
-            {
-                string rowNum = ObjWorkSheet.Cells[i, 7].Text;
-                if (!string.IsNullOrEmpty(rowNum))
-                {
-                    var rowData = data?.SingleOrDefault(x => x.Code == rowNum);
-                    if (rowData != null)
-                    {
-                        if (ObjWorkSheet.Cells[i, 8].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 8] = rowData.CountAmbulatory;
-                        }
+        //private void FillTableLetal(ReportZpzDataDto[] data, int startRowIndex, int endRowIndex, string form)
+        //{
+        //    for (int i = startRowIndex; i <= endRowIndex; i++)
+        //    {
+        //        string rowNum = ObjWorkSheet.Cells[i, 7].Text;
+        //        if (!string.IsNullOrEmpty(rowNum))
+        //        {
+        //            var rowData = data?.SingleOrDefault(x => x.Code == rowNum);
+        //            if (rowData != null)
+        //            {
+        //                if (ObjWorkSheet.Cells[i, 8].Text != "X")
+        //                {
+        //                    ObjWorkSheet.Cells[i, 8] = rowData.CountAmbulatory;
+        //                }
 
-                        if (ObjWorkSheet.Cells[i, 9].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 9] = rowData.CountStac;
-                        }
+        //                if (ObjWorkSheet.Cells[i, 9].Text != "X")
+        //                {
+        //                    ObjWorkSheet.Cells[i, 9] = rowData.CountStac;
+        //                }
 
-                        if (ObjWorkSheet.Cells[i, 10].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 10] = rowData.CountDs;
-                        }
+        //                if (ObjWorkSheet.Cells[i, 10].Text != "X")
+        //                {
+        //                    ObjWorkSheet.Cells[i, 10] = rowData.CountDs;
+        //                }
 
-                        if (ObjWorkSheet.Cells[i, 11].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 11] = rowData.CountOutOfSmoAnother;
-                        }
+        //                if (ObjWorkSheet.Cells[i, 11].Text != "X")
+        //                {
+        //                    ObjWorkSheet.Cells[i, 11] = rowData.CountOutOfSmoAnother;
+        //                }
 
-                        if (ObjWorkSheet.Cells[i, 12].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 12] = rowData.CountSmo;
-                        }
+        //                if (ObjWorkSheet.Cells[i, 12].Text != "X")
+        //                {
+        //                    ObjWorkSheet.Cells[i, 12] = rowData.CountSmo;
+        //                }
                     
-                    }
-                }
-            }
-        }
+        //            }
+        //        }
+        //    }
+        //}
 
         private void FinishZpz()
         {

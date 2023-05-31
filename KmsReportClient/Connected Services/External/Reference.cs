@@ -23445,9 +23445,13 @@ namespace KmsReportClient.External {
         
         private decimal BillsField;
         
-        private decimal CountMeeField;
+        private decimal CountMeeTargetField;
         
-        private decimal CountMeeComplaintField;
+        private decimal CountMeePlanField;
+        
+        private decimal CountMeeComplaintTargetField;
+        
+        private decimal CountMeeComplaintPlanField;
         
         private decimal CountMeeRepeatField;
         
@@ -23459,9 +23463,13 @@ namespace KmsReportClient.External {
         
         private decimal CountMeeInjuredField;
         
-        private decimal CountMeeDefectedCaseField;
+        private decimal CountMeeDefectedCaseTargetField;
         
-        private decimal CountMeeDefectsField;
+        private decimal CountMeeDefectedCasePlanField;
+        
+        private decimal CountMeeDefectsTargetField;
+        
+        private decimal CountMeeDefectsPlanField;
         
         private decimal CountMeeDefectsPeriodField;
         
@@ -23489,7 +23497,9 @@ namespace KmsReportClient.External {
         
         private decimal CountMeeDefectsOutOfProtocolField;
         
-        private decimal CountCaseEkmpField;
+        private decimal CountCaseEkmpTargetField;
+        
+        private decimal CountCaseEkmpPlanField;
         
         private decimal CountCaseEkmpComplaintField;
         
@@ -23501,15 +23511,23 @@ namespace KmsReportClient.External {
         
         private decimal CountCaseEkmpUThemeField;
         
-        private decimal CountCaseEkmpMultiField;
+        private decimal CountCaseEkmpMultiTargetField;
+        
+        private decimal CountCaseEkmpMultiPlanField;
         
         private decimal CountCaseEkmpMultiLethField;
         
-        private decimal CountCaseEkmpMultiUthemeField;
+        private decimal CountCaseEkmpMultiUthemeTargetField;
         
-        private decimal CountCaseDefectedBySmoField;
+        private decimal CountCaseEkmpMultiUthemePlanField;
         
-        private decimal CountEkmpDefectedCaseField;
+        private decimal CountCaseDefectedBySmoTargetField;
+        
+        private decimal CountCaseDefectedBySmoPlanField;
+        
+        private decimal CountEkmpDefectedCaseTargetField;
+        
+        private decimal CountEkmpDefectedCasePlanField;
         
         private decimal CountEkmpBadDsField;
         
@@ -23575,32 +23593,58 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal CountMee {
+        public decimal CountMeeTarget {
             get {
-                return this.CountMeeField;
+                return this.CountMeeTargetField;
             }
             set {
-                if ((this.CountMeeField.Equals(value) != true)) {
-                    this.CountMeeField = value;
-                    this.RaisePropertyChanged("CountMee");
+                if ((this.CountMeeTargetField.Equals(value) != true)) {
+                    this.CountMeeTargetField = value;
+                    this.RaisePropertyChanged("CountMeeTarget");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal CountMeeComplaint {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public decimal CountMeePlan {
             get {
-                return this.CountMeeComplaintField;
+                return this.CountMeePlanField;
             }
             set {
-                if ((this.CountMeeComplaintField.Equals(value) != true)) {
-                    this.CountMeeComplaintField = value;
-                    this.RaisePropertyChanged("CountMeeComplaint");
+                if ((this.CountMeePlanField.Equals(value) != true)) {
+                    this.CountMeePlanField = value;
+                    this.RaisePropertyChanged("CountMeePlan");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public decimal CountMeeComplaintTarget {
+            get {
+                return this.CountMeeComplaintTargetField;
+            }
+            set {
+                if ((this.CountMeeComplaintTargetField.Equals(value) != true)) {
+                    this.CountMeeComplaintTargetField = value;
+                    this.RaisePropertyChanged("CountMeeComplaintTarget");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public decimal CountMeeComplaintPlan {
+            get {
+                return this.CountMeeComplaintPlanField;
+            }
+            set {
+                if ((this.CountMeeComplaintPlanField.Equals(value) != true)) {
+                    this.CountMeeComplaintPlanField = value;
+                    this.RaisePropertyChanged("CountMeeComplaintPlan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
         public decimal CountMeeRepeat {
             get {
                 return this.CountMeeRepeatField;
@@ -23613,7 +23657,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
         public decimal CountMeeOnco {
             get {
                 return this.CountMeeOncoField;
@@ -23626,7 +23670,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
         public decimal CountMeeDs {
             get {
                 return this.CountMeeDsField;
@@ -23639,7 +23683,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
         public decimal CountMeeLeth {
             get {
                 return this.CountMeeLethField;
@@ -23652,7 +23696,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
         public decimal CountMeeInjured {
             get {
                 return this.CountMeeInjuredField;
@@ -23665,33 +23709,59 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public decimal CountMeeDefectedCase {
-            get {
-                return this.CountMeeDefectedCaseField;
-            }
-            set {
-                if ((this.CountMeeDefectedCaseField.Equals(value) != true)) {
-                    this.CountMeeDefectedCaseField = value;
-                    this.RaisePropertyChanged("CountMeeDefectedCase");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
-        public decimal CountMeeDefects {
-            get {
-                return this.CountMeeDefectsField;
-            }
-            set {
-                if ((this.CountMeeDefectsField.Equals(value) != true)) {
-                    this.CountMeeDefectsField = value;
-                    this.RaisePropertyChanged("CountMeeDefects");
-                }
-            }
-        }
-        
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        public decimal CountMeeDefectedCaseTarget {
+            get {
+                return this.CountMeeDefectedCaseTargetField;
+            }
+            set {
+                if ((this.CountMeeDefectedCaseTargetField.Equals(value) != true)) {
+                    this.CountMeeDefectedCaseTargetField = value;
+                    this.RaisePropertyChanged("CountMeeDefectedCaseTarget");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        public decimal CountMeeDefectedCasePlan {
+            get {
+                return this.CountMeeDefectedCasePlanField;
+            }
+            set {
+                if ((this.CountMeeDefectedCasePlanField.Equals(value) != true)) {
+                    this.CountMeeDefectedCasePlanField = value;
+                    this.RaisePropertyChanged("CountMeeDefectedCasePlan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
+        public decimal CountMeeDefectsTarget {
+            get {
+                return this.CountMeeDefectsTargetField;
+            }
+            set {
+                if ((this.CountMeeDefectsTargetField.Equals(value) != true)) {
+                    this.CountMeeDefectsTargetField = value;
+                    this.RaisePropertyChanged("CountMeeDefectsTarget");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
+        public decimal CountMeeDefectsPlan {
+            get {
+                return this.CountMeeDefectsPlanField;
+            }
+            set {
+                if ((this.CountMeeDefectsPlanField.Equals(value) != true)) {
+                    this.CountMeeDefectsPlanField = value;
+                    this.RaisePropertyChanged("CountMeeDefectsPlan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
         public decimal CountMeeDefectsPeriod {
             get {
                 return this.CountMeeDefectsPeriodField;
@@ -23704,7 +23774,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
         public decimal CountMeeDefectsCondition {
             get {
                 return this.CountMeeDefectsConditionField;
@@ -23717,7 +23787,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
         public decimal CountMeeDefectsRepeat {
             get {
                 return this.CountMeeDefectsRepeatField;
@@ -23730,7 +23800,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
         public decimal CountMeeDefectsOutOfDocums {
             get {
                 return this.CountMeeDefectsOutOfDocumsField;
@@ -23743,7 +23813,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=18)]
         public decimal CountMeeDefectsUnpayable {
             get {
                 return this.CountMeeDefectsUnpayableField;
@@ -23756,7 +23826,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=15)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=19)]
         public decimal CountMeeDefectsBuyMedicament {
             get {
                 return this.CountMeeDefectsBuyMedicamentField;
@@ -23769,7 +23839,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=16)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=20)]
         public decimal CountMeeDefectsOutOfLeth {
             get {
                 return this.CountMeeDefectsOutOfLethField;
@@ -23782,7 +23852,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=17)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=21)]
         public decimal CountMeeDefectsWithoutDocums {
             get {
                 return this.CountMeeDefectsWithoutDocumsField;
@@ -23795,7 +23865,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=18)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=22)]
         public decimal CountMeeDefectsIncorrectDocums {
             get {
                 return this.CountMeeDefectsIncorrectDocumsField;
@@ -23808,7 +23878,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=19)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=23)]
         public decimal CountMeeDefectsBadDocums {
             get {
                 return this.CountMeeDefectsBadDocumsField;
@@ -23821,7 +23891,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=20)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=24)]
         public decimal CountMeeDefectsBadDate {
             get {
                 return this.CountMeeDefectsBadDateField;
@@ -23834,7 +23904,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=21)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=25)]
         public decimal CountMeeDefectsBadData {
             get {
                 return this.CountMeeDefectsBadDataField;
@@ -23847,7 +23917,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=22)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=26)]
         public decimal CountMeeDefectsOutOfProtocol {
             get {
                 return this.CountMeeDefectsOutOfProtocolField;
@@ -23860,20 +23930,33 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=23)]
-        public decimal CountCaseEkmp {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=27)]
+        public decimal CountCaseEkmpTarget {
             get {
-                return this.CountCaseEkmpField;
+                return this.CountCaseEkmpTargetField;
             }
             set {
-                if ((this.CountCaseEkmpField.Equals(value) != true)) {
-                    this.CountCaseEkmpField = value;
-                    this.RaisePropertyChanged("CountCaseEkmp");
+                if ((this.CountCaseEkmpTargetField.Equals(value) != true)) {
+                    this.CountCaseEkmpTargetField = value;
+                    this.RaisePropertyChanged("CountCaseEkmpTarget");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=24)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=28)]
+        public decimal CountCaseEkmpPlan {
+            get {
+                return this.CountCaseEkmpPlanField;
+            }
+            set {
+                if ((this.CountCaseEkmpPlanField.Equals(value) != true)) {
+                    this.CountCaseEkmpPlanField = value;
+                    this.RaisePropertyChanged("CountCaseEkmpPlan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=29)]
         public decimal CountCaseEkmpComplaint {
             get {
                 return this.CountCaseEkmpComplaintField;
@@ -23886,7 +23969,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=25)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=30)]
         public decimal CountCaseEkmpLeth {
             get {
                 return this.CountCaseEkmpLethField;
@@ -23899,7 +23982,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=26)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=31)]
         public decimal CountCaseEkmpByMek {
             get {
                 return this.CountCaseEkmpByMekField;
@@ -23912,7 +23995,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=27)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=32)]
         public decimal CountCaseEkmpByMee {
             get {
                 return this.CountCaseEkmpByMeeField;
@@ -23925,7 +24008,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=28)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=33)]
         public decimal CountCaseEkmpUTheme {
             get {
                 return this.CountCaseEkmpUThemeField;
@@ -23938,20 +24021,33 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=29)]
-        public decimal CountCaseEkmpMulti {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=34)]
+        public decimal CountCaseEkmpMultiTarget {
             get {
-                return this.CountCaseEkmpMultiField;
+                return this.CountCaseEkmpMultiTargetField;
             }
             set {
-                if ((this.CountCaseEkmpMultiField.Equals(value) != true)) {
-                    this.CountCaseEkmpMultiField = value;
-                    this.RaisePropertyChanged("CountCaseEkmpMulti");
+                if ((this.CountCaseEkmpMultiTargetField.Equals(value) != true)) {
+                    this.CountCaseEkmpMultiTargetField = value;
+                    this.RaisePropertyChanged("CountCaseEkmpMultiTarget");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=30)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=35)]
+        public decimal CountCaseEkmpMultiPlan {
+            get {
+                return this.CountCaseEkmpMultiPlanField;
+            }
+            set {
+                if ((this.CountCaseEkmpMultiPlanField.Equals(value) != true)) {
+                    this.CountCaseEkmpMultiPlanField = value;
+                    this.RaisePropertyChanged("CountCaseEkmpMultiPlan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=36)]
         public decimal CountCaseEkmpMultiLeth {
             get {
                 return this.CountCaseEkmpMultiLethField;
@@ -23964,46 +24060,85 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=31)]
-        public decimal CountCaseEkmpMultiUtheme {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=37)]
+        public decimal CountCaseEkmpMultiUthemeTarget {
             get {
-                return this.CountCaseEkmpMultiUthemeField;
+                return this.CountCaseEkmpMultiUthemeTargetField;
             }
             set {
-                if ((this.CountCaseEkmpMultiUthemeField.Equals(value) != true)) {
-                    this.CountCaseEkmpMultiUthemeField = value;
-                    this.RaisePropertyChanged("CountCaseEkmpMultiUtheme");
+                if ((this.CountCaseEkmpMultiUthemeTargetField.Equals(value) != true)) {
+                    this.CountCaseEkmpMultiUthemeTargetField = value;
+                    this.RaisePropertyChanged("CountCaseEkmpMultiUthemeTarget");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=32)]
-        public decimal CountCaseDefectedBySmo {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=38)]
+        public decimal CountCaseEkmpMultiUthemePlan {
             get {
-                return this.CountCaseDefectedBySmoField;
+                return this.CountCaseEkmpMultiUthemePlanField;
             }
             set {
-                if ((this.CountCaseDefectedBySmoField.Equals(value) != true)) {
-                    this.CountCaseDefectedBySmoField = value;
-                    this.RaisePropertyChanged("CountCaseDefectedBySmo");
+                if ((this.CountCaseEkmpMultiUthemePlanField.Equals(value) != true)) {
+                    this.CountCaseEkmpMultiUthemePlanField = value;
+                    this.RaisePropertyChanged("CountCaseEkmpMultiUthemePlan");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=33)]
-        public decimal CountEkmpDefectedCase {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=39)]
+        public decimal CountCaseDefectedBySmoTarget {
             get {
-                return this.CountEkmpDefectedCaseField;
+                return this.CountCaseDefectedBySmoTargetField;
             }
             set {
-                if ((this.CountEkmpDefectedCaseField.Equals(value) != true)) {
-                    this.CountEkmpDefectedCaseField = value;
-                    this.RaisePropertyChanged("CountEkmpDefectedCase");
+                if ((this.CountCaseDefectedBySmoTargetField.Equals(value) != true)) {
+                    this.CountCaseDefectedBySmoTargetField = value;
+                    this.RaisePropertyChanged("CountCaseDefectedBySmoTarget");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=34)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=40)]
+        public decimal CountCaseDefectedBySmoPlan {
+            get {
+                return this.CountCaseDefectedBySmoPlanField;
+            }
+            set {
+                if ((this.CountCaseDefectedBySmoPlanField.Equals(value) != true)) {
+                    this.CountCaseDefectedBySmoPlanField = value;
+                    this.RaisePropertyChanged("CountCaseDefectedBySmoPlan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=41)]
+        public decimal CountEkmpDefectedCaseTarget {
+            get {
+                return this.CountEkmpDefectedCaseTargetField;
+            }
+            set {
+                if ((this.CountEkmpDefectedCaseTargetField.Equals(value) != true)) {
+                    this.CountEkmpDefectedCaseTargetField = value;
+                    this.RaisePropertyChanged("CountEkmpDefectedCaseTarget");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=42)]
+        public decimal CountEkmpDefectedCasePlan {
+            get {
+                return this.CountEkmpDefectedCasePlanField;
+            }
+            set {
+                if ((this.CountEkmpDefectedCasePlanField.Equals(value) != true)) {
+                    this.CountEkmpDefectedCasePlanField = value;
+                    this.RaisePropertyChanged("CountEkmpDefectedCasePlan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=43)]
         public decimal CountEkmpBadDs {
             get {
                 return this.CountEkmpBadDsField;
@@ -24016,7 +24151,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=35)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=44)]
         public decimal CountEkmpBadDsNotAffected {
             get {
                 return this.CountEkmpBadDsNotAffectedField;
@@ -24029,7 +24164,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=36)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=45)]
         public decimal CountEkmpBadDsProlonger {
             get {
                 return this.CountEkmpBadDsProlongerField;
@@ -24042,7 +24177,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=37)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=46)]
         public decimal CountEkmpBadDsDecline {
             get {
                 return this.CountEkmpBadDsDeclineField;
@@ -24055,7 +24190,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=38)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=47)]
         public decimal CountEkmpBadDsInjured {
             get {
                 return this.CountEkmpBadDsInjuredField;
@@ -24068,7 +24203,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=39)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=48)]
         public decimal CountEkmpBadDsLeth {
             get {
                 return this.CountEkmpBadDsLethField;
@@ -24081,7 +24216,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=40)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=49)]
         public decimal CountEkmpBadMed {
             get {
                 return this.CountEkmpBadMedField;
@@ -24094,7 +24229,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=41)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=50)]
         public decimal CountEkmpUnreglamentedMed {
             get {
                 return this.CountEkmpUnreglamentedMedField;
@@ -24107,7 +24242,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=42)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=51)]
         public decimal CountEkmpStopMed {
             get {
                 return this.CountEkmpStopMedField;
@@ -24120,7 +24255,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=43)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=52)]
         public decimal CountEkmpContinuity {
             get {
                 return this.CountEkmpContinuityField;
@@ -24133,7 +24268,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=44)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=53)]
         public decimal CountEkmpUnprofile {
             get {
                 return this.CountEkmpUnprofileField;
@@ -24146,7 +24281,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=45)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=54)]
         public decimal CountEkmpUnfounded {
             get {
                 return this.CountEkmpUnfoundedField;
@@ -24159,7 +24294,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=46)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=55)]
         public decimal CountEkmpRepeat {
             get {
                 return this.CountEkmpRepeatField;
@@ -24172,7 +24307,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=47)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=56)]
         public decimal CountEkmpDifference {
             get {
                 return this.CountEkmpDifferenceField;
@@ -24185,7 +24320,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=48)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=57)]
         public decimal CountEkmpUnfoundedMedicaments {
             get {
                 return this.CountEkmpUnfoundedMedicamentsField;
@@ -24198,7 +24333,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=49)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=58)]
         public decimal CountEkmpUnfoundedReject {
             get {
                 return this.CountEkmpUnfoundedRejectField;
@@ -24211,7 +24346,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=50)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=59)]
         public decimal CountEkmpDisp {
             get {
                 return this.CountEkmpDispField;
@@ -24224,7 +24359,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=51)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=60)]
         public decimal CountEkmpRepeat2weeks {
             get {
                 return this.CountEkmpRepeat2weeksField;
@@ -24237,7 +24372,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=52)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=61)]
         public decimal CountEkmpOutOfResults {
             get {
                 return this.CountEkmpOutOfResultsField;
@@ -24250,7 +24385,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=53)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=62)]
         public decimal CountEkmpDoubleHospital {
             get {
                 return this.CountEkmpDoubleHospitalField;

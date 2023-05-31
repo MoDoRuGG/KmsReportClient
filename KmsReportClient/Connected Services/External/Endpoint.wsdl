@@ -3712,15 +3712,19 @@
       <s:complexType name="ZpzExpertise2023">
         <s:sequence>
           <s:element minOccurs="1" maxOccurs="1" name="Bills" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CountMee" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CountMeeComplaint" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeTarget" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeePlan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeComplaintTarget" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeComplaintPlan" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountMeeRepeat" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountMeeOnco" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountMeeDs" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountMeeLeth" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountMeeInjured" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectedCase" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefects" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectedCaseTarget" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectedCasePlan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsTarget" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsPlan" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsPeriod" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsCondition" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsRepeat" type="s:decimal" />
@@ -3734,17 +3738,22 @@
           <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsBadDate" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsBadData" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsOutOfProtocol" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpTarget" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpPlan" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpComplaint" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpLeth" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpByMek" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpByMee" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpUTheme" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpMulti" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpMultiTarget" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpMultiPlan" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpMultiLeth" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpMultiUtheme" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CountCaseDefectedBySmo" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpDefectedCase" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpMultiUthemeTarget" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpMultiUthemePlan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseDefectedBySmoTarget" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseDefectedBySmoPlan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpDefectedCaseTarget" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpDefectedCasePlan" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadDs" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadDsNotAffected" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadDsProlonger" type="s:decimal" />
