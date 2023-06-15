@@ -259,7 +259,7 @@ namespace KmsReportClient.Forms
                     ReportGlobalConst.FSSMonitoring,
                     new FSSMonitoringProcessor(_client, _reportsDictionary, dgvFssM, cbFssM, tbFssM, PageFssMonitoring)
                 },
-                                  {
+                  {
                     ReportGlobalConst.MonitoringVCR,
                     new MonitoringVCRProcessor(_client, _reportsDictionary, dgvMonitoringVCR, cbMonitoringVCR, tbMonitoringVCR, PageMonitoringVCR)
                 },
@@ -2172,6 +2172,11 @@ namespace KmsReportClient.Forms
         private void свод2ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenConsolidateReportForm(ConsolidateReport.ConsOpedFinance2);
+        }
+
+        private void свод3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenConsolidateReportForm(ConsolidateReport.ConsOpedFinance3);
         }
 
         private void DgvQuery_CellEndEdit(object sender, DataGridViewCellEventArgs e)

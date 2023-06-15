@@ -31,6 +31,7 @@
         ConsolidateCPNP2Q,
         ConsOpedFinance1,
         ConsOpedFinance2,
+        ConsOpedFinance3,
         ConsPropsal,
     }
 }

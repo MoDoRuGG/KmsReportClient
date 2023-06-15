@@ -136,6 +136,7 @@ namespace KmsReportClient.Forms
             this.оПЭДФинансыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.свод1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.свод2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.свод3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчётОПредложенияхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сводToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.кадрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -677,7 +678,8 @@ namespace KmsReportClient.Forms
             // 
             this.оПЭДФинансыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.свод1ToolStripMenuItem,
-            this.свод2ToolStripMenuItem});
+            this.свод2ToolStripMenuItem,
+            this.свод3ToolStripMenuItem,});
             this.оПЭДФинансыToolStripMenuItem.Name = "оПЭДФинансыToolStripMenuItem";
             this.оПЭДФинансыToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.оПЭДФинансыToolStripMenuItem.Text = "ОПЭД Доходы";
@@ -695,6 +697,13 @@ namespace KmsReportClient.Forms
             this.свод2ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.свод2ToolStripMenuItem.Text = "Свод 2";
             this.свод2ToolStripMenuItem.Click += new System.EventHandler(this.свод2ToolStripMenuItem_Click);
+            // 
+            // свод3ToolStripMenuItem
+            // 
+            this.свод3ToolStripMenuItem.Name = "свод3ToolStripMenuItem";
+            this.свод3ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.свод3ToolStripMenuItem.Text = "Свод по примечаниям";
+            this.свод3ToolStripMenuItem.Click += new System.EventHandler(this.свод3ToolStripMenuItem_Click);
             // 
             // отчётОПредложенияхToolStripMenuItem
             // 
@@ -3446,6 +3455,7 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.ComboBox cbIizl2022;
         private System.Windows.Forms.DataGridView dgvIizl2022;
         private System.Windows.Forms.ToolStripMenuItem свод2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem свод3ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отчётОПредложенияхToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сводToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem MenuChangelog;
