@@ -160,6 +160,7 @@
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateLetal.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateOpedCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateOpedQCreator.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateOpenFinance3.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateOpenFinance1.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateOpenFinance2.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateVCRCreator.cs" />
@@ -407,10 +408,16 @@
     <None Include="Connected Services\External\KmsReportClient.External.ConsolidateOpedFinance2Response.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.ConsolidateOpedFinance3Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.ConsolidateOpedFinance_1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.ConsolidateOpedFinance_2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.ConsolidateOpedFinance_3.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.ConsolidateOpedQ.datasource">

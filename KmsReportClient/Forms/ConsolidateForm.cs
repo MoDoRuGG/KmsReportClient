@@ -324,6 +324,22 @@ namespace KmsReportClient.Forms
                     cmbStart.DataSource = GlobalConst.PeriodsQ;
                     labelStart.Text = "Год";
                     break;
+
+                case ConsolidateReport.ConsOpedFinance3:
+                    labelStart.Text = "Период";
+                    //nudSingle.Visible = false;
+                    nudEnd.Visible = false;
+                    cmbEnd.Visible = false;
+                    cmbStart.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    nudStart.Visible = false;
+                    btnDo.Text = "Сформировать сводный отчёт ОПЭД финансы 3";
+                    saveFileDialog1.FileName = "Сводный отчёт ОПЭД финансы 3";
+                    cmbStart.DataSource = GlobalConst.PeriodsQ;
+                    labelStart.Text = "Год";
+                    break;
+
                 case ConsolidateReport.ConsPropsal:
                     labelStart.Text = "Период";
                     nudSingle.Visible = false;
@@ -444,6 +460,9 @@ namespace KmsReportClient.Forms
                     case ConsolidateReport.ConsOpedFinance2:
                         ConsolidateOpedFinance2();
                         break;
+                    case ConsolidateReport.ConsOpedFinance3:
+                        ConsolidateOpedFinance3();
+                        break;
                     case ConsolidateReport.ConsPropsal:
                         ConsolidateProposal();
                         break;
@@ -510,6 +529,24 @@ namespace KmsReportClient.Forms
                 return;
             }
             var excel = new ExcelConsolidateOpenFinance2(saveFileDialog1.FileName, "", _filialName);
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+        }
+
+        private void ConsolidateOpedFinance3()
+        {
+            string year = nudSingle.Value.ToString();
+
+            var data = _client.ConsolidateOpedFinance3(year);
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            var excel = new ExcelConsolidateOpenFinance3(saveFileDialog1.FileName, "", _filialName);
             excel.CreateReport(data, null);
 
             GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
