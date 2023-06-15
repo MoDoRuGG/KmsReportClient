@@ -119,6 +119,8 @@ namespace KmsReportClient.Model.Enums
         iizl2022,
         [Description(GlobalConst.TempFolder + "consOpedFinance2.xlsx")]
         consOpedFinance2,
+        [Description(GlobalConst.TempFolder + "consOpedFinance3.xlsx")]
+        consOpedFinance3,
         [Description(GlobalConst.TempFolder + "consProposal.xlsx")]
         consProposal,
         [Description(GlobalConst.TempFolder + "cadre.xlsx")]
