@@ -33,7 +33,9 @@ namespace KmsReportClient.Excel.Creator
 
         public void CreateReport(T report, T yearReport)
         {
-            ObjExcel = new Application { DisplayAlerts = false, Visible = true };
+            ObjExcel = new Application { DisplayAlerts = false, 
+                                       //Visible = true 
+                                        };
             ObjWorkBook = ObjExcel.Workbooks.Open(AppDomain.CurrentDomain.BaseDirectory + ReportName.GetDescription());
             ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets[1];
 
