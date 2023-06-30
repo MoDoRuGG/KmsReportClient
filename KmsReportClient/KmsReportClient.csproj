@@ -144,6 +144,7 @@
     <Compile Include="Excel\Creator\Base\ExcelPgQCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelProposalCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelVacCreator.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateVCRFilialCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateOpedUnplanned.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateCadreTable2Creator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateCadreTable1Creator.cs" />
@@ -285,6 +286,7 @@
     <Compile Include="Report\Basic\DynamicReportProcessor.cs" />
     <Compile Include="Report\Basic\FSSMonitoringProcessor.cs" />
     <Compile Include="Report\Basic\ReportIizlProcessor2022.cs" />
+    <Compile Include="Report\Basic\ReportOpedFinance3Processor.cs" />
     <Compile Include="Report\Basic\ReportOpedFinanceProcessor.cs" />
     <Compile Include="Report\Basic\ReportOpedUProcessor.cs" />
     <Compile Include="Report\Basic\ReportOpedProcessor.cs" />
@@ -492,6 +494,9 @@
     <None Include="Connected Services\External\KmsReportClient.External.CreateReportOpedUnplannedResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateReportVCRFilialResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateReportVCRResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -523,6 +528,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CReportPg.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CReportVCRFilial.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CReportZpz2023.datasource">
@@ -732,6 +740,9 @@
     <None Include="Connected Services\External\KmsReportClient.External.WebReportMonitoringVCRResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.WebReportOpedFinance3Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.WebReportOpedFinanceResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -753,7 +764,6 @@
     <None Include="Connected Services\External\KmsReportClient.External.ZpzForWebSite2023.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="KmsReportClient_TemporaryKey.pfx" />
     <None Include="Resources\w256h2561372777059DatabaseActive.png" />
     <None Include="Connected Services\External\endpoint.disco" />
     <None Include="Connected Services\External\configuration91.svcinfo" />

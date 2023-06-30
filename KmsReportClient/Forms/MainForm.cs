@@ -144,6 +144,7 @@ namespace KmsReportClient.Forms
             TbControl.TabPages.Remove(PageIizl);
             TbControl.TabPages.Remove(PageProposal);
             TbControl.TabPages.Remove(tpOpedFinance);
+            TbControl.TabPages.Remove(tpOpedFinance3);
             TbControl.TabPages.Remove(tpIizl2022);
             TbControl.TabPages.Remove(PageCadre);
             TbControl.TabPages.Remove(PageZpz);
@@ -185,6 +186,7 @@ namespace KmsReportClient.Forms
                         {PageMonitoringVCR, ReportGlobalConst.MonitoringVCR},
                         {PageProposal, ReportGlobalConst.ReportProposal},
                         {tpOpedFinance, ReportGlobalConst.ReportOpedFinance},
+                        {tpOpedFinance3, ReportGlobalConst.ReportOpedFinance},
                         {tpIizl2022, ReportGlobalConst.ReportIizl2022},
                         {PageCadre, ReportGlobalConst.ReportCadre},
                         {PageZpz10, ReportGlobalConst.ReportZpz10},
@@ -272,6 +274,11 @@ namespace KmsReportClient.Forms
                    {
                     ReportGlobalConst.ReportOpedFinance,
                     new ReportOpedFinanceProcessor(_client, _reportsDictionary, dgvOpedFinance, cbOpedFinance, tbOpedFinance, tpOpedFinance)
+                },
+
+                                   {
+                    ReportGlobalConst.ReportOpedFinance3,
+                    new ReportOpedFinance3Processor(_client, _reportsDictionary, dgvOpedFinance3, cbOpedFinance3, tbOpedFinance3, tpOpedFinance3)
                 },
 
                   {
@@ -1709,6 +1716,7 @@ namespace KmsReportClient.Forms
                     TbControl.TabPages.Remove(PageOpedQ);
                     TbControl.TabPages.Remove(PageProposal);
                     TbControl.TabPages.Remove(tpOpedFinance);
+                    TbControl.TabPages.Remove(tpOpedFinance3);
                     TbControl.TabPages.Remove(tpIizl2022);
                     TbControl.TabPages.Remove(PageFssMonitoring);
                     TbControl.TabPages.Remove(PageMonitoringVCR);
@@ -2111,6 +2119,11 @@ namespace KmsReportClient.Forms
             OpenConsolidateReportForm(ConsolidateReport.ConsolidateVCR);
         }
 
+        private void сводПоФилиаламToolStripMenuItemVCRFilial_Click(object sender, EventArgs e)
+        {
+            OpenConsolidateReportForm(ConsolidateReport.ConsolidateVCRFilial);
+        }
+
         private void сводToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             OpenConsolidateReportForm(ConsolidateReport.ConsolidateOpedQ);
@@ -2131,6 +2144,11 @@ namespace KmsReportClient.Forms
         private void dgvOpedFinance_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             (_processor as ReportOpedFinanceProcessor).CalculateCells();
+        }
+
+        private void dgvOpedFinance3_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as ReportOpedFinance3Processor).CalculateCells();
         }
 
         private void цПНП2квартальныйToolStripMenuItem_Click(object sender, EventArgs e)

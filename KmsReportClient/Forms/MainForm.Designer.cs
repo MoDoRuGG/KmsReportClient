@@ -96,6 +96,9 @@ namespace KmsReportClient.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle65 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle66 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -130,6 +133,7 @@ namespace KmsReportClient.Forms
             this.сводToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.мониторингВСС2023ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сводToolStripMenuItemVCR = new System.Windows.Forms.ToolStripMenuItem();
+            this.сводПоФилиаламToolStripMenuItemVCRFilial = new System.Windows.Forms.ToolStripMenuItem();
             this.оПЭДКвартальныйToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сводToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.сводToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
@@ -280,6 +284,10 @@ namespace KmsReportClient.Forms
             this.tbOpedFinance = new System.Windows.Forms.TextBox();
             this.cbOpedFinance = new System.Windows.Forms.ComboBox();
             this.dgvOpedFinance = new System.Windows.Forms.DataGridView();
+            this.tpOpedFinance3 = new System.Windows.Forms.TabPage();
+            this.tbOpedFinance3 = new System.Windows.Forms.TextBox();
+            this.cbOpedFinance3 = new System.Windows.Forms.ComboBox();
+            this.dgvOpedFinance3 = new System.Windows.Forms.DataGridView();
             this.tpIizl2022 = new System.Windows.Forms.TabPage();
             this.tbIizl2022 = new System.Windows.Forms.TextBox();
             this.cbIizl2022 = new System.Windows.Forms.ComboBox();
@@ -357,6 +365,8 @@ namespace KmsReportClient.Forms
             ((System.ComponentModel.ISupportInitialize)(this.dgvProposal)).BeginInit();
             this.tpOpedFinance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOpedFinance)).BeginInit();
+            this.tpOpedFinance3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOpedFinance3)).BeginInit();
             this.tpIizl2022.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIizl2022)).BeginInit();
             this.PageInfo.SuspendLayout();
@@ -639,7 +649,8 @@ namespace KmsReportClient.Forms
             // мониторингВСС2023ToolStripMenuItem
             // 
             this.мониторингВСС2023ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.сводToolStripMenuItemVCR});
+            this.сводToolStripMenuItemVCR,
+            this.сводПоФилиаламToolStripMenuItemVCRFilial});
             this.мониторингВСС2023ToolStripMenuItem.Name = "мониторингВСС2023ToolStripMenuItem";
             this.мониторингВСС2023ToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.мониторингВСС2023ToolStripMenuItem.Text = "Мониторинг ВСС 2023";
@@ -650,6 +661,13 @@ namespace KmsReportClient.Forms
             this.сводToolStripMenuItemVCR.Size = new System.Drawing.Size(101, 22);
             this.сводToolStripMenuItemVCR.Text = "Свод";
             this.сводToolStripMenuItemVCR.Click += new System.EventHandler(this.сводToolStripMenuItemVCR_Click);
+            // 
+            // сводПоФилиаламToolStripMenuItemVCRFilial
+            // 
+            this.сводПоФилиаламToolStripMenuItemVCRFilial.Name = "сводПоФилиаламToolStripMenuItemVCRFilial";
+            this.сводПоФилиаламToolStripMenuItemVCRFilial.Size = new System.Drawing.Size(101, 22);
+            this.сводПоФилиаламToolStripMenuItemVCRFilial.Text = "Свод по всем филиалам";
+            this.сводПоФилиаламToolStripMenuItemVCRFilial.Click += new System.EventHandler(this.сводПоФилиаламToolStripMenuItemVCRFilial_Click);
             // 
             // оПЭДКвартальныйToolStripMenuItem
             // 
@@ -1430,6 +1448,7 @@ namespace KmsReportClient.Forms
             this.TbControl.Controls.Add(this.PageFssMonitoring);
             this.TbControl.Controls.Add(this.PageProposal);
             this.TbControl.Controls.Add(this.tpOpedFinance);
+            this.TbControl.Controls.Add(this.tpOpedFinance3);
             this.TbControl.Controls.Add(this.tpIizl2022);
             this.TbControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.TbControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -2843,6 +2862,79 @@ namespace KmsReportClient.Forms
             this.dgvOpedFinance.TabIndex = 30;
             this.dgvOpedFinance.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOpedFinance_CellEndEdit);
             // 
+            // tpOpedFinance3
+            // 
+            this.tpOpedFinance3.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.tpOpedFinance3.Controls.Add(this.tbOpedFinance3);
+            this.tpOpedFinance3.Controls.Add(this.cbOpedFinance3);
+            this.tpOpedFinance3.Controls.Add(this.dgvOpedFinance3);
+            this.tpOpedFinance3.Location = new System.Drawing.Point(4, 36);
+            this.tpOpedFinance3.Name = "tpOpedFinance3";
+            this.tpOpedFinance3.Padding = new System.Windows.Forms.Padding(3);
+            this.tpOpedFinance3.Size = new System.Drawing.Size(712, 330);
+            this.tpOpedFinance3.TabIndex = 13;
+            this.tpOpedFinance3.Text = "tabPage1";
+            // 
+            // tbOpedFinance3
+            // 
+            this.tbOpedFinance3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbOpedFinance3.Location = new System.Drawing.Point(115, 5);
+            this.tbOpedFinance3.Multiline = true;
+            this.tbOpedFinance3.Name = "tbOpedFinance3";
+            this.tbOpedFinance3.ReadOnly = true;
+            this.tbOpedFinance3.Size = new System.Drawing.Size(593, 39);
+            this.tbOpedFinance3.TabIndex = 32;
+            // 
+            // cbOpedFinance3
+            // 
+            this.cbOpedFinance3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbOpedFinance3.FormattingEnabled = true;
+            this.cbOpedFinance3.Location = new System.Drawing.Point(9, 5);
+            this.cbOpedFinance3.Name = "cbOpedFinance3";
+            this.cbOpedFinance3.Size = new System.Drawing.Size(100, 21);
+            this.cbOpedFinance3.TabIndex = 31;
+            // 
+            // dgvOpedFinance3
+            // 
+            this.dgvOpedFinance3.AllowUserToAddRows = false;
+            this.dgvOpedFinance3.AllowUserToDeleteRows = false;
+            this.dgvOpedFinance3.AllowUserToResizeColumns = false;
+            this.dgvOpedFinance3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvOpedFinance3.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            dataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            dataGridViewCellStyle67.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle67.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle67.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle67.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle67.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle67.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOpedFinance3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle67;
+            this.dgvOpedFinance3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle68.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle68.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle68.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle68.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle68.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle68.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOpedFinance3.DefaultCellStyle = dataGridViewCellStyle68;
+            this.dgvOpedFinance3.Location = new System.Drawing.Point(5, 50);
+            this.dgvOpedFinance3.Name = "dgvOpedFinance3";
+            dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle69.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle69.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle69.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle69.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle69.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle69.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOpedFinance3.RowHeadersDefaultCellStyle = dataGridViewCellStyle69;
+            this.dgvOpedFinance3.Size = new System.Drawing.Size(703, 276);
+            this.dgvOpedFinance3.TabIndex = 30;
+            this.dgvOpedFinance3.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOpedFinance3_CellEndEdit);
+            // 
             // tpIizl2022
             // 
             this.tpIizl2022.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -3236,6 +3328,9 @@ namespace KmsReportClient.Forms
             this.tpOpedFinance.ResumeLayout(false);
             this.tpOpedFinance.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOpedFinance)).EndInit();
+            this.tpOpedFinance3.ResumeLayout(false);
+            this.tpOpedFinance3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOpedFinance3)).EndInit();
             this.tpIizl2022.ResumeLayout(false);
             this.tpIizl2022.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIizl2022)).EndInit();
@@ -3434,6 +3529,7 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.DataGridView dgvMonitoringVCR;
         private System.Windows.Forms.ToolStripMenuItem мониторингВСС2023ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сводToolStripMenuItemVCR;
+        private System.Windows.Forms.ToolStripMenuItem сводПоФилиаламToolStripMenuItemVCRFilial;
         private System.Windows.Forms.ToolStripMenuItem оПЭДКвартальныйToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сводToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem сводToolStripMenuItem4;
@@ -3446,6 +3542,10 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.TextBox tbOpedFinance;
         private System.Windows.Forms.ComboBox cbOpedFinance;
         private System.Windows.Forms.DataGridView dgvOpedFinance;
+        private System.Windows.Forms.TabPage tpOpedFinance3;
+        private System.Windows.Forms.TextBox tbOpedFinance3;
+        private System.Windows.Forms.ComboBox cbOpedFinance3;
+        private System.Windows.Forms.DataGridView dgvOpedFinance3;
         private System.Windows.Forms.ToolStripMenuItem цПНП2квартальныйToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem планРезультативностиЭкспертнойДеятельностиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПЭДФинансыToolStripMenuItem;

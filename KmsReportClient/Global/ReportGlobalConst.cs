@@ -20,6 +20,7 @@
         public const string MonitoringVCR = "mvcr";
         public const string ReportProposal = "proposal";
         public const string ReportOpedFinance = "oped_fin";
+        public const string ReportOpedFinance3 = "oped_fin3";
         public const string ReportIizl2022 = "iizl2022";
         public const string ReportCadre = "cadre";
         public const string ReportZpz10 = "Zpz10";

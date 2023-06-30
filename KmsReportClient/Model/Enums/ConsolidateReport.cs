@@ -33,5 +33,6 @@
         ConsOpedFinance2,
         ConsOpedFinance3,
         ConsPropsal,
+        ConsolidateVCRFilial
     }
 }
