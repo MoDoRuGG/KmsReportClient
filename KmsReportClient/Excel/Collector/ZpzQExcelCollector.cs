@@ -203,11 +203,12 @@ namespace KmsReportClient.Excel.Collector
                 {
                     case "Таблица 1Л":
                         startRow = GetStartRow();
+                        lastRow = 35;
                         dictionary = FindColumnIndexies(_columnsTableLetal1, startRow - 1);
                         break;
                     case "Таблица 2Л":
                         startRow = GetStartRow();
-                        lastRow = GetLastRow();
+                        lastRow = 45;
                         dictionary = FindColumnIndexies(_columnsTableLetal1, startRow - 1);
                         break;
 
