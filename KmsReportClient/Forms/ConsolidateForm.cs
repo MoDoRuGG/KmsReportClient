@@ -550,6 +550,7 @@ namespace KmsReportClient.Forms
         {
             string year = nudSingle.Value.ToString();
 
+
             var data = _client.ConsolidateOpedFinance3(year);
 
             if (data.Length == 0)

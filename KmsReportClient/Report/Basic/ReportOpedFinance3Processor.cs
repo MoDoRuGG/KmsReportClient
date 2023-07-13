@@ -15,7 +15,7 @@ using NLog;
 
 namespace KmsReportClient.Report.Basic
 {
-    public class ReportOpedFinance3Processor : AbstractReportProcessor<ReportOpedFinance>
+    public class ReportOpedFinance3Processor : AbstractReportProcessor<ReportOpedFinance3>
     {
 
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
@@ -45,7 +45,7 @@ namespace KmsReportClient.Report.Basic
                 }
             };
             var response = Client.GetReport(request)?.Body?.GetReportResult;
-            return response == null ? null : response as ReportOpedFinance;
+            return response == null ? null : response as ReportOpedFinance3;
         }
         public override void FillDataGridView(string form)
         {
@@ -68,9 +68,13 @@ namespace KmsReportClient.Report.Basic
                     {
                         row.Cells[2].Value = data.Notes;
                     }
+                    else
+                    {
+                        row.Cells[2].Value = "";
+                    }
                 }
 
-                CalculateCells();
+                //CalculateCells();
 
             }
         }
@@ -79,10 +83,10 @@ namespace KmsReportClient.Report.Basic
         { }
         public override void SaveReportDataSourceHandle()
         { }
-        public void CalculateCells()
-        {
-                var row1 = Dgv.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[1].Value.ToString() == "1.");
-        }
+        //public void CalculateCells()
+        //{
+        //        var row1 = Dgv.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[1].Value.ToString() == "1.");
+        //}
 
         public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status, DataSource datasource)
         {
@@ -90,7 +94,7 @@ namespace KmsReportClient.Report.Basic
         }
         public override void InitReport()
         {
-            Report = new ReportOpedFinance { ReportDataList = new ReportOpedFinanceData[] { }, IdType = IdReportType };
+            Report = new ReportOpedFinance3 { ReportDataList = Array.Empty<ReportOpedFinance3Data>(), IdType = IdReportType };
         }
         public override bool IsVisibleBtnDownloadExcel() => false;
 
@@ -113,7 +117,7 @@ namespace KmsReportClient.Report.Basic
                     reportType = ReportType.OpedFinance3
                 }
             };
-            var response = Client.SaveReport(request).Body.SaveReportResult as ReportOpedFinance;
+            var response = Client.SaveReport(request).Body.SaveReportResult as ReportOpedFinance3;
             Report.IdFlow = response.IdFlow;
             Report.Status = response.Status;
         }
@@ -166,11 +170,11 @@ namespace KmsReportClient.Report.Basic
                 return;
             }
 
-            var reportDto = new List<ReportOpedFinanceData>();
+            var reportDto = new List<ReportOpedFinance3Data>();
 
             foreach (DataGridViewRow row in Dgv.Rows)
             {
-                var data = new ReportOpedFinanceData
+                var data = new ReportOpedFinance3Data
                 {
                     RowNum = row.Cells[1].Value.ToString(),
                     Notes = row.Cells[2].Value.ToString()

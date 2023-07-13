@@ -17097,6 +17097,7 @@ namespace KmsReportClient.External {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportMonitoringVCR))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportProposal))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportOpedFinance))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportOpedFinance3))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportInfomaterial))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportCadre))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.Report262))]
@@ -17690,6 +17691,44 @@ namespace KmsReportClient.External {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
         public KmsReportClient.External.ReportOpedFinanceData[] ReportDataList {
+            get {
+                return this.ReportDataListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReportDataListField, value) != true)) {
+                    this.ReportDataListField = value;
+                    this.RaisePropertyChanged("ReportDataList");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportOpedFinance3", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportOpedFinance3 : KmsReportClient.External.AbstractReport {
+        
+        private int IdReportDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.ReportOpedFinance3Data[] ReportDataListField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int IdReportData {
+            get {
+                return this.IdReportDataField;
+            }
+            set {
+                if ((this.IdReportDataField.Equals(value) != true)) {
+                    this.IdReportDataField = value;
+                    this.RaisePropertyChanged("IdReportData");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public KmsReportClient.External.ReportOpedFinance3Data[] ReportDataList {
             get {
                 return this.ReportDataListField;
             }
@@ -18401,6 +18440,82 @@ namespace KmsReportClient.External {
     [System.Runtime.Serialization.DataContractAttribute(Name="ReportOpedFinanceData", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportOpedFinanceData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RowNumField;
+        
+        private System.Nullable<decimal> ValueFactField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NotesField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string RowNum {
+            get {
+                return this.RowNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RowNumField, value) != true)) {
+                    this.RowNumField = value;
+                    this.RaisePropertyChanged("RowNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.Nullable<decimal> ValueFact {
+            get {
+                return this.ValueFactField;
+            }
+            set {
+                if ((this.ValueFactField.Equals(value) != true)) {
+                    this.ValueFactField = value;
+                    this.RaisePropertyChanged("ValueFact");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Notes {
+            get {
+                return this.NotesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NotesField, value) != true)) {
+                    this.NotesField = value;
+                    this.RaisePropertyChanged("Notes");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportOpedFinance3Data", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportOpedFinance3Data : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -31041,12 +31156,12 @@ namespace KmsReportClient.External {
     public partial class WebReportOpedFinance3RequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public KmsReportClient.External.ReportOpedFinance report;
+        public KmsReportClient.External.ReportOpedFinance3 report;
         
         public WebReportOpedFinance3RequestBody() {
         }
         
-        public WebReportOpedFinance3RequestBody(KmsReportClient.External.ReportOpedFinance report) {
+        public WebReportOpedFinance3RequestBody(KmsReportClient.External.ReportOpedFinance3 report) {
             this.report = report;
         }
     }
@@ -35184,7 +35299,7 @@ namespace KmsReportClient.External {
             return base.Channel.WebReportOpedFinance3(request);
         }
         
-        public void WebReportOpedFinance3(KmsReportClient.External.ReportOpedFinance report) {
+        public void WebReportOpedFinance3(KmsReportClient.External.ReportOpedFinance3 report) {
             KmsReportClient.External.WebReportOpedFinance3Request inValue = new KmsReportClient.External.WebReportOpedFinance3Request();
             inValue.Body = new KmsReportClient.External.WebReportOpedFinance3RequestBody();
             inValue.Body.report = report;
@@ -35196,7 +35311,7 @@ namespace KmsReportClient.External {
             return base.Channel.WebReportOpedFinance3Async(request);
         }
         
-        public System.Threading.Tasks.Task<KmsReportClient.External.WebReportOpedFinance3Response> WebReportOpedFinance3Async(KmsReportClient.External.ReportOpedFinance report) {
+        public System.Threading.Tasks.Task<KmsReportClient.External.WebReportOpedFinance3Response> WebReportOpedFinance3Async(KmsReportClient.External.ReportOpedFinance3 report) {
             KmsReportClient.External.WebReportOpedFinance3Request inValue = new KmsReportClient.External.WebReportOpedFinance3Request();
             inValue.Body = new KmsReportClient.External.WebReportOpedFinance3RequestBody();
             inValue.Body.report = report;

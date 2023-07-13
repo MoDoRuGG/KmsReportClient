@@ -39,23 +39,29 @@ namespace KmsReportClient.Excel.Creator.Consolidate
                 ObjWorkSheet.Cells[rowIndex, 2] = filial;
                 foreach (var md in monthData.OrderBy(x => x.Yymm))
                 {
-                    ObjWorkSheet.Cells[rowIndex, columnIndex++] = md.Fact;
-                    ObjWorkSheet.Cells[rowIndex, columnIndex++] = md.PlanO;
-                    //ObjWorkSheet.Cells[rowIndex, columnIndex++] = md.PlanO != 0 ? (md.Fact*100/md.PlanO) : 0;
-                    ObjWorkSheet.Cells[rowIndex, ++columnIndex] = md.Notes;
 
 
                     #region Определяем номер следующего столбца
-                    if (continueColumns.Contains(++columnIndex))
+                    if (continueColumns.Contains(columnIndex))
+                    #endregion
                     {
                         if (columnIndex == 15 || columnIndex == 31 || columnIndex == 47)
-                        {
-                            columnIndex += 4;
+                    {
+
+                            columnIndex++;
+                            columnIndex++;
+                            ObjWorkSheet.Cells[rowIndex, ++columnIndex] = md.Notes;
+                            columnIndex++;
                         }
                     }
-
-
-                    #endregion
+                    else 
+                    {
+                        ObjWorkSheet.Cells[rowIndex, columnIndex++] = md.Fact;
+                        ObjWorkSheet.Cells[rowIndex, columnIndex++] = md.PlanO;
+                        //ObjWorkSheet.Cells[rowIndex, columnIndex++] = md.PlanO != 0 ? (md.Fact*100/md.PlanO) : 0;
+                        ObjWorkSheet.Cells[rowIndex, ++columnIndex] = md.Notes;
+                        columnIndex++;
+                    }
                 }
 
                 rowIndex += 1;

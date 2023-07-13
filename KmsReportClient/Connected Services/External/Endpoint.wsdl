@@ -2485,10 +2485,32 @@
       <s:element name="WebReportOpedFinance3">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:ReportOpedFinance" />
+            <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:ReportOpedFinance3" />
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:complexType name="ReportOpedFinance3">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AbstractReport">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="IdReportData" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="ReportDataList" type="tns:ArrayOfReportOpedFinance3Data" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfReportOpedFinance3Data">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReportOpedFinance3Data" nillable="true" type="tns:ReportOpedFinance3Data" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReportOpedFinance3Data">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValueFact" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="WebReportOpedFinance3Response">
         <s:complexType />
       </s:element>
