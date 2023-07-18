@@ -15411,6 +15411,9 @@ namespace KmsReportClient.External {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NotesField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NotesGoodReasonField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -15521,6 +15524,19 @@ namespace KmsReportClient.External {
                 if ((object.ReferenceEquals(this.NotesField, value) != true)) {
                     this.NotesField = value;
                     this.RaisePropertyChanged("Notes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string NotesGoodReason {
+            get {
+                return this.NotesGoodReasonField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NotesGoodReasonField, value) != true)) {
+                    this.NotesGoodReasonField = value;
+                    this.RaisePropertyChanged("NotesGoodReason");
                 }
             }
         }

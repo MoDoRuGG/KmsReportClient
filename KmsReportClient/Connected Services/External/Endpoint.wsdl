@@ -1690,6 +1690,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="EkmpLetalPlan" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="EkmpLetalFact" type="s:decimal" />
           <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NotesGoodReason" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="ConsolidateCPNP2QCollect">

@@ -43,6 +43,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
                 ObjWorkSheet.Cells[row, 10] = regionData.EkmpLetalFact;
 
                 ObjWorkSheet.Cells[row, 12] = regionData.Notes;
+                ObjWorkSheet.Cells[row, 13] = regionData.NotesGoodReason;
 
                 row++;
             }

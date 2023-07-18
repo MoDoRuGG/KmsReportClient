@@ -233,41 +233,45 @@ namespace KmsReportClient.Excel.Creator.Base
         {
             for (int i = startRowIndex; i <= endRowIndex; i++)
             {
-                string rowNum = ObjWorkSheet.Cells[i, 2].Text;
-                if (!string.IsNullOrEmpty(rowNum))
+                if (data != null)
                 {
-                    var rowData = data?.SingleOrDefault(x => x.Code == rowNum);
-                    if (rowData != null)
+
+                    if (ObjWorkSheet.Cells[i, 2].Text != "X")
                     {
-                        if (ObjWorkSheet.Cells[i, 4].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 4] = rowData.CountOutOfSmo;
-                        }
+                        ObjWorkSheet.Cells[i, 2] = data[0].Code;
+                    }
+                    if (ObjWorkSheet.Cells[i, 3].Text != "X")
+                    {
+                        ObjWorkSheet.Cells[i, 3] = data[0].CountSmo;
+                    }
+                    if (ObjWorkSheet.Cells[i, 4].Text != "X")
+                    {
+                        ObjWorkSheet.Cells[i, 4] = data[0].CountSmoAnother;
+                    }
 
-                        if (ObjWorkSheet.Cells[i, 5].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 5] = rowData.CountAmbulatory;
-                        }
+                    if (ObjWorkSheet.Cells[i, 5].Text != "X")
+                    {
+                        ObjWorkSheet.Cells[i, 5] = data[0].CountInsured;
+                    }
 
-                        if (ObjWorkSheet.Cells[i, 6].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 6] = rowData.CountDs;
-                        }
+                    if (ObjWorkSheet.Cells[i, 6].Text != "X")
+                    {
+                        ObjWorkSheet.Cells[i, 6] = data[0].CountInsuredRepresentative;
+                    }
 
-                        if (ObjWorkSheet.Cells[i, 7].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 7] = rowData.CountDsVmp;
-                        }
+                    if (ObjWorkSheet.Cells[i, 7].Text != "X")
+                    {
+                        ObjWorkSheet.Cells[i, 7] = data[0].CountTfoms;
+                    }
 
-                        if (ObjWorkSheet.Cells[i, 8].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 8] = rowData.CountStac;
-                        }
+                    if (ObjWorkSheet.Cells[i, 8].Text != "X")
+                    {
+                        ObjWorkSheet.Cells[i, 8] = data[0].CountProsecutor;
+                    }
 
-                        if (ObjWorkSheet.Cells[i, 9].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 9] = rowData.CountStacVmp;
-                        }
+                    if (ObjWorkSheet.Cells[i, 9].Text != "X")
+                    {
+                        ObjWorkSheet.Cells[i, 9] = data[0].CountOutOfSmo;
                     }
                 }
             }
