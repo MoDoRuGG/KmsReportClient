@@ -167,6 +167,14 @@ namespace KmsReportClient.Forms
                     saveFileDialog1.FileName = "Сводный отчет для контроля ЗПЗ 2023(квартальный)";
                     cmbStart.DataSource = GlobalConst.Periods;
                     break;
+                case ConsolidateReport.ControlZpz2023FullQuarterly:
+                    labelStart.Text = "Год";
+                    panelSt.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать отчет для контроля ЗПЗ 2023(за весь год)";
+                    saveFileDialog1.FileName = "Сводный отчет для контроля ЗПЗ 2023(за весь год)";
+                    break;
                 case ConsolidateReport.Onko:
                     labelStart.Text = "Период";
                     nudSingle.Visible = false;
@@ -419,6 +427,9 @@ namespace KmsReportClient.Forms
                         break;
                     case ConsolidateReport.ControlZpz2023Quarterly:
                         CreateControlZpz2023(false);
+                        break;
+                    case ConsolidateReport.ControlZpz2023FullQuarterly:
+                        CreateControlZpz2023Full();
                         break;
                     case ConsolidateReport.ZpzWebSite:
                         CreateZpzWebSite();
@@ -871,6 +882,31 @@ namespace KmsReportClient.Forms
 
             string filename = saveFileDialog1.FileName;
             var excel = new ExcelControlZpz2023Creator(filename, "", _filialName, yymm);
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(filename);
+        }
+
+        private void CreateControlZpz2023Full()
+        {
+            string year = Convert.ToString(nudSingle.Value);
+            var data = _client.CreateReportControlZpz2023Full(year);
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            foreach (var d in data)
+            {
+                d.Filial = _regions.Single(x => x.Key == d.Filial).Value;
+            }
+
+            data = data.OrderBy(x => x.Filial).ToArray();
+
+            string filename = saveFileDialog1.FileName;
+            var excel = new ExcelControlZpz2023FullCreator(filename, "", _filialName);
             excel.CreateReport(data, null);
 
             GlobalUtils.OpenFileOrDirectory(filename);

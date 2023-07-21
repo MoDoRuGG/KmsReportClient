@@ -125,6 +125,7 @@ namespace KmsReportClient.Forms
             this.цПНП2квартальныйToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.формаЗПЗToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.контрольЗПЗ2023ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.контрольЗПЗ2023FullToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетДляСайта2023ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.летальные2023ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.формаОПЭДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -590,6 +591,7 @@ namespace KmsReportClient.Forms
             this.формаЗПЗToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.отчетДляСайта2023ToolStripMenuItem,
             this.контрольЗПЗ2023ToolStripMenuItem,
+            this.контрольЗПЗ2023FullToolStripMenuItem,
             this.летальные2023ToolStripMenuItem});
             this.формаЗПЗToolStripMenuItem.Name = "формаЗПЗToolStripMenuItem";
             this.формаЗПЗToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
@@ -601,6 +603,13 @@ namespace KmsReportClient.Forms
             this.контрольЗПЗ2023ToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
             this.контрольЗПЗ2023ToolStripMenuItem.Text = "Контроль ЗПЗ 2023(квартальная)";
             this.контрольЗПЗ2023ToolStripMenuItem.Click += new System.EventHandler(this.КонтрольЗПЗ2023ToolStripMenuItem_Click);
+            // 
+            // контрольЗПЗ2023FullToolStripMenuItem
+            // 
+            this.контрольЗПЗ2023FullToolStripMenuItem.Name = "контрольЗПЗ2023FullToolStripMenuItem";
+            this.контрольЗПЗ2023FullToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.контрольЗПЗ2023FullToolStripMenuItem.Text = "Контроль ЗПЗ 2023(свод за весь год)";
+            this.контрольЗПЗ2023FullToolStripMenuItem.Click += new System.EventHandler(this.КонтрольЗПЗ2023FullToolStripMenuItem_Click);
             // 
             // отчетДляСайта2023ToolStripMenuItem
             // 
@@ -3466,6 +3475,7 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.ComboBox CmbZpzLethal;
         private System.Windows.Forms.ToolStripMenuItem контрольЗПЗежемесячнаяToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem контрольЗПЗ2023ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem контрольЗПЗ2023FullToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton BtnSaveToDb;
         private System.Windows.Forms.ToolStripMenuItem онкологияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem онкологияквартальныйToolStripMenuItem;

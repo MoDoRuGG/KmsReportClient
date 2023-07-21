@@ -109,6 +109,17 @@ namespace KmsReportClient.Excel.Creator
             }
         }
 
+        protected void CopyNullCells4Rows(Worksheet sheet, int count, int position)
+        {
+            for (int k = 1; k <= count - 2; k++)
+            {
+                var r = sheet.Range[position + ":" + (position+3), Type.Missing];
+                r.Copy(Type.Missing);
+                r = sheet.Range[Convert.ToString( position + 4) + ":" + Convert.ToString(position + 7), Type.Missing];
+                r.Insert(XlInsertShiftDirection.xlShiftDown);
+            }
+        }
+
 
         protected void CopyNullCellsOped(Worksheet sheet, int count, int position)
         {
