@@ -68,11 +68,11 @@ namespace KmsReportClient.Excel.Creator.Consolidate
                 ObjWorkSheet.Cells[currentIndex, 45] = data.Data._2110_ExpertWithEducation;
                 ObjWorkSheet.Cells[currentIndex, 46] = data.Data._2110_ExpertWithoutEducation;
                 ObjWorkSheet.Cells[currentIndex, 47] = data.Data._2110_total;
-                ObjWorkSheet.Cells[currentIndex, 48] = data.Data._221_ExpertWithEducation;
-                ObjWorkSheet.Cells[currentIndex, 49] = data.Data._221_ExpertWithoutEducation;
-                ObjWorkSheet.Cells[currentIndex, 50] = data.Data._22_ExpertWithEducation;
-                ObjWorkSheet.Cells[currentIndex, 51] = data.Data._22_ExpertWithoutEducation;
-                ObjWorkSheet.Cells[currentIndex, 52] = data.Data._22_total;
+                ObjWorkSheet.Cells[currentIndex, 48] = data.Data._22_ExpertWithEducation;
+                ObjWorkSheet.Cells[currentIndex, 49] = data.Data._22_ExpertWithoutEducation;
+                ObjWorkSheet.Cells[currentIndex, 50] = data.Data._22_total;
+                ObjWorkSheet.Cells[currentIndex, 51] = data.Data._221_ExpertWithEducation;
+                ObjWorkSheet.Cells[currentIndex, 52] = data.Data._221_ExpertWithoutEducation;
                 ObjWorkSheet.Cells[currentIndex, 53] = data.Data._221_total;
                 ObjWorkSheet.Cells[currentIndex, 54] = data.Data._222_ExpertWithEducation;
                 ObjWorkSheet.Cells[currentIndex, 55] = data.Data._222_ExpertWithoutEducation;

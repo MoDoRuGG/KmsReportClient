@@ -365,7 +365,7 @@ namespace KmsReportClient.Forms
                     nudSingle.Visible = false;
                     cmbStart.DataSource = GlobalConst.Periods;
                     btnDo.Text = "Сформировать сводный отчет Мониторинг ВСС 2023 пофилиально";
-                    saveFileDialog1.FileName = "Cводный отчет Мониторинг ВСС 2023 (пофилиально)";
+                    saveFileDialog1.FileName = "Пофилиальный Мониторинг ВСС 2023";
                     break;
 
 
@@ -646,7 +646,7 @@ namespace KmsReportClient.Forms
 
         private void CreateCVCR()
         {
-            string yymm = GetYymm(cmbStart.Text, Convert.ToInt32(nudStart.Value)).ToString();
+            string yymm = GetYymmQuarterly2();
 
 
 
