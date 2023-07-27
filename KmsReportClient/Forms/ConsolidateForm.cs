@@ -278,7 +278,7 @@ namespace KmsReportClient.Forms
                     panelEnd.Visible = false;
                     panelRegion.Visible = false;
                     nudSingle.Visible = false;
-                    cmbStart.DataSource = GlobalConst.Months;
+                    cmbStart.DataSource = GlobalConst.Periods;
                     btnDo.Text = "Сформировать сводный отчёт Мониторинг ВСС 2023";
                     saveFileDialog1.FileName = "Cводный отчет Мониторинг ВСС 2023";
                     break;
@@ -646,7 +646,7 @@ namespace KmsReportClient.Forms
 
         private void CreateCVCR()
         {
-            string yymm = GetYymmQuarterly2();
+            string yymm = GetYymmQuarterly();
 
 
 
