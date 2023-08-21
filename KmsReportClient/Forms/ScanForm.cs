@@ -95,6 +95,76 @@ namespace KmsReportClient.Forms
 
             }
 
+            if (!string.IsNullOrEmpty(processor.Report.Scan4))
+            {
+                LbScan.Items.Add(new ScanData
+                {
+                    Num = 4,
+                    Name = processor.Report.Scan4
+                });
+
+            }
+
+            if (!string.IsNullOrEmpty(processor.Report.Scan5))
+            {
+                LbScan.Items.Add(new ScanData
+                {
+                    Num = 5,
+                    Name = processor.Report.Scan5
+                });
+
+            }
+
+            if (!string.IsNullOrEmpty(processor.Report.Scan6))
+            {
+                LbScan.Items.Add(new ScanData
+                {
+                    Num = 6,
+                    Name = processor.Report.Scan6
+                });
+
+            }
+
+            if (!string.IsNullOrEmpty(processor.Report.Scan7))
+            {
+                LbScan.Items.Add(new ScanData
+                {
+                    Num = 7,
+                    Name = processor.Report.Scan7
+                });
+
+            }
+
+            if (!string.IsNullOrEmpty(processor.Report.Scan8))
+            {
+                LbScan.Items.Add(new ScanData
+                {
+                    Num = 8,
+                    Name = processor.Report.Scan8
+                });
+
+            }
+
+            if (!string.IsNullOrEmpty(processor.Report.Scan9))
+            {
+                LbScan.Items.Add(new ScanData
+                {
+                    Num = 9,
+                    Name = processor.Report.Scan9
+                });
+
+            }
+
+            if (!string.IsNullOrEmpty(processor.Report.Scan10))
+            {
+                LbScan.Items.Add(new ScanData
+                {
+                    Num = 10,
+                    Name = processor.Report.Scan10
+                });
+
+            }
+
         }
 
         private void OpenScan(string uri)
@@ -122,9 +192,9 @@ namespace KmsReportClient.Forms
                     throw new Exception("Скан можно закачать только для отчетов, которые находится в статусах: " +
                         "'Сохранен в БД', 'Загружен скан', 'Отправлен на доработку'");
                 }
-                if (LbScan.Items.Count == 3 && LbScan.SelectedItem == null)
+                if (LbScan.Items.Count == 10 && LbScan.SelectedItem == null)
                 {
-                    throw new Exception("Максимальное количество сканов - 3 ");
+                    throw new Exception("Максимальное количество сканов - 10 ");
 
                 }
 
@@ -173,7 +243,7 @@ namespace KmsReportClient.Forms
                     }
                     else
                     {
-                        for (int i = 1; i <= 3; i++)
+                        for (int i = 1; i <= 10; i++)
                         {
                             if (!existsNums.Any(x => x == i))
                             {
@@ -213,23 +283,17 @@ namespace KmsReportClient.Forms
                 }
 
 
-                if (num == 1)
-                {
-                    _processor.Report.Scan = savedFileName;
-                }
+                if (num == 1){_processor.Report.Scan = savedFileName;}
+                if (num == 2) { _processor.Report.Scan2 = savedFileName; }
+                if (num == 3) { _processor.Report.Scan3 = savedFileName; }
+                if (num == 4) { _processor.Report.Scan4 = savedFileName; }
+                if (num == 5) { _processor.Report.Scan5 = savedFileName; }
+                if (num == 6) { _processor.Report.Scan6 = savedFileName; }
+                if (num == 7) { _processor.Report.Scan7 = savedFileName; }
+                if (num == 8) { _processor.Report.Scan8 = savedFileName; }
+                if (num == 9) { _processor.Report.Scan9 = savedFileName; }
+                if (num == 10) { _processor.Report.Scan10 = savedFileName; }
 
-
-                if (num == 2)
-                {
-                    _processor.Report.Scan2 = savedFileName;
-
-                }
-
-                if (num == 3)
-                {
-                    _processor.Report.Scan3 = savedFileName;
-
-                }
 
             }
             catch (Exception ex)
@@ -288,6 +352,14 @@ namespace KmsReportClient.Forms
                 _processor.Report.Scan3 = null;
 
             }
+
+            if (num == 4) { _processor.Report.Scan4 = null; }
+            if (num == 5) { _processor.Report.Scan5 = null; }
+            if (num == 6) { _processor.Report.Scan6 = null; }
+            if (num == 7) { _processor.Report.Scan7 = null; }
+            if (num == 8) { _processor.Report.Scan8 = null; }
+            if (num == 9) { _processor.Report.Scan9 = null; }
+            if (num == 10) { _processor.Report.Scan10 = null; }
 
             if (String.IsNullOrEmpty(_processor.Report.Scan) && String.IsNullOrEmpty(_processor.Report.Scan2) && String.IsNullOrEmpty(_processor.Report.Scan3))
             {
