@@ -26,5 +26,6 @@
         public const string ReportZpz10 = "Zpz10";
         public const string ReportEffectiveness = "Effective";
         public const string ReportZpzLethal = "ZpzLethal";
+        public const string ReportReqVCR = "ReqVCR";
     }
 }

@@ -99,6 +99,9 @@ namespace KmsReportClient.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle72 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -257,6 +260,10 @@ namespace KmsReportClient.Forms
             this.TxtbCadre = new System.Windows.Forms.TextBox();
             this.CmbCadre = new System.Windows.Forms.ComboBox();
             this.DgvCadre = new System.Windows.Forms.DataGridView();
+            this.PageReqVCR = new System.Windows.Forms.TabPage();
+            this.TxtbReqVCR = new System.Windows.Forms.TextBox();
+            this.CmbReqVCR = new System.Windows.Forms.ComboBox();
+            this.DgvReqVCR = new System.Windows.Forms.DataGridView();
             this.PageZpz = new System.Windows.Forms.TabPage();
             this.DgwReportZpz = new System.Windows.Forms.DataGridView();
             this.TxtbZpz = new System.Windows.Forms.TextBox();
@@ -352,6 +359,8 @@ namespace KmsReportClient.Forms
             ((System.ComponentModel.ISupportInitialize)(this.gVac)).BeginInit();
             this.PageCadre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCadre)).BeginInit();
+            this.PageReqVCR.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvReqVCR)).BeginInit();
             this.PageZpz.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgwReportZpz)).BeginInit();
             this.PageZpzQ.SuspendLayout();
@@ -1450,6 +1459,7 @@ namespace KmsReportClient.Forms
             this.TbControl.Controls.Add(this.PageOpedQ);
             this.TbControl.Controls.Add(this.tabVac);
             this.TbControl.Controls.Add(this.PageCadre);
+            this.TbControl.Controls.Add(this.PageReqVCR);
             this.TbControl.Controls.Add(this.PageZpz);
             this.TbControl.Controls.Add(this.PageZpzQ);
             this.TbControl.Controls.Add(this.PageZpz10);
@@ -3240,6 +3250,81 @@ namespace KmsReportClient.Forms
             this.dgvMonitoringVCR.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvMonitoringVCR_CellBeginEdit);
             this.dgvMonitoringVCR.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonitoringVCR_CellEndEdit);
             // 
+            // PageReqVCR
+            // 
+            this.PageReqVCR.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.PageReqVCR.Controls.Add(this.TxtbReqVCR);
+            this.PageReqVCR.Controls.Add(this.CmbReqVCR);
+            this.PageReqVCR.Controls.Add(this.DgvReqVCR);
+            this.PageReqVCR.Location = new System.Drawing.Point(4, 36);
+            this.PageReqVCR.Name = "PageReqVCR";
+            this.PageReqVCR.Padding = new System.Windows.Forms.Padding(3);
+            this.PageReqVCR.Size = new System.Drawing.Size(712, 330);
+            this.PageReqVCR.TabIndex = 15;
+            this.PageReqVCR.Text = "tabPage1";
+            // 
+            // TxtbReqVCR
+            // 
+            this.TxtbReqVCR.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtbReqVCR.Location = new System.Drawing.Point(115, 5);
+            this.TxtbReqVCR.Multiline = true;
+            this.TxtbReqVCR.Name = "TxtbReqVCR";
+            this.TxtbReqVCR.ReadOnly = true;
+            this.TxtbReqVCR.Size = new System.Drawing.Size(593, 39);
+            this.TxtbReqVCR.TabIndex = 38;
+            // 
+            // CmbReqVCR
+            // 
+            this.CmbReqVCR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbReqVCR.FormattingEnabled = true;
+            this.CmbReqVCR.Location = new System.Drawing.Point(9, 5);
+            this.CmbReqVCR.Name = "CmbReqVCR";
+            this.CmbReqVCR.Size = new System.Drawing.Size(100, 21);
+            this.CmbReqVCR.TabIndex = 37;
+            this.CmbReqVCR.SelectedIndexChanged += new System.EventHandler(this.CmbPageReqVCR_SelectedIndexChanged);
+            // 
+            // DgvReqVCR
+            // 
+            this.DgvReqVCR.AllowUserToAddRows = false;
+            this.DgvReqVCR.AllowUserToDeleteRows = false;
+            this.DgvReqVCR.AllowUserToResizeColumns = false;
+            this.DgvReqVCR.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DgvReqVCR.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            dataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            dataGridViewCellStyle70.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle70.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle70.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle70.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle70.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle70.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvReqVCR.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle70;
+            this.DgvReqVCR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle71.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle71.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle71.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle71.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle71.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle71.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvReqVCR.DefaultCellStyle = dataGridViewCellStyle71;
+            this.DgvReqVCR.Location = new System.Drawing.Point(5, 50);
+            this.DgvReqVCR.Name = "DgvReqVCR";
+            dataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle72.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle72.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle72.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle72.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle72.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle72.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvReqVCR.RowHeadersDefaultCellStyle = dataGridViewCellStyle72;
+            this.DgvReqVCR.Size = new System.Drawing.Size(703, 276);
+            this.DgvReqVCR.TabIndex = 24;
+            this.DgvReqVCR.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.DgvReqVCR_CellBeginEdit);
+            this.DgvReqVCR.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvReqVCR_CellEndEdit);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3316,6 +3401,9 @@ namespace KmsReportClient.Forms
             this.PageCadre.ResumeLayout(false);
             this.PageCadre.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCadre)).EndInit();
+            this.PageReqVCR.ResumeLayout(false);
+            this.PageReqVCR.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvReqVCR)).EndInit();
             this.PageZpz.ResumeLayout(false);
             this.PageZpz.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgwReportZpz)).EndInit();
@@ -3445,7 +3533,11 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.TabPage PageCadre;
         private System.Windows.Forms.DataGridView DgvCadre;
         private System.Windows.Forms.TextBox TxtbCadre;
-        private System.Windows.Forms.ComboBox CmbCadre;
+        private System.Windows.Forms.ComboBox CmbCadre; 
+        private System.Windows.Forms.TabPage PageReqVCR;
+        private System.Windows.Forms.DataGridView DgvReqVCR;
+        private System.Windows.Forms.TextBox TxtbReqVCR;
+        private System.Windows.Forms.ComboBox CmbReqVCR;
         private System.Windows.Forms.ToolStripMenuItem формаПГToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem формаЗПЗToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem контрольЗПЗToolStripMenuItem;

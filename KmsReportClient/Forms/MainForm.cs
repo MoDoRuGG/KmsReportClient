@@ -147,6 +147,7 @@ namespace KmsReportClient.Forms
             TbControl.TabPages.Remove(tpOpedFinance3);
             TbControl.TabPages.Remove(tpIizl2022);
             TbControl.TabPages.Remove(PageCadre);
+            TbControl.TabPages.Remove(PageReqVCR);
             TbControl.TabPages.Remove(PageZpz);
             TbControl.TabPages.Remove(PageZpzQ);
             TbControl.TabPages.Remove(PageZpz10);
@@ -189,6 +190,7 @@ namespace KmsReportClient.Forms
                         {tpOpedFinance3, ReportGlobalConst.ReportOpedFinance},
                         {tpIizl2022, ReportGlobalConst.ReportIizl2022},
                         {PageCadre, ReportGlobalConst.ReportCadre},
+                        {PageReqVCR, ReportGlobalConst.ReportReqVCR},
                         {PageZpz10, ReportGlobalConst.ReportZpz10},
                         {PageZpzLethal, ReportGlobalConst.ReportZpzLethal},
                         {PageEffectiveness, ReportGlobalConst.ReportEffectiveness},
@@ -288,6 +290,10 @@ namespace KmsReportClient.Forms
                 {
                     ReportGlobalConst.ReportCadre,
                     new ReportCadreProcessor(_client, _reportsDictionary, DgvCadre, CmbCadre, TxtbCadre, PageCadre)
+                },
+                {
+                    ReportGlobalConst.ReportReqVCR,
+                    new ReportReqVCRProcessor(_client, _reportsDictionary, DgvReqVCR, CmbReqVCR, TxtbReqVCR, PageReqVCR)
                 }
             };
 
@@ -1535,6 +1541,12 @@ namespace KmsReportClient.Forms
         private void CmbZpz_SelectedIndexChanged(object sender, EventArgs e) =>
         ChangeIndexComboBox(DgwReportZpzQ, CmbZpzQ, TxtbZpzQ);
 
+        private void CmbCadre_SelectedIndexChanged(object sender, EventArgs e) =>
+        ChangeIndexComboBox(DgvCadre, CmbCadre, TxtbCadre);
+
+        private void CmbReqVCR_SelectedIndexChanged(object sender, EventArgs e) =>
+        ChangeIndexComboBox(DgvReqVCR, CmbReqVCR, TxtbReqVCR);
+
         private void CmbZpzLethal_SelectedIndexChanged(object sender, EventArgs e) =>
         ChangeIndexComboBox(DgwReportZpzLethal, CmbZpzLethal, TxtbZpzLethal);
 
@@ -1713,6 +1725,8 @@ namespace KmsReportClient.Forms
                     TbControl.TabPages.Remove(PageZpz10);
                     TbControl.TabPages.Remove(PageZpzQ);
                     TbControl.TabPages.Remove(PageQuery);
+                    TbControl.TabPages.Remove(PageCadre);
+                    TbControl.TabPages.Remove(PageReqVCR);
                     TbControl.TabPages.Remove(PageOtclkInfrorm);
                     TbControl.TabPages.Remove(PageOped);
                     TbControl.TabPages.Remove(PageOpedU);
@@ -2026,12 +2040,22 @@ namespace KmsReportClient.Forms
             ChangeIndexComboBox(DgvCadre, CmbCadre, TxtbCadre);
         }
 
+        private void CmbPageReqVCR_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ChangeIndexComboBox(DgvReqVCR, CmbReqVCR, TxtbReqVCR);
+        }
+
         private void DgvOtclkInfrorm_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
         private void DgvCadre_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void DgvReqVCR_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
 
         }
@@ -2044,6 +2068,11 @@ namespace KmsReportClient.Forms
         private void DgvCadre_KeyPress(object sender, KeyPressEventArgs e)
         {
             (_processor as ReportCadreProcessor).SetFormula();
+        }
+
+        private void DgvReqVCR_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            (_processor as ReportReqVCRProcessor).SetFormula();
         }
 
         private void DgvEffectiveness_keyPress(object sender, KeyPressEventArgs e)
@@ -2059,6 +2088,11 @@ namespace KmsReportClient.Forms
         private void DgvCadre_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             (_processor as ReportCadreProcessor).SetFormula();
+        }
+
+        private void DgvReqVCR_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as ReportReqVCRProcessor).SetFormula();
         }
 
         private void dgvOpedQ_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -2113,6 +2147,17 @@ namespace KmsReportClient.Forms
         private void dgvMonitoringVCR_KeyPress(object sender, DataGridViewCellEventArgs e)
         {
             (_processor as MonitoringVCRProcessor).SetFormula();
+
+        }
+
+        private void DgvReqVCR_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            (_processor as ReportReqVCRProcessor).SetFormula();
+        }
+
+        private void DgvReqVCR_KeyPress(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as ReportReqVCRProcessor).SetFormula();
 
         }
 
