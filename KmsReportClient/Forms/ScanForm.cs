@@ -335,24 +335,9 @@ namespace KmsReportClient.Forms
             int num = (LbScan.SelectedItem as ScanData).Num;
             _processor.DeleteScan(num);
 
-            if (num == 1)
-            {
-                _processor.Report.Scan = null;
-            }
-
-
-            if (num == 2)
-            {
-                _processor.Report.Scan2 = null;
-
-            }
-
-            if (num == 3)
-            {
-                _processor.Report.Scan3 = null;
-
-            }
-
+            if (num == 1) { _processor.Report.Scan = null; }
+            if (num == 2) { _processor.Report.Scan2 = null; }
+            if (num == 3) { _processor.Report.Scan3 = null; }
             if (num == 4) { _processor.Report.Scan4 = null; }
             if (num == 5) { _processor.Report.Scan5 = null; }
             if (num == 6) { _processor.Report.Scan6 = null; }
@@ -361,7 +346,15 @@ namespace KmsReportClient.Forms
             if (num == 9) { _processor.Report.Scan9 = null; }
             if (num == 10) { _processor.Report.Scan10 = null; }
 
-            if (String.IsNullOrEmpty(_processor.Report.Scan) && String.IsNullOrEmpty(_processor.Report.Scan2) && String.IsNullOrEmpty(_processor.Report.Scan3))
+            if (String.IsNullOrEmpty(_processor.Report.Scan) && String.IsNullOrEmpty(_processor.Report.Scan2) && String.IsNullOrEmpty(_processor.Report.Scan3)
+             && String.IsNullOrEmpty(_processor.Report.Scan4)
+              && String.IsNullOrEmpty(_processor.Report.Scan5)
+               && String.IsNullOrEmpty(_processor.Report.Scan6)
+                && String.IsNullOrEmpty(_processor.Report.Scan7)
+                 && String.IsNullOrEmpty(_processor.Report.Scan8)
+                  && String.IsNullOrEmpty(_processor.Report.Scan9)
+                   && String.IsNullOrEmpty(_processor.Report.Scan10)
+                   )
             {
                 _processor.Report.Status = ReportStatus.Saved;
             }
