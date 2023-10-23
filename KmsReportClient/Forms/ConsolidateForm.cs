@@ -175,6 +175,14 @@ namespace KmsReportClient.Forms
                     btnDo.Text = "Сформировать отчет для контроля ЗПЗ 2023(за весь год)";
                     saveFileDialog1.FileName = "Сводный отчет для контроля ЗПЗ 2023(за весь год)";
                     break;
+                case ConsolidateReport.ControlZpz2023SingleQuarterly:
+                    labelStart.Text = "Год";
+                    panelSt.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Проверочная таблица ЗПЗ 2023(за весь год)";
+                    saveFileDialog1.FileName = "Проверочная таблица ЗПЗ 2023(за весь год)";
+                    break;
                 case ConsolidateReport.Onko:
                     labelStart.Text = "Период";
                     nudSingle.Visible = false;
@@ -430,6 +438,9 @@ namespace KmsReportClient.Forms
                         break;
                     case ConsolidateReport.ControlZpz2023FullQuarterly:
                         CreateControlZpz2023Full();
+                        break;
+                    case ConsolidateReport.ControlZpz2023SingleQuarterly:
+                        CreateControlZpz2023Single();
                         break;
                     case ConsolidateReport.ZpzWebSite:
                         CreateZpzWebSite();
@@ -897,19 +908,59 @@ namespace KmsReportClient.Forms
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            if (CurrentUser.IsMain) { 
+                foreach (var d in data)
+                {
+                    d.Filial = _regions.Single(x => x.Key == d.Filial).Value;
+                }
+
+                data = data.OrderBy(x => x.Filial).ToArray();
+
+                string filename = saveFileDialog1.FileName;
+                var excel = new ExcelControlZpz2023FullCreator(filename, "", _filialName);
+                excel.CreateReport(data, null);
+
+                GlobalUtils.OpenFileOrDirectory(filename);
+            }
+            else 
+            {
+                foreach (var d in data)
+                {
+                    d.Filial = CurrentUser.Region;
+                    data = data.OrderBy(x => x.Filial).ToArray();
+
+                    string filename = saveFileDialog1.FileName;
+                    var excel = new ExcelControlZpz2023FullCreator(filename, "", _filialName);
+                    excel.CreateReport(data, null);
+
+                    GlobalUtils.OpenFileOrDirectory(filename);
+                }
+            }
+        }
+
+        private void CreateControlZpz2023Single()
+        {
+            string year = Convert.ToString(nudSingle.Value);
+            string filial = CurrentUser.FilialCode;
+            var data = _client.CreateReportControlZpz2023Single(year,filial);
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
             foreach (var d in data)
             {
-                d.Filial = _regions.Single(x => x.Key == d.Filial).Value;
+                d.Filial = CurrentUser.Region;
+                data = data.OrderBy(x => x.Filial).ToArray();
+
+                string filename = saveFileDialog1.FileName;
+                var excel = new ExcelControlZpz2023SingleCreator(filename, "", _filialName);
+                excel.CreateReport(data, null);
+
+                GlobalUtils.OpenFileOrDirectory(filename);
             }
-
-            data = data.OrderBy(x => x.Filial).ToArray();
-
-            string filename = saveFileDialog1.FileName;
-            var excel = new ExcelControlZpz2023FullCreator(filename, "", _filialName);
-            excel.CreateReport(data, null);
-
-            GlobalUtils.OpenFileOrDirectory(filename);
         }
 
         private void CreateOnko(bool isMonthly)

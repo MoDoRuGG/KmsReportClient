@@ -198,6 +198,8 @@ namespace KmsReportClient.Report.Basic
 
         public override bool IsVisibleBtnHandle() => false;
 
+        public override bool IsVisibleBtnSummary() => false;
+
         public override string ValidReport() { return ""; }
 
         public override void ToExcel(string filename, string filialName)

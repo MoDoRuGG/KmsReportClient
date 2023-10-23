@@ -116,6 +116,8 @@ namespace KmsReportClient.Report.Basic
 
         public override bool IsVisibleBtnHandle() => false;
 
+        public override bool IsVisibleBtnSummary() => false;
+
         public override void MapForAutoFill(AbstractReport report)
         {
             if (report == null)

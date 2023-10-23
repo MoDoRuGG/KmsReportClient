@@ -77,6 +77,7 @@ namespace KmsReportClient.Report.Basic
         public abstract string ValidReport();
         public abstract bool IsVisibleBtnDownloadExcel();
         public abstract bool IsVisibleBtnHandle();
+        public abstract bool IsVisibleBtnSummary();
         public abstract void InitReport();
         public abstract void MapForAutoFill(AbstractReport report);
         public abstract void SaveReportDataSourceHandle();

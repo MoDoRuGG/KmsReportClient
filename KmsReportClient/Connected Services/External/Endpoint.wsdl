@@ -1630,6 +1630,115 @@
           <s:element minOccurs="1" maxOccurs="1" name="SumEkmp" type="s:decimal" />
         </s:sequence>
       </s:complexType>
+      <s:element name="CreateReportControlZpz2023Single">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filial" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateReportControlZpz2023SingleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateReportControlZpz2023SingleResult" type="tns:ArrayOfCReportZpz2023Single" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCReportZpz2023Single">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CReportZpz2023Single" nillable="true" type="tns:CReportZpz2023Single" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CReportZpz2023Single">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Expertise1Q" type="tns:ZpzExpertise2023Single" />
+          <s:element minOccurs="0" maxOccurs="1" name="Expertise2Q" type="tns:ZpzExpertise2023Single" />
+          <s:element minOccurs="0" maxOccurs="1" name="Expertise3Q" type="tns:ZpzExpertise2023Single" />
+          <s:element minOccurs="0" maxOccurs="1" name="Expertise4Q" type="tns:ZpzExpertise2023Single" />
+          <s:element minOccurs="0" maxOccurs="1" name="Finance1Q" type="tns:ZpzFinance2023Single" />
+          <s:element minOccurs="0" maxOccurs="1" name="Finance2Q" type="tns:ZpzFinance2023Single" />
+          <s:element minOccurs="0" maxOccurs="1" name="Finance3Q" type="tns:ZpzFinance2023Single" />
+          <s:element minOccurs="0" maxOccurs="1" name="Finance4Q" type="tns:ZpzFinance2023Single" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZpzExpertise2023Single">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Bills" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeTarget" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeePlan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeComplaintTarget" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeComplaintPlan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeRepeat" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeOnco" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDs" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeLeth" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeInjured" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectedCaseTarget" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectedCasePlan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsTarget" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsPlan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsPeriod" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsCondition" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsRepeat" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsOutOfDocums" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsUnpayable" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsBuyMedicament" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsOutOfLeth" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsWithoutDocums" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsIncorrectDocums" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsBadDocums" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsBadDate" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsBadData" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMeeDefectsOutOfProtocol" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpTarget" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpPlan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpComplaint" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpLeth" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpByMek" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpByMee" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpUTheme" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpMultiTarget" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpMultiPlan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpMultiLeth" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpMultiUthemeTarget" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseEkmpMultiUthemePlan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseDefectedBySmoTarget" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCaseDefectedBySmoPlan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpDefectedCaseTarget" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpDefectedCasePlan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadDs" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadDsNotAffected" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadDsProlonger" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadDsDecline" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadDsInjured" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadDsLeth" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadMed" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpUnreglamentedMed" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpStopMed" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpContinuity" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpUnprofile" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpUnfounded" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpRepeat" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpDifference" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpUnfoundedMedicaments" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpUnfoundedReject" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpDisp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpRepeat2weeks" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpOutOfResults" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpDoubleHospital" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZpzFinance2023Single">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SumPayment" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumNotPayment" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumMek" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumMee" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SumEkmp" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="ConsolidateProposalCollect">
         <s:complexType>
           <s:sequence>
@@ -4314,6 +4423,12 @@
   <wsdl:message name="CreateReportControlZpz2023FullSoapOut">
     <wsdl:part name="parameters" element="tns:CreateReportControlZpz2023FullResponse" />
   </wsdl:message>
+  <wsdl:message name="CreateReportControlZpz2023SingleSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateReportControlZpz2023Single" />
+  </wsdl:message>
+  <wsdl:message name="CreateReportControlZpz2023SingleSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateReportControlZpz2023SingleResponse" />
+  </wsdl:message>
   <wsdl:message name="ConsolidateProposalCollectSoapIn">
     <wsdl:part name="parameters" element="tns:ConsolidateProposalCollect" />
   </wsdl:message>
@@ -4873,6 +4988,10 @@
       <wsdl:input message="tns:CreateReportControlZpz2023FullSoapIn" />
       <wsdl:output message="tns:CreateReportControlZpz2023FullSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="CreateReportControlZpz2023Single">
+      <wsdl:input message="tns:CreateReportControlZpz2023SingleSoapIn" />
+      <wsdl:output message="tns:CreateReportControlZpz2023SingleSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="ConsolidateProposalCollect">
       <wsdl:input message="tns:ConsolidateProposalCollectSoapIn" />
       <wsdl:output message="tns:ConsolidateProposalCollectSoapOut" />
@@ -5317,6 +5436,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateReportControlZpz2023Full">
       <soap:operation soapAction="http://kms-oms.ru/CreateReportControlZpz2023Full" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateReportControlZpz2023Single">
+      <soap:operation soapAction="http://kms-oms.ru/CreateReportControlZpz2023Single" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -6193,6 +6321,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateReportControlZpz2023Full">
       <soap12:operation soapAction="http://kms-oms.ru/CreateReportControlZpz2023Full" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateReportControlZpz2023Single">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateReportControlZpz2023Single" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

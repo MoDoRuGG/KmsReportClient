@@ -215,6 +215,8 @@ namespace KmsReportClient.Report.Basic
 
         public override bool IsVisibleBtnHandle() => false;
 
+        public override bool IsVisibleBtnSummary() => false;
+
         public override string ValidReport()
         {
             string message = "";

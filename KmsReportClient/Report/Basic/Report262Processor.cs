@@ -330,6 +330,8 @@ namespace KmsReportClient.Report.Basic
             return false;
         }
 
+        public override bool IsVisibleBtnSummary() => false;
+
         public override string ValidReport()
         {
             var message = "";

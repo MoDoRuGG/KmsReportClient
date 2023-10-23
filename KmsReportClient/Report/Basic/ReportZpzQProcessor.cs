@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using KmsReportClient.Excel.Creator.Base;
 using KmsReportClient.External;
+using KmsReportClient.Forms;
 using KmsReportClient.Global;
 using KmsReportClient.Model.Enums;
 using KmsReportClient.Model.XML;
@@ -144,6 +145,11 @@ namespace KmsReportClient.Report.Basic
             InitReport();
         }
 
+        public override bool IsVisibleBtnDownloadExcel() => CurrentUser.IsMain ? false : true;
+        public override bool IsVisibleBtnHandle() => CurrentUser.IsMain ? false : true;
+
+        public override bool IsVisibleBtnSummary() => CurrentUser.IsMain ? false : true;
+
         public override void InitReport()
         {
             Report = new ReportZpz { ReportDataList = new ReportZpzDto[ThemesList.Count], IdType = IdReportType };
@@ -154,6 +160,7 @@ namespace KmsReportClient.Report.Basic
                 Report.ReportDataList[i++] = new ReportZpzDto { Theme = theme };
             }
         }
+
         public override AbstractReport CollectReportFromWs(string yymm)
         {
             var request = new GetReportRequest
@@ -254,11 +261,10 @@ namespace KmsReportClient.Report.Basic
             }
         }
 
-        public override bool IsVisibleBtnDownloadExcel() => true;
-        public override bool IsVisibleBtnHandle() => false;
+        
 
 
-        public override string ValidReport()
+    public override string ValidReport()
         {
 
             string message = "";

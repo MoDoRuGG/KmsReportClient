@@ -28,6 +28,7 @@ namespace KmsReportClient.Report
         string ValidReport();
         bool IsVisibleBtnDownloadExcel();
         bool IsVisibleBtnHandle();
+        bool IsVisibleBtnSummary();
 
         void InitReport();
         void SetReadonlyForDgv(bool isReadonly);

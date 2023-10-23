@@ -169,6 +169,7 @@
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateYear294Creator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsZpzWebSite2023.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsZpzWebSite.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelControlZpz2023SingleCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelControlZpz2023FullCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelControlZpz2023Creator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelControlZpzCreator.cs" />
@@ -484,6 +485,9 @@
     <None Include="Connected Services\External\KmsReportClient.External.CreateReportControlZpz2023Response.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateReportControlZpz2023SingleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateReportCOpedResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -542,6 +546,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CReportZpz2023Full.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CReportZpz2023Single.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.DownloadDllFileResponse.datasource">
@@ -786,6 +793,7 @@
     <Content Include="logo.ico" />
     <None Include="Resources\Screenshot_1.jpg" />
     <None Include="Resources\KapitalLogo.png" />
+    <None Include="Resources\BtnSummary.Image.bmp" />
     <Content Include="Resources\TemplateTextF262.xml" />
     <Content Include="Resources\TemplateTextF294.xml" />
     <Content Include="Resources\TemplateTextIizl.xml" />

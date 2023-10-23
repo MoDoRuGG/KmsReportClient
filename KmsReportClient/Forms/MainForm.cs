@@ -315,11 +315,16 @@ namespace KmsReportClient.Forms
             BtnSave.Visible = false;
             BtnClear.Visible = false;
             BtnUpload.Visible = false;
+            BtnUploaded.Visible = false;
             BtnAutoFill.Visible = false;
+            BtnSummary.Visible = false; 
             BtnSubmit.Text = "Утвердить отчет";
             consolidateMenu.Visible = true;
             serviceMenu.Visible = true;
             BtnSaveToDb.Visible = false;
+            separatorExcel.Visible = false;
+            toolStripSeparator2.Visible = false;
+
 
 
         }
@@ -333,7 +338,7 @@ namespace KmsReportClient.Forms
             BtnRefuse.Visible = false;
             SpravItem.Visible = false;
             Con.Visible = false;
-            //Con.Visible = false;
+            BtnSummary.Visible = false;
         }
 
         private void CreateTreeView()
@@ -557,7 +562,8 @@ namespace KmsReportClient.Forms
            
                 BtnUploaded.Visible = _processor.IsVisibleBtnDownloadExcel();
                 BtnHandle.Visible = _processor.IsVisibleBtnHandle();
-            
+                BtnSummary.Visible = _processor.IsVisibleBtnSummary();
+
             if (_processor.Report.IdType == "PG" || _processor.Report.IdType == "Zpz")
             {
                 DgwReportPg.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
@@ -946,6 +952,11 @@ namespace KmsReportClient.Forms
                 BtnHandle.Visible = _processor.IsVisibleBtnHandle();
                 dgw.AllowUserToDeleteRows = _processor.IsVisibleBtnDownloadExcel();
                 separatorExcel.Visible = _processor.IsVisibleBtnDownloadExcel();
+            }
+            else
+            {
+                BtnUploaded.Visible = false;
+                BtnHandle.Visible = false;
             }
         }
 
@@ -1384,6 +1395,22 @@ namespace KmsReportClient.Forms
 
         }
 
+        private void BtnSummary_Click(object sender, EventArgs e)
+        {
+            if (!_isQuery)
+            {
+                CollectReportDataUploaded();
+                SaveReportToDB_DataSourceToExcel();
+            }
+            else
+            {
+                CollectDynamicReportDataUploaded();
+
+            }
+
+
+        }
+
         private void BtnHandle_Click(object sender, EventArgs e)
         {
             if (!_isQuery)
@@ -1622,6 +1649,9 @@ namespace KmsReportClient.Forms
 
         private void КонтрольЗПЗ2023FullToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.ControlZpz2023FullQuarterly);
+
+        private void КонтрольЗПЗ2023SingleToolStripMenuItem_Click(object sender, EventArgs e) =>
+            OpenConsolidateReportForm(ConsolidateReport.ControlZpz2023SingleQuarterly);
 
         private void онкологияToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.Onko);
