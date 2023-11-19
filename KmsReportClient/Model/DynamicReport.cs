@@ -142,7 +142,7 @@ namespace KmsReportClient.Model
             this.Page = pages;
 
             //Добавить IsUserRow
-            // this.IsUserRow= Xml.IsUserRow;
+            //this.IsUserRow= Xml.IsUserRow;
         }
 
     }

@@ -463,6 +463,8 @@ namespace KmsReportClient.Forms
             {
                 var data = _dynamicReportProcessor.GetRegionData(reportTag.idFlow);
                 _dynamicReportProcessor.data = data;
+                // пробуем всунуть создание dgv
+                _dynamicReportProcessor.SetDgv(DgvQuery, CmbQuery.Text);
                 _dynamicReportProcessor.SetReportDynamicFlow(reportTag.idFlow);
                 _dynamicReportProcessor.FillThemeData(DgvQuery);
             }

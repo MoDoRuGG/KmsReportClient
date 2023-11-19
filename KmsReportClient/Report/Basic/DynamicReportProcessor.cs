@@ -1,19 +1,17 @@
-﻿using KmsReportClient.Excel.Creator;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Windows.Forms;
+using System.Xml.Serialization;
+using KmsReportClient.Excel.Creator;
 using KmsReportClient.External;
 using KmsReportClient.Global;
 using KmsReportClient.Model;
 using KmsReportClient.Model.XML;
 using KmsReportClient.Report.Common;
 using KmsReportClient.Support;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml.Serialization;
 
 namespace KmsReportClient.Report.Basic
 {
@@ -22,7 +20,6 @@ namespace KmsReportClient.Report.Basic
         private readonly EndpointSoap client;
         public List<DynamicDataDto> data = new List<DynamicDataDto>();
         public DynamicReport Report;
-
         private ComboBox _cb;
         private DataGridView Dgv;
         public string _pageName;
@@ -412,49 +409,22 @@ namespace KmsReportClient.Report.Basic
 
         }
 
+
+
         public void SetDgv(DataGridView dgv, string page)
         {
+            int ColCounter = 0;
             dgv.Rows.Clear();
             dgv.Columns.Clear();
             int dgvColumnCount = dgv.Columns.Count;
             string columnName;
 
+            
+
 
             foreach (var theme in Report.Page.Where(x => x.Key.Name == page))
             {
-                if (theme.Value.Rows.Any())
-                {
-
-                    var clnRowName = new DataGridViewTextBoxColumn
-                    {
-                        Name = "Наименование показателя",
-                        HeaderText = "Наименование показателя",
-                        ReadOnly = true
-
-                    };
-                    dgv.Columns.Add(clnRowName);
-
-                    var clnRowIndex = new DataGridViewTextBoxColumn
-                    {
-                        Name = "N",
-                        HeaderText = "№",
-                        Width = 30,
-                        ReadOnly = true
-                    };
-
-                    dgv.Columns.Add(clnRowIndex);
-
-                    //Добавляем строки
-                    for (int i = 0; i < theme.Value.Rows.Count; i++)
-                    {
-                        dgv.Rows.Add();
-                        dgv.Rows[i].Cells[0].Value = theme.Value.Rows[i].Name;
-                        dgv.Rows[i].Cells[1].Value = theme.Value.Rows[i].Index;
-
-                    }
-
-                }
-
+                ColCounter = theme.Value.Columns.Count();
                 //Создаём столбцы
                 foreach (var column in theme.Value.Columns)
                 {
@@ -466,22 +436,26 @@ namespace KmsReportClient.Report.Basic
                         {
                             columnName = CreateColumnName(column.Name, childColumn.Name);
                             dgv.Columns.Add("Column" + dgvColumnCount, columnName);
-
                         }
-
                     }
                     else
                     {
                         dgv.Columns.Add("Column" + dgvColumnCount, columnName);
-
-
                     }
-
                 }
 
-                if (!theme.Value.Rows.Any())
-                    dgv.Rows.Add();
+                int RowCounter = (int) Math.Ceiling((decimal) data.Count() / (decimal) ColCounter);
 
+                //Добавляем строки
+                if (theme.Value.Rows.Any())
+                {
+                    for (int i = 0; i < RowCounter; i++)
+                        dgv.Rows.Add();
+                }
+                else
+                {
+                    dgv.Rows.Add();
+                }
             }
         }
 
