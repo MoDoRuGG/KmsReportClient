@@ -447,7 +447,7 @@ namespace KmsReportClient.Report.Basic
                 int RowCounter = (int) Math.Ceiling((decimal) data.Count() / (decimal) ColCounter);
 
                 //Добавляем строки
-                if (theme.Value.Rows.Any())
+                if (RowCounter > 1)
                 {
                     for (int i = 0; i < RowCounter; i++)
                         dgv.Rows.Add();
