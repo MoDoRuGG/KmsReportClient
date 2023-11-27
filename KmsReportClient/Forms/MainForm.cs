@@ -2252,6 +2252,22 @@ namespace KmsReportClient.Forms
             };
         }
 
+        private void планЧисленностиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new QuantityPlanDictionaryForm(_client);
+            form.Show();
+            form.FormClosed += (s, ee) =>
+            {
+                if (form != null)
+                {
+                    if (!form.IsDisposed)
+                        form.Dispose();
+
+                    form = null;
+                }
+            };
+        }
+
         private void свод1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenConsolidateReportForm(ConsolidateReport.ConsOpedFinance1);

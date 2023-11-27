@@ -161,6 +161,7 @@ namespace KmsReportClient.Forms
             this.SpravItem = new System.Windows.Forms.ToolStripMenuItem();
             this.электронныеАдресаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.планРезультативностиЭкспертнойДеятельностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.планЧисленностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuChangelog = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.TsslVersion = new System.Windows.Forms.ToolStripStatusLabel();
@@ -847,7 +848,9 @@ namespace KmsReportClient.Forms
             // 
             this.SpravItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.электронныеАдресаToolStripMenuItem,
-            this.планРезультативностиЭкспертнойДеятельностиToolStripMenuItem});
+            this.планРезультативностиЭкспертнойДеятельностиToolStripMenuItem,
+            this.планЧисленностиToolStripMenuItem
+            });
             this.SpravItem.Name = "SpravItem";
             this.SpravItem.Size = new System.Drawing.Size(94, 20);
             this.SpravItem.Text = "Справочники";
@@ -866,6 +869,13 @@ namespace KmsReportClient.Forms
             this.планРезультативностиЭкспертнойДеятельностиToolStripMenuItem.Size = new System.Drawing.Size(348, 22);
             this.планРезультативностиЭкспертнойДеятельностиToolStripMenuItem.Text = "План результативности экспертной деятельности";
             this.планРезультативностиЭкспертнойДеятельностиToolStripMenuItem.Click += new System.EventHandler(this.планРезультативностиЭкспертнойДеятельностиToolStripMenuItem_Click);
+            // 
+            // планЧисленностиToolStripMenuItem
+            // 
+            this.планЧисленностиToolStripMenuItem.Name = "планЧисленностиToolStripMenuItem";
+            this.планЧисленностиToolStripMenuItem.Size = new System.Drawing.Size(348, 22);
+            this.планЧисленностиToolStripMenuItem.Text = "План численности";
+            this.планЧисленностиToolStripMenuItem.Click += new System.EventHandler(this.планЧисленностиToolStripMenuItem_Click);
             // 
             // MenuChangelog
             // 
@@ -3662,6 +3672,7 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.DataGridView dgvOpedFinance3;
         private System.Windows.Forms.ToolStripMenuItem цПНП2квартальныйToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem планРезультативностиЭкспертнойДеятельностиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem планЧисленностиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПЭДФинансыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem свод1ToolStripMenuItem;
         private System.Windows.Forms.TabPage tpIizl2022;

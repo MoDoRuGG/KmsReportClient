@@ -2,6 +2,100 @@
 <wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://kms-oms.ru/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://kms-oms.ru/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://kms-oms.ru/">
+      <s:element name="CreateReportCadreTable2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateReportCadreTable2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateReportCadreTable2Result" type="tns:ArrayOfCReportCadreTable2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCReportCadreTable2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CReportCadreTable2" nillable="true" type="tns:CReportCadreTable2" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CReportCadreTable2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ReportCadreDataDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReportCadreDataDto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_itog_state" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_itog_fact" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_itog_vacancy" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_leader_state" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_leader_fact" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_leader_vacancy" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_deputy_leader_state" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_deputy_leader_fact" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_deputy_leader_vacancy" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_expert_doctor_state" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_expert_doctor_fact" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_expert_doctor_vacancy" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_specialist_state" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_specialist_fact" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_specialist_vacancy" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf15" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf16" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf17" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf18" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf19" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf20" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf21" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf22" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf23" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf24" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf25" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="count_grf26" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateReport262T1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="year" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateReport262T1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateReport262T1Result" type="tns:ArrayOfCReport262Table1" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCReport262Table1">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CReport262Table1" nillable="true" type="tns:CReport262Table1" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CReport262Table1">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListOfCountPpl" type="tns:ArrayOfCReport262Table1Row" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListOfCountInform" type="tns:ArrayOfCReport262Table1Row" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCReport262Table1Row">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CReport262Table1Row" nillable="true" type="tns:CReport262Table1Row" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CReport262Table1Row">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Value" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="CreateReport262T2">
         <s:complexType>
           <s:sequence>
@@ -1231,6 +1325,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="OpedFinancePlan" type="tns:ArrayOfOpedFinancePlan" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Dynamic_Flow" type="tns:ArrayOfReport_Dynamic_Flow" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:ArrayOfReport_Flow" />
+          <s:element minOccurs="0" maxOccurs="1" name="QuantityPlan" type="tns:ArrayOfQuantityPlan" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfEmployee">
@@ -1246,6 +1341,20 @@
       <s:complexType name="OpedFinancePlan">
         <s:sequence>
           <s:element minOccurs="1" maxOccurs="1" name="Id_OpedFinancePlan" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Yymm" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Value" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Id_Region" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Region" type="tns:Region" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfQuantityPlan">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="QuantityPlan" nillable="true" type="tns:QuantityPlan" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="QuantityPlan">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id_QuantityPlan" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Yymm" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="Value" type="s:decimal" />
           <s:element minOccurs="0" maxOccurs="1" name="Id_Region" type="s:string" />
@@ -1819,6 +1928,33 @@
           <s:element minOccurs="1" maxOccurs="1" name="Value" type="s:decimal" />
         </s:sequence>
       </s:complexType>
+      <s:element name="GetQuantityPlanList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQuantityPlanListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetQuantityPlanListResult" type="tns:ArrayOfQuantityPlanDictionaryItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfQuantityPlanDictionaryItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="QuantityPlanDictionaryItem" nillable="true" type="tns:QuantityPlanDictionaryItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="QuantityPlanDictionaryItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdQuantityPlan" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdRegion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Yymm" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Value" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="ConsolidateOpedFinance3">
         <s:complexType>
           <s:sequence>
@@ -1942,6 +2078,16 @@
         </s:complexType>
       </s:element>
       <s:element name="SaveOpedFinanceListResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SaveQuantityPlanList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="plans" type="tns:ArrayOfQuantityPlanDictionaryItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveQuantityPlanListResponse">
         <s:complexType />
       </s:element>
       <s:element name="ConsolidateOpedQCollect">
@@ -2222,38 +2368,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="ReportCadreDataDto">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_itog_state" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_itog_fact" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_itog_vacancy" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_leader_state" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_leader_fact" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_leader_vacancy" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_deputy_leader_state" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_deputy_leader_fact" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_deputy_leader_vacancy" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_expert_doctor_state" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_expert_doctor_fact" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_expert_doctor_vacancy" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_specialist_state" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_specialist_fact" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_specialist_vacancy" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_grf15" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_grf16" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_grf17" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_grf18" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_grf19" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_grf20" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_grf21" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_grf22" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_grf23" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_grf24" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_grf25" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="count_grf26" type="s:int" />
-        </s:sequence>
-      </s:complexType>
       <s:element name="GetVacYearData">
         <s:complexType>
           <s:sequence>
@@ -4287,70 +4401,20 @@
           <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ReportCadreDataDto" />
         </s:sequence>
       </s:complexType>
-      <s:element name="CreateReportCadreTable2">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CreateReportCadreTable2Response">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CreateReportCadreTable2Result" type="tns:ArrayOfCReportCadreTable2" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfCReportCadreTable2">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="CReportCadreTable2" nillable="true" type="tns:CReportCadreTable2" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="CReportCadreTable2">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ReportCadreDataDto" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="CreateReport262T1">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="year" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CreateReport262T1Response">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CreateReport262T1Result" type="tns:ArrayOfCReport262Table1" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfCReport262Table1">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="CReport262Table1" nillable="true" type="tns:CReport262Table1" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="CReport262Table1">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ListOfCountPpl" type="tns:ArrayOfCReport262Table1Row" />
-          <s:element minOccurs="0" maxOccurs="1" name="ListOfCountInform" type="tns:ArrayOfCReport262Table1Row" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfCReport262Table1Row">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="CReport262Table1Row" nillable="true" type="tns:CReport262Table1Row" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="CReport262Table1Row">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="Value" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
-        </s:sequence>
-      </s:complexType>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="CreateReportCadreTable2SoapIn">
+    <wsdl:part name="parameters" element="tns:CreateReportCadreTable2" />
+  </wsdl:message>
+  <wsdl:message name="CreateReportCadreTable2SoapOut">
+    <wsdl:part name="parameters" element="tns:CreateReportCadreTable2Response" />
+  </wsdl:message>
+  <wsdl:message name="CreateReport262T1SoapIn">
+    <wsdl:part name="parameters" element="tns:CreateReport262T1" />
+  </wsdl:message>
+  <wsdl:message name="CreateReport262T1SoapOut">
+    <wsdl:part name="parameters" element="tns:CreateReport262T1Response" />
+  </wsdl:message>
   <wsdl:message name="CreateReport262T2SoapIn">
     <wsdl:part name="parameters" element="tns:CreateReport262T2" />
   </wsdl:message>
@@ -4447,6 +4511,12 @@
   <wsdl:message name="GetOpedFinanceListSoapOut">
     <wsdl:part name="parameters" element="tns:GetOpedFinanceListResponse" />
   </wsdl:message>
+  <wsdl:message name="GetQuantityPlanListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetQuantityPlanList" />
+  </wsdl:message>
+  <wsdl:message name="GetQuantityPlanListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetQuantityPlanListResponse" />
+  </wsdl:message>
   <wsdl:message name="ConsolidateOpedFinance3SoapIn">
     <wsdl:part name="parameters" element="tns:ConsolidateOpedFinance3" />
   </wsdl:message>
@@ -4470,6 +4540,12 @@
   </wsdl:message>
   <wsdl:message name="SaveOpedFinanceListSoapOut">
     <wsdl:part name="parameters" element="tns:SaveOpedFinanceListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveQuantityPlanListSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveQuantityPlanList" />
+  </wsdl:message>
+  <wsdl:message name="SaveQuantityPlanListSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveQuantityPlanListResponse" />
   </wsdl:message>
   <wsdl:message name="ConsolidateOpedQCollectSoapIn">
     <wsdl:part name="parameters" element="tns:ConsolidateOpedQCollect" />
@@ -4927,19 +5003,15 @@
   <wsdl:message name="CreateReportCadreTable1SoapOut">
     <wsdl:part name="parameters" element="tns:CreateReportCadreTable1Response" />
   </wsdl:message>
-  <wsdl:message name="CreateReportCadreTable2SoapIn">
-    <wsdl:part name="parameters" element="tns:CreateReportCadreTable2" />
-  </wsdl:message>
-  <wsdl:message name="CreateReportCadreTable2SoapOut">
-    <wsdl:part name="parameters" element="tns:CreateReportCadreTable2Response" />
-  </wsdl:message>
-  <wsdl:message name="CreateReport262T1SoapIn">
-    <wsdl:part name="parameters" element="tns:CreateReport262T1" />
-  </wsdl:message>
-  <wsdl:message name="CreateReport262T1SoapOut">
-    <wsdl:part name="parameters" element="tns:CreateReport262T1Response" />
-  </wsdl:message>
   <wsdl:portType name="EndpointSoap">
+    <wsdl:operation name="CreateReportCadreTable2">
+      <wsdl:input message="tns:CreateReportCadreTable2SoapIn" />
+      <wsdl:output message="tns:CreateReportCadreTable2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateReport262T1">
+      <wsdl:input message="tns:CreateReport262T1SoapIn" />
+      <wsdl:output message="tns:CreateReport262T1SoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="CreateReport262T2">
       <wsdl:input message="tns:CreateReport262T2SoapIn" />
       <wsdl:output message="tns:CreateReport262T2SoapOut" />
@@ -5004,6 +5076,10 @@
       <wsdl:input message="tns:GetOpedFinanceListSoapIn" />
       <wsdl:output message="tns:GetOpedFinanceListSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetQuantityPlanList">
+      <wsdl:input message="tns:GetQuantityPlanListSoapIn" />
+      <wsdl:output message="tns:GetQuantityPlanListSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="ConsolidateOpedFinance3">
       <wsdl:input message="tns:ConsolidateOpedFinance3SoapIn" />
       <wsdl:output message="tns:ConsolidateOpedFinance3SoapOut" />
@@ -5019,6 +5095,10 @@
     <wsdl:operation name="SaveOpedFinanceList">
       <wsdl:input message="tns:SaveOpedFinanceListSoapIn" />
       <wsdl:output message="tns:SaveOpedFinanceListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveQuantityPlanList">
+      <wsdl:input message="tns:SaveQuantityPlanListSoapIn" />
+      <wsdl:output message="tns:SaveQuantityPlanListSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="ConsolidateOpedQCollect">
       <wsdl:input message="tns:ConsolidateOpedQCollectSoapIn" />
@@ -5324,17 +5404,27 @@
       <wsdl:input message="tns:CreateReportCadreTable1SoapIn" />
       <wsdl:output message="tns:CreateReportCadreTable1SoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="CreateReportCadreTable2">
-      <wsdl:input message="tns:CreateReportCadreTable2SoapIn" />
-      <wsdl:output message="tns:CreateReportCadreTable2SoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="CreateReport262T1">
-      <wsdl:input message="tns:CreateReport262T1SoapIn" />
-      <wsdl:output message="tns:CreateReport262T1SoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="EndpointSoap" type="tns:EndpointSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateReportCadreTable2">
+      <soap:operation soapAction="http://kms-oms.ru/CreateReportCadreTable2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateReport262T1">
+      <soap:operation soapAction="http://kms-oms.ru/CreateReport262T1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateReport262T2">
       <soap:operation soapAction="http://kms-oms.ru/CreateReport262T2" style="document" />
       <wsdl:input>
@@ -5479,6 +5569,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetQuantityPlanList">
+      <soap:operation soapAction="http://kms-oms.ru/GetQuantityPlanList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ConsolidateOpedFinance3">
       <soap:operation soapAction="http://kms-oms.ru/ConsolidateOpedFinance3" style="document" />
       <wsdl:input>
@@ -5508,6 +5607,15 @@
     </wsdl:operation>
     <wsdl:operation name="SaveOpedFinanceList">
       <soap:operation soapAction="http://kms-oms.ru/SaveOpedFinanceList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveQuantityPlanList">
+      <soap:operation soapAction="http://kms-oms.ru/SaveQuantityPlanList" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -6199,27 +6307,27 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateReportCadreTable2">
-      <soap:operation soapAction="http://kms-oms.ru/CreateReportCadreTable2" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateReport262T1">
-      <soap:operation soapAction="http://kms-oms.ru/CreateReport262T1" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="EndpointSoap12" type="tns:EndpointSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateReportCadreTable2">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateReportCadreTable2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateReport262T1">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateReport262T1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateReport262T2">
       <soap12:operation soapAction="http://kms-oms.ru/CreateReport262T2" style="document" />
       <wsdl:input>
@@ -6364,6 +6472,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetQuantityPlanList">
+      <soap12:operation soapAction="http://kms-oms.ru/GetQuantityPlanList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ConsolidateOpedFinance3">
       <soap12:operation soapAction="http://kms-oms.ru/ConsolidateOpedFinance3" style="document" />
       <wsdl:input>
@@ -6393,6 +6510,15 @@
     </wsdl:operation>
     <wsdl:operation name="SaveOpedFinanceList">
       <soap12:operation soapAction="http://kms-oms.ru/SaveOpedFinanceList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveQuantityPlanList">
+      <soap12:operation soapAction="http://kms-oms.ru/SaveQuantityPlanList" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -7077,24 +7203,6 @@
     </wsdl:operation>
     <wsdl:operation name="CreateReportCadreTable1">
       <soap12:operation soapAction="http://kms-oms.ru/CreateReportCadreTable1" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateReportCadreTable2">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateReportCadreTable2" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateReport262T1">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateReport262T1" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

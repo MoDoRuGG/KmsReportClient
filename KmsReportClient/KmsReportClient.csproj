@@ -206,6 +206,12 @@
     <Compile Include="Forms\CreateElementForm.Designer.cs">
       <DependentUpon>CreateElementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Dictionary\QuantityPlanDictionaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dictionary\QuantityPlanDictionaryForm.Designer.cs">
+      <DependentUpon>QuantityPlanDictionaryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Dictionary\OpedFinanceDictionaryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -608,6 +614,9 @@
     <None Include="Connected Services\External\KmsReportClient.External.GetOpedFinanceListResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.GetQuantityPlanListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.GetReportDynamicByIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -659,6 +668,9 @@
     <None Include="Connected Services\External\KmsReportClient.External.OpedFinancePlanDictionaryItem.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.QuantityPlanDictionaryItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.ReportCadreDataDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -708,6 +720,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.SaveOpedFinanceListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.SaveQuantityPlanListResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.SaveReportDataSourceExcelResponse.datasource">
@@ -823,6 +838,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateElementForm.resx">
       <DependentUpon>CreateElementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dictionary\QuantityPlanDictionaryForm.resx">
+      <DependentUpon>QuantityPlanDictionaryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dictionary\OpedFinanceDictionaryForm.resx">
       <DependentUpon>OpedFinanceDictionaryForm.cs</DependentUpon>
