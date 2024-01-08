@@ -211,9 +211,9 @@ namespace KmsReportClient.Report.Basic
             }
         }
 
-        public override bool IsVisibleBtnDownloadExcel() => false;
+        public override bool IsVisibleBtnDownloadExcel() => true;
 
-        public override bool IsVisibleBtnHandle() => false;
+        public override bool IsVisibleBtnHandle() => true;
 
         public override bool IsVisibleBtnSummary() => false;
 
