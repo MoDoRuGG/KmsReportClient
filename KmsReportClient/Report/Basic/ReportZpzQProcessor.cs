@@ -17,7 +17,7 @@ namespace KmsReportClient.Report.Basic
     public class ReportZpzQProcessor : AbstractReportProcessor<ReportZpz>
     {
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
-
+        private readonly string[] _coloringRows = { "1", "2", "3", "4", "5", "6" };
         private readonly string[] _forms1 = { "Таблица 1", "Таблица 9" };
         private readonly string[] _forms2 = { "Таблица 2", "Таблица 3" };
         private readonly string[] _forms3 = { "Таблица 4", "Таблица 8", "Таблица 10" };
@@ -484,6 +484,12 @@ namespace KmsReportClient.Report.Basic
             foreach (var row in table)
             {
                 var dgvRow = new DataGridViewRow();
+                //string rowNum = dgvRow.Cells[0].Value.ToString();
+                //if (_coloringRows.Contains(rowNum))
+                //{
+                //    dgvRow.DefaultCellStyle.BackColor = Color.Green;
+                //}
+
                 var cellName = new DataGridViewTextBoxCell
                 {
                     Value = row.RowText_fromxml
@@ -517,7 +523,9 @@ namespace KmsReportClient.Report.Basic
                     Dgv.Rows[rowIndex].ReadOnly = true;
                     Dgv.Rows[rowIndex].DefaultCellStyle.BackColor = Color.LightCyan;
                 }
+
             }
+            SetStyle();
         }
 
         private void CreateDgvColumnsForTheme(DataGridView dgvReport,
@@ -576,6 +584,7 @@ namespace KmsReportClient.Report.Basic
                 };
                 dgvReport.Columns.Add(column);
             }
+            
         }
 
         private void FillThemesForms1(DataGridView dgvReport, string form)
@@ -891,6 +900,27 @@ namespace KmsReportClient.Report.Basic
                                          GlobalUtils.TryParseDecimal(row.Cells[5].Value) +
                                          GlobalUtils.TryParseDecimal(row.Cells[7].Value);
                 }
+            }
+        }
+
+        private void SetStyle()
+        {
+
+            //Dgv.Columns[0].Width = 70;
+            //Dgv.Columns[1].Width = 150;
+            //Dgv.Columns[2].Width = 200;
+            //Dgv.Columns[3].Width = 200;
+            //Dgv.Columns[4].Width = 110;
+
+            foreach (DataGridViewRow row in Dgv.Rows)
+            {
+                string rowNum = row.Cells[1].Value.ToString();
+                if (_coloringRows.Contains(rowNum))
+                {
+                    row.DefaultCellStyle.BackColor = Color.LightGreen;
+                }
+
+
             }
         }
     }

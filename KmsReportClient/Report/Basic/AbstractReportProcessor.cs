@@ -132,12 +132,12 @@ namespace KmsReportClient.Report.Basic
 
                         Dgv.Columns["TotalPlan"].ReadOnly = true;
                         Dgv.Columns["TotalPlan"].DefaultCellStyle.BackColor = Color.LightGray;
-
+                        Dgv.Columns["Total"].DefaultCellStyle.BackColor = Color.LightGray;
                         Dgv.Columns.Add("TotalPlanCel", "Итого");
                         Dgv.Columns["TotalPlanCel"].DisplayIndex = 2;
 
                         Dgv.Columns["TotalPlanCel"].ReadOnly = true;
-                        Dgv.Columns["TotalPlanCel"].DefaultCellStyle.BackColor = Color.Gray;
+                        Dgv.Columns["TotalPlanCel"].DefaultCellStyle.BackColor = Color.LightGreen;
                     }
                 }
             }
@@ -151,8 +151,8 @@ namespace KmsReportClient.Report.Basic
                 for (int row = 0; row < Dgv.Rows.Count; row++)
                 {
                     Dgv.Rows[row].Cells[columnCount].Value = 0;
-                    decimal valueCel = 0.00M;
-                    decimal valuePlan = 0.00M;
+                    int valueCel = 0;
+                    int valuePlan = 0;
 
                     for (int cell = 1; cell < Dgv.Rows[row].Cells.Count - 1; cell++)
                     {
@@ -166,11 +166,11 @@ namespace KmsReportClient.Report.Basic
                             {
                                 if (Dgv.Rows[row].Cells[cell].ColumnIndex == 2 || Dgv.Rows[row].Cells[cell].ColumnIndex == 3 || Dgv.Rows[row].Cells[cell].ColumnIndex == 4 || Dgv.Rows[row].Cells[cell].ColumnIndex == 6)
                                 {
-                                    valueCel += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value);
+                                    valueCel += GlobalUtils.TryParseInt(Dgv.Rows[row].Cells[cell].Value);
                                 }
                                 else if (Dgv.Rows[row].Cells[cell].ColumnIndex == 8 || Dgv.Rows[row].Cells[cell].ColumnIndex == 9 || Dgv.Rows[row].Cells[cell].ColumnIndex == 10 || Dgv.Rows[row].Cells[cell].ColumnIndex == 12)
                                 {
-                                    valuePlan += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value);
+                                    valuePlan += GlobalUtils.TryParseInt(Dgv.Rows[row].Cells[cell].Value);
                                 }
                                 /// НА ДАННОМ ЭТАПЕ ПРОБЕГАЕМ ДЛЯ КАЖДОЙ СТРОКИ ОТЧЕТА ПО ЯЧЕЙКАМ и СУММИРУЕМ ЗНАЧЕНИЯ ДЛЯ ЦЕЛЕВЫХ (2-3-4-6) И ПЛАНОВЫХ (8-9-10-12), ПОКА ПРОСТО В ПЕРЕМЕННЫЕ valueCel и valuePlan ///
                             }
@@ -178,11 +178,11 @@ namespace KmsReportClient.Report.Basic
                             {
                                 if (Dgv.Rows[row].Cells[cell].ColumnIndex == 2 || Dgv.Rows[row].Cells[cell].ColumnIndex == 3 || Dgv.Rows[row].Cells[cell].ColumnIndex == 4 || Dgv.Rows[row].Cells[cell].ColumnIndex == 6)
                                 {
-                                    valueCel += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value);
+                                    valueCel += GlobalUtils.TryParseInt(Dgv.Rows[row].Cells[cell].Value);
                                 }
                                 else if (Dgv.Rows[row].Cells[cell].ColumnIndex == 8 || Dgv.Rows[row].Cells[cell].ColumnIndex == 9 || Dgv.Rows[row].Cells[cell].ColumnIndex == 10 || Dgv.Rows[row].Cells[cell].ColumnIndex == 12)
                                 {
-                                    valuePlan += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value);
+                                    valuePlan += GlobalUtils.TryParseInt(Dgv.Rows[row].Cells[cell].Value);
                                 }
                                 /// НА ДАННОМ ЭТАПЕ ПРОБЕГАЕМ ДЛЯ КАЖДОЙ СТРОКИ ОТЧЕТА ПО ЯЧЕЙКАМ и СУММИРУЕМ ЗНАЧЕНИЯ ДЛЯ ЦЕЛЕВЫХ (2-3-4-6) И ПЛАНОВЫХ (8-9-10-12), ПОКА ПРОСТО В ПЕРЕМЕННЫЕ valueCel и valuePlan ///
                             }
@@ -193,7 +193,7 @@ namespace KmsReportClient.Report.Basic
                                 {
                                     if (Dgv.Rows[row].Cells[cell].ColumnIndex != 6)
                                     {
-                                        valueCel += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value);
+                                        valueCel += GlobalUtils.TryParseInt(Dgv.Rows[row].Cells[cell].Value);
 
                                     }
                                     // Потребовали, чтобы в 6й колонке была сумма 2-5. Попробуем плюсануть тут.
@@ -204,16 +204,16 @@ namespace KmsReportClient.Report.Basic
                                 {
                                     if (Dgv.Rows[row].Cells[cell].ColumnIndex != 3)
                                     {
-                                        valueCel += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value);
+                                        valueCel += GlobalUtils.TryParseInt(Dgv.Rows[row].Cells[cell].Value);
                                     }
                                 }
                                 else
                                 {
                                     if (Report.IdType == "Zpz" && GetCurrentTheme() == "Таблица 1")
                                     {
-                                        if (Dgv.Rows[row].Cells[cell].ColumnIndex != 4) { valueCel += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value); }
+                                        if (Dgv.Rows[row].Cells[cell].ColumnIndex != 4) { valueCel += GlobalUtils.TryParseInt(Dgv.Rows[row].Cells[cell].Value); }
                                     }
-                                    else { valueCel += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value); }
+                                    else { valueCel += GlobalUtils.TryParseInt(Dgv.Rows[row].Cells[cell].Value); }
                                 }
                             }
                         }
