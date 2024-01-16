@@ -80,6 +80,10 @@ namespace KmsReportClient.DgvHeaderGenerator
             {
                 objDataGrid.ColumnHeadersHeight = 145;
             }
+            else if (objDataGrid.Parent.Name == "PageQuantity")
+            {
+                objDataGrid.ColumnHeadersHeight = 163;
+            }
             else
             {
                 objDataGrid.ColumnHeadersHeight = iNoOfLevels * 20;

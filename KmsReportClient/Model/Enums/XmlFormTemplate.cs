@@ -29,5 +29,6 @@ namespace KmsReportClient.Model.Enums
         [Description("TemplateTextEffectiveness.xml")] Effectiveness,
         [Description("TemplateTextZpzLethal.xml")] ZpzLethal,
         [Description("TemplateTextReqVCR.xml")] ReqVCR,
+        [Description("TemplateTextQuantity.xml")] Quantity,
     }
 }

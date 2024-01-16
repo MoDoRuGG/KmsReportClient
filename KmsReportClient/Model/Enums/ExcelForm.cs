@@ -135,5 +135,7 @@ namespace KmsReportClient.Model.Enums
         cadre,
         [Description(GlobalConst.TempFolder + "expertEffectiveness.xlsx")]
         effectiveness,
+        [Description(GlobalConst.TempFolder + "Quantity.xlsx")]
+        Quantity,
     }
 }

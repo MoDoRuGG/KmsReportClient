@@ -52,5 +52,18 @@ namespace KmsReportClient.Support
 
             return monthsSpr;
         }
+
+        public static string GetPreviousYymm(string yymm)
+        {
+            int year = 2000 + Convert.ToInt32(yymm.Substring(0, 2));
+            int month = Convert.ToInt32(yymm.Substring(2, 2));
+            var res = new DateTime(year, month, 1);
+            var last_res = res.AddMonths(-1);
+            string last_yymm = last_res.ToString("yy") + last_res.ToString("MM");
+            
+            return last_yymm;
+        }
+
+
     }
 }

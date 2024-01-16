@@ -153,6 +153,7 @@ namespace KmsReportClient.Forms
             TbControl.TabPages.Remove(PageZpz10);
             TbControl.TabPages.Remove(PageZpzLethal);
             TbControl.TabPages.Remove(PageEffectiveness);
+            TbControl.TabPages.Remove(PageQuantity);
 
             if (CurrentUser.IsMain)
             {
@@ -194,6 +195,7 @@ namespace KmsReportClient.Forms
                         {PageZpz10, ReportGlobalConst.ReportZpz10},
                         {PageZpzLethal, ReportGlobalConst.ReportZpzLethal},
                         {PageEffectiveness, ReportGlobalConst.ReportEffectiveness},
+                        {PageQuantity, ReportGlobalConst.ReportQuantity},
             };
 
         private Dictionary<string, IReportProcessor> CreateProcessorMap() =>
@@ -294,6 +296,10 @@ namespace KmsReportClient.Forms
                 {
                     ReportGlobalConst.ReportReqVCR,
                     new ReportReqVCRProcessor(_client, _reportsDictionary, DgvReqVCR, CmbReqVCR, TxtbReqVCR, PageReqVCR)
+                },
+                {
+                    ReportGlobalConst.ReportQuantity,
+                    new ReportQuantityProcessor(_client, _reportsDictionary, DgvQuantity, CmbQuantity, TxtbQuantity, PageQuantity)
                 }
             };
 
@@ -348,11 +354,14 @@ namespace KmsReportClient.Forms
             bool isNeedRefuseNotification = _reportView.CreateTreeView((int)TreeYear.Value);
             if (isNeedRefuseNotification)
             {
+                var WF = new WaitingForm();
+                WF.Show();
                 MessageBox.Show(
                     "Имеются отчеты, возвращенные на доработку",
                     "Внимание",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
+                
             }
         }
 
@@ -522,7 +531,7 @@ namespace KmsReportClient.Forms
             _processor.SetReadonlyForDgv(SuccessStatuses.Contains(_processor.Report.Status));
 
 
-             waitingForm.Close();
+            waitingForm.Close();
             SetReportInterface();
 
             if (CurrentUser.IsMain && inReport == null)
@@ -1067,6 +1076,8 @@ namespace KmsReportClient.Forms
                     MessageBoxIcon.Error);
             }
         }
+
+
 
         private void AutoFillReportFromPrevious()
         {
@@ -1769,6 +1780,7 @@ namespace KmsReportClient.Forms
                     TbControl.TabPages.Remove(tpIizl2022);
                     TbControl.TabPages.Remove(PageFssMonitoring);
                     TbControl.TabPages.Remove(PageMonitoringVCR);
+                    TbControl.TabPages.Remove(PageQuantity);
                     break;
             }
         }
@@ -2181,6 +2193,18 @@ namespace KmsReportClient.Forms
             (_processor as MonitoringVCRProcessor).SetFormula();
 
         }
+
+        private void dgvQuantity_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            (_processor as ReportQuantityProcessor).SetFormula();
+        }
+
+        private void dgvQuantity_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as ReportQuantityProcessor).SetFormula();
+
+        }
+
 
         private void DgvReqVCR_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
