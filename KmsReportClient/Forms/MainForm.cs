@@ -154,6 +154,7 @@ namespace KmsReportClient.Forms
             TbControl.TabPages.Remove(PageZpzLethal);
             TbControl.TabPages.Remove(PageEffectiveness);
             TbControl.TabPages.Remove(PageQuantity);
+            TbControl.TabPages.Remove(PageTarAllow);
 
             if (CurrentUser.IsMain)
             {
@@ -196,6 +197,7 @@ namespace KmsReportClient.Forms
                         {PageZpzLethal, ReportGlobalConst.ReportZpzLethal},
                         {PageEffectiveness, ReportGlobalConst.ReportEffectiveness},
                         {PageQuantity, ReportGlobalConst.ReportQuantity},
+                        {PageTarAllow, ReportGlobalConst.ReportTargetedAllowances},
             };
 
         private Dictionary<string, IReportProcessor> CreateProcessorMap() =>
@@ -300,6 +302,10 @@ namespace KmsReportClient.Forms
                 {
                     ReportGlobalConst.ReportQuantity,
                     new ReportQuantityProcessor(_client, _reportsDictionary, DgvQuantity, CmbQuantity, TxtbQuantity, PageQuantity)
+                },
+                {
+                    ReportGlobalConst.ReportTargetedAllowances,
+                    new ReportTargetedAllowancesProcessor(_client, _reportsDictionary, DgvTarAllow, CmbTarAllow, TbTarAllow, PageTarAllow)
                 }
             };
 
@@ -1781,6 +1787,7 @@ namespace KmsReportClient.Forms
                     TbControl.TabPages.Remove(PageFssMonitoring);
                     TbControl.TabPages.Remove(PageMonitoringVCR);
                     TbControl.TabPages.Remove(PageQuantity);
+                    TbControl.TabPages.Remove(PageTarAllow);
                     break;
             }
         }
@@ -2202,6 +2209,19 @@ namespace KmsReportClient.Forms
         private void dgvQuantity_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             (_processor as ReportQuantityProcessor).SetFormula();
+
+        }
+
+        private void dgvTarAllow_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as ReportTargetedAllowancesProcessor).SetFormula();
+
+        }
+
+
+        private void dgvTarAllow_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            (_processor as ReportTargetedAllowancesProcessor).SetFormula();
 
         }
 

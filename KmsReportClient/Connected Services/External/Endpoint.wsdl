@@ -2,6 +2,37 @@
 <wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://kms-oms.ru/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://kms-oms.ru/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://kms-oms.ru/">
+      <s:element name="CreateReportOpedUnplanned">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateReportOpedUnplannedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateReportOpedUnplannedResult" type="tns:ArrayOfCReportOpedUnplanned" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCReportOpedUnplanned">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CReportOpedUnplanned" nillable="true" type="tns:CReportOpedUnplanned" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CReportOpedUnplanned">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="App" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ks" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ds" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Smp" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NotesGoodReason" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="CreateReportCadreTable1">
         <s:complexType>
           <s:sequence>
@@ -880,6 +911,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Report_Effectiveness" type="tns:ArrayOfReport_Effectiveness" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_ReqVCR" type="tns:ArrayOfReport_ReqVCR" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Quantity" type="tns:ArrayOfReport_Quantity" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Targeted_Allowances" type="tns:ArrayOfReport_Targeted_Allowances" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Type" type="tns:Report_Type" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:Report_Flow" />
         </s:sequence>
@@ -1312,6 +1344,27 @@
           <s:element minOccurs="1" maxOccurs="1" name="Col_14" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="Col_15" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="Col_16" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:Report_Data" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReport_Targeted_Allowances">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Report_Targeted_Allowances" nillable="true" type="tns:Report_Targeted_Allowances" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Report_Targeted_Allowances">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_Report_Data" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FIO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Speciality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Period" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEKMP" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AmountSank" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AmountPayment" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProvidedBy" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowNumID" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:Report_Data" />
         </s:sequence>
       </s:complexType>
@@ -3071,6 +3124,45 @@
       <s:element name="WebReportQuantityResponse">
         <s:complexType />
       </s:element>
+      <s:element name="WebReportTargetedAllowances">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:ReportTargetedAllowances" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReportTargetedAllowances">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AbstractReport">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Id_Report_Data" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ArrayOfTargetedAllowancesData" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfTargetedAllowancesData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TargetedAllowancesData" nillable="true" type="tns:TargetedAllowancesData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TargetedAllowancesData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowNumID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FIO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Speciality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Period" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEKMP" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AmountSank" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AmountPayment" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProvidedBy" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WebReportTargetedAllowancesResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="WebReportReqVCR">
         <s:complexType>
           <s:sequence>
@@ -3518,6 +3610,7 @@
           <s:enumeration value="ZpzLethal" />
           <s:enumeration value="ReqVCR" />
           <s:enumeration value="Quantity" />
+          <s:enumeration value="TarAllow" />
         </s:restriction>
       </s:simpleType>
       <s:element name="CollectSummaryReportResponse">
@@ -4436,39 +4529,14 @@
           <s:element minOccurs="1" maxOccurs="1" name="SumViolationUnderage" type="s:decimal" />
         </s:sequence>
       </s:complexType>
-      <s:element name="CreateReportOpedUnplanned">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CreateReportOpedUnplannedResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CreateReportOpedUnplannedResult" type="tns:ArrayOfCReportOpedUnplanned" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfCReportOpedUnplanned">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="CReportOpedUnplanned" nillable="true" type="tns:CReportOpedUnplanned" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="CReportOpedUnplanned">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="App" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="Ks" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="Ds" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="Smp" type="s:decimal" />
-          <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="NotesGoodReason" type="s:string" />
-        </s:sequence>
-      </s:complexType>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="CreateReportOpedUnplannedSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateReportOpedUnplanned" />
+  </wsdl:message>
+  <wsdl:message name="CreateReportOpedUnplannedSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateReportOpedUnplannedResponse" />
+  </wsdl:message>
   <wsdl:message name="CreateReportCadreTable1SoapIn">
     <wsdl:part name="parameters" element="tns:CreateReportCadreTable1" />
   </wsdl:message>
@@ -4841,6 +4909,12 @@
   <wsdl:message name="WebReportQuantitySoapOut">
     <wsdl:part name="parameters" element="tns:WebReportQuantityResponse" />
   </wsdl:message>
+  <wsdl:message name="WebReportTargetedAllowancesSoapIn">
+    <wsdl:part name="parameters" element="tns:WebReportTargetedAllowances" />
+  </wsdl:message>
+  <wsdl:message name="WebReportTargetedAllowancesSoapOut">
+    <wsdl:part name="parameters" element="tns:WebReportTargetedAllowancesResponse" />
+  </wsdl:message>
   <wsdl:message name="WebReportReqVCRSoapIn">
     <wsdl:part name="parameters" element="tns:WebReportReqVCR" />
   </wsdl:message>
@@ -5069,13 +5143,11 @@
   <wsdl:message name="CreateReportCardioSoapOut">
     <wsdl:part name="parameters" element="tns:CreateReportCardioResponse" />
   </wsdl:message>
-  <wsdl:message name="CreateReportOpedUnplannedSoapIn">
-    <wsdl:part name="parameters" element="tns:CreateReportOpedUnplanned" />
-  </wsdl:message>
-  <wsdl:message name="CreateReportOpedUnplannedSoapOut">
-    <wsdl:part name="parameters" element="tns:CreateReportOpedUnplannedResponse" />
-  </wsdl:message>
   <wsdl:portType name="EndpointSoap">
+    <wsdl:operation name="CreateReportOpedUnplanned">
+      <wsdl:input message="tns:CreateReportOpedUnplannedSoapIn" />
+      <wsdl:output message="tns:CreateReportOpedUnplannedSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="CreateReportCadreTable1">
       <wsdl:input message="tns:CreateReportCadreTable1SoapIn" />
       <wsdl:output message="tns:CreateReportCadreTable1SoapOut" />
@@ -5324,6 +5396,10 @@
       <wsdl:input message="tns:WebReportQuantitySoapIn" />
       <wsdl:output message="tns:WebReportQuantitySoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="WebReportTargetedAllowances">
+      <wsdl:input message="tns:WebReportTargetedAllowancesSoapIn" />
+      <wsdl:output message="tns:WebReportTargetedAllowancesSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="WebReportReqVCR">
       <wsdl:input message="tns:WebReportReqVCRSoapIn" />
       <wsdl:output message="tns:WebReportReqVCRSoapOut" />
@@ -5476,13 +5552,18 @@
       <wsdl:input message="tns:CreateReportCardioSoapIn" />
       <wsdl:output message="tns:CreateReportCardioSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="CreateReportOpedUnplanned">
-      <wsdl:input message="tns:CreateReportOpedUnplannedSoapIn" />
-      <wsdl:output message="tns:CreateReportOpedUnplannedSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="EndpointSoap" type="tns:EndpointSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateReportOpedUnplanned">
+      <soap:operation soapAction="http://kms-oms.ru/CreateReportOpedUnplanned" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateReportCadreTable1">
       <soap:operation soapAction="http://kms-oms.ru/CreateReportCadreTable1" style="document" />
       <wsdl:input>
@@ -6041,6 +6122,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="WebReportTargetedAllowances">
+      <soap:operation soapAction="http://kms-oms.ru/WebReportTargetedAllowances" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="WebReportReqVCR">
       <soap:operation soapAction="http://kms-oms.ru/WebReportReqVCR" style="document" />
       <wsdl:input>
@@ -6383,18 +6473,18 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateReportOpedUnplanned">
-      <soap:operation soapAction="http://kms-oms.ru/CreateReportOpedUnplanned" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="EndpointSoap12" type="tns:EndpointSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateReportOpedUnplanned">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateReportOpedUnplanned" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateReportCadreTable1">
       <soap12:operation soapAction="http://kms-oms.ru/CreateReportCadreTable1" style="document" />
       <wsdl:input>
@@ -6953,6 +7043,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="WebReportTargetedAllowances">
+      <soap12:operation soapAction="http://kms-oms.ru/WebReportTargetedAllowances" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="WebReportReqVCR">
       <soap12:operation soapAction="http://kms-oms.ru/WebReportReqVCR" style="document" />
       <wsdl:input>
@@ -7288,15 +7387,6 @@
     </wsdl:operation>
     <wsdl:operation name="CreateReportCardio">
       <soap12:operation soapAction="http://kms-oms.ru/CreateReportCardio" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateReportOpedUnplanned">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateReportOpedUnplanned" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

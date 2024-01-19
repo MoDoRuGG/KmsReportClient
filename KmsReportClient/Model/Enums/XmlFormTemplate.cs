@@ -30,5 +30,6 @@ namespace KmsReportClient.Model.Enums
         [Description("TemplateTextZpzLethal.xml")] ZpzLethal,
         [Description("TemplateTextReqVCR.xml")] ReqVCR,
         [Description("TemplateTextQuantity.xml")] Quantity,
+        [Description("TemplateTextTargetedAllowances.xml")] TarAllow,
     }
 }

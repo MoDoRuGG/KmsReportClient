@@ -105,6 +105,9 @@ namespace KmsReportClient.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle145 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle146 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle147 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle148 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle149 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle150 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -326,6 +329,10 @@ namespace KmsReportClient.Forms
             this.TxtbQuantity = new System.Windows.Forms.TextBox();
             this.CmbQuantity = new System.Windows.Forms.ComboBox();
             this.DgvQuantity = new System.Windows.Forms.DataGridView();
+            this.PageTarAllow = new System.Windows.Forms.TabPage();
+            this.TbTarAllow = new System.Windows.Forms.TextBox();
+            this.CmbTarAllow = new System.Windows.Forms.ComboBox();
+            this.DgvTarAllow = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -372,6 +379,8 @@ namespace KmsReportClient.Forms
             ((System.ComponentModel.ISupportInitialize)(this.DgvReqVCR)).BeginInit();
             this.PageQuantity.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvQuantity)).BeginInit();
+            this.PageTarAllow.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvTarAllow)).BeginInit();
             this.PageZpz.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgwReportZpz)).BeginInit();
             this.PageZpzQ.SuspendLayout();
@@ -3429,6 +3438,78 @@ namespace KmsReportClient.Forms
             this.DgvQuantity.TabIndex = 24;
             this.DgvQuantity.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvQuantity_CellBeginEdit);
             this.DgvQuantity.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQuantity_CellEndEdit);
+            ///
+            ///PageTarAllow
+            ///
+            this.PageTarAllow.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.PageTarAllow.Controls.Add(this.TbTarAllow);
+            this.PageTarAllow.Controls.Add(this.CmbTarAllow);
+            this.PageTarAllow.Controls.Add(this.DgvTarAllow);
+            this.PageTarAllow.Location = new System.Drawing.Point(4, 36);
+            this.PageTarAllow.Name = "PageTarAllow";
+            this.PageTarAllow.Padding = new System.Windows.Forms.Padding(3);
+            this.PageTarAllow.Size = new System.Drawing.Size(712, 330);
+            this.PageTarAllow.TabIndex = 11;
+            this.PageTarAllow.Text = "Целевые надбавки";
+            // 
+            // Tb__
+            // 
+            this.TbTarAllow.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TbTarAllow.Location = new System.Drawing.Point(118, 8);
+            this.TbTarAllow.Multiline = true;
+            this.TbTarAllow.Name = "TbTarAllow";
+            this.TbTarAllow.ReadOnly = true;
+            this.TbTarAllow.Size = new System.Drawing.Size(1099, 39);
+            this.TbTarAllow.TabIndex = 26;
+            // 
+            // CmbTarAllow
+            // 
+            this.CmbTarAllow.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbTarAllow.FormattingEnabled = true;
+            this.CmbTarAllow.Location = new System.Drawing.Point(9, 5);
+            this.CmbTarAllow.Name = "CmbTarAllow";
+            this.CmbTarAllow.Size = new System.Drawing.Size(100, 21);
+            this.CmbTarAllow.TabIndex = 25;
+            // 
+            // DgvTarAllow
+            // 
+            this.DgvTarAllow.AllowUserToResizeColumns = false;
+            this.DgvTarAllow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DgvTarAllow.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            dataGridViewCellStyle148.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            dataGridViewCellStyle148.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle148.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle148.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle148.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle148.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle148.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvTarAllow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle148;
+            this.DgvTarAllow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle149.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle149.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle149.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle149.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle149.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle149.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle149.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvTarAllow.DefaultCellStyle = dataGridViewCellStyle149;
+            this.DgvTarAllow.Location = new System.Drawing.Point(8, 53);
+            this.DgvTarAllow.Name = "DgvTarAllow";
+            dataGridViewCellStyle150.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle150.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle150.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle150.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle150.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle150.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle150.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvTarAllow.RowHeadersDefaultCellStyle = dataGridViewCellStyle150;
+            this.DgvTarAllow.Size = new System.Drawing.Size(1209, 500);
+            this.DgvTarAllow.TabIndex = 24;
+            this.DgvTarAllow.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvTarAllow_CellBeginEdit);
+            this.DgvTarAllow.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTarAllow_CellEndEdit);
             // 
             // MainForm
             // 
@@ -3555,6 +3636,10 @@ namespace KmsReportClient.Forms
             ((System.ComponentModel.ISupportInitialize)(this.DgvQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
+            this.PageTarAllow.ResumeLayout(false);
+            this.PageTarAllow.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvTarAllow)).EndInit();
 
         }
 
@@ -3749,7 +3834,10 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.ToolStripMenuItem оПЭДКвартальныйToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сводToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem сводToolStripMenuItem4;
-
+        private System.Windows.Forms.TabPage PageTarAllow;
+        private System.Windows.Forms.TextBox TbTarAllow;
+        private System.Windows.Forms.ComboBox CmbTarAllow;
+        private System.Windows.Forms.DataGridView DgvTarAllow;
         private System.Windows.Forms.TabPage PageProposal;
         private System.Windows.Forms.TextBox tbProposal;
         private System.Windows.Forms.ComboBox cbProposal;
