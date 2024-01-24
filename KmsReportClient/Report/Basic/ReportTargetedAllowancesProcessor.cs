@@ -118,8 +118,8 @@ namespace KmsReportClient.Report.Basic
         }
         public override void ToExcel(string filename, string filialName)
         {
-            //var excel = new ExcelQuantityCreator(filename, ExcelForm.Quantity, "", filialName, Report.Yymm);
-            //excel.CreateReport(Report, null);
+            var excel = new ExcelTarAllowCreator(filename, ExcelForm.TarAllow, Report.Yymm, filialName, Client, FilialCode);
+            excel.CreateReport(Report, null);
         }
 
         public override void SaveReportDataSourceExcel()

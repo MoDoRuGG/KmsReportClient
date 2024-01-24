@@ -127,6 +127,7 @@
     <Compile Include="Excel\Collector\ZpzExcelCollector.cs" />
     <Compile Include="Excel\Collector\PgExcelCollector.cs" />
     <Compile Include="Excel\Collector\ZpzQExcelCollector.cs" />
+    <Compile Include="Excel\Creator\Base\ExcelTarAllowCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelCadreCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExceIRCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelIizl2022Creator.cs" />
@@ -484,6 +485,9 @@
     <None Include="Connected Services\External\KmsReportClient.External.CreateReportCardioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateReportConsQuantityFilialResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateReportControlPgZpzResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -545,6 +549,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CReportPg.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CReportQuantityFilial.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CReportVCRFilial.datasource">

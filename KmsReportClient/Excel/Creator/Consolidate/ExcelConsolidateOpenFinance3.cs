@@ -30,8 +30,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
 
             var filials = report.Select(x => x.RegionName).Distinct().OrderBy(x => x);
             int rowIndex = 5;
-
-            int[] continueColumns = { 15, 31, 47 };
+            int[] continueColumns = { 15, 31, 47, 63, 67 };
             foreach (var filial in filials)
             {
                 var monthData = report.Where(x => x.RegionName == filial);
@@ -45,7 +44,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
                     if (continueColumns.Contains(columnIndex))
                     #endregion
                     {
-                        if (columnIndex == 15 || columnIndex == 31 || columnIndex == 47)
+                        if (columnIndex == 15 || columnIndex == 31 || columnIndex == 47 || columnIndex == 63 || columnIndex == 67)
                     {
 
                             columnIndex++;
@@ -54,11 +53,11 @@ namespace KmsReportClient.Excel.Creator.Consolidate
                             columnIndex++;
                         }
                     }
-                    else 
+                    
+                    else
                     {
                         ObjWorkSheet.Cells[rowIndex, columnIndex++] = md.Fact;
                         ObjWorkSheet.Cells[rowIndex, columnIndex++] = md.PlanO;
-                        //ObjWorkSheet.Cells[rowIndex, columnIndex++] = md.PlanO != 0 ? (md.Fact*100/md.PlanO) : 0;
                         ObjWorkSheet.Cells[rowIndex, ++columnIndex] = md.Notes;
                         columnIndex++;
                     }

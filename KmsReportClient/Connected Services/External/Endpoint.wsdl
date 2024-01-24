@@ -33,6 +33,105 @@
           <s:element minOccurs="0" maxOccurs="1" name="NotesGoodReason" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="CreateReportConsQuantityFilial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateReportConsQuantityFilialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateReportConsQuantityFilialResult" type="tns:ArrayOfCReportQuantityFilial" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCReportQuantityFilial">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CReportQuantityFilial" nillable="true" type="tns:CReportQuantityFilial" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CReportQuantityFilial">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Theme" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ReportQuantity" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReportQuantity">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AbstractReport">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Id_Report_Data" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Col_1" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Col_2" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Col_3" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Col_4" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Col_5" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Col_6" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Col_7" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Col_8" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Col_9" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Col_10" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Col_11" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Col_12" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Col_13" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Col_14" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Col_15" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Col_16" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="AbstractReport">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdFlow" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Yymm" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Created" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdEmployee" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Updated" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdEmployeeUpd" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateToCo" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserToCo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RefuseDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="RefuseUser" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateIsDone" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserSubmit" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Version" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Scan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Scan2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Scan3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Scan4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Scan5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Scan6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Scan7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Scan8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Scan9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Scan10" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="tns:ReportStatus" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataSource" type="tns:DataSource" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ReportStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="New" />
+          <s:enumeration value="Saved" />
+          <s:enumeration value="Scan" />
+          <s:enumeration value="Submit" />
+          <s:enumeration value="Refuse" />
+          <s:enumeration value="Done" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="DataSource">
+        <s:restriction base="s:string">
+          <s:enumeration value="New" />
+          <s:enumeration value="Excel" />
+          <s:enumeration value="Handle" />
+        </s:restriction>
+      </s:simpleType>
       <s:element name="CreateReportCadreTable1">
         <s:complexType>
           <s:sequence>
@@ -2510,53 +2609,6 @@
           </s:extension>
         </s:complexContent>
       </s:complexType>
-      <s:complexType name="AbstractReport">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="IdFlow" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="IdType" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Yymm" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Created" type="s:dateTime" />
-          <s:element minOccurs="1" maxOccurs="1" name="IdEmployee" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Updated" nillable="true" type="s:dateTime" />
-          <s:element minOccurs="1" maxOccurs="1" name="IdEmployeeUpd" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="DateToCo" nillable="true" type="s:dateTime" />
-          <s:element minOccurs="1" maxOccurs="1" name="UserToCo" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="RefuseDate" nillable="true" type="s:dateTime" />
-          <s:element minOccurs="1" maxOccurs="1" name="RefuseUser" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="DateIsDone" nillable="true" type="s:dateTime" />
-          <s:element minOccurs="1" maxOccurs="1" name="UserSubmit" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Version" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="Scan" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Scan2" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Scan3" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Scan4" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Scan5" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Scan6" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Scan7" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Scan8" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Scan9" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Scan10" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Status" type="tns:ReportStatus" />
-          <s:element minOccurs="1" maxOccurs="1" name="DataSource" type="tns:DataSource" />
-        </s:sequence>
-      </s:complexType>
-      <s:simpleType name="ReportStatus">
-        <s:restriction base="s:string">
-          <s:enumeration value="New" />
-          <s:enumeration value="Saved" />
-          <s:enumeration value="Scan" />
-          <s:enumeration value="Submit" />
-          <s:enumeration value="Refuse" />
-          <s:enumeration value="Done" />
-        </s:restriction>
-      </s:simpleType>
-      <s:simpleType name="DataSource">
-        <s:restriction base="s:string">
-          <s:enumeration value="New" />
-          <s:enumeration value="Excel" />
-          <s:enumeration value="Handle" />
-        </s:restriction>
-      </s:simpleType>
       <s:element name="GetFSSMonitoringPGData">
         <s:complexType>
           <s:sequence>
@@ -3095,32 +3147,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="ReportQuantity">
-        <s:complexContent mixed="false">
-          <s:extension base="tns:AbstractReport">
-            <s:sequence>
-              <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
-              <s:element minOccurs="1" maxOccurs="1" name="Id_Report_Data" type="s:int" />
-              <s:element minOccurs="1" maxOccurs="1" name="Col_1" type="s:int" />
-              <s:element minOccurs="1" maxOccurs="1" name="Col_2" type="s:int" />
-              <s:element minOccurs="1" maxOccurs="1" name="Col_3" type="s:int" />
-              <s:element minOccurs="1" maxOccurs="1" name="Col_4" type="s:int" />
-              <s:element minOccurs="1" maxOccurs="1" name="Col_5" type="s:int" />
-              <s:element minOccurs="1" maxOccurs="1" name="Col_6" type="s:int" />
-              <s:element minOccurs="1" maxOccurs="1" name="Col_7" type="s:int" />
-              <s:element minOccurs="1" maxOccurs="1" name="Col_8" type="s:int" />
-              <s:element minOccurs="1" maxOccurs="1" name="Col_9" type="s:int" />
-              <s:element minOccurs="1" maxOccurs="1" name="Col_10" type="s:int" />
-              <s:element minOccurs="1" maxOccurs="1" name="Col_11" type="s:int" />
-              <s:element minOccurs="1" maxOccurs="1" name="Col_12" type="s:int" />
-              <s:element minOccurs="1" maxOccurs="1" name="Col_13" type="s:int" />
-              <s:element minOccurs="1" maxOccurs="1" name="Col_14" type="s:int" />
-              <s:element minOccurs="1" maxOccurs="1" name="Col_15" type="s:int" />
-              <s:element minOccurs="1" maxOccurs="1" name="Col_16" type="s:int" />
-            </s:sequence>
-          </s:extension>
-        </s:complexContent>
-      </s:complexType>
       <s:element name="WebReportQuantityResponse">
         <s:complexType />
       </s:element>
@@ -4537,6 +4563,12 @@
   <wsdl:message name="CreateReportOpedUnplannedSoapOut">
     <wsdl:part name="parameters" element="tns:CreateReportOpedUnplannedResponse" />
   </wsdl:message>
+  <wsdl:message name="CreateReportConsQuantityFilialSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateReportConsQuantityFilial" />
+  </wsdl:message>
+  <wsdl:message name="CreateReportConsQuantityFilialSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateReportConsQuantityFilialResponse" />
+  </wsdl:message>
   <wsdl:message name="CreateReportCadreTable1SoapIn">
     <wsdl:part name="parameters" element="tns:CreateReportCadreTable1" />
   </wsdl:message>
@@ -5148,6 +5180,10 @@
       <wsdl:input message="tns:CreateReportOpedUnplannedSoapIn" />
       <wsdl:output message="tns:CreateReportOpedUnplannedSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="CreateReportConsQuantityFilial">
+      <wsdl:input message="tns:CreateReportConsQuantityFilialSoapIn" />
+      <wsdl:output message="tns:CreateReportConsQuantityFilialSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="CreateReportCadreTable1">
       <wsdl:input message="tns:CreateReportCadreTable1SoapIn" />
       <wsdl:output message="tns:CreateReportCadreTable1SoapOut" />
@@ -5557,6 +5593,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="CreateReportOpedUnplanned">
       <soap:operation soapAction="http://kms-oms.ru/CreateReportOpedUnplanned" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateReportConsQuantityFilial">
+      <soap:operation soapAction="http://kms-oms.ru/CreateReportConsQuantityFilial" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -6478,6 +6523,15 @@
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="CreateReportOpedUnplanned">
       <soap12:operation soapAction="http://kms-oms.ru/CreateReportOpedUnplanned" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateReportConsQuantityFilial">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateReportConsQuantityFilial" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
