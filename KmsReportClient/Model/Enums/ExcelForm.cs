@@ -137,7 +137,11 @@ namespace KmsReportClient.Model.Enums
         effectiveness,
         [Description(GlobalConst.TempFolder + "Quantity.xlsx")]
         Quantity,
+        [Description(GlobalConst.TempFolder + "ConsolidateQuantityFilials.xlsx")]
+        ConsQuantityFilials,
         [Description(GlobalConst.TempFolder + "TarAllow.xlsx")]
         TarAllow,
+        //[Description(GlobalConst.TempFolder + "ReqVCR.xlsx")]
+        //ReqVCR,
     }
 }

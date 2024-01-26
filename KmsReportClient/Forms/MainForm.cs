@@ -74,7 +74,8 @@ namespace KmsReportClient.Forms
 
             CheckUpdateApplication(true);
 
-            _regions = CurrentUser.Regions;
+            _regions = CurrentUser.Regions.ToList();
+            _regions.RemoveAt(39);
             _regions.Add(new KmsReportDictionary { Value = "Все филиалы", Key = "All" });
             _reportsDictionary = CurrentUser.ReportTypes.ToList();
 
@@ -2246,6 +2247,11 @@ namespace KmsReportClient.Forms
         private void сводПоФилиаламToolStripMenuItemVCRFilial_Click(object sender, EventArgs e)
         {
             OpenConsolidateReportForm(ConsolidateReport.ConsolidateVCRFilial);
+        }
+
+        private void сводПоВсемФилиаламToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenConsolidateReportForm(ConsolidateReport.ConsQuantityFilial);
         }
 
         private void сводToolStripMenuItem2_Click(object sender, EventArgs e)

@@ -376,7 +376,15 @@ namespace KmsReportClient.Forms
                     saveFileDialog1.FileName = "Пофилиальный Мониторинг ВСС 2023";
                     break;
 
-
+                case ConsolidateReport.ConsQuantityFilial:
+                    labelStart.Text = "Период";
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    nudSingle.Visible = false;
+                    
+                    btnDo.Text = "Сформировать сводный отчет Численность пофилиально";
+                    saveFileDialog1.FileName = "Численность по всем филиалам";
+                    break;
             }
         }
 
@@ -438,6 +446,9 @@ namespace KmsReportClient.Forms
                         break;
                     case ConsolidateReport.ControlZpz2023FullQuarterly:
                         CreateControlZpz2023Full();
+                        break;
+                    case ConsolidateReport.ConsQuantityFilial:
+                        CreateReportConsQuantityFilial();
                         break;
                     case ConsolidateReport.ControlZpz2023SingleQuarterly:
                         CreateControlZpz2023Single();
@@ -936,6 +947,50 @@ namespace KmsReportClient.Forms
                     GlobalUtils.OpenFileOrDirectory(filename);
                 }
             }
+        }
+
+        private void CreateReportConsQuantityFilial()
+        {
+            string yymm = GetYymm(cmbStart.Text, Convert.ToInt32(nudStart.Value)).ToString();
+            var dataMonths = _client.CreateReportConsQuantityFilial(yymm);
+            if (dataMonths.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            foreach (var d in dataMonths)
+            {
+                if (d.Filial == "RU")
+                {
+                    continue;
+                }
+                else
+                {
+                    d.Filial = _regions.Single(j => j.Key == d.Filial).Value;
+                }
+            }
+            dataMonths = dataMonths.OrderBy(x => x.Filial).Skip(1).ToArray();
+            string statPeriod = yymm.Substring(0, 2) + "01";
+            var dataYear = _client.CreateReportConsQuantityFilial(yymm);
+            foreach (var d in dataYear)
+            {
+                if (d.Filial == "RU")
+                {
+                    continue;
+                }
+                else
+                {
+                    d.Filial = _regions.Single(k => k.Key == d.Filial).Value;
+                }
+            }
+
+            dataYear = dataYear.OrderBy(x => x.Filial).Skip(1).ToArray();
+
+            var excel = new ExcelConsolidateQuantityFilialsCreator(saveFileDialog1.FileName, "", _filialName);
+            excel.CreateReport(dataMonths, dataYear);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
         }
 
         private void CreateControlZpz2023Single()

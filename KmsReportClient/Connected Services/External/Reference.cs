@@ -179,9 +179,6 @@ namespace KmsReportClient.External {
         private string FilialField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ThemeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private KmsReportClient.External.ReportQuantity DataField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -207,20 +204,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Theme {
-            get {
-                return this.ThemeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ThemeField, value) != true)) {
-                    this.ThemeField = value;
-                    this.RaisePropertyChanged("Theme");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
         public KmsReportClient.External.ReportQuantity Data {
             get {
                 return this.DataField;

@@ -127,6 +127,7 @@
     <Compile Include="Excel\Collector\ZpzExcelCollector.cs" />
     <Compile Include="Excel\Collector\PgExcelCollector.cs" />
     <Compile Include="Excel\Collector\ZpzQExcelCollector.cs" />
+    <Compile Include="Excel\Creator\Base\ExcelQuantityCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelTarAllowCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelCadreCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExceIRCreator.cs" />
@@ -145,6 +146,7 @@
     <Compile Include="Excel\Creator\Base\ExcelPgQCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelProposalCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelVacCreator.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateQuantityFilialCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateVCRFilialCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateOpedUnplanned.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateCadreTable2Creator.cs" />
