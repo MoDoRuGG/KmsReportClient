@@ -37,5 +37,8 @@
         ConsPropsal,
         ConsolidateVCRFilial,
         ConsQuantityFilial,
+        ConsQuantityAR,
+        ConsQuantityFP,
+        ConsQuantityInformation
     }
 }

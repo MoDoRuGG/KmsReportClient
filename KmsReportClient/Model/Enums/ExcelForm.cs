@@ -19,7 +19,7 @@ namespace KmsReportClient.Model.Enums
 
         [Description(GlobalConst.TempFolder + "pg.xlsx")]
         Pg,
-                
+
         [Description(GlobalConst.TempFolder + "zpzq.xlsx")]
         ZpzQ,
 
@@ -34,13 +34,13 @@ namespace KmsReportClient.Model.Enums
 
         [Description(GlobalConst.TempFolder + "oped.xlsx")]
         Oped,
-        
+
         [Description(GlobalConst.TempFolder + "opedU.xlsx")]
         OpedU,
 
         [Description(GlobalConst.TempFolder + "cons262t1.xlsx")]
         C262T1,
-        
+
         [Description(GlobalConst.TempFolder + "consCadreT1.xlsx")]
         CCadreT1,
 
@@ -94,7 +94,7 @@ namespace KmsReportClient.Model.Enums
         [Description(GlobalConst.TempFolder + "letal.xlsx")]
         letal,
         [Description(GlobalConst.TempFolder + "consOped.xlsx")]
-        consOped,        
+        consOped,
         [Description(GlobalConst.TempFolder + "consOpedU.xlsx")]
         consOpedU,
         [Description(GlobalConst.TempFolder + "IR.xlsx")]
@@ -139,9 +139,13 @@ namespace KmsReportClient.Model.Enums
         Quantity,
         [Description(GlobalConst.TempFolder + "ConsolidateQuantityFilials.xlsx")]
         ConsQuantityFilials,
+        [Description(GlobalConst.TempFolder + "consQuantityAddRemove.xlsx")]
+        ConsQuantityAR,
         [Description(GlobalConst.TempFolder + "TarAllow.xlsx")]
         TarAllow,
-        //[Description(GlobalConst.TempFolder + "ReqVCR.xlsx")]
-        //ReqVCR,
+        [Description(GlobalConst.TempFolder + "consQuantityFactPlan.xlsx")]
+        ConsQuantityFP,
+        [Description(GlobalConst.TempFolder + "consQuantityInformation.xlsx")]
+        ConsQuantityInformation,
     }
 }

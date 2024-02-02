@@ -356,6 +356,52 @@ namespace KmsReportClient.Forms
                     labelStart.Text = "Год";
                     break;
 
+                case ConsolidateReport.ConsQuantityFP:
+                    labelStart.Text = "Период";
+                    //nudSingle.Visible = false;
+                    nudEnd.Visible = false;
+                    cmbEnd.Visible = false;
+                    cmbStart.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    nudStart.Visible = false;
+                    btnDo.Text = "Сформировать сводный отчет по выполнению плана";
+                    saveFileDialog1.FileName = "Выполнение плана по численности";
+                    cmbStart.DataSource = GlobalConst.PeriodsQ;
+                    labelStart.Text = "Год";
+                    break;
+
+
+                case ConsolidateReport.ConsQuantityAR:
+                    labelStart.Text = "Период";
+                    //nudSingle.Visible = false;
+                    nudEnd.Visible = false;
+                    cmbEnd.Visible = false;
+                    cmbStart.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    nudStart.Visible = false;
+                    btnDo.Text = "Сформировать сводный отчёт по численности ВЗ и УД";
+                    saveFileDialog1.FileName = "Сводный отчёт Численность по ВЗ и УД";
+                    cmbStart.DataSource = GlobalConst.PeriodsQ;
+                    labelStart.Text = "Год";
+                    break;
+
+                case ConsolidateReport.ConsQuantityInformation:
+                    labelStart.Text = "Период";
+                    //nudSingle.Visible = false;
+                    nudEnd.Visible = false;
+                    cmbEnd.Visible = false;
+                    cmbStart.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    nudStart.Visible = false;
+                    btnDo.Text = "Сформировать свод сведения по численности";
+                    saveFileDialog1.FileName = "Свод сведения о численности";
+                    cmbStart.DataSource = GlobalConst.PeriodsQ;
+                    labelStart.Text = "Год";
+                    break;
+
                 case ConsolidateReport.ConsPropsal:
                     labelStart.Text = "Период";
                     nudSingle.Visible = false;
@@ -408,6 +454,12 @@ namespace KmsReportClient.Forms
 
                 switch (_report)
                 {
+                    case ConsolidateReport.ConsQuantityFP:
+                        CreateConsolidateQuantityFactPlan();
+                        break;
+                    case ConsolidateReport.ConsQuantityInformation:
+                        CreateConsolidateQuantityInfo();
+                        break;
                     case ConsolidateReport.ConsolidateVCRFilial:
                         CreateReportVCRFilial();
                         break;
@@ -449,6 +501,9 @@ namespace KmsReportClient.Forms
                         break;
                     case ConsolidateReport.ConsQuantityFilial:
                         CreateReportConsQuantityFilial();
+                        break;
+                    case ConsolidateReport.ConsQuantityAR:
+                        CreateConsolidateQuantityAddRemove();
                         break;
                     case ConsolidateReport.ControlZpz2023SingleQuarterly:
                         CreateControlZpz2023Single();
@@ -993,6 +1048,28 @@ namespace KmsReportClient.Forms
             GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
         }
 
+
+        private void CreateConsolidateQuantityAddRemove()
+        {
+            string year = nudSingle.Value.ToString();
+
+
+            var data = _client.CreateConsolidateQuantityAddRemove(year);
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            var excel = new ExcelConsolidateQuantityAR(saveFileDialog1.FileName, "", _filialName);
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+        }
+
+
+
         private void CreateControlZpz2023Single()
         {
             string year = Convert.ToString(nudSingle.Value);
@@ -1017,6 +1094,46 @@ namespace KmsReportClient.Forms
                 GlobalUtils.OpenFileOrDirectory(filename);
             }
         }
+
+
+        private void CreateConsolidateQuantityFactPlan()
+        {
+            string year = nudSingle.Value.ToString();
+
+
+            var data = _client.CreateConsolidateQuantityFactPlan(year);
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            var excel = new ExcelConsolidateQuantityFP(saveFileDialog1.FileName, "", _filialName);
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+        }
+
+        private void CreateConsolidateQuantityInfo()
+        {
+            string year = nudSingle.Value.ToString();
+
+
+            var data = _client.CreateConsolidateQuantityInformation(year);
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            var excel = new ExcelConsolidateQuantityInfo(saveFileDialog1.FileName, "", _filialName);
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+        }
+
 
         private void CreateOnko(bool isMonthly)
         {

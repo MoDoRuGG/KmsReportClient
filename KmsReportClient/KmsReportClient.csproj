@@ -146,6 +146,9 @@
     <Compile Include="Excel\Creator\Base\ExcelPgQCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelProposalCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelVacCreator.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateQuantityInfo.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateQuantityFP.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateQuantityAR.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateQuantityFilialCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateVCRFilialCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateOpedUnplanned.cs" />
@@ -448,6 +451,15 @@
     <None Include="Connected Services\External\KmsReportClient.External.ConsolidateProposalCollectResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.ConsolidateQuantityAR.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.ConsolidateQuantityFP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.ConsolidateQuantityInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.ConsolidateVCR.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -464,6 +476,15 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateConsolidateOnkoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateConsolidateQuantityAddRemoveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateConsolidateQuantityFactPlanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateConsolidateQuantityInformationResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateDynamicReportResponse.datasource">
