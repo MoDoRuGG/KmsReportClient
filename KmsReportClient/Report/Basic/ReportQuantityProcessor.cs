@@ -202,6 +202,7 @@ namespace KmsReportClient.Report.Basic
         protected override void FillReport(string form)
         {
             var row = Dgv.Rows[0];
+            Report.Col_1 = GlobalUtils.TryParseInt(row.Cells[0].Value);
             Report.Col_2 = GlobalUtils.TryParseInt(row.Cells[1].Value);
             Report.Col_3 = GlobalUtils.TryParseInt(row.Cells[2].Value);
             Report.Col_4 = GlobalUtils.TryParseInt(row.Cells[3].Value);

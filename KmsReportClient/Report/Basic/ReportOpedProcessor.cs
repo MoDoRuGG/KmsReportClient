@@ -21,6 +21,7 @@ namespace KmsReportClient.Report.Basic
 
         private string[] columns = new string[] { "АПП", "Стационар", "Стационарозамещая помощь", "Скорая медицинская помощь", "Примечания" };
         private ReportOpedDto[] firstValueYear = new ReportOpedDto[] { };
+        int[] _calcRows = { 5, 8 };
 
         List<CellModel> beforeJunyNormativ = new List<CellModel>()
         {
@@ -236,6 +237,7 @@ namespace KmsReportClient.Report.Basic
                 SetStaticValue();
                 SetFormula();
                 SetTotalColumn();
+                ColoringBadPercent();
 
             }
         }
@@ -586,6 +588,48 @@ namespace KmsReportClient.Report.Basic
         public void CreateCmbItem()
         {
 
+        }
+
+        private void ColoringBadPercent()
+        {
+            try
+            {
+                for (int i = 2; i < 6; i++)
+                {
+                    if (Convert.ToDouble(Dgv.Rows[5].Cells[i].Value) < Convert.ToDouble(Dgv.Rows[1].Cells[i].Value))
+                    {
+                        Dgv.Rows[5].Cells[i].Style.BackColor = Color.LightCoral;
+                        Dgv.Rows[6].Cells[i].Style.BackColor = Color.LightCoral;
+                    }
+                    else
+                    {
+                        Dgv.Rows[5].Cells[i].Style.BackColor = Color.LightGreen;
+                        Dgv.Rows[6].Cells[i].Style.BackColor = Color.LightGreen;
+                    };
+
+                    if (Convert.ToDouble(Dgv.Rows[7].Cells[i].Value) < Convert.ToDouble(Dgv.Rows[2].Cells[i].Value))
+                    {
+                        Dgv.Rows[7].Cells[i].Style.BackColor = Color.LightCoral;
+                        Dgv.Rows[8].Cells[i].Style.BackColor = Color.LightCoral;
+                    }
+                    else
+                    {
+                        Dgv.Rows[7].Cells[i].Style.BackColor = Color.LightGreen;
+                        Dgv.Rows[8].Cells[i].Style.BackColor = Color.LightGreen;
+                    };
+                };
+            }
+            catch (Exception ex)
+            {
+                var dialogResult = MessageBox.Show("Внесены некорректные данные на форму, возникает деление на ноль!",
+                    "Ошибка в данных!",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.ServiceNotification
+                    );
+            }
+           
         }
     }
 }
