@@ -699,7 +699,7 @@ namespace KmsReportClient.Forms
             this.сводПоФилиаламToolStripMenuItemVCRFilial});
             this.мониторингВСС2023ToolStripMenuItem.Name = "мониторингВСС2023ToolStripMenuItem";
             this.мониторингВСС2023ToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.мониторингВСС2023ToolStripMenuItem.Text = "Мониторинг ВСС 2023";
+            this.мониторингВСС2023ToolStripMenuItem.Text = "Мониторинг ВСС 2024";
             // 
             // сводToolStripMenuItemVCR
             // 

@@ -621,7 +621,7 @@ namespace KmsReportClient.Report.Basic
             }
             catch (Exception ex)
             {
-                var dialogResult = MessageBox.Show("Внесены некорректные данные на форму, возникает деление на ноль!",
+                var dialogResult = MessageBox.Show(ex.Message,
                     "Ошибка в данных!",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error,

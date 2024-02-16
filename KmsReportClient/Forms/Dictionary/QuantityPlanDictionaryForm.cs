@@ -53,14 +53,14 @@ namespace KmsReportClient.Forms.Dictionary
 
             });
 
-            dgvDictionary.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                HeaderText = "Год",
-                Name = "YearValue",
-                ReadOnly = true,
-                DefaultCellStyle = new DataGridViewCellStyle() { BackColor = Color.LightGray }
+            //dgvDictionary.Columns.Add(new DataGridViewTextBoxColumn
+            //{
+            //    HeaderText = "Год",
+            //    Name = "YearValue",
+            //    ReadOnly = true,
+            //    DefaultCellStyle = new DataGridViewCellStyle() { BackColor = Color.LightGray }
 
-            });
+            //});
 
             //Console.WriteLine(CultureInfo.CurrentCulture.Name);
             foreach (var month in GlobalConst.MonthsWithNumber)
@@ -74,7 +74,7 @@ namespace KmsReportClient.Forms.Dictionary
                 });
             }
 
-            foreach (var region in CurrentUser.Regions.Where(x => x.Key != "RU" && x.Key != "RU-KHA" && x.Key != "RU-LEN"))
+            foreach (var region in CurrentUser.Regions.Where(x => x.Key != "RU" && x.Key != "RU-KHA"))
             {
 
                 int rowIndex = dgvDictionary.Rows.Add();
@@ -114,10 +114,10 @@ namespace KmsReportClient.Forms.Dictionary
                     }
 
 
-                    for (int i = 0; i < dgvDictionary.Rows.Count; i++)
-                    {
-                        SetColumnYearValueForRow(i);
-                    }
+                    //for (int i = 0; i < dgvDictionary.Rows.Count; i++)
+                    //{
+                    //    SetColumnYearValueForRow(i);
+                    //}
 
                 }
 
@@ -289,7 +289,7 @@ namespace KmsReportClient.Forms.Dictionary
 
         private void dgvDictionary_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            SetColumnYearValueForRow(e.RowIndex);
+            //SetColumnYearValueForRow(e.RowIndex);
         }
     }
 }
