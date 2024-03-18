@@ -743,6 +743,8 @@
           <s:element minOccurs="1" maxOccurs="1" name="CountCaseDefectedBySmoPlan" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpDefectedCaseTarget" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpDefectedCasePlan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadTarget" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadPlan" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadDs" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadDsNotAffected" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadDsProlonger" type="s:decimal" />
@@ -1793,7 +1795,7 @@
         <s:sequence>
           <s:element minOccurs="1" maxOccurs="1" name="Id_QuantityPlan" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Yymm" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Value" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Value" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Id_Region" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Region" type="tns:Region" />
         </s:sequence>
@@ -2389,7 +2391,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="IdQuantityPlan" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="IdRegion" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Yymm" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Value" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Value" type="s:int" />
         </s:sequence>
       </s:complexType>
       <s:element name="CreateConsolidateQuantityAddRemove">

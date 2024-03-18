@@ -26,7 +26,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
         protected override void FillReport(ConsolidateQuantityInfo[] report, ConsolidateQuantityInfo[] yearReport)
         {
             ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets[1];
-            CopyNullCells(ObjWorkSheet,report.Length/12+1,4);
+            CopyNullCells(ObjWorkSheet,(report.Length/12+1)-1,4);
 
             var filials = report.Select(x => x.RegionName).Distinct().OrderBy(x => x);
             int rowIndex = 4;
@@ -49,7 +49,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
                     {
                         ObjWorkSheet.Cells[rowIndex, columnIndex1++] = md.Fact;
                         ObjWorkSheet.Cells[rowIndex, columnIndex2++] = md.Plan;
-                        ObjWorkSheet.Cells[rowIndex, columnIndex3++] = md.Added-md.Plan;
+                        ObjWorkSheet.Cells[rowIndex, columnIndex3++] = md.Fact-md.Plan;
                         ObjWorkSheet.Cells[rowIndex, columnIndex4++] = md.Col_3 + md.Col_7 + md.Col_15;
                         ObjWorkSheet.Cells[rowIndex, columnIndex5++] = md.Col_8;
                         ObjWorkSheet.Cells[rowIndex, columnIndex6++] = md.Col_10+md.Col_12;

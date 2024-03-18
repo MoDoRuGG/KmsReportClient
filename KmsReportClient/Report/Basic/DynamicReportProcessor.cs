@@ -181,7 +181,6 @@ namespace KmsReportClient.Report.Basic
             else
             {
                 dgv.AllowUserToAddRows = true;
-
             }
 
             if (CurrentUser.IsMain)
@@ -414,47 +413,101 @@ namespace KmsReportClient.Report.Basic
         public void SetDgv(DataGridView dgv, string page)
         {
             int ColCounter = 0;
-            dgv.Rows.Clear();
-            dgv.Columns.Clear();
-            int dgvColumnCount = dgv.Columns.Count;
-            string columnName;
+            int RowCounter = 0;
 
-            
-
-
-            foreach (var theme in Report.Page.Where(x => x.Key.Name == page))
+            if (Report.IsUserRow == true)
             {
-                ColCounter = theme.Value.Columns.Count();
-                //Создаём столбцы
-                foreach (var column in theme.Value.Columns)
-                {
-                    columnName = CreateColumnName("", column.Name);
+                dgv.Rows.Clear();
+                dgv.Columns.Clear();
+                int dgvColumnCount = dgv.Columns.Count;
+                int dgvRowCount = dgv.Rows.Count;
+                string columnName;
 
-                    if (column.IsGroup)
+
+
+
+                foreach (var theme in Report.Page.Where(x => x.Key.Name == page))
+                {
+                    ColCounter = theme.Value.Columns.Count();
+                    //Создаём столбцы
+                    foreach (var column in theme.Value.Columns)
                     {
-                        foreach (var childColumn in column.Columns)
+                        columnName = CreateColumnName("", column.Name);
+
+                        if (column.IsGroup)
                         {
-                            columnName = CreateColumnName(column.Name, childColumn.Name);
+                            foreach (var childColumn in column.Columns)
+                            {
+                                columnName = CreateColumnName(column.Name, childColumn.Name);
+                                dgv.Columns.Add("Column" + dgvColumnCount, columnName);
+                            }
+                        }
+                        else
+                        {
                             dgv.Columns.Add("Column" + dgvColumnCount, columnName);
+                        }
+                    }
+
+                    RowCounter = (int)Math.Ceiling((decimal)data.Count() / (decimal)ColCounter);
+
+                    //Добавляем строки
+                    if (RowCounter > 1)
+                    {
+                        for (int i = 0; i < RowCounter; i++)
+                            dgv.Rows.Add();
+                    }
+                    else
+                    {
+                        dgv.Rows.Add();
+                    }
+                }
+            }
+            else
+            {
+                dgv.Rows.Clear();
+                dgv.Columns.Clear();
+                int dgvColumnCount = dgv.Columns.Count;
+                int dgvRowCount = dgv.Rows.Count;
+                string columnName, rowText;
+
+                foreach (var theme in Report.Page.Where(x => x.Key.Name == page))
+                {
+                    ColCounter = theme.Value.Columns.Count();
+                    RowCounter = theme.Value.Rows.Count();
+                    //Создаём столбцы
+                    foreach (var column in theme.Value.Columns)
+                    {
+                        columnName = CreateColumnName("", column.Name);
+
+                        if (column.IsGroup)
+                        {
+                            foreach (var childColumn in column.Columns)
+                            {
+                                columnName = CreateColumnName(column.Name, childColumn.Name);
+                                dgv.Columns.Add("Column" + dgvColumnCount, columnName);
+                            }
+                        }
+                        else
+                        {
+                            dgv.Columns.Add("Column" + dgvColumnCount, columnName);
+                        }
+                    }
+
+                    //Добавляем строки
+                    if (theme.Value.Rows.Count > 0)
+                    {
+                        foreach (var row in theme.Value.Rows)
+                        {
+                            dgv.Rows.Add();
+                            dgv.Rows[Convert.ToInt32(row.Index) - 1].Cells[0].Value = row.Name;
+                            dgv.Rows[Convert.ToInt32(row.Index) - 1].Cells[0].Style.BackColor = System.Drawing.Color.LightCyan;
+                            dgv.Rows[Convert.ToInt32(row.Index) - 1].Cells[0].ReadOnly = true;
                         }
                     }
                     else
                     {
-                        dgv.Columns.Add("Column" + dgvColumnCount, columnName);
-                    }
-                }
-
-                int RowCounter = (int) Math.Ceiling((decimal) data.Count() / (decimal) ColCounter);
-
-                //Добавляем строки
-                if (RowCounter > 1)
-                {
-                    for (int i = 0; i < RowCounter; i++)
                         dgv.Rows.Add();
-                }
-                else
-                {
-                    dgv.Rows.Add();
+                    }
                 }
             }
         }

@@ -151,12 +151,12 @@ namespace KmsReportClient.Forms.Dictionary
                             continue;
 
                         var value = row.Cells[column.Name].Value == null ? "" : row.Cells[column.Name].Value.ToString().Replace(" ", "");
-                        decimal res = 0.00m;
+                        int res = 0;
 
                         requestData.Add(new QuantityPlanDictionaryItem
                         {
                             IdRegion = row.Tag.ToString(),
-                            Value = decimal.TryParse(value, out res) ? res : 0.0m,
+                            Value = int.TryParse(value, out res) ? res : 0,
                             Yymm = column.Name
                         });
 
@@ -197,11 +197,11 @@ namespace KmsReportClient.Forms.Dictionary
 
         private void dgvDictionary_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            var dec = 0.00m;
+            var inte = 0;
             string value = dgvDictionary.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == null ? "" : dgvDictionary.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-            if (decimal.TryParse(value, out dec))
+            if (int.TryParse(value, out inte))
             {
-                dgvDictionary.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = dec.ToString("#,#");
+                dgvDictionary.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = inte.ToString("#");
 
             }
 

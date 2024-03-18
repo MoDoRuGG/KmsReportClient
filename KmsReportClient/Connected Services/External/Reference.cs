@@ -9863,6 +9863,10 @@ namespace KmsReportClient.External {
         
         private decimal CountEkmpDefectedCasePlanField;
         
+        private decimal CountEkmpBadTargetField;
+        
+        private decimal CountEkmpBadPlanField;
+        
         private decimal CountEkmpBadDsField;
         
         private decimal CountEkmpBadDsNotAffectedField;
@@ -10473,6 +10477,32 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=43)]
+        public decimal CountEkmpBadTarget {
+            get {
+                return this.CountEkmpBadTargetField;
+            }
+            set {
+                if ((this.CountEkmpBadTargetField.Equals(value) != true)) {
+                    this.CountEkmpBadTargetField = value;
+                    this.RaisePropertyChanged("CountEkmpBadTarget");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=44)]
+        public decimal CountEkmpBadPlan {
+            get {
+                return this.CountEkmpBadPlanField;
+            }
+            set {
+                if ((this.CountEkmpBadPlanField.Equals(value) != true)) {
+                    this.CountEkmpBadPlanField = value;
+                    this.RaisePropertyChanged("CountEkmpBadPlan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=45)]
         public decimal CountEkmpBadDs {
             get {
                 return this.CountEkmpBadDsField;
@@ -10485,7 +10515,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=44)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=46)]
         public decimal CountEkmpBadDsNotAffected {
             get {
                 return this.CountEkmpBadDsNotAffectedField;
@@ -10498,7 +10528,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=45)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=47)]
         public decimal CountEkmpBadDsProlonger {
             get {
                 return this.CountEkmpBadDsProlongerField;
@@ -10511,7 +10541,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=46)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=48)]
         public decimal CountEkmpBadDsDecline {
             get {
                 return this.CountEkmpBadDsDeclineField;
@@ -10524,7 +10554,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=47)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=49)]
         public decimal CountEkmpBadDsInjured {
             get {
                 return this.CountEkmpBadDsInjuredField;
@@ -10537,7 +10567,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=48)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=50)]
         public decimal CountEkmpBadDsLeth {
             get {
                 return this.CountEkmpBadDsLethField;
@@ -10550,7 +10580,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=49)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=51)]
         public decimal CountEkmpBadMed {
             get {
                 return this.CountEkmpBadMedField;
@@ -10563,7 +10593,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=50)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=52)]
         public decimal CountEkmpUnreglamentedMed {
             get {
                 return this.CountEkmpUnreglamentedMedField;
@@ -10576,7 +10606,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=51)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=53)]
         public decimal CountEkmpStopMed {
             get {
                 return this.CountEkmpStopMedField;
@@ -10589,7 +10619,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=52)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=54)]
         public decimal CountEkmpContinuity {
             get {
                 return this.CountEkmpContinuityField;
@@ -10602,7 +10632,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=53)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=55)]
         public decimal CountEkmpUnprofile {
             get {
                 return this.CountEkmpUnprofileField;
@@ -10615,7 +10645,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=54)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=56)]
         public decimal CountEkmpUnfounded {
             get {
                 return this.CountEkmpUnfoundedField;
@@ -10628,7 +10658,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=55)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=57)]
         public decimal CountEkmpRepeat {
             get {
                 return this.CountEkmpRepeatField;
@@ -10641,7 +10671,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=56)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=58)]
         public decimal CountEkmpDifference {
             get {
                 return this.CountEkmpDifferenceField;
@@ -10654,7 +10684,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=57)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=59)]
         public decimal CountEkmpUnfoundedMedicaments {
             get {
                 return this.CountEkmpUnfoundedMedicamentsField;
@@ -10667,7 +10697,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=58)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=60)]
         public decimal CountEkmpUnfoundedReject {
             get {
                 return this.CountEkmpUnfoundedRejectField;
@@ -10680,7 +10710,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=59)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=61)]
         public decimal CountEkmpDisp {
             get {
                 return this.CountEkmpDispField;
@@ -10693,7 +10723,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=60)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=62)]
         public decimal CountEkmpRepeat2weeks {
             get {
                 return this.CountEkmpRepeat2weeksField;
@@ -10706,7 +10736,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=61)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=63)]
         public decimal CountEkmpOutOfResults {
             get {
                 return this.CountEkmpOutOfResultsField;
@@ -10719,7 +10749,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=62)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=64)]
         public decimal CountEkmpDoubleHospital {
             get {
                 return this.CountEkmpDoubleHospitalField;
@@ -21531,7 +21561,7 @@ namespace KmsReportClient.External {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string YymmField;
         
-        private decimal ValueField;
+        private int ValueField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string Id_RegionField;
@@ -21576,7 +21606,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public decimal Value {
+        public int Value {
             get {
                 return this.ValueField;
             }
@@ -26331,7 +26361,7 @@ namespace KmsReportClient.External {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string YymmField;
         
-        private decimal ValueField;
+        private int ValueField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -26383,7 +26413,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public decimal Value {
+        public int Value {
             get {
                 return this.ValueField;
             }
