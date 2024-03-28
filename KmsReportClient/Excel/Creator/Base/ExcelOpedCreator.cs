@@ -7,6 +7,7 @@ using KmsReportClient.External;
 using KmsReportClient.Model;
 using KmsReportClient.Model.Enums;
 using KmsReportClient.Support;
+using Microsoft.Office.Interop.Excel;
 
 namespace KmsReportClient.Excel.Creator.Base
 {
@@ -162,6 +163,7 @@ namespace KmsReportClient.Excel.Creator.Base
 
         protected override void FillReport(ReportOped report, ReportOped yearReport)
         {
+            ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets[1];
             ObjWorkSheet.Name = Header;
 
             string reportMonths = YymmUtils.GetMonth(report.Yymm.Substring(2, 2));
@@ -189,6 +191,40 @@ namespace KmsReportClient.Excel.Creator.Base
             {
                 string exRowNum = Convert.ToString(ObjWorkSheet.Cells[i, 1].Value);
                 var rowData = report.ReportDataList.SingleOrDefault(x => x.RowNum == exRowNum);
+                if (rowData != null)
+                {
+                    SetRow(rowData, i);
+                }
+            }
+
+
+            ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets[2];
+            ObjWorkSheet.Name = "Свод";
+
+            reportMonths = YymmUtils.GetMonth(report.Yymm.Substring(2, 2));
+            reportYear = 20 + report.Yymm.Substring(0, 2);
+
+            ObjWorkSheet.Cells[11, 2] = String.Format($"ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ 'КАПИТАЛ МЕДИЦИНСКОЕ СТРАХОВАНИЕ' ({FilialName})");
+            ObjWorkSheet.Cells[9, 2] = String.Format($"Отчет о выполнении нормативов объемов экспертиз с Января по {reportMonths} {reportYear} года");
+
+            //Заполнение статисческие данных
+
+            yymmForNormativ = Convert.ToInt32(report.Yymm) <= 2105 ? "2105" : "2106";
+
+
+            if (staticNormativ.TryGetValue(yymmForNormativ, out normativ))
+            {
+                foreach (var n in normativ)
+                {
+                    ObjWorkSheet.Cells[n.Row, n.Column] = n.Value;
+                }
+            }
+
+
+            for (int i = 16; i <= 24; i++)
+            {
+                string exRowNum = Convert.ToString(ObjWorkSheet.Cells[i, 1].Value);
+                var rowData = yearReport.ReportDataList.SingleOrDefault(x => x.RowNum == exRowNum);
                 if (rowData != null)
                 {
                     SetRow(rowData, i);

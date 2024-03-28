@@ -289,7 +289,8 @@ namespace KmsReportClient.Report.Basic
         public override void ToExcel(string filename, string filialName)
         {
             var excel = new ExcelOpedCreator(filename, ExcelForm.Oped, Report.Yymm, filialName);
-            excel.CreateReport(Report, null);
+            var yearReport = FillYearReport();
+            excel.CreateReport(Report, yearReport);
         }
 
         public override string ValidReport()
@@ -372,6 +373,23 @@ namespace KmsReportClient.Report.Basic
 
             Report.ReportDataList = reportDto.ToArray();
 
+        }
+
+
+        private ReportOped FillYearReport()
+        {
+            var request = new CollectSummaryReportRequest
+            {
+                Body = new CollectSummaryReportRequestBody
+                {
+                    filials = new ArrayOfString { FilialCode },
+                    status = ReportStatus.Saved,
+                    yymmStart = Report.Yymm.Substring(0, 2) + "01",
+                    yymmEnd = Report.Yymm,
+                    reportType = ReportType.Oped
+                }
+            };
+            return Client.CollectSummaryReport(request).Body.CollectSummaryReportResult as ReportOped;
         }
 
         private void CreateDgvCommonColumns(DataGridView dgvReport, int widthFirstColumn)
