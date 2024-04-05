@@ -29,5 +29,6 @@
         public const string ReportReqVCR = "ReqVCR";
         public const string ReportQuantity = "Quantity";
         public const string ReportTargetedAllowances = "TarAllow";
+        public const string ReportPVPLoad = "pvpl";
     }
 }

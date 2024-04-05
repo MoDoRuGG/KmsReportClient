@@ -128,6 +128,7 @@
     <Compile Include="Excel\Collector\PgExcelCollector.cs" />
     <Compile Include="Excel\Collector\ZpzQExcelCollector.cs" />
     <Compile Include="Excel\Creator\Base\ExcelQuantityCreator.cs" />
+    <Compile Include="Excel\Creator\Base\ExcelPVPLoadCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelTarAllowCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelCadreCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExceIRCreator.cs" />
@@ -295,6 +296,7 @@
     <Compile Include="Model\XML\TemplateForm.cs" />
     <Compile Include="Model\XML\TemplateTextMail.cs" />
     <Compile Include="Report\Basic\MonitoringVCRProcessor.cs" />
+    <Compile Include="Report\Basic\ReportPVPLoadProcessor.cs" />
     <Compile Include="Report\Basic\ReportTargetedAllowancesProcessor.cs" />
     <Compile Include="Report\Basic\ReportQuantityProcessor.cs" />
     <Compile Include="Report\Basic\ReportReqVCRProcessor.cs" />
@@ -815,6 +817,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.WebReportProposalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.WebReportPVPLoadResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.WebReportQuantityResponse.datasource">

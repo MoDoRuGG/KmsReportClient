@@ -69,15 +69,18 @@ namespace KmsReportClient.DgvHeaderGenerator
         {
             iNoOfLevels = NoOfLevels(objHeaderTree);
             objGraphics = e.Graphics;
-            objDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            //objDataGrid.AutoSize = true;
+            //objDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 
-            if (objDataGrid.Parent.Name == "PageCadre")
+            //if (objDataGrid.Parent.Name == "PageCadre")
+            //{
+            //    //objDataGrid.ColumnHeadersHeight = 160;
+            //    //objDataGrid.DefaultCellStyle.BackColor = Color.FromArgb(253, 233, 217);
+            //}
+            //else
+            if (objDataGrid.Parent.Name == "PageMonitoringVCR")
             {
-                objDataGrid.ColumnHeadersHeight = 145;
-                objDataGrid.DefaultCellStyle.BackColor = Color.FromArgb(253, 233, 217);
-            }
-            else if (objDataGrid.Parent.Name == "PageMonitoringVCR")
-            {
+                objDataGrid.AutoSize = true;
                 objDataGrid.ColumnHeadersHeight = 145;
             }
             else if (objDataGrid.Parent.Name == "PageQuantity")
@@ -86,10 +89,10 @@ namespace KmsReportClient.DgvHeaderGenerator
             }
             else
             {
-                objDataGrid.ColumnHeadersHeight = iNoOfLevels * 20;
+                objDataGrid.ColumnHeadersHeight = iNoOfLevels * 25;
             }
 
-                if (null != objHeaderTree)
+            if (null != objHeaderTree)
             {
                 RenderColumnHeaders();
             }
@@ -119,8 +122,8 @@ namespace KmsReportClient.DgvHeaderGenerator
 
             foreach (Header objChild in objHeaderTree.Children)
             {
-      
-                objChild.Measure(objDataGrid, 0, objDataGrid.ColumnHeadersHeight / iNoOfLevels +3);
+
+                objChild.Measure(objDataGrid, 3, objChild.Height+50);
                 objChild.AcceptRenderer(this);
             }
         }

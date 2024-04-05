@@ -2,6 +2,33 @@
 <wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://kms-oms.ru/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://kms-oms.ru/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://kms-oms.ru/">
+      <s:element name="CreateReportVCR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateReportVCRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateReportVCRResult" type="tns:ArrayOfConsolidateVCR" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfConsolidateVCR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsolidateVCR" nillable="true" type="tns:ConsolidateVCR" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConsolidateVCR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertWithEducation" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertWithoutEducation" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="CreateReportCpnpM">
         <s:complexType>
           <s:sequence>
@@ -1244,6 +1271,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Report_ReqVCR" type="tns:ArrayOfReport_ReqVCR" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Quantity" type="tns:ArrayOfReport_Quantity" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Targeted_Allowances" type="tns:ArrayOfReport_Targeted_Allowances" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_PVP_Load" type="tns:ArrayOfReport_PVP_Load" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Type" type="tns:Report_Type" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:Report_Flow" />
         </s:sequence>
@@ -1697,6 +1725,34 @@
           <s:element minOccurs="0" maxOccurs="1" name="ProvidedBy" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="RowNumID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:Report_Data" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReport_PVP_Load">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Report_PVP_Load" nillable="true" type="tns:Report_PVP_Load" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Report_PVP_Load">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_Report_Data" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowNumID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PVP_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="location_of_the_office" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="number_of_insured_by_beginning_of_year" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="number_of_insured_by_reporting_date" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="population_dynamics" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="specialist" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="conditions_of_employment" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PVP_plan" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="registered_total_citizens" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="newly_insured" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="attracted_by_agents" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="issued_by_PEO_and_extracts_from_ERZL" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="workload_per_day_for_specialist" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="appeals_through_EPGU" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="notes" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:Report_Data" />
         </s:sequence>
       </s:complexType>
@@ -3515,6 +3571,51 @@
       <s:element name="WebReportTargetedAllowancesResponse">
         <s:complexType />
       </s:element>
+      <s:element name="WebReportPVPLoad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:ReportPVPLoad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReportPVPLoad">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AbstractReport">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Id_Report_Data" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ArrayOfPVPload" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfPVPload">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PVPload" nillable="true" type="tns:PVPload" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PVPload">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RowNumID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PVP_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="location_of_the_office" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="number_of_insured_by_beginning_of_year" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="number_of_insured_by_reporting_date" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="population_dynamics" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="specialist" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="conditions_of_employment" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PVP_plan" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="registered_total_citizens" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="newly_insured" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="attracted_by_agents" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="issued_by_PEO_and_extracts_from_ERZL" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="workload_per_day_for_specialist" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="appeals_through_EPGU" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="notes" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WebReportPVPLoadResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="WebReportReqVCR">
         <s:complexType>
           <s:sequence>
@@ -3963,6 +4064,7 @@
           <s:enumeration value="ReqVCR" />
           <s:enumeration value="Quantity" />
           <s:enumeration value="TarAllow" />
+          <s:enumeration value="PVPLoad" />
         </s:restriction>
       </s:simpleType>
       <s:element name="CollectSummaryReportResponse">
@@ -4622,35 +4724,14 @@
           <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:decimal" />
         </s:sequence>
       </s:complexType>
-      <s:element name="CreateReportVCR">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CreateReportVCRResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CreateReportVCRResult" type="tns:ArrayOfConsolidateVCR" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfConsolidateVCR">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsolidateVCR" nillable="true" type="tns:ConsolidateVCR" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ConsolidateVCR">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="ExpertWithEducation" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="ExpertWithoutEducation" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:decimal" />
-        </s:sequence>
-      </s:complexType>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="CreateReportVCRSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateReportVCR" />
+  </wsdl:message>
+  <wsdl:message name="CreateReportVCRSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateReportVCRResponse" />
+  </wsdl:message>
   <wsdl:message name="CreateReportCpnpMSoapIn">
     <wsdl:part name="parameters" element="tns:CreateReportCpnpM" />
   </wsdl:message>
@@ -5077,6 +5158,12 @@
   <wsdl:message name="WebReportTargetedAllowancesSoapOut">
     <wsdl:part name="parameters" element="tns:WebReportTargetedAllowancesResponse" />
   </wsdl:message>
+  <wsdl:message name="WebReportPVPLoadSoapIn">
+    <wsdl:part name="parameters" element="tns:WebReportPVPLoad" />
+  </wsdl:message>
+  <wsdl:message name="WebReportPVPLoadSoapOut">
+    <wsdl:part name="parameters" element="tns:WebReportPVPLoadResponse" />
+  </wsdl:message>
   <wsdl:message name="WebReportReqVCRSoapIn">
     <wsdl:part name="parameters" element="tns:WebReportReqVCR" />
   </wsdl:message>
@@ -5281,13 +5368,11 @@
   <wsdl:message name="CreateReportVSSSoapOut">
     <wsdl:part name="parameters" element="tns:CreateReportVSSResponse" />
   </wsdl:message>
-  <wsdl:message name="CreateReportVCRSoapIn">
-    <wsdl:part name="parameters" element="tns:CreateReportVCR" />
-  </wsdl:message>
-  <wsdl:message name="CreateReportVCRSoapOut">
-    <wsdl:part name="parameters" element="tns:CreateReportVCRResponse" />
-  </wsdl:message>
   <wsdl:portType name="EndpointSoap">
+    <wsdl:operation name="CreateReportVCR">
+      <wsdl:input message="tns:CreateReportVCRSoapIn" />
+      <wsdl:output message="tns:CreateReportVCRSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="CreateReportCpnpM">
       <wsdl:input message="tns:CreateReportCpnpMSoapIn" />
       <wsdl:output message="tns:CreateReportCpnpMSoapOut" />
@@ -5572,6 +5657,10 @@
       <wsdl:input message="tns:WebReportTargetedAllowancesSoapIn" />
       <wsdl:output message="tns:WebReportTargetedAllowancesSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="WebReportPVPLoad">
+      <wsdl:input message="tns:WebReportPVPLoadSoapIn" />
+      <wsdl:output message="tns:WebReportPVPLoadSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="WebReportReqVCR">
       <wsdl:input message="tns:WebReportReqVCRSoapIn" />
       <wsdl:output message="tns:WebReportReqVCRSoapOut" />
@@ -5708,13 +5797,18 @@
       <wsdl:input message="tns:CreateReportVSSSoapIn" />
       <wsdl:output message="tns:CreateReportVSSSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="CreateReportVCR">
-      <wsdl:input message="tns:CreateReportVCRSoapIn" />
-      <wsdl:output message="tns:CreateReportVCRSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="EndpointSoap" type="tns:EndpointSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateReportVCR">
+      <soap:operation soapAction="http://kms-oms.ru/CreateReportVCR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateReportCpnpM">
       <soap:operation soapAction="http://kms-oms.ru/CreateReportCpnpM" style="document" />
       <wsdl:input>
@@ -6354,6 +6448,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="WebReportPVPLoad">
+      <soap:operation soapAction="http://kms-oms.ru/WebReportPVPLoad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="WebReportReqVCR">
       <soap:operation soapAction="http://kms-oms.ru/WebReportReqVCR" style="document" />
       <wsdl:input>
@@ -6660,18 +6763,18 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateReportVCR">
-      <soap:operation soapAction="http://kms-oms.ru/CreateReportVCR" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="EndpointSoap12" type="tns:EndpointSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateReportVCR">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateReportVCR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateReportCpnpM">
       <soap12:operation soapAction="http://kms-oms.ru/CreateReportCpnpM" style="document" />
       <wsdl:input>
@@ -7311,6 +7414,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="WebReportPVPLoad">
+      <soap12:operation soapAction="http://kms-oms.ru/WebReportPVPLoad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="WebReportReqVCR">
       <soap12:operation soapAction="http://kms-oms.ru/WebReportReqVCR" style="document" />
       <wsdl:input>
@@ -7610,15 +7722,6 @@
     </wsdl:operation>
     <wsdl:operation name="CreateReportVSS">
       <soap12:operation soapAction="http://kms-oms.ru/CreateReportVSS" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateReportVCR">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateReportVCR" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

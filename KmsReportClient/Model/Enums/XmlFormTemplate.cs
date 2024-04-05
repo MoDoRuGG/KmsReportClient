@@ -31,5 +31,6 @@ namespace KmsReportClient.Model.Enums
         [Description("TemplateTextReqVCR.xml")] ReqVCR,
         [Description("TemplateTextQuantity.xml")] Quantity,
         [Description("TemplateTextTargetedAllowances.xml")] TarAllow,
+        [Description("TemplateTextPVPLoad.xml")] PVPL,
     }
 }

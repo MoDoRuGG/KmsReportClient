@@ -199,6 +199,7 @@ namespace KmsReportClient.Forms
                         {PageEffectiveness, ReportGlobalConst.ReportEffectiveness},
                         {PageQuantity, ReportGlobalConst.ReportQuantity},
                         {PageTarAllow, ReportGlobalConst.ReportTargetedAllowances},
+                        {PagePVPLoad, ReportGlobalConst.ReportPVPLoad},
             };
 
         private Dictionary<string, IReportProcessor> CreateProcessorMap() =>
@@ -307,6 +308,10 @@ namespace KmsReportClient.Forms
                 {
                     ReportGlobalConst.ReportTargetedAllowances,
                     new ReportTargetedAllowancesProcessor(_client, _reportsDictionary, DgvTarAllow, CmbTarAllow, TbTarAllow, PageTarAllow)
+                },
+                {
+                    ReportGlobalConst.ReportPVPLoad,
+                    new ReportPVPLoadProcessor(_client, _reportsDictionary, DgvPVPLoad, CmbPVPLoad, TbPVPLoad, PagePVPLoad)
                 }
             };
 
@@ -2235,10 +2240,23 @@ namespace KmsReportClient.Forms
 
         }
 
+        private void dgvPVPLoad_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as ReportPVPLoadProcessor).SetFormula();
+
+        }
+
 
         private void dgvTarAllow_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
             (_processor as ReportTargetedAllowancesProcessor).SetFormula();
+
+        }
+
+
+        private void dgvPVPLoad_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            (_processor as ReportPVPLoadProcessor).SetFormula();
 
         }
 
