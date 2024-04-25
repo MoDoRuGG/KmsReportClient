@@ -861,6 +861,7 @@ namespace KmsReportClient.Forms
             this.сводЗаКварталToolStripMenuItem.Name = "сводЗаКварталToolStripMenuItem";
             this.сводЗаКварталToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.сводЗаКварталToolStripMenuItem.Text = "Свод за квартал";
+            this.сводЗаКварталToolStripMenuItem.Click += new System.EventHandler(this.ЧислСводКварталToolStripMenuItem_Click);
             // 
             // serviceMenu
             // 

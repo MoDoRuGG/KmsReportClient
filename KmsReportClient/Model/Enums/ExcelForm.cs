@@ -149,5 +149,7 @@ namespace KmsReportClient.Model.Enums
         ConsQuantityInformation,
         [Description(GlobalConst.TempFolder + "pvpload.xlsx")]
         PVPLoad,
+        [Description(GlobalConst.TempFolder + "consQuantityQ.xlsx")]
+        ConsQuantityQ,
     }
 }

@@ -38,6 +38,7 @@
         ConsolidateVCRFilial,
         ConsQuantityFilial,
         ConsQuantityAR,
+        ConsQuantityQ,
         ConsQuantityFP,
         ConsQuantityInformation
     }

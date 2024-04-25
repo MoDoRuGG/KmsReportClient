@@ -24,7 +24,7 @@ namespace KmsReportClient.DgvHeaderGenerator
             this.objDataGrid = objDataGrid;
             objFormat = new StringFormat();
             objFormat.Alignment = StringAlignment.Center;
-            objFormat.LineAlignment = StringAlignment.Far;
+            objFormat.LineAlignment = StringAlignment.Near;
 
             Type dgvType = objDataGrid.GetType();
             PropertyInfo pi = dgvType.GetProperty("DoubleBuffered",
@@ -69,31 +69,30 @@ namespace KmsReportClient.DgvHeaderGenerator
         {
             iNoOfLevels = NoOfLevels(objHeaderTree);
             objGraphics = e.Graphics;
-            objDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            objDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 
             //if (objDataGrid.Parent.Name == "PageCadre")
             //{
             //    objDataGrid.ColumnHeadersHeight = 145;
             //    //objDataGrid.DefaultCellStyle.BackColor = Color.FromArgb(253, 233, 217);
             //}
-            //else if (objDataGrid.Parent.Name == "PageMonitoringVCR")
-            //{
-            //    objDataGrid.ColumnHeadersHeight = 145;
-            //}
+            if (objDataGrid.Parent.Name == "PageMonitoringVCR")
+            {
+                objDataGrid.ColumnHeadersHeight = 150;
+            }
             //else if (objDataGrid.Parent.Name == "PageQuantity")
             //{
             //    objDataGrid.ColumnHeadersHeight = 163;
             //}
             //else
             //{
-                objDataGrid.ColumnHeadersHeight = 145;
+            //objDataGrid.ColumnHeadersHeight = objDataGrid.ColumnHeadersHeight;
             //}
 
             if (null != objHeaderTree)
             {
                 RenderColumnHeaders();
             }
-            Refresh();
         }
 
         void objDataGrid_Scroll(object sender, ScrollEventArgs e)
@@ -121,7 +120,7 @@ namespace KmsReportClient.DgvHeaderGenerator
             foreach (Header objChild in objHeaderTree.Children)
             {
 
-                objChild.Measure(objDataGrid, 0, objDataGrid.ColumnHeadersHeight /iNoOfLevels*20);
+                objChild.Measure(objDataGrid, 15, objDataGrid.ColumnHeadersHeight/iNoOfLevels);
                 objChild.AcceptRenderer(this);
             }
         }

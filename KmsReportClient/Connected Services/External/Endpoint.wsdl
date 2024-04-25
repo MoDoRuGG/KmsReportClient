@@ -2,6 +2,33 @@
 <wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://kms-oms.ru/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://kms-oms.ru/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://kms-oms.ru/">
+      <s:element name="CreateReportVSS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateReportVSSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateReportVSSResult" type="tns:ArrayOfConsolidateVSS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfConsolidateVSS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsolidateVSS" nillable="true" type="tns:ConsolidateVSS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConsolidateVSS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertWithEducation" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpertWithoutEducation" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="CreateReportVCR">
         <s:complexType>
           <s:sequence>
@@ -2478,6 +2505,40 @@
           <s:element minOccurs="1" maxOccurs="1" name="Removed" type="s:int" />
         </s:sequence>
       </s:complexType>
+      <s:element name="CreateConsolidateQuantityQ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateConsolidateQuantityQResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateConsolidateQuantityQResult" type="tns:ArrayOfConsolidateQuantityQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfConsolidateQuantityQ">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsolidateQuantityQ" nillable="true" type="tns:ConsolidateQuantityQ" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConsolidateQuantityQ">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RegionName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdRegion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Yymm" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="c2" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="c3" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="c4" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="c5" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="c6" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="c7" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="c8" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="c9" type="s:int" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="CreateConsolidateQuantityFactPlan">
         <s:complexType>
           <s:sequence>
@@ -4697,35 +4758,14 @@
           <s:element minOccurs="1" maxOccurs="1" name="smp" type="s:decimal" />
         </s:sequence>
       </s:complexType>
-      <s:element name="CreateReportVSS">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CreateReportVSSResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CreateReportVSSResult" type="tns:ArrayOfConsolidateVSS" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfConsolidateVSS">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsolidateVSS" nillable="true" type="tns:ConsolidateVSS" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ConsolidateVSS">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="ExpertWithEducation" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="ExpertWithoutEducation" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:decimal" />
-        </s:sequence>
-      </s:complexType>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="CreateReportVSSSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateReportVSS" />
+  </wsdl:message>
+  <wsdl:message name="CreateReportVSSSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateReportVSSResponse" />
+  </wsdl:message>
   <wsdl:message name="CreateReportVCRSoapIn">
     <wsdl:part name="parameters" element="tns:CreateReportVCR" />
   </wsdl:message>
@@ -4887,6 +4927,12 @@
   </wsdl:message>
   <wsdl:message name="CreateConsolidateQuantityAddRemoveSoapOut">
     <wsdl:part name="parameters" element="tns:CreateConsolidateQuantityAddRemoveResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateConsolidateQuantityQSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateConsolidateQuantityQ" />
+  </wsdl:message>
+  <wsdl:message name="CreateConsolidateQuantityQSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateConsolidateQuantityQResponse" />
   </wsdl:message>
   <wsdl:message name="CreateConsolidateQuantityFactPlanSoapIn">
     <wsdl:part name="parameters" element="tns:CreateConsolidateQuantityFactPlan" />
@@ -5362,13 +5408,11 @@
   <wsdl:message name="CreateReportCOpedSoapOut">
     <wsdl:part name="parameters" element="tns:CreateReportCOpedResponse" />
   </wsdl:message>
-  <wsdl:message name="CreateReportVSSSoapIn">
-    <wsdl:part name="parameters" element="tns:CreateReportVSS" />
-  </wsdl:message>
-  <wsdl:message name="CreateReportVSSSoapOut">
-    <wsdl:part name="parameters" element="tns:CreateReportVSSResponse" />
-  </wsdl:message>
   <wsdl:portType name="EndpointSoap">
+    <wsdl:operation name="CreateReportVSS">
+      <wsdl:input message="tns:CreateReportVSSSoapIn" />
+      <wsdl:output message="tns:CreateReportVSSSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="CreateReportVCR">
       <wsdl:input message="tns:CreateReportVCRSoapIn" />
       <wsdl:output message="tns:CreateReportVCRSoapOut" />
@@ -5476,6 +5520,10 @@
     <wsdl:operation name="CreateConsolidateQuantityAddRemove">
       <wsdl:input message="tns:CreateConsolidateQuantityAddRemoveSoapIn" />
       <wsdl:output message="tns:CreateConsolidateQuantityAddRemoveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateConsolidateQuantityQ">
+      <wsdl:input message="tns:CreateConsolidateQuantityQSoapIn" />
+      <wsdl:output message="tns:CreateConsolidateQuantityQSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="CreateConsolidateQuantityFactPlan">
       <wsdl:input message="tns:CreateConsolidateQuantityFactPlanSoapIn" />
@@ -5793,13 +5841,18 @@
       <wsdl:input message="tns:CreateReportCOpedSoapIn" />
       <wsdl:output message="tns:CreateReportCOpedSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="CreateReportVSS">
-      <wsdl:input message="tns:CreateReportVSSSoapIn" />
-      <wsdl:output message="tns:CreateReportVSSSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="EndpointSoap" type="tns:EndpointSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateReportVSS">
+      <soap:operation soapAction="http://kms-oms.ru/CreateReportVSS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateReportVCR">
       <soap:operation soapAction="http://kms-oms.ru/CreateReportVCR" style="document" />
       <wsdl:input>
@@ -6036,6 +6089,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateConsolidateQuantityAddRemove">
       <soap:operation soapAction="http://kms-oms.ru/CreateConsolidateQuantityAddRemove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateConsolidateQuantityQ">
+      <soap:operation soapAction="http://kms-oms.ru/CreateConsolidateQuantityQ" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -6754,18 +6816,18 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateReportVSS">
-      <soap:operation soapAction="http://kms-oms.ru/CreateReportVSS" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="EndpointSoap12" type="tns:EndpointSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateReportVSS">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateReportVSS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateReportVCR">
       <soap12:operation soapAction="http://kms-oms.ru/CreateReportVCR" style="document" />
       <wsdl:input>
@@ -7002,6 +7064,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateConsolidateQuantityAddRemove">
       <soap12:operation soapAction="http://kms-oms.ru/CreateConsolidateQuantityAddRemove" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateConsolidateQuantityQ">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateConsolidateQuantityQ" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -7713,15 +7784,6 @@
     </wsdl:operation>
     <wsdl:operation name="CreateReportCOped">
       <soap12:operation soapAction="http://kms-oms.ru/CreateReportCOped" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateReportVSS">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateReportVSS" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

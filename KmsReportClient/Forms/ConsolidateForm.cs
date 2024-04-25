@@ -431,6 +431,16 @@ namespace KmsReportClient.Forms
                     btnDo.Text = "Сформировать сводный отчет Численность пофилиально";
                     saveFileDialog1.FileName = "Численность по всем филиалам";
                     break;
+
+                case ConsolidateReport.ConsQuantityQ:
+                    labelStart.Text = "Период";
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    nudSingle.Visible = false;
+                    cmbStart.DataSource = GlobalConst.Periods;
+                    btnDo.Text = "Сформировать сводный отчёт численность за период";
+                    saveFileDialog1.FileName = "Квартальный сводный отчет численность";
+                    break;
             }
         }
 
@@ -504,6 +514,9 @@ namespace KmsReportClient.Forms
                         break;
                     case ConsolidateReport.ConsQuantityAR:
                         CreateConsolidateQuantityAddRemove();
+                        break;
+                    case ConsolidateReport.ConsQuantityQ:
+                        CreateConsolidateQuantityQ();
                         break;
                     case ConsolidateReport.ControlZpz2023SingleQuarterly:
                         CreateControlZpz2023Single();
@@ -1068,6 +1081,25 @@ namespace KmsReportClient.Forms
             GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
         }
 
+
+        private void CreateConsolidateQuantityQ()
+        {
+            string yymm = GetYymmQuarterly();
+
+
+            var data = _client.CreateConsolidateQuantityQ(yymm);
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            var excel = new ExcelConsolidateQuantityQ(saveFileDialog1.FileName, " "+yymm+" ", _filialName);
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+        }
 
 
         private void CreateControlZpz2023Single()

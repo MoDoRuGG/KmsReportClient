@@ -1719,6 +1719,11 @@ namespace KmsReportClient.Forms
             OpenConsolidateReportForm(ConsolidateReport.ConsQuantityAR);
         }
 
+        private void ЧислСводКварталToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenConsolidateReportForm(ConsolidateReport.ConsQuantityQ);
+        }
+
         private void выполнениеПланаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenConsolidateReportForm(ConsolidateReport.ConsQuantityFP);
