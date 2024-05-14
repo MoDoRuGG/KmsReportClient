@@ -199,7 +199,8 @@ namespace KmsReportClient.Forms
                 }
 
                 var openFileDialog1 = new OpenFileDialog();
-                openFileDialog1.Filter = "PDF | *.pdf";
+                //openFileDialog1.Filter = "PDF | *.pdf";
+                openFileDialog1.Filter = "*.PDF; *.XLS; *.XLSX| *.PDF; *.XLS; *.XLSX;";
                 if (openFileDialog1.ShowDialog() != DialogResult.OK)
                 {
                     return;
@@ -214,9 +215,9 @@ namespace KmsReportClient.Forms
                 string filename = openFileDialog1.FileName;
                 var extension = Path.GetExtension(filename)?.ToLower() ?? "";
 
-                if (extension != ".pdf")
+                if (extension != ".pdf" && extension != ".xls" && extension != ".xlsx")
                 {
-                    throw new Exception("Можно загрузить только документы с расширением PDF");
+                    throw new Exception("Можно загрузить только документы с расширением PDF, XLS, XLSX");
                 }
 
                 string savedFileName = "";
