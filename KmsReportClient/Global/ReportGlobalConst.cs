@@ -30,5 +30,6 @@
         public const string ReportQuantity = "Quantity";
         public const string ReportTargetedAllowances = "TarAllow";
         public const string ReportPVPLoad = "pvpl";
+        public const string ReportDoff = "Doff";
     }
 }

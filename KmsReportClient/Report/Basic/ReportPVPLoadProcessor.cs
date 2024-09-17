@@ -95,8 +95,8 @@ namespace KmsReportClient.Report.Basic
                             row.Cells[11].Value = rowData.issued_by_PEO_and_extracts_from_ERZL;
                             row.Cells[12].Value = rowData.registered_total_citizens + rowData.issued_by_PEO_and_extracts_from_ERZL;
                             row.Cells[13].Value = rowData.newly_insured - rowData.PVP_plan;
-                            row.Cells[14].Value = rowData.appeals_through_EPGU;
-                            row.Cells[15].Value = rowData.notes;
+                            row.Cells[15].Value = rowData.appeals_through_EPGU;
+                            row.Cells[16].Value = rowData.notes;
 
                         }
                     }

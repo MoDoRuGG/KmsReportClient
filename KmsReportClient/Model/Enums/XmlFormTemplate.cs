@@ -32,5 +32,6 @@ namespace KmsReportClient.Model.Enums
         [Description("TemplateTextQuantity.xml")] Quantity,
         [Description("TemplateTextTargetedAllowances.xml")] TarAllow,
         [Description("TemplateTextPVPLoad.xml")] PVPL,
+        [Description("TemplateTextDoff.xml")] Doff,
     }
 }

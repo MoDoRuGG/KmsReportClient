@@ -39,6 +39,8 @@ namespace KmsReportClient.Report.Basic
 
         }
 
+
+
         public DynamicReportProcessor(EndpointSoap client, DataGridView dgv, ComboBox cb)
         {
             this.client = client;
@@ -591,5 +593,7 @@ namespace KmsReportClient.Report.Basic
 
             }
         }
+
+
     }
 }

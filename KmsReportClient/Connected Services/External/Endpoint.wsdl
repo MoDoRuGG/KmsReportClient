@@ -2,6 +2,47 @@
 <wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://kms-oms.ru/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://kms-oms.ru/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://kms-oms.ru/">
+      <s:element name="CreateReportCOped">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymmStart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yymmEnd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="regions" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateReportCOpedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateReportCOpedResult" type="tns:ArrayOfConsolidateOped" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfConsolidateOped">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsolidateOped" nillable="true" type="tns:ConsolidateOped" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConsolidateOped">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mee" type="tns:OpedData" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ekmp" type="tns:OpedData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OpedData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="app" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ks" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ds" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="smp" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="CreateReportVSS">
         <s:complexType>
           <s:sequence>
@@ -1154,25 +1195,11 @@
           <s:element minOccurs="1" maxOccurs="1" name="Id_Employee" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="Created" type="s:dateTime" />
           <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Report_Dynamic_Data" type="tns:ArrayOfReport_Dynamic_Data" />
           <s:element minOccurs="0" maxOccurs="1" name="Scan_Dynamic" type="tns:ArrayOfScan_Dynamic" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Dynamic_Data" type="tns:ArrayOfReport_Dynamic_Data" />
           <s:element minOccurs="0" maxOccurs="1" name="Employee" type="tns:Employee" />
           <s:element minOccurs="0" maxOccurs="1" name="Region" type="tns:Region" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Dynamic" type="tns:Report_Dynamic" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfReport_Dynamic_Data">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Report_Dynamic_Data" nillable="true" type="tns:Report_Dynamic_Data" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="Report_Dynamic_Data">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:short" />
-          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Position" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Id_Flow" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="Report_Dynamic_Flow" type="tns:Report_Dynamic_Flow" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfScan_Dynamic">
@@ -1185,6 +1212,20 @@
           <s:element minOccurs="1" maxOccurs="1" name="id_DynamicScan" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="IdFlow" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Dynamic_Flow" type="tns:Report_Dynamic_Flow" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReport_Dynamic_Data">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Report_Dynamic_Data" nillable="true" type="tns:Report_Dynamic_Data" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Report_Dynamic_Data">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Position" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_Flow" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Dynamic_Flow" type="tns:Report_Dynamic_Flow" />
         </s:sequence>
       </s:complexType>
@@ -1203,11 +1244,11 @@
           <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="Comment" type="tns:ArrayOfComment" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Dynamic" type="tns:ArrayOfReport_Dynamic" />
-          <s:element minOccurs="0" maxOccurs="1" name="Report_Dynamic_Flow" type="tns:ArrayOfReport_Dynamic_Flow" />
           <s:element minOccurs="0" maxOccurs="1" name="Responsible_Employee" type="tns:ArrayOfResponsible_Employee" />
           <s:element minOccurs="0" maxOccurs="1" name="Scans_Base" type="tns:ArrayOfScans_Base" />
           <s:element minOccurs="0" maxOccurs="1" name="Scans_Base1" type="tns:ArrayOfScans_Base" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:ArrayOfReport_Flow" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Dynamic_Flow" type="tns:ArrayOfReport_Dynamic_Flow" />
           <s:element minOccurs="0" maxOccurs="1" name="Region1" type="tns:Region" />
         </s:sequence>
       </s:complexType>
@@ -1299,6 +1340,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Report_Quantity" type="tns:ArrayOfReport_Quantity" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Targeted_Allowances" type="tns:ArrayOfReport_Targeted_Allowances" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_PVP_Load" type="tns:ArrayOfReport_PVP_Load" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Doff" type="tns:ArrayOfReport_Doff" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Type" type="tns:Report_Type" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:Report_Flow" />
         </s:sequence>
@@ -1783,6 +1825,22 @@
           <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:Report_Data" />
         </s:sequence>
       </s:complexType>
+      <s:complexType name="ArrayOfReport_Doff">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Report_Doff" nillable="true" type="tns:Report_Doff" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Report_Doff">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_Report_Data" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Column1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Column2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Column3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:Report_Data" />
+        </s:sequence>
+      </s:complexType>
       <s:complexType name="Report_Type">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
@@ -1845,9 +1903,9 @@
           <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Employee" type="tns:ArrayOfEmployee" />
           <s:element minOccurs="0" maxOccurs="1" name="OpedFinancePlan" type="tns:ArrayOfOpedFinancePlan" />
-          <s:element minOccurs="0" maxOccurs="1" name="Report_Dynamic_Flow" type="tns:ArrayOfReport_Dynamic_Flow" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:ArrayOfReport_Flow" />
           <s:element minOccurs="0" maxOccurs="1" name="QuantityPlan" type="tns:ArrayOfQuantityPlan" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Dynamic_Flow" type="tns:ArrayOfReport_Dynamic_Flow" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfEmployee">
@@ -3117,11 +3175,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="ArrayOfString">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
-        </s:sequence>
-      </s:complexType>
       <s:element name="SendEmailResponse">
         <s:complexType />
       </s:element>
@@ -3455,6 +3508,49 @@
         </s:complexContent>
       </s:complexType>
       <s:element name="WebReportProposalResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="WebReportDoff">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:ReportDoff" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReportDoff">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AbstractReport">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ReportDataList" type="tns:ArrayOfReportDoffDto" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfReportDoffDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReportDoffDto" nillable="true" type="tns:ReportDoffDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReportDoffDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Theme" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ArrayOfReportDoffDataDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReportDoffDataDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReportDoffDataDto" nillable="true" type="tns:ReportDoffDataDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReportDoffDataDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Column1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Column2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Column3" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WebReportDoffResponse">
         <s:complexType />
       </s:element>
       <s:element name="WebReportOpedFinance">
@@ -4126,6 +4222,7 @@
           <s:enumeration value="Quantity" />
           <s:enumeration value="TarAllow" />
           <s:enumeration value="PVPLoad" />
+          <s:enumeration value="Doff" />
         </s:restriction>
       </s:simpleType>
       <s:element name="CollectSummaryReportResponse">
@@ -4722,44 +4819,14 @@
           <s:element minOccurs="1" maxOccurs="1" name="NormativFederalCpnp" type="s:double" />
         </s:sequence>
       </s:complexType>
-      <s:element name="CreateReportCOped">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="yymmStart" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="yymmEnd" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="regions" type="tns:ArrayOfString" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CreateReportCOpedResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CreateReportCOpedResult" type="tns:ArrayOfConsolidateOped" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfConsolidateOped">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsolidateOped" nillable="true" type="tns:ConsolidateOped" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ConsolidateOped">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Mee" type="tns:OpedData" />
-          <s:element minOccurs="0" maxOccurs="1" name="Ekmp" type="tns:OpedData" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="OpedData">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="app" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="ks" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="ds" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="smp" type="s:decimal" />
-        </s:sequence>
-      </s:complexType>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="CreateReportCOpedSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateReportCOped" />
+  </wsdl:message>
+  <wsdl:message name="CreateReportCOpedSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateReportCOpedResponse" />
+  </wsdl:message>
   <wsdl:message name="CreateReportVSSSoapIn">
     <wsdl:part name="parameters" element="tns:CreateReportVSS" />
   </wsdl:message>
@@ -5168,6 +5235,12 @@
   <wsdl:message name="WebReportProposalSoapOut">
     <wsdl:part name="parameters" element="tns:WebReportProposalResponse" />
   </wsdl:message>
+  <wsdl:message name="WebReportDoffSoapIn">
+    <wsdl:part name="parameters" element="tns:WebReportDoff" />
+  </wsdl:message>
+  <wsdl:message name="WebReportDoffSoapOut">
+    <wsdl:part name="parameters" element="tns:WebReportDoffResponse" />
+  </wsdl:message>
   <wsdl:message name="WebReportOpedFinanceSoapIn">
     <wsdl:part name="parameters" element="tns:WebReportOpedFinance" />
   </wsdl:message>
@@ -5402,13 +5475,11 @@
   <wsdl:message name="CreateReportCpnpSoapOut">
     <wsdl:part name="parameters" element="tns:CreateReportCpnpResponse" />
   </wsdl:message>
-  <wsdl:message name="CreateReportCOpedSoapIn">
-    <wsdl:part name="parameters" element="tns:CreateReportCOped" />
-  </wsdl:message>
-  <wsdl:message name="CreateReportCOpedSoapOut">
-    <wsdl:part name="parameters" element="tns:CreateReportCOpedResponse" />
-  </wsdl:message>
   <wsdl:portType name="EndpointSoap">
+    <wsdl:operation name="CreateReportCOped">
+      <wsdl:input message="tns:CreateReportCOpedSoapIn" />
+      <wsdl:output message="tns:CreateReportCOpedSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="CreateReportVSS">
       <wsdl:input message="tns:CreateReportVSSSoapIn" />
       <wsdl:output message="tns:CreateReportVSSSoapOut" />
@@ -5681,6 +5752,10 @@
       <wsdl:input message="tns:WebReportProposalSoapIn" />
       <wsdl:output message="tns:WebReportProposalSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="WebReportDoff">
+      <wsdl:input message="tns:WebReportDoffSoapIn" />
+      <wsdl:output message="tns:WebReportDoffSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="WebReportOpedFinance">
       <wsdl:input message="tns:WebReportOpedFinanceSoapIn" />
       <wsdl:output message="tns:WebReportOpedFinanceSoapOut" />
@@ -5837,13 +5912,18 @@
       <wsdl:input message="tns:CreateReportCpnpSoapIn" />
       <wsdl:output message="tns:CreateReportCpnpSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="CreateReportCOped">
-      <wsdl:input message="tns:CreateReportCOpedSoapIn" />
-      <wsdl:output message="tns:CreateReportCOpedSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="EndpointSoap" type="tns:EndpointSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateReportCOped">
+      <soap:operation soapAction="http://kms-oms.ru/CreateReportCOped" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateReportVSS">
       <soap:operation soapAction="http://kms-oms.ru/CreateReportVSS" style="document" />
       <wsdl:input>
@@ -6456,6 +6536,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="WebReportDoff">
+      <soap:operation soapAction="http://kms-oms.ru/WebReportDoff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="WebReportOpedFinance">
       <soap:operation soapAction="http://kms-oms.ru/WebReportOpedFinance" style="document" />
       <wsdl:input>
@@ -6807,18 +6896,18 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateReportCOped">
-      <soap:operation soapAction="http://kms-oms.ru/CreateReportCOped" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="EndpointSoap12" type="tns:EndpointSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateReportCOped">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateReportCOped" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateReportVSS">
       <soap12:operation soapAction="http://kms-oms.ru/CreateReportVSS" style="document" />
       <wsdl:input>
@@ -7431,6 +7520,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="WebReportDoff">
+      <soap12:operation soapAction="http://kms-oms.ru/WebReportDoff" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="WebReportOpedFinance">
       <soap12:operation soapAction="http://kms-oms.ru/WebReportOpedFinance" style="document" />
       <wsdl:input>
@@ -7775,15 +7873,6 @@
     </wsdl:operation>
     <wsdl:operation name="CreateReportCpnp">
       <soap12:operation soapAction="http://kms-oms.ru/CreateReportCpnp" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateReportCOped">
-      <soap12:operation soapAction="http://kms-oms.ru/CreateReportCOped" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

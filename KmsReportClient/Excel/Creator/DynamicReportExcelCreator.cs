@@ -56,16 +56,16 @@ namespace KmsReportClient.Excel.Creator
 
                 if (checkRow)
                 {
-                    Range group = (Range)ObjWorkSheet.Range[ObjWorkSheet.Cells[startRow, i], ObjWorkSheet.Cells[startRow + 1, i]].Cells;
-                    group.Merge(Type.Missing);
-                    ObjWorkSheet.Cells[startRow, i++] = "Наименование показателя";
-                    group.Borders.LineStyle = XlLineStyle.xlContinuous;
+                    //Range group = (Range)ObjWorkSheet.Range[ObjWorkSheet.Cells[startRow, i], ObjWorkSheet.Cells[startRow + 1, i]].Cells;
+                    //group.Merge(Type.Missing);
+                    //ObjWorkSheet.Cells[startRow, i++] = "Наименование показателя";
+                    //group.Borders.LineStyle = XlLineStyle.xlContinuous;
 
 
-                    Range group1 = (Range)ObjWorkSheet.Range[ObjWorkSheet.Cells[startRow, i], ObjWorkSheet.Cells[startRow + 1, i]].Cells;
-                    group1.Merge(Type.Missing);
-                    ObjWorkSheet.Cells[startRow, i++] = "№";
-                    group.Borders.LineStyle = XlLineStyle.xlContinuous;
+                    //Range group1 = (Range)ObjWorkSheet.Range[ObjWorkSheet.Cells[startRow, i], ObjWorkSheet.Cells[startRow + 1, i]].Cells;
+                    //group1.Merge(Type.Missing);
+                    //ObjWorkSheet.Cells[startRow, i++] = "№";
+                    //group.Borders.LineStyle = XlLineStyle.xlContinuous;
 
 
                 }

@@ -156,6 +156,7 @@ namespace KmsReportClient.Forms
             TbControl.TabPages.Remove(PageEffectiveness);
             TbControl.TabPages.Remove(PageQuantity);
             TbControl.TabPages.Remove(PageTarAllow);
+            TbControl.TabPages.Remove(PageDoff);
 
             if (CurrentUser.IsMain)
             {
@@ -200,6 +201,7 @@ namespace KmsReportClient.Forms
                         {PageQuantity, ReportGlobalConst.ReportQuantity},
                         {PageTarAllow, ReportGlobalConst.ReportTargetedAllowances},
                         {PagePVPLoad, ReportGlobalConst.ReportPVPLoad},
+                        {PageDoff, ReportGlobalConst.ReportDoff},
             };
 
         private Dictionary<string, IReportProcessor> CreateProcessorMap() =>
@@ -312,6 +314,10 @@ namespace KmsReportClient.Forms
                 {
                     ReportGlobalConst.ReportPVPLoad,
                     new ReportPVPLoadProcessor(_client, _reportsDictionary, DgvPVPLoad, CmbPVPLoad, TbPVPLoad, PagePVPLoad)
+                },
+                {
+                    ReportGlobalConst.ReportDoff,
+                    new ReportDoffProcessor(_client, _reportsDictionary, DgvDoff, CmbDoff, TbDoff, PageDoff)
                 }
             };
 
@@ -583,9 +589,17 @@ namespace KmsReportClient.Forms
             BtnSubmit.Enabled = _processor.Report.Status != ReportStatus.Done;
             Console.WriteLine(!CurrentUser.IsMain);
            
-                BtnUploaded.Visible = _processor.IsVisibleBtnDownloadExcel();
-                BtnHandle.Visible = _processor.IsVisibleBtnHandle();
-                BtnSummary.Visible = _processor.IsVisibleBtnSummary();
+            BtnUploaded.Visible = _processor.IsVisibleBtnDownloadExcel();
+            BtnHandle.Visible = _processor.IsVisibleBtnHandle();
+            BtnSummary.Visible = _processor.IsVisibleBtnSummary();
+
+            if (_isQuery)
+            {
+                BtnUploaded.Visible = false;
+                BtnHandle.Visible = false;
+                BtnSummary.Visible = false;
+
+            }
 
             if (_processor.Report.IdType == "PG" || _processor.Report.IdType == "Zpz")
             {
@@ -1520,16 +1534,10 @@ namespace KmsReportClient.Forms
                         return;
                     }
 
-
                     using var form = new ScanDynamicForm(_dynamicReportProcessor, reportTag, ReportTree, _client);
                     form.ShowDialog();
                 }
-
-
             }
-
-            //OpenScan();
-
         }
 
         private void AddValueInTextBox()
@@ -1596,11 +1604,17 @@ namespace KmsReportClient.Forms
         private void CmbCadre_SelectedIndexChanged(object sender, EventArgs e) =>
         ChangeIndexComboBox(DgvCadre, CmbCadre, TxtbCadre);
 
+        private void CmbDoff_SelectedIndexChanged(object sender, EventArgs e) =>
+        ChangeIndexComboBox(DgvDoff, CmbDoff, TbDoff);
+
         private void CmbReqVCR_SelectedIndexChanged(object sender, EventArgs e) =>
         ChangeIndexComboBox(DgvReqVCR, CmbReqVCR, TxtbReqVCR);
 
         private void CmbZpzLethal_SelectedIndexChanged(object sender, EventArgs e) =>
         ChangeIndexComboBox(DgwReportZpzLethal, CmbZpzLethal, TxtbZpzLethal);
+
+        private void CmbDoff_SelectedIndexChanged_1(object sender, EventArgs e) =>
+        ChangeIndexComboBox(DgvDoff, CmbDoff, TbDoff);
 
         private void CmbZpz_SelectedIndexChanged_1(object sender, EventArgs e) =>
             ChangeIndexComboBox(DgwReportZpz, CmbZpz, TxtbZpz);
@@ -1790,8 +1804,8 @@ namespace KmsReportClient.Forms
                     ReportTree.Nodes.Clear();
                     _reportView.CreateTreeViewQuery(SelecetedYear);
                     if (!CurrentUser.IsMain)
-                        BtnUploaded.Visible = true;
-                    BtnHandle.Visible = true;
+                        BtnUploaded.Visible = false;
+                    BtnHandle.Visible = false;
                     TbControl.TabPages.Remove(Page262);
                     TbControl.TabPages.Remove(Page294);
                     TbControl.TabPages.Remove(PageIizl);
@@ -1815,6 +1829,7 @@ namespace KmsReportClient.Forms
                     TbControl.TabPages.Remove(PageMonitoringVCR);
                     TbControl.TabPages.Remove(PageQuantity);
                     TbControl.TabPages.Remove(PageTarAllow);
+                    TbControl.TabPages.Remove(PageDoff);
                     break;
             }
         }
