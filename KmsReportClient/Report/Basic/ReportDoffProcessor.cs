@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using KmsReportClient.Excel.Creator.Base;
 using KmsReportClient.External;
 using KmsReportClient.Global;
 using KmsReportClient.Model.Enums;
@@ -92,7 +91,7 @@ namespace KmsReportClient.Report.Basic
                 foreach (DataGridViewRow row in Dgv.Rows)
                 {
                     var code = row.Cells[1].Value;
-                    var data = 
+                    var data =
                         reportDto.Data.SingleOrDefault(
                             x => x.RowNum == code);
                     if (data != null)
@@ -189,22 +188,17 @@ namespace KmsReportClient.Report.Basic
             else if (form == "Таблица 3.1" || form == "Таблица 4.1")
             {
                 var dataList = new List<ReportDoffDataDto>();
+
+                foreach (DataGridViewRow row in Dgv.Rows)
                 {
-                    foreach (DataGridViewRow row in Dgv.Rows)
+                    var data = new ReportDoffDataDto
                     {
-                        while (row.Index+1 < Dgv.Rows.Count)
-                        {
-                            var data = new ReportDoffDataDto
-                            {
-                                RowNum = (Convert.ToInt32(row.Index)+1).ToString(),
-                                Column1 = row.Cells[0].Value.ToString(),
-                                Column2 = row.Cells[1].Value.ToString(),
-                                Column3 = row.Cells[2].Value.ToString()
-                            };
-                            dataList.Add(data);
-                            break;
-                        }
-                    }
+                        RowNum = (Convert.ToInt32(row.Index) + 1).ToString(),
+                        Column1 = row.Cells[0].Value.ToString(),
+                        Column2 = row.Cells[1].Value.ToString(),
+                        Column3 = row.Cells[2].Value.ToString()
+                    };
+                    dataList.Add(data);
                 }
                 reportDto.Data = dataList.ToArray();
             }
