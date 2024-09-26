@@ -126,19 +126,16 @@ namespace KmsReportClient.Report.Basic
                     return;
                 }
 
-                foreach (DataGridViewRow row in Dgv.Rows)
+                foreach (var data in reportDto.Data)
                 {
-                    var code = row.Cells[0].Value;
-                    var data =
-                        reportDto.Data.SingleOrDefault(
-                            x => x.RowNum == code);
-                    if (data != null)
-                    {
-                        row.Cells[1].Value = data.Column1;
-                        row.Cells[2].Value = data.Column2;
-                        row.Cells[3].Value = data.Column3;
-                    }
+                    Dgv.Rows.Add(data.RowNum, data.Column1, data.Column2, data.Column3);
                 }
+            }
+            if (CurrentUser.IsMain)
+            {
+                Dgv.AllowUserToAddRows = false;
+                Dgv.AllowUserToDeleteRows = false;
+                Dgv.ReadOnly = true;
             }
         }
 
@@ -191,14 +188,18 @@ namespace KmsReportClient.Report.Basic
 
                 foreach (DataGridViewRow row in Dgv.Rows)
                 {
-                    var data = new ReportDoffDataDto
+                    try
                     {
-                        RowNum = (Convert.ToInt32(row.Index) + 1).ToString(),
-                        Column1 = row.Cells[0].Value.ToString(),
-                        Column2 = row.Cells[1].Value.ToString(),
-                        Column3 = row.Cells[2].Value.ToString()
-                    };
-                    dataList.Add(data);
+                        var data = new ReportDoffDataDto
+                        {
+                            RowNum = (Convert.ToInt32(row.Index) + 1).ToString(),
+                            Column1 = row.Cells[0].Value.ToString(),
+                            Column2 = row.Cells[1].Value.ToString(),
+                            Column3 = row.Cells[2].Value.ToString()
+                        };
+                        dataList.Add(data);
+                    }
+                    catch { }
                 }
                 reportDto.Data = dataList.ToArray();
             }
@@ -480,7 +481,7 @@ namespace KmsReportClient.Report.Basic
             var column = new DataGridViewTextBoxColumn
             {
                 HeaderText = headerText1,
-                Width = 125,
+                Width = 50,
                 DataPropertyName = "RowNum",
                 Name = "RowNum",
                 SortMode = DataGridViewColumnSortMode.NotSortable
@@ -531,7 +532,7 @@ namespace KmsReportClient.Report.Basic
             var column = new DataGridViewTextBoxColumn
             {
                 HeaderText = headerText1,
-                Width = 125,
+                Width = 50,
                 DataPropertyName = "RowNum",
                 Name = "RowNum",
                 SortMode = DataGridViewColumnSortMode.NotSortable
