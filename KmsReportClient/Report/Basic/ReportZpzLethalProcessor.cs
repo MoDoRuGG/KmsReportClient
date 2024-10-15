@@ -140,7 +140,7 @@ namespace KmsReportClient.Report.Basic
         public override void ToExcel(string filename, string filialName)
         {
             var mm = YymmUtils.GetMonth(Report.Yymm.Substring(2, 2)) + " 20" + Report.Yymm.Substring(0, 2);
-            var excel = new ExcelZpzQCreator(filename, ExcelForm.ZpzQ, mm, filialName);
+            var excel = new ExcelZpzQCreator(filename, ExcelForm.ZpzLethal, mm, filialName);
             excel.CreateReport(Report, null);
         }
 

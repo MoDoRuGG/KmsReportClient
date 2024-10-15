@@ -71,7 +71,7 @@ namespace KmsReportClient.Report.Basic
                 foreach (DataGridViewRow row in Dgv.Rows)
                 {
                     var data = reportDto.Data[0];
-                    if (data == null)
+                    if (data == null) 
                     {
                         continue;
                     }
@@ -131,6 +131,9 @@ namespace KmsReportClient.Report.Basic
                     Dgv.Rows.Add(data.RowNum, data.Column1, data.Column2, data.Column3);
                 }
             }
+
+            //SetFormula();
+
             if (CurrentUser.IsMain)
             {
                 Dgv.AllowUserToAddRows = false;
@@ -894,5 +897,21 @@ namespace KmsReportClient.Report.Basic
             var inTheme = inReport.ReportDataList.Single(x => x.Theme == Cmb.Text);
             Report.ReportDataList[index] = inTheme;
         }
+
+
+        public void SetFormula()
+        {
+            if (GetCurrentTheme() == "Таблица 2")
+            {
+                foreach (DataGridViewRow row in Dgv.Rows)
+                {
+                    if (row.Cells[1].Value == "1.")
+                    { 
+                        
+                    }
+                }
+            }
+        }
+
     }
 }
