@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -16,6 +15,17 @@ namespace KmsReportClient.Report.Basic
     {
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
 
+        string[] _notSaveCells = new string[] { "1.", "1.а)", "1.б)", "1.в)", "1.1.", "1.2." };
+
+        private readonly string[] _forms2 = { "Таблица 2" };
+        private readonly string[] _forms346 = { "Таблица 3", "Таблица 4", "Таблица 6" };
+        private readonly string[] _forms159 = { "Таблица 1", "Таблица 5", "Таблица 9" };
+        private readonly string[] _forms3141 = { "Таблица 3.1", "Таблица 4.1" };
+        private readonly string[] _forms78 = { "Таблица 7", "Таблица 8" };
+
+        Dictionary<string, DataGridViewRow> _rows;
+
+
         public ReportDoffProcessor(EndpointSoap inClient, List<KmsReportDictionary> reportsDictionary, DataGridView dgv, ComboBox cmb, TextBox txtb, TabPage page) :
             base(inClient, dgv, cmb, txtb, page,
                 XmlFormTemplate.Doff.GetDescription(),
@@ -25,6 +35,25 @@ namespace KmsReportClient.Report.Basic
         {
             InitReport();
         }
+
+
+        private void SetStyle()
+        {
+            foreach (DataGridViewRow row in Dgv.Rows)
+            {
+                string rowNum = row.Cells[1].Value.ToString();
+                if (_notSaveCells.Contains(rowNum))
+                {
+                    row.DefaultCellStyle.BackColor = Color.LightGray;
+
+                    row.ReadOnly = true;
+                    row.DefaultCellStyle.Font = new Font(Dgv.DefaultCellStyle.Font, FontStyle.Bold);
+                }
+                row.Cells[3].Style.BackColor = Color.LightGray;
+                row.Cells[4].Style.BackColor = Color.LightGray;
+            }
+        }
+
 
         public override void InitReport()
         {
@@ -59,87 +88,20 @@ namespace KmsReportClient.Report.Basic
                 return;
             }
 
-            var reportDto = Report.ReportDataList.Single(x => x.Theme == form);
 
-            if (form == "Таблица 1" || form == "Таблица 5" || form == "Таблица 9")
+            else if (_forms159.Contains(form))
             {
-                if (reportDto.Data == null || reportDto.Data.Length == 0)
-                {
-                    return;
-                }
-
-                foreach (DataGridViewRow row in Dgv.Rows)
-                {
-                    var data = reportDto.Data[0];
-                    if (data == null) 
-                    {
-                        continue;
-                    }
-
-                    row.Cells[0].Value = data.Column1;
-
-                }
+                FillDgvForms159(Dgv, form);
+            }
+            else if (_forms2.Contains(form))
+            {
+                FillDgvForms2(Dgv, form);
+            }            
+            else if (_forms346.Contains(form))
+            {
+                FillDgvForms346(Dgv, form);
             }
 
-            else if (form == "Таблица 2" || form == "Таблица 3" || form == "Таблица 4" || form == "Таблица 6")
-            {
-                if (reportDto.Data == null || reportDto.Data.Length == 0)
-                {
-                    return;
-                }
-
-                foreach (DataGridViewRow row in Dgv.Rows)
-                {
-                    var code = row.Cells[1].Value;
-                    var data =
-                        reportDto.Data.SingleOrDefault(
-                            x => x.RowNum == code);
-                    if (data != null)
-                    {
-                        row.Cells[2].Value = data.Column1;
-                        row.Cells[3].Value = data.Column2;
-                        row.Cells[4].Value = data.Column3;
-                    }
-                }
-            }
-
-
-            else if (form == "Таблица 3.1" | form == "Таблица 4.1")
-            {
-                Dgv.Rows.Clear();
-                if (reportDto.Data == null)
-                {
-                    return;
-                }
-
-                foreach (var data in reportDto.Data)
-                {
-                    Dgv.Rows.Add(data.Column1, data.Column2, data.Column3);
-                }
-            }
-
-
-            else if (form == "Таблица 7" || form == "Таблица 8")
-            {
-                if (reportDto.Data == null || reportDto.Data.Length == 0)
-                {
-                    return;
-                }
-
-                foreach (var data in reportDto.Data)
-                {
-                    Dgv.Rows.Add(data.RowNum, data.Column1, data.Column2, data.Column3);
-                }
-            }
-
-            //SetFormula();
-
-            if (CurrentUser.IsMain)
-            {
-                Dgv.AllowUserToAddRows = false;
-                Dgv.AllowUserToDeleteRows = false;
-                Dgv.ReadOnly = true;
-            }
         }
 
         protected override void FillReport(string form)
@@ -148,91 +110,21 @@ namespace KmsReportClient.Report.Basic
             {
                 return;
             }
-
-            var reportDto = Report.ReportDataList.Single(x => x.Theme == form);
-
-            if (form == "Таблица 1" || form == "Таблица 5" || form == "Таблица 9")
+            if (_forms159.Contains(form))
             {
-                var dataList = new List<ReportDoffDataDto>();
-
-                foreach (DataGridViewRow row in Dgv.Rows)
-                {
-                    var data = new ReportDoffDataDto
-                    {
-                        Column1 = row.Cells[0].Value.ToString()
-                    };
-                    dataList.Add(data);
-                }
-
-                reportDto.Data = dataList.ToArray();
+                FillThemesForms159(Dgv, form);
             }
-            else if (form == "Таблица 2" || form == "Таблица 3" || form == "Таблица 4" || form == "Таблица 6")
+            else if (_forms2.Contains(form))
             {
-                var dataList = new List<ReportDoffDataDto>();
-
-                foreach (DataGridViewRow row in Dgv.Rows)
-                {
-                    var data = new ReportDoffDataDto
-                    {
-                        RowNum = row.Cells[1].Value.ToString(),
-                        Column1 = row.Cells[2].Value.ToString(),
-                        Column2 = row.Cells[3].Value.ToString(),
-                        Column3 = row.Cells[4].Value.ToString()
-                    };
-                    dataList.Add(data);
-                }
-
-                reportDto.Data = dataList.ToArray();
+                FillThemesForms2(Dgv, form);
+            }
+            else if (_forms346.Contains(form))
+            {
+                FillThemesForms346(Dgv, form);
             }
 
-            else if (form == "Таблица 3.1" || form == "Таблица 4.1")
-            {
-                var dataList = new List<ReportDoffDataDto>();
-
-                foreach (DataGridViewRow row in Dgv.Rows)
-                {
-                    try
-                    {
-                        var data = new ReportDoffDataDto
-                        {
-                            RowNum = (Convert.ToInt32(row.Index) + 1).ToString(),
-                            Column1 = row.Cells[0].Value.ToString(),
-                            Column2 = row.Cells[1].Value.ToString(),
-                            Column3 = row.Cells[2].Value.ToString()
-                        };
-                        dataList.Add(data);
-                    }
-                    catch { }
-                }
-                reportDto.Data = dataList.ToArray();
-            }
-
-
-            else if (form == "Таблица 7" || form == "Таблица 8")
-            {
-                var T78DataList = new List<ReportDoffDataDto>();
-                foreach (DataGridViewRow row in Dgv.Rows)
-                {
-                    string RowN = row.Cells[0].Value?.ToString() ?? "";
-                    if (string.IsNullOrEmpty(RowN))
-                    {
-                        continue;
-                    }
-
-                    var data = new ReportDoffDataDto
-                    {
-                        RowNum = row.Cells[0].Value.ToString(),
-                        Column1 = row.Cells[1].Value.ToString(),
-                        Column2 = row.Cells[2].Value.ToString(),
-                        Column3 = row.Cells[3].Value.ToString(),
-
-                    };
-                    T78DataList.Add(data);
-                }
-
-                reportDto.Data = T78DataList.ToArray();
-            }
         }
+
 
         public override void ToExcel(string filename, string filialName)
         {
@@ -285,7 +177,7 @@ namespace KmsReportClient.Report.Basic
             Report.Yymm = yymmEnd;
         }
 
-        public override bool IsVisibleBtnDownloadExcel() => false; // Cmb.Text == "Таблица 3";
+        public override bool IsVisibleBtnDownloadExcel() => false;
 
         public override bool IsVisibleBtnHandle()
         {
@@ -430,6 +322,13 @@ namespace KmsReportClient.Report.Basic
                 foreach (var row in table)
                 {
                     Dgv.Rows.Add(row.RowText_fromxml, row.RowNum_fromxml, "", "", "");
+
+                }
+                SetStyle();
+                _rows = new Dictionary<string, DataGridViewRow>();
+                foreach (DataGridViewRow row in Dgv.Rows)
+                {
+                    _rows.Add(row.Cells[1].Value.ToString(), row);
                 }
             }
             else if (form == "Таблица 3")
@@ -439,6 +338,12 @@ namespace KmsReportClient.Report.Basic
                 {
                     Dgv.Rows.Add(row.RowText_fromxml, row.RowNum_fromxml, "", "", "");
                 }
+                SetStyle();
+                _rows = new Dictionary<string, DataGridViewRow>();
+                foreach (DataGridViewRow row in Dgv.Rows)
+                {
+                    _rows.Add(row.Cells[1].Value.ToString(), row);
+                }
             }
             else if (form == "Таблица 4")
             {
@@ -447,6 +352,12 @@ namespace KmsReportClient.Report.Basic
                 {
                     Dgv.Rows.Add(row.RowText_fromxml, row.RowNum_fromxml, "", "", "");
                 }
+                SetStyle();
+                _rows = new Dictionary<string, DataGridViewRow>();
+                foreach (DataGridViewRow row in Dgv.Rows)
+                {
+                    _rows.Add(row.Cells[1].Value.ToString(), row);
+                }
             }
             else if (form == "Таблица 6")
             {
@@ -454,6 +365,12 @@ namespace KmsReportClient.Report.Basic
                 foreach (var row in table)
                 {
                     Dgv.Rows.Add(row.RowText_fromxml, row.RowNum_fromxml, "", "", "");
+                }
+                SetStyle();
+                _rows = new Dictionary<string, DataGridViewRow>();
+                foreach (DataGridViewRow row in Dgv.Rows)
+                {
+                    _rows.Add(row.Cells[1].Value.ToString(), row);
                 }
             }
             else if (form == "Таблица 7")
@@ -465,7 +382,10 @@ namespace KmsReportClient.Report.Basic
             {
                 Dgv.AllowUserToAddRows = true;
                 CreateDgvColumnsForTable8(Dgv);
+
             }
+
+
         }
 
         private void CreateDgvColumnsForTable7(DataGridView dgvReport)
@@ -623,6 +543,8 @@ namespace KmsReportClient.Report.Basic
                 SortMode = DataGridViewColumnSortMode.NotSortable
             };
             dgvReport.Columns.Add(column);
+
+
         }
 
         private void CreateDgvColumnsForTable3(DataGridView dgvReport)
@@ -869,22 +791,6 @@ namespace KmsReportClient.Report.Basic
         }
 
 
-        private ReportDoff FillYearReport()
-        {
-            var request = new CollectSummaryReportRequest
-            {
-                Body = new CollectSummaryReportRequestBody
-                {
-                    filials = new ArrayOfString { FilialCode },
-                    status = ReportStatus.Saved,
-                    yymmStart = Report.Yymm.Substring(0, 2) + "01",
-                    yymmEnd = Report.Yymm,
-                    reportType = ReportType.Doff
-                }
-            };
-            return Client.CollectSummaryReport(request).Body.CollectSummaryReportResult as ReportDoff;
-        }
-
         public override void MapForAutoFill(AbstractReport report)
         {
             if (report == null)
@@ -903,15 +809,257 @@ namespace KmsReportClient.Report.Basic
         {
             if (GetCurrentTheme() == "Таблица 2")
             {
-                foreach (DataGridViewRow row in Dgv.Rows)
+                foreach (var row in _rows.Reverse())
                 {
-                    if (row.Cells[1].Value == "1.")
-                    { 
-                        
+                    if (row.Key == "1.2.")
+                    {
+                        row.Value.Cells[2].Value = _rows.Where(x => x.Key == "1.2.а)" || x.Key == "1.2.б)" || x.Key == "1.2.в)").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                        row.Value.Cells[3].Value = _rows.Where(x => x.Key == "1.2.а)" || x.Key == "1.2.б)" || x.Key == "1.2.в)").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                        row.Value.Cells[4].Value = _rows.Where(x => x.Key == "1.2.а)" || x.Key == "1.2.б)" || x.Key == "1.2.в)").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[4].Value));
+                        continue;
                     }
+
+                    if (row.Key == "1.1.")
+                    {
+                        row.Value.Cells[2].Value = _rows.Where(x => x.Key == "1.1.а)" || x.Key == "1.1.б)" || x.Key == "1.1.в)").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                        row.Value.Cells[3].Value = _rows.Where(x => x.Key == "1.1.а)" || x.Key == "1.1.б)" || x.Key == "1.1.в)").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                        row.Value.Cells[4].Value = _rows.Where(x => x.Key == "1.1.а)" || x.Key == "1.1.б)" || x.Key == "1.1.в)").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[4].Value));
+                        continue;
+                    }
+
+                    if (row.Key == "1.а)")
+                    {
+                        row.Value.Cells[2].Value = _rows.Where(x => x.Key == "1.1.а)" || x.Key == "1.2.а)").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                        row.Value.Cells[3].Value = _rows.Where(x => x.Key == "1.1.а)" || x.Key == "1.2.а)").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                        row.Value.Cells[4].Value = _rows.Where(x => x.Key == "1.1.а)" || x.Key == "1.2.а)").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[4].Value));
+                        continue;
+                    }
+
+                    if (row.Key == "1.б)")
+                    {
+                        row.Value.Cells[2].Value = _rows.Where(x => x.Key == "1.1.б)" || x.Key == "1.2.б)").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                        row.Value.Cells[3].Value = _rows.Where(x => x.Key == "1.1.б)" || x.Key == "1.2.б)").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                        row.Value.Cells[4].Value = _rows.Where(x => x.Key == "1.1.б)" || x.Key == "1.2.б)").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[4].Value));
+                        continue;
+                    }
+
+                    if (row.Key == "1.в)")
+                    {
+                        row.Value.Cells[2].Value = _rows.Where(x => x.Key == "1.1.в)" || x.Key == "1.2.в)").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                        row.Value.Cells[3].Value = _rows.Where(x => x.Key == "1.1.в)" || x.Key == "1.2.в)").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                        row.Value.Cells[4].Value = _rows.Where(x => x.Key == "1.1.в)" || x.Key == "1.2.в)").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[4].Value));
+                        continue;
+                    }
+
+                    if (row.Key == "1.")
+                    {
+                        row.Value.Cells[2].Value = _rows.Where(x => x.Key == "1.1." || x.Key == "1.2.").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                        row.Value.Cells[3].Value = _rows.Where(x => x.Key == "1.1." || x.Key == "1.2.").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                        row.Value.Cells[4].Value = _rows.Where(x => x.Key == "1.1." || x.Key == "1.2.").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[4].Value));
+                        continue;
+                    }
+                }
+            }
+            else if (GetCurrentTheme() == "Таблица 3" || GetCurrentTheme() == "Таблица 4" || GetCurrentTheme() == "Таблица 6")
+            {
+                foreach (var row in _rows.Reverse())
+                    if (row.Key == "1.")
+                    {
+                        row.Value.Cells[2].Value = _rows.Where(x => x.Key == "1.1" || x.Key == "1.2").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                        row.Value.Cells[3].Value = _rows.Where(x => x.Key == "1.1" || x.Key == "1.2").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                        row.Value.Cells[4].Value = _rows.Where(x => x.Key == "1.1" || x.Key == "1.2").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[4].Value));
+                        continue;
+                    }
+
+            }
+
+        }
+
+        private void FillDgvForms159(DataGridView dgvReport, string form)
+        {
+            var reportDoffDto = Report.ReportDataList?.Single(x => x.Theme == form);
+            if (reportDoffDto?.Data == null || reportDoffDto.Data.Length == 0)
+            {
+                return;
+            }
+
+            var rows = ThemeTextData.Tables_fromxml.Where(x => x.TableName_fromxml == form).SelectMany(x => x.Rows_fromxml).ToList();
+            foreach (DataGridViewRow row in dgvReport.Rows)
+            {
+
+                var data = reportDoffDto.Data.SingleOrDefault();
+                if (data != null)
+                {
+                    row.Cells[0].Value = data.Column1.ToString();
+
                 }
             }
         }
 
+        private void FillDgvForms2(DataGridView dgvReport, string form)
+        {
+            var reportDoffDto = Report.ReportDataList?.Single(x => x.Theme == form);
+            if (reportDoffDto?.Data == null || reportDoffDto.Data.Length == 0)
+            {
+                return;
+            }
+
+            var rows = ThemeTextData.Tables_fromxml.Where(x => x.TableName_fromxml == form).SelectMany(x => x.Rows_fromxml).ToList();
+            foreach (DataGridViewRow row in dgvReport.Rows)
+            {
+                var rowNum = row.Cells[1].Value.ToString().Trim();
+                bool exclusionsRow = rows.Single(x => x.RowNum_fromxml == rowNum).Exclusion_fromxml;
+
+                var data = reportDoffDto.Data.SingleOrDefault(x => x.RowNum == rowNum);
+                if (data != null)
+                {
+                    row.Cells[2].Value = data.Column1.ToString();
+                }
+
+
+                var yearThemeData = Client.GetDoffYearData(new GetDoffYearDataRequest(new GetDoffYearDataRequestBody
+                {
+                    fillial = FilialCode,
+                    theme = form,
+                    yymm = Report.Yymm,
+                    rowNum = rowNum
+                })).Body.GetDoffYearDataResult;
+                if (yearThemeData != null)
+                {
+                    row.Cells[3].Value = yearThemeData.Column2;
+
+                }
+
+                var beginningThemeData = Client.GetDoffBeginningData(new GetDoffBeginningDataRequest(new GetDoffBeginningDataRequestBody
+                {
+                    fillial = FilialCode,
+                    theme = form,
+                    yymm = Report.Yymm,
+                    rowNum = rowNum
+                })).Body.GetDoffBeginningDataResult;
+                if (beginningThemeData != null)
+                {
+                    row.Cells[4].Value = beginningThemeData.Column3;
+
+                }
+            }
+
+            SetFormula();
+        }
+
+
+        private void FillDgvForms346(DataGridView dgvReport, string form)
+        {
+            var reportDoffDto = Report.ReportDataList?.Single(x => x.Theme == form);
+            if (reportDoffDto?.Data == null || reportDoffDto.Data.Length == 0)
+            {
+                return;
+            }
+
+            var rows = ThemeTextData.Tables_fromxml.Where(x => x.TableName_fromxml == form).SelectMany(x => x.Rows_fromxml).ToList();
+            foreach (DataGridViewRow row in dgvReport.Rows)
+            {
+                var rowNum = row.Cells[1].Value.ToString().Trim();
+                bool exclusionsRow = rows.Single(x => x.RowNum_fromxml == rowNum).Exclusion_fromxml;
+
+                var data = reportDoffDto.Data.SingleOrDefault(x => x.RowNum == rowNum);
+                if (data != null)
+                {
+                    row.Cells[2].Value = data.Column1.ToString();
+                }
+
+
+                var yearThemeData = Client.GetDoffYearData(new GetDoffYearDataRequest(new GetDoffYearDataRequestBody
+                {
+                    fillial = FilialCode,
+                    theme = form,
+                    yymm = Report.Yymm,
+                    rowNum = rowNum
+                })).Body.GetDoffYearDataResult;
+                if (yearThemeData != null)
+                {
+                    row.Cells[3].Value = yearThemeData.Column2;
+
+                }
+
+                var beginningThemeData = Client.GetDoffBeginningData(new GetDoffBeginningDataRequest(new GetDoffBeginningDataRequestBody
+                {
+                    fillial = FilialCode,
+                    theme = form,
+                    yymm = Report.Yymm,
+                    rowNum = rowNum
+                })).Body.GetDoffBeginningDataResult;
+                if (beginningThemeData != null)
+                {
+                    row.Cells[4].Value = beginningThemeData.Column3;
+
+                }
+            }
+
+            SetFormula();
+        }
+
+
+        private void FillThemesForms159(DataGridView dgvReport, string form)
+        {
+            var reportDto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
+            if (reportDto == null)
+            {
+                return;
+            }
+            {
+                var dataList = new List<ReportDoffDataDto>();
+
+                foreach (DataGridViewRow row in Dgv.Rows)
+                {
+                    var data = new ReportDoffDataDto
+                    {
+                        Column1 = row.Cells[0].Value.ToString()
+                    };
+                    dataList.Add(data);
+                }
+
+                reportDto.Data = dataList.ToArray();
+            }
+
+        }
+
+        private void FillThemesForms2(DataGridView dgvReport, string form)
+        {
+            var reportDoffDto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
+            if (reportDoffDto == null)
+            {
+                return;
+            }
+
+            reportDoffDto.Data = (from DataGridViewRow row in dgvReport.Rows
+                                  let rowNum = row.Cells[1].Value.ToString().Trim()
+                                  where !IsNotNeedFillRow(form, rowNum)
+                                  select new ReportDoffDataDto
+                                  {
+                                      RowNum = rowNum,
+                                      Column1 = row.Cells[2].Value.ToString(),
+                                  }).ToArray();
+        }
+
+
+
+        private void FillThemesForms346(DataGridView dgvReport, string form)
+        {
+            var reportDoffDto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
+            if (reportDoffDto == null)
+            {
+                return;
+            }
+
+            reportDoffDto.Data = (from DataGridViewRow row in dgvReport.Rows
+                                  let rowNum = row.Cells[1].Value.ToString().Trim()
+                                  where !IsNotNeedFillRow(form, rowNum)
+                                  select new ReportDoffDataDto
+                                  {
+                                      RowNum = rowNum,
+                                      Column1 = row.Cells[2].Value.ToString(),
+                                  }).ToArray();
+        }
     }
 }

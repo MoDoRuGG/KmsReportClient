@@ -3707,6 +3707,8 @@ namespace KmsReportClient.Forms
             this.DgvDoff.RowHeadersDefaultCellStyle = dataGridViewCellStyle84;
             this.DgvDoff.Size = new System.Drawing.Size(699, 272);
             this.DgvDoff.TabIndex = 8;
+            this.DgvDoff.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvDoff_CellBeginEdit);
+            this.DgvDoff.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDoff_CellEndEdit);
             // 
             // TbDoff
             // 

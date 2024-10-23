@@ -2266,6 +2266,12 @@ namespace KmsReportClient.Forms
 
         }
 
+        private void dgvDoff_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as ReportDoffProcessor).SetFormula();
+
+        }
+
 
         private void dgvTarAllow_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
@@ -2277,6 +2283,12 @@ namespace KmsReportClient.Forms
         private void dgvPVPLoad_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
             (_processor as ReportPVPLoadProcessor).SetFormula();
+
+        }
+
+        private void dgvDoff_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            (_processor as ReportDoffProcessor).SetFormula();
 
         }
 
