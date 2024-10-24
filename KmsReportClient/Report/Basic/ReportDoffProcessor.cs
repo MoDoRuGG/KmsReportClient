@@ -96,10 +96,18 @@ namespace KmsReportClient.Report.Basic
             else if (_forms2.Contains(form))
             {
                 FillDgvForms2(Dgv, form);
-            }            
+            }
             else if (_forms346.Contains(form))
             {
                 FillDgvForms346(Dgv, form);
+            }
+            else if (_forms3141.Contains(form))
+            {
+                FillDgvForms3141(Dgv, form);
+            }
+            else if (_forms78.Contains(form))
+            {
+                FillDgvForms78(Dgv, form);
             }
 
         }
@@ -121,6 +129,14 @@ namespace KmsReportClient.Report.Basic
             else if (_forms346.Contains(form))
             {
                 FillThemesForms346(Dgv, form);
+            }
+            else if (_forms3141.Contains(form))
+            {
+                FillThemesForms3141(Dgv, form);
+            }
+            else if (_forms78.Contains(form))
+            {
+                FillThemesForms78(Dgv, form);
             }
 
         }
@@ -303,17 +319,29 @@ namespace KmsReportClient.Report.Basic
             else if (form == "Таблица 3.1")
             {
                 CreateDgvColumnsForTable3_1(Dgv);
-                foreach (var row in table)
+                int RowCounter = Report.ReportDataList[3].Data == null ? 0 : Report.ReportDataList[3].Data.Length;
+                if (RowCounter > 0)
                 {
-                    Dgv.Rows.Add("");
+                    for (int i = 0; i < RowCounter; i++)
+                        Dgv.Rows.Add();
+                }
+                else
+                {
+                    Dgv.Rows.Add();
                 }
             }
             else if (form == "Таблица 4.1")
             {
                 CreateDgvColumnsForTable4_1(Dgv);
-                foreach (var row in table)
+                int RowCounter = Report.ReportDataList[5].Data == null ? 0 : Report.ReportDataList[5].Data.Length;
+                if (RowCounter > 0)
                 {
-                    Dgv.Rows.Add("");
+                    for (int i = 0; i < RowCounter; i++)
+                        Dgv.Rows.Add();
+                }
+                else
+                {
+                    Dgv.Rows.Add();
                 }
             }
             else if (form == "Таблица 2")
@@ -373,33 +401,62 @@ namespace KmsReportClient.Report.Basic
                     _rows.Add(row.Cells[1].Value.ToString(), row);
                 }
             }
-            else if (form == "Таблица 7")
+            if (form == "Таблица 7")
             {
                 Dgv.AllowUserToAddRows = true;
                 CreateDgvColumnsForTable7(Dgv);
+                int RowCounter = Report.ReportDataList[9].Data == null ? 0 : Report.ReportDataList[9].Data.Length;
+                if (RowCounter > 0)
+                {
+                    for (int i = 0; i < RowCounter; i++)
+                        Dgv.Rows.Add(i + 1, "", "", ""); // Добавляем с нумерацией
+                }
+                else
+                {
+                    Dgv.Rows.Add("1", "", "", ""); // Если нет данных, добавляем строку с "1"
+                }
+
+                // Подписка на событие добавления строки
+                Dgv.UserAddedRow += (sender, e) => UpdateRowNumbers(Dgv);
             }
             else if (form == "Таблица 8")
             {
                 Dgv.AllowUserToAddRows = true;
                 CreateDgvColumnsForTable8(Dgv);
+                int RowCounter = Report.ReportDataList[10].Data == null ? 0 : Report.ReportDataList[10].Data.Length;
+                if (RowCounter > 0)
+                {
+                    for (int i = 0; i < RowCounter; i++)
+                        Dgv.Rows.Add(i + 1, "", "", ""); // Добавляем с нумерацией
+                }
+                else
+                {
+                    Dgv.Rows.Add("1", "", "", ""); // Если нет данных, добавляем строку с "1"
+                }
 
+                // Подписка на событие добавления строки
+                Dgv.UserAddedRow += (sender, e) => UpdateRowNumbers(Dgv);
             }
+        }
 
-
+        // Метод для обновления нумерации строк
+        private void UpdateRowNumbers(DataGridView dgv)
+        {
+            for (int i = 0; i < dgv.Rows.Count - 1; i++) // Пропускаем последнюю пустую строку
+            {
+                dgv.Rows[i].Cells[0].Value = (i + 1).ToString(); // Обновляем первую ячейку с нумерацией
+            }
         }
 
         private void CreateDgvColumnsForTable7(DataGridView dgvReport)
         {
             dgvReport.AllowUserToAddRows = true;
             dgvReport.ColumnHeadersVisible = true;
-            var headerText1 =
-                "№ п/п";
-            var headerText2 =
-                "Дата проведения (дд.мм.гггг)";
-            var headerText3 =
-                "Вид мероприятия, наименование, инициатор (руководитель мероприятия)";
-            var headerText4 =
-                "Краткое содержание, относящееся к тематике соглашения (участники, темы обсуждения, решения)";
+
+            var headerText1 = "№ п/п";
+            var headerText2 = "Дата проведения (дд.мм.гггг)";
+            var headerText3 = "Вид мероприятия, наименование, инициатор (руководитель мероприятия)";
+            var headerText4 = "Краткое содержание, относящееся к тематике соглашения (участники, темы обсуждения, решения)";
 
             var column = new DataGridViewTextBoxColumn
             {
@@ -407,9 +464,11 @@ namespace KmsReportClient.Report.Basic
                 Width = 50,
                 DataPropertyName = "RowNum",
                 Name = "RowNum",
-                SortMode = DataGridViewColumnSortMode.NotSortable
+                SortMode = DataGridViewColumnSortMode.NotSortable,
+                ReadOnly = true // Делаем колонку только для чтения
             };
             dgvReport.Columns.Add(column);
+
             column = new DataGridViewTextBoxColumn
             {
                 HeaderText = headerText2,
@@ -419,6 +478,7 @@ namespace KmsReportClient.Report.Basic
                 SortMode = DataGridViewColumnSortMode.NotSortable
             };
             dgvReport.Columns.Add(column);
+
             column = new DataGridViewTextBoxColumn
             {
                 HeaderText = headerText3,
@@ -428,6 +488,7 @@ namespace KmsReportClient.Report.Basic
                 SortMode = DataGridViewColumnSortMode.NotSortable
             };
             dgvReport.Columns.Add(column);
+
             column = new DataGridViewTextBoxColumn
             {
                 HeaderText = headerText4,
@@ -458,7 +519,8 @@ namespace KmsReportClient.Report.Basic
                 Width = 50,
                 DataPropertyName = "RowNum",
                 Name = "RowNum",
-                SortMode = DataGridViewColumnSortMode.NotSortable
+                SortMode = DataGridViewColumnSortMode.NotSortable,
+                ReadOnly = true,
             };
             dgvReport.Columns.Add(column);
             column = new DataGridViewTextBoxColumn
@@ -757,6 +819,7 @@ namespace KmsReportClient.Report.Basic
                 Name = "Unit3",
             };
             dgvReport.Columns.Add(column);
+ 
         }
 
 
@@ -895,6 +958,72 @@ namespace KmsReportClient.Report.Basic
                 }
             }
         }
+
+
+        private void FillDgvForms3141(DataGridView dgvReport, string form)
+        {
+            // Извлекаем данные из Report
+            var reportDoffDto = Report.ReportDataList?.SingleOrDefault(x => x.Theme == form);
+            if (reportDoffDto?.Data == null || reportDoffDto.Data.Length == 0)
+            {
+                return;
+            }
+
+            // Получаем строки из ThemeTextData для данного form
+            var rowsFromXml = ThemeTextData.Tables_fromxml
+                                .Where(x => x.TableName_fromxml == form)
+                                .SelectMany(x => x.Rows_fromxml)
+                                .ToList();
+
+            // Проходим по всем строкам из reportDoffDto.Data и заполняем DataGridView
+            for (int i = 0; i < reportDoffDto.Data.Length && i < dgvReport.Rows.Count; i++)
+            {
+                var data = reportDoffDto.Data[i];  // Берем каждую строку данных
+
+                if (data != null)
+                {
+                    // Заполняем строки DataGridView
+                    dgvReport.Rows[i].Cells[0].Value = data.Column1;
+                    dgvReport.Rows[i].Cells[1].Value = data.Column2;
+                    dgvReport.Rows[i].Cells[2].Value = data.Column3;
+                }
+            }
+        }
+
+
+
+
+        private void FillDgvForms78(DataGridView dgvReport, string form)
+        {
+            // Извлекаем данные из Report
+            var reportDoffDto = Report.ReportDataList?.SingleOrDefault(x => x.Theme == form);
+            if (reportDoffDto?.Data == null || reportDoffDto.Data.Length == 0)
+            {
+                return;
+            }
+
+            // Получаем строки из ThemeTextData для данного form
+            var rowsFromXml = ThemeTextData.Tables_fromxml
+                                .Where(x => x.TableName_fromxml == form)
+                                .SelectMany(x => x.Rows_fromxml)
+                                .ToList();
+
+            // Проходим по всем строкам из reportDoffDto.Data и заполняем DataGridView
+            for (int i = 0; i < reportDoffDto.Data.Length && i < dgvReport.Rows.Count; i++)
+            {
+                var data = reportDoffDto.Data[i];  // Берем каждую строку данных
+
+                if (data != null)
+                {
+                    // Заполняем строки DataGridView
+                    dgvReport.Rows[i].Cells[0].Value = data.RowNum;
+                    dgvReport.Rows[i].Cells[1].Value = data.Column1;
+                    dgvReport.Rows[i].Cells[2].Value = data.Column2;
+                    dgvReport.Rows[i].Cells[3].Value = data.Column3;
+                }
+            }
+        }
+
 
         private void FillDgvForms2(DataGridView dgvReport, string form)
         {
@@ -1059,6 +1188,50 @@ namespace KmsReportClient.Report.Basic
                                   {
                                       RowNum = rowNum,
                                       Column1 = row.Cells[2].Value.ToString(),
+                                  }).ToArray();
+        }
+
+        private void FillThemesForms3141(DataGridView dgvReport, string form)
+        {
+            // Поиск соответствующего отчета
+            var reportDoffDto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
+            if (reportDoffDto == null)
+            {
+                return;
+            }
+
+            // Сбор данных из DataGridView, с фильтрацией пустых строк
+            reportDoffDto.Data = (from DataGridViewRow row in dgvReport.Rows
+                                  where row.Cells[0].Value != null && !string.IsNullOrWhiteSpace(row.Cells[0].Value.ToString()) // Проверка непустых значений
+                                  select new ReportDoffDataDto
+                                  {
+                                      RowNum = (row.Index + 1).ToString(),
+                                      Column1 = row.Cells[0].Value?.ToString(),
+                                      Column2 = row.Cells[1].Value?.ToString(),
+                                      Column3 = row.Cells[2].Value?.ToString(),
+                                  }).ToArray();
+        }
+
+
+
+        private void FillThemesForms78(DataGridView dgvReport, string form)
+        {
+            // Поиск соответствующего отчета
+            var reportDoffDto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
+            if (reportDoffDto == null)
+            {
+                return;
+            }
+
+            // Сбор данных из DataGridView, с фильтрацией пустых строк
+            reportDoffDto.Data = (from DataGridViewRow row in dgvReport.Rows
+                                  where row.Cells[0].Value != null && !string.IsNullOrWhiteSpace(row.Cells[0].Value.ToString()) // Проверка непустых значений
+                                  select new ReportDoffDataDto
+                                  {
+                                      RowNum = row.Cells[0].Value?.ToString(),
+                                      Column1 = row.Cells[1].Value?.ToString(),
+                                      Column2 = row.Cells[2].Value?.ToString(),
+                                      Column3 = row.Cells[3].Value?.ToString(),
                                   }).ToArray();
         }
     }
