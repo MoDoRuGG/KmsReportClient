@@ -94,7 +94,7 @@ namespace KmsReportClient.Report.Basic
         {
             if (GetCurrentTheme() != "Таблица 5А")
             {
-                if (Report.IdType == "Zpz10") { Dgv.Columns.Add("Total", "С начала года"); }
+                if (Report.IdType == "Zpz10" || Report.IdType == "Zpz10_2025") { Dgv.Columns.Add("Total", "С начала года"); }
                 else { Dgv.Columns.Add("Total", "Итого"); }
 
                 Dgv.Columns["Total"].ReadOnly = true;
@@ -121,7 +121,7 @@ namespace KmsReportClient.Report.Basic
                         Dgv.Columns["TotalPlanCel"].DefaultCellStyle.BackColor = Color.Gray;
                     }
                 }
-                if (Report.IdType == "Zpz" || Report.IdType == "Zpz_Q")
+                if (Report.IdType == "Zpz" || Report.IdType == "Zpz_Q" || Report.IdType == "Zpz2025" || Report.IdType == "Zpz_Q2025")
                 {
                     if (GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 7")
                     {
@@ -174,7 +174,7 @@ namespace KmsReportClient.Report.Basic
                                 }
                                 /// НА ДАННОМ ЭТАПЕ ПРОБЕГАЕМ ДЛЯ КАЖДОЙ СТРОКИ ОТЧЕТА ПО ЯЧЕЙКАМ и СУММИРУЕМ ЗНАЧЕНИЯ ДЛЯ ЦЕЛЕВЫХ (2-3-4-6) И ПЛАНОВЫХ (8-9-10-12), ПОКА ПРОСТО В ПЕРЕМЕННЫЕ valueCel и valuePlan ///
                             }
-                            else if ((Report.IdType == "Zpz" || Report.IdType == "Zpz_Q") && (GetCurrentTheme() == "Таблица 5А" || GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 7"))
+                            else if ((Report.IdType == "Zpz" || Report.IdType == "Zpz_Q" || Report.IdType == "Zpz2025" || Report.IdType == "Zpz_Q2025") && (GetCurrentTheme() == "Таблица 5А" || GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 7"))
                             {
                                 if (Dgv.Rows[row].Cells[cell].ColumnIndex == 2 || Dgv.Rows[row].Cells[cell].ColumnIndex == 3 || Dgv.Rows[row].Cells[cell].ColumnIndex == 4 || Dgv.Rows[row].Cells[cell].ColumnIndex == 6)
                                 {
@@ -209,7 +209,7 @@ namespace KmsReportClient.Report.Basic
                                 }
                                 else
                                 {
-                                    if (Report.IdType == "Zpz" && GetCurrentTheme() == "Таблица 1")
+                                    if ((Report.IdType == "Zpz" || Report.IdType == "Zpz2025") && GetCurrentTheme() == "Таблица 1")
                                     {
                                         if (Dgv.Rows[row].Cells[cell].ColumnIndex != 4) { valueCel += GlobalUtils.TryParseInt(Dgv.Rows[row].Cells[cell].Value); }
                                     }
@@ -228,7 +228,7 @@ namespace KmsReportClient.Report.Basic
                         Dgv.Rows[row].Cells["TotalPlanCel"].Value = valuePlan + valueCel; // Итого цел + план
                         // Пишем в DGV значения и сумму
                     }
-                    else if ((Report.IdType == "Zpz" || Report.IdType == "Zpz_Q") && (GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 7"))
+                    else if ((Report.IdType == "Zpz" || Report.IdType == "Zpz_Q" || Report.IdType == "Zpz2025" || Report.IdType == "Zpz_Q2025") && (GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 7"))
                     {
                         Dgv.Rows[row].Cells["Total"].Value = valueCel; //Целевые
                         Dgv.Rows[row].Cells["TotalPlan"].Value = valuePlan; // Плановые
@@ -468,7 +468,7 @@ namespace KmsReportClient.Report.Basic
 
             CreateDgvForForm(form, table);
 
-            if (Report.IdType == "PG" || Report.IdType == "PG_Q" || Report.IdType == "foped" || Report.IdType == "Zpz_Q" || Report.IdType == "Zpz" || Report.IdType == "ZpzLethal"/**|| Report.IdType == "Zpz10"**/)
+            if (Report.IdType == "PG" || Report.IdType == "PG_Q" || Report.IdType == "foped" || Report.IdType == "Zpz_Q" || Report.IdType == "Zpz" || Report.IdType == "ZpzLethal" || Report.IdType == "Zpz_Q2025" || Report.IdType == "Zpz2025" || Report.IdType == "ZpzL2025"/**|| Report.IdType == "Zpz10"**/)
                 CreateTotalColumn();
 
         }
@@ -526,7 +526,7 @@ namespace KmsReportClient.Report.Basic
                 info += $"Пользователь: {GetUser(Report.UserToCo)}; " + Environment.NewLine;
             }
 
-            if (Report.IdType == "PG" || Report.IdType == "Zpz")
+            if (Report.IdType == "PG" || Report.IdType == "Zpz" || Report.IdType == "Zpz2025")
             {
                 info += "Данные вносились вручную: " + (Report.DataSource.ToString() != "Handle" ? "Нет; " : "Да; ") + Environment.NewLine;
             }

@@ -7,18 +7,18 @@ using Microsoft.Office.Interop.Excel;
 
 namespace KmsReportClient.Excel.Creator.Consolidate
 {
-    class ExcelControlZpz2023FullCreator : ExcelBaseCreator<CReportZpz2023Full[]>
+    class ExcelControlZpz2025FullCreator : ExcelBaseCreator<CReportZpz2025Full[]>
     {
         private const int StartPositionExpertises = 6;
         private const int StartPositionFinance = 7;
         private string _year;
 
-        public ExcelControlZpz2023FullCreator(
+        public ExcelControlZpz2025FullCreator(
             string filename,
             string header,
-            string filialName) : base(filename, ExcelForm.ControlZpz2023Full, header, filialName, false) { }
+            string filialName) : base(filename, ExcelForm.ControlZpz2025Full, header, filialName, false) { }
 
-        protected override void FillReport(CReportZpz2023Full[] reports, CReportZpz2023Full[] yearReport)
+        protected override void FillReport(CReportZpz2025Full[] reports, CReportZpz2025Full[] yearReport)
         {
             FillExpertises(reports);
             FillFinance(reports);
@@ -26,7 +26,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
 
         
 
-        private void FillFinance(CReportZpz2023Full[] reports)
+        private void FillFinance(CReportZpz2025Full[] reports)
         {
             var finance = reports.Select(r => new { r.Filial, r.Finance1Q, r.Finance2Q, r.Finance3Q, r.Finance4Q }).ToList();
 
@@ -67,7 +67,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
             }
         }
 
-        private void FillExpertises(CReportZpz2023Full[] reports)
+        private void FillExpertises(CReportZpz2025Full[] reports)
         {
             var expertises = reports.Select(r => new { r.Filial, r.Expertise1Q, r.Expertise2Q, r.Expertise3Q, r.Expertise4Q }).ToList();
 

@@ -13,7 +13,7 @@ using NLog;
 
 namespace KmsReportClient.Report.Basic
 {
-    class ReportZpzProcessor : AbstractReportProcessor<ReportZpz>
+    class ReportZpz2025Processor : AbstractReportProcessor<ReportZpz2025>
     {
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
 
@@ -22,7 +22,6 @@ namespace KmsReportClient.Report.Basic
         private readonly string[] _forms1 = { "Таблица 10", "Таблица 4", "Таблица 8" };
         private readonly string[] _forms2 = { "Таблица 2", "Таблица 3" };
         private readonly string[] _forms67 = { "Таблица 6", "Таблица 7" };
-
 
         private readonly string[][] _headers = {
             new[]
@@ -90,19 +89,17 @@ namespace KmsReportClient.Report.Basic
             { "Таблица 2", "Количество спорных случаев (сумма возмещения ущерба, причиненного застрахованным лицам)" },
             { "Таблица 3", "Виды обращений" },
             { "Таблица 4", "Количество исков в порядке регресса (сумма средств, полученных по регрессным искам)" },
-            //{ "Таблица 5", "Количество проведенного медико-экономического контроля медицинской помощи (далее - МЭК) (выявленных нарушений)" },
             { "Таблица 6", "Количество проведенных медико-экономических экспертиз медицинской помощи (далее - МЭЭ) (выявленных нарушений)" },
             { "Таблица 7", "Количество проведенных экспертиз качества медицинской помощи (далее - ЭКМП) (выявленных нарушений)" },
             { "Таблица 8", "Финансовые результаты" },
             { "Таблица 9", "Специалисты, участвующие в защите прав застрахованных лиц" },
-            //{ "Таблица 10", "Численность проинформированных застрахованных лиц" },        
         };
 
-        public ReportZpzProcessor(EndpointSoap inClient, List<KmsReportDictionary> reportsDictionary, DataGridView dgv, ComboBox cmb, TextBox txtb, TabPage page) :
+        public ReportZpz2025Processor(EndpointSoap inClient, List<KmsReportDictionary> reportsDictionary, DataGridView dgv, ComboBox cmb, TextBox txtb, TabPage page) :
             base(inClient, dgv, cmb, txtb, page,
-                XmlFormTemplate.Zpz.GetDescription(),
+                XmlFormTemplate.Zpz2025.GetDescription(),
                 Log,
-                ReportGlobalConst.ReportZpz,
+                ReportGlobalConst.ReportZpz2025,
                 reportsDictionary)
         {
             InitReport();
@@ -110,12 +107,12 @@ namespace KmsReportClient.Report.Basic
 
         public override void InitReport()
         {
-            Report = new ReportZpz { ReportDataList = new ReportZpzDto[ThemesList.Count], IdType = IdReportType };
+            Report = new ReportZpz2025 { ReportDataList = new ReportZpz2025Dto[ThemesList.Count], IdType = IdReportType };
 
             int i = 0;
             foreach (var theme in ThemesList.Select(x => x.Key))
             {
-                Report.ReportDataList[i++] = new ReportZpzDto { Theme = theme };
+                Report.ReportDataList[i++] = new ReportZpz2025Dto { Theme = theme };
             }
         }
 
@@ -127,11 +124,11 @@ namespace KmsReportClient.Report.Basic
                 {
                     filialCode = FilialCode,
                     yymm = yymm,
-                    reportType = ReportType.Zpz
+                    reportType = ReportType.Zpz2025
                 }
             };
             var response = Client.GetReport(request)?.Body?.GetReportResult;
-            return response as ReportZpz;
+            return response as ReportZpz2025;
         }
 
         public override void MapForAutoFill(AbstractReport report)
@@ -140,7 +137,7 @@ namespace KmsReportClient.Report.Basic
             {
                 return;
             }
-            var inReport = report as ReportZpz;
+            var inReport = report as ReportZpz2025;
 
             var index = Report.ReportDataList.ToList().FindIndex(x => x.Theme == Cmb.Text);
             var inTheme = inReport.ReportDataList.Single(x => x.Theme == Cmb.Text);
@@ -178,13 +175,14 @@ namespace KmsReportClient.Report.Basic
                 FillDgwForms5(Dgv, form);
             }
 
-
             if (Report.DataSource != DataSource.Handle)
             {
                 Dgv.DefaultCellStyle.BackColor = Color.LightGray;
             }
             else
-            { Dgv.DefaultCellStyle.BackColor = Color.Azure; }
+            {
+                Dgv.DefaultCellStyle.BackColor = Color.Azure;
+            }
             SetTotalColumn();
         }
 
@@ -220,9 +218,7 @@ namespace KmsReportClient.Report.Basic
             }
         }
 
-        
         public override bool IsVisibleBtnDownloadExcel() => true;
-
         public override bool IsVisibleBtnHandle() => true;
         public override bool IsVisibleBtnSummary() => false;
 
@@ -254,92 +250,49 @@ namespace KmsReportClient.Report.Basic
                 decimal gr9Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountStacVmp);
                 decimal gr11 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountOutOfSmoAnother);
                 decimal gr11Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountOutOfSmoAnother);
-                decimal gr12 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountAmbulatoryAnother);
-                decimal gr12Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountAmbulatoryAnother);
-                decimal gr13 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountDsAnother);
-                decimal gr13Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountDsAnother);
-                decimal gr14 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountDsVmpAnother);
-                decimal gr14Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountDsVmpAnother);
-                decimal gr15 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountStacAnother);
-                decimal gr15Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountStacAnother);
-                decimal gr16 = data.Data.Where(x => x.Code == "2").Sum(x => x.CountStacVmpAnother);
-                decimal gr16Another = data.Data.Where(x => x.Code.StartsWith("2") && x.Code.Length == 3).Sum(x => x.CountStacVmpAnother);
+
                 if (gr4 < gr4Another)
                 {
-                    localMessage += $"гр.4 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
+                    localMessage += $"В строке 2 сумма гр.4 должна быть больше или равна сумме строк {lastSumRow} гр.4\n";
                 }
-
                 if (gr5 < gr5Another)
                 {
-                    localMessage += $"гр.5 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
+                    localMessage += $"В строке 2 сумма гр.5 должна быть больше или равна сумме строк {lastSumRow} гр.5\n";
                 }
-
                 if (gr6 < gr6Another)
                 {
-                    localMessage += $"гр.6 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
+                    localMessage += $"В строке 2 сумма гр.6 должна быть больше или равна сумме строк {lastSumRow} гр.6\n";
                 }
-
                 if (gr7 < gr7Another)
                 {
-                    localMessage += $"гр.7 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
+                    localMessage += $"В строке 2 сумма гр.7 должна быть больше или равна сумме строк {lastSumRow} гр.7\n";
                 }
-
                 if (gr8 < gr8Another)
                 {
-                    localMessage += $"гр.8 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
+                    localMessage += $"В строке 2 сумма гр.8 должна быть больше или равна сумме строк {lastSumRow} гр.8\n";
                 }
-
                 if (gr9 < gr9Another)
                 {
-                    localMessage += $"гр.9 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
+                    localMessage += $"В строке 2 сумма гр.9 должна быть больше или равна сумме строк {lastSumRow} гр.9\n";
                 }
-
                 if (gr11 < gr11Another)
                 {
-                    localMessage += $"гр.11 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
+                    localMessage += $"В строке 2 сумма гр.11 должна быть больше или равна сумме строк {lastSumRow} гр.11\n";
                 }
 
-                if (gr12 < gr12Another)
+                if (!string.IsNullOrEmpty(localMessage))
                 {
-                    localMessage += $"гр.12 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
-                }
-
-                if (gr13 < gr13Another)
-                {
-                    localMessage += $"гр.13 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
-                }
-
-                if (gr14 < gr14Another)
-                {
-                    localMessage += $"гр.14 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
-                }
-
-                if (gr15 < gr15Another)
-                {
-                    localMessage += $"гр.15 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
-                }
-
-                if (gr16 < gr16Another)
-                {
-                    localMessage += $"гр.16 - значение стр.2 должно быть больше или равна сумме строк 2.1, 2.2, 2.3, 2.4, {lastSumRow} \r\n";
-                }
-
-                if (localMessage.Length > 0)
-                {
-                    message += $"{data.Theme}. \r\n {localMessage}";
+                    message += $"Тема {data.Theme}\n" + localMessage;
                 }
             }
-            if (message.Length > 0)
-            {
-                message = "Форма ЗПЗ. " + Environment.NewLine + message;
-            }
+
             return message;
         }
 
         public override void ToExcel(string filename, string filialName)
         {
             var mm = YymmUtils.GetMonth(Report.Yymm.Substring(2, 2)) + " 20" + Report.Yymm.Substring(0, 2);
-            var excel = new ExcelZpzCreator(filename, ExcelForm.Zpz, mm, filialName);
+            var excel = new ExcelZpz2025Creator(filename, ExcelForm.Zpz2025, mm, filialName);
             excel.CreateReport(Report, null);
         }
 
@@ -348,20 +301,19 @@ namespace KmsReportClient.Report.Basic
             var request = new SaveReportRequest
             {
                 Body = new SaveReportRequestBody
-                
+
                 {
                     filialCode = CurrentUser.FilialCode,
                     idUser = CurrentUser.IdUser,
                     report = Report,
                     yymm = Report.Yymm,
-                    reportType = ReportType.Zpz
+                    reportType = ReportType.Zpz2025
                 }
             };
-            var response = Client.SaveReport(request).Body.SaveReportResult as ReportZpz;
+            var response = Client.SaveReport(request).Body.SaveReportResult as ReportZpz2025;
             Report.IdFlow = response.IdFlow;
             Report.Status = response.Status;
             Report.DataSource = response.DataSource;
-            
         }
 
         public override void SaveReportDataSourceExcel()
@@ -375,14 +327,13 @@ namespace KmsReportClient.Report.Basic
                     filialCode = CurrentUser.FilialCode,
                     idUser = CurrentUser.IdUser,
                     yymm = Report.Yymm,
-                    reportType = ReportType.Zpz
+                    reportType = ReportType.Zpz2025
                 }
             };
-            var response = Client.SaveReportDataSourceExcel(request).Body.SaveReportDataSourceExcelResult as ReportZpz;
+            var response = Client.SaveReportDataSourceExcel(request).Body.SaveReportDataSourceExcelResult as ReportZpz2025;
             Report.IdFlow = response.IdFlow;
             Report.Status = response.Status;
             Report.DataSource = response.DataSource;
-
         }
 
         public override void SaveReportDataSourceHandle()
@@ -396,14 +347,13 @@ namespace KmsReportClient.Report.Basic
                     filialCode = CurrentUser.FilialCode,
                     idUser = CurrentUser.IdUser,
                     yymm = Report.Yymm,
-                    reportType = ReportType.Zpz
+                    reportType = ReportType.Zpz2025
                 }
             };
-            var response = Client.SaveReportDataSourceHandle(request).Body.SaveReportDataSourceHandleResult as ReportZpz;
+            var response = Client.SaveReportDataSourceHandle(request).Body.SaveReportDataSourceHandleResult as ReportZpz2025;
             Report.IdFlow = response.IdFlow;
             Report.Status = response.Status;
             Report.DataSource = response.DataSource;
-
         }
 
         public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status, DataSource datasource)
@@ -418,11 +368,11 @@ namespace KmsReportClient.Report.Basic
                     status = status,
                     yymmStart = yymmStart,
                     yymmEnd = yymmEnd,
-                    reportType = ReportType.Zpz
+                    reportType = ReportType.Zpz2025
                 }
             };
             var response = Client.CollectSummaryReport(request);
-            Report = response.Body.CollectSummaryReportResult as ReportZpz;
+            Report = response.Body.CollectSummaryReportResult as ReportZpz2025;
             Report.IdType = IdReportType;
             Report.Yymm = yymmEnd;
         }
@@ -524,117 +474,101 @@ namespace KmsReportClient.Report.Basic
                 }
             };
             dgvReport.Columns.Add(column);
-
         }
 
         private void FillThemesForms2(DataGridView dgvReport, string form)
         {
-            var reportZpzDto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
-            if (reportZpzDto != null)
+            var reportZpz2025Dto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
+            if (reportZpz2025Dto != null)
             {
-                reportZpzDto.Data = (from DataGridViewRow row in dgvReport.Rows
-                                    let rowNum = row.Cells[1].Value.ToString().Trim()
-                                    where !IsNotNeedFillRow(form, rowNum)
-                                    select new ReportZpzDataDto
-                                    {
-                                        Code = rowNum,
-                                        CountSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
-                                        CountInsured = GlobalUtils.TryParseDecimal(row.Cells[3].Value),
-                                        CountInsuredRepresentative = GlobalUtils.TryParseDecimal(row.Cells[4].Value),
-                                        CountTfoms = GlobalUtils.TryParseDecimal(row.Cells[5].Value),
-                                        CountSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[6].Value),
-                                        CountProsecutor = GlobalUtils.TryParseDecimal(row.Cells[7].Value)
-                                    }).ToArray();
+                reportZpz2025Dto.Data = (from DataGridViewRow row in dgvReport.Rows
+                                         let rowNum = row.Cells[1].Value.ToString().Trim()
+                                         where !IsNotNeedFillRow(form, rowNum)
+                                         select new ReportZpz2025DataDto
+                                         {
+                                             Code = rowNum,
+                                             CountSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
+                                             CountInsured = GlobalUtils.TryParseDecimal(row.Cells[3].Value),
+                                             CountInsuredRepresentative = GlobalUtils.TryParseDecimal(row.Cells[4].Value),
+                                             CountTfoms = GlobalUtils.TryParseDecimal(row.Cells[5].Value),
+                                             CountSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[6].Value),
+                                             CountProsecutor = GlobalUtils.TryParseDecimal(row.Cells[7].Value)
+                                         }).ToArray();
             }
         }
 
         private void FillThemesForms3(DataGridView dgvReport, string form)
         {
-            var reportZpzDto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
-            if (reportZpzDto == null)
+            var reportZpz2025Dto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
+            if (reportZpz2025Dto == null)
             {
                 return;
             }
 
-            reportZpzDto.Data = (from DataGridViewRow row in dgvReport.Rows
-                                let rowNum = row.Cells[1].Value.ToString().Trim()
-                                where !IsNotNeedFillRow(form, rowNum)
-                                select new ReportZpzDataDto
-                                {
-                                    Code = rowNum,
-                                    CountSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
-                                    CountSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[3].Value),
-                                    CountAssignment = GlobalUtils.TryParseDecimal(row.Cells[4].Value)
-                                }).ToArray();
+            reportZpz2025Dto.Data = (from DataGridViewRow row in dgvReport.Rows
+                                     let rowNum = row.Cells[1].Value.ToString().Trim()
+                                     where !IsNotNeedFillRow(form, rowNum)
+                                     select new ReportZpz2025DataDto
+                                     {
+                                         Code = rowNum,
+                                         CountSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
+                                         CountSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[3].Value),
+                                         CountAssignment = GlobalUtils.TryParseDecimal(row.Cells[4].Value)
+                                     }).ToArray();
         }
 
         private void FillThemesForms9(DataGridView dgvReport, string form)
         {
-            var reportZpzDto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
-            if (reportZpzDto == null)
+            var reportZpz2025Dto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
+            if (reportZpz2025Dto == null)
             {
                 return;
             }
 
-            reportZpzDto.Data = (from DataGridViewRow row in dgvReport.Rows
-                                 let rowNum = row.Cells[1].Value.ToString().Trim()
-                                 where !IsNotNeedFillRow(form, rowNum)
-                                 select new ReportZpzDataDto
-                                 {
-                                     Code = rowNum,
-                                     CountSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
-                                     CountSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[3].Value),
-                                     CountAssignment = GlobalUtils.TryParseDecimal(row.Cells[4].Value)
-                                 }).ToArray();
+            reportZpz2025Dto.Data = (from DataGridViewRow row in dgvReport.Rows
+                                     let rowNum = row.Cells[1].Value.ToString().Trim()
+                                     where !IsNotNeedFillRow(form, rowNum)
+                                     select new ReportZpz2025DataDto
+                                     {
+                                         Code = rowNum,
+                                         CountSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
+                                         CountSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[3].Value),
+                                         CountAssignment = GlobalUtils.TryParseDecimal(row.Cells[4].Value)
+                                     }).ToArray();
         }
-
-        //private void FillThemesForms1(DataGridView dgvReport, string form)
-        //{
-        //    var reportZpzDto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
-        //    if (reportZpzDto != null)
-        //    {
-        //        reportZpzDto.Data = (from DataGridViewRow row in dgvReport.Rows
-        //                            let rowNum = row.Cells[1].Value.ToString().Trim()
-        //                            where !IsNotNeedFillRow(form, rowNum)
-        //                            select new ReportZpzDataDto
-        //                            {
-        //                                Code = rowNum,
-        //                                CountSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value)
-        //                            }).ToArray();
-        //    }
-        //}
 
         private void FillThemesForms1(DataGridView dgvReport, string form)
         {
-            var reportZpzDto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
-            if (reportZpzDto == null)
+            var reportZpz2025Dto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
+            if (reportZpz2025Dto == null)
             {
                 return;
             }
 
-            reportZpzDto.Data = (from DataGridViewRow row in dgvReport.Rows
-                                let rowNum = row.Cells[1].Value.ToString().Trim()
-                                where !IsNotNeedFillRow(form, rowNum)
-                                select new ReportZpzDataDto
-                                {
-                                    Code = rowNum,
-                                    CountSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
-                                    CountSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[3].Value)
-                                }).ToArray();
+            reportZpz2025Dto.Data = (from DataGridViewRow row in dgvReport.Rows
+                                     let rowNum = row.Cells[1].Value.ToString().Trim()
+                                     where !IsNotNeedFillRow(form, rowNum)
+                                     select new ReportZpz2025DataDto
+                                     {
+                                         Code = rowNum,
+                                         CountSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
+                                         CountSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[3].Value)
+                                     }).ToArray();
         }
+
 
 
         private void FillThemesForms67(DataGridView dgvReport, string form)
         {
 
                      
-            var reportZpzDto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
-            if (reportZpzDto != null)
+            var reportZpz2025Dto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
+            if (reportZpz2025Dto != null)
             {
-                reportZpzDto.Data = (from DataGridViewRow row in dgvReport.Rows
+                reportZpz2025Dto.Data = (from DataGridViewRow row in dgvReport.Rows
                                     let rowNum = row.Cells[1].Value.ToString().Trim()
                                     where !IsNotNeedFillRow(form, rowNum)
-                                    select new ReportZpzDataDto
+                                    select new ReportZpz2025DataDto
                                     {
                                         Code = rowNum,
                                         CountOutOfSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
@@ -657,13 +591,13 @@ namespace KmsReportClient.Report.Basic
 
         private void FillThemesForms5(DataGridView dgvReport, string form)
         {
-            var reportZpzDto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
-            if (reportZpzDto != null)
+            var reportZpz2025Dto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
+            if (reportZpz2025Dto != null)
             {
-                reportZpzDto.Data = (from DataGridViewRow row in dgvReport.Rows
+                reportZpz2025Dto.Data = (from DataGridViewRow row in dgvReport.Rows
                                     let rowNum = row.Cells[1].Value.ToString().Trim()
                                     where !IsNotNeedFillRow(form, rowNum)
-                                    select new ReportZpzDataDto
+                                    select new ReportZpz2025DataDto
                                     {
                                         Code = rowNum,
                                         CountOutOfSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
@@ -678,8 +612,8 @@ namespace KmsReportClient.Report.Basic
 
         private void FillDgwForms3(DataGridView dgvReport, string form)
         {
-            var reportZpzDto = Report.ReportDataList?.Single(x => x.Theme == form);
-            if (reportZpzDto?.Data == null || reportZpzDto.Data.Length == 0)
+            var reportZpz2025Dto = Report.ReportDataList?.Single(x => x.Theme == form);
+            if (reportZpz2025Dto?.Data == null || reportZpz2025Dto.Data.Length == 0)
             {
                 return;
             }
@@ -690,7 +624,7 @@ namespace KmsReportClient.Report.Basic
                 var rowNum = row.Cells[1].Value.ToString().Trim();
                 bool exclusionsRow = rows.Single(x => x.RowNum_fromxml == rowNum).Exclusion_fromxml;
 
-                var data = reportZpzDto.Data.SingleOrDefault(x => x.Code == rowNum);
+                var data = reportZpz2025Dto.Data.SingleOrDefault(x => x.Code == rowNum);
                 if (data != null)
                 {
                     row.Cells[2].Value = exclusionsRow ? "x" : data.CountSmo.ToString().Replace(",00", "");
@@ -702,8 +636,8 @@ namespace KmsReportClient.Report.Basic
 
         //private void FillDgwForms1(DataGridView dgvReport, string form)
         //{
-        //    var reportZpzDto = Report.ReportDataList.FirstOrDefault(x => x.Theme == form);
-        //    if (reportZpzDto?.Data == null || reportZpzDto?.Data?.Length == 0)
+        //    var reportZpz2025Dto = Report.ReportDataList.FirstOrDefault(x => x.Theme == form);
+        //    if (reportZpz2025Dto?.Data == null || reportZpz2025Dto?.Data?.Length == 0)
         //    {
         //        return;
         //    }
@@ -713,7 +647,7 @@ namespace KmsReportClient.Report.Basic
         //    {
         //        var rowNum = row.Cells[1].Value.ToString().Trim();
         //        bool exclusionsRow = rows.Single(x => x.Num == rowNum).Exclusion;
-        //        var data = reportZpzDto.Data.SingleOrDefault(x => x.Code == rowNum);
+        //        var data = reportZpz2025Dto.Data.SingleOrDefault(x => x.Code == rowNum);
         //        if (data != null)
         //        {
         //            row.Cells[2].Value = exclusionsRow ? "x" : data.CountSmo.ToString().Replace(",00", "");
@@ -724,8 +658,8 @@ namespace KmsReportClient.Report.Basic
 
         private void FillDgwForms9(DataGridView dgvReport, string form)
         {
-            var reportZpzDto = Report.ReportDataList?.Single(x => x.Theme == form);
-            if (reportZpzDto?.Data == null || reportZpzDto.Data.Length == 0)
+            var reportZpz2025Dto = Report.ReportDataList?.Single(x => x.Theme == form);
+            if (reportZpz2025Dto?.Data == null || reportZpz2025Dto.Data.Length == 0)
             {
                 return;
             }
@@ -736,7 +670,7 @@ namespace KmsReportClient.Report.Basic
                 var rowNum = row.Cells[1].Value.ToString().Trim();
                 bool isExclusionsRow = rows.Single(x => x.RowNum_fromxml == rowNum).Exclusion_fromxml;
 
-                var data = reportZpzDto.Data.SingleOrDefault(x => x.Code == rowNum);
+                var data = reportZpz2025Dto.Data.SingleOrDefault(x => x.Code == rowNum);
                 if (data != null)
                 {
                     row.Cells[2].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, null, 0, data.CountSmo);
@@ -749,8 +683,8 @@ namespace KmsReportClient.Report.Basic
 
         private void FillDgwForms1(DataGridView dgvReport, string form)
         {
-            var reportZpzDto = Report.ReportDataList?.Single(x => x.Theme == form);
-            if (reportZpzDto?.Data == null || reportZpzDto.Data.Length == 0)
+            var reportZpz2025Dto = Report.ReportDataList?.Single(x => x.Theme == form);
+            if (reportZpz2025Dto?.Data == null || reportZpz2025Dto.Data.Length == 0)
             {
                 return;
             }
@@ -761,7 +695,7 @@ namespace KmsReportClient.Report.Basic
                 var rowNum = row.Cells[1].Value.ToString().Trim();
                 bool isExclusionsRow = rows.Single(x => x.RowNum_fromxml == rowNum).Exclusion_fromxml;
 
-                var data = reportZpzDto.Data.SingleOrDefault(x => x.Code == rowNum);
+                var data = reportZpz2025Dto.Data.SingleOrDefault(x => x.Code == rowNum);
                 if (data != null)
                 {
                     row.Cells[2].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, null, 0, data.CountSmo);
@@ -772,12 +706,12 @@ namespace KmsReportClient.Report.Basic
 
         private void FillDgwForms2(DataGridView dgvReport, string form)
         {
-            var reportZpzDto = Report.ReportDataList.FirstOrDefault(x => x.Theme == form);
-            if (reportZpzDto == null)
+            var reportZpz2025Dto = Report.ReportDataList.FirstOrDefault(x => x.Theme == form);
+            if (reportZpz2025Dto == null)
             {
                 return;
             }
-            if (reportZpzDto.Data == null || reportZpzDto.Data.Length == 0)
+            if (reportZpz2025Dto.Data == null || reportZpz2025Dto.Data.Length == 0)
             {
                 return;
             }
@@ -789,7 +723,7 @@ namespace KmsReportClient.Report.Basic
                 var exclusionsCells = rows.Single(x => x.RowNum_fromxml == rowNum).ExclusionCells_fromxml?.Split(',');
                 bool isExclusionsRow = rows.Single(x => x.RowNum_fromxml == rowNum).Exclusion_fromxml;
 
-                var data = reportZpzDto.Data.SingleOrDefault(x => x.Code == rowNum);
+                var data = reportZpz2025Dto.Data.SingleOrDefault(x => x.Code == rowNum);
                 if (data != null)
                 {
                     row.Cells[2].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, exclusionsCells, 2, data.CountSmo);
@@ -807,8 +741,8 @@ namespace KmsReportClient.Report.Basic
 
         private void FillDgwForms67(DataGridView dgvReport, string form)
         {
-            var reportZpzDto = Report.ReportDataList.Single(x => x.Theme == form);
-            if (reportZpzDto.Data == null || reportZpzDto.Data.Length == 0)
+            var reportZpz2025Dto = Report.ReportDataList.Single(x => x.Theme == form);
+            if (reportZpz2025Dto.Data == null || reportZpz2025Dto.Data.Length == 0)
             {
                 return;
             }
@@ -820,7 +754,7 @@ namespace KmsReportClient.Report.Basic
                 var exclusionsCells = rows.Single(x => x.RowNum_fromxml == rowNum).ExclusionCells_fromxml?.Split(',');
                 bool isExclusionsRow = rows.Single(x => x.RowNum_fromxml == rowNum).Exclusion_fromxml;
 
-                var data = reportZpzDto.Data.SingleOrDefault(x => x.Code == rowNum);
+                var data = reportZpz2025Dto.Data.SingleOrDefault(x => x.Code == rowNum);
                 if (data == null)
                 {
                     continue;
@@ -845,8 +779,8 @@ namespace KmsReportClient.Report.Basic
 
         private void FillDgwForms5(DataGridView dgvReport, string form)
         {
-            var reportZpzDto = Report.ReportDataList.Single(x => x.Theme == form);
-            if (reportZpzDto.Data == null || reportZpzDto.Data.Length == 0)
+            var reportZpz2025Dto = Report.ReportDataList.Single(x => x.Theme == form);
+            if (reportZpz2025Dto.Data == null || reportZpz2025Dto.Data.Length == 0)
             {
                 return;
             }
@@ -855,7 +789,7 @@ namespace KmsReportClient.Report.Basic
             foreach (DataGridViewRow row in dgvReport.Rows)
             {
                 var rowNum = row.Cells[1].Value.ToString().Trim();
-                var data = reportZpzDto.Data.SingleOrDefault(x => x.Code == rowNum);
+                var data = reportZpz2025Dto.Data.SingleOrDefault(x => x.Code == rowNum);
                 bool isExclusionsRow = rows.Single(x => x.RowNum_fromxml == rowNum).Exclusion_fromxml;
                 if (data == null)
                 {

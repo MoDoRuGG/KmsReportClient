@@ -7,7 +7,7 @@ using Microsoft.Office.Interop.Excel;
 
 namespace KmsReportClient.Excel.Collector
 {
-    class ZpzExcelCollector : ExcelBaseCollector
+    class Zpz2025ExcelCollector : ExcelBaseCollector
     {
         private readonly string[] _columnsTable1 = { "2", "8", "9","10" };
         private readonly string[] _columnsTable2 = { "2", "5", "7", "8", "9", "10", "11" };
@@ -17,9 +17,9 @@ namespace KmsReportClient.Excel.Collector
 
         protected override void FillReport(string form, AbstractReport destReport, AbstractReport srcReport)
         {
-            var destData = (destReport as ReportZpz)?.ReportDataList.Single(r => r.Theme == form) ?? 
+            var destData = (destReport as ReportZpz2025)?.ReportDataList.Single(r => r.Theme == form) ?? 
                            throw new Exception($"Can't find destReportDataList for form = {form}");
-            var srcData = (srcReport as ReportZpz)?.ReportDataList.Single(r => r.Theme == form) ?? 
+            var srcData = (srcReport as ReportZpz2025)?.ReportDataList.Single(r => r.Theme == form) ?? 
                           throw new Exception($"Can't find srcReportDataList for form = {form}");
             destData.Data = srcData.Data;
         }
@@ -34,8 +34,8 @@ namespace KmsReportClient.Excel.Collector
                 "Таблица 10" => FillTable4(form),
 
             };
-            var report = new ReportZpz { ReportDataList = new ReportZpzDto[1] };
-            report.ReportDataList[0] = new ReportZpzDto
+            var report = new ReportZpz2025 { ReportDataList = new ReportZpz2025Dto[1] };
+            report.ReportDataList[0] = new ReportZpz2025Dto
             {
                 Theme = form,
                 Data = themeData
@@ -43,9 +43,9 @@ namespace KmsReportClient.Excel.Collector
             return report;
         }
 
-        private ReportZpzDataDto[] FillTable4(string form)
+        private ReportZpz2025DataDto[] FillTable4(string form)
         {
-            var list = new List<ReportZpzDataDto>();
+            var list = new List<ReportZpz2025DataDto>();
             int countWorkSheet = ObjWorkBook.Worksheets.Count;
 
             for (int currentList = 1; currentList <= countWorkSheet; currentList++)
@@ -72,7 +72,7 @@ namespace KmsReportClient.Excel.Collector
 
                 for (int i = startRow; i <= lastRow; i++)
                 {
-                    var data = new ReportZpzDataDto
+                    var data = new ReportZpz2025DataDto
                     {
                         Code = ObjWorkSheet.Cells[i, dictionary["2"]].Text,
                         CountSmo = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary[k]].Text)
@@ -84,9 +84,9 @@ namespace KmsReportClient.Excel.Collector
             return list.ToArray();
         }
 
-        private ReportZpzDataDto[] FillTable2(string form)
+        private ReportZpz2025DataDto[] FillTable2(string form)
         {
-            var list = new List<ReportZpzDataDto>();
+            var list = new List<ReportZpz2025DataDto>();
             int countWorkSheet = ObjWorkBook.Worksheets.Count;
 
             for (int currentList = 1; currentList <= countWorkSheet; currentList++)
@@ -101,7 +101,7 @@ namespace KmsReportClient.Excel.Collector
 
                 for (int i = startRow; i <= lastRow; i++)
                 {
-                    var data = new ReportZpzDataDto
+                    var data = new ReportZpz2025DataDto
                     {
                         Code = ObjWorkSheet.Cells[i, dictionary["2"]].Text,
                         CountSmo = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["5"]].Text),
@@ -118,9 +118,9 @@ namespace KmsReportClient.Excel.Collector
             return list.ToArray();
         }
 
-        private ReportZpzDataDto[] FillTable1(string form)
+        private ReportZpz2025DataDto[] FillTable1(string form)
         {
-            var list = new List<ReportZpzDataDto>();
+            var list = new List<ReportZpz2025DataDto>();
             int countWorkSheet = ObjWorkBook.Worksheets.Count;
 
             for (int currentList = 1; currentList <= countWorkSheet; currentList++)
@@ -145,7 +145,7 @@ namespace KmsReportClient.Excel.Collector
 
                     for (int i = startRow; i <= lastRow; i++)
                     {
-                        var data = new ReportZpzDataDto
+                        var data = new ReportZpz2025DataDto
                         {
                             Code = ObjWorkSheet.Cells[i, dictionary["2"]].Text,
                             CountSmo = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["8"]].Text),

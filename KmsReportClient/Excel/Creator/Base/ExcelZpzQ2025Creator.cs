@@ -10,7 +10,7 @@ using Microsoft.Office.Interop.Excel;
 
 namespace KmsReportClient.Excel.Creator.Base
 {
-    class ExcelZpzQCreator : ExcelBaseCreator<ReportZpz>
+    class ExcelZpzQ2025Creator : ExcelBaseCreator<ReportZpz2025>
     {
         private readonly List<ReportDictionary> _zpzDictionaries = new List<ReportDictionary> {
             new ReportDictionary {TableName = "Таблица 5А", StartRow = 6, EndRow = 6, Index = 1},
@@ -22,13 +22,13 @@ namespace KmsReportClient.Excel.Creator.Base
             new ReportDictionary {TableName = "Таблица 2Л", StartRow = 5, EndRow = 30, Index = 7},
         };
 
-        public ExcelZpzQCreator(
+        public ExcelZpzQ2025Creator(
             string filename,
             ExcelForm reportName,
             string header,
             string filialName) : base(filename, reportName, header, filialName, false) { }
 
-        protected override void FillReport(ReportZpz report, ReportZpz yearReport)
+        protected override void FillReport(ReportZpz2025 report, ReportZpz2025 yearReport)
         {
             string reportMonths = YymmUtils.GetMonth(report.Yymm.Substring(2, 2));
             string reportYear = report.Yymm.Substring(0, 2);
@@ -72,7 +72,7 @@ namespace KmsReportClient.Excel.Creator.Base
             FinishZpz();
         }
 
-        private void FillTable1(ReportZpzDataDto[] data, int startRowIndex, int endRowIndex, string theme)
+        private void FillTable1(ReportZpz2025DataDto[] data, int startRowIndex, int endRowIndex, string theme)
         {
             int firstColumnIndex;
             int seconfColumnIndex;
@@ -138,7 +138,7 @@ namespace KmsReportClient.Excel.Creator.Base
         //    }
         //}
 
-        private void FillTable4(ReportZpzDataDto[] data, int startRowIndex, int endRowIndex, string form)
+        private void FillTable4(ReportZpz2025DataDto[] data, int startRowIndex, int endRowIndex, string form)
         {
             int columnIndex = 5;
             for (int i = startRowIndex; i <= endRowIndex; i++)
@@ -155,7 +155,7 @@ namespace KmsReportClient.Excel.Creator.Base
             }
         }
 
-        private void FillTable6(ReportZpzDataDto[] data, int startRowIndex, int endRowIndex, string form)
+        private void FillTable6(ReportZpz2025DataDto[] data, int startRowIndex, int endRowIndex, string form)
         {
             for (int i = startRowIndex; i <= endRowIndex; i++)
             {
@@ -229,7 +229,7 @@ namespace KmsReportClient.Excel.Creator.Base
             }
         }
 
-        private void FillTable5(ReportZpzDataDto[] data, int startRowIndex, int endRowIndex, string form)
+        private void FillTable5(ReportZpz2025DataDto[] data, int startRowIndex, int endRowIndex, string form)
         {
             for (int i = startRowIndex; i <= endRowIndex; i++)
             {
@@ -277,7 +277,7 @@ namespace KmsReportClient.Excel.Creator.Base
             }
         }
 
-        private void FillTableLetal(ReportZpzDataDto[] data, int startRowIndex, int endRowIndex, string form)
+        private void FillTableLetal(ReportZpz2025DataDto[] data, int startRowIndex, int endRowIndex, string form)
         {
             for (int i = startRowIndex; i <= endRowIndex; i++)
             {

@@ -32,6 +32,18 @@ namespace KmsReportClient.Model.Enums
         [Description(GlobalConst.TempFolder + "zpz.xlsx")]
         Zpz,
 
+        [Description(GlobalConst.TempFolder + "zpzq2025.xlsx")]
+        ZpzQ2025,
+
+        [Description(GlobalConst.TempFolder + "zpz10_2025.xlsx")]
+        Zpz10_2025,
+
+        [Description(GlobalConst.TempFolder + "zpz2025lethal.xlsx")]
+        Zpz2025Lethal,
+
+        [Description(GlobalConst.TempFolder + "zpz2025.xlsx")]
+        Zpz2025,
+
         [Description(GlobalConst.TempFolder + "oped.xlsx")]
         Oped,
 
@@ -77,11 +89,23 @@ namespace KmsReportClient.Model.Enums
         [Description(GlobalConst.TempFolder + "controlzpz2023single.xlsx")]
         ControlZpz2023Single,
 
+        [Description(GlobalConst.TempFolder + "controlzpz2025.xlsx")]
+        ControlZpz2025,
+
+        [Description(GlobalConst.TempFolder + "controlzpz2025full.xlsx")]
+        ControlZpz2025Full,
+
+        [Description(GlobalConst.TempFolder + "controlzpz2025single.xlsx")]
+        ControlZpz2025Single,
+
         [Description(GlobalConst.TempFolder + "zpzWebSite.xlsx")]
         ZpzForWebSite,
 
         [Description(GlobalConst.TempFolder + "zpzWebSite2023.xlsx")]
         ZpzForWebSite2023,
+
+        [Description(GlobalConst.TempFolder + "zpzWebSite2025.xlsx")]
+        ZpzForWebSite2025,
 
         [Description(GlobalConst.TempFolder + "onko.xlsx")]
         Onko,

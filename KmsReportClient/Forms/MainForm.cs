@@ -157,6 +157,10 @@ namespace KmsReportClient.Forms
             TbControl.TabPages.Remove(PageQuantity);
             TbControl.TabPages.Remove(PageTarAllow);
             TbControl.TabPages.Remove(PageDoff);
+            TbControl.TabPages.Remove(PageZpz2025);
+            TbControl.TabPages.Remove(PageZpzQ2025);
+            TbControl.TabPages.Remove(PageZpz10_2025);
+            TbControl.TabPages.Remove(PageZpzLethal2025);
 
             if (CurrentUser.IsMain)
             {
@@ -182,6 +186,9 @@ namespace KmsReportClient.Forms
                         {PageZpz, ReportGlobalConst.ReportZpz},
                         {PageZpzQ, ReportGlobalConst.ReportZpzQ},
                         {PageQueryZpz, ReportGlobalConst.ReportZpzQ},
+                        {PageZpz2025, ReportGlobalConst.ReportZpz2025},
+                        {PageZpzQ2025, ReportGlobalConst.ReportZpzQ2025},
+                        {PageQueryZpz2025, ReportGlobalConst.ReportZpzQ2025},
                         {PageOped, ReportGlobalConst.ReportOped},
                         {PageOpedU, ReportGlobalConst.ReportOpedU},
                         {PageOtclkInfrorm, ReportGlobalConst.ReportOtklik},
@@ -197,6 +204,8 @@ namespace KmsReportClient.Forms
                         {PageReqVCR, ReportGlobalConst.ReportReqVCR},
                         {PageZpz10, ReportGlobalConst.ReportZpz10},
                         {PageZpzLethal, ReportGlobalConst.ReportZpzLethal},
+                        {PageZpz10_2025, ReportGlobalConst.ReportZpz10_2025},
+                        {PageZpzLethal2025, ReportGlobalConst.ReportZpz2025Lethal},
                         {PageEffectiveness, ReportGlobalConst.ReportEffectiveness},
                         {PageQuantity, ReportGlobalConst.ReportQuantity},
                         {PageTarAllow, ReportGlobalConst.ReportTargetedAllowances},
@@ -242,6 +251,22 @@ namespace KmsReportClient.Forms
                 {
                     ReportGlobalConst.ReportZpzQ,
                     new ReportZpzQProcessor(_client, _reportsDictionary, DgwReportZpzQ, CmbZpzQ, TxtbZpzQ, PageZpzQ)
+                },
+                                {
+                    ReportGlobalConst.ReportZpz2025,
+                    new ReportZpz2025Processor(_client, _reportsDictionary, DgvReportZpz2025, CmbZpz2025, TxtbZpz2025, PageZpz2025)
+                },
+                {
+                    ReportGlobalConst.ReportZpz2025Lethal,
+                    new ReportZpz2025LethalProcessor(_client, _reportsDictionary, DgvReportZpzLethal2025, CmbZpzLethal2025, TxtbZpzLethal2025, PageZpzLethal2025)
+                },
+                {
+                    ReportGlobalConst.ReportZpz10_2025,
+                    new ReportZpz10_2025Processor(_client, _reportsDictionary, DgvReportZpz10_2025, CmbZpz10_2025, TxtbZpz10_2025, PageZpz10_2025)
+                },
+                {
+                    ReportGlobalConst.ReportZpzQ2025,
+                    new ReportZpzQ2025Processor(_client, _reportsDictionary, DgvReportZpzQ2025, CmbZpzQ2025, TxtbZpzQ2025, PageZpzQ2025)
                 },
                  {
                     ReportGlobalConst.ReportOped,
@@ -601,10 +626,11 @@ namespace KmsReportClient.Forms
 
             }
 
-            if (_processor.Report.IdType == "PG" || _processor.Report.IdType == "Zpz")
+            if (_processor.Report.IdType == "PG" || _processor.Report.IdType == "Zpz" || _processor.Report.IdType == "Zpz2025")
             {
                 DgwReportPg.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
                 DgwReportZpz.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
+                DgvReportZpz2025.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
             }
             TxtbInfo.Text = _processor.GetReportInfo();
             BtnCommentReport.Visible = true;
@@ -760,6 +786,8 @@ namespace KmsReportClient.Forms
             DgwReportPg.ReadOnly = true;
             DgwReportZpz.ReadOnly = true;
             DgwReportZpz10.ReadOnly = false;
+            DgvReportZpz2025.ReadOnly = true;
+            DgvReportZpz10_2025.ReadOnly = false;
             _processor.SaveToDb();
         }
 
@@ -780,6 +808,8 @@ namespace KmsReportClient.Forms
             DgwReportPg.ReadOnly = false;
             DgwReportZpz.ReadOnly = false;
             DgwReportZpz10.ReadOnly = false;
+            DgvReportZpz2025.ReadOnly = false;
+            DgvReportZpz10_2025.ReadOnly = false;
             _processor.FillDataGridView(theme);
             _processor.SaveToDb();
 
@@ -1601,6 +1631,9 @@ namespace KmsReportClient.Forms
         private void CmbZpz_SelectedIndexChanged(object sender, EventArgs e) =>
         ChangeIndexComboBox(DgwReportZpzQ, CmbZpzQ, TxtbZpzQ);
 
+        private void CmbZpz2025_SelectedIndexChanged(object sender, EventArgs e) =>
+        ChangeIndexComboBox(DgvReportZpzQ2025, CmbZpzQ2025, TxtbZpzQ2025);
+
         private void CmbCadre_SelectedIndexChanged(object sender, EventArgs e) =>
         ChangeIndexComboBox(DgvCadre, CmbCadre, TxtbCadre);
 
@@ -1613,11 +1646,20 @@ namespace KmsReportClient.Forms
         private void CmbZpzLethal_SelectedIndexChanged(object sender, EventArgs e) =>
         ChangeIndexComboBox(DgwReportZpzLethal, CmbZpzLethal, TxtbZpzLethal);
 
+        private void CmbZpz2025Lethal_SelectedIndexChanged(object sender, EventArgs e) =>
+ChangeIndexComboBox(DgvReportZpzLethal2025, CmbZpzLethal2025, TxtbZpzLethal2025);
+
         private void CmbDoff_SelectedIndexChanged_1(object sender, EventArgs e) =>
         ChangeIndexComboBox(DgvDoff, CmbDoff, TbDoff);
 
+        private void CmbZpz2025_SelectedIndexChanged_1(object sender, EventArgs e) =>
+            ChangeIndexComboBox(DgvReportZpz2025, CmbZpz2025, TxtbZpz2025);
+
+        private void CmbZpz10_2025_SelectedIndexChanged(object sender, EventArgs e) =>
+        ChangeIndexComboBox(DgvReportZpz10_2025, CmbZpz10_2025, TxtbZpz10_2025);
+
         private void CmbZpz_SelectedIndexChanged_1(object sender, EventArgs e) =>
-            ChangeIndexComboBox(DgwReportZpz, CmbZpz, TxtbZpz);
+    ChangeIndexComboBox(DgwReportZpz, CmbZpz, TxtbZpz);
 
         private void CmbZpz10_SelectedIndexChanged(object sender, EventArgs e) =>
         ChangeIndexComboBox(DgwReportZpz10, CmbZpz10, TxtbZpz10);
@@ -1668,6 +1710,9 @@ namespace KmsReportClient.Forms
         private void КонтрольЗПЗToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.ControlZpzMonthly);
 
+        private void КонтрольЗПЗ2025ToolStripMenuItem_Click(object sender, EventArgs e) =>
+        OpenConsolidateReportForm(ConsolidateReport.ControlZpz2025Monthly);
+
         private void СуммарныйОтчетПоФилиалуToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.ConsolidateFilial294);
 
@@ -1680,8 +1725,14 @@ namespace KmsReportClient.Forms
         private void ОтчетДляСайта2023ToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.ZpzWebSite2023);
 
+        private void ОтчетДляСайта2025ToolStripMenuItem_Click(object sender, EventArgs e) =>
+            OpenConsolidateReportForm(ConsolidateReport.ZpzWebSite2025);
+
         private void КонтрольЗПЗежемесячнаяToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.ControlZpzQuarterly);
+
+        private void КонтрольЗПЗ2025ежемесячнаяToolStripMenuItem_Click(object sender, EventArgs e) =>
+            OpenConsolidateReportForm(ConsolidateReport.ControlZpz2025Quarterly);
 
         private void КонтрольЗПЗ2023ToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.ControlZpz2023Quarterly);
@@ -1691,6 +1742,12 @@ namespace KmsReportClient.Forms
 
         private void КонтрольЗПЗ2023SingleToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.ControlZpz2023SingleQuarterly);
+
+        private void КонтрольЗПЗ2025FullToolStripMenuItem_Click(object sender, EventArgs e) =>
+            OpenConsolidateReportForm(ConsolidateReport.ControlZpz2025FullQuarterly);
+
+        private void КонтрольЗПЗ2025SingleToolStripMenuItem_Click(object sender, EventArgs e) =>
+            OpenConsolidateReportForm(ConsolidateReport.ControlZpz2025SingleQuarterly);
 
         private void онкологияToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.Onko);
@@ -1814,6 +1871,9 @@ namespace KmsReportClient.Forms
                     TbControl.TabPages.Remove(PageZpz);
                     TbControl.TabPages.Remove(PageZpz10);
                     TbControl.TabPages.Remove(PageZpzQ);
+                    TbControl.TabPages.Remove(PageZpz2025);
+                    TbControl.TabPages.Remove(PageZpz10_2025);
+                    TbControl.TabPages.Remove(PageZpzQ2025);
                     TbControl.TabPages.Remove(PageQuery);
                     TbControl.TabPages.Remove(PageCadre);
                     TbControl.TabPages.Remove(PageReqVCR);
@@ -2073,6 +2133,33 @@ namespace KmsReportClient.Forms
             (_processor as ReportZpzLethalProcessor).SetFormula();
         }
 
+
+        private void DgvReportZpz10_2025_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            (_processor as ReportZpz10_2025Processor).SetFormula();
+        }
+
+        private void DgvReportZpz10_2025_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            (_processor as ReportZpz10_2025Processor).SetFormula();
+        }
+
+
+        private void DgvReportZpz10_2025_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as ReportZpz10_2025Processor).SetFormula();
+        }
+
+        private void DgvReportZpzQ2025_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as ReportZpzQ2025Processor).SetFormula();
+        }
+
+        private void DgvReportZpz2025Lethal_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as ReportZpz2025LethalProcessor).SetFormula();
+        }
+
         private void DgvReportMVCR_KeyPress(object sender, KeyPressEventArgs e)
         {
             (_processor as MonitoringVCRProcessor).SetFormula();
@@ -2092,6 +2179,11 @@ namespace KmsReportClient.Forms
         private void DgvReportZpz10_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             (_processor as ReportZpz10Processor).SetFormula();
+        }
+
+        private void DgvReportZpz10_2025_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as ReportZpz10_2025Processor).SetFormula();
         }
 
         private void DgvReportOped_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)

@@ -3,14 +3,14 @@ using KmsReportClient.Model.Enums;
 
 namespace KmsReportClient.Excel.Creator.Consolidate
 {
-    class ExcelConsZpzWebSite2023 : ExcelBaseCreator<ZpzForWebSite2023>
+    class ExcelConsZpzWebSite2025 : ExcelBaseCreator<ZpzForWebSite2025>
     {
-        public ExcelConsZpzWebSite2023(
+        public ExcelConsZpzWebSite2025(
             string filename,
             string header,
-            string filialName) : base(filename, ExcelForm.ZpzForWebSite2023, header, filialName, true) { }
+            string filialName) : base(filename, ExcelForm.ZpzForWebSite2025, header, filialName, true) { }
 
-        protected override void FillReport(ZpzForWebSite2023 report, ZpzForWebSite2023 yearReport)
+        protected override void FillReport(ZpzForWebSite2025 report, ZpzForWebSite2025 yearReport)
         {
             ObjWorkSheet.Cells[2, 2] = FilialName;
 
@@ -22,7 +22,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
             FillInformations(report);
         }
 
-        private void FillTreatments(ZpzForWebSite2023 report)
+        private void FillTreatments(ZpzForWebSite2025 report)
         {
             int currentIndex = 7;
             foreach (var treatment in report.Treatments)
@@ -33,7 +33,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
             }
         }
 
-        private void FillComplaints(ZpzForWebSite2023 report)
+        private void FillComplaints(ZpzForWebSite2025 report)
         {
             int currentIndex = 12;
             foreach (var complaint in report.Complaints)
@@ -44,7 +44,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
             }
         }
 
-        private void FillExpertises(ZpzForWebSite2023 report)
+        private void FillExpertises(ZpzForWebSite2025 report)
         {
             int currentIndex = 28;
             foreach (var expertise in report.Expertises)
@@ -56,7 +56,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
             }
         }
 
-        private void FillProtections(ZpzForWebSite2023 report)
+        private void FillProtections(ZpzForWebSite2025 report)
         {
             int currentIndex = 41;
             foreach (var protection in report.Protections)
@@ -65,7 +65,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
             }
         }
 
-        private void FillSpecialists(ZpzForWebSite2023 report)
+        private void FillSpecialists(ZpzForWebSite2025 report)
         {
             int currentIndex = 46;
             foreach (var specialist in report.Specialists)
@@ -74,7 +74,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
             }
         }
 
-        private void FillInformations(ZpzForWebSite2023 report)
+        private void FillInformations(ZpzForWebSite2025 report)
         {
             int currentIndex = 54;
             foreach (var information in report.Informations)

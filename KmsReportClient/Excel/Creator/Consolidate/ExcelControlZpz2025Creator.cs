@@ -7,18 +7,18 @@ using Microsoft.Office.Interop.Excel;
 
 namespace KmsReportClient.Excel.Creator.Consolidate
 {
-    class ExcelControlZpz2023Creator : ExcelBaseCreator<CReportZpz2023[]>
+    class ExcelControlZpz2025Creator : ExcelBaseCreator<CReportZpz2025[]>
     {
         private const int StartPosition = 6;
         private const int StartPersonnel = 4;
         private string _yymm;
 
-        public ExcelControlZpz2023Creator(
+        public ExcelControlZpz2025Creator(
             string filename,
             string header,
-            string filialName, string yymm) : base(filename, ExcelForm.ControlZpz2023, header, filialName, false) { _yymm = yymm; }
+            string filialName, string yymm) : base(filename, ExcelForm.ControlZpz2025, header, filialName, false) { _yymm = yymm; }
 
-        protected override void FillReport(CReportZpz2023[] reports, CReportZpz2023[] yearReport)
+        protected override void FillReport(CReportZpz2025[] reports, CReportZpz2025[] yearReport)
         {
             FillExpertises(reports);
             FillFinance(reports);
@@ -26,7 +26,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
             FillNormative(reports);
         }
 
-        private void FillNormative(CReportZpz2023[] reports)
+        private void FillNormative(CReportZpz2025[] reports)
         {
             Dictionary<int, double> newNormative = new Dictionary<int, double>()
             {
@@ -94,7 +94,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
             }
         }
 
-        private void FillPersonnel(CReportZpz2023[] reports)
+        private void FillPersonnel(CReportZpz2025[] reports)
         {
             var personnel = reports.Select(r => new { r.Filial, r.Personnel }).ToList();
 
@@ -170,7 +170,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
             }
         }
 
-        private void FillFinance(CReportZpz2023[] reports)
+        private void FillFinance(CReportZpz2025[] reports)
         {
             var finance = reports.Select(r => new { r.Filial, r.Finance }).ToList();
 
@@ -193,7 +193,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
             }
         }
 
-        private void FillExpertises(CReportZpz2023[] reports)
+        private void FillExpertises(CReportZpz2025[] reports)
         {
             var expertises = reports.Select(r => new { r.Filial, r.Expertise }).ToList();
 

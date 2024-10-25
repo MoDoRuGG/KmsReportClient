@@ -150,8 +150,10 @@
     <Compile Include="Excel\Collector\DynamicReportExcelCollector.cs" />
     <Compile Include="Excel\Collector\ExcelCollectorFactory.cs" />
     <Compile Include="Excel\Collector\IExcelCollector.cs" />
+    <Compile Include="Excel\Collector\Zpz2025ExcelCollector.cs" />
     <Compile Include="Excel\Collector\ZpzExcelCollector.cs" />
     <Compile Include="Excel\Collector\PgExcelCollector.cs" />
+    <Compile Include="Excel\Collector\ZpzQ2025ExcelCollector.cs" />
     <Compile Include="Excel\Collector\ZpzQExcelCollector.cs" />
     <Compile Include="Excel\Creator\Base\ExcelDoffCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelQuantityCreator.cs" />
@@ -166,10 +168,14 @@
     <Compile Include="Excel\Creator\Base\ExcelOpedFinanceCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelOpedUCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelOpedQCreator.cs" />
+    <Compile Include="Excel\Creator\Base\ExcelZpz10_2025Creator.cs" />
+    <Compile Include="Excel\Creator\Base\ExcelZpz2025Creator.cs" />
+    <Compile Include="Excel\Creator\Base\ExcelZpz2025LethalCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelZpzLethalCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelZpz10Creator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelZpzCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelPgCreator.cs" />
+    <Compile Include="Excel\Creator\Base\ExcelZpzQ2025Creator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelZpzQCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelPgQCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelProposalCreator.cs" />
@@ -202,8 +208,12 @@
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateVCRCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateVSSCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateYear294Creator.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelConsZpzWebSite2025.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsZpzWebSite2023.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsZpzWebSite.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelControlZpz2025Creator.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelControlZpz2025FullCreator.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelControlZpz2025SingleCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelControlZpz2023SingleCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelControlZpz2023FullCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelControlZpz2023Creator.cs" />
@@ -340,14 +350,19 @@
     <Compile Include="Report\Basic\ReportOpedProcessor.cs" />
     <Compile Include="Report\Basic\ReportInfrormationResponseProcessor.cs" />
     <Compile Include="Report\Basic\ReportOpedQProcessor.cs" />
+    <Compile Include="Report\Basic\ReportZpz10_2025Processor.cs" />
+    <Compile Include="Report\Basic\ReportZpz2025LethalProcessor.cs" />
     <Compile Include="Report\Basic\ReportZpzLethalProcessor.cs" />
     <Compile Include="Report\Basic\ReportZpz10Processor.cs" />
+    <Compile Include="Report\Basic\ReportZpz2025Processor.cs" />
+    <Compile Include="Report\Basic\ReportZpzQ2025Processor.cs" />
     <Compile Include="Report\Basic\ReportZpzQProcessor.cs" />
     <Compile Include="Report\Basic\ReportZpzProcessor.cs" />
     <Compile Include="Report\Basic\ReportPgProcessor.cs" />
     <Compile Include="Report\Basic\ReportProposalProcessor.cs" />
     <Compile Include="Report\Basic\ReportVaccinationProccesor.cs" />
     <Compile Include="Report\Common\CheckFFOMS2022Common.cs" />
+    <Compile Include="Report\Consolidate\ZpzForWebSite2025Creator.cs" />
     <Compile Include="Report\Consolidate\ZpzForWebSite2023Creator.cs" />
     <Compile Include="Report\Consolidate\ZpzForWebSiteCreator.cs" />
     <Compile Include="Report\IConsolidateReportCreator.cs" />
@@ -560,6 +575,15 @@
     <None Include="Connected Services\External\KmsReportClient.External.CreateReportControlZpz2023SingleResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateReportControlZpz2025FullResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateReportControlZpz2025Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateReportControlZpz2025SingleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateReportCOpedResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -585,6 +609,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateZpzForWebSite2023Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateZpzForWebSite2025Response.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateZpzForWebSiteResponse.datasource">
@@ -624,6 +651,15 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CReportZpz2023Single.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CReportZpz2025.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CReportZpz2025Full.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CReportZpz2025Single.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.DownloadDllFileResponse.datasource">
@@ -728,6 +764,12 @@
     <None Include="Connected Services\External\KmsReportClient.External.GetZpz10YearDataResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.GetZpz10_2025YearDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.GetZpz2025LethalYearDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.GetZpzLethalYearDataResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -780,6 +822,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.ReportVaccination.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.ReportZpz2025DataDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.ReportZpzDataDto.datasource">
@@ -885,6 +930,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.ZpzForWebSite2023.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.ZpzForWebSite2025.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Resources\w256h2561372777059DatabaseActive.png" />

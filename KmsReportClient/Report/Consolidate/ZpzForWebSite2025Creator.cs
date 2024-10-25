@@ -7,7 +7,7 @@ using KmsReportClient.Support;
 namespace KmsReportClient.Report.Consolidate
 {
     // todo rewrite all consolidate creators with factory pattern
-    class ZpzForWebSite2023Creator : IConsolidateReportCreator
+    class ZpzForWebSite2025Creator : IConsolidateReportCreator
     {
         public void CreateReport(
             EndpointSoapClient client,
@@ -20,8 +20,8 @@ namespace KmsReportClient.Report.Consolidate
             int mmEnd = 3 * (Array.IndexOf(GlobalConst.Periods, periodStart) + 1);
             string yymm = $"{yy}{mmEnd}";
 
-            var data = client.CreateZpzForWebSite2023(yymm);           
-            var excel = new ExcelConsZpzWebSite2023(filename, "", filename);
+            var data = client.CreateZpzForWebSite2025(yymm);           
+            var excel = new ExcelConsZpzWebSite2025(filename, "", filename);
            // excel.CreateReport(data, null);
 
             GlobalUtils.OpenFileOrDirectory(filename);

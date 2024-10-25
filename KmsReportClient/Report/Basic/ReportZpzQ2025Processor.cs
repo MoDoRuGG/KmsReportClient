@@ -14,7 +14,7 @@ using NLog;
 
 namespace KmsReportClient.Report.Basic
 {
-    public class ReportZpzQProcessor : AbstractReportProcessor<ReportZpz>
+    public class ReportZpzQ2025Processor : AbstractReportProcessor<ReportZpz2025>
     {
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
         private readonly string[] _coloringRows = { "1", "2", "3", "4", "5", "6" };
@@ -135,11 +135,11 @@ namespace KmsReportClient.Report.Basic
         public override void SaveReportDataSourceHandle()
         { }
 
-        public ReportZpzQProcessor(EndpointSoap inClient, List<KmsReportDictionary> reportsDictionary, DataGridView dgv, ComboBox cmb, TextBox txtb, TabPage page) :
+        public ReportZpzQ2025Processor(EndpointSoap inClient, List<KmsReportDictionary> reportsDictionary, DataGridView dgv, ComboBox cmb, TextBox txtb, TabPage page) :
             base(inClient, dgv, cmb, txtb, page,
-                XmlFormTemplate.ZpzQ.GetDescription(),
+                XmlFormTemplate.ZpzQ2025.GetDescription(),
                 Log,
-                ReportGlobalConst.ReportZpzQ,
+                ReportGlobalConst.ReportZpzQ2025,
                 reportsDictionary)
         {
             InitReport();
@@ -152,12 +152,12 @@ namespace KmsReportClient.Report.Basic
 
         public override void InitReport()
         {
-            Report = new ReportZpz { ReportDataList = new ReportZpzDto[ThemesList.Count], IdType = IdReportType };
+            Report = new ReportZpz2025 { ReportDataList = new ReportZpz2025Dto[ThemesList.Count], IdType = IdReportType };
 
             int i = 0;
             foreach (var theme in ThemesList.Select(x => x.Key))
             {
-                Report.ReportDataList[i++] = new ReportZpzDto { Theme = theme };
+                Report.ReportDataList[i++] = new ReportZpz2025Dto { Theme = theme };
             }
         }
 
@@ -169,11 +169,11 @@ namespace KmsReportClient.Report.Basic
                 {
                     filialCode = FilialCode,
                     yymm = yymm,
-                    reportType = ReportType.ZpzQ
+                    reportType = ReportType.ZpzQ2025
                 }
             };
             var response = Client.GetReport(request)?.Body?.GetReportResult;
-            return response as ReportZpz;
+            return response as ReportZpz2025;
         }
 
         public override void MapForAutoFill(AbstractReport report)
@@ -182,7 +182,7 @@ namespace KmsReportClient.Report.Basic
             {
                 return;
             }
-            var inReport = report as ReportZpz;
+            var inReport = report as ReportZpz2025;
 
             var index = Report.ReportDataList.ToList().FindIndex(x => x.Theme == Cmb.Text);
             var inTheme = inReport.ReportDataList.Single(x => x.Theme == Cmb.Text);
@@ -197,32 +197,32 @@ namespace KmsReportClient.Report.Basic
             }
             if (_forms1.Contains(form))
             {
-                FillDgwForms1(Dgv, form);
+                FillDgvForms1(Dgv, form);
                 SetTotalColumn();
             }
             else if (_forms2.Contains(form))
             {
-                FillDgwForms2(Dgv, form);
+                FillDgvForms2(Dgv, form);
                 SetTotalColumn();
             }
             else if (_forms3.Contains(form))
             {
-                FillDgwForms3(Dgv, form);
+                FillDgvForms3(Dgv, form);
                 SetTotalColumn();
             }
             else if (_forms4.Contains(form))
             {
-                FillDgwForms4(Dgv, form);
+                FillDgvForms4(Dgv, form);
                 SetTotalColumn();
             }
             //else if (_forms6.Contains(form))
             //{
-            //    FillDgwForms6(Dgv, form);
+            //    FillDgvForms6(Dgv, form);
             //    SetTotalColumn();
             //}
             else
             {
-                FillDgwForms5(Dgv, form);
+                FillDgvForms5(Dgv, form);
             }
 
 
@@ -422,7 +422,7 @@ namespace KmsReportClient.Report.Basic
         public override void ToExcel(string filename, string filialName)
         {
             var mm = YymmUtils.GetMonth(Report.Yymm.Substring(2, 2)) + " 20" + Report.Yymm.Substring(0, 2);
-            var excel = new ExcelZpzQCreator(filename, ExcelForm.ZpzQ, mm, filialName);
+            var excel = new ExcelZpzQ2025Creator(filename, ExcelForm.ZpzQ2025, mm, filialName);
             excel.CreateReport(Report, null);
         }
 
@@ -438,10 +438,10 @@ namespace KmsReportClient.Report.Basic
                     idUser = CurrentUser.IdUser,
                     report = Report,
                     yymm = Report.Yymm,
-                    reportType = ReportType.ZpzQ
+                    reportType = ReportType.ZpzQ2025
                 }
             };
-            var response = Client.SaveReport(request).Body.SaveReportResult as ReportZpz;
+            var response = Client.SaveReport(request).Body.SaveReportResult as ReportZpz2025;
             Report.IdFlow = response.IdFlow;
             Report.Status = response.Status;
         }
@@ -458,11 +458,11 @@ namespace KmsReportClient.Report.Basic
                     status = status,
                     yymmStart = yymmStart,
                     yymmEnd = yymmEnd,
-                    reportType = ReportType.ZpzQ
+                    reportType = ReportType.ZpzQ2025
                 }
             };
             var response = Client.CollectSummaryReport(request);
-            Report = response.Body.CollectSummaryReportResult as ReportZpz;
+            Report = response.Body.CollectSummaryReportResult as ReportZpz2025;
             Report.IdType = IdReportType;
             Report.Yymm = yymmEnd;
         }
@@ -598,7 +598,7 @@ namespace KmsReportClient.Report.Basic
             reportZpzDto.Data = (from DataGridViewRow row in dgvReport.Rows
                                  let rowNum = row.Cells[1].Value.ToString().Trim()
                                  where !IsNotNeedFillRow(form, rowNum)
-                                 select new ReportZpzDataDto
+                                 select new ReportZpz2025DataDto
                                  {
                                      Code = rowNum,
                                      CountSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
@@ -614,7 +614,7 @@ namespace KmsReportClient.Report.Basic
                 reportZpzDto.Data = (from DataGridViewRow row in dgvReport.Rows
                                      let rowNum = row.Cells[1].Value.ToString().Trim()
                                      where !IsNotNeedFillRow(form, rowNum)
-                                     select new ReportZpzDataDto
+                                     select new ReportZpz2025DataDto
                                      {
                                          Code = rowNum,
                                          CountSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
@@ -635,7 +635,7 @@ namespace KmsReportClient.Report.Basic
                 reportZpzDto.Data = (from DataGridViewRow row in dgvReport.Rows
                                      let rowNum = row.Cells[1].Value.ToString().Trim()
                                      where !IsNotNeedFillRow(form, rowNum)
-                                     select new ReportZpzDataDto
+                                     select new ReportZpz2025DataDto
                                      {
                                          Code = rowNum,
                                          CountSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value)
@@ -651,7 +651,7 @@ namespace KmsReportClient.Report.Basic
                 reportZpzDto.Data = (from DataGridViewRow row in dgvReport.Rows
                                      let rowNum = row.Cells[1].Value.ToString().Trim()
                                      where !IsNotNeedFillRow(form, rowNum)
-                                     select new ReportZpzDataDto
+                                     select new ReportZpz2025DataDto
                                      {
                                          Code = rowNum,
                                          CountOutOfSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
@@ -680,7 +680,7 @@ namespace KmsReportClient.Report.Basic
 
                     reportZpzDto.Data = (from DataGridViewRow row in dgvReport.Rows
                                          let rowNum = row.Cells[1].Value.ToString()
-                                         select new ReportZpzDataDto
+                                         select new ReportZpz2025DataDto
                                          {
                                              Code = row.Cells[1].Value.ToString() ?? " ",
                                              CountSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
@@ -717,7 +717,7 @@ namespace KmsReportClient.Report.Basic
         //    }
         //}
 
-        private void FillDgwForms1(DataGridView dgvReport, string form)
+        private void FillDgvForms1(DataGridView dgvReport, string form)
         {
             var reportZpzDto = Report.ReportDataList?.Single(x => x.Theme == form);
             if (reportZpzDto?.Data == null || reportZpzDto.Data.Length == 0)
@@ -740,7 +740,7 @@ namespace KmsReportClient.Report.Basic
             }
         }
 
-        private void FillDgwForms2(DataGridView dgvReport, string form)
+        private void FillDgvForms2(DataGridView dgvReport, string form)
         {
             var reportZpzDto = Report.ReportDataList.Single(x => x.Theme == form);
             if (reportZpzDto.Data == null || reportZpzDto.Data.Length == 0)
@@ -768,7 +768,7 @@ namespace KmsReportClient.Report.Basic
             }
         }
 
-        private void FillDgwForms3(DataGridView dgvReport, string form)
+        private void FillDgvForms3(DataGridView dgvReport, string form)
         {
             var reportZpzDto = Report.ReportDataList.Single(x => x.Theme == form);
             if (reportZpzDto.Data == null || reportZpzDto.Data.Length == 0)
@@ -790,7 +790,7 @@ namespace KmsReportClient.Report.Basic
 
         }
 
-        private void FillDgwForms4(DataGridView dgvReport, string form)
+        private void FillDgvForms4(DataGridView dgvReport, string form)
         {
             var reportZpzDto = Report.ReportDataList.Single(x => x.Theme == form);
             if (reportZpzDto.Data == null || reportZpzDto.Data.Length == 0)
@@ -827,7 +827,7 @@ namespace KmsReportClient.Report.Basic
 
         }
 
-        private void FillDgwForms5(DataGridView dgvReport, string form) // в форму
+        private void FillDgvForms5(DataGridView dgvReport, string form) // в форму
         {
             var reportZpzDto = Report.ReportDataList.Single(x => x.Theme == form);
             if (reportZpzDto.Data == null || reportZpzDto.Data.Length == 0)
@@ -856,7 +856,7 @@ namespace KmsReportClient.Report.Basic
             SetFormula();
         }
 
-        //private void FillDgwForms6(DataGridView dgvReport, string form)
+        //private void FillDgvForms6(DataGridView dgvReport, string form)
         //{
         //    var reportZpzDto = Report.ReportDataList.FirstOrDefault(x => x.Theme == form);
         //    if (reportZpzDto == null)

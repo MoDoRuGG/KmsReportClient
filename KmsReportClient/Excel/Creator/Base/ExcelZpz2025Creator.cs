@@ -10,7 +10,7 @@ using Microsoft.Office.Interop.Excel;
 
 namespace KmsReportClient.Excel.Creator.Base
 {
-    class ExcelZpzCreator : ExcelBaseCreator<ReportZpz>
+    class ExcelZpz2025Creator : ExcelBaseCreator<ReportZpz2025>
     {
         private readonly List<ReportDictionary> _zpzDictionaries = new List<ReportDictionary> {
 
@@ -21,13 +21,13 @@ namespace KmsReportClient.Excel.Creator.Base
             new ReportDictionary {TableName = "Таблица 10", StartRow = 7, EndRow = 58, Index = 5}  
         };
 
-        public ExcelZpzCreator(
+        public ExcelZpz2025Creator(
             string filename,
             ExcelForm reportName,
             string header,
             string filialName) : base(filename, reportName, header, filialName, false) { }
 
-        protected override void FillReport(ReportZpz report, ReportZpz yearReport)
+        protected override void FillReport(ReportZpz2025 report, ReportZpz2025 yearReport)
         {
             string reportMonths = YymmUtils.GetMonth(report.Yymm.Substring(2, 2));
             string reportYear = report.Yymm.Substring(0, 2);
@@ -62,7 +62,7 @@ namespace KmsReportClient.Excel.Creator.Base
         }
 
 
-        private void FillTable4(ReportZpzDataDto[] data, int startRowIndex, int endRowIndex, string form)
+        private void FillTable4(ReportZpz2025DataDto[] data, int startRowIndex, int endRowIndex, string form)
         {
             var columnIndex = form switch
             {
@@ -85,7 +85,7 @@ namespace KmsReportClient.Excel.Creator.Base
             }
         }
 
-        private void FillTable1(ReportZpzDataDto[] data, int startRowIndex, int endRowIndex, string form)
+        private void FillTable1(ReportZpz2025DataDto[] data, int startRowIndex, int endRowIndex, string form)
         {
             for (int i = startRowIndex; i <= endRowIndex; i++)
             {
@@ -112,7 +112,7 @@ namespace KmsReportClient.Excel.Creator.Base
             }
         }
 
-        private void FillTable2(ReportZpzDataDto[] data, int startRowIndex, int endRowIndex)
+        private void FillTable2(ReportZpz2025DataDto[] data, int startRowIndex, int endRowIndex)
         {
             for (int i = startRowIndex; i <= endRowIndex; i++)
             {

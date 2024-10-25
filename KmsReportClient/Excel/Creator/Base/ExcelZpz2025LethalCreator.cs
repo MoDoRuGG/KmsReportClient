@@ -10,20 +10,20 @@ using Microsoft.Office.Interop.Excel;
 
 namespace KmsReportClient.Excel.Creator.Base
 {
-    class ExcelZpzLethalCreator : ExcelBaseCreator<ReportZpz>
+    class ExcelZpz2025LethalCreator : ExcelBaseCreator<ReportZpz2025>
     {
         private readonly List<ReportDictionary> _zpzDictionaries = new List<ReportDictionary> {
             new ReportDictionary {TableName = "Таблица 1Л", StartRow = 5, EndRow = 28, Index = 1},
             new ReportDictionary {TableName = "Таблица 2Л", StartRow = 5, EndRow = 30, Index = 2},
         };
 
-        public ExcelZpzLethalCreator(
+        public ExcelZpz2025LethalCreator(
             string filename,
             ExcelForm reportName,
             string header,
             string filialName) : base(filename, reportName, header, filialName, false) { }
 
-        protected override void FillReport(ReportZpz report, ReportZpz yearReport)
+        protected override void FillReport(ReportZpz2025 report, ReportZpz2025 yearReport)
         {
             string reportMonths = YymmUtils.GetMonth(report.Yymm.Substring(2, 2));
             string reportYear = report.Yymm.Substring(0, 2);
@@ -51,7 +51,7 @@ namespace KmsReportClient.Excel.Creator.Base
         }
 
 
-        private void FillTableLetal(ReportZpzDataDto[] data, int startRowIndex, int endRowIndex, string form)
+        private void FillTableLetal(ReportZpz2025DataDto[] data, int startRowIndex, int endRowIndex, string form)
         {
             for (int i = startRowIndex; i <= endRowIndex; i++)
             {

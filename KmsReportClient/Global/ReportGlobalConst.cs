@@ -31,5 +31,11 @@
         public const string ReportTargetedAllowances = "TarAllow";
         public const string ReportPVPLoad = "pvpl";
         public const string ReportDoff = "doff";
+
+        public const string ReportZpz2025 = "Zpz2025";
+        public const string ReportZpz10_2025 = "Zpz10_2025";
+        public const string ReportZpzQ2025 = "Zpz_Q2025";
+        public const string ReportQueryZpz2025 = "QueryZpz2025";
+        public const string ReportZpz2025Lethal = "ZpzL2025";
     }
 }
