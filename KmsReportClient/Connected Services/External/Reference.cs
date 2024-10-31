@@ -6584,6 +6584,15 @@ namespace KmsReportClient.External {
         private string FilialField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.OpedData CountSlField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.OpedData CountMeeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.OpedData CountEkmpField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private KmsReportClient.External.OpedData MeeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -6612,7 +6621,46 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public KmsReportClient.External.OpedData CountSl {
+            get {
+                return this.CountSlField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CountSlField, value) != true)) {
+                    this.CountSlField = value;
+                    this.RaisePropertyChanged("CountSl");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public KmsReportClient.External.OpedData CountMee {
+            get {
+                return this.CountMeeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CountMeeField, value) != true)) {
+                    this.CountMeeField = value;
+                    this.RaisePropertyChanged("CountMee");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public KmsReportClient.External.OpedData CountEkmp {
+            get {
+                return this.CountEkmpField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CountEkmpField, value) != true)) {
+                    this.CountEkmpField = value;
+                    this.RaisePropertyChanged("CountEkmp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
         public KmsReportClient.External.OpedData Mee {
             get {
                 return this.MeeField;
@@ -6625,7 +6673,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
         public KmsReportClient.External.OpedData Ekmp {
             get {
                 return this.EkmpField;

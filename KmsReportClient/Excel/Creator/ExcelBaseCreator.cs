@@ -36,7 +36,7 @@ namespace KmsReportClient.Excel.Creator
         public void CreateReport(T report, T yearReport)
         {
             ObjExcel = new Application { DisplayAlerts = false, 
-                                       Visible = false
+                                       Visible = true
                                         };
             ObjWorkBook = ObjExcel.Workbooks.Open(AppDomain.CurrentDomain.BaseDirectory + ReportName.GetDescription());
             ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets[1];
@@ -125,15 +125,15 @@ namespace KmsReportClient.Excel.Creator
 
         protected void CopyNullCellsOped(Worksheet sheet, int count, int position)
         {
-            int cntS = 10;
-            int cntE = 12;
+            int cntS = 6;
+            int cntE = 11;
             for (int k = 1; k <= count - 1; k++)
             {
 
                 var row = sheet.Range["A" + cntS + ":F" + cntE, Type.Missing];
                 row.Copy(Type.Missing);
-                cntS += 4;
-                cntE += 4;
+                cntS += 7;
+                cntE += 7;
                 row = sheet.Range["A" + cntS + ":F" + cntE, Type.Missing];
                 row.Insert(XlInsertShiftDirection.xlShiftDown);
 
