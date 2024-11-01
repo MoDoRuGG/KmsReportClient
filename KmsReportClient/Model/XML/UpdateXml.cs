@@ -17,5 +17,7 @@ namespace KmsReportClient.Model.XML
         public string Name { get; set; }
         [XmlElement("IS_NEED_DOWNLOAD")]
         public bool IsNeedDownload { get; set; }
+        [XmlElement("HASH")]
+        public string Hash { get; set; }
     }
 }
