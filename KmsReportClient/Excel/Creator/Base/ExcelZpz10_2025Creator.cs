@@ -13,7 +13,7 @@ namespace KmsReportClient.Excel.Creator.Base
     class ExcelZpz10_2025Creator : ExcelBaseCreator<ReportZpz2025>
     {
         private readonly List<ReportDictionary> _zpzDictionaries = new List<ReportDictionary> {
-            new ReportDictionary {TableName = "Таблица 10", StartRow = 7, EndRow = 58, Index = 5}  
+            new ReportDictionary {TableName = "Таблица 10", StartRow = 7, EndRow = 107, Index = 1}  
         };
 
         public ExcelZpz10_2025Creator(
@@ -37,32 +37,22 @@ namespace KmsReportClient.Excel.Creator.Base
                 var data = themeData.Data;
                 switch (themeData.Theme)
                 {
-                    case "Таблица 1":
-                        FillTable1(data, dict.StartRow, dict.EndRow, themeData.Theme);
-                        break;
-                  
-                    case "Таблица 4":
                     case "Таблица 10":
-                        FillTable4(data, dict.StartRow, dict.EndRow, themeData.Theme);
-                        break;
-                    case "Таблица 2":
-                    case "Таблица 3":
-                        FillTable2(data, dict.StartRow, dict.EndRow);
+                        FillTable10(data, dict.StartRow, dict.EndRow, themeData.Theme);
                         break;
                 }
             }
 
-            ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets[5];
+            ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets[1];
             FinishZpz();
         }
 
 
-        private void FillTable4(ReportZpz2025DataDto[] data, int startRowIndex, int endRowIndex, string form)
+        private void FillTable10(ReportZpz2025DataDto[] data, int startRowIndex, int endRowIndex, string form)
         {
             var columnIndex = form switch
             {
                 "Таблица 10" => 7,
-                "Таблица 4" => 5,
             };
             for (int i = startRowIndex; i <= endRowIndex; i++)
             {
@@ -80,96 +70,26 @@ namespace KmsReportClient.Excel.Creator.Base
             }
         }
 
-        private void FillTable1(ReportZpz2025DataDto[] data, int startRowIndex, int endRowIndex, string form)
-        {
-            for (int i = startRowIndex; i <= endRowIndex; i++)
-            {
-                string rowNum = ObjWorkSheet.Cells[i, 2].Text;
-                if (!string.IsNullOrEmpty(rowNum))
-                {
-                    var rowData = data?.SingleOrDefault(x => x.Code == rowNum);
-                    if (rowData != null)
-                    {
-                        if (ObjWorkSheet.Cells[i, 8].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 8] = rowData.CountSmo;
-                        }
-                        if (ObjWorkSheet.Cells[i, 9].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 9] = rowData.CountSmoAnother;
-                        }
-                        if (ObjWorkSheet.Cells[i, 10].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 10] = rowData.CountAssignment;
-                        }
-                    }
-                }
-            }
-        }
-
-        private void FillTable2(ReportZpz2025DataDto[] data, int startRowIndex, int endRowIndex)
-        {
-            for (int i = startRowIndex; i <= endRowIndex; i++)
-            {
-                string rowNum = ObjWorkSheet.Cells[i, 2].Text;
-                if (!string.IsNullOrEmpty(rowNum))
-                {
-                    var rowData = data?.SingleOrDefault(x => x.Code == rowNum);
-                    if (rowData != null)
-                    {
-                        if (ObjWorkSheet.Cells[i, 5].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 5] = rowData.CountSmo;
-                        }
-
-                        if (ObjWorkSheet.Cells[i, 7].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 7] = rowData.CountInsured;
-                        }
-
-                        if (ObjWorkSheet.Cells[i, 8].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 8] = rowData.CountInsuredRepresentative;
-                        }
-
-                        if (ObjWorkSheet.Cells[i, 9].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 9] = rowData.CountTfoms;
-                        }
-
-                        if (ObjWorkSheet.Cells[i, 10].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 10] = rowData.CountSmoAnother;
-                        }
-
-                        if (ObjWorkSheet.Cells[i, 11].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 11] = rowData.CountProsecutor;
-                        }
-                    }
-                }
-            }
-        }
 
 
         private void FinishZpz()
         {
-            ObjWorkSheet.Cells[61, 3] = CurrentUser.Director;
-            ObjWorkSheet.Cells[64, 1] = "Дата: " + DateTime.Today.ToShortDateString();
+            ObjWorkSheet.Cells[110, 3] = CurrentUser.Director;
+            ObjWorkSheet.Cells[113, 1] = "Дата: " + DateTime.Today.ToShortDateString();
             if (!string.IsNullOrEmpty(CurrentUser.DirectorPhone))
             {
                 var code = GetPhoneCode(CurrentUser.DirectorPhone);
                 var number = GetPhoneNumber(CurrentUser.DirectorPhone);
-                ObjWorkSheet.Cells[64, 4] = $"+7 ({code}) {number}";
+                ObjWorkSheet.Cells[113, 4] = $"+7 ({code}) {number}";
             }
 
-            ObjWorkSheet.Cells[67, 3] = CurrentUser.UserName;
-            ObjWorkSheet.Cells[70, 1] = CurrentUser.Email ?? "";
+            ObjWorkSheet.Cells[116, 3] = CurrentUser.UserName;
+            ObjWorkSheet.Cells[119, 1] = CurrentUser.Email ?? "";
             if (!string.IsNullOrEmpty(CurrentUser.Phone))
             {
                 var code = GetPhoneCode(CurrentUser.Phone);
                 var number = GetPhoneNumber(CurrentUser.Phone);
-                ObjWorkSheet.Cells[70, 4] = $"+7 ({code}) {number}";
+                ObjWorkSheet.Cells[119, 4] = $"+7 ({code}) {number}";
             }
         }
 

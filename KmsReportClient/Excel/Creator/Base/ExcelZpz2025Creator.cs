@@ -18,7 +18,6 @@ namespace KmsReportClient.Excel.Creator.Base
             new ReportDictionary {TableName = "Таблица 2", StartRow = 7, EndRow = 27, Index = 2},
             new ReportDictionary {TableName = "Таблица 3", StartRow = 7, EndRow = 51, Index = 3},
             new ReportDictionary {TableName = "Таблица 4", StartRow = 7, EndRow = 13, Index = 4},
-            new ReportDictionary {TableName = "Таблица 10", StartRow = 7, EndRow = 58, Index = 5}  
         };
 
         public ExcelZpz2025Creator(
@@ -47,7 +46,6 @@ namespace KmsReportClient.Excel.Creator.Base
                         break;
                   
                     case "Таблица 4":
-                    case "Таблица 10":
                         FillTable4(data, dict.StartRow, dict.EndRow, themeData.Theme);
                         break;
                     case "Таблица 2":
@@ -56,9 +54,6 @@ namespace KmsReportClient.Excel.Creator.Base
                         break;
                 }
             }
-
-            ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets[5];
-            FinishZpz();
         }
 
 
@@ -66,7 +61,6 @@ namespace KmsReportClient.Excel.Creator.Base
         {
             var columnIndex = form switch
             {
-                "Таблица 10" => 7,
                 "Таблица 4" => 5,
             };
             for (int i = startRowIndex; i <= endRowIndex; i++)
@@ -78,8 +72,6 @@ namespace KmsReportClient.Excel.Creator.Base
                     if (rowData != null)
                     {
                         ObjWorkSheet.Cells[i, columnIndex] = rowData.CountSmo;
-                        if (form == "Таблица 10")
-                        ObjWorkSheet.Cells[i, columnIndex+1] = rowData.CountSmo;
                     }
                 }
             }
@@ -155,28 +147,5 @@ namespace KmsReportClient.Excel.Creator.Base
                 }
             }
         }
-
-
-        private void FinishZpz()
-        {
-            ObjWorkSheet.Cells[61, 3] = CurrentUser.Director;
-            ObjWorkSheet.Cells[64, 1] = "Дата: " + DateTime.Today.ToShortDateString();
-            if (!string.IsNullOrEmpty(CurrentUser.DirectorPhone))
-            {
-                var code = GetPhoneCode(CurrentUser.DirectorPhone);
-                var number = GetPhoneNumber(CurrentUser.DirectorPhone);
-                ObjWorkSheet.Cells[64, 4] = $"+7 ({code}) {number}";
-            }
-
-            ObjWorkSheet.Cells[67, 3] = CurrentUser.UserName;
-            ObjWorkSheet.Cells[70, 1] = CurrentUser.Email ?? "";
-            if (!string.IsNullOrEmpty(CurrentUser.Phone))
-            {
-                var code = GetPhoneCode(CurrentUser.Phone);
-                var number = GetPhoneNumber(CurrentUser.Phone);
-                ObjWorkSheet.Cells[70, 4] = $"+7 ({code}) {number}";
-            }
-        }
-
     }
 }
