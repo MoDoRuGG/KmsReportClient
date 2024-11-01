@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using System.Xml.Serialization;
@@ -108,10 +109,20 @@ namespace KmsReportClient.Service
                     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
                     foreach (var file in updateXml.RemoteFiles.Where(f => f.IsNeedDownload))
                     {
-                        if (file.Name == XmlFormTemplate.TextMail.GetDescription() && File.Exists(TemplatesFolder + file.Name))
+                        string localFilePath = Path.Combine(TemplatesFolder, file.Name);
+
+                        // Проверка наличия файла и его хэша
+                        if (File.Exists(localFilePath))
                         {
-                            continue;
+                            string localFileHash = GetFileHash(localFilePath);
+                            if (localFileHash == file.Hash)
+                            {
+                                // Файл уже актуален, пропускаем скачивание
+                                continue;
+                            }
                         }
+
+                        // Скачиваем файл, если его нет или хэш не совпадает
                         DownloadExcelTemplate(file.Name);
                     }
                     ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -129,6 +140,19 @@ namespace KmsReportClient.Service
                 var message = $"Ошибка обновления. {ex}";
                 Log.Error(ex, "Ошибка обновления");
                 MessageBox.Show(message, @"Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Метод для вычисления хэша MD5 файла
+        static string GetFileHash(string filePath)
+        {
+            using (var md5 = MD5.Create())
+            {
+                using (var stream = File.OpenRead(filePath))
+                {
+                    var hash = md5.ComputeHash(stream);
+                    return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+                }
             }
         }
 
