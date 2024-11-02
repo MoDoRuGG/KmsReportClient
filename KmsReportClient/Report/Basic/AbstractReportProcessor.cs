@@ -209,7 +209,7 @@ namespace KmsReportClient.Report.Basic
                                 }
                                 else
                                 {
-                                    if ((Report.IdType == "Zpz" || Report.IdType == "Zpz2025") && GetCurrentTheme() == "Таблица 1")
+                                    if ((Report.IdType == "Zpz" || Report.IdType == "Zpz2025") && (GetCurrentTheme() == "Таблица 1" || GetCurrentTheme() == "Таблица 2" || GetCurrentTheme() == "Таблица 3" || GetCurrentTheme() == "Таблица 4"))
                                     {
                                         if (Dgv.Rows[row].Cells[cell].ColumnIndex != 4) { valueCel += GlobalUtils.TryParseInt(Dgv.Rows[row].Cells[cell].Value); }
                                     }
