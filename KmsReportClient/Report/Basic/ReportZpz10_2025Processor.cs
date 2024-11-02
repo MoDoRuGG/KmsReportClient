@@ -5,8 +5,8 @@ using System.Linq;
 using System.Windows.Forms;
 using KmsReportClient.Excel.Creator.Base;
 using KmsReportClient.External;
+using KmsReportClient.Forms;
 using KmsReportClient.Global;
-using KmsReportClient.Model;
 using KmsReportClient.Model.Enums;
 using KmsReportClient.Model.XML;
 using KmsReportClient.Support;
@@ -18,12 +18,16 @@ namespace KmsReportClient.Report.Basic
     {
         string[] _notSaveCells = new string[] { "1",
                                                 "2",
-                                                "3", 
+                                                "3",
                                                 "4", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6",
                                                 "5", "5.1", "5.2", "5.3", "5.4", "5.5", "5.6",
                                                 "6",
                                                 "7",
                                                 "8"
+                                                };
+
+        string[] _notStyleCells = new string[] {
+                                                "8.1", "8.2", "8.3", "8.4", "8.5", "8.6"
                                                 };
 
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
@@ -92,13 +96,16 @@ namespace KmsReportClient.Report.Basic
 
         public override void FillDataGridView(string form)
         {
+            var waitingForm = new WaitingForm();
+            waitingForm.Show();
+            Application.DoEvents();
             if (form == null)
             {
                 return;
             }
             if (_forms1.Contains(form))
             {
-                FillDgwForms1(Dgv, form);
+                FillDgvForms1(Dgv, form);
             }
 
 
@@ -106,6 +113,7 @@ namespace KmsReportClient.Report.Basic
 
             SetFormula();
             //SetTotalColumn();
+            waitingForm.Close();
         }
 
         public void SetFormula()
@@ -243,15 +251,28 @@ namespace KmsReportClient.Report.Basic
         {
             foreach (DataGridViewRow row in Dgv.Rows)
             {
-                string rowNum = row.Cells[1].Value.ToString();
-                if (_notSaveCells.Contains(rowNum))
+                if (_notStyleCells.Contains(row.Cells[1].Value.ToString()))
                 {
-                    row.DefaultCellStyle.BackColor = Color.LightGray;
-                    
-                    row.ReadOnly = false;
-                    row.DefaultCellStyle.Font = new Font(Dgv.DefaultCellStyle.Font, FontStyle.Bold);
+                    continue;
                 }
-                row.Cells[2].Style.BackColor = Color.LightGray;
+                else
+                {
+                    string rowNum = row.Cells[1].Value.ToString();
+                    if (_notSaveCells.Contains(rowNum))
+                    {
+                        row.DefaultCellStyle.BackColor = Color.LightGray;
+
+                        row.ReadOnly = false;
+                        row.DefaultCellStyle.Font = new Font(Dgv.DefaultCellStyle.Font, FontStyle.Bold);
+                    }
+                    row.Cells[2].Style.BackColor = Color.LightGray;
+
+                }
+                if (row.Cells[1].Value.ToString() == "7.5")
+                {
+                    row.Cells[3].Style.BackColor= Color.DarkGray;
+                    row.ReadOnly = true;
+                }
             }
         }
 
@@ -398,8 +419,23 @@ namespace KmsReportClient.Report.Basic
                 };
                 dgvRow.Cells.Add(cellName);
                 dgvRow.Cells.Add(cellNum);
+                var exclusionCells = row.ExclusionCells_fromxml?.Split(',');
+                for (int i = 2; i < countRows; i++)
+                {
+                    bool isNeedExcludeSum = exclusionCells?.Contains(i.ToString()) ?? false;
+                    var cell = new DataGridViewTextBoxCell
+                    {
+                        Value = row.Exclusion_fromxml || isNeedExcludeSum ? "x" : "0"
+                    };
+                    dgvRow.Cells.Add(cell);
 
-        
+                    if (isNeedExcludeSum)
+                    {
+                        cell.ReadOnly = true;
+                        cell.Style.BackColor = Color.DarkGray;
+                    }
+                }
+
                 int rowIndex = Dgv.Rows.Add(dgvRow);
             }
             SetStyle();
@@ -408,6 +444,7 @@ namespace KmsReportClient.Report.Basic
             {
                 _rows.Add(row.Cells[1].Value.ToString(), row);
             }
+
         }
 
         private void CreateDgvColumnsForTheme(DataGridView dgvReport, int widthFirstColumn, string mainHeader,
@@ -482,7 +519,7 @@ namespace KmsReportClient.Report.Basic
             SetFormula();
         }
 
-        private void FillDgwForms1(DataGridView dgvReport, string form)
+        private void FillDgvForms1(DataGridView dgvReport, string form)
         {
             var reportZpzDto = Report.ReportDataList?.Single(x => x.Theme == form);
             if (reportZpzDto?.Data == null || reportZpzDto.Data.Length == 0)
@@ -515,7 +552,7 @@ namespace KmsReportClient.Report.Basic
                 })).Body.GetZpz10_2025YearDataResult;
                 if (yearThemeData != null)
                 {
-                   row.Cells[2].Value = yearThemeData.CountSmo;
+                    row.Cells[2].Value = yearThemeData.CountSmo;
 
                 }
             }

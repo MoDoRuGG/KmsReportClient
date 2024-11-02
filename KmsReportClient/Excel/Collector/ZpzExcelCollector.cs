@@ -28,8 +28,8 @@ namespace KmsReportClient.Excel.Collector
         {
             var themeData = form switch {
                 "Таблица 1" => FillTable1(form),
-                "Таблица 2" => FillTable2(form),
-                "Таблица 3" => FillTable2(form),
+                "Таблица 2" => FillTable2_3(form),
+                "Таблица 3" => FillTable2_3(form),
                 "Таблица 4" => FillTable4(form),
                 "Таблица 10" => FillTable4(form),
 
@@ -84,7 +84,7 @@ namespace KmsReportClient.Excel.Collector
             return list.ToArray();
         }
 
-        private ReportZpzDataDto[] FillTable2(string form)
+        private ReportZpzDataDto[] FillTable2_3(string form)
         {
             var list = new List<ReportZpzDataDto>();
             int countWorkSheet = ObjWorkBook.Worksheets.Count;
@@ -93,7 +93,7 @@ namespace KmsReportClient.Excel.Collector
             {
                 ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets[currentList];
                 int lastRow = GetLastRow();
-                int startRow = currentList == 1 ? 12 : 5;
+                int startRow = currentList == 1 ? 11 : 5;
 
                 Dictionary<string, int> dictionary = form == "Таблица 2" ?
                     FindColumnIndexies(_columnsTable2, startRow - 1) :
@@ -103,7 +103,7 @@ namespace KmsReportClient.Excel.Collector
                 {
                     var data = new ReportZpzDataDto
                     {
-                        Code = ObjWorkSheet.Cells[i, dictionary["2"]].Text,
+                        Code = ObjWorkSheet.Cells[i, dictionary[""]].Text,
                         CountSmo = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["5"]].Text),
                         CountInsured = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["7"]].Text),
                         CountInsuredRepresentative = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["8"]].Text),

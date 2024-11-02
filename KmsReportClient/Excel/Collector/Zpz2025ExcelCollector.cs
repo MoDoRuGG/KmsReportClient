@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using KmsReportClient.External;
+using KmsReportClient.Forms;
 using KmsReportClient.Support;
 using Microsoft.Office.Interop.Excel;
 
@@ -9,9 +10,9 @@ namespace KmsReportClient.Excel.Collector
 {
     class Zpz2025ExcelCollector : ExcelBaseCollector
     {
-        private readonly string[] _columnsTable1 = { "2", "8", "9","10" };
-        private readonly string[] _columnsTable2 = { "2", "5", "7", "8", "9", "10", "11" };
-        private readonly string[] _columnsTable3 = { "2", "5", "7", "8", "9", "10", "11" };
+        private readonly string[] _columnsTable1 = { "", "8", "9","10" };
+        private readonly string[] _columnsTable2 = { "", "5", "7", "8", "9", "10", "11" };
+        private readonly string[] _columnsTable3 = { "", "5", "7", "8", "9", "10", "11" };
         private readonly string[] _columnsTable4 = { "2", "5" };
         private readonly string[] _columnsTable10 = { "2", "4" };
 
@@ -26,6 +27,8 @@ namespace KmsReportClient.Excel.Collector
 
         protected override AbstractReport CollectReportData(string form)
         {
+            var waitingForm = new WaitingForm();
+            waitingForm.Show();
             var themeData = form switch {
                 "Таблица 1" => FillTable1(form),
                 "Таблица 2" => FillTable2(form),
@@ -34,13 +37,16 @@ namespace KmsReportClient.Excel.Collector
                 "Таблица 10" => FillTable4(form),
 
             };
+            
             var report = new ReportZpz2025 { ReportDataList = new ReportZpz2025Dto[1] };
             report.ReportDataList[0] = new ReportZpz2025Dto
             {
                 Theme = form,
                 Data = themeData
             };
+            waitingForm.Close();
             return report;
+            
         }
 
         private ReportZpz2025DataDto[] FillTable4(string form)
@@ -93,7 +99,7 @@ namespace KmsReportClient.Excel.Collector
             {
                 ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets[currentList];
                 int lastRow = GetLastRow();
-                int startRow = currentList == 1 ? 12 : 5;
+                int startRow = currentList == 1 ? 11 : 5;
 
                 Dictionary<string, int> dictionary = form == "Таблица 2" ?
                     FindColumnIndexies(_columnsTable2, startRow - 1) :
@@ -103,7 +109,7 @@ namespace KmsReportClient.Excel.Collector
                 {
                     var data = new ReportZpz2025DataDto
                     {
-                        Code = ObjWorkSheet.Cells[i, dictionary["2"]].Text,
+                        Code = ObjWorkSheet.Cells[i, dictionary[""]].Text,
                         CountSmo = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["5"]].Text),
                         CountInsured = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["7"]].Text),
                         CountInsuredRepresentative = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["8"]].Text),
@@ -134,12 +140,7 @@ namespace KmsReportClient.Excel.Collector
 
                 if (form == "Таблица 1")
                 {
-                    if (currentList == 1)
-                    {
-                        continue;
-                    }
-
-                    startRow = currentList == 2 ? 8 : 6;
+                    startRow = currentList == 1 ? 12 : 6;
                     dictionary = FindColumnIndexies(_columnsTable1, startRow - 1);
 
 
@@ -147,7 +148,7 @@ namespace KmsReportClient.Excel.Collector
                     {
                         var data = new ReportZpz2025DataDto
                         {
-                            Code = ObjWorkSheet.Cells[i, dictionary["2"]].Text,
+                            Code = ObjWorkSheet.Cells[i, dictionary[""]].Text,
                             CountSmo = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["8"]].Text),
                             CountSmoAnother = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["9"]].Text),
                             CountAssignment = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["10"]].Text)

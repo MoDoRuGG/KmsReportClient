@@ -68,7 +68,7 @@ namespace KmsReportClient.Excel.Collector
         protected Dictionary<string, int> FindColumnIndexies(string[] columns, int rowNum)
         {
             var dictionary = new Dictionary<string, int>();
-            int colNum = 1;
+            int colNum = 2;
             foreach (var column in columns)
             {
                 bool isFindIndex = false;
