@@ -1711,7 +1711,7 @@ ChangeIndexComboBox(DgvReportZpzLethal2025, CmbZpzLethal2025, TxtbZpzLethal2025)
             OpenConsolidateReportForm(ConsolidateReport.ControlZpzMonthly);
 
         private void КонтрольЗПЗ2025ToolStripMenuItem_Click(object sender, EventArgs e) =>
-        OpenConsolidateReportForm(ConsolidateReport.ControlZpz2025Monthly);
+        OpenConsolidateReportForm(ConsolidateReport.ControlZpz2025Quarterly);
 
         private void СуммарныйОтчетПоФилиалуToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.ConsolidateFilial294);
