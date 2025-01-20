@@ -17,7 +17,7 @@ namespace KmsReportClient.Forms
         private const string SummaryFilialName = "ООО «Капитал МС»";
         private const string SummaryFilialCode = "RU";
 
-        private static readonly ConsolidateReport[] FolderReports = { ConsolidateReport.ZpzWebSite, ConsolidateReport.ZpzWebSite2023 };
+        private static readonly ConsolidateReport[] FolderReports = { ConsolidateReport.ZpzWebSite, ConsolidateReport.ZpzWebSite2023, ConsolidateReport.ZpzWebSite2025};
 
         private readonly EndpointSoapClient _client;
         private readonly string _filialName;
@@ -141,6 +141,15 @@ namespace KmsReportClient.Forms
                     saveFileDialog1.FileName = "Сводный отчет ЗПЗ для сайта";
                     cmbStart.DataSource = GlobalConst.Periods;
                     break;
+                case ConsolidateReport.ZpzWebSite2025:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать отчет ЗПЗ для сайта";
+                    saveFileDialog1.FileName = "Сводный отчет ЗПЗ для сайта 118н";
+                    cmbStart.DataSource = GlobalConst.Periods;
+                    break;
                 case ConsolidateReport.ControlZpzMonthly:
                     labelStart.Text = "Период";
                     nudSingle.Visible = false;
@@ -167,6 +176,15 @@ namespace KmsReportClient.Forms
                     saveFileDialog1.FileName = "Сводный отчет для контроля ЗПЗ 2023(квартальный)";
                     cmbStart.DataSource = GlobalConst.Periods;
                     break;
+                case ConsolidateReport.ControlZpz2025Quarterly:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать сводный отчет для контроля ЗПЗ 118н(квартальный)";
+                    saveFileDialog1.FileName = "Сводный отчет для контроля ЗПЗ 118н(квартальный)";
+                    cmbStart.DataSource = GlobalConst.Periods;
+                    break;
                 case ConsolidateReport.ControlZpz2023FullQuarterly:
                     labelStart.Text = "Год";
                     panelSt.Visible = false;
@@ -182,6 +200,22 @@ namespace KmsReportClient.Forms
                     panelRegion.Visible = false;
                     btnDo.Text = "Проверочная таблица ЗПЗ 2023(за весь год)";
                     saveFileDialog1.FileName = "Проверочная таблица ЗПЗ 2023(за весь год)";
+                    break;
+                case ConsolidateReport.ControlZpz2025FullQuarterly:
+                    labelStart.Text = "Год";
+                    panelSt.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать отчет для контроля ЗПЗ 118н(за весь год)";
+                    saveFileDialog1.FileName = "Сводный отчет для контроля ЗПЗ 118н(за весь год)";
+                    break;
+                case ConsolidateReport.ControlZpz2025SingleQuarterly:
+                    labelStart.Text = "Год";
+                    panelSt.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Проверочная таблица ЗПЗ 118н(за весь год)";
+                    saveFileDialog1.FileName = "Проверочная таблица ЗПЗ 118н(за весь год)";
                     break;
                 case ConsolidateReport.Onko:
                     labelStart.Text = "Период";
@@ -527,6 +561,9 @@ namespace KmsReportClient.Forms
                     case ConsolidateReport.ZpzWebSite2023:
                         CreateZpzWebSite2023();
                         break;
+                    case ConsolidateReport.ZpzWebSite2025:
+                        CreateZpzWebSite2025();
+                        break;
                     case ConsolidateReport.Onko:
                         CreateOnko(true);
                         break;
@@ -802,6 +839,27 @@ namespace KmsReportClient.Forms
             GlobalUtils.OpenFileOrDirectory(folder);
         }
 
+        private void CreateZpzWebSite2025()
+        {
+            string yymm = GetYymmQuarterly();
+            string folder = folderBrowserDialog1.SelectedPath;
+
+            var reports = _client.CreateZpzForWebSite2025(yymm);
+
+            foreach (var report in reports)
+            {
+                string filename = folder + $"\\Отчет_для_сайта_{report.Filial}_{yymm}.xlsx";
+                string filialName = _regions.Single(x => x.Key == report.Filial).ForeignKey;
+                CreateReport(filename, filialName, report);
+            }
+
+            var summaryReport = CollectSummaryReport2025(reports);
+            string summaryFilename = folder + $"\\Отчет_для_сайта_суммарный_{yymm}.xlsx";
+            CreateReport(summaryFilename, SummaryFilialName, summaryReport);
+
+            GlobalUtils.OpenFileOrDirectory(folder);
+        }
+
         private ZpzForWebSite CollectSummaryReport(ZpzForWebSite[] reports)
         {
             var treatments = reports.SelectMany(x => x.Treatments).GroupBy(x => x.Row).Select(x => new ZpzTreatment
@@ -909,6 +967,37 @@ namespace KmsReportClient.Forms
             };
         }
 
+
+        private ZpzForWebSite2025 CollectSummaryReport2025(ZpzForWebSite2025[] reports)
+        {
+            // Получаем все данные из WSData, преобразуем в массив
+            var datas = reports.SelectMany(x => x.WSData).ToArray();
+
+            // Считаем сумму по всем колонкам
+            var summary = new WSData2025
+            {
+                Col1 = datas.Sum(x => x.Col1),
+                Col2 = datas.Sum(x => x.Col2),
+                Col3 = datas.Sum(x => x.Col3),
+                Col4 = datas.Sum(x => x.Col4),
+                Col5 = datas.Sum(x => x.Col5),
+                Col6 = datas.Sum(x => x.Col6),
+                Col8 = datas.Sum(x => x.Col8),
+                Col9 = datas.Sum(x => x.Col9),
+                Col10 = datas.Sum(x => x.Col10),
+                Col11 = datas.Sum(x => x.Col11),
+                Col12 = datas.Sum(x => x.Col12),
+                Col13 = datas.Sum(x => x.Col13)
+            };
+
+            // Возвращаем итоговый отчет с суммами
+            return new ZpzForWebSite2025
+            {
+                Filial = "Summary",  // Можно использовать любой идентификатор для итогового филиала
+                WSData = new WSData2025[] { summary }  // Возвращаем List, если нужно
+            };
+        }
+
         private void CreateReport(string filename, string filialName, ZpzForWebSite report)
         {
             var excel = new ExcelConsZpzWebSite(filename, "", filialName);
@@ -918,6 +1007,12 @@ namespace KmsReportClient.Forms
         private void CreateReport(string filename, string filialName, ZpzForWebSite2023 report)
         {
             var excel = new ExcelConsZpzWebSite2023(filename, "", filialName);
+            excel.CreateReport(report, null);
+        }
+
+        private void CreateReport(string filename, string filialName, ZpzForWebSite2025 report)
+        {
+            var excel = new ExcelConsZpzWebSite2025(filename, "", filialName);
             excel.CreateReport(report, null);
         }
 

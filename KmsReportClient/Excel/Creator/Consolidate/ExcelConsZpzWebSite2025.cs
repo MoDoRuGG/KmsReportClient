@@ -12,75 +12,26 @@ namespace KmsReportClient.Excel.Creator.Consolidate
 
         protected override void FillReport(ZpzForWebSite2025 report, ZpzForWebSite2025 yearReport)
         {
-            ObjWorkSheet.Cells[2, 2] = FilialName;
 
-            FillTreatments(report);
-            FillComplaints(report);
-            FillProtections(report);
-            FillExpertises(report);
-            FillSpecialists(report);
-            FillInformations(report);
-        }
-
-        private void FillTreatments(ZpzForWebSite2025 report)
-        {
-            int currentIndex = 7;
-            foreach (var treatment in report.Treatments)
+            ObjWorkSheet.Cells[1, 2] = FilialName;
+            int currentIndex = 5;
+            foreach (var col in report.WSData)
             {
-                ObjWorkSheet.Cells[currentIndex, 3] = treatment.Oral;
-                ObjWorkSheet.Cells[currentIndex, 4] = treatment.Written;
-                ObjWorkSheet.Cells[currentIndex++, 5] = treatment.Assignment;
+                ObjWorkSheet.Cells[currentIndex, 1] = col.Col1;
+                ObjWorkSheet.Cells[currentIndex, 2] = col.Col2;
+                ObjWorkSheet.Cells[currentIndex, 3] = col.Col3;
+                ObjWorkSheet.Cells[currentIndex, 4] = col.Col4;
+                ObjWorkSheet.Cells[currentIndex, 5] = col.Col5;
+                ObjWorkSheet.Cells[currentIndex, 6] = col.Col6;
+                ObjWorkSheet.Cells[currentIndex, 8] = col.Col8;
+                ObjWorkSheet.Cells[currentIndex, 9] = col.Col9;
+                ObjWorkSheet.Cells[currentIndex, 10] = col.Col10;
+                ObjWorkSheet.Cells[currentIndex, 11] = col.Col11;
+                ObjWorkSheet.Cells[currentIndex, 12] = col.Col12;
+                ObjWorkSheet.Cells[currentIndex, 13] = col.Col13;
             }
+
         }
 
-        private void FillComplaints(ZpzForWebSite2025 report)
-        {
-            int currentIndex = 12;
-            foreach (var complaint in report.Complaints)
-            {
-                ObjWorkSheet.Cells[currentIndex, 3] = complaint.Oral;
-                ObjWorkSheet.Cells[currentIndex, 4] = complaint.Written;
-                ObjWorkSheet.Cells[currentIndex++, 5] = complaint.Assignment;
-            }
-        }
-
-        private void FillExpertises(ZpzForWebSite2025 report)
-        {
-            int currentIndex = 28;
-            foreach (var expertise in report.Expertises)
-            {
-                ObjWorkSheet.Cells[++currentIndex, 3] = expertise.Target;
-                ObjWorkSheet.Cells[++currentIndex, 3] = expertise.Plan;
-                ObjWorkSheet.Cells[++currentIndex, 3] = expertise.Violation;
-                currentIndex += 2;
-            }
-        }
-
-        private void FillProtections(ZpzForWebSite2025 report)
-        {
-            int currentIndex = 41;
-            foreach (var protection in report.Protections)
-            {
-                ObjWorkSheet.Cells[currentIndex++, 3] = protection.Count;
-            }
-        }
-
-        private void FillSpecialists(ZpzForWebSite2025 report)
-        {
-            int currentIndex = 46;
-            foreach (var specialist in report.Specialists)
-            {
-                ObjWorkSheet.Cells[currentIndex++, 3] = specialist.Count;
-            }
-        }
-
-        private void FillInformations(ZpzForWebSite2025 report)
-        {
-            int currentIndex = 54;
-            foreach (var information in report.Informations)
-            {
-                ObjWorkSheet.Cells[currentIndex++, 3] = information.Count;
-            }
-        }
     }
 }

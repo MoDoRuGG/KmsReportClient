@@ -142,6 +142,7 @@ namespace KmsReportClient.Forms
             this.формаЗПЗToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.формаЗПЗ2025ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетДляСайта2023ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.отчетДляСайта2025ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.контрольЗПЗ2023ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.контрольЗПЗ2023FullToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.летальные2023ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -514,6 +515,7 @@ namespace KmsReportClient.Forms
             this.форма294ToolStripMenuItem,
             this.формаПГToolStripMenuItem,
             this.формаЗПЗToolStripMenuItem,
+            this.формаЗПЗ2025ToolStripMenuItem,
             this.формаОПЭДToolStripMenuItem,
             this.мониторингВССToolStripMenuItem,
             this.мониторингВСС2023ToolStripMenuItem,
@@ -714,6 +716,49 @@ namespace KmsReportClient.Forms
             this.летальные2023ToolStripMenuItem.Size = new System.Drawing.Size(275, 22);
             this.летальные2023ToolStripMenuItem.Text = "Летальные 2024";
             this.летальные2023ToolStripMenuItem.Click += new System.EventHandler(this.летальные2023ToolStripMenuItem_Click);
+
+
+            // 
+            // формаЗПЗ2025ToolStripMenuItem
+            // 
+            this.формаЗПЗ2025ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.отчетДляСайта2025ToolStripMenuItem,
+            this.контрольЗПЗ2025ToolStripMenuItem,
+            this.контрольЗПЗ2025FullToolStripMenuItem,
+            this.летальные2025ToolStripMenuItem});
+            this.формаЗПЗ2025ToolStripMenuItem.Name = "формаЗПЗ2025ToolStripMenuItem";
+            this.формаЗПЗ2025ToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.формаЗПЗ2025ToolStripMenuItem.Text = "Форма ЗПЗ 118н";
+            // 
+            // отчетДляСайта2025ToolStripMenuItem
+            // 
+            this.отчетДляСайта2025ToolStripMenuItem.Name = "отчетДляСайта2025ToolStripMenuItem";
+            this.отчетДляСайта2025ToolStripMenuItem.Size = new System.Drawing.Size(275, 22);
+            this.отчетДляСайта2025ToolStripMenuItem.Text = "Отчет для сайта";
+            this.отчетДляСайта2025ToolStripMenuItem.Click += new System.EventHandler(this.ОтчетДляСайта2025ToolStripMenuItem_Click);
+            // 
+            // контрольЗПЗ2025ToolStripMenuItem
+            // 
+            this.контрольЗПЗ2025ToolStripMenuItem.Name = "контрольЗПЗ2025ToolStripMenuItem";
+            this.контрольЗПЗ2025ToolStripMenuItem.Size = new System.Drawing.Size(275, 22);
+            this.контрольЗПЗ2025ToolStripMenuItem.Text = "Контроль ЗПЗ 118н (квартальная)";
+            this.контрольЗПЗ2025ToolStripMenuItem.Click += new System.EventHandler(this.КонтрольЗПЗ2025ToolStripMenuItem_Click);
+            // 
+            // контрольЗПЗ2025FullToolStripMenuItem
+            // 
+            this.контрольЗПЗ2025FullToolStripMenuItem.Name = "контрольЗПЗ2025FullToolStripMenuItem";
+            this.контрольЗПЗ2025FullToolStripMenuItem.Size = new System.Drawing.Size(275, 22);
+            this.контрольЗПЗ2025FullToolStripMenuItem.Text = "Контроль ЗПЗ 118н (свод за весь год)";
+            this.контрольЗПЗ2025FullToolStripMenuItem.Click += new System.EventHandler(this.КонтрольЗПЗ2025FullToolStripMenuItem_Click);
+            // 
+            // летальные2025ToolStripMenuItem
+            // 
+            this.летальные2025ToolStripMenuItem.Name = "летальные2025ToolStripMenuItem";
+            this.летальные2025ToolStripMenuItem.Size = new System.Drawing.Size(275, 22);
+            this.летальные2025ToolStripMenuItem.Text = "Летальные 118н";
+            this.летальные2025ToolStripMenuItem.Click += new System.EventHandler(this.летальные2023ToolStripMenuItem_Click);
+
+
             // 
             // формаОПЭДToolStripMenuItem
             // 

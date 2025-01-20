@@ -3056,49 +3056,28 @@
       <s:complexType name="ZpzForWebSite2025">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Treatments" type="tns:ArrayOfZpzTreatment2025" />
-          <s:element minOccurs="0" maxOccurs="1" name="Complaints" type="tns:ArrayOfZpzTreatment2025" />
-          <s:element minOccurs="0" maxOccurs="1" name="Protections" type="tns:ArrayOfZpzStatistics2025" />
-          <s:element minOccurs="0" maxOccurs="1" name="Expertises" type="tns:ArrayOfExpertise2025" />
-          <s:element minOccurs="0" maxOccurs="1" name="Specialists" type="tns:ArrayOfZpzStatistics2025" />
-          <s:element minOccurs="0" maxOccurs="1" name="Informations" type="tns:ArrayOfZpzStatistics2025" />
+          <s:element minOccurs="0" maxOccurs="1" name="WSData" type="tns:ArrayOfWSData2025" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="ArrayOfZpzTreatment2025">
+      <s:complexType name="ArrayOfWSData2025">
         <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="ZpzTreatment2025" nillable="true" type="tns:ZpzTreatment2025" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WSData2025" nillable="true" type="tns:WSData2025" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="ZpzTreatment2025">
+      <s:complexType name="WSData2025">
         <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Row" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Oral" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Written" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Assignment" type="s:int" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfZpzStatistics2025">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="ZpzStatistics2025" nillable="true" type="tns:ZpzStatistics2025" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ZpzStatistics2025">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Row" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:decimal" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfExpertise2025">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Expertise2025" nillable="true" type="tns:Expertise2025" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="Expertise2025">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Row" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Target" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Plan" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Violation" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Col1" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Col2" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Col3" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Col4" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Col5" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Col6" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Col8" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Col9" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Col10" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Col11" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Col12" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Col13" type="s:decimal" />
         </s:sequence>
       </s:complexType>
       <s:element name="CreateReportControlZpz2025Full">
