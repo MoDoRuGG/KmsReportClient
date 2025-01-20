@@ -10,17 +10,17 @@ namespace KmsReportClient.Excel.Collector
 {
     class Zpz2025ExcelCollector : ExcelBaseCollector
     {
-        private readonly string[] _columnsTable1 = { "", "8", "9","10" };
+        private readonly string[] _columnsTable1 = { "", "8", "9", "10" };
         private readonly string[] _columnsTable2 = { "", "5", "7", "8", "9", "10", "11" };
         private readonly string[] _columnsTable3 = { "", "5", "7", "8", "9", "10", "11" };
         private readonly string[] _columnsTable4 = { "2", "5" };
-        private readonly string[] _columnsTable10 = { "2", "4" };
+        private readonly string[] _columnsTable10 = { "", "4" };
 
         protected override void FillReport(string form, AbstractReport destReport, AbstractReport srcReport)
         {
-            var destData = (destReport as ReportZpz2025)?.ReportDataList.Single(r => r.Theme == form) ?? 
+            var destData = (destReport as ReportZpz2025)?.ReportDataList.Single(r => r.Theme == form) ??
                            throw new Exception($"Can't find destReportDataList for form = {form}");
-            var srcData = (srcReport as ReportZpz2025)?.ReportDataList.Single(r => r.Theme == form) ?? 
+            var srcData = (srcReport as ReportZpz2025)?.ReportDataList.Single(r => r.Theme == form) ??
                           throw new Exception($"Can't find srcReportDataList for form = {form}");
             destData.Data = srcData.Data;
         }
@@ -29,7 +29,8 @@ namespace KmsReportClient.Excel.Collector
         {
             var waitingForm = new WaitingForm();
             waitingForm.Show();
-            var themeData = form switch {
+            var themeData = form switch
+            {
                 "Таблица 1" => FillTable1(form),
                 "Таблица 2" => FillTable2(form),
                 "Таблица 3" => FillTable2(form),
@@ -37,7 +38,7 @@ namespace KmsReportClient.Excel.Collector
                 "Таблица 10" => FillTable4(form),
 
             };
-            
+
             var report = new ReportZpz2025 { ReportDataList = new ReportZpz2025Dto[1] };
             report.ReportDataList[0] = new ReportZpz2025Dto
             {
@@ -46,7 +47,7 @@ namespace KmsReportClient.Excel.Collector
             };
             waitingForm.Close();
             return report;
-            
+
         }
 
         private ReportZpz2025DataDto[] FillTable4(string form)
@@ -65,12 +66,12 @@ namespace KmsReportClient.Excel.Collector
                 switch (form)
                 {
                     case "Таблица 4":
-                        k = "5";    
-                    //startRow = 15;
+                        k = "5";
+                        //startRow = 15;
                         dictionary = FindColumnIndexies(_columnsTable4, startRow - 1);
                         break;
                     default:
-                        //startRow = currentList == 1 ? 15 : 4;
+                        startRow = currentList == 1 ? 11 : 5;
                         k = "4";
                         dictionary = FindColumnIndexies(_columnsTable10, startRow - 1);
                         break;
@@ -80,7 +81,7 @@ namespace KmsReportClient.Excel.Collector
                 {
                     var data = new ReportZpz2025DataDto
                     {
-                        Code = ObjWorkSheet.Cells[i, dictionary["2"]].Text,
+                        Code = ObjWorkSheet.Cells[i, dictionary[""]].Text,
                         CountSmo = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary[k]].Text)
                     };
                     list.Add(data);
