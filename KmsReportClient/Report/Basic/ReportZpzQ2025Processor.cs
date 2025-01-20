@@ -5,7 +5,6 @@ using System.Linq;
 using System.Windows.Forms;
 using KmsReportClient.Excel.Creator.Base;
 using KmsReportClient.External;
-using KmsReportClient.Forms;
 using KmsReportClient.Global;
 using KmsReportClient.Model.Enums;
 using KmsReportClient.Model.XML;
@@ -18,56 +17,12 @@ namespace KmsReportClient.Report.Basic
     {
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
         private readonly string[] _coloringRows = { "1", "2", "3", "4", "5", "6" };
-        private readonly string[] _forms1 = { "Таблица 1", "Таблица 9" };
-        private readonly string[] _forms2 = { "Таблица 2", "Таблица 3" };
-        private readonly string[] _forms3 = { "Таблица 4", "Таблица 8", "Таблица 10" };
-        private readonly string[] _forms4 = { "Таблица 6", "Таблица 7" };
-        //private readonly string[] _forms6 = { "Таблица 1Л", "Таблица 2Л" };
+        private readonly string[] _forms9 = { "Таблица 9" };
+        private readonly string[] _forms8 = { "Таблица 8" };
+        private readonly string[] _forms67 = { "Таблица 6", "Таблица 7" };
 
         private readonly string[][] _headers = {
-            //new[]
-            //{ "Устные", "Письменные", "По поручениям" }, //1
-            //new[]
-            //{ "Всего" }, //10
-            //new[]
-            //{
-            //    "разрешенные в досудебном порядке \r\n (гр.5)",
-            //    "разрешенные в судебном порядке, в т.ч. по лицам, обратившимся за защитой прав ЗЛ: \r\n ЗЛ \r\n (гр.7)",
-            //    "разрешенные в судебном порядке, в т.ч. по лицам, обратившимся за защитой прав ЗЛ: \r\n Представитель ЗЛ \r\n (гр.8)",
-            //    "разрешенные в судебном порядке, в т.ч. по лицам, обратившимся за защитой прав ЗЛ: \r\n ТФОМС \r\n (гр.9)",
-            //    "разрешенные в судебном порядке, в т.ч. по лицам, обратившимся за защитой прав ЗЛ: \r\n СМО \r\n (гр.10)",
-            //    "разрешенные в судебном порядке, в т.ч. по лицам, обратившимся за защитой прав ЗЛ: \r\n Прокуратура \r\n (гр.11)"
-            //}, //2
-            //new[]
-            //{
-            //    "разрешенные в досудебном порядке \r\n (гр.5)",
-            //    "разрешенные в судебном порядке, в т.ч. по лицам, обратившимся за защитой прав ЗЛ: \r\n ЗЛ \r\n (гр.7)",
-            //    "разрешенные в судебном порядке, в т.ч. по лицам, обратившимся за защитой прав ЗЛ: \r\n Представитель ЗЛ \r\n (гр.8)",
-            //    "разрешенные в судебном порядке, в т.ч. по лицам, обратившимся за защитой прав ЗЛ: \r\n ТФОМС \r\n (гр.9)",
-            //    "разрешенные в судебном порядке, в т.ч. по лицам, обратившимся за защитой прав ЗЛ: \r\n СМО \r\n (гр.10)",
-            //    "разрешенные в судебном порядке, в т.ч. по лицам, обратившимся за защитой прав ЗЛ: \r\n Прокуратура \r\n (гр.11)"
-            //}, //3
-            //new[]
-            //{ "Всего" }, //4
-            //new[]
-            //{
-            //    "амбулаторно - поликлинической медицинской помощи",
-            //    "стационарной медицинской помощи",
-            //    "стационаро - замещающей медицинской помощи",
-            //    "скорой медицинской помощи вне медицинской организации",
-            //    "Всего"
-
-            //}, //1Л
-            //new[]
-            //{
-            //    "амбулаторно - поликлинической медицинской помощи",
-            //    "стационарной медицинской помощи",
-            //    "стационаро - замещающей медицинской помощи",
-            //    "скорой медицинской помощи вне медицинской организации",
-            //    "Всего"
-
-            //}, //2Л
-            new[]
+                        new[]
             {
                 "Дата сдачи формы ЗПЗ в ТФОМС",
                 "Всего",
@@ -109,25 +64,32 @@ namespace KmsReportClient.Report.Basic
                 "плановая ЭКМП в том числе ВМП \r\n (гр.16)"
             }, //7
             new[]
-            { "Всего" }, //8
+            {
+                "По результатам МЭЭ и ЭКМП, проведенных СМО вне медицинской организации \r\n (гр.11)",
+                "По результатам МЭЭ и ЭКМП, проведенных СМО амбулаторно \r\n (гр.12)",
+                "По результатам МЭЭ и ЭКМП, проведенных СМО в дневном стационаре \r\n (гр.13)",
+                "По результатам МЭЭ и ЭКМП, проведенных СМО в том числе ВМП \r\n (гр.14)",
+                "По результатам МЭЭ и ЭКМП, проведенных СМО стационарно \r\n (гр.15)",
+                "По результатам МЭЭ и ЭКМП, проведенных СМО в том числе ВМП \r\n (гр.16)",
+
+            }, //8
             new[]
             { "Штатные работники", "Привлекаемые по договору" }, //9
+
         };
 
         private readonly Dictionary<string, string> _headersMap = new Dictionary<string, string>
         {
-            { "Таблица 1", "Виды обращений" },
-            { "Таблица 2", "Количество спорных случаев (сумма возмещения ущерба, причиненного застрахованным лицам)" },
-            { "Таблица 3", "Виды обращений" },
-            { "Таблица 4", "Количество исков в порядке регресса (сумма средств, полученных по регрессным искам)" },
+            //{ "Таблица 1", "Виды обращений" },
+            //{ "Таблица 2", "Количество спорных случаев (сумма возмещения ущерба, причиненного застрахованным лицам)" },
+            //{ "Таблица 3", "Виды обращений" },
+            //{ "Таблица 4", "Количество исков в порядке регресса (сумма средств, полученных по регрессным искам)" },
             { "Таблица 5А", "№ строки" },
             { "Таблица 6", "Количество проведенных медико-экономических экспертиз медицинской помощи (далее - МЭЭ) (выявленных нарушений)" },
             { "Таблица 7", "Количество проведенных экспертиз качества медицинской помощи (далее - ЭКМП) (выявленных нарушений)" },
             { "Таблица 8", "Финансовые результаты" },
             { "Таблица 9", "Специалисты, участвующие в защите прав застрахованных лиц" },
-            { "Таблица 10", "Численность проинформированных застрахованных лиц\r\nЕдиница измерения: для индивидуального информирования - количество человек от 18 лет и старше; для публичного (общего) информирования - абсолютное количество\r\n" },
-            //{ "Таблица 1Л", "" },
-            //{ "Таблица 2Л", "" }
+            //{ "Таблица 10", "Численность проинформированных застрахованных лиц\r\nЕдиница измерения: для индивидуального информирования - количество человек от 18 лет и старше; для публичного (общего) информирования - абсолютное количество\r\n" },
             };
 
         public override void SaveReportDataSourceExcel()
@@ -195,37 +157,25 @@ namespace KmsReportClient.Report.Basic
             {
                 return;
             }
-            if (_forms1.Contains(form))
+            if (_forms9.Contains(form))
             {
-                FillDgvForms1(Dgv, form);
+                FillDgvForms9(Dgv, form);
                 SetTotalColumn();
             }
-            else if (_forms2.Contains(form))
+            else if (_forms8.Contains(form))
             {
-                FillDgvForms2(Dgv, form);
+                FillDgvForms8(Dgv, form);
                 SetTotalColumn();
             }
-            else if (_forms3.Contains(form))
+            else if (_forms67.Contains(form))
             {
-                FillDgvForms3(Dgv, form);
+                FillDgvForms67(Dgv, form);
                 SetTotalColumn();
             }
-            else if (_forms4.Contains(form))
-            {
-                FillDgvForms4(Dgv, form);
-                SetTotalColumn();
-            }
-            //else if (_forms6.Contains(form))
-            //{
-            //    FillDgvForms6(Dgv, form);
-            //    SetTotalColumn();
-            //}
             else
             {
                 FillDgvForms5(Dgv, form);
             }
-
-
         }
 
         protected override void FillReport(string form)
@@ -235,36 +185,28 @@ namespace KmsReportClient.Report.Basic
                 return;
             }
 
-            if (_forms1.Contains(form))
+            if (_forms9.Contains(form))
             {
-                FillThemesForms1(Dgv, form);
+                FillThemesForms9(Dgv, form);
             }
-            else if (_forms2.Contains(form))
+            else if (_forms8.Contains(form))
             {
-                FillThemesForms2(Dgv, form);
+                FillThemesForms8(Dgv, form);
             }
-            else if (_forms3.Contains(form))
+            else if (_forms67.Contains(form))
             {
-                FillThemesForms3(Dgv, form);
+                FillThemesForms67(Dgv, form);
             }
-            else if (_forms4.Contains(form))
-            {
-                FillThemesForms4(Dgv, form);
-            }
-            //else if (_forms6.Contains(form))
-            //{
-            //    FillThemesForms6(Dgv, form);
-            //}
             else
             {
                 FillThemesForms5(Dgv, form);
             }
         }
 
-        
 
 
-    public override string ValidReport()
+
+        public override string ValidReport()
         {
 
             string message = "";
@@ -507,7 +449,7 @@ namespace KmsReportClient.Report.Basic
                     bool isNeedExludeSum = exclusionCells?.Contains(i.ToString()) ?? false;
                     var cell = new DataGridViewTextBoxCell
                     {
-                        Value = row.Exclusion_fromxml || isNeedExludeSum ? "X" : "0"
+                        Value = row.Exclusion_fromxml || isNeedExludeSum ? "x" : "0"
                     };
                     dgvRow.Cells.Add(cell);
 
@@ -584,10 +526,10 @@ namespace KmsReportClient.Report.Basic
                 };
                 dgvReport.Columns.Add(column);
             }
-            
+
         }
 
-        private void FillThemesForms1(DataGridView dgvReport, string form)
+        private void FillThemesForms9(DataGridView dgvReport, string form)
         {
             var reportZpzDto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
             if (reportZpzDto == null)
@@ -606,7 +548,7 @@ namespace KmsReportClient.Report.Basic
                                  }).ToArray();
         }
 
-        private void FillThemesForms2(DataGridView dgvReport, string form)
+        private void FillThemesForms8(DataGridView dgvReport, string form)
         {
             var reportZpzDto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
             if (reportZpzDto != null)
@@ -617,33 +559,17 @@ namespace KmsReportClient.Report.Basic
                                      select new ReportZpz2025DataDto
                                      {
                                          Code = rowNum,
-                                         CountSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
-                                         CountInsured = GlobalUtils.TryParseDecimal(row.Cells[3].Value),
-                                         CountInsuredRepresentative = GlobalUtils.TryParseDecimal(row.Cells[4].Value),
-                                         CountTfoms = GlobalUtils.TryParseDecimal(row.Cells[5].Value),
-                                         CountSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[6].Value),
-                                         CountProsecutor = GlobalUtils.TryParseDecimal(row.Cells[7].Value)
+                                         CountOutOfSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
+                                         CountAmbulatoryAnother = GlobalUtils.TryParseDecimal(row.Cells[3].Value),
+                                         CountDsAnother = GlobalUtils.TryParseDecimal(row.Cells[4].Value),
+                                         CountDsVmpAnother = GlobalUtils.TryParseDecimal(row.Cells[5].Value),
+                                         CountStacAnother = GlobalUtils.TryParseDecimal(row.Cells[6].Value),
+                                         CountStacVmpAnother = GlobalUtils.TryParseDecimal(row.Cells[7].Value)
                                      }).ToArray();
             }
         }
 
-        private void FillThemesForms3(DataGridView dgvReport, string form)
-        {
-            var reportZpzDto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
-            if (reportZpzDto != null)
-            {
-                reportZpzDto.Data = (from DataGridViewRow row in dgvReport.Rows
-                                     let rowNum = row.Cells[1].Value.ToString().Trim()
-                                     where !IsNotNeedFillRow(form, rowNum)
-                                     select new ReportZpz2025DataDto
-                                     {
-                                         Code = rowNum,
-                                         CountSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value)
-                                     }).ToArray();
-            }
-        }
-
-        private void FillThemesForms4(DataGridView dgvReport, string form)
+        private void FillThemesForms67(DataGridView dgvReport, string form)
         {
             var reportZpzDto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
             if (reportZpzDto != null)
@@ -670,54 +596,31 @@ namespace KmsReportClient.Report.Basic
             }
         }
 
-
-
         private void FillThemesForms5(DataGridView dgvReport, string form) // в базу
         {
-            var reportZpzDto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
+            var reportZpzDto = Report.ReportDataList.FirstOrDefault(x => x.Theme == form);
             if (reportZpzDto != null)
             {
 
-                    reportZpzDto.Data = (from DataGridViewRow row in dgvReport.Rows
-                                         let rowNum = row.Cells[1].Value.ToString()
-                                         select new ReportZpz2025DataDto
-                                         {
-                                             Code = row.Cells[1].Value.ToString() ?? " ",
-                                             CountSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
-                                             CountSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[3].Value),
-                                             CountInsured = GlobalUtils.TryParseDecimal(row.Cells[4].Value),
-                                             CountInsuredRepresentative = GlobalUtils.TryParseDecimal(row.Cells[5].Value),
-                                             CountTfoms = GlobalUtils.TryParseDecimal(row.Cells[6].Value),
-                                             CountProsecutor = GlobalUtils.TryParseDecimal(row.Cells[7].Value),
-                                             CountOutOfSmo = GlobalUtils.TryParseDecimal(row.Cells[8].Value)
-                                         }).ToArray();
+                reportZpzDto.Data = (from DataGridViewRow row in dgvReport.Rows
+                                     let rowNum = row.Cells[1].Value.ToString()
+                                     select new ReportZpz2025DataDto
+                                     {
+                                         Code = row.Cells[1].Value.ToString() ?? " ",
+                                         CountSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
+                                         CountSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[3].Value),
+                                         CountInsured = GlobalUtils.TryParseDecimal(row.Cells[4].Value),
+                                         CountInsuredRepresentative = GlobalUtils.TryParseDecimal(row.Cells[5].Value),
+                                         CountTfoms = GlobalUtils.TryParseDecimal(row.Cells[6].Value),
+                                         CountProsecutor = GlobalUtils.TryParseDecimal(row.Cells[7].Value),
+                                         CountOutOfSmo = GlobalUtils.TryParseDecimal(row.Cells[8].Value)
+                                     }).ToArray();
             }
 
         }
 
 
-        //private void FillThemesForms6(DataGridView dgvReport, string form)
-        //{
-        //    var reportZpzDto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
-        //    if (reportZpzDto != null)
-        //    {
-        //        reportZpzDto.Data = (from DataGridViewRow row in dgvReport.Rows
-        //                             let rowNum = row.Cells[1].Value.ToString().Trim()
-        //                             where !IsNotNeedFillRow(form, rowNum)
-        //                             select new ReportZpzDataDto
-        //                             {
-        //                                 Code = rowNum,
-        //                                 CountAmbulatory = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
-        //                                 CountStac = GlobalUtils.TryParseDecimal(row.Cells[3].Value),
-        //                                 CountDs = GlobalUtils.TryParseDecimal(row.Cells[4].Value),
-        //                                 CountOutOfSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[5].Value),
-        //                                 CountSmo = GlobalUtils.TryParseDecimal(row.Cells[6].Value),
-
-        //                             }).ToArray();
-        //    }
-        //}
-
-        private void FillDgvForms1(DataGridView dgvReport, string form)
+        private void FillDgvForms9(DataGridView dgvReport, string form)
         {
             var reportZpzDto = Report.ReportDataList?.Single(x => x.Theme == form);
             if (reportZpzDto?.Data == null || reportZpzDto.Data.Length == 0)
@@ -740,7 +643,7 @@ namespace KmsReportClient.Report.Basic
             }
         }
 
-        private void FillDgvForms2(DataGridView dgvReport, string form)
+        private void FillDgvForms8(DataGridView dgvReport, string form)
         {
             var reportZpzDto = Report.ReportDataList.Single(x => x.Theme == form);
             if (reportZpzDto.Data == null || reportZpzDto.Data.Length == 0)
@@ -754,43 +657,21 @@ namespace KmsReportClient.Report.Basic
                 var rowNum = row.Cells[1].Value.ToString().Trim();
                 var exclusionsCells = rows.Single(x => x.RowNum_fromxml == rowNum).ExclusionCells_fromxml?.Split(',');
                 bool isExclusionsRow = rows.Single(x => x.RowNum_fromxml == rowNum).Exclusion_fromxml;
-
                 var data = reportZpzDto.Data.SingleOrDefault(x => x.Code == rowNum);
                 if (data != null)
                 {
-                    row.Cells[2].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, exclusionsCells, 2, data.CountSmo);
-                    row.Cells[3].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, exclusionsCells, 3, data.CountInsured);
-                    row.Cells[4].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, exclusionsCells, 4, data.CountInsuredRepresentative);
-                    row.Cells[5].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, exclusionsCells, 5, data.CountTfoms);
-                    row.Cells[6].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, exclusionsCells, 6, data.CountSmoAnother);
-                    row.Cells[7].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, exclusionsCells, 7, data.CountProsecutor);
-                }
-            }
-        }
-
-        private void FillDgvForms3(DataGridView dgvReport, string form)
-        {
-            var reportZpzDto = Report.ReportDataList.Single(x => x.Theme == form);
-            if (reportZpzDto.Data == null || reportZpzDto.Data.Length == 0)
-            {
-                return;
-            }
-
-            var rows = ThemeTextData.Tables_fromxml.Where(x => x.TableName_fromxml == form).SelectMany(x => x.Rows_fromxml).ToList();
-            foreach (DataGridViewRow row in dgvReport.Rows)
-            {
-                var rowNum = row.Cells[1].Value.ToString().Trim();
-                bool isExclusionsRow = rows.Single(x => x.RowNum_fromxml == rowNum).Exclusion_fromxml;
-                var data = reportZpzDto.Data.SingleOrDefault(x => x.Code == rowNum);
-                if (data != null)
-                {
-                    row.Cells[2].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, null, 0, data.CountSmo);
+                    row.Cells[2].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, exclusionsCells, 8, data.CountOutOfSmoAnother);
+                    row.Cells[3].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, exclusionsCells, 9, data.CountAmbulatoryAnother);
+                    row.Cells[4].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, exclusionsCells, 10, data.CountDsAnother);
+                    row.Cells[5].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, exclusionsCells, 11, data.CountDsVmpAnother);
+                    row.Cells[6].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, exclusionsCells, 12, data.CountStacAnother);
+                    row.Cells[7].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, exclusionsCells, 13, data.CountStacVmpAnother);
                 }
             }
 
         }
 
-        private void FillDgvForms4(DataGridView dgvReport, string form)
+        private void FillDgvForms67(DataGridView dgvReport, string form)
         {
             var reportZpzDto = Report.ReportDataList.Single(x => x.Theme == form);
             if (reportZpzDto.Data == null || reportZpzDto.Data.Length == 0)
@@ -827,9 +708,10 @@ namespace KmsReportClient.Report.Basic
 
         }
 
+
         private void FillDgvForms5(DataGridView dgvReport, string form) // в форму
         {
-            var reportZpzDto = Report.ReportDataList.Single(x => x.Theme == form);
+            var reportZpzDto = Report.ReportDataList.FirstOrDefault(x => x.Theme == form);
             if (reportZpzDto.Data == null || reportZpzDto.Data.Length == 0)
             {
                 return;
@@ -856,39 +738,6 @@ namespace KmsReportClient.Report.Basic
             SetFormula();
         }
 
-        //private void FillDgvForms6(DataGridView dgvReport, string form)
-        //{
-        //    var reportZpzDto = Report.ReportDataList.FirstOrDefault(x => x.Theme == form);
-        //    if (reportZpzDto == null)
-        //    {
-        //        return;
-        //    }
-        //    if (reportZpzDto.Data == null || reportZpzDto.Data.Length == 0)
-        //    {
-        //        return;
-        //    }
-
-        //    var rows = ThemeTextData.Tables_fromxml.Where(x => x.TableName_fromxml == form).SelectMany(x => x.Rows_fromxml).ToList();
-
-        //    foreach (DataGridViewRow row in dgvReport.Rows)
-        //    {
-        //        var rowNum = row.Cells[1].Value.ToString().Trim();
-        //        var data = reportZpzDto.Data.SingleOrDefault(x => x.Code == rowNum);
-        //        var exclusionsCells = rows.Single(x => x.RowNum_fromxml == rowNum).ExclusionCells_fromxml?.Split(',');
-        //        bool isExclusionsRow = rows.Single(x => x.RowNum_fromxml == rowNum).Exclusion_fromxml;
-        //        if (data == null)
-        //        {
-        //            continue;
-        //        }
-
-        //        row.Cells[2].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, exclusionsCells, 2, data.CountAmbulatory);
-        //        row.Cells[3].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, exclusionsCells, 3, data.CountStac);
-        //        row.Cells[4].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, exclusionsCells, 4, data.CountDs);
-        //        row.Cells[5].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, exclusionsCells, 5, data.CountOutOfSmoAnother);
-        //        row.Cells[6].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, exclusionsCells, 6, data.CountSmo);
-        //    }
-        //}
-
         public void SetFormula()
         {
             if (GetCurrentTheme() == "Таблица 5А")
@@ -905,22 +754,23 @@ namespace KmsReportClient.Report.Basic
 
         private void SetStyle()
         {
-
-            //Dgv.Columns[0].Width = 70;
-            //Dgv.Columns[1].Width = 150;
-            //Dgv.Columns[2].Width = 200;
-            //Dgv.Columns[3].Width = 200;
-            //Dgv.Columns[4].Width = 110;
-
-            foreach (DataGridViewRow row in Dgv.Rows)
+            if (GetCurrentTheme() != "Таблица 8")
             {
-                string rowNum = row.Cells[1].Value.ToString();
-                if (_coloringRows.Contains(rowNum))
+                //Dgv.Columns[0].Width = 70;
+                //Dgv.Columns[1].Width = 150;
+                //Dgv.Columns[2].Width = 200;
+                //Dgv.Columns[3].Width = 200;
+                //Dgv.Columns[4].Width = 110;
+
+                foreach (DataGridViewRow row in Dgv.Rows)
                 {
-                    row.DefaultCellStyle.BackColor = Color.LightGreen;
+                    string rowNum = row.Cells[1].Value.ToString();
+                    if (_coloringRows.Contains(rowNum))
+                    {
+                        row.DefaultCellStyle.BackColor = Color.LightGreen;
+                    }
+
                 }
-
-
             }
         }
     }
