@@ -139,10 +139,16 @@ namespace KmsReportClient.Report.Basic
                         Dgv.Columns["TotalPlanCel"].ReadOnly = true;
                         Dgv.Columns["TotalPlanCel"].DefaultCellStyle.BackColor = Color.LightGreen;
                     }
+                    if (GetCurrentTheme() == "Таблица 8" && Report.IdType == "Zpz_Q2025")
+                    {
+                        Dgv.Columns["Total"].HeaderText = "Итого результаты";
+                        Dgv.Columns["Total"].DefaultCellStyle.BackColor = Color.LightGray;
+                        Dgv.Columns["Total"].ReadOnly = true;
+                    }
                 }
             }
         }
-        
+
         public void SetTotalColumn()
         {
             try
@@ -153,6 +159,7 @@ namespace KmsReportClient.Report.Basic
                     Dgv.Rows[row].Cells[columnCount].Value = 0;
                     int valueCel = 0;
                     int valuePlan = 0;
+                    decimal valueSMO = 0;
 
                     for (int cell = 1; cell < Dgv.Rows[row].Cells.Count - 1; cell++)
                     {
@@ -185,6 +192,24 @@ namespace KmsReportClient.Report.Basic
                                     valuePlan += GlobalUtils.TryParseInt(Dgv.Rows[row].Cells[cell].Value);
                                 }
                                 /// НА ДАННОМ ЭТАПЕ ПРОБЕГАЕМ ДЛЯ КАЖДОЙ СТРОКИ ОТЧЕТА ПО ЯЧЕЙКАМ и СУММИРУЕМ ЗНАЧЕНИЯ ДЛЯ ЦЕЛЕВЫХ (2-3-4-6) И ПЛАНОВЫХ (8-9-10-12), ПОКА ПРОСТО В ПЕРЕМЕННЫЕ valueCel и valuePlan ///
+                            }
+
+                            else if ((Report.IdType == "Zpz_Q2025") && (GetCurrentTheme() == "Таблица 8"))
+                            {
+                                if (Dgv.Rows[row].Cells[cell].ColumnIndex == 2 || Dgv.Rows[row].Cells[cell].ColumnIndex == 3 || Dgv.Rows[row].Cells[cell].ColumnIndex == 4 || Dgv.Rows[row].Cells[cell].ColumnIndex == 6)
+                                {
+                                    valueSMO += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value);
+                                }
+                                /// НА ДАННОМ ЭТАПЕ ПРОБЕГАЕМ ДЛЯ КАЖДОЙ СТРОКИ ОТЧЕТА ПО ЯЧЕЙКАМ и СУММИРУЕМ ЗНАЧЕНИЯ (2-3-4-6) ПОКА ПРОСТО В ПЕРЕМЕННУЮ valueSMO ///
+                            }
+
+                            else if ((Report.IdType == "Zpz_Q2025") && (GetCurrentTheme() == "Таблица 9"))
+                            {
+                                if (Dgv.Rows[row].Cells[cell].ColumnIndex == 2 || Dgv.Rows[row].Cells[cell].ColumnIndex == 3)
+                                {
+                                    valueSMO += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value);
+                                }
+                                /// НА ДАННОМ ЭТАПЕ ПРОБЕГАЕМ ДЛЯ КАЖДОЙ СТРОКИ ОТЧЕТА ПО ЯЧЕЙКАМ и СУММИРУЕМ ЗНАЧЕНИЯ (2-3-4-6) ПОКА ПРОСТО В ПЕРЕМЕННУЮ valueSMO ///
                             }
 
                             else
@@ -235,13 +260,18 @@ namespace KmsReportClient.Report.Basic
                         Dgv.Rows[row].Cells["TotalPlanCel"].Value = valuePlan + valueCel; // Итого цел + план
                         // Пишем в DGV значения и сумму
                     }
+                    else if ((Report.IdType == "Zpz_Q2025") && (GetCurrentTheme() == "Таблица 8" || GetCurrentTheme() == "Таблица 9"))
+                    {
+                        Dgv.Rows[row].Cells["Total"].Value = valueSMO;
+                        // Пишем в DGV значения и сумму
+                    }
                     else
                     {
                         Dgv.Rows[row].Cells[columnCount].Value = valueCel; //Целевые
                     }
                 }
-                
-                string[] rowFor6Row = { "6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7", "6.8", "6.9", "6.10" }; 
+
+                string[] rowFor6Row = { "6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7", "6.8", "6.9", "6.10" };
                 if ((Report.IdType == "PG" && (GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 8" || GetCurrentTheme() == "Таблица 5" || GetCurrentTheme() == "Таблица 10")) ||
                     (Report.IdType == "PG_Q"))
                 {
@@ -255,7 +285,7 @@ namespace KmsReportClient.Report.Basic
 
                         row6.Cells["TotalPlanCel"].Value = GlobalUtils.TryParseDecimal(row6.Cells["Total"].Value) + GlobalUtils.TryParseDecimal(row6.Cells["TotalPlan"].Value); // Итого цел + план
                     }
-                    else 
+                    else
                     {
                         var rowsForCalcluate6Total = Dgv.Rows.Cast<DataGridViewRow>().Where(x => "6".Contains(x.Cells[1].Value.ToString()));
 
@@ -346,7 +376,7 @@ namespace KmsReportClient.Report.Basic
                         { }
                         try
                         {
-                            string[] rowFor1Row = { "2", "4", "5"};
+                            string[] rowFor1Row = { "2", "4", "5" };
                             var row1 = Dgv.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[1].Value.ToString() == "1");
                             var rowsForCalcluate1Total = Dgv.Rows.Cast<DataGridViewRow>().Where(x => rowFor1Row.Contains(x.Cells[1].Value.ToString()));
                             row1.Cells["Total"].Value = rowsForCalcluate1Total.Sum(x => GlobalUtils.TryParseDecimal(x.Cells["Total"].Value));
