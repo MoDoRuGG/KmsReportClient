@@ -81,8 +81,8 @@ namespace KmsReportClient.Excel.Collector
                 {
                     var data = new ReportZpz2025DataDto
                     {
-                        Code = ObjWorkSheet.Cells[i, dictionary[""]].Value,
-                        CountSmo = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary[k]].Value)
+                        Code = ObjWorkSheet.Cells[i, dictionary[""]].Text,
+                        CountSmo = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary[k]].Text)
                     };
                     list.Add(data);
                 }
@@ -110,13 +110,13 @@ namespace KmsReportClient.Excel.Collector
                 {
                     var data = new ReportZpz2025DataDto
                     {
-                        Code = ObjWorkSheet.Cells[i, dictionary[""]].Value,
-                        CountSmo = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["5"]].Value),
-                        CountInsured = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["7"]].Value),
-                        CountInsuredRepresentative = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["8"]].Value),
-                        CountTfoms = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["9"]].Value),
-                        CountSmoAnother = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["10"]].Value),
-                        CountProsecutor = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["11"]].Value)
+                        Code = ObjWorkSheet.Cells[i, dictionary[""]].Text,
+                        CountSmo = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["5"]].Text),
+                        CountInsured = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["7"]].Text),
+                        CountInsuredRepresentative = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["8"]].Text),
+                        CountTfoms = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["9"]].Text),
+                        CountSmoAnother = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["10"]].Text),
+                        CountProsecutor = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["11"]].Text)
                     };
                     list.Add(data);
                 }
@@ -149,10 +149,10 @@ namespace KmsReportClient.Excel.Collector
                     {
                         var data = new ReportZpz2025DataDto
                         {
-                            Code = ObjWorkSheet.Cells[i, dictionary[""]].Value,
-                            CountSmo = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["8"]].Value),
-                            CountSmoAnother = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["9"]].Value),
-                            CountAssignment = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["10"]].Value)
+                            Code = ObjWorkSheet.Cells[i, dictionary[""]].Text,
+                            CountSmo = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["8"]].Text),
+                            CountSmoAnother = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["9"]].Text),
+                            CountAssignment = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary["10"]].Text)
                         };
                         list.Add(data);
                     }
