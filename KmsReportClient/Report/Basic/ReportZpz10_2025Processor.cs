@@ -26,7 +26,7 @@ namespace KmsReportClient.Report.Basic
                                                 "8"
                                                 };
 
-        string[] _notStyleCells = new string[] {
+        string[] _notStyleCells = new string[] {"7.5",
                                                 "8.1", "8.2", "8.3", "8.4", "8.5", "8.6"
                                                 };
 
@@ -244,6 +244,12 @@ namespace KmsReportClient.Report.Basic
                     row.Value.Cells[3].Value = _rows.Where(x => x.Key == "8.1" || x.Key == "8.2" || x.Key == "8.3" || x.Key == "8.4" || x.Key == "8.5" || x.Key == "8.6").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
                     continue;
                 }
+                if (row.Key == "7.5")
+                {
+                    row.Value.Cells[3].Value = "X";
+                    row.Value.Cells[3].ReadOnly = true;
+                    row.Value.Cells[3].Style.BackColor = Color.LightGray;
+                }
             }
         }
 
@@ -270,8 +276,8 @@ namespace KmsReportClient.Report.Basic
                 }
                 if (row.Cells[1].Value.ToString() == "7.5")
                 {
-                    row.Cells[3].Style.BackColor= Color.DarkGray;
-                    row.ReadOnly = true;
+                    row.Cells[3].Style.BackColor = row.Cells[2].Style.BackColor = Color.Azure;
+                    row.ReadOnly = false;
                 }
             }
         }
@@ -516,7 +522,8 @@ namespace KmsReportClient.Report.Basic
                                      CountSmo = GlobalUtils.TryParseDecimal(row.Cells[3].Value),
                                      CountSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[2].Value)
                                  }).ToArray();
-            SetFormula();
+            if (reportZpzDto.Data.Length > 0) { SetFormula(); }
+
         }
 
         private void FillDgvForms1(DataGridView dgvReport, string form)
@@ -539,7 +546,8 @@ namespace KmsReportClient.Report.Basic
                 var data = reportZpzDto.Data.SingleOrDefault(x => x.Code == rowNum);
                 if (data != null)
                 {
-                    row.Cells[3].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, null, 0, data.CountSmo);
+                    if (rowNum != "7.5") { row.Cells[3].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, null, 0, data.CountSmo); }
+                    else { row.Cells[2].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, null, 0, data.CountSmoAnother); }
                 }
 
 
@@ -552,8 +560,7 @@ namespace KmsReportClient.Report.Basic
                 })).Body.GetZpz10_2025YearDataResult;
                 if (yearThemeData != null)
                 {
-                    row.Cells[2].Value = yearThemeData.CountSmo;
-
+                    if (rowNum != "7.5") { row.Cells[2].Value = yearThemeData.CountSmo; }
                 }
             }
             SetFormula();
