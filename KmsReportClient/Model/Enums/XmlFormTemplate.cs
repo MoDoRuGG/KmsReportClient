@@ -24,6 +24,7 @@ namespace KmsReportClient.Model.Enums
         [Description("TemplateMonitoringVCR.xml")] MVCR,
         [Description("TemplateTextProposal.xml")] Proposal,
         [Description("TemplateTextOpedFinance.xml")] OpedFinance,
+        [Description("TemplateTextOpedFinance2025.xml")] OpedFinance2025,
         [Description("TemplateTextOpedFinance3.xml")] OpedFinance3,
         [Description("TemplateTextIizl2022.xml")] Iizl2022,
         [Description("TemplateTextCadre.xml")] Cadre,

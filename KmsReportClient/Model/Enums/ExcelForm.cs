@@ -143,6 +143,8 @@ namespace KmsReportClient.Model.Enums
         proposal,
         [Description(GlobalConst.TempFolder + "opedFinance.xlsx")]
         opedFinance,
+        [Description(GlobalConst.TempFolder + "opedFinance2025.xlsx")]
+        OpedFinance2025,
         [Description(GlobalConst.TempFolder + "CPNP2_Q.xlsx")]
         consCPNPQ2,
         [Description(GlobalConst.TempFolder + "consOpedFinance1.xlsx")]

@@ -13,13 +13,14 @@ namespace KmsReportClient.Excel.Creator.Base
     class ExcelZpzQ2025Creator : ExcelBaseCreator<ReportZpz2025>
     {
         private readonly List<ReportDictionary> _zpzDictionaries = new List<ReportDictionary> {
-            new ReportDictionary {TableName = "Таблица 5А", StartRow = 6, EndRow = 6, Index = 1},
+            new ReportDictionary {TableName = "Результаты МЭК", StartRow = 6, EndRow = 6, Index = 1},
             new ReportDictionary {TableName = "Таблица 6", StartRow = 7, EndRow = 187, Index = 2},
             new ReportDictionary {TableName = "Таблица 7", StartRow = 7, EndRow = 407, Index = 3},
-            new ReportDictionary {TableName = "Таблица 8", StartRow = 5, EndRow = 459, Index = 4},
+            new ReportDictionary {TableName = "Таблица 8", StartRow = 6, EndRow = 459, Index = 4},
             new ReportDictionary {TableName = "Таблица 9", StartRow = 6, EndRow = 38, Index = 5},
-            new ReportDictionary {TableName = "Таблица 1Л", StartRow = 5, EndRow = 28, Index = 6},
-            new ReportDictionary {TableName = "Таблица 2Л", StartRow = 5, EndRow = 30, Index = 7},
+            new ReportDictionary {TableName = "Оплата МП", StartRow = 6, EndRow = 6, Index = 6},
+            new ReportDictionary {TableName = "Таблица 1Л", StartRow = 5, EndRow = 28, Index = 7},
+            new ReportDictionary {TableName = "Таблица 2Л", StartRow = 5, EndRow = 30, Index = 8},
         };
 
         public ExcelZpzQ2025Creator(
@@ -49,17 +50,18 @@ namespace KmsReportClient.Excel.Creator.Base
                 switch (themeData.Theme)
                 {
                     case "Таблица 9":
-                        FillTable1(data, dict.StartRow, dict.EndRow, themeData.Theme);
+                        FillTable9(data, dict.StartRow, dict.EndRow, themeData.Theme);
                         break;
                     case "Таблица 8":
-                        FillTable4(data, dict.StartRow, dict.EndRow, themeData.Theme);
+                        FillTable8(data, dict.StartRow, dict.EndRow, themeData.Theme);
                         break;
                     case "Таблица 6":
                     case "Таблица 7":
-                        FillTable6(data, dict.StartRow, dict.EndRow, themeData.Theme);
+                        FillTable67(data, dict.StartRow, dict.EndRow, themeData.Theme);
                         break;
-                    case "Таблица 5А"    :
-                        FillTable5(data, dict.StartRow, dict.EndRow, themeData.Theme);
+                    case "Результаты МЭК":
+                    case "Оплата МП":
+                        FillTable5A8A(data, dict.StartRow, dict.EndRow, themeData.Theme);
                         break;
                     case "Таблица 1Л":
                     case "Таблица 2Л":
@@ -72,7 +74,7 @@ namespace KmsReportClient.Excel.Creator.Base
             FinishZpz();
         }
 
-        private void FillTable1(ReportZpz2025DataDto[] data, int startRowIndex, int endRowIndex, string theme)
+        private void FillTable9(ReportZpz2025DataDto[] data, int startRowIndex, int endRowIndex, string theme)
         {
             int firstColumnIndex;
             int seconfColumnIndex;
@@ -104,32 +106,32 @@ namespace KmsReportClient.Excel.Creator.Base
         //            var rowData = data?.SingleOrDefault(x => x.Code == rowNum);
         //            if (rowData != null)
         //            {
-        //                if (ObjWorkSheet.Cells[i, 5].Text != "X")
+        //                if (ObjWorkSheet.Cells[i, 5].Text != "x")
         //                {
         //                    ObjWorkSheet.Cells[i, 5] = rowData.CountSmo;
         //                }
 
-        //                if (ObjWorkSheet.Cells[i, 7].Text != "X")
+        //                if (ObjWorkSheet.Cells[i, 7].Text != "x")
         //                {
         //                    ObjWorkSheet.Cells[i, 7] = rowData.CountInsured;
         //                }
 
-        //                if (ObjWorkSheet.Cells[i, 8].Text != "X")
+        //                if (ObjWorkSheet.Cells[i, 8].Text != "x")
         //                {
         //                    ObjWorkSheet.Cells[i, 8] = rowData.CountInsuredRepresentative;
         //                }
 
-        //                if (ObjWorkSheet.Cells[i, 9].Text != "X")
+        //                if (ObjWorkSheet.Cells[i, 9].Text != "x")
         //                {
         //                    ObjWorkSheet.Cells[i, 9] = rowData.CountTfoms;
         //                }
 
-        //                if (ObjWorkSheet.Cells[i, 10].Text != "X")
+        //                if (ObjWorkSheet.Cells[i, 10].Text != "x")
         //                {
         //                    ObjWorkSheet.Cells[i, 10] = rowData.CountSmoAnother;
         //                }
 
-        //                if (ObjWorkSheet.Cells[i, 11].Text != "X")
+        //                if (ObjWorkSheet.Cells[i, 11].Text != "x")
         //                {
         //                    ObjWorkSheet.Cells[i, 11] = rowData.CountProsecutor;
         //                }
@@ -138,24 +140,7 @@ namespace KmsReportClient.Excel.Creator.Base
         //    }
         //}
 
-        private void FillTable4(ReportZpz2025DataDto[] data, int startRowIndex, int endRowIndex, string form)
-        {
-            int columnIndex = 5;
-            for (int i = startRowIndex; i <= endRowIndex; i++)
-            {
-                string rowNum = ObjWorkSheet.Cells[i, 2].Text;
-                if (!string.IsNullOrEmpty(rowNum))
-                {
-                    var rowData = data?.SingleOrDefault(x => x.Code == rowNum);
-                    if (rowData != null)
-                    {
-                        ObjWorkSheet.Cells[i, columnIndex] = rowData.CountSmo;
-                    }
-                }
-            }
-        }
-
-        private void FillTable6(ReportZpz2025DataDto[] data, int startRowIndex, int endRowIndex, string form)
+        private void FillTable8(ReportZpz2025DataDto[] data, int startRowIndex, int endRowIndex, string form)
         {
             for (int i = startRowIndex; i <= endRowIndex; i++)
             {
@@ -165,62 +150,33 @@ namespace KmsReportClient.Excel.Creator.Base
                     var rowData = data?.SingleOrDefault(x => x.Code == rowNum);
                     if (rowData != null)
                     {
-                        if (ObjWorkSheet.Cells[i, 4].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 4] = rowData.CountOutOfSmo;
-                        }
 
-                        if (ObjWorkSheet.Cells[i, 5].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 5] = rowData.CountAmbulatory;
-                        }
-
-                        if (ObjWorkSheet.Cells[i, 6].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 6] = rowData.CountDs;
-                        }
-
-                        if (ObjWorkSheet.Cells[i, 7].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 7] = rowData.CountDsVmp;
-                        }
-
-                        if (ObjWorkSheet.Cells[i, 8].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 8] = rowData.CountStac;
-                        }
-
-                        if (ObjWorkSheet.Cells[i, 9].Text != "X")
-                        {
-                            ObjWorkSheet.Cells[i, 9] = rowData.CountStacVmp;
-                        }
-
-                        if (ObjWorkSheet.Cells[i, 11].Text != "X")
+                        if (ObjWorkSheet.Cells[i, 11].Text != "x")
                         {
                             ObjWorkSheet.Cells[i, 11] = rowData.CountOutOfSmoAnother;
                         }
 
-                        if (ObjWorkSheet.Cells[i, 12].Text != "X")
+                        if (ObjWorkSheet.Cells[i, 12].Text != "x")
                         {
                             ObjWorkSheet.Cells[i, 12] = rowData.CountAmbulatoryAnother;
                         }
 
-                        if (ObjWorkSheet.Cells[i, 13].Text != "X")
+                        if (ObjWorkSheet.Cells[i, 13].Text != "x")
                         {
                             ObjWorkSheet.Cells[i, 13] = rowData.CountDsAnother;
                         }
 
-                        if (ObjWorkSheet.Cells[i, 14].Text != "X")
+                        if (ObjWorkSheet.Cells[i, 14].Text != "x")
                         {
                             ObjWorkSheet.Cells[i, 14] = rowData.CountDsVmpAnother;
                         }
 
-                        if (ObjWorkSheet.Cells[i, 15].Text != "X")
+                        if (ObjWorkSheet.Cells[i, 15].Text != "x")
                         {
                             ObjWorkSheet.Cells[i, 15] = rowData.CountStacAnother;
                         }
 
-                        if (ObjWorkSheet.Cells[i, 16].Text != "X")
+                        if (ObjWorkSheet.Cells[i, 16].Text != "x")
                         {
                             ObjWorkSheet.Cells[i, 16] = rowData.CountStacVmpAnother;
                         }
@@ -229,47 +185,121 @@ namespace KmsReportClient.Excel.Creator.Base
             }
         }
 
-        private void FillTable5(ReportZpz2025DataDto[] data, int startRowIndex, int endRowIndex, string form)
+        private void FillTable67(ReportZpz2025DataDto[] data, int startRowIndex, int endRowIndex, string form)
+        {
+            for (int i = startRowIndex; i <= endRowIndex; i++)
+            {
+                string rowNum = ObjWorkSheet.Cells[i, 2].Text;
+                if (!string.IsNullOrEmpty(rowNum))
+                {
+                    var rowData = data?.SingleOrDefault(x => x.Code == rowNum);
+                    if (rowData != null)
+                    {
+                        if (ObjWorkSheet.Cells[i, 4].Text != "x")
+                        {
+                            ObjWorkSheet.Cells[i, 4] = rowData.CountOutOfSmo;
+                        }
+
+                        if (ObjWorkSheet.Cells[i, 5].Text != "x")
+                        {
+                            ObjWorkSheet.Cells[i, 5] = rowData.CountAmbulatory;
+                        }
+
+                        if (ObjWorkSheet.Cells[i, 6].Text != "x")
+                        {
+                            ObjWorkSheet.Cells[i, 6] = rowData.CountDs;
+                        }
+
+                        if (ObjWorkSheet.Cells[i, 7].Text != "x")
+                        {
+                            ObjWorkSheet.Cells[i, 7] = rowData.CountDsVmp;
+                        }
+
+                        if (ObjWorkSheet.Cells[i, 8].Text != "x")
+                        {
+                            ObjWorkSheet.Cells[i, 8] = rowData.CountStac;
+                        }
+
+                        if (ObjWorkSheet.Cells[i, 9].Text != "x")
+                        {
+                            ObjWorkSheet.Cells[i, 9] = rowData.CountStacVmp;
+                        }
+
+                        if (ObjWorkSheet.Cells[i, 11].Text != "x")
+                        {
+                            ObjWorkSheet.Cells[i, 11] = rowData.CountOutOfSmoAnother;
+                        }
+
+                        if (ObjWorkSheet.Cells[i, 12].Text != "x")
+                        {
+                            ObjWorkSheet.Cells[i, 12] = rowData.CountAmbulatoryAnother;
+                        }
+
+                        if (ObjWorkSheet.Cells[i, 13].Text != "x")
+                        {
+                            ObjWorkSheet.Cells[i, 13] = rowData.CountDsAnother;
+                        }
+
+                        if (ObjWorkSheet.Cells[i, 14].Text != "x")
+                        {
+                            ObjWorkSheet.Cells[i, 14] = rowData.CountDsVmpAnother;
+                        }
+
+                        if (ObjWorkSheet.Cells[i, 15].Text != "x")
+                        {
+                            ObjWorkSheet.Cells[i, 15] = rowData.CountStacAnother;
+                        }
+
+                        if (ObjWorkSheet.Cells[i, 16].Text != "x")
+                        {
+                            ObjWorkSheet.Cells[i, 16] = rowData.CountStacVmpAnother;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void FillTable5A8A(ReportZpz2025DataDto[] data, int startRowIndex, int endRowIndex, string form)
         {
             for (int i = startRowIndex; i <= endRowIndex; i++)
             {
                 if (data != null)
                 {
 
-                    if (ObjWorkSheet.Cells[i, 2].Text != "X")
+                    if (ObjWorkSheet.Cells[i, 2].Text != "x")
                     {
                         ObjWorkSheet.Cells[i, 2] = data[0].Code;
                     }
-                    if (ObjWorkSheet.Cells[i, 3].Text != "X")
+                    if (ObjWorkSheet.Cells[i, 3].Text != "x")
                     {
                         ObjWorkSheet.Cells[i, 3] = data[0].CountSmo;
                     }
-                    if (ObjWorkSheet.Cells[i, 4].Text != "X")
+                    if (ObjWorkSheet.Cells[i, 4].Text != "x")
                     {
                         ObjWorkSheet.Cells[i, 4] = data[0].CountSmoAnother;
                     }
 
-                    if (ObjWorkSheet.Cells[i, 5].Text != "X")
+                    if (ObjWorkSheet.Cells[i, 5].Text != "x")
                     {
                         ObjWorkSheet.Cells[i, 5] = data[0].CountInsured;
                     }
 
-                    if (ObjWorkSheet.Cells[i, 6].Text != "X")
+                    if (ObjWorkSheet.Cells[i, 6].Text != "x")
                     {
                         ObjWorkSheet.Cells[i, 6] = data[0].CountInsuredRepresentative;
                     }
 
-                    if (ObjWorkSheet.Cells[i, 7].Text != "X")
+                    if (ObjWorkSheet.Cells[i, 7].Text != "x")
                     {
                         ObjWorkSheet.Cells[i, 7] = data[0].CountTfoms;
                     }
 
-                    if (ObjWorkSheet.Cells[i, 8].Text != "X")
+                    if (ObjWorkSheet.Cells[i, 8].Text != "x")
                     {
                         ObjWorkSheet.Cells[i, 8] = data[0].CountProsecutor;
                     }
 
-                    if (ObjWorkSheet.Cells[i, 9].Text != "X")
+                    if (ObjWorkSheet.Cells[i, 9].Text != "x")
                     {
                         ObjWorkSheet.Cells[i, 9] = data[0].CountOutOfSmo;
                     }
@@ -287,27 +317,27 @@ namespace KmsReportClient.Excel.Creator.Base
                     var rowData = data?.SingleOrDefault(x => x.Code == rowNum);
                     if (rowData != null)
                     {
-                        if (ObjWorkSheet.Cells[i, 8].Text != "X")
+                        if (ObjWorkSheet.Cells[i, 8].Text != "x")
                         {
                             ObjWorkSheet.Cells[i, 8] = rowData.CountAmbulatory;
                         }
 
-                        if (ObjWorkSheet.Cells[i, 9].Text != "X")
+                        if (ObjWorkSheet.Cells[i, 9].Text != "x")
                         {
                             ObjWorkSheet.Cells[i, 9] = rowData.CountStac;
                         }
 
-                        if (ObjWorkSheet.Cells[i, 10].Text != "X")
+                        if (ObjWorkSheet.Cells[i, 10].Text != "x")
                         {
                             ObjWorkSheet.Cells[i, 10] = rowData.CountDs;
                         }
 
-                        if (ObjWorkSheet.Cells[i, 11].Text != "X")
+                        if (ObjWorkSheet.Cells[i, 11].Text != "x")
                         {
                             ObjWorkSheet.Cells[i, 11] = rowData.CountOutOfSmoAnother;
                         }
 
-                        if (ObjWorkSheet.Cells[i, 12].Text != "X")
+                        if (ObjWorkSheet.Cells[i, 12].Text != "x")
                         {
                             ObjWorkSheet.Cells[i, 12] = rowData.CountSmo;
                         }

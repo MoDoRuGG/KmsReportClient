@@ -92,7 +92,7 @@ namespace KmsReportClient.Report.Basic
 
         public void CreateTotalColumn()
         {
-            if (GetCurrentTheme() != "Таблица 5А")
+            if (GetCurrentTheme() != "Результаты МЭК" && GetCurrentTheme() != "Таблица 5А" && GetCurrentTheme() != "Оплата МП")
             {
                 if (Report.IdType == "Zpz10" || Report.IdType == "Zpz10_2025") { Dgv.Columns.Add("Total", "С начала года"); }
                 else { Dgv.Columns.Add("Total", "Итого"); }
@@ -181,7 +181,7 @@ namespace KmsReportClient.Report.Basic
                                 }
                                 /// НА ДАННОМ ЭТАПЕ ПРОБЕГАЕМ ДЛЯ КАЖДОЙ СТРОКИ ОТЧЕТА ПО ЯЧЕЙКАМ и СУММИРУЕМ ЗНАЧЕНИЯ ДЛЯ ЦЕЛЕВЫХ (2-3-4-6) И ПЛАНОВЫХ (8-9-10-12), ПОКА ПРОСТО В ПЕРЕМЕННЫЕ valueCel и valuePlan ///
                             }
-                            else if ((Report.IdType == "Zpz" || Report.IdType == "Zpz_Q" || Report.IdType == "Zpz2025" || Report.IdType == "Zpz_Q2025") && (GetCurrentTheme() == "Таблица 5А" || GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 7"))
+                            else if ((Report.IdType == "Zpz" || Report.IdType == "Zpz_Q" || Report.IdType == "Zpz2025" || Report.IdType == "Zpz_Q2025") && (GetCurrentTheme() == "Таблица 5А" || GetCurrentTheme() == "Результаты МЭК" || GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 7"))
                             {
                                 if (Dgv.Rows[row].Cells[cell].ColumnIndex == 2 || Dgv.Rows[row].Cells[cell].ColumnIndex == 3 || Dgv.Rows[row].Cells[cell].ColumnIndex == 4 || Dgv.Rows[row].Cells[cell].ColumnIndex == 6)
                                 {
@@ -525,8 +525,11 @@ namespace KmsReportClient.Report.Basic
             }
             catch (Exception ex)
             {
-
-                throw;
+                // Логирование ошибки для отладки
+                Console.WriteLine($"Ошибка при получении форм: {ex.Message}");
+                // Можно использовать специализированные библиотеки для логирования, такие как NLog или Serilog
+                // Для примера просто выбрасываем исключение с дополнительной информацией
+                throw new ApplicationException("Ошибка при получении форм из XML", ex);
             }
 
 

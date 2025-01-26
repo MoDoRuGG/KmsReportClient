@@ -156,6 +156,7 @@
     <Compile Include="Excel\Collector\ZpzQ2025ExcelCollector.cs" />
     <Compile Include="Excel\Collector\ZpzQExcelCollector.cs" />
     <Compile Include="Excel\Creator\Base\ExcelDoffCreator.cs" />
+    <Compile Include="Excel\Creator\Base\ExcelOpedFinance2025Creator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelQuantityCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelPVPLoadCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelTarAllowCreator.cs" />

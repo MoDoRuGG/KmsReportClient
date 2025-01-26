@@ -22,7 +22,7 @@ namespace KmsReportClient.Report.Basic
         private readonly string[] _forms67 = { "Таблица 6", "Таблица 7" };
 
         private readonly string[][] _headers = {
-                        new[]
+            new[]
             {
                 "Дата сдачи формы ЗПЗ в ТФОМС",
                 "Всего",
@@ -32,7 +32,7 @@ namespace KmsReportClient.Report.Basic
                 "Количество оплаченных страховых случаев (по результатам МЭК ТФОМС) в том числе ВМП",
                 "Количество оплаченных страховых случаев (по результатам МЭК ТФОМС) стационарно",
                 "Количество оплаченных страховых случаев (по результатам МЭК ТФОМС) в том числе ВМП"
-            }, //5А
+            }, //Результаты МЭК
             new[]
             {
                 "целевая МЭЭ вне медицинской организации \r\n (гр.4)",
@@ -75,8 +75,21 @@ namespace KmsReportClient.Report.Basic
             }, //8
             new[]
             { "Штатные работники", "Привлекаемые по договору" }, //9
+            new[]
+            {
+            "Всего\r\n",
+            "в том числе по медицинской помощи, оказанной: вне медицинской организации\r\n",
+            "в том числе по медицинской помощи, оказанной: амбулаторно\r\n",
+            "в том числе по медицинской помощи, оказанной: в дневном стационаре\r\n",
+            "в том числе по медицинской помощи, оказанной: в дневном стационаре, в том числе: ВМП\r\n",
+            "в том числе по медицинской помощи, оказанной: стационарно\r\n",
+            "в том числе по медицинской помощи, оказанной: стационарно, в том числе: ВМП\r\n", 
+            }, //Оплата МП
 
         };
+
+
+        
 
         private readonly Dictionary<string, string> _headersMap = new Dictionary<string, string>
         {
@@ -84,11 +97,13 @@ namespace KmsReportClient.Report.Basic
             //{ "Таблица 2", "Количество спорных случаев (сумма возмещения ущерба, причиненного застрахованным лицам)" },
             //{ "Таблица 3", "Виды обращений" },
             //{ "Таблица 4", "Количество исков в порядке регресса (сумма средств, полученных по регрессным искам)" },
-            { "Таблица 5А", "№ строки" },
+
+            { "Результаты МЭК", "№ строки" },
             { "Таблица 6", "Количество проведенных медико-экономических экспертиз медицинской помощи (далее - МЭЭ) (выявленных нарушений)" },
             { "Таблица 7", "Количество проведенных экспертиз качества медицинской помощи (далее - ЭКМП) (выявленных нарушений)" },
             { "Таблица 8", "Финансовые результаты" },
             { "Таблица 9", "Специалисты, участвующие в защите прав застрахованных лиц" },
+            { "Оплата МП", "Финансовые результаты"},
             //{ "Таблица 10", "Численность проинформированных застрахованных лиц\r\nЕдиница измерения: для индивидуального информирования - количество человек от 18 лет и старше; для публичного (общего) информирования - абсолютное количество\r\n" },
             };
 
@@ -411,10 +426,11 @@ namespace KmsReportClient.Report.Basic
 
         protected override void CreateDgvForForm(string form, List<TemplateRow> table)
         {
-            var formsList = ThemesList.Select(x => x.Key).OrderBy(x => x).ToList();
+
+            var formsList = ThemesList.Select(x => x.Key).ToList();
             var index = formsList.IndexOf(form);
             var currentHeaders = _headers[index];
-            if (GetCurrentTheme() == "Таблица 5А")
+            if (GetCurrentTheme() == "Результаты МЭК")
             {
                 CreateDgvColumnsForTheme(Dgv, 70, _headersMap[form], currentHeaders);
             }
@@ -426,11 +442,6 @@ namespace KmsReportClient.Report.Basic
             foreach (var row in table)
             {
                 var dgvRow = new DataGridViewRow();
-                //string rowNum = dgvRow.Cells[0].Value.ToString();
-                //if (_coloringRows.Contains(rowNum))
-                //{
-                //    dgvRow.DefaultCellStyle.BackColor = Color.Green;
-                //}
 
                 var cellName = new DataGridViewTextBoxCell
                 {
@@ -487,8 +498,6 @@ namespace KmsReportClient.Report.Basic
                 };
                 dgvReport.Columns.Add(dgvColumn);
             }
-
-            //Console.WriteLine("Кол-во столбцов="+dgvReport.Columns.Count);
         }
 
         private void CreateDgvCommonColumns(DataGridView dgvReport, int widthFirstColumn, string mainHeader)
@@ -509,7 +518,7 @@ namespace KmsReportClient.Report.Basic
                 }
             };
             dgvReport.Columns.Add(column);
-            if (GetCurrentTheme() != "Таблица 5А")
+            if (GetCurrentTheme() != "Результаты МЭК")
             {
                 column = new DataGridViewTextBoxColumn
                 {
@@ -740,7 +749,7 @@ namespace KmsReportClient.Report.Basic
 
         public void SetFormula()
         {
-            if (GetCurrentTheme() == "Таблица 5А")
+            if (GetCurrentTheme() == "Результаты МЭК")
             {
                 foreach (DataGridViewRow row in Dgv.Rows)
                 {
@@ -754,7 +763,7 @@ namespace KmsReportClient.Report.Basic
 
         private void SetStyle()
         {
-            if (GetCurrentTheme() != "Таблица 8")
+            if (GetCurrentTheme() != "Таблица 8" && GetCurrentTheme() != "Оплата МП")
             {
                 //Dgv.Columns[0].Width = 70;
                 //Dgv.Columns[1].Width = 150;

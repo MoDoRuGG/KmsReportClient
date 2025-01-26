@@ -26,7 +26,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
         protected override void FillReport(ConsolidateOpedFinance_1[] report, ConsolidateOpedFinance_1[] yearReport)
         {
             ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets[1];
-            CopyNullCellsNew(ObjWorkSheet);
+            CopyNullCellsP1(ObjWorkSheet);
 
             var filials = report.Select(x => x.RegionName).Distinct().OrderBy(x => x);
             int rowIndex = 5;
@@ -77,10 +77,34 @@ namespace KmsReportClient.Excel.Creator.Consolidate
                 rowIndex += 22;
 
             }
+
+            ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets[2];
+            CopyNullCellsP2(ObjWorkSheet);
+
+            filials = report.Select(x => x.RegionName).Distinct().OrderBy(x => x);
+            rowIndex = 5;
+
+            foreach (var filial in filials)
+            {
+                var monthData = report.Where(x => x.RegionName == filial);
+                int columnIndex = 3;
+                ObjWorkSheet.Cells[rowIndex - 1, 2] = filial;
+                foreach (var md in monthData.OrderBy(x => x.Yymm))
+                {
+                    int currentRowIndex = rowIndex;
+                    ObjWorkSheet.Cells[currentRowIndex, columnIndex] = md.PlanO;
+                    ObjWorkSheet.Cells[++currentRowIndex, columnIndex++] = md.Fact;
+                }
+
+                rowIndex += 4;
+
+            }
+
+
         }
 
 
-        protected void CopyNullCellsNew(Worksheet sheet)
+        protected void CopyNullCellsP1(Worksheet sheet)
         {
             int cntS = 4;
             int cntE = 25;
@@ -90,6 +114,23 @@ namespace KmsReportClient.Excel.Creator.Consolidate
                 row.Copy(Type.Missing);
                 cntS += 22;
                 cntE += 22;
+                row = sheet.Range["B" + cntS + ":U" + cntE, Type.Missing];
+                row.Insert(XlInsertShiftDirection.xlShiftDown);
+
+            }
+        }
+
+
+        protected void CopyNullCellsP2(Worksheet sheet)
+        {
+            int cntS = 4;
+            int cntE = 7;
+            for (int k = 1; k <= 40 - 1; k++)
+            {
+                var row = sheet.Range["B" + cntS + ":U" + cntE, Type.Missing];
+                row.Copy(Type.Missing);
+                cntS += 4;
+                cntE += 4;
                 row = sheet.Range["B" + cntS + ":U" + cntE, Type.Missing];
                 row.Insert(XlInsertShiftDirection.xlShiftDown);
 
