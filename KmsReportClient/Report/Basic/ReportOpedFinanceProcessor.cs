@@ -84,15 +84,15 @@ namespace KmsReportClient.Report.Basic
         { }
         public void CalculateCells()
         {
-            try
-            {
-                var row1 = Dgv.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[1].Value.ToString() == "1.");
-                if(row1 != null)
-                {
-                    row1.Cells[2].Value = Dgv.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[1].Value.ToString() == "1.1."  || x.Cells[1].Value.ToString() == "1.2." || x.Cells[1].Value.ToString() == "1.4.").Sum(x=> GlobalUtils.TryParseDecimal(x.Cells[2].Value));
-                }
-            }
-            catch (Exception ex) { }
+            //try
+            //{
+            //    var row1 = Dgv.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[1].Value.ToString() == "1.");
+            //    if(row1 != null)
+            //    {
+            //        row1.Cells[2].Value = Dgv.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[1].Value.ToString() == "1.1."  || x.Cells[1].Value.ToString() == "1.2." || x.Cells[1].Value.ToString() == "1.4.").Sum(x=> GlobalUtils.TryParseDecimal(x.Cells[2].Value));
+            //    }
+            //}
+            //catch (Exception ex) { }
         }
 
         public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status, DataSource datasource)
@@ -166,9 +166,9 @@ namespace KmsReportClient.Report.Basic
                 int rowIndex = Dgv.Rows.Add(dgvRow);
             }
 
-            var row1 = Dgv.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[1].Value.ToString() == "1.");
-            row1.Cells[2].Style.BackColor = Color.LightGray;
-            row1.Cells[2].ReadOnly = true;
+            //var row1 = Dgv.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => x.Cells[1].Value.ToString() == "1.");
+            //row1.Cells[2].Style.BackColor = Color.LightGray;
+            //row1.Cells[2].ReadOnly = true;
 
 
 

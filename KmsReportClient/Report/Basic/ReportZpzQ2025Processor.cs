@@ -122,8 +122,8 @@ namespace KmsReportClient.Report.Basic
             InitReport();
         }
 
-        public override bool IsVisibleBtnDownloadExcel() => CurrentUser.IsMain ? false : true;
-        public override bool IsVisibleBtnHandle() => CurrentUser.IsMain ? false : true;
+        public override bool IsVisibleBtnDownloadExcel() => (CurrentUser.IsMain || Report.Status == ReportStatus.Done || Report.Status == ReportStatus.Submit) ? false : true;
+        public override bool IsVisibleBtnHandle() => (CurrentUser.IsMain || Report.Status == ReportStatus.Done || Report.Status == ReportStatus.Submit) ? false : true;
 
         public override bool IsVisibleBtnSummary() => CurrentUser.IsMain ? false : true;
 
