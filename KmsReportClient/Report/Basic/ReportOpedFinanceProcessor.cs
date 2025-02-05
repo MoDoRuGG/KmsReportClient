@@ -183,7 +183,7 @@ namespace KmsReportClient.Report.Basic
 
             var reportDto = new List<ReportOpedFinanceData>();
 
-            string[] notSavedCells = { "1." };
+            string[] notSavedCells = {  };
 
             foreach (DataGridViewRow row in Dgv.Rows)
             {

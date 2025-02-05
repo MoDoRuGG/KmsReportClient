@@ -1046,13 +1046,13 @@ namespace KmsReportClient.Forms
             this.планЧисленностиToolStripMenuItem.Size = new System.Drawing.Size(348, 22);
             this.планЧисленностиToolStripMenuItem.Text = "План численности";
             this.планЧисленностиToolStripMenuItem.Click += new System.EventHandler(this.планЧисленностиToolStripMenuItem_Click);
-            // 
-            // MenuChangelog
-            // 
-            this.MenuChangelog.Name = "MenuChangelog";
-            this.MenuChangelog.Size = new System.Drawing.Size(237, 20);
-            this.MenuChangelog.Text = "Посмотреть изменения в новой версии";
-            this.MenuChangelog.Click += new System.EventHandler(this.MenuChangelog_Click);
+            //// 
+            //// MenuChangelog
+            //// 
+            //this.MenuChangelog.Name = "MenuChangelog";
+            //this.MenuChangelog.Size = new System.Drawing.Size(237, 20);
+            //this.MenuChangelog.Text = "Посмотреть изменения в новой версии";
+            //this.MenuChangelog.Click += new System.EventHandler(this.MenuChangelog_Click);
             // 
             // statusStrip1
             // 
