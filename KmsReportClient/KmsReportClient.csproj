@@ -609,6 +609,9 @@
     <None Include="Connected Services\External\KmsReportClient.External.CreateReportVSSResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateViolationsOfAppealsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateZpzForWebSite2023Response.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -877,6 +880,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.UploadXmlDynamicFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.ViolationsOfAppeals.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.WebReportCadreResponse.datasource">

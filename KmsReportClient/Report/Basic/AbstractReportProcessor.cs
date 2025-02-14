@@ -157,7 +157,7 @@ namespace KmsReportClient.Report.Basic
                 for (int row = 0; row < Dgv.Rows.Count; row++)
                 {
                     Dgv.Rows[row].Cells[columnCount].Value = 0;
-                    int valueCel = 0;
+                    decimal valueCel = 0;
                     int valuePlan = 0;
                     decimal valueSMO = 0;
 
@@ -236,9 +236,9 @@ namespace KmsReportClient.Report.Basic
                                 {
                                     if ((Report.IdType == "Zpz" || Report.IdType == "Zpz2025") && (GetCurrentTheme() == "Таблица 1" || GetCurrentTheme() == "Таблица 2" || GetCurrentTheme() == "Таблица 3" || GetCurrentTheme() == "Таблица 4"))
                                     {
-                                        if (Dgv.Rows[row].Cells[cell].ColumnIndex != 4) { valueCel += GlobalUtils.TryParseInt(Dgv.Rows[row].Cells[cell].Value); }
+                                        if (Dgv.Rows[row].Cells[cell].ColumnIndex != 4) { valueCel += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value); }
                                     }
-                                    else { valueCel += GlobalUtils.TryParseInt(Dgv.Rows[row].Cells[cell].Value); }
+                                    else { valueCel += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value); }
                                 }
                             }
                         }

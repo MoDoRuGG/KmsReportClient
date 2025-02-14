@@ -2817,6 +2817,73 @@
           <s:element minOccurs="1" maxOccurs="1" name="Violation" type="s:int" />
         </s:sequence>
       </s:complexType>
+      <s:element name="CreateViolationsOfAppeals">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateViolationsOfAppealsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateViolationsOfAppealsResult" type="tns:ArrayOfViolationsOfAppeals" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfViolationsOfAppeals">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ViolationsOfAppeals" nillable="true" type="tns:ViolationsOfAppeals" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ViolationsOfAppeals">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Treatments" type="tns:ArrayOfTreatmentVOA" />
+          <s:element minOccurs="0" maxOccurs="1" name="Complaints" type="tns:ArrayOfTreatmentVOA" />
+          <s:element minOccurs="0" maxOccurs="1" name="Protections" type="tns:ArrayOfStatisticsVOA" />
+          <s:element minOccurs="0" maxOccurs="1" name="Expertises" type="tns:ArrayOfExpertiseVOA" />
+          <s:element minOccurs="0" maxOccurs="1" name="Specialists" type="tns:ArrayOfStatisticsVOA" />
+          <s:element minOccurs="0" maxOccurs="1" name="Informations" type="tns:ArrayOfStatisticsVOA" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTreatmentVOA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TreatmentVOA" nillable="true" type="tns:TreatmentVOA" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TreatmentVOA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Row" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Oral" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Written" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Assignment" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfStatisticsVOA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="StatisticsVOA" nillable="true" type="tns:StatisticsVOA" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="StatisticsVOA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Row" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfExpertiseVOA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ExpertiseVOA" nillable="true" type="tns:ExpertiseVOA" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ExpertiseVOA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Row" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Target" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Plan" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Violation" type="s:int" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="CreateReportControlZpz2023Full">
         <s:complexType>
           <s:sequence>
@@ -3078,6 +3145,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="Col11" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="Col12" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="Col13" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Col14" type="s:decimal" />
         </s:sequence>
       </s:complexType>
       <s:element name="CreateReportControlZpz2025Full">
@@ -5604,6 +5672,12 @@
   <wsdl:message name="CreateZpzForWebSite2023SoapOut">
     <wsdl:part name="parameters" element="tns:CreateZpzForWebSite2023Response" />
   </wsdl:message>
+  <wsdl:message name="CreateViolationsOfAppealsSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateViolationsOfAppeals" />
+  </wsdl:message>
+  <wsdl:message name="CreateViolationsOfAppealsSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateViolationsOfAppealsResponse" />
+  </wsdl:message>
   <wsdl:message name="CreateReportControlZpz2023FullSoapIn">
     <wsdl:part name="parameters" element="tns:CreateReportControlZpz2023Full" />
   </wsdl:message>
@@ -6253,6 +6327,10 @@
       <wsdl:input message="tns:CreateZpzForWebSite2023SoapIn" />
       <wsdl:output message="tns:CreateZpzForWebSite2023SoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="CreateViolationsOfAppeals">
+      <wsdl:input message="tns:CreateViolationsOfAppealsSoapIn" />
+      <wsdl:output message="tns:CreateViolationsOfAppealsSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="CreateReportControlZpz2023Full">
       <wsdl:input message="tns:CreateReportControlZpz2023FullSoapIn" />
       <wsdl:output message="tns:CreateReportControlZpz2023FullSoapOut" />
@@ -6852,6 +6930,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateZpzForWebSite2023">
       <soap:operation soapAction="http://kms-oms.ru/CreateZpzForWebSite2023" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateViolationsOfAppeals">
+      <soap:operation soapAction="http://kms-oms.ru/CreateViolationsOfAppeals" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -7908,6 +7995,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateZpzForWebSite2023">
       <soap12:operation soapAction="http://kms-oms.ru/CreateZpzForWebSite2023" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateViolationsOfAppeals">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateViolationsOfAppeals" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

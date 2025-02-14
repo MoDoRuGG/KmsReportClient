@@ -69,22 +69,30 @@ namespace KmsReportClient.Excel.Collector
                         k = "5";
                         //startRow = 15;
                         dictionary = FindColumnIndexies(_columnsTable4, startRow - 1);
+                        for (int i = startRow; i <= lastRow; i++)
+                        {
+                            var data = new ReportZpz2025DataDto
+                            {
+                                Code = ObjWorkSheet.Cells[i, dictionary["2"]].Text,
+                                CountSmo = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary[k]].Text)
+                            };
+                            list.Add(data);
+                        }
                         break;
                     default:
                         startRow = currentList == 1 ? 11 : 5;
                         k = "4";
                         dictionary = FindColumnIndexies(_columnsTable10, startRow - 1);
+                        for (int i = startRow; i <= lastRow; i++)
+                        {
+                            var data = new ReportZpz2025DataDto
+                            {
+                                Code = ObjWorkSheet.Cells[i, dictionary[""]].Text,
+                                CountSmo = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary[k]].Text)
+                            };
+                            list.Add(data);
+                        }
                         break;
-                }
-
-                for (int i = startRow; i <= lastRow; i++)
-                {
-                    var data = new ReportZpz2025DataDto
-                    {
-                        Code = ObjWorkSheet.Cells[i, dictionary[""]].Text,
-                        CountSmo = GlobalUtils.TryParseDecimal(ObjWorkSheet.Cells[i, dictionary[k]].Text)
-                    };
-                    list.Add(data);
                 }
             }
 

@@ -1,5 +1,6 @@
 ﻿using KmsReportClient.External;
 using KmsReportClient.Model.Enums;
+using KmsReportClient.Support;
 
 namespace KmsReportClient.Excel.Creator.Consolidate
 {
@@ -12,9 +13,9 @@ namespace KmsReportClient.Excel.Creator.Consolidate
 
         protected override void FillReport(ZpzForWebSite2025 report, ZpzForWebSite2025 yearReport)
         {
-
-            ObjWorkSheet.Cells[1, 2] = FilialName;
-            int currentIndex = 5;
+            ObjWorkSheet.Cells[2, 1] = FilialName;
+            ObjWorkSheet.Cells[3, 1] = $"2024 год";
+            int currentIndex = 8;
             foreach (var col in report.WSData)
             {
                 ObjWorkSheet.Cells[currentIndex, 1] = col.Col1;
@@ -29,6 +30,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
                 ObjWorkSheet.Cells[currentIndex, 11] = col.Col11;
                 ObjWorkSheet.Cells[currentIndex, 12] = col.Col12;
                 ObjWorkSheet.Cells[currentIndex, 13] = col.Col13;
+                ObjWorkSheet.Cells[currentIndex, 14] = col.Col14;
             }
 
         }
