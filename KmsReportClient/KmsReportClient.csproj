@@ -209,6 +209,7 @@
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateVCRCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateVSSCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateYear294Creator.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelConsViolationsOfAppealsCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsZpzWebSite2025.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsZpzWebSite2023.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsZpzWebSite.cs" />
@@ -363,6 +364,7 @@
     <Compile Include="Report\Basic\ReportProposalProcessor.cs" />
     <Compile Include="Report\Basic\ReportVaccinationProccesor.cs" />
     <Compile Include="Report\Common\CheckFFOMS2022Common.cs" />
+    <Compile Include="Report\Consolidate\ViolationsOfAppealsCreator.cs" />
     <Compile Include="Report\Consolidate\ZpzForWebSite2025Creator.cs" />
     <Compile Include="Report\Consolidate\ZpzForWebSite2023Creator.cs" />
     <Compile Include="Report\Consolidate\ZpzForWebSiteCreator.cs" />

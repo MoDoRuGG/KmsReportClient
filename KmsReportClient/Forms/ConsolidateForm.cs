@@ -1005,7 +1005,8 @@ namespace KmsReportClient.Forms
                 Col10 = datas.Sum(x => x.Col10),
                 Col11 = datas.Sum(x => x.Col11),
                 Col12 = datas.Sum(x => x.Col12),
-                Col13 = datas.Sum(x => x.Col13)
+                Col13 = datas.Sum(x => x.Col13),
+                Col14 = datas.Sum(x => x.Col14),
             };
 
             // Возвращаем итоговый отчет с суммами

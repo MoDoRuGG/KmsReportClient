@@ -3,9 +3,9 @@ using KmsReportClient.Model.Enums;
 
 namespace KmsReportClient.Excel.Creator.Consolidate
 {
-    class ExcelConsViolationsOfAppeals : ExcelBaseCreator<ViolationsOfAppeals>
+    class ExcelConsViolationsOfAppealsCreator : ExcelBaseCreator<ViolationsOfAppeals>
     {
-        public ExcelConsViolationsOfAppeals(
+        public ExcelConsViolationsOfAppealsCreator(
             string filename,
             string header,
             string filialName) : base(filename, ExcelForm.ZpzForWebSite2023, header, filialName, true) { }
