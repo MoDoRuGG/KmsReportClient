@@ -15,7 +15,7 @@ namespace KmsReportClient.Forms
         private const string SummaryFilialName = "ООО «Капитал МС»";
         private const string SummaryFilialCode = "RU";
 
-        private static readonly ConsolidateReport[] FolderReports = { ConsolidateReport.ZpzWebSite, ConsolidateReport.ZpzWebSite2023, ConsolidateReport.ZpzWebSite2025 };
+        private static readonly ConsolidateReport[] FolderReports = { ConsolidateReport.ZpzWebSite, ConsolidateReport.ZpzWebSite2023, ConsolidateReport.ZpzWebSite2025, ConsolidateReport.ViolationsOfAppeals };
 
         private readonly EndpointSoapClient _client;
         private readonly string _filialName;
@@ -146,6 +146,15 @@ namespace KmsReportClient.Forms
                     panelRegion.Visible = false;
                     btnDo.Text = "Сформировать отчет ЗПЗ 118н для сайта";
                     saveFileDialog1.FileName = "Сводный отчет ЗПЗ 118н для сайта";
+                    cmbStart.DataSource = GlobalConst.Periods;
+                    break;
+                case ConsolidateReport.ViolationsOfAppeals:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать отчет Нарушения по обращениям ЗЛ";
+                    saveFileDialog1.FileName = "Нарушения по обращениям ЗЛ";
                     cmbStart.DataSource = GlobalConst.Periods;
                     break;
                 case ConsolidateReport.ControlZpzMonthly:
@@ -568,6 +577,9 @@ namespace KmsReportClient.Forms
                     case ConsolidateReport.ZpzWebSite2023:
                         CreateZpzWebSite2023();
                         break;
+                    case ConsolidateReport.ViolationsOfAppeals:
+                        CreateViolationsOfAppeals();
+                        break;
                     case ConsolidateReport.ZpzWebSite2025:
                         CreateZpzWebSite2025();
                         break;
@@ -848,6 +860,31 @@ namespace KmsReportClient.Forms
 
 
 
+         
+
+        private void CreateViolationsOfAppeals()
+        {
+            string yymm = GetYymmQuarterly();
+            string folder = folderBrowserDialog1.SelectedPath;
+
+            var reports = _client.CreateViolationsOfAppeals(yymm);
+
+            foreach (var report in reports)
+            {
+                string filename = folder + $"\\Нарушения_по_обращениям_ЗЛ_{report.Filial}_{yymm}.xlsx";
+                string filialName = _regions.Single(x => x.Key == report.Filial).ForeignKey;
+                CreateReport(filename, filialName, report);
+            }
+
+            var summaryReport = CollectSummaryViolationsOfAppeals(reports);
+            string summaryFilename = folder + $"\\Нарушения_по_обращениям_ЗЛ_суммарный_{yymm}.xlsx";
+            CreateReport(summaryFilename, SummaryFilialName, summaryReport);
+
+            GlobalUtils.OpenFileOrDirectory(folder);
+        }
+
+
+
 
 
 
@@ -986,6 +1023,42 @@ namespace KmsReportClient.Forms
         }
 
 
+
+        private ViolationsOfAppeals CollectSummaryViolationsOfAppeals(ViolationsOfAppeals[] reports)
+        {
+            var table1 = reports.SelectMany(x => x.T1).GroupBy(x => x.Row).Select(x => new ForT1VOA
+            {
+                Row = x.Key,
+                Oral = x.Sum(x => x.Oral),
+                Written = x.Sum(x => x.Written),
+                Assignment = x.Sum(x => x.Assignment)
+            }).ToArray();
+            var table2 = reports.SelectMany(x => x.T2).GroupBy(x => x.Row).Select(x => new ForT2VOA
+            {
+                Row = x.Key,
+                Target = x.Sum(x => x.Target),
+                Plan = x.Sum(x => x.Plan),
+                Violation = x.Sum(x => x.Violation)
+            }).ToArray();
+            var table3 = reports.SelectMany(x => x.T3).GroupBy(x => x.Row).Select(x => new ForT3VOA
+            {
+                Row = x.Key,
+                Target = x.Sum(x => x.Target),
+                Plan = x.Sum(x => x.Plan),
+                Violation = x.Sum(x => x.Violation)
+            }).ToArray();
+
+            return new ViolationsOfAppeals
+            {
+                Filial = SummaryFilialCode,
+                T1 = table1,
+                T2 = table2,
+                T3 = table3
+            };
+        }
+
+
+
         private ZpzForWebSite2025 CollectSummaryReport2025(ZpzForWebSite2025[] reports)
         {
             // Получаем все данные из WSData, преобразуем в массив
@@ -1026,6 +1099,13 @@ namespace KmsReportClient.Forms
         private void CreateReport(string filename, string filialName, ZpzForWebSite2023 report)
         {
             var excel = new ExcelConsZpzWebSite2023(filename, "", filialName);
+            excel.CreateReport(report, null);
+        }
+
+
+        private void CreateReport(string filename, string filialName, ViolationsOfAppeals report)
+        {
+            var excel = new ExcelConsViolationsOfAppealsCreator(filename, "", filialName);
             excel.CreateReport(report, null);
         }
 

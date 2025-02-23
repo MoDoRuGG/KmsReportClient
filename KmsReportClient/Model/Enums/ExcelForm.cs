@@ -104,6 +104,9 @@ namespace KmsReportClient.Model.Enums
         [Description(GlobalConst.TempFolder + "zpzWebSite2023.xlsx")]
         ZpzForWebSite2023,
 
+        [Description(GlobalConst.TempFolder + "ViolationsOfAppeals.xlsx")]
+        ViolationsOfAppeals,
+
         [Description(GlobalConst.TempFolder + "zpzWebSite2025.xlsx")]
         ZpzForWebSite2025,
 

@@ -169,6 +169,7 @@ namespace KmsReportClient.Forms
             this.отделЗПЗИЭКМПToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оИИЗПЗToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.численностьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.НарушенияПоОбращениямЗЛToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сводПоВсемФилиаламToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вновьЗСИУДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выполнениеПланаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -523,7 +524,8 @@ namespace KmsReportClient.Forms
             this.оПЭДФинансыToolStripMenuItem,
             this.отчётОПредложенияхToolStripMenuItem,
             this.кадрыToolStripMenuItem,
-            this.численностьToolStripMenuItem});
+            this.численностьToolStripMenuItem,
+            this.НарушенияПоОбращениямЗЛToolStripMenuItem});
             this.consolidateMenu.Name = "consolidateMenu";
             this.consolidateMenu.Size = new System.Drawing.Size(129, 20);
             this.consolidateMenu.Text = "Сводная отчетность";
@@ -916,6 +918,20 @@ namespace KmsReportClient.Forms
             this.численностьToolStripMenuItem.Name = "численностьToolStripMenuItem";
             this.численностьToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.численностьToolStripMenuItem.Text = "Численность";
+            // 
+            // НарушенияПоОбращениямЗЛToolStripMenuItem
+            // 
+            this.НарушенияПоОбращениямЗЛToolStripMenuItem.Name = "НарушенияПоОбращениямЗЛToolStripMenuItem";
+            this.НарушенияПоОбращениямЗЛToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.НарушенияПоОбращениямЗЛToolStripMenuItem.Text = "Нарушения по обращениям ЗЛ";
+            this.НарушенияПоОбращениямЗЛToolStripMenuItem.Click += new System.EventHandler(this.ОтчетНарушенияПоОбращениямЗЛToolStripMenuItem_Click);
+            // 
+            // отчетДляСайта2025ToolStripMenuItem
+            // 
+            this.отчетДляСайта2025ToolStripMenuItem.Name = "отчетДляСайта2025ToolStripMenuItem";
+            this.отчетДляСайта2025ToolStripMenuItem.Size = new System.Drawing.Size(275, 22);
+            this.отчетДляСайта2025ToolStripMenuItem.Text = "Отчет для сайта";
+            this.отчетДляСайта2025ToolStripMenuItem.Click += new System.EventHandler(this.ОтчетДляСайта2025ToolStripMenuItem_Click);
             // 
             // сводПоВсемФилиаламToolStripMenuItem
             // 
@@ -4598,6 +4614,7 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton BtnSummary;
         private System.Windows.Forms.ToolStripMenuItem численностьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem НарушенияПоОбращениямЗЛToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сводПоВсемФилиаламToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem вновьЗСИУДToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выполнениеПланаToolStripMenuItem;

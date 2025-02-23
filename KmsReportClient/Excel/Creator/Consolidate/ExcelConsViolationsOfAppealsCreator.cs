@@ -1,5 +1,6 @@
 ﻿using KmsReportClient.External;
 using KmsReportClient.Model.Enums;
+using Microsoft.Office.Interop.Excel;
 
 namespace KmsReportClient.Excel.Creator.Consolidate
 {
@@ -8,78 +9,49 @@ namespace KmsReportClient.Excel.Creator.Consolidate
         public ExcelConsViolationsOfAppealsCreator(
             string filename,
             string header,
-            string filialName) : base(filename, ExcelForm.ZpzForWebSite2023, header, filialName, true) { }
+            string filialName) : base(filename, ExcelForm.ViolationsOfAppeals, header, filialName, true) { }
 
         protected override void FillReport(ViolationsOfAppeals report, ViolationsOfAppeals yearReport)
         {
-            ObjWorkSheet.Cells[2, 2] = FilialName;
-
-            FillTreatments(report);
-            FillComplaints(report);
-            FillProtections(report);
-            FillExpertises(report);
-            FillSpecialists(report);
-            FillInformations(report);
+            FillTable1(report);
+            FillTable2(report);
+            FillTable3(report);
         }
 
-        private void FillTreatments(ViolationsOfAppeals report)
+        private void FillTable1(ViolationsOfAppeals report)
         {
-            int currentIndex = 7;
-            foreach (var treatment in report.Treatments)
+            ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets[1];
+            ObjWorkSheet.Range["B1","C1"].Value = $"Количество обоснованных жалоб застрахованных лиц  в {FilialName} за 2024 год";
+
+            int currentIndex = 2;
+            foreach (var treatment in report.T1)
             {
-                ObjWorkSheet.Cells[currentIndex, 3] = treatment.Oral;
-                ObjWorkSheet.Cells[currentIndex, 4] = treatment.Written;
-                ObjWorkSheet.Cells[currentIndex++, 5] = treatment.Assignment;
+                ObjWorkSheet.Cells[currentIndex++, 3] = treatment.Oral+treatment.Written;
+
             }
         }
 
-        private void FillComplaints(ViolationsOfAppeals report)
+
+        private void FillTable2(ViolationsOfAppeals report)
         {
-            int currentIndex = 12;
-            foreach (var complaint in report.Complaints)
+            ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets[2];
+            ObjWorkSheet.Range["B1", "C1"].Value = $"Количество страховых случаев, подвергшихся ЭКМП, проведенным по жалобам от застрахованных лиц или их представителей в {FilialName} за 2024 год";
+            int currentIndex = 2;
+            foreach (var expertise in report.T2)
             {
-                ObjWorkSheet.Cells[currentIndex, 3] = complaint.Oral;
-                ObjWorkSheet.Cells[currentIndex, 4] = complaint.Written;
-                ObjWorkSheet.Cells[currentIndex++, 5] = complaint.Assignment;
+                ObjWorkSheet.Cells[currentIndex++, 3] = expertise.Target + expertise.Plan;
             }
         }
 
-        private void FillExpertises(ViolationsOfAppeals report)
+        private void FillTable3(ViolationsOfAppeals report)
         {
-            int currentIndex = 28;
-            foreach (var expertise in report.Expertises)
+            ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets[3];
+            ObjWorkSheet.Range["B1", "C1"].Value = $"Количество страховых случаев, подвергшихся МЭЭ, проведенным по жалобам от застрахованных лиц или их представителей в {FilialName} за 2024 год";
+            int currentIndex = 2;
+            foreach (var expertise in report.T3)
             {
-                ObjWorkSheet.Cells[++currentIndex, 3] = expertise.Target;
-                ObjWorkSheet.Cells[++currentIndex, 3] = expertise.Plan;
-                ObjWorkSheet.Cells[++currentIndex, 3] = expertise.Violation;
-                currentIndex += 2;
-            }
-        }
+                ObjWorkSheet.Cells[currentIndex++, 3] = expertise.Target + expertise.Plan;
 
-        private void FillProtections(ViolationsOfAppeals report)
-        {
-            int currentIndex = 41;
-            foreach (var protection in report.Protections)
-            {
-                ObjWorkSheet.Cells[currentIndex++, 3] = protection.Count;
-            }
-        }
-
-        private void FillSpecialists(ViolationsOfAppeals report)
-        {
-            int currentIndex = 46;
-            foreach (var specialist in report.Specialists)
-            {
-                ObjWorkSheet.Cells[currentIndex++, 3] = specialist.Count;
-            }
-        }
-
-        private void FillInformations(ViolationsOfAppeals report)
-        {
-            int currentIndex = 54;
-            foreach (var information in report.Informations)
-            {
-                ObjWorkSheet.Cells[currentIndex++, 3] = information.Count;
             }
         }
     }

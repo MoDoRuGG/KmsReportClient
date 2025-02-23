@@ -18,7 +18,6 @@ namespace KmsReportClient.Excel.Creator.Consolidate
             int currentIndex = 8;
             foreach (var col in report.WSData)
             {
-                System.Console.WriteLine($"{FilialName}: Col13  {col.Col13}, Col14 {col.Col14}");
                 ObjWorkSheet.Cells[currentIndex, 1] = col.Col1;
                 ObjWorkSheet.Cells[currentIndex, 2] = col.Col2;
                 ObjWorkSheet.Cells[currentIndex, 3] = col.Col3;

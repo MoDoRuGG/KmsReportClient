@@ -2839,20 +2839,17 @@
       <s:complexType name="ViolationsOfAppeals">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Treatments" type="tns:ArrayOfTreatmentVOA" />
-          <s:element minOccurs="0" maxOccurs="1" name="Complaints" type="tns:ArrayOfTreatmentVOA" />
-          <s:element minOccurs="0" maxOccurs="1" name="Protections" type="tns:ArrayOfStatisticsVOA" />
-          <s:element minOccurs="0" maxOccurs="1" name="Expertises" type="tns:ArrayOfExpertiseVOA" />
-          <s:element minOccurs="0" maxOccurs="1" name="Specialists" type="tns:ArrayOfStatisticsVOA" />
-          <s:element minOccurs="0" maxOccurs="1" name="Informations" type="tns:ArrayOfStatisticsVOA" />
+          <s:element minOccurs="0" maxOccurs="1" name="T1" type="tns:ArrayOfForT1VOA" />
+          <s:element minOccurs="0" maxOccurs="1" name="T2" type="tns:ArrayOfForT2VOA" />
+          <s:element minOccurs="0" maxOccurs="1" name="T3" type="tns:ArrayOfForT3VOA" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="ArrayOfTreatmentVOA">
+      <s:complexType name="ArrayOfForT1VOA">
         <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="TreatmentVOA" nillable="true" type="tns:TreatmentVOA" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ForT1VOA" nillable="true" type="tns:ForT1VOA" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="TreatmentVOA">
+      <s:complexType name="ForT1VOA">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="Row" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="Oral" type="s:int" />
@@ -2860,23 +2857,25 @@
           <s:element minOccurs="1" maxOccurs="1" name="Assignment" type="s:int" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="ArrayOfStatisticsVOA">
+      <s:complexType name="ArrayOfForT2VOA">
         <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="StatisticsVOA" nillable="true" type="tns:StatisticsVOA" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ForT2VOA" nillable="true" type="tns:ForT2VOA" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="StatisticsVOA">
+      <s:complexType name="ForT2VOA">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="Row" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Target" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Plan" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Violation" type="s:int" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="ArrayOfExpertiseVOA">
+      <s:complexType name="ArrayOfForT3VOA">
         <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="ExpertiseVOA" nillable="true" type="tns:ExpertiseVOA" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ForT3VOA" nillable="true" type="tns:ForT3VOA" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="ExpertiseVOA">
+      <s:complexType name="ForT3VOA">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="Row" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="Target" type="s:int" />
