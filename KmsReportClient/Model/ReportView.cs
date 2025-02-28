@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 using KmsReportClient.External;
 using KmsReportClient.Global;
 using KmsReportClient.Report.Basic;
+using Microsoft.Office.Interop.Word;
 using NLog;
 
 namespace KmsReportClient.Model
@@ -17,6 +19,7 @@ namespace KmsReportClient.Model
 
         private const string Monthly = "monthly";
         private const string Quarterly = "quarterly";
+        private const string FFOMS = "ffoms";
 
         private readonly TreeView tree;
         private readonly List<KmsReportDictionary> regions;
@@ -25,7 +28,7 @@ namespace KmsReportClient.Model
         private readonly DynamicReportProcessor dynamicReportProcessor;
 
         private readonly Dictionary<string, string> rootDict =
-            new Dictionary<string, string> { { Monthly, "Ежемесячные отчеты" }, { Quarterly, "Квартальные отчеты" } };
+            new Dictionary<string, string> { { Monthly, "Ежемесячные отчеты" }, { Quarterly, "Квартальные отчеты" }, { FFOMS, "К проверке ФФОМС" } };
 
         private readonly List<ReportHistory> reportsHistory;
 
@@ -51,61 +54,92 @@ namespace KmsReportClient.Model
             try
             {
                 var flows = CollectFlow(year);
-
                 int yymmEnd = Convert.ToInt32(year.ToString().Substring(2) + "12");
-
                 tree.Nodes.Clear();
+
                 foreach (var root in rootDict)
                 {
                     var rootNode = new TreeNode { Text = root.Value };
                     tree.Nodes.Add(rootNode);
 
-                    var dates = CreateDateList(root.Key, year);
-                    foreach (var history in reportsHistory.Where(x => x.Type == root.Key))
+                    if (root.Key == FFOMS)
                     {
-                        //Берём только те отчёты, которые нужно показать
-                        if(Convert.ToInt32(history.YymmEnd) < yymmEnd)
-                            continue;
-
-                        //Тот кто будет читать простите))
-                        if (history.HistoryCode == "iizl2022" &&  Convert.ToInt32(yymmEnd) <= 2112)
-                            continue;
-
-                        var nodeReport = new TreeNode { Text = history.HistoryName };
-                        rootNode.Nodes.Add(nodeReport);
-
-                        foreach (var date in dates)
+                        // Обработка FFOMS: отчеты без даты
+                        var ffomsReports = reportsHistory.Where(x => x.Type == FFOMS);
+                        foreach (var report in ffomsReports)
                         {
-                            var nodePeriod = new TreeNode { Text = date.ToString("MMMM yyyy") };
-                            nodeReport.Nodes.Add(nodePeriod);
-
-                            if (!CurrentUser.IsMain)
+                            var reportNode = new TreeNode { Text = report.HistoryName };
+                            rootNode.Nodes.Add(reportNode);
+                            if (CurrentUser.IsMain)
                             {
-                                var color = FindReportColor(date, history.HistoryCode, CurrentUser.FilialCode, flows);
-                                if (color != null)
+                                // Для главного администратора: добавляем все регионы
+                                foreach (var region in regions)
                                 {
-                                    nodePeriod.BackColor = color.Value;
+                                    var regionNode = new TreeNode { Text = region.Value };
+                                    var date = DateTime.ParseExact(report.YymmEnd, "yyMM", CultureInfo.InvariantCulture);
+                                    var color = FindReportColor(date, report.HistoryCode, region.Key, flows);
+                                    if (color != null) regionNode.BackColor = color.Value;
+                                    reportNode.Nodes.Add(regionNode);
                                 }
                             }
                             else
                             {
-                                foreach (var region in regions)
+                                // Для обычного пользователя: только текущий филиал
+                                var date = DateTime.ParseExact(report.YymmEnd, "yyMM", CultureInfo.InvariantCulture);
+                                var color = FindReportColor(date, report.HistoryCode, CurrentUser.FilialCode, flows);
+                                if (color != null) reportNode.BackColor = color.Value;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        var dates = CreateDateList(root.Key, year);
+                        foreach (var history in reportsHistory.Where(x => x.Type == root.Key))
+                        {
+                            //Берём только те отчёты, которые нужно показать
+                            if (Convert.ToInt32(history.YymmEnd) < yymmEnd)
+                                continue;
+
+                            //Тот кто будет читать простите))
+                            if (history.HistoryCode == "iizl2022" && Convert.ToInt32(yymmEnd) <= 2112)
+                                continue;
+
+                            var nodeReport = new TreeNode { Text = history.HistoryName };
+                            rootNode.Nodes.Add(nodeReport);
+
+                            foreach (var date in dates)
+                            {
+                                var nodePeriod = new TreeNode { Text = date.ToString("MMMM yyyy") };
+                                nodeReport.Nodes.Add(nodePeriod);
+
+                                if (!CurrentUser.IsMain)
                                 {
-                                    var nodeRegion = new TreeNode { Text = region.Value };
-                                    nodePeriod.Nodes.Add(nodeRegion);
-                                    var color = FindReportColor(date, history.HistoryCode, region.Key, flows);
+                                    var color = FindReportColor(date, history.HistoryCode, CurrentUser.FilialCode, flows);
                                     if (color != null)
                                     {
-                                        nodeRegion.BackColor = color.Value;
+                                        nodePeriod.BackColor = color.Value;
                                     }
                                 }
+                                else
+                                {
+                                    foreach (var region in regions)
+                                    {
+                                        var nodeRegion = new TreeNode { Text = region.Value };
+                                        nodePeriod.Nodes.Add(nodeRegion);
+                                        var color = FindReportColor(date, history.HistoryCode, region.Key, flows);
+                                        if (color != null)
+                                        {
+                                            nodeRegion.BackColor = color.Value;
+                                        }
+                                    }
 
+                                }
                             }
                         }
                     }
                 }
 
-                return !CurrentUser.IsMain && flows.Any(x => x.Status == ReportStatus.Refuse);
+                return true;
             }
             catch (Exception ex)
             {
