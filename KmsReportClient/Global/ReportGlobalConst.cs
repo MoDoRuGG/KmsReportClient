@@ -37,5 +37,8 @@
         public const string ReportZpzQ2025 = "Zpz_Q2025";
         public const string ReportQueryZpz2025 = "QueryZpz2025";
         public const string ReportZpz2025Lethal = "ZpzL2025";
+        public const string ReportViolMEE = "ViolMEE";
+        public const string ReportViolEKMP = "ViolEKMP";
+        public const string ReportVerifyPlan = "VerifyPlan";
     }
 }

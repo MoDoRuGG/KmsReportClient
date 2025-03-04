@@ -2,6 +2,20 @@
 <wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://kms-oms.ru/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://kms-oms.ru/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://kms-oms.ru/">
+      <s:element name="DownloadDllFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadDllFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadDllFileResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetDllFileNames">
         <s:complexType />
       </s:element>
@@ -38,6 +52,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="zpz" type="tns:ReportZpz" />
             <s:element minOccurs="0" maxOccurs="1" name="zpz2025" type="tns:ReportZpz2025" />
             <s:element minOccurs="0" maxOccurs="1" name="effective" type="tns:ReportEffectiveness" />
+            <s:element minOccurs="0" maxOccurs="1" name="violations" type="tns:ReportViolations" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -97,6 +112,37 @@
           <s:enumeration value="Handle" />
         </s:restriction>
       </s:simpleType>
+      <s:complexType name="ReportViolations">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AbstractReport">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ReportDataList" type="tns:ArrayOfReportViolationsDto" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfReportViolationsDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReportViolationsDto" nillable="true" type="tns:ReportViolationsDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReportViolationsDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Theme" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ArrayOfReportViolationsDataDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReportViolationsDataDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReportViolationsDataDto" nillable="true" type="tns:ReportViolationsDataDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReportViolationsDataDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
       <s:complexType name="ReportEffectiveness">
         <s:complexContent mixed="false">
           <s:extension base="tns:AbstractReport">
@@ -1915,6 +1961,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Report_PVP_Load" type="tns:ArrayOfReport_PVP_Load" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Doff" type="tns:ArrayOfReport_Doff" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Zpz2025" type="tns:ArrayOfReport_Zpz2025" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Violations" type="tns:ArrayOfReport_Violations" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Type" type="tns:Report_Type" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:Report_Flow" />
         </s:sequence>
@@ -2444,6 +2491,20 @@
           <s:element minOccurs="1" maxOccurs="1" name="CountStacAnother" nillable="true" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountStacVmpAnother" nillable="true" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountAssignment" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:Report_Data" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReport_Violations">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Report_Violations" nillable="true" type="tns:Report_Violations" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Report_Violations">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_Report_Data" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Count" nillable="true" type="s:decimal" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:Report_Data" />
         </s:sequence>
       </s:complexType>
@@ -4659,6 +4720,16 @@
       <s:element name="WebReportCadreResponse">
         <s:complexType />
       </s:element>
+      <s:element name="WebReportViolations">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:ReportViolations" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebReportViolationsResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="WebReportQuantity">
         <s:complexType>
           <s:sequence>
@@ -5207,6 +5278,9 @@
           <s:enumeration value="ZpzQ2025" />
           <s:enumeration value="Zpz10_2025" />
           <s:enumeration value="ZpzL2025" />
+          <s:enumeration value="ViolMEE" />
+          <s:enumeration value="ViolEKMP" />
+          <s:enumeration value="VerifyPlan" />
         </s:restriction>
       </s:simpleType>
       <s:element name="CollectSummaryReportResponse">
@@ -5493,22 +5567,14 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="DownloadDllFile">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="DownloadDllFileResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="DownloadDllFileResult" type="s:base64Binary" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="DownloadDllFileSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadDllFile" />
+  </wsdl:message>
+  <wsdl:message name="DownloadDllFileSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadDllFileResponse" />
+  </wsdl:message>
   <wsdl:message name="GetDllFileNamesSoapIn">
     <wsdl:part name="parameters" element="tns:GetDllFileNames" />
   </wsdl:message>
@@ -6031,6 +6097,12 @@
   <wsdl:message name="WebReportCadreSoapOut">
     <wsdl:part name="parameters" element="tns:WebReportCadreResponse" />
   </wsdl:message>
+  <wsdl:message name="WebReportViolationsSoapIn">
+    <wsdl:part name="parameters" element="tns:WebReportViolations" />
+  </wsdl:message>
+  <wsdl:message name="WebReportViolationsSoapOut">
+    <wsdl:part name="parameters" element="tns:WebReportViolationsResponse" />
+  </wsdl:message>
   <wsdl:message name="WebReportQuantitySoapIn">
     <wsdl:part name="parameters" element="tns:WebReportQuantity" />
   </wsdl:message>
@@ -6211,13 +6283,11 @@
   <wsdl:message name="DownloadFileSoapOut">
     <wsdl:part name="parameters" element="tns:DownloadFileResponse" />
   </wsdl:message>
-  <wsdl:message name="DownloadDllFileSoapIn">
-    <wsdl:part name="parameters" element="tns:DownloadDllFile" />
-  </wsdl:message>
-  <wsdl:message name="DownloadDllFileSoapOut">
-    <wsdl:part name="parameters" element="tns:DownloadDllFileResponse" />
-  </wsdl:message>
   <wsdl:portType name="EndpointSoap">
+    <wsdl:operation name="DownloadDllFile">
+      <wsdl:input message="tns:DownloadDllFileSoapIn" />
+      <wsdl:output message="tns:DownloadDllFileSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetDllFileNames">
       <wsdl:input message="tns:GetDllFileNamesSoapIn" />
       <wsdl:output message="tns:GetDllFileNamesSoapOut" />
@@ -6566,6 +6636,10 @@
       <wsdl:input message="tns:WebReportCadreSoapIn" />
       <wsdl:output message="tns:WebReportCadreSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="WebReportViolations">
+      <wsdl:input message="tns:WebReportViolationsSoapIn" />
+      <wsdl:output message="tns:WebReportViolationsSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="WebReportQuantity">
       <wsdl:input message="tns:WebReportQuantitySoapIn" />
       <wsdl:output message="tns:WebReportQuantitySoapOut" />
@@ -6686,13 +6760,18 @@
       <wsdl:input message="tns:DownloadFileSoapIn" />
       <wsdl:output message="tns:DownloadFileSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="DownloadDllFile">
-      <wsdl:input message="tns:DownloadDllFileSoapIn" />
-      <wsdl:output message="tns:DownloadDllFileSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="EndpointSoap" type="tns:EndpointSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DownloadDllFile">
+      <soap:operation soapAction="http://kms-oms.ru/DownloadDllFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetDllFileNames">
       <soap:operation soapAction="http://kms-oms.ru/GetDllFileNames" style="document" />
       <wsdl:input>
@@ -7476,6 +7555,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="WebReportViolations">
+      <soap:operation soapAction="http://kms-oms.ru/WebReportViolations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="WebReportQuantity">
       <soap:operation soapAction="http://kms-oms.ru/WebReportQuantity" style="document" />
       <wsdl:input>
@@ -7746,18 +7834,18 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="DownloadDllFile">
-      <soap:operation soapAction="http://kms-oms.ru/DownloadDllFile" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="EndpointSoap12" type="tns:EndpointSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DownloadDllFile">
+      <soap12:operation soapAction="http://kms-oms.ru/DownloadDllFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetDllFileNames">
       <soap12:operation soapAction="http://kms-oms.ru/GetDllFileNames" style="document" />
       <wsdl:input>
@@ -8541,6 +8629,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="WebReportViolations">
+      <soap12:operation soapAction="http://kms-oms.ru/WebReportViolations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="WebReportQuantity">
       <soap12:operation soapAction="http://kms-oms.ru/WebReportQuantity" style="document" />
       <wsdl:input>
@@ -8804,15 +8901,6 @@
     </wsdl:operation>
     <wsdl:operation name="DownloadFile">
       <soap12:operation soapAction="http://kms-oms.ru/DownloadFile" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DownloadDllFile">
-      <soap12:operation soapAction="http://kms-oms.ru/DownloadDllFile" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

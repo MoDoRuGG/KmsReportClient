@@ -161,6 +161,9 @@ namespace KmsReportClient.Forms
             TbControl.TabPages.Remove(PageZpzQ2025);
             TbControl.TabPages.Remove(PageZpz10_2025);
             TbControl.TabPages.Remove(PageZpzLethal2025);
+            TbControl.TabPages.Remove(PageViolMEE);
+            TbControl.TabPages.Remove(PageViolEKMP);
+            TbControl.TabPages.Remove(PageVerifyPlan);
 
             if (CurrentUser.IsMain)
             {
@@ -211,6 +214,9 @@ namespace KmsReportClient.Forms
                         {PageTarAllow, ReportGlobalConst.ReportTargetedAllowances},
                         {PagePVPLoad, ReportGlobalConst.ReportPVPLoad},
                         {PageDoff, ReportGlobalConst.ReportDoff},
+                        {PageViolMEE, ReportGlobalConst.ReportViolMEE},
+                        {PageViolEKMP, ReportGlobalConst.ReportViolEKMP},
+                        {PageVerifyPlan, ReportGlobalConst.ReportVerifyPlan},
             };
 
         private Dictionary<string, IReportProcessor> CreateProcessorMap() =>
@@ -343,6 +349,18 @@ namespace KmsReportClient.Forms
                 {
                     ReportGlobalConst.ReportDoff,
                     new ReportDoffProcessor(_client, _reportsDictionary, DgvDoff, CmbDoff, TbDoff, PageDoff)
+                },
+                {
+                    ReportGlobalConst.ReportViolMEE,
+                    new ReportViolMEEProcessor(_client, _reportsDictionary, DgvViolMEE, CmbViolMEE, TbViolMEE, PageViolMEE)
+                },
+                {
+                    ReportGlobalConst.ReportVerifyPlan,
+                    new ReportVerifyPlanProcessor(_client, _reportsDictionary, DgvVerifyPlan, CmbVerifyPlan, TbVerifyPlan, PageVerifyPlan)
+                },
+                {
+                    ReportGlobalConst.ReportViolEKMP,
+                    new ReportViolEKMPProcessor(_client, _reportsDictionary, DgvViolEKMP, CmbViolEKMP, TbViolEKMP, PageViolEKMP)
                 }
             };
 
@@ -441,6 +459,14 @@ namespace KmsReportClient.Forms
 
                 filialCode = CurrentUser.FilialCode;
 
+            }
+            else if (!CurrentUser.IsMain && (ReportTree.SelectedNode.Text == "Нарушения МЭЭ" || ReportTree.SelectedNode.Text == "Нарушения ЭКМП" || ReportTree.SelectedNode.Text == "Планы проверок" ))
+            {
+                isNeedCreateReport = true;
+                _yymm = "Март 2025";
+                _currentReportName = ReportTree.SelectedNode.Text;
+
+                filialCode = CurrentUser.FilialCode;
             }
             //Console.WriteLine($"yymm={_yymm} currentReportName={_currentReportName} Филиал={filialCode}");
 
@@ -1652,6 +1678,16 @@ ChangeIndexComboBox(DgvReportZpzLethal2025, CmbZpzLethal2025, TxtbZpzLethal2025)
         private void CmbDoff_SelectedIndexChanged_1(object sender, EventArgs e) =>
         ChangeIndexComboBox(DgvDoff, CmbDoff, TbDoff);
 
+        private void CmbViolMEE_SelectedIndexChanged_1(object sender, EventArgs e) =>
+ChangeIndexComboBox(DgvViolMEE, CmbViolMEE, TbViolMEE);
+
+        private void CmbViolEKMP_SelectedIndexChanged_1(object sender, EventArgs e) =>
+ChangeIndexComboBox(DgvViolEKMP, CmbViolEKMP, TbViolEKMP);
+
+
+        private void CmbVerifyPlan_SelectedIndexChanged_1(object sender, EventArgs e) =>
+ChangeIndexComboBox(DgvVerifyPlan, CmbVerifyPlan, TbVerifyPlan);
+
         private void CmbZpz2025_SelectedIndexChanged_1(object sender, EventArgs e) =>
             ChangeIndexComboBox(DgvReportZpz2025, CmbZpz2025, TxtbZpz2025);
 
@@ -1893,6 +1929,9 @@ ChangeIndexComboBox(DgvReportZpzLethal2025, CmbZpzLethal2025, TxtbZpzLethal2025)
                     TbControl.TabPages.Remove(PageQuantity);
                     TbControl.TabPages.Remove(PageTarAllow);
                     TbControl.TabPages.Remove(PageDoff);
+                    TbControl.TabPages.Remove(PageViolMEE);
+                    TbControl.TabPages.Remove(PageViolEKMP);
+                    TbControl.TabPages.Remove(PageVerifyPlan);
                     break;
             }
         }
@@ -2198,6 +2237,63 @@ ChangeIndexComboBox(DgvReportZpzLethal2025, CmbZpzLethal2025, TxtbZpzLethal2025)
         {
             _processor.CallculateCells();
         }
+
+
+        private void DgvReportViolMEE_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            (_processor as ReportViolMEEProcessor).SetFormula();
+        }
+
+        private void DgvReportViolMEE_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            (_processor as ReportViolMEEProcessor).SetFormula();
+        }
+
+
+        private void DgvReportViolMEE_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as ReportViolMEEProcessor).SetFormula();
+        }
+
+
+        private void DgvReportViolEKMP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            (_processor as ReportViolEKMPProcessor).SetFormula();
+        }
+
+        private void DgvReportViolEKMP_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            (_processor as ReportViolEKMPProcessor).SetFormula();
+        }
+
+
+        private void DgvReportViolEKMP_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as ReportViolEKMPProcessor).SetFormula();
+        }
+
+
+
+
+
+
+
+        private void DgvReportVerifyPlan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            (_processor as ReportVerifyPlanProcessor).SetFormula();
+        }
+
+        private void DgvReportVerifyPlan_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            (_processor as ReportVerifyPlanProcessor).SetFormula();
+        }
+
+
+        private void DgvReportVerifyPlan_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as ReportVerifyPlanProcessor).SetFormula();
+        }
+
 
         private void сводToolStripMenuItem_Click(object sender, EventArgs e)
         {

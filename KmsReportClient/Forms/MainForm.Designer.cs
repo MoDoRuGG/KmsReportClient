@@ -115,6 +115,9 @@ namespace KmsReportClient.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle82 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle83 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle84 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle85 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle86 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle87 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -384,6 +387,22 @@ namespace KmsReportClient.Forms
             this.TbDoff = new System.Windows.Forms.TextBox();
             this.CmbDoff = new System.Windows.Forms.ComboBox();
             this.DgvDoff = new System.Windows.Forms.DataGridView();
+
+            this.PageViolMEE = new System.Windows.Forms.TabPage();
+            this.TbViolMEE = new System.Windows.Forms.TextBox();
+            this.CmbViolMEE = new System.Windows.Forms.ComboBox();
+            this.DgvViolMEE = new System.Windows.Forms.DataGridView();
+
+            this.PageViolEKMP = new System.Windows.Forms.TabPage();
+            this.TbViolEKMP = new System.Windows.Forms.TextBox();
+            this.CmbViolEKMP = new System.Windows.Forms.ComboBox();
+            this.DgvViolEKMP = new System.Windows.Forms.DataGridView();
+
+            this.PageVerifyPlan = new System.Windows.Forms.TabPage();
+            this.TbVerifyPlan = new System.Windows.Forms.TextBox();
+            this.CmbVerifyPlan = new System.Windows.Forms.ComboBox();
+            this.DgvVerifyPlan = new System.Windows.Forms.DataGridView();
+
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -426,6 +445,10 @@ namespace KmsReportClient.Forms
             ((System.ComponentModel.ISupportInitialize)(this.gVac)).BeginInit();
             this.PageCadre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCadre)).BeginInit();
+            this.PageDoff.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvDoff)).BeginInit();
+            this.PageViolMEE.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvViolMEE)).BeginInit();
             this.PageReqVCR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReqVCR)).BeginInit();
             this.PageZpz.SuspendLayout();
@@ -1681,6 +1704,8 @@ namespace KmsReportClient.Forms
             this.TbControl.Controls.Add(this.tpOpedFinance);
             this.TbControl.Controls.Add(this.tpOpedFinance3);
             this.TbControl.Controls.Add(this.tpIizl2022);
+            this.TbControl.Controls.Add(this.PageDoff);
+            this.TbControl.Controls.Add(this.PageViolMEE);
             this.TbControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.TbControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TbControl.Location = new System.Drawing.Point(4, 124);
@@ -4175,6 +4200,159 @@ namespace KmsReportClient.Forms
 
 
 
+            // 
+            // PageViolMEE
+            // 
+            this.PageViolMEE.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.PageViolMEE.Controls.Add(this.DgvViolMEE);
+            this.PageViolMEE.Controls.Add(this.TbViolMEE);
+            this.PageViolMEE.Controls.Add(this.CmbViolMEE);
+            this.PageViolMEE.Location = new System.Drawing.Point(4, 36);
+            this.PageViolMEE.Name = "PageViolMEE";
+            this.PageViolMEE.Padding = new System.Windows.Forms.Padding(3);
+            this.PageViolMEE.Size = new System.Drawing.Size(712, 330);
+            this.PageViolMEE.TabIndex = 5;
+            this.PageViolMEE.Text = "tabPage1";
+            // 
+            // DgvViolMEE
+            // 
+            this.DgvViolMEE.AllowUserToAddRows = false;
+            this.DgvViolMEE.AllowUserToDeleteRows = false;
+            this.DgvViolMEE.AllowUserToResizeColumns = false;
+            this.DgvViolMEE.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DgvViolMEE.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            dataGridViewCellStyle85.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            dataGridViewCellStyle85.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle85.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle85.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle85.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle85.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle85.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvViolMEE.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle85;
+            this.DgvViolMEE.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle86.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle86.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle86.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle86.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle86.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle86.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle86.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvViolMEE.DefaultCellStyle = dataGridViewCellStyle86;
+            this.DgvViolMEE.Location = new System.Drawing.Point(7, 51);
+            this.DgvViolMEE.Name = "DgvViolMEE";
+            dataGridViewCellStyle87.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle87.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle87.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle87.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle87.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle87.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle87.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvViolMEE.RowHeadersDefaultCellStyle = dataGridViewCellStyle87;
+            this.DgvViolMEE.Size = new System.Drawing.Size(699, 272);
+            this.DgvViolMEE.TabIndex = 8;
+            this.DgvViolMEE.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.DgvReportViolMEE_CellBeginEdit);
+            this.DgvViolMEE.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvReportViolMEE_CellEndEdit);
+            // 
+            // TbViolMEE
+            // 
+            this.TbViolMEE.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TbViolMEE.Location = new System.Drawing.Point(113, 6);
+            this.TbViolMEE.Multiline = true;
+            this.TbViolMEE.Name = "TbViolMEE";
+            this.TbViolMEE.ReadOnly = true;
+            this.TbViolMEE.Size = new System.Drawing.Size(593, 39);
+            this.TbViolMEE.TabIndex = 7;
+            // 
+            // CmbViolMEE
+            // 
+            this.CmbViolMEE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbViolMEE.FormattingEnabled = true;
+            this.CmbViolMEE.Location = new System.Drawing.Point(7, 6);
+            this.CmbViolMEE.Name = "CmbViolMEE";
+            this.CmbViolMEE.Size = new System.Drawing.Size(100, 21);
+            this.CmbViolMEE.TabIndex = 6;
+            this.CmbViolMEE.SelectedIndexChanged += new System.EventHandler(this.CmbViolMEE_SelectedIndexChanged_1);
+
+
+
+            // 
+            // PageViolEKMP
+            // 
+            this.PageViolEKMP.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.PageViolEKMP.Controls.Add(this.DgvViolEKMP);
+            this.PageViolEKMP.Controls.Add(this.TbViolEKMP);
+            this.PageViolEKMP.Controls.Add(this.CmbViolEKMP);
+            this.PageViolEKMP.Location = new System.Drawing.Point(4, 36);
+            this.PageViolEKMP.Name = "PageViolEKMP";
+            this.PageViolEKMP.Padding = new System.Windows.Forms.Padding(3);
+            this.PageViolEKMP.Size = new System.Drawing.Size(712, 330);
+            this.PageViolEKMP.TabIndex = 5;
+            this.PageViolEKMP.Text = "tabPage1";
+            // 
+            // DgvViolEKMP
+            // 
+            this.DgvViolEKMP.AllowUserToAddRows = false;
+            this.DgvViolEKMP.AllowUserToDeleteRows = false;
+            this.DgvViolEKMP.AllowUserToResizeColumns = false;
+            this.DgvViolEKMP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DgvViolEKMP.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            dataGridViewCellStyle85.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            dataGridViewCellStyle85.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle85.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle85.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle85.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle85.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle85.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvViolEKMP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle85;
+            this.DgvViolEKMP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle86.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle86.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle86.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle86.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle86.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle86.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle86.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvViolEKMP.DefaultCellStyle = dataGridViewCellStyle86;
+            this.DgvViolEKMP.Location = new System.Drawing.Point(7, 51);
+            this.DgvViolEKMP.Name = "DgvViolEKMP";
+            dataGridViewCellStyle87.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle87.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle87.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle87.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle87.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle87.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle87.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvViolEKMP.RowHeadersDefaultCellStyle = dataGridViewCellStyle87;
+            this.DgvViolEKMP.Size = new System.Drawing.Size(699, 272);
+            this.DgvViolEKMP.TabIndex = 8;
+            this.DgvViolEKMP.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.DgvReportViolEKMP_CellBeginEdit);
+            this.DgvViolEKMP.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvReportViolEKMP_CellEndEdit);
+            // 
+            // TbViolEKMP
+            // 
+            this.TbViolEKMP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TbViolEKMP.Location = new System.Drawing.Point(113, 6);
+            this.TbViolEKMP.Multiline = true;
+            this.TbViolEKMP.Name = "TbViolEKMP";
+            this.TbViolEKMP.ReadOnly = true;
+            this.TbViolEKMP.Size = new System.Drawing.Size(593, 39);
+            this.TbViolEKMP.TabIndex = 7;
+            // 
+            // CmbViolEKMP
+            // 
+            this.CmbViolEKMP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbViolEKMP.FormattingEnabled = true;
+            this.CmbViolEKMP.Location = new System.Drawing.Point(7, 6);
+            this.CmbViolEKMP.Name = "CmbViolEKMP";
+            this.CmbViolEKMP.Size = new System.Drawing.Size(100, 21);
+            this.CmbViolEKMP.TabIndex = 6;
+            this.CmbViolEKMP.SelectedIndexChanged += new System.EventHandler(this.CmbViolEKMP_SelectedIndexChanged_1);
 
 
 
@@ -4183,8 +4361,81 @@ namespace KmsReportClient.Forms
 
 
 
-
-
+            // 
+            // PageVerifyPlan
+            // 
+            this.PageVerifyPlan.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.PageVerifyPlan.Controls.Add(this.DgvVerifyPlan);
+            this.PageVerifyPlan.Controls.Add(this.TbVerifyPlan);
+            this.PageVerifyPlan.Controls.Add(this.CmbVerifyPlan);
+            this.PageVerifyPlan.Location = new System.Drawing.Point(4, 36);
+            this.PageVerifyPlan.Name = "PageVerifyPlan";
+            this.PageVerifyPlan.Padding = new System.Windows.Forms.Padding(3);
+            this.PageVerifyPlan.Size = new System.Drawing.Size(712, 330);
+            this.PageVerifyPlan.TabIndex = 5;
+            this.PageVerifyPlan.Text = "tabPage1";
+            // 
+            // DgvVerifyPlan
+            // 
+            this.DgvVerifyPlan.AllowUserToAddRows = false;
+            this.DgvVerifyPlan.AllowUserToDeleteRows = false;
+            this.DgvVerifyPlan.AllowUserToResizeColumns = false;
+            this.DgvVerifyPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DgvVerifyPlan.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            dataGridViewCellStyle85.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            dataGridViewCellStyle85.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle85.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle85.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle85.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle85.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle85.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvVerifyPlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle85;
+            this.DgvVerifyPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle86.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle86.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle86.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle86.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle86.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle86.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle86.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvVerifyPlan.DefaultCellStyle = dataGridViewCellStyle86;
+            this.DgvVerifyPlan.Location = new System.Drawing.Point(7, 51);
+            this.DgvVerifyPlan.Name = "DgvVerifyPlan";
+            dataGridViewCellStyle87.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle87.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle87.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle87.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle87.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle87.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle87.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvVerifyPlan.RowHeadersDefaultCellStyle = dataGridViewCellStyle87;
+            this.DgvVerifyPlan.Size = new System.Drawing.Size(699, 272);
+            this.DgvVerifyPlan.TabIndex = 8;
+            this.DgvVerifyPlan.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.DgvReportVerifyPlan_CellBeginEdit);
+            this.DgvVerifyPlan.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvReportVerifyPlan_CellEndEdit);
+            // 
+            // TbVerifyPlan
+            // 
+            this.TbVerifyPlan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TbVerifyPlan.Location = new System.Drawing.Point(113, 6);
+            this.TbVerifyPlan.Multiline = true;
+            this.TbVerifyPlan.Name = "TbVerifyPlan";
+            this.TbVerifyPlan.ReadOnly = true;
+            this.TbVerifyPlan.Size = new System.Drawing.Size(593, 39);
+            this.TbVerifyPlan.TabIndex = 7;
+            // 
+            // CmbVerifyPlan
+            // 
+            this.CmbVerifyPlan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbVerifyPlan.FormattingEnabled = true;
+            this.CmbVerifyPlan.Location = new System.Drawing.Point(7, 6);
+            this.CmbVerifyPlan.Name = "CmbVerifyPlan";
+            this.CmbVerifyPlan.Size = new System.Drawing.Size(100, 21);
+            this.CmbVerifyPlan.TabIndex = 6;
+            this.CmbVerifyPlan.SelectedIndexChanged += new System.EventHandler(this.CmbVerifyPlan_SelectedIndexChanged_1);
 
 
 
@@ -4350,6 +4601,15 @@ namespace KmsReportClient.Forms
             ((System.ComponentModel.ISupportInitialize)(this.DgvPVPLoad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+            this.PageViolMEE.ResumeLayout(false);
+            this.PageViolMEE.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvViolMEE)).EndInit();
+            this.PageViolEKMP.ResumeLayout(false);
+            this.PageViolEKMP.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvViolEKMP)).EndInit();
+            this.PageVerifyPlan.ResumeLayout(false);
+            this.PageVerifyPlan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvVerifyPlan)).EndInit();
 
         }
 
@@ -4620,6 +4880,18 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.ToolStripMenuItem выполнениеПланаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сведенияЧисленностьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сводЗаКварталToolStripMenuItem;
+        private System.Windows.Forms.TabPage PageViolMEE;
+        private System.Windows.Forms.TextBox TbViolMEE;
+        private System.Windows.Forms.ComboBox CmbViolMEE;
+        private System.Windows.Forms.DataGridView DgvViolMEE;
+        private System.Windows.Forms.TabPage PageViolEKMP;
+        private System.Windows.Forms.TextBox TbViolEKMP;
+        private System.Windows.Forms.ComboBox CmbViolEKMP;
+        private System.Windows.Forms.DataGridView DgvViolEKMP;
+        private System.Windows.Forms.TabPage PageVerifyPlan;
+        private System.Windows.Forms.TextBox TbVerifyPlan;
+        private System.Windows.Forms.ComboBox CmbVerifyPlan;
+        private System.Windows.Forms.DataGridView DgvVerifyPlan;
     }
 }
 

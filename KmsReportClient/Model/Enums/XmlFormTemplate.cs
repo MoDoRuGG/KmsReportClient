@@ -38,5 +38,8 @@ namespace KmsReportClient.Model.Enums
         [Description("TemplateTextTargetedAllowances.xml")] TarAllow,
         [Description("TemplateTextPVPLoad.xml")] PVPL,
         [Description("TemplateTextDoff.xml")] Doff,
+        [Description("TemplateTextViolMEE.xml")] ViolMEE,
+        [Description("TemplateTextViolEKMP.xml")] ViolEKMP,
+        [Description("TemplateTextVerifyPlan.xml")] VerifyPlan,
     }
 }

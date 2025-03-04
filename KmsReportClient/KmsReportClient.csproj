@@ -352,6 +352,9 @@
     <Compile Include="Report\Basic\ReportOpedProcessor.cs" />
     <Compile Include="Report\Basic\ReportInfrormationResponseProcessor.cs" />
     <Compile Include="Report\Basic\ReportOpedQProcessor.cs" />
+    <Compile Include="Report\Basic\ReportVerifyPlanProcessor.cs" />
+    <Compile Include="Report\Basic\ReportViolEKMPProcessor.cs" />
+    <Compile Include="Report\Basic\ReportViolMEEProcessor.cs" />
     <Compile Include="Report\Basic\ReportZpz10_2025Processor.cs" />
     <Compile Include="Report\Basic\ReportZpz2025LethalProcessor.cs" />
     <Compile Include="Report\Basic\ReportZpzLethalProcessor.cs" />
@@ -933,6 +936,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.WebReportVaccinationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.WebReportViolationsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.ZpzForWebSite.datasource">

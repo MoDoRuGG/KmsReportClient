@@ -24,6 +24,7 @@ namespace KmsReportClient.External {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="AbstractReport", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportViolations))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportEffectiveness))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportZpz2025))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportZpz))]
@@ -470,6 +471,29 @@ namespace KmsReportClient.External {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportViolations", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportViolations : KmsReportClient.External.AbstractReport {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.ReportViolationsDto[] ReportDataListField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public KmsReportClient.External.ReportViolationsDto[] ReportDataList {
+            get {
+                return this.ReportDataListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReportDataListField, value) != true)) {
+                    this.ReportDataListField = value;
+                    this.RaisePropertyChanged("ReportDataList");
+                }
             }
         }
     }
@@ -1701,6 +1725,127 @@ namespace KmsReportClient.External {
                 if ((object.ReferenceEquals(this.Table3Field, value) != true)) {
                     this.Table3Field = value;
                     this.RaisePropertyChanged("Table3");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportViolationsDto", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportViolationsDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ThemeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.ReportViolationsDataDto[] DataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Theme {
+            get {
+                return this.ThemeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ThemeField, value) != true)) {
+                    this.ThemeField = value;
+                    this.RaisePropertyChanged("Theme");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public KmsReportClient.External.ReportViolationsDataDto[] Data {
+            get {
+                return this.DataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataField, value) != true)) {
+                    this.DataField = value;
+                    this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportViolationsDataDto", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportViolationsDataDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodeField;
+        
+        private decimal CountField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Code {
+            get {
+                return this.CodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodeField, value) != true)) {
+                    this.CodeField = value;
+                    this.RaisePropertyChanged("Code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal Count {
+            get {
+                return this.CountField;
+            }
+            set {
+                if ((this.CountField.Equals(value) != true)) {
+                    this.CountField = value;
+                    this.RaisePropertyChanged("Count");
                 }
             }
         }
@@ -20314,6 +20459,9 @@ namespace KmsReportClient.External {
         private KmsReportClient.External.Report_Zpz2025[] Report_Zpz2025Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.Report_Violations[] Report_ViolationsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private KmsReportClient.External.Report_Type Report_TypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -20707,6 +20855,19 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=29)]
+        public KmsReportClient.External.Report_Violations[] Report_Violations {
+            get {
+                return this.Report_ViolationsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Report_ViolationsField, value) != true)) {
+                    this.Report_ViolationsField = value;
+                    this.RaisePropertyChanged("Report_Violations");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=30)]
         public KmsReportClient.External.Report_Type Report_Type {
             get {
                 return this.Report_TypeField;
@@ -20719,7 +20880,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=30)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=31)]
         public KmsReportClient.External.Report_Flow Report_Flow {
             get {
                 return this.Report_FlowField;
@@ -26261,6 +26422,112 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=22)]
+        public KmsReportClient.External.Report_Data Report_Data {
+            get {
+                return this.Report_DataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Report_DataField, value) != true)) {
+                    this.Report_DataField = value;
+                    this.RaisePropertyChanged("Report_Data");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report_Violations", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class Report_Violations : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdField;
+        
+        private int Id_Report_DataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RowNumField;
+        
+        private System.Nullable<decimal> CountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.Report_Data Report_DataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id_Report_Data {
+            get {
+                return this.Id_Report_DataField;
+            }
+            set {
+                if ((this.Id_Report_DataField.Equals(value) != true)) {
+                    this.Id_Report_DataField = value;
+                    this.RaisePropertyChanged("Id_Report_Data");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string RowNum {
+            get {
+                return this.RowNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RowNumField, value) != true)) {
+                    this.RowNumField = value;
+                    this.RaisePropertyChanged("RowNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public System.Nullable<decimal> Count {
+            get {
+                return this.CountField;
+            }
+            set {
+                if ((this.CountField.Equals(value) != true)) {
+                    this.CountField = value;
+                    this.RaisePropertyChanged("Count");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
         public KmsReportClient.External.Report_Data Report_Data {
             get {
                 return this.Report_DataField;
@@ -39646,6 +39913,15 @@ namespace KmsReportClient.External {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         ZpzL2025 = 31,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ViolMEE = 32,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ViolEKMP = 33,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        VerifyPlan = 34,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -40145,6 +40421,13 @@ namespace KmsReportClient.External {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://kms-oms.ru/", ConfigurationName="External.EndpointSoap")]
     public interface EndpointSoap {
+        
+        // CODEGEN: Контракт генерации сообщений с именем fileName из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/DownloadDllFile", ReplyAction="*")]
+        KmsReportClient.External.DownloadDllFileResponse DownloadDllFile(KmsReportClient.External.DownloadDllFileRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/DownloadDllFile", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.DownloadDllFileResponse> DownloadDllFileAsync(KmsReportClient.External.DownloadDllFileRequest request);
         
         // CODEGEN: Контракт генерации сообщений с именем GetDllFileNamesResult из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
         [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetDllFileNames", ReplyAction="*")]
@@ -40753,6 +41036,13 @@ namespace KmsReportClient.External {
         System.Threading.Tasks.Task<KmsReportClient.External.WebReportCadreResponse> WebReportCadreAsync(KmsReportClient.External.WebReportCadreRequest request);
         
         // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/WebReportViolations", ReplyAction="*")]
+        KmsReportClient.External.WebReportViolationsResponse WebReportViolations(KmsReportClient.External.WebReportViolationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/WebReportViolations", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.WebReportViolationsResponse> WebReportViolationsAsync(KmsReportClient.External.WebReportViolationsRequest request);
+        
+        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
         [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/WebReportQuantity", ReplyAction="*")]
         KmsReportClient.External.WebReportQuantityResponse WebReportQuantity(KmsReportClient.External.WebReportQuantityRequest request);
         
@@ -40957,13 +41247,74 @@ namespace KmsReportClient.External {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/DownloadFile", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.DownloadFileResponse> DownloadFileAsync(KmsReportClient.External.DownloadFileRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DownloadDllFileRequest {
         
-        // CODEGEN: Контракт генерации сообщений с именем fileName из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/DownloadDllFile", ReplyAction="*")]
-        KmsReportClient.External.DownloadDllFileResponse DownloadDllFile(KmsReportClient.External.DownloadDllFileRequest request);
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DownloadDllFile", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.DownloadDllFileRequestBody Body;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/DownloadDllFile", ReplyAction="*")]
-        System.Threading.Tasks.Task<KmsReportClient.External.DownloadDllFileResponse> DownloadDllFileAsync(KmsReportClient.External.DownloadDllFileRequest request);
+        public DownloadDllFileRequest() {
+        }
+        
+        public DownloadDllFileRequest(KmsReportClient.External.DownloadDllFileRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class DownloadDllFileRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string fileName;
+        
+        public DownloadDllFileRequestBody() {
+        }
+        
+        public DownloadDllFileRequestBody(string fileName) {
+            this.fileName = fileName;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DownloadDllFileResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DownloadDllFileResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.DownloadDllFileResponseBody Body;
+        
+        public DownloadDllFileResponse() {
+        }
+        
+        public DownloadDllFileResponse(KmsReportClient.External.DownloadDllFileResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class DownloadDllFileResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public byte[] DownloadDllFileResult;
+        
+        public DownloadDllFileResponseBody() {
+        }
+        
+        public DownloadDllFileResponseBody(byte[] DownloadDllFileResult) {
+            this.DownloadDllFileResult = DownloadDllFileResult;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -41136,10 +41487,13 @@ namespace KmsReportClient.External {
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
         public KmsReportClient.External.ReportEffectiveness effective;
         
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public KmsReportClient.External.ReportViolations violations;
+        
         public MethodForSendingChildModelRequestBody() {
         }
         
-        public MethodForSendingChildModelRequestBody(KmsReportClient.External.Report262 f262, KmsReportClient.External.Report294 f294, KmsReportClient.External.ReportIizl iilz, KmsReportClient.External.ReportPg pg, KmsReportClient.External.ReportZpz zpz, KmsReportClient.External.ReportZpz2025 zpz2025, KmsReportClient.External.ReportEffectiveness effective) {
+        public MethodForSendingChildModelRequestBody(KmsReportClient.External.Report262 f262, KmsReportClient.External.Report294 f294, KmsReportClient.External.ReportIizl iilz, KmsReportClient.External.ReportPg pg, KmsReportClient.External.ReportZpz zpz, KmsReportClient.External.ReportZpz2025 zpz2025, KmsReportClient.External.ReportEffectiveness effective, KmsReportClient.External.ReportViolations violations) {
             this.f262 = f262;
             this.f294 = f294;
             this.iilz = iilz;
@@ -41147,6 +41501,7 @@ namespace KmsReportClient.External {
             this.zpz = zpz;
             this.zpz2025 = zpz2025;
             this.effective = effective;
+            this.violations = violations;
         }
     }
     
@@ -46728,6 +47083,67 @@ namespace KmsReportClient.External {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class WebReportViolationsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportViolations", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.WebReportViolationsRequestBody Body;
+        
+        public WebReportViolationsRequest() {
+        }
+        
+        public WebReportViolationsRequest(KmsReportClient.External.WebReportViolationsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class WebReportViolationsRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.ReportViolations report;
+        
+        public WebReportViolationsRequestBody() {
+        }
+        
+        public WebReportViolationsRequestBody(KmsReportClient.External.ReportViolations report) {
+            this.report = report;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class WebReportViolationsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportViolationsResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.WebReportViolationsResponseBody Body;
+        
+        public WebReportViolationsResponse() {
+        }
+        
+        public WebReportViolationsResponse(KmsReportClient.External.WebReportViolationsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class WebReportViolationsResponseBody {
+        
+        public WebReportViolationsResponseBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class WebReportQuantityRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="WebReportQuantity", Namespace="http://kms-oms.ru/", Order=0)]
@@ -48583,74 +48999,6 @@ namespace KmsReportClient.External {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class DownloadDllFileRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="DownloadDllFile", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.DownloadDllFileRequestBody Body;
-        
-        public DownloadDllFileRequest() {
-        }
-        
-        public DownloadDllFileRequest(KmsReportClient.External.DownloadDllFileRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class DownloadDllFileRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string fileName;
-        
-        public DownloadDllFileRequestBody() {
-        }
-        
-        public DownloadDllFileRequestBody(string fileName) {
-            this.fileName = fileName;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class DownloadDllFileResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="DownloadDllFileResponse", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.DownloadDllFileResponseBody Body;
-        
-        public DownloadDllFileResponse() {
-        }
-        
-        public DownloadDllFileResponse(KmsReportClient.External.DownloadDllFileResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class DownloadDllFileResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public byte[] DownloadDllFileResult;
-        
-        public DownloadDllFileResponseBody() {
-        }
-        
-        public DownloadDllFileResponseBody(byte[] DownloadDllFileResult) {
-            this.DownloadDllFileResult = DownloadDllFileResult;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface EndpointSoapChannel : KmsReportClient.External.EndpointSoap, System.ServiceModel.IClientChannel {
     }
@@ -48676,6 +49024,31 @@ namespace KmsReportClient.External {
         
         public EndpointSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.DownloadDllFileResponse KmsReportClient.External.EndpointSoap.DownloadDllFile(KmsReportClient.External.DownloadDllFileRequest request) {
+            return base.Channel.DownloadDllFile(request);
+        }
+        
+        public byte[] DownloadDllFile(string fileName) {
+            KmsReportClient.External.DownloadDllFileRequest inValue = new KmsReportClient.External.DownloadDllFileRequest();
+            inValue.Body = new KmsReportClient.External.DownloadDllFileRequestBody();
+            inValue.Body.fileName = fileName;
+            KmsReportClient.External.DownloadDllFileResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).DownloadDllFile(inValue);
+            return retVal.Body.DownloadDllFileResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.DownloadDllFileResponse> KmsReportClient.External.EndpointSoap.DownloadDllFileAsync(KmsReportClient.External.DownloadDllFileRequest request) {
+            return base.Channel.DownloadDllFileAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.DownloadDllFileResponse> DownloadDllFileAsync(string fileName) {
+            KmsReportClient.External.DownloadDllFileRequest inValue = new KmsReportClient.External.DownloadDllFileRequest();
+            inValue.Body = new KmsReportClient.External.DownloadDllFileRequestBody();
+            inValue.Body.fileName = fileName;
+            return ((KmsReportClient.External.EndpointSoap)(this)).DownloadDllFileAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -48732,7 +49105,7 @@ namespace KmsReportClient.External {
             return base.Channel.MethodForSendingChildModel(request);
         }
         
-        public void MethodForSendingChildModel(KmsReportClient.External.Report262 f262, KmsReportClient.External.Report294 f294, KmsReportClient.External.ReportIizl iilz, KmsReportClient.External.ReportPg pg, KmsReportClient.External.ReportZpz zpz, KmsReportClient.External.ReportZpz2025 zpz2025, KmsReportClient.External.ReportEffectiveness effective) {
+        public void MethodForSendingChildModel(KmsReportClient.External.Report262 f262, KmsReportClient.External.Report294 f294, KmsReportClient.External.ReportIizl iilz, KmsReportClient.External.ReportPg pg, KmsReportClient.External.ReportZpz zpz, KmsReportClient.External.ReportZpz2025 zpz2025, KmsReportClient.External.ReportEffectiveness effective, KmsReportClient.External.ReportViolations violations) {
             KmsReportClient.External.MethodForSendingChildModelRequest inValue = new KmsReportClient.External.MethodForSendingChildModelRequest();
             inValue.Body = new KmsReportClient.External.MethodForSendingChildModelRequestBody();
             inValue.Body.f262 = f262;
@@ -48742,6 +49115,7 @@ namespace KmsReportClient.External {
             inValue.Body.zpz = zpz;
             inValue.Body.zpz2025 = zpz2025;
             inValue.Body.effective = effective;
+            inValue.Body.violations = violations;
             KmsReportClient.External.MethodForSendingChildModelResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).MethodForSendingChildModel(inValue);
         }
         
@@ -48750,7 +49124,7 @@ namespace KmsReportClient.External {
             return base.Channel.MethodForSendingChildModelAsync(request);
         }
         
-        public System.Threading.Tasks.Task<KmsReportClient.External.MethodForSendingChildModelResponse> MethodForSendingChildModelAsync(KmsReportClient.External.Report262 f262, KmsReportClient.External.Report294 f294, KmsReportClient.External.ReportIizl iilz, KmsReportClient.External.ReportPg pg, KmsReportClient.External.ReportZpz zpz, KmsReportClient.External.ReportZpz2025 zpz2025, KmsReportClient.External.ReportEffectiveness effective) {
+        public System.Threading.Tasks.Task<KmsReportClient.External.MethodForSendingChildModelResponse> MethodForSendingChildModelAsync(KmsReportClient.External.Report262 f262, KmsReportClient.External.Report294 f294, KmsReportClient.External.ReportIizl iilz, KmsReportClient.External.ReportPg pg, KmsReportClient.External.ReportZpz zpz, KmsReportClient.External.ReportZpz2025 zpz2025, KmsReportClient.External.ReportEffectiveness effective, KmsReportClient.External.ReportViolations violations) {
             KmsReportClient.External.MethodForSendingChildModelRequest inValue = new KmsReportClient.External.MethodForSendingChildModelRequest();
             inValue.Body = new KmsReportClient.External.MethodForSendingChildModelRequestBody();
             inValue.Body.f262 = f262;
@@ -48760,6 +49134,7 @@ namespace KmsReportClient.External {
             inValue.Body.zpz = zpz;
             inValue.Body.zpz2025 = zpz2025;
             inValue.Body.effective = effective;
+            inValue.Body.violations = violations;
             return ((KmsReportClient.External.EndpointSoap)(this)).MethodForSendingChildModelAsync(inValue);
         }
         
@@ -50879,6 +51254,30 @@ namespace KmsReportClient.External {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.WebReportViolationsResponse KmsReportClient.External.EndpointSoap.WebReportViolations(KmsReportClient.External.WebReportViolationsRequest request) {
+            return base.Channel.WebReportViolations(request);
+        }
+        
+        public void WebReportViolations(KmsReportClient.External.ReportViolations report) {
+            KmsReportClient.External.WebReportViolationsRequest inValue = new KmsReportClient.External.WebReportViolationsRequest();
+            inValue.Body = new KmsReportClient.External.WebReportViolationsRequestBody();
+            inValue.Body.report = report;
+            KmsReportClient.External.WebReportViolationsResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).WebReportViolations(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.WebReportViolationsResponse> KmsReportClient.External.EndpointSoap.WebReportViolationsAsync(KmsReportClient.External.WebReportViolationsRequest request) {
+            return base.Channel.WebReportViolationsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.WebReportViolationsResponse> WebReportViolationsAsync(KmsReportClient.External.ReportViolations report) {
+            KmsReportClient.External.WebReportViolationsRequest inValue = new KmsReportClient.External.WebReportViolationsRequest();
+            inValue.Body = new KmsReportClient.External.WebReportViolationsRequestBody();
+            inValue.Body.report = report;
+            return ((KmsReportClient.External.EndpointSoap)(this)).WebReportViolationsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         KmsReportClient.External.WebReportQuantityResponse KmsReportClient.External.EndpointSoap.WebReportQuantity(KmsReportClient.External.WebReportQuantityRequest request) {
             return base.Channel.WebReportQuantity(request);
         }
@@ -51629,31 +52028,6 @@ namespace KmsReportClient.External {
             inValue.Body.fileName = fileName;
             inValue.Body.filial = filial;
             return ((KmsReportClient.External.EndpointSoap)(this)).DownloadFileAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        KmsReportClient.External.DownloadDllFileResponse KmsReportClient.External.EndpointSoap.DownloadDllFile(KmsReportClient.External.DownloadDllFileRequest request) {
-            return base.Channel.DownloadDllFile(request);
-        }
-        
-        public byte[] DownloadDllFile(string fileName) {
-            KmsReportClient.External.DownloadDllFileRequest inValue = new KmsReportClient.External.DownloadDllFileRequest();
-            inValue.Body = new KmsReportClient.External.DownloadDllFileRequestBody();
-            inValue.Body.fileName = fileName;
-            KmsReportClient.External.DownloadDllFileResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).DownloadDllFile(inValue);
-            return retVal.Body.DownloadDllFileResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<KmsReportClient.External.DownloadDllFileResponse> KmsReportClient.External.EndpointSoap.DownloadDllFileAsync(KmsReportClient.External.DownloadDllFileRequest request) {
-            return base.Channel.DownloadDllFileAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<KmsReportClient.External.DownloadDllFileResponse> DownloadDllFileAsync(string fileName) {
-            KmsReportClient.External.DownloadDllFileRequest inValue = new KmsReportClient.External.DownloadDllFileRequest();
-            inValue.Body = new KmsReportClient.External.DownloadDllFileRequestBody();
-            inValue.Body.fileName = fileName;
-            return ((KmsReportClient.External.EndpointSoap)(this)).DownloadDllFileAsync(inValue);
         }
     }
 }
