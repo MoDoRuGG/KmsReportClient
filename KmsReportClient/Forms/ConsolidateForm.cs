@@ -15,7 +15,7 @@ namespace KmsReportClient.Forms
         private const string SummaryFilialName = "ООО «Капитал МС»";
         private const string SummaryFilialCode = "RU";
 
-        private static readonly ConsolidateReport[] FolderReports = { ConsolidateReport.ZpzWebSite, ConsolidateReport.ZpzWebSite2023, ConsolidateReport.ZpzWebSite2025, ConsolidateReport.ViolationsOfAppeals };
+        private static readonly ConsolidateReport[] FolderReports = { ConsolidateReport.ZpzWebSite, ConsolidateReport.ZpzWebSite2023, ConsolidateReport.ZpzWebSite2025, ConsolidateReport.ViolationsOfAppeals, ConsolidateReport.FFOMSTargetedExp };
 
         private readonly EndpointSoapClient _client;
         private readonly string _filialName;
@@ -137,6 +137,15 @@ namespace KmsReportClient.Forms
                     panelRegion.Visible = false;
                     btnDo.Text = "Сформировать отчет ЗПЗ для сайта";
                     saveFileDialog1.FileName = "Сводный отчет ЗПЗ для сайта";
+                    cmbStart.DataSource = GlobalConst.Periods;
+                    break;
+                case ConsolidateReport.FFOMSTargetedExp:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать отчет по Внеплановым экспертизам";
+                    saveFileDialog1.FileName = "Отчет по Внеплановым экспертизам";
                     cmbStart.DataSource = GlobalConst.Periods;
                     break;
                 case ConsolidateReport.ZpzWebSite2025:
@@ -577,6 +586,9 @@ namespace KmsReportClient.Forms
                     case ConsolidateReport.ZpzWebSite2023:
                         CreateZpzWebSite2023();
                         break;
+                    case ConsolidateReport.FFOMSTargetedExp:
+                        CreateFFOMSTargetedExp();
+                        break;
                     case ConsolidateReport.ViolationsOfAppeals:
                         CreateViolationsOfAppeals();
                         break;
@@ -884,6 +896,28 @@ namespace KmsReportClient.Forms
         }
 
 
+        private void CreateFFOMSTargetedExp()
+        {
+            string yymm = GetYymmQuarterly();
+            string folder = folderBrowserDialog1.SelectedPath;
+
+            var reports = _client.CreateFFOMSTargetedExp(yymm);
+
+            foreach (var report in reports)
+            {
+                string filename = folder + $"\\Внеплановые_экспертизы_{report.Filial}_{yymm}.xlsx";
+                string filialName = _regions.Single(x => x.Key == report.Filial).ForeignKey;
+                CreateReport(filename, filialName, report);
+            }
+
+            var summaryReport = CollectSummaryFFOMSTargetedExp(reports);
+            string summaryFilename = folder + $"\\Внеплановые_экспертизы_суммарный_{yymm}.xlsx";
+            CreateReport(summaryFilename, SummaryFilialName, summaryReport);
+
+            GlobalUtils.OpenFileOrDirectory(folder);
+        }
+
+
 
 
 
@@ -1057,6 +1091,34 @@ namespace KmsReportClient.Forms
             };
         }
 
+        private FFOMSTargetedExp CollectSummaryFFOMSTargetedExp(FFOMSTargetedExp[] reports)
+        {
+            var table1 = reports.SelectMany(x => x.MEE).GroupBy(x => x.Row).Select(x => new MEE
+            {
+                Row = x.Key,
+                Target = x.Sum(x => x.Target),
+
+            }).ToArray();
+            var table2 = reports.SelectMany(x => x.EKMP).GroupBy(x => x.Row).Select(x => new EKMP
+            {
+                Row = x.Key,
+                Target = x.Sum(x => x.Target),
+            }).ToArray();
+            var table3 = reports.SelectMany(x => x.MD_EKMP).GroupBy(x => x.Row).Select(x => new MD_EKMP
+            {
+                Row = x.Key,
+                Target = x.Sum(x => x.Target),
+            }).ToArray();
+
+            return new FFOMSTargetedExp
+            {
+                Filial = SummaryFilialCode,
+                MEE = table1,
+                EKMP = table2,
+                MD_EKMP = table3
+            };
+        }
+
 
 
         private ZpzForWebSite2025 CollectSummaryReport2025(ZpzForWebSite2025[] reports)
@@ -1112,6 +1174,12 @@ namespace KmsReportClient.Forms
         private void CreateReport(string filename, string filialName, ZpzForWebSite2025 report)
         {
             var excel = new ExcelConsZpzWebSite2025(filename, "", filialName);
+            excel.CreateReport(report, null);
+        }
+
+        private void CreateReport(string filename, string filialName, FFOMSTargetedExp report)
+        {
+            var excel = new ExcelFFOMSTargetedExpCreator(filename, "", filialName);
             excel.CreateReport(report, null);
         }
 

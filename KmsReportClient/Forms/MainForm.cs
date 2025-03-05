@@ -468,6 +468,16 @@ namespace KmsReportClient.Forms
 
                 filialCode = CurrentUser.FilialCode;
             }
+            //else if (CurrentUser.IsMain && (ReportTree.SelectedNode.Parent.Text == "Нарушения МЭЭ" || ReportTree.SelectedNode.Parent.Text == "Нарушения ЭКМП" || ReportTree.SelectedNode.Parent.Text == "Планы проверок"))
+            //{
+            //    isNeedCreateReport = true;
+            //    _yymm = "Март 2025";
+            //    _currentReportName = ReportTree.SelectedNode.Parent.Text;
+
+            //    filialCode = _regions.Single(x => x.Value == ReportTree.SelectedNode.Parent.Text).Key;
+
+
+            //}
             //Console.WriteLine($"yymm={_yymm} currentReportName={_currentReportName} Филиал={filialCode}");
 
             if (isNeedCreateReport)
@@ -1766,6 +1776,9 @@ ChangeIndexComboBox(DgvVerifyPlan, CmbVerifyPlan, TbVerifyPlan);
 
         private void ОтчетНарушенияПоОбращениямЗЛToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.ViolationsOfAppeals);
+
+        private void ВнеплановыеЭкспертизыToolStripMenuItem_Click(object sender, EventArgs e) =>
+            OpenConsolidateReportForm(ConsolidateReport.FFOMSTargetedExp);
 
         private void КонтрольЗПЗежемесячнаяToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.ControlZpzQuarterly);

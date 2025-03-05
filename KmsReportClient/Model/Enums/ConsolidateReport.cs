@@ -47,6 +47,7 @@
         ConsQuantityAR,
         ConsQuantityQ,
         ConsQuantityFP,
-        ConsQuantityInformation
+        ConsQuantityInformation,
+        FFOMSTargetedExp
     }
 }

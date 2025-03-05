@@ -182,5 +182,7 @@ namespace KmsReportClient.Model.Enums
         ConsQuantityQ,
         [Description(GlobalConst.TempFolder + "Doff.xlsx")]
         Doff,
+        [Description(GlobalConst.TempFolder + "FFOMSTargetedExp.xlsx")]
+        FFOMSTargetedExp,
     }
 }

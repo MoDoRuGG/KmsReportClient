@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -33,16 +34,21 @@ namespace KmsReportClient.Report.Basic
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
 
         Dictionary<string, DataGridViewRow> _rows;
-        private readonly string[] _forms1 = { "Таблица 10" };
+        private readonly string[] _forms1 = { "Таблица 10", };
+        private readonly string[] _forms2 = { "Сведения СП" };
 
         private readonly string[][] _headers = {
             new[]
+            { "Штатные работники", "Привлекаемые по договору" }, //сведения СП
+            new[]
             { "С начала года", "За отчетный период" }, //10
+            
         };
 
         private readonly Dictionary<string, string> _headersMap = new Dictionary<string, string>
         {
             { "Таблица 10", "Численность проинформированных застрахованных лиц" },
+            { "Сведения СП", "Сведения по страховым представителям" }
         };
 
         public ReportZpz10_2025Processor(EndpointSoap inClient, List<KmsReportDictionary> reportsDictionary, DataGridView dgv, ComboBox cmb, TextBox txtb, TabPage page) :
@@ -109,175 +115,188 @@ namespace KmsReportClient.Report.Basic
             }
 
 
+
             Dgv.DefaultCellStyle.BackColor = Color.Azure;
 
             SetFormula();
-            //SetTotalColumn();
+            
+            if (_forms2.Contains(form))
+            {
+                FillDgvForms2(Dgv, form);
+                SetTotalColumn();
+            }
+
             waitingForm.Close();
         }
 
         public void SetFormula()
         {
-            foreach (var row in _rows.Reverse())
+            if (GetCurrentTheme() != "Сведения СП")
             {
-                if (row.Key == "1")
+                foreach (var row in _rows.Reverse())
                 {
-                    row.Value.Cells[2].Value = _rows.Where(x => x.Key == "1.1" || x.Key == "1.2" || x.Key == "1.3" || x.Key == "1.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "1.1" || x.Key == "1.2" || x.Key == "1.3" || x.Key == "1.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
-                    continue;
-                }
+                    if (row.Key == "1")
+                    {
+                        row.Value.Cells[2].Value = _rows.Where(x => x.Key == "1.1" || x.Key == "1.2" || x.Key == "1.3" || x.Key == "1.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                        row.Value.Cells[3].Value = _rows.Where(x => x.Key == "1.1" || x.Key == "1.2" || x.Key == "1.3" || x.Key == "1.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                        continue;
+                    }
 
-                if (row.Key == "2")
-                {
-                    row.Value.Cells[2].Value = _rows.Where(x => x.Key == "2.1" || x.Key == "2.2" || x.Key == "2.3" || x.Key == "2.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "2.1" || x.Key == "2.2" || x.Key == "2.3" || x.Key == "2.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
-                    continue;
-                }
+                    if (row.Key == "2")
+                    {
+                        row.Value.Cells[2].Value = _rows.Where(x => x.Key == "2.1" || x.Key == "2.2" || x.Key == "2.3" || x.Key == "2.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                        row.Value.Cells[3].Value = _rows.Where(x => x.Key == "2.1" || x.Key == "2.2" || x.Key == "2.3" || x.Key == "2.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                        continue;
+                    }
 
-                if (row.Key == "3")
-                {
-                    row.Value.Cells[2].Value = _rows.Where(x => x.Key == "3.1" || x.Key == "3.2" || x.Key == "3.3" || x.Key == "3.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "3.1" || x.Key == "3.2" || x.Key == "3.3" || x.Key == "3.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
-                    continue;
-                }
+                    if (row.Key == "3")
+                    {
+                        row.Value.Cells[2].Value = _rows.Where(x => x.Key == "3.1" || x.Key == "3.2" || x.Key == "3.3" || x.Key == "3.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                        row.Value.Cells[3].Value = _rows.Where(x => x.Key == "3.1" || x.Key == "3.2" || x.Key == "3.3" || x.Key == "3.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                        continue;
+                    }
 
-                if (row.Key == "4")
-                {
-                    row.Value.Cells[2].Value = _rows.Where(x => x.Key == "4.1" || x.Key == "4.2" || x.Key == "4.3" || x.Key == "4.4" || x.Key == "4.5" || x.Key == "4.6").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "4.1" || x.Key == "4.2" || x.Key == "4.3" || x.Key == "4.4" || x.Key == "4.5" || x.Key == "4.6").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
-                    continue;
-                }
+                    if (row.Key == "4")
+                    {
+                        row.Value.Cells[2].Value = _rows.Where(x => x.Key == "4.1" || x.Key == "4.2" || x.Key == "4.3" || x.Key == "4.4" || x.Key == "4.5" || x.Key == "4.6").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                        row.Value.Cells[3].Value = _rows.Where(x => x.Key == "4.1" || x.Key == "4.2" || x.Key == "4.3" || x.Key == "4.4" || x.Key == "4.5" || x.Key == "4.6").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                        continue;
+                    }
 
-                if (row.Key == "4.1")
-                {
-                    row.Value.Cells[2].Value = _rows.Where(x => x.Key == "4.1.1" || x.Key == "4.1.2" || x.Key == "4.1.3" || x.Key == "4.1.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "4.1.1" || x.Key == "4.1.2" || x.Key == "4.1.3" || x.Key == "4.1.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
-                    continue;
-                }
-                if (row.Key == "4.2")
-                {
-                    row.Value.Cells[2].Value = _rows.Where(x => x.Key == "4.2.1" || x.Key == "4.2.2" || x.Key == "4.2.3" || x.Key == "4.2.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "4.2.1" || x.Key == "4.2.2" || x.Key == "4.2.3" || x.Key == "4.2.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
-                    continue;
-                }
-                if (row.Key == "4.3")
-                {
-                    row.Value.Cells[2].Value = _rows.Where(x => x.Key == "4.3.1" || x.Key == "4.3.2" || x.Key == "4.3.3" || x.Key == "4.3.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "4.3.1" || x.Key == "4.3.2" || x.Key == "4.3.3" || x.Key == "4.3.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
-                    continue;
-                }
-                if (row.Key == "4.4")
-                {
-                    row.Value.Cells[2].Value = _rows.Where(x => x.Key == "4.4.1" || x.Key == "4.4.2" || x.Key == "4.4.3" || x.Key == "4.4.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "4.4.1" || x.Key == "4.4.2" || x.Key == "4.4.3" || x.Key == "4.4.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
-                    continue;
-                }
-                if (row.Key == "4.5")
-                {
-                    row.Value.Cells[2].Value = _rows.Where(x => x.Key == "4.5.1" || x.Key == "4.5.2" || x.Key == "4.5.3" || x.Key == "4.5.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "4.5.1" || x.Key == "4.5.2" || x.Key == "4.5.3" || x.Key == "4.5.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
-                    continue;
-                }
-                if (row.Key == "4.6")
-                {
-                    row.Value.Cells[2].Value = _rows.Where(x => x.Key == "4.6.1" || x.Key == "4.6.2" || x.Key == "4.6.3" || x.Key == "4.6.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "4.6.1" || x.Key == "4.6.2" || x.Key == "4.6.3" || x.Key == "4.6.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
-                    continue;
-                }
-                if (row.Key == "5")
-                {
-                    row.Value.Cells[2].Value = _rows.Where(x => x.Key == "5.1" || x.Key == "5.2" || x.Key == "5.3" || x.Key == "5.4" || x.Key == "5.5" || x.Key == "5.6").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "5.1" || x.Key == "5.2" || x.Key == "5.3" || x.Key == "5.4" || x.Key == "5.5" || x.Key == "5.6").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
-                    continue;
-                }
-                if (row.Key == "5.1")
-                {
-                    row.Value.Cells[2].Value = _rows.Where(x => x.Key == "5.1.1" || x.Key == "5.1.2" || x.Key == "5.1.3" || x.Key == "5.1.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "5.1.1" || x.Key == "5.1.2" || x.Key == "5.1.3" || x.Key == "5.1.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
-                    continue;
-                }
-                if (row.Key == "5.2")
-                {
-                    row.Value.Cells[2].Value = _rows.Where(x => x.Key == "5.2.1" || x.Key == "5.2.2" || x.Key == "5.2.3" || x.Key == "5.2.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "5.2.1" || x.Key == "5.2.2" || x.Key == "5.2.3" || x.Key == "5.2.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
-                    continue;
-                }
-                if (row.Key == "5.3")
-                {
-                    row.Value.Cells[2].Value = _rows.Where(x => x.Key == "5.3.1" || x.Key == "5.3.2" || x.Key == "5.3.3" || x.Key == "5.3.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "5.3.1" || x.Key == "5.3.2" || x.Key == "5.3.3" || x.Key == "5.3.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
-                    continue;
-                }
-                if (row.Key == "5.4")
-                {
-                    row.Value.Cells[2].Value = _rows.Where(x => x.Key == "5.4.1" || x.Key == "5.4.2" || x.Key == "5.4.3" || x.Key == "5.4.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "5.4.1" || x.Key == "5.4.2" || x.Key == "5.4.3" || x.Key == "5.4.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
-                    continue;
-                }
-                if (row.Key == "5.5")
-                {
-                    row.Value.Cells[2].Value = _rows.Where(x => x.Key == "5.5.1" || x.Key == "5.5.2" || x.Key == "5.5.3" || x.Key == "5.5.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "5.5.1" || x.Key == "5.5.2" || x.Key == "5.5.3" || x.Key == "5.5.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
-                    continue;
-                }
-                if (row.Key == "5.6")
-                {
-                    row.Value.Cells[2].Value = _rows.Where(x => x.Key == "5.6.1" || x.Key == "5.6.2" || x.Key == "5.6.3" || x.Key == "5.6.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "5.6.1" || x.Key == "5.6.2" || x.Key == "5.6.3" || x.Key == "5.6.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
-                    continue;
-                }
-                if (row.Key == "6")
-                {
-                    row.Value.Cells[2].Value = _rows.Where(x => x.Key == "6.1" || x.Key == "6.2" || x.Key == "6.3" || x.Key == "6.4" || x.Key == "6.5" || x.Key == "6.6" || x.Key == "6.7").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "6.1" || x.Key == "6.2" || x.Key == "6.3" || x.Key == "6.4" || x.Key == "6.5" || x.Key == "6.6" || x.Key == "6.7").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
-                    continue;
-                }
-                if (row.Key == "7")
-                {
-                    row.Value.Cells[2].Value = _rows.Where(x => x.Key == "7.1" || x.Key == "7.2" || x.Key == "7.3" || x.Key == "7.4" || x.Key == "7.5" || x.Key == "7.6" || x.Key == "7.7" || x.Key == "7.8").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "7.1" || x.Key == "7.2" || x.Key == "7.3" || x.Key == "7.4" || x.Key == "7.5" || x.Key == "7.6" || x.Key == "7.7" || x.Key == "7.8").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
-                    continue;
-                }
-                if (row.Key == "8")
-                {
-                    row.Value.Cells[2].Value = _rows.Where(x => x.Key == "8.1" || x.Key == "8.2" || x.Key == "8.3" || x.Key == "8.4" || x.Key == "8.5" || x.Key == "8.6").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
-                    row.Value.Cells[3].Value = _rows.Where(x => x.Key == "8.1" || x.Key == "8.2" || x.Key == "8.3" || x.Key == "8.4" || x.Key == "8.5" || x.Key == "8.6").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
-                    continue;
-                }
-                if (row.Key == "7.5")
-                {
-                    row.Value.Cells[3].Value = "X";
-                    row.Value.Cells[3].ReadOnly = true;
-                    row.Value.Cells[3].Style.BackColor = Color.LightGray;
+                    if (row.Key == "4.1")
+                    {
+                        row.Value.Cells[2].Value = _rows.Where(x => x.Key == "4.1.1" || x.Key == "4.1.2" || x.Key == "4.1.3" || x.Key == "4.1.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                        row.Value.Cells[3].Value = _rows.Where(x => x.Key == "4.1.1" || x.Key == "4.1.2" || x.Key == "4.1.3" || x.Key == "4.1.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                        continue;
+                    }
+                    if (row.Key == "4.2")
+                    {
+                        row.Value.Cells[2].Value = _rows.Where(x => x.Key == "4.2.1" || x.Key == "4.2.2" || x.Key == "4.2.3" || x.Key == "4.2.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                        row.Value.Cells[3].Value = _rows.Where(x => x.Key == "4.2.1" || x.Key == "4.2.2" || x.Key == "4.2.3" || x.Key == "4.2.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                        continue;
+                    }
+                    if (row.Key == "4.3")
+                    {
+                        row.Value.Cells[2].Value = _rows.Where(x => x.Key == "4.3.1" || x.Key == "4.3.2" || x.Key == "4.3.3" || x.Key == "4.3.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                        row.Value.Cells[3].Value = _rows.Where(x => x.Key == "4.3.1" || x.Key == "4.3.2" || x.Key == "4.3.3" || x.Key == "4.3.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                        continue;
+                    }
+                    if (row.Key == "4.4")
+                    {
+                        row.Value.Cells[2].Value = _rows.Where(x => x.Key == "4.4.1" || x.Key == "4.4.2" || x.Key == "4.4.3" || x.Key == "4.4.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                        row.Value.Cells[3].Value = _rows.Where(x => x.Key == "4.4.1" || x.Key == "4.4.2" || x.Key == "4.4.3" || x.Key == "4.4.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                        continue;
+                    }
+                    if (row.Key == "4.5")
+                    {
+                        row.Value.Cells[2].Value = _rows.Where(x => x.Key == "4.5.1" || x.Key == "4.5.2" || x.Key == "4.5.3" || x.Key == "4.5.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                        row.Value.Cells[3].Value = _rows.Where(x => x.Key == "4.5.1" || x.Key == "4.5.2" || x.Key == "4.5.3" || x.Key == "4.5.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                        continue;
+                    }
+                    if (row.Key == "4.6")
+                    {
+                        row.Value.Cells[2].Value = _rows.Where(x => x.Key == "4.6.1" || x.Key == "4.6.2" || x.Key == "4.6.3" || x.Key == "4.6.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                        row.Value.Cells[3].Value = _rows.Where(x => x.Key == "4.6.1" || x.Key == "4.6.2" || x.Key == "4.6.3" || x.Key == "4.6.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                        continue;
+                    }
+                    if (row.Key == "5")
+                    {
+                        row.Value.Cells[2].Value = _rows.Where(x => x.Key == "5.1" || x.Key == "5.2" || x.Key == "5.3" || x.Key == "5.4" || x.Key == "5.5" || x.Key == "5.6").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                        row.Value.Cells[3].Value = _rows.Where(x => x.Key == "5.1" || x.Key == "5.2" || x.Key == "5.3" || x.Key == "5.4" || x.Key == "5.5" || x.Key == "5.6").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                        continue;
+                    }
+                    if (row.Key == "5.1")
+                    {
+                        row.Value.Cells[2].Value = _rows.Where(x => x.Key == "5.1.1" || x.Key == "5.1.2" || x.Key == "5.1.3" || x.Key == "5.1.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                        row.Value.Cells[3].Value = _rows.Where(x => x.Key == "5.1.1" || x.Key == "5.1.2" || x.Key == "5.1.3" || x.Key == "5.1.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                        continue;
+                    }
+                    if (row.Key == "5.2")
+                    {
+                        row.Value.Cells[2].Value = _rows.Where(x => x.Key == "5.2.1" || x.Key == "5.2.2" || x.Key == "5.2.3" || x.Key == "5.2.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                        row.Value.Cells[3].Value = _rows.Where(x => x.Key == "5.2.1" || x.Key == "5.2.2" || x.Key == "5.2.3" || x.Key == "5.2.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                        continue;
+                    }
+                    if (row.Key == "5.3")
+                    {
+                        row.Value.Cells[2].Value = _rows.Where(x => x.Key == "5.3.1" || x.Key == "5.3.2" || x.Key == "5.3.3" || x.Key == "5.3.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                        row.Value.Cells[3].Value = _rows.Where(x => x.Key == "5.3.1" || x.Key == "5.3.2" || x.Key == "5.3.3" || x.Key == "5.3.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                        continue;
+                    }
+                    if (row.Key == "5.4")
+                    {
+                        row.Value.Cells[2].Value = _rows.Where(x => x.Key == "5.4.1" || x.Key == "5.4.2" || x.Key == "5.4.3" || x.Key == "5.4.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                        row.Value.Cells[3].Value = _rows.Where(x => x.Key == "5.4.1" || x.Key == "5.4.2" || x.Key == "5.4.3" || x.Key == "5.4.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                        continue;
+                    }
+                    if (row.Key == "5.5")
+                    {
+                        row.Value.Cells[2].Value = _rows.Where(x => x.Key == "5.5.1" || x.Key == "5.5.2" || x.Key == "5.5.3" || x.Key == "5.5.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                        row.Value.Cells[3].Value = _rows.Where(x => x.Key == "5.5.1" || x.Key == "5.5.2" || x.Key == "5.5.3" || x.Key == "5.5.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                        continue;
+                    }
+                    if (row.Key == "5.6")
+                    {
+                        row.Value.Cells[2].Value = _rows.Where(x => x.Key == "5.6.1" || x.Key == "5.6.2" || x.Key == "5.6.3" || x.Key == "5.6.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                        row.Value.Cells[3].Value = _rows.Where(x => x.Key == "5.6.1" || x.Key == "5.6.2" || x.Key == "5.6.3" || x.Key == "5.6.4").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                        continue;
+                    }
+                    if (row.Key == "6")
+                    {
+                        row.Value.Cells[2].Value = _rows.Where(x => x.Key == "6.1" || x.Key == "6.2" || x.Key == "6.3" || x.Key == "6.4" || x.Key == "6.5" || x.Key == "6.6" || x.Key == "6.7").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                        row.Value.Cells[3].Value = _rows.Where(x => x.Key == "6.1" || x.Key == "6.2" || x.Key == "6.3" || x.Key == "6.4" || x.Key == "6.5" || x.Key == "6.6" || x.Key == "6.7").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                        continue;
+                    }
+                    if (row.Key == "7")
+                    {
+                        row.Value.Cells[2].Value = _rows.Where(x => x.Key == "7.1" || x.Key == "7.2" || x.Key == "7.3" || x.Key == "7.4" || x.Key == "7.5" || x.Key == "7.6" || x.Key == "7.7" || x.Key == "7.8").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                        row.Value.Cells[3].Value = _rows.Where(x => x.Key == "7.1" || x.Key == "7.2" || x.Key == "7.3" || x.Key == "7.4" || x.Key == "7.5" || x.Key == "7.6" || x.Key == "7.7" || x.Key == "7.8").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                        continue;
+                    }
+                    if (row.Key == "8")
+                    {
+                        row.Value.Cells[2].Value = _rows.Where(x => x.Key == "8.1" || x.Key == "8.2" || x.Key == "8.3" || x.Key == "8.4" || x.Key == "8.5" || x.Key == "8.6").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[2].Value));
+                        row.Value.Cells[3].Value = _rows.Where(x => x.Key == "8.1" || x.Key == "8.2" || x.Key == "8.3" || x.Key == "8.4" || x.Key == "8.5" || x.Key == "8.6").Sum(x => GlobalUtils.TryParseDecimal(x.Value.Cells[3].Value));
+                        continue;
+                    }
+                    if (row.Key == "7.5")
+                    {
+                        row.Value.Cells[3].Value = "X";
+                        row.Value.Cells[3].ReadOnly = true;
+                        row.Value.Cells[3].Style.BackColor = Color.LightGray;
+                    }
                 }
             }
         }
 
         private void SetStyle()
         {
-            foreach (DataGridViewRow row in Dgv.Rows)
+            if (GetCurrentTheme() != "Сведения СП")
             {
-                if (_notStyleCells.Contains(row.Cells[1].Value.ToString()))
+                foreach (DataGridViewRow row in Dgv.Rows)
                 {
-                    continue;
-                }
-                else
-                {
-                    string rowNum = row.Cells[1].Value.ToString();
-                    if (_notSaveCells.Contains(rowNum))
+                    if (_notStyleCells.Contains(row.Cells[1].Value.ToString()))
                     {
-                        row.DefaultCellStyle.BackColor = Color.LightGray;
-
-                        row.ReadOnly = false;
-                        row.DefaultCellStyle.Font = new Font(Dgv.DefaultCellStyle.Font, FontStyle.Bold);
+                        continue;
                     }
-                    row.Cells[2].Style.BackColor = Color.LightGray;
+                    else
+                    {
+                        string rowNum = row.Cells[1].Value.ToString();
+                        if (_notSaveCells.Contains(rowNum))
+                        {
+                            row.DefaultCellStyle.BackColor = Color.LightGray;
 
-                }
-                if (row.Cells[1].Value.ToString() == "7.5")
-                {
-                    row.Cells[3].Style.BackColor = row.Cells[2].Style.BackColor = Color.Azure;
-                    row.ReadOnly = false;
+                            row.ReadOnly = false;
+                            row.DefaultCellStyle.Font = new Font(Dgv.DefaultCellStyle.Font, FontStyle.Bold);
+                        }
+                        row.Cells[2].Style.BackColor = Color.LightGray;
+
+                    }
+                    if (row.Cells[1].Value.ToString() == "7.5")
+                    {
+                        row.Cells[3].Style.BackColor = row.Cells[2].Style.BackColor = Color.Azure;
+                        row.ReadOnly = false;
+                    }
                 }
             }
         }
@@ -292,6 +311,10 @@ namespace KmsReportClient.Report.Basic
             if (_forms1.Contains(form))
             {
                 FillThemesForms1(Dgv, form);
+            }
+            if (_forms2.Contains(form))
+            {
+                FillThemesForms2(Dgv, form);
             }
         }
 
@@ -501,7 +524,6 @@ namespace KmsReportClient.Report.Basic
                 }
             };
             dgvReport.Columns.Add(column);
-
         }
 
         private void FillThemesForms1(DataGridView dgvReport, string form)
@@ -563,6 +585,50 @@ namespace KmsReportClient.Report.Basic
                 }
             }
             SetFormula();
+        }
+
+
+
+        private void FillThemesForms2(DataGridView dgvReport, string form)
+        {
+            var reportZpzDto = Report.ReportDataList.SingleOrDefault(x => x.Theme == form);
+            if (reportZpzDto == null)
+            {
+                return;
+            }
+
+            reportZpzDto.Data = (from DataGridViewRow row in dgvReport.Rows
+                                 let rowNum = row.Cells[1].Value.ToString()
+                                 select new ReportZpz2025DataDto
+                                 {
+                                     Code = rowNum,
+                                     CountSmo = GlobalUtils.TryParseDecimal(row.Cells[2].Value),
+                                     CountSmoAnother = GlobalUtils.TryParseDecimal(row.Cells[3].Value)
+                                 }).ToArray();
+
+        }
+
+        private void FillDgvForms2(DataGridView dgvReport, string form)
+        {
+            var reportZpzDto = Report.ReportDataList?.Single(x => x.Theme == form);
+            if (reportZpzDto?.Data == null || reportZpzDto.Data.Length == 0)
+            {
+                return;
+            }
+
+            var rows = ThemeTextData.Tables_fromxml.Where(x => x.TableName_fromxml == form).SelectMany(x => x.Rows_fromxml).ToList();
+            foreach (DataGridViewRow row in dgvReport.Rows)
+            {
+                var rowNum = row.Cells[1].Value.ToString().Trim();
+                bool isExclusionsRow = rows.Single(x => x.RowNum_fromxml == rowNum).Exclusion_fromxml;
+
+                var data = reportZpzDto.Data.SingleOrDefault(x => x.Code == rowNum);
+                if (data != null)
+                {
+                    row.Cells[2].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, null, 0, data.CountSmo);
+                    row.Cells[3].Value = ZpzDgvUtils.GetRowText(isExclusionsRow, null, 0, data.CountSmoAnother);
+                }
+            }
         }
     }
 }

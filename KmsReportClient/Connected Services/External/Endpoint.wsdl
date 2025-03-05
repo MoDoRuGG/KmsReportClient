@@ -1817,8 +1817,8 @@
           <s:element minOccurs="0" maxOccurs="1" name="Scan_Dynamic" type="tns:ArrayOfScan_Dynamic" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Dynamic_Data" type="tns:ArrayOfReport_Dynamic_Data" />
           <s:element minOccurs="0" maxOccurs="1" name="Employee" type="tns:Employee" />
-          <s:element minOccurs="0" maxOccurs="1" name="Region" type="tns:Region" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Dynamic" type="tns:Report_Dynamic" />
+          <s:element minOccurs="0" maxOccurs="1" name="Region" type="tns:Region" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfScan_Dynamic">
@@ -1921,8 +1921,8 @@
           <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:ArrayOfReport_Data" />
           <s:element minOccurs="0" maxOccurs="1" name="Scans_Base" type="tns:ArrayOfScans_Base" />
           <s:element minOccurs="0" maxOccurs="1" name="Employee" type="tns:Employee" />
-          <s:element minOccurs="0" maxOccurs="1" name="Region" type="tns:Region" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Type" type="tns:Report_Type" />
+          <s:element minOccurs="0" maxOccurs="1" name="Region" type="tns:Region" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfReport_Data">
@@ -2568,6 +2568,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="position" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="name_head" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="name_short" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Employee" type="tns:ArrayOfEmployee" />
           <s:element minOccurs="0" maxOccurs="1" name="OpedFinancePlan" type="tns:ArrayOfOpedFinancePlan" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:ArrayOfReport_Flow" />
@@ -3425,6 +3426,66 @@
           <s:element minOccurs="1" maxOccurs="1" name="SumEkmp" type="s:decimal" />
         </s:sequence>
       </s:complexType>
+      <s:element name="CreateFFOMSTargetedExp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateFFOMSTargetedExpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateFFOMSTargetedExpResult" type="tns:ArrayOfFFOMSTargetedExp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFFOMSTargetedExp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FFOMSTargetedExp" nillable="true" type="tns:FFOMSTargetedExp" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FFOMSTargetedExp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MEE" type="tns:ArrayOfMEE" />
+          <s:element minOccurs="0" maxOccurs="1" name="EKMP" type="tns:ArrayOfEKMP" />
+          <s:element minOccurs="0" maxOccurs="1" name="MD_EKMP" type="tns:ArrayOfMD_EKMP" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMEE">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MEE" nillable="true" type="tns:MEE" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MEE">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Row" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Target" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEKMP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EKMP" nillable="true" type="tns:EKMP" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EKMP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Row" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Target" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMD_EKMP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MD_EKMP" nillable="true" type="tns:MD_EKMP" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MD_EKMP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Row" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Target" type="s:int" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="ConsolidateProposalCollect">
         <s:complexType>
           <s:sequence>
@@ -3902,6 +3963,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="ForeignKey" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="AdditionalField" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShortName" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="GetYearOpedData">
@@ -5773,6 +5835,12 @@
   <wsdl:message name="CreateReportControlZpz2025SingleSoapOut">
     <wsdl:part name="parameters" element="tns:CreateReportControlZpz2025SingleResponse" />
   </wsdl:message>
+  <wsdl:message name="CreateFFOMSTargetedExpSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateFFOMSTargetedExp" />
+  </wsdl:message>
+  <wsdl:message name="CreateFFOMSTargetedExpSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateFFOMSTargetedExpResponse" />
+  </wsdl:message>
   <wsdl:message name="ConsolidateProposalCollectSoapIn">
     <wsdl:part name="parameters" element="tns:ConsolidateProposalCollect" />
   </wsdl:message>
@@ -6420,6 +6488,10 @@
       <wsdl:input message="tns:CreateReportControlZpz2025SingleSoapIn" />
       <wsdl:output message="tns:CreateReportControlZpz2025SingleSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="CreateFFOMSTargetedExp">
+      <wsdl:input message="tns:CreateFFOMSTargetedExpSoapIn" />
+      <wsdl:output message="tns:CreateFFOMSTargetedExpSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="ConsolidateProposalCollect">
       <wsdl:input message="tns:ConsolidateProposalCollectSoapIn" />
       <wsdl:output message="tns:ConsolidateProposalCollectSoapOut" />
@@ -7062,6 +7134,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateReportControlZpz2025Single">
       <soap:operation soapAction="http://kms-oms.ru/CreateReportControlZpz2025Single" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFFOMSTargetedExp">
+      <soap:operation soapAction="http://kms-oms.ru/CreateFFOMSTargetedExp" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -8136,6 +8217,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateReportControlZpz2025Single">
       <soap12:operation soapAction="http://kms-oms.ru/CreateReportControlZpz2025Single" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFFOMSTargetedExp">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateFFOMSTargetedExp" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

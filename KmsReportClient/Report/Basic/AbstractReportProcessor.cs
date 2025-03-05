@@ -94,7 +94,14 @@ namespace KmsReportClient.Report.Basic
         {
             if (GetCurrentTheme() != "Результаты МЭК" && GetCurrentTheme() != "Таблица 5А" && GetCurrentTheme() != "Оплата МП")
             {
-                if (Report.IdType == "Zpz10" || Report.IdType == "Zpz10_2025") { Dgv.Columns.Add("Total", "С начала года"); }
+                if (Report.IdType == "Zpz10" || Report.IdType == "Zpz10_2025" && GetCurrentTheme() == "Таблица 10")
+                {
+                    Dgv.Columns.Add("Total", "С начала года");
+                }
+                else if (Report.IdType == "Zpz10_2025" && GetCurrentTheme() == "Таблица 10")
+                {
+                    Dgv.Columns.Add("Total", "Всего");
+                }
                 else { Dgv.Columns.Add("Total", "Итого"); }
 
                 Dgv.Columns["Total"].ReadOnly = true;
@@ -168,6 +175,7 @@ namespace KmsReportClient.Report.Basic
 
                         if (!Dgv.Columns[Dgv.Rows[row].Cells[cell].ColumnIndex].Name.Contains("Row") && Dgv.Rows[row].Cells[cell].Value.ToString() != "x")
                         {
+
                             //Console.WriteLine($"{GetCurrentTheme()} {Report.IdType}");
                             if ((Report.IdType == "PG" || Report.IdType == "PG_Q") && (GetCurrentTheme() == "Таблица 5" || GetCurrentTheme() == "Таблица 6" || GetCurrentTheme() == "Таблица 8"))
                             {
@@ -224,6 +232,10 @@ namespace KmsReportClient.Report.Basic
                                     // Потребовали, чтобы в 6й колонке была сумма 2-5. Попробуем плюсануть тут.
                                     else if (GetCurrentTheme() == "Таблица 1Л" && row != Dgv.Rows.Count - 1 && row != Dgv.Rows.Count - 2)
                                     { Dgv.Rows[row].Cells[cell].Value = valueCel; };
+                                }
+                                else if (Report.IdType == "Zpz10_2025" && GetCurrentTheme() == "Сведения СП")
+                                {
+                                        valueCel += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value); 
                                 }
                                 else if (GetCurrentTheme() == "Таблица 12")
                                 {
@@ -498,7 +510,7 @@ namespace KmsReportClient.Report.Basic
 
             CreateDgvForForm(form, table);
 
-            if (Report.IdType == "PG" || Report.IdType == "PG_Q" || Report.IdType == "foped" || Report.IdType == "Zpz_Q" || Report.IdType == "Zpz" || Report.IdType == "ZpzLethal" || Report.IdType == "Zpz_Q2025" || Report.IdType == "Zpz2025" || Report.IdType == "ZpzL2025"/**|| Report.IdType == "Zpz10"**/)
+            if (Report.IdType == "PG" || Report.IdType == "PG_Q" || Report.IdType == "foped" || Report.IdType == "Zpz_Q" || Report.IdType == "Zpz" || Report.IdType == "ZpzLethal" || Report.IdType == "Zpz_Q2025" || Report.IdType == "Zpz2025" || Report.IdType == "ZpzL2025" || (Report.IdType == "Zpz10_2025" && GetCurrentTheme() == "Сведения СП"))
                 CreateTotalColumn();
 
         }
