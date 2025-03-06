@@ -32,7 +32,13 @@ namespace KmsReportClient.Excel.Creator.Base
 
             foreach (var themeData in report.ReportDataList.OrderBy(x => x.Theme))
             {
-                var dict = _zpzDictionaries.Single(x => x.TableName == themeData.Theme);
+                var dict = _zpzDictionaries.FirstOrDefault(x => x.TableName == themeData.Theme);
+                if (dict == null)
+                {
+                    // Обработка ошибки: лист не найден
+                    Console.WriteLine($"Ошибка: Словарь для темы '{themeData.Theme}' не найден.");
+                    continue; // Пропуск текущей итерации
+                }
                 ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets[dict.Index];
                 var data = themeData.Data;
                 switch (themeData.Theme)
