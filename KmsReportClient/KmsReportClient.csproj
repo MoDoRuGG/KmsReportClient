@@ -338,7 +338,6 @@
     <Compile Include="Model\XML\TemplateTextMail.cs" />
     <Compile Include="Report\Basic\MonitoringVCRProcessor.cs" />
     <Compile Include="Report\Basic\ReportDoffProcessor.cs" />
-    <Compile Include="Report\Basic\ReportMonthlyVolProcessor.cs" />
     <Compile Include="Report\Basic\ReportPVPLoadProcessor.cs" />
     <Compile Include="Report\Basic\ReportTargetedAllowancesProcessor.cs" />
     <Compile Include="Report\Basic\ReportQuantityProcessor.cs" />
