@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ООО Капитал МС")]
 [assembly: AssemblyProduct("KmsReportClient")]
-[assembly: AssemblyCopyright("Дибров С.Г., Перелыгин А.О.")]
+[assembly: AssemblyCopyright("Перелыгин А.О.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // используя "*", как показано ниже:
 // [assembly: AssemblyVersion("1.0.*")]
 
-[assembly: AssemblyVersion("1.1.8.62")]
-[assembly: AssemblyFileVersion("1.1.8.62")]
+[assembly: AssemblyVersion("1.1.8.63")]
+[assembly: AssemblyFileVersion("1.1.8.63")]

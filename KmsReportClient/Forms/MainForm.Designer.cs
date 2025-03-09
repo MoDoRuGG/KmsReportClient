@@ -175,6 +175,8 @@ namespace KmsReportClient.Forms
             this.НарушенияПоОбращениямЗЛToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.КПроверкеФФОМСToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ВнеплановыеЭкспертизыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ОнкологияХТToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.КадрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сводПоВсемФилиаламToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вновьЗСИУДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выполнениеПланаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -949,7 +951,9 @@ namespace KmsReportClient.Forms
             // КПроверкеФФОМСToolStripMenuItem
             // 
             this.КПроверкеФФОМСToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ВнеплановыеЭкспертизыToolStripMenuItem});
+            this.ВнеплановыеЭкспертизыToolStripMenuItem,
+            this.ОнкологияХТToolStripMenuItem,
+            this.КадрыToolStripMenuItem});
             this.КПроверкеФФОМСToolStripMenuItem.Name = "КПроверкеФФОМСToolStripMenuItem";
             this.КПроверкеФФОМСToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.КПроверкеФФОМСToolStripMenuItem.Text = "К проверке ФФОМС";
@@ -960,6 +964,20 @@ namespace KmsReportClient.Forms
             this.ВнеплановыеЭкспертизыToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.ВнеплановыеЭкспертизыToolStripMenuItem.Text = "Внеплановые экспертизы";
             this.ВнеплановыеЭкспертизыToolStripMenuItem.Click += new System.EventHandler(this.ВнеплановыеЭкспертизыToolStripMenuItem_Click);
+            // 
+            // ОнкологияХТToolStripMenuItem
+            // 
+            this.ОнкологияХТToolStripMenuItem.Name = "ОнкологияХТToolStripMenuItem";
+            this.ОнкологияХТToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.ОнкологияХТToolStripMenuItem.Text = "Онкология ХТ";
+            this.ОнкологияХТToolStripMenuItem.Click += new System.EventHandler(this.ОнкологияХТToolStripMenuItem_Click);
+            // 
+            // КадрыToolStripMenuItem
+            // 
+            this.КадрыToolStripMenuItem.Name = "КадрыToolStripMenuItem";
+            this.КадрыToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.КадрыToolStripMenuItem.Text = "Кадры";
+            this.КадрыToolStripMenuItem.Click += new System.EventHandler(this.КадрыToolStripMenuItem_Click);
             // 
             // НарушенияПоОбращениямЗЛToolStripMenuItem
             // 
@@ -4896,6 +4914,8 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.ToolStripMenuItem НарушенияПоОбращениямЗЛToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem КПроверкеФФОМСToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ВнеплановыеЭкспертизыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ОнкологияХТToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem КадрыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сводПоВсемФилиаламToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem вновьЗСИУДToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выполнениеПланаToolStripMenuItem;

@@ -48,6 +48,8 @@
         ConsQuantityQ,
         ConsQuantityFP,
         ConsQuantityInformation,
-        FFOMSTargetedExp
+        FFOMSTargetedExp,
+        FFOMSOncoCT,
+        FFOMSPersonnel,
     }
 }

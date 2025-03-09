@@ -1780,6 +1780,12 @@ ChangeIndexComboBox(DgvVerifyPlan, CmbVerifyPlan, TbVerifyPlan);
         private void ВнеплановыеЭкспертизыToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.FFOMSTargetedExp);
 
+        private void ОнкологияХТToolStripMenuItem_Click(object sender, EventArgs e) =>
+            OpenConsolidateReportForm(ConsolidateReport.FFOMSOncoCT);
+
+        private void КадрыToolStripMenuItem_Click(object sender, EventArgs e) =>
+            OpenConsolidateReportForm(ConsolidateReport.FFOMSPersonnel);
+
         private void КонтрольЗПЗежемесячнаяToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.ControlZpzQuarterly);
 

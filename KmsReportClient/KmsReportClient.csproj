@@ -220,6 +220,8 @@
     <Compile Include="Excel\Creator\Consolidate\ExcelControlZpz2023FullCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelControlZpz2023Creator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelControlZpzCreator.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelFFOMSOncoCTCreator.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelFFOMSPersonnelCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelFFOMSTargetedExpCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelOnkoCreator.cs" />
     <Compile Include="Excel\Creator\DynamicReportExcelCreator.cs" />
@@ -549,6 +551,12 @@
     <None Include="Connected Services\External\KmsReportClient.External.CreateDynamicReportResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateFFOMSOncoCTResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateFFOMSPersonnelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateFFOMSTargetedExpResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -688,6 +696,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.EditFilialResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.FFOMSOncoCT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.FFOMSPersonnel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.FFOMSTargetedExp.datasource">

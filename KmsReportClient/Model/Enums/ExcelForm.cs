@@ -184,5 +184,9 @@ namespace KmsReportClient.Model.Enums
         Doff,
         [Description(GlobalConst.TempFolder + "FFOMSTargetedExp.xlsx")]
         FFOMSTargetedExp,
+        [Description(GlobalConst.TempFolder + "FFOMSOncoCT.xlsx")]
+        FFOMSOncoCT,
+        [Description(GlobalConst.TempFolder + "FFOMSPersonnel.xlsx")]
+        FFOMSPersonnel,
     }
 }
