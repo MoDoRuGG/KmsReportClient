@@ -164,6 +164,7 @@ namespace KmsReportClient.Forms
             TbControl.TabPages.Remove(PageViolMEE);
             TbControl.TabPages.Remove(PageViolEKMP);
             TbControl.TabPages.Remove(PageVerifyPlan);
+            TbControl.TabPages.Remove(PageMonthlyVol);
 
             if (CurrentUser.IsMain)
             {
@@ -217,6 +218,7 @@ namespace KmsReportClient.Forms
                         {PageViolMEE, ReportGlobalConst.ReportViolMEE},
                         {PageViolEKMP, ReportGlobalConst.ReportViolEKMP},
                         {PageVerifyPlan, ReportGlobalConst.ReportVerifyPlan},
+                        {PageMonthlyVol, ReportGlobalConst.ReportMonthlyVol},
             };
 
         private Dictionary<string, IReportProcessor> CreateProcessorMap() =>
@@ -361,6 +363,10 @@ namespace KmsReportClient.Forms
                 {
                     ReportGlobalConst.ReportViolEKMP,
                     new ReportViolEKMPProcessor(_client, _reportsDictionary, DgvViolEKMP, CmbViolEKMP, TbViolEKMP, PageViolEKMP)
+                },
+                {
+                    ReportGlobalConst.ReportMonthlyVol,
+                    new ReportMonthlyVolProcessor(_client, _reportsDictionary, DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol, PageMonthlyVol)
                 }
             };
 
@@ -460,7 +466,7 @@ namespace KmsReportClient.Forms
                 filialCode = CurrentUser.FilialCode;
 
             }
-            else if (!CurrentUser.IsMain && (ReportTree.SelectedNode.Text == "Нарушения МЭЭ" || ReportTree.SelectedNode.Text == "Нарушения ЭКМП" || ReportTree.SelectedNode.Text == "Планы проверок" ))
+            else if (!CurrentUser.IsMain && (ReportTree.SelectedNode.Text == "Нарушения МЭЭ" || ReportTree.SelectedNode.Text == "Нарушения ЭКМП" || ReportTree.SelectedNode.Text == "Планы проверок" || ReportTree.SelectedNode.Text == "Объемы ежемесячные"))
             {
                 isNeedCreateReport = true;
                 _yymm = "Март 2025";
@@ -1698,6 +1704,9 @@ ChangeIndexComboBox(DgvViolEKMP, CmbViolEKMP, TbViolEKMP);
         private void CmbVerifyPlan_SelectedIndexChanged_1(object sender, EventArgs e) =>
 ChangeIndexComboBox(DgvVerifyPlan, CmbVerifyPlan, TbVerifyPlan);
 
+        private void CmbMonthlyVol_SelectedIndexChanged_1(object sender, EventArgs e) =>
+ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
+
         private void CmbZpz2025_SelectedIndexChanged_1(object sender, EventArgs e) =>
             ChangeIndexComboBox(DgvReportZpz2025, CmbZpz2025, TxtbZpz2025);
 
@@ -2311,6 +2320,17 @@ ChangeIndexComboBox(DgvVerifyPlan, CmbVerifyPlan, TbVerifyPlan);
         private void DgvReportVerifyPlan_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             (_processor as ReportVerifyPlanProcessor).SetFormula();
+        }
+
+        private void DgvReportMonthlyVol_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            (_processor as ReportMonthlyVolProcessor).SetFormula();
+        }
+
+
+        private void DgvReportMonthlyVol_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as ReportMonthlyVolProcessor).SetFormula();
         }
 
 

@@ -24,6 +24,7 @@ namespace KmsReportClient.External {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="AbstractReport", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportMonthlyVol))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportViolations))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportEffectiveness))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportZpz2025))]
@@ -471,6 +472,29 @@ namespace KmsReportClient.External {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportMonthlyVol", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportMonthlyVol : KmsReportClient.External.AbstractReport {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.ReportMonthlyVolDto[] ReportDataListField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public KmsReportClient.External.ReportMonthlyVolDto[] ReportDataList {
+            get {
+                return this.ReportDataListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReportDataListField, value) != true)) {
+                    this.ReportDataListField = value;
+                    this.RaisePropertyChanged("ReportDataList");
+                }
             }
         }
     }
@@ -1725,6 +1749,172 @@ namespace KmsReportClient.External {
                 if ((object.ReferenceEquals(this.Table3Field, value) != true)) {
                     this.Table3Field = value;
                     this.RaisePropertyChanged("Table3");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportMonthlyVolDto", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportMonthlyVolDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ThemeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.ReportMonthlyVolDataDto[] DataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Theme {
+            get {
+                return this.ThemeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ThemeField, value) != true)) {
+                    this.ThemeField = value;
+                    this.RaisePropertyChanged("Theme");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public KmsReportClient.External.ReportMonthlyVolDataDto[] Data {
+            get {
+                return this.DataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataField, value) != true)) {
+                    this.DataField = value;
+                    this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportMonthlyVolDataDto", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportMonthlyVolDataDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodeField;
+        
+        private int CountSluchField;
+        
+        private int CountAppliedSluchField;
+        
+        private int CountSluchMEEField;
+        
+        private int CountSluchEKMPField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Code {
+            get {
+                return this.CodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodeField, value) != true)) {
+                    this.CodeField = value;
+                    this.RaisePropertyChanged("Code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int CountSluch {
+            get {
+                return this.CountSluchField;
+            }
+            set {
+                if ((this.CountSluchField.Equals(value) != true)) {
+                    this.CountSluchField = value;
+                    this.RaisePropertyChanged("CountSluch");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int CountAppliedSluch {
+            get {
+                return this.CountAppliedSluchField;
+            }
+            set {
+                if ((this.CountAppliedSluchField.Equals(value) != true)) {
+                    this.CountAppliedSluchField = value;
+                    this.RaisePropertyChanged("CountAppliedSluch");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int CountSluchMEE {
+            get {
+                return this.CountSluchMEEField;
+            }
+            set {
+                if ((this.CountSluchMEEField.Equals(value) != true)) {
+                    this.CountSluchMEEField = value;
+                    this.RaisePropertyChanged("CountSluchMEE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public int CountSluchEKMP {
+            get {
+                return this.CountSluchEKMPField;
+            }
+            set {
+                if ((this.CountSluchEKMPField.Equals(value) != true)) {
+                    this.CountSluchEKMPField = value;
+                    this.RaisePropertyChanged("CountSluchEKMP");
                 }
             }
         }
@@ -40651,6 +40841,9 @@ namespace KmsReportClient.External {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         VerifyPlan = 34,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MonthlyVol = 35,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -42240,10 +42433,13 @@ namespace KmsReportClient.External {
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
         public KmsReportClient.External.ReportViolations violations;
         
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public KmsReportClient.External.ReportMonthlyVol monthlyVol;
+        
         public MethodForSendingChildModelRequestBody() {
         }
         
-        public MethodForSendingChildModelRequestBody(KmsReportClient.External.Report262 f262, KmsReportClient.External.Report294 f294, KmsReportClient.External.ReportIizl iilz, KmsReportClient.External.ReportPg pg, KmsReportClient.External.ReportZpz zpz, KmsReportClient.External.ReportZpz2025 zpz2025, KmsReportClient.External.ReportEffectiveness effective, KmsReportClient.External.ReportViolations violations) {
+        public MethodForSendingChildModelRequestBody(KmsReportClient.External.Report262 f262, KmsReportClient.External.Report294 f294, KmsReportClient.External.ReportIizl iilz, KmsReportClient.External.ReportPg pg, KmsReportClient.External.ReportZpz zpz, KmsReportClient.External.ReportZpz2025 zpz2025, KmsReportClient.External.ReportEffectiveness effective, KmsReportClient.External.ReportViolations violations, KmsReportClient.External.ReportMonthlyVol monthlyVol) {
             this.f262 = f262;
             this.f294 = f294;
             this.iilz = iilz;
@@ -42252,6 +42448,7 @@ namespace KmsReportClient.External {
             this.zpz2025 = zpz2025;
             this.effective = effective;
             this.violations = violations;
+            this.monthlyVol = monthlyVol;
         }
     }
     
@@ -50059,7 +50256,7 @@ namespace KmsReportClient.External {
             return base.Channel.MethodForSendingChildModel(request);
         }
         
-        public void MethodForSendingChildModel(KmsReportClient.External.Report262 f262, KmsReportClient.External.Report294 f294, KmsReportClient.External.ReportIizl iilz, KmsReportClient.External.ReportPg pg, KmsReportClient.External.ReportZpz zpz, KmsReportClient.External.ReportZpz2025 zpz2025, KmsReportClient.External.ReportEffectiveness effective, KmsReportClient.External.ReportViolations violations) {
+        public void MethodForSendingChildModel(KmsReportClient.External.Report262 f262, KmsReportClient.External.Report294 f294, KmsReportClient.External.ReportIizl iilz, KmsReportClient.External.ReportPg pg, KmsReportClient.External.ReportZpz zpz, KmsReportClient.External.ReportZpz2025 zpz2025, KmsReportClient.External.ReportEffectiveness effective, KmsReportClient.External.ReportViolations violations, KmsReportClient.External.ReportMonthlyVol monthlyVol) {
             KmsReportClient.External.MethodForSendingChildModelRequest inValue = new KmsReportClient.External.MethodForSendingChildModelRequest();
             inValue.Body = new KmsReportClient.External.MethodForSendingChildModelRequestBody();
             inValue.Body.f262 = f262;
@@ -50070,6 +50267,7 @@ namespace KmsReportClient.External {
             inValue.Body.zpz2025 = zpz2025;
             inValue.Body.effective = effective;
             inValue.Body.violations = violations;
+            inValue.Body.monthlyVol = monthlyVol;
             KmsReportClient.External.MethodForSendingChildModelResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).MethodForSendingChildModel(inValue);
         }
         
@@ -50078,7 +50276,7 @@ namespace KmsReportClient.External {
             return base.Channel.MethodForSendingChildModelAsync(request);
         }
         
-        public System.Threading.Tasks.Task<KmsReportClient.External.MethodForSendingChildModelResponse> MethodForSendingChildModelAsync(KmsReportClient.External.Report262 f262, KmsReportClient.External.Report294 f294, KmsReportClient.External.ReportIizl iilz, KmsReportClient.External.ReportPg pg, KmsReportClient.External.ReportZpz zpz, KmsReportClient.External.ReportZpz2025 zpz2025, KmsReportClient.External.ReportEffectiveness effective, KmsReportClient.External.ReportViolations violations) {
+        public System.Threading.Tasks.Task<KmsReportClient.External.MethodForSendingChildModelResponse> MethodForSendingChildModelAsync(KmsReportClient.External.Report262 f262, KmsReportClient.External.Report294 f294, KmsReportClient.External.ReportIizl iilz, KmsReportClient.External.ReportPg pg, KmsReportClient.External.ReportZpz zpz, KmsReportClient.External.ReportZpz2025 zpz2025, KmsReportClient.External.ReportEffectiveness effective, KmsReportClient.External.ReportViolations violations, KmsReportClient.External.ReportMonthlyVol monthlyVol) {
             KmsReportClient.External.MethodForSendingChildModelRequest inValue = new KmsReportClient.External.MethodForSendingChildModelRequest();
             inValue.Body = new KmsReportClient.External.MethodForSendingChildModelRequestBody();
             inValue.Body.f262 = f262;
@@ -50089,6 +50287,7 @@ namespace KmsReportClient.External {
             inValue.Body.zpz2025 = zpz2025;
             inValue.Body.effective = effective;
             inValue.Body.violations = violations;
+            inValue.Body.monthlyVol = monthlyVol;
             return ((KmsReportClient.External.EndpointSoap)(this)).MethodForSendingChildModelAsync(inValue);
         }
         

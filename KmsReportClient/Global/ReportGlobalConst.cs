@@ -40,5 +40,6 @@
         public const string ReportViolMEE = "ViolMEE";
         public const string ReportViolEKMP = "ViolEKMP";
         public const string ReportVerifyPlan = "VerifyPlan";
+        public const string ReportMonthlyVol = "MonthlyVol";
     }
 }

@@ -41,5 +41,6 @@ namespace KmsReportClient.Model.Enums
         [Description("TemplateTextViolMEE.xml")] ViolMEE,
         [Description("TemplateTextViolEKMP.xml")] ViolEKMP,
         [Description("TemplateTextVerifyPlan.xml")] VerifyPlan,
+        [Description("TemplateTextMonthlyVol.xml")] MonthlyVol,
     }
 }

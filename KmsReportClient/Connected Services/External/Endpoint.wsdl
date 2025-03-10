@@ -53,6 +53,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="zpz2025" type="tns:ReportZpz2025" />
             <s:element minOccurs="0" maxOccurs="1" name="effective" type="tns:ReportEffectiveness" />
             <s:element minOccurs="0" maxOccurs="1" name="violations" type="tns:ReportViolations" />
+            <s:element minOccurs="0" maxOccurs="1" name="monthlyVol" type="tns:ReportMonthlyVol" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -112,6 +113,40 @@
           <s:enumeration value="Handle" />
         </s:restriction>
       </s:simpleType>
+      <s:complexType name="ReportMonthlyVol">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AbstractReport">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ReportDataList" type="tns:ArrayOfReportMonthlyVolDto" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfReportMonthlyVolDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReportMonthlyVolDto" nillable="true" type="tns:ReportMonthlyVolDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReportMonthlyVolDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Theme" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ArrayOfReportMonthlyVolDataDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReportMonthlyVolDataDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReportMonthlyVolDataDto" nillable="true" type="tns:ReportMonthlyVolDataDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReportMonthlyVolDataDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountSluch" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountAppliedSluch" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountSluchMEE" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountSluchEKMP" type="s:int" />
+        </s:sequence>
+      </s:complexType>
       <s:complexType name="ReportViolations">
         <s:complexContent mixed="false">
           <s:extension base="tns:AbstractReport">
@@ -5434,6 +5469,7 @@
           <s:enumeration value="ViolMEE" />
           <s:enumeration value="ViolEKMP" />
           <s:enumeration value="VerifyPlan" />
+          <s:enumeration value="MonthlyVol" />
         </s:restriction>
       </s:simpleType>
       <s:element name="CollectSummaryReportResponse">

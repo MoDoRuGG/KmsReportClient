@@ -118,6 +118,9 @@ namespace KmsReportClient.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle85 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle86 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle87 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle88 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle89 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle90 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -407,6 +410,11 @@ namespace KmsReportClient.Forms
             this.CmbVerifyPlan = new System.Windows.Forms.ComboBox();
             this.DgvVerifyPlan = new System.Windows.Forms.DataGridView();
 
+            this.PageMonthlyVol = new System.Windows.Forms.TabPage();
+            this.TbMonthlyVol = new System.Windows.Forms.TextBox();
+            this.CmbMonthlyVol = new System.Windows.Forms.ComboBox();
+            this.DgvMonthlyVol = new System.Windows.Forms.DataGridView();
+
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -453,6 +461,8 @@ namespace KmsReportClient.Forms
             ((System.ComponentModel.ISupportInitialize)(this.DgvDoff)).BeginInit();
             this.PageViolMEE.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvViolMEE)).BeginInit();
+            this.PageMonthlyVol.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvMonthlyVol)).BeginInit();
             this.PageReqVCR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReqVCR)).BeginInit();
             this.PageZpz.SuspendLayout();
@@ -1743,6 +1753,9 @@ namespace KmsReportClient.Forms
             this.TbControl.Controls.Add(this.tpIizl2022);
             this.TbControl.Controls.Add(this.PageDoff);
             this.TbControl.Controls.Add(this.PageViolMEE);
+            this.TbControl.Controls.Add(this.PageViolEKMP);
+            this.TbControl.Controls.Add(this.PageTarAllow);
+            this.TbControl.Controls.Add(this.PageVerifyPlan);
             this.TbControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.TbControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TbControl.Location = new System.Drawing.Point(4, 124);
@@ -4477,6 +4490,81 @@ namespace KmsReportClient.Forms
 
 
 
+            // 
+            // PageMonthlyVol
+            // 
+            this.PageMonthlyVol.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.PageMonthlyVol.Controls.Add(this.DgvMonthlyVol);
+            this.PageMonthlyVol.Controls.Add(this.TbMonthlyVol);
+            this.PageMonthlyVol.Controls.Add(this.CmbMonthlyVol);
+            this.PageMonthlyVol.Location = new System.Drawing.Point(4, 36);
+            this.PageMonthlyVol.Name = "PageMonthlyVol";
+            this.PageMonthlyVol.Padding = new System.Windows.Forms.Padding(3);
+            this.PageMonthlyVol.Size = new System.Drawing.Size(712, 330);
+            this.PageMonthlyVol.TabIndex = 5;
+            this.PageMonthlyVol.Text = "tabPage1";
+            // 
+            // DgvMonthlyVol
+            // 
+            this.DgvMonthlyVol.AllowUserToAddRows = false;
+            this.DgvMonthlyVol.AllowUserToDeleteRows = false;
+            this.DgvMonthlyVol.AllowUserToResizeColumns = false;
+            this.DgvMonthlyVol.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DgvMonthlyVol.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            dataGridViewCellStyle88.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            dataGridViewCellStyle88.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle88.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle88.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle88.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle88.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle88.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvMonthlyVol.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle88;
+            this.DgvMonthlyVol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle89.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle89.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle89.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle89.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle89.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle89.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle89.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvMonthlyVol.DefaultCellStyle = dataGridViewCellStyle89;
+            this.DgvMonthlyVol.Location = new System.Drawing.Point(7, 51);
+            this.DgvMonthlyVol.Name = "DgvMonthlyVol";
+            dataGridViewCellStyle90.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle90.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle90.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle90.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle90.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle90.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle90.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvMonthlyVol.RowHeadersDefaultCellStyle = dataGridViewCellStyle90;
+            this.DgvMonthlyVol.Size = new System.Drawing.Size(699, 272);
+            this.DgvMonthlyVol.TabIndex = 8;
+            this.DgvMonthlyVol.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.DgvReportMonthlyVol_CellBeginEdit);
+            this.DgvMonthlyVol.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvReportMonthlyVol_CellEndEdit);
+            // 
+            // TbMonthlyVol
+            // 
+            this.TbMonthlyVol.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TbMonthlyVol.Location = new System.Drawing.Point(113, 6);
+            this.TbMonthlyVol.Multiline = true;
+            this.TbMonthlyVol.Name = "TbMonthlyVol";
+            this.TbMonthlyVol.ReadOnly = true;
+            this.TbMonthlyVol.Size = new System.Drawing.Size(593, 39);
+            this.TbMonthlyVol.TabIndex = 7;
+            // 
+            // CmbMonthlyVol
+            // 
+            this.CmbMonthlyVol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbMonthlyVol.FormattingEnabled = true;
+            this.CmbMonthlyVol.Location = new System.Drawing.Point(7, 6);
+            this.CmbMonthlyVol.Name = "CmbMonthlyVol";
+            this.CmbMonthlyVol.Size = new System.Drawing.Size(100, 21);
+            this.CmbMonthlyVol.TabIndex = 6;
+            this.CmbMonthlyVol.SelectedIndexChanged += new System.EventHandler(this.CmbMonthlyVol_SelectedIndexChanged_1);
 
 
 
@@ -4647,6 +4735,9 @@ namespace KmsReportClient.Forms
             this.PageVerifyPlan.ResumeLayout(false);
             this.PageVerifyPlan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvVerifyPlan)).EndInit();
+            this.PageMonthlyVol.ResumeLayout(false);
+            this.PageMonthlyVol.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvMonthlyVol)).EndInit();
 
         }
 
@@ -4933,6 +5024,10 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.TextBox TbVerifyPlan;
         private System.Windows.Forms.ComboBox CmbVerifyPlan;
         private System.Windows.Forms.DataGridView DgvVerifyPlan;
+        private System.Windows.Forms.TabPage PageMonthlyVol;
+        private System.Windows.Forms.TextBox TbMonthlyVol;
+        private System.Windows.Forms.ComboBox CmbMonthlyVol;
+        private System.Windows.Forms.DataGridView DgvMonthlyVol;
     }
 }
 
