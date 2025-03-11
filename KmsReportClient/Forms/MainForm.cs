@@ -2304,11 +2304,15 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
 
 
 
-
-
         private void DgvReportVerifyPlan_KeyPress(object sender, KeyPressEventArgs e)
         {
             (_processor as ReportVerifyPlanProcessor).SetFormula();
+        }
+
+        private void DgvReportMonthlyVol_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            (_processor as ReportMonthlyVolProcessor).SetFormula();
+            (_processor as ReportMonthlyVolProcessor).CalculateCells();
         }
 
         private void DgvReportVerifyPlan_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
@@ -2390,6 +2394,7 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
 
         private void DgvCadre_KeyPress(object sender, KeyPressEventArgs e)
         {
+            (_processor as ReportCadreProcessor).SetFormula();
             (_processor as ReportCadreProcessor).SetFormula();
         }
 

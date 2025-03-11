@@ -4544,6 +4544,7 @@ namespace KmsReportClient.Forms
             this.DgvMonthlyVol.TabIndex = 8;
             this.DgvMonthlyVol.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.DgvReportMonthlyVol_CellBeginEdit);
             this.DgvMonthlyVol.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvReportMonthlyVol_CellEndEdit);
+            this.DgvMonthlyVol.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DgvReportMonthlyVol_KeyPress);
             // 
             // TbMonthlyVol
             // 

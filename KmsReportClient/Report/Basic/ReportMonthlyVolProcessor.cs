@@ -6,9 +6,13 @@ using System.Windows.Forms;
 using KmsReportClient.Excel.Creator.Base;
 using KmsReportClient.External;
 using KmsReportClient.Global;
+using KmsReportClient.Model;
 using KmsReportClient.Model.Enums;
 using KmsReportClient.Model.XML;
 using KmsReportClient.Support;
+using Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Interop.Word;
+using Microsoft.VisualStudio.OLE.Interop;
 using NLog;
 
 namespace KmsReportClient.Report.Basic
@@ -19,7 +23,65 @@ namespace KmsReportClient.Report.Basic
 
         private readonly string[] _forms = { "Стационарная помощь", "Дневной стационар", "АПП", "Скорая медицинская помощь" };
 
+        private static List<CellModel> originalItemsKS = new List<CellModel>
+        {
+            new CellModel { Row = 0, Column = 5, Value = 6M },
+            new CellModel { Row = 0, Column = 9, Value = 3M }
+        };
 
+        private static List<CellModel> originalItemsDS = new List<CellModel>
+        {
+            new CellModel { Row = 0, Column = 5, Value = 6M },
+            new CellModel { Row = 0, Column = 9, Value = 1.5M }
+        };
+
+        private static List<CellModel> originalItemsAPP = new List<CellModel>
+        {
+            new CellModel { Row = 0, Column = 5, Value = 0.5M },
+            new CellModel { Row = 0, Column = 9, Value = 0.2M }
+        };
+
+        private static List<CellModel> originalItemsSMP = new List<CellModel>
+        {
+            new CellModel { Row = 0, Column = 5, Value = 2M },
+            new CellModel { Row = 0, Column = 9, Value = 0.5M }
+        };
+
+
+        List<CellModel> NormativKS = Enumerable.Range(0, 13).SelectMany(row => originalItemsKS.Select(item => new CellModel
+            {
+                Row = row,
+                Column = item.Column,
+                Value = item.Value
+            }
+            )).ToList();
+
+        List<CellModel> NormativDS = Enumerable.Range(0, 13).SelectMany(row => originalItemsDS.Select(item => new CellModel
+        {
+            Row = row,
+            Column = item.Column,
+            Value = item.Value
+        }
+           )).ToList();
+
+        List<CellModel> NormativAPP = Enumerable.Range(0, 13).SelectMany(row => originalItemsAPP.Select(item => new CellModel
+        {
+            Row = row,
+            Column = item.Column,
+            Value = item.Value
+        }
+        )).ToList();
+
+        List<CellModel> NormativSMP = Enumerable.Range(0, 13).SelectMany(row => originalItemsSMP.Select(item => new CellModel
+        {
+            Row = row,
+            Column = item.Column,
+            Value = item.Value
+        }
+    )).ToList();
+
+
+        private int[] rowWithFormula = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
 
         private readonly string[][] _headers = {
             new[]
@@ -77,10 +139,10 @@ namespace KmsReportClient.Report.Basic
             { "Стационарная помощь", "Период экспертизы" },
             { "Дневной стационар", "Период экспертизы" },
             { "АПП", "Период экспертизы" },
-            { "Скорая медицинская помощь", "Период экспертизы" },    
+            { "Скорая медицинская помощь", "Период экспертизы" },
         };
 
-        public ReportMonthlyVolProcessor(EndpointSoap inClient, List<KmsReportDictionary> reportsDictionary, DataGridView dgv, ComboBox cmb, TextBox txtb, TabPage page) :
+        public ReportMonthlyVolProcessor(EndpointSoap inClient, List<KmsReportDictionary> reportsDictionary, DataGridView dgv, ComboBox cmb, System.Windows.Forms.TextBox txtb, TabPage page) :
             base(inClient, dgv, cmb, txtb, page,
                 XmlFormTemplate.MonthlyVol.GetDescription(),
                 Log,
@@ -153,10 +215,10 @@ namespace KmsReportClient.Report.Basic
             }
         }
 
-        
-        public override bool IsVisibleBtnDownloadExcel() => true;
 
-        public override bool IsVisibleBtnHandle() => true;
+        public override bool IsVisibleBtnDownloadExcel() => false;
+
+        public override bool IsVisibleBtnHandle() => false;
         public override bool IsVisibleBtnSummary() => false;
 
         public override string ValidReport()
@@ -271,9 +333,9 @@ namespace KmsReportClient.Report.Basic
 
         public override void ToExcel(string filename, string filialName)
         {
-            //var mm = YymmUtils.GetMonth(Report.Yymm.Substring(2, 2)) + " 20" + Report.Yymm.Substring(0, 2);
-            //var excel = new ExcelMonthlyVolCreator(filename, ExcelForm.MonthlyVol, mm, filialName);
-            //excel.CreateReport(Report, null);
+            var mm = YymmUtils.GetMonth(Report.Yymm.Substring(2, 2)) + " 20" + Report.Yymm.Substring(0, 2);
+            var excel = new ExcelMonthlyVolCreator(filename, ExcelForm.MonthlyVol, mm, filialName);
+            excel.CreateReport(Report, null);
         }
 
         public override void SaveToDb()
@@ -281,7 +343,7 @@ namespace KmsReportClient.Report.Basic
             var request = new SaveReportRequest
             {
                 Body = new SaveReportRequestBody
-                
+
                 {
                     filialCode = CurrentUser.FilialCode,
                     idUser = CurrentUser.IdUser,
@@ -294,10 +356,58 @@ namespace KmsReportClient.Report.Basic
             Report.IdFlow = response.IdFlow;
             Report.Status = response.Status;
             Report.DataSource = response.DataSource;
-            
+
         }
 
-        public void SetFormula() { }
+        public void SetFormula()
+        {
+            
+
+            foreach (var row in rowWithFormula)
+            {
+                string resultC4 = "";
+                decimal valC3 = Dgv.Rows[row].Cells[3].Value == null ? 0 : Convert.ToInt32(Dgv.Rows[row].Cells[3].Value);
+                decimal valC5 = Dgv.Rows[row].Cells[5].Value == null ? 0 : Convert.ToInt32(Dgv.Rows[row].Cells[5].Value);
+                resultC4 = Math.Round((valC3 * valC5) / 100).ToString();
+                Dgv.Rows[row].Cells[4].Value = resultC4;
+
+                string resultC7 = "";
+                decimal valC6 = Dgv.Rows[row].Cells[6].Value == null ? 0 : Convert.ToInt32(Dgv.Rows[row].Cells[6].Value);
+                valC3 = Dgv.Rows[row].Cells[3].Value == null ? 0 : Convert.ToInt32(Dgv.Rows[row].Cells[3].Value);
+                if (valC3 != 0)
+                {
+                    resultC7 = ((valC6 / valC3) * 100).ToString("F1");
+                }
+                else
+                {
+                    resultC7 = "Деление на 0";
+
+                }
+                Dgv.Rows[row].Cells[7].Value = resultC7;
+
+
+
+
+                string resultC8 = "";
+                decimal valC9 = Dgv.Rows[row].Cells[9].Value == null ? 0 : Convert.ToInt32(Dgv.Rows[row].Cells[9].Value);
+                resultC8 = Math.Round((valC3 * valC9) / 100).ToString();
+                Dgv.Rows[row].Cells[8].Value = resultC8;
+
+                string resultC11 = "";
+                decimal valC10 = Dgv.Rows[row].Cells[10].Value == null ? 0 : Convert.ToInt32(Dgv.Rows[row].Cells[10].Value);
+                if (valC3 != 0)
+                {
+                    resultC11 = ((valC10 / valC3) * 100).ToString("F1");
+                }
+                else
+                {
+                    resultC11 = "Деление на 0";
+
+                }
+                Dgv.Rows[row].Cells[11].Value = resultC11;
+            }
+        }
+
 
         public override void SaveReportDataSourceExcel()
         {
@@ -367,47 +477,24 @@ namespace KmsReportClient.Report.Basic
             var formsList = ThemesList.Select(x => x.Key).OrderBy(x => x).ToList();
             var index = formsList.IndexOf(form);
             var currentHeaders = _headers[index];
-            CreateDgvColumnsForTheme(Dgv, 400, _headersMap[form], currentHeaders);
+            CreateDgvColumnsForTheme(Dgv, 100, _headersMap[form], currentHeaders);
 
             int countRows = ThemeTextData.Tables_fromxml.Single(x => x.TableName_fromxml == form).RowsCount_fromxml;
             foreach (var row in table)
             {
                 var dgvRow = new DataGridViewRow();
-                var cellName = new DataGridViewTextBoxCell
-                {
-                    Value = row.RowText_fromxml
-                };
-                var cellNum = new DataGridViewTextBoxCell
-                {
-                    Value = row.RowNum_fromxml
-                };
-                dgvRow.Cells.Add(cellName);
+                var cellName = new DataGridViewTextBoxCell { Value = row.RowText_fromxml };
+                var cellNum = new DataGridViewTextBoxCell { Value = row.RowNum_fromxml };
                 dgvRow.Cells.Add(cellNum);
-
-                var exclusionCells = row.ExclusionCells_fromxml?.Split(',');
-                for (int i = 2; i < countRows; i++)
-                {
-                    bool isNeedExcludeSum = exclusionCells?.Contains(i.ToString()) ?? false;
-                    var cell = new DataGridViewTextBoxCell
-                    {
-                        Value = row.Exclusion_fromxml || isNeedExcludeSum ? "x" : "0"
-                    };
-                    dgvRow.Cells.Add(cell);
-
-                    if (isNeedExcludeSum)
-                    {
-                        cell.ReadOnly = true;
-                        cell.Style.BackColor = Color.DarkGray;
-                    }
-                }
+                dgvRow.Cells.Add(cellName);
                 int rowIndex = Dgv.Rows.Add(dgvRow);
-                if (row.Exclusion_fromxml)
-                {
-                    Dgv.Rows[rowIndex].ReadOnly = true;
-                    Dgv.Rows[rowIndex].DefaultCellStyle.BackColor = Color.LightCyan;
-                }
+
+
 
             }
+            SetStaticValue();
+            SetStyleDgv();
+            CalculateCells();
         }
 
         private void CreateDgvColumnsForTheme(DataGridView dgvReport, int widthFirstColumn, string mainHeader,
@@ -425,6 +512,7 @@ namespace KmsReportClient.Report.Basic
                 };
                 dgvReport.Columns.Add(dgvColumn);
             }
+
         }
 
         private void CreateDgvCommonColumns(DataGridView dgvReport, int widthFirstColumn, string mainHeader)
@@ -432,6 +520,21 @@ namespace KmsReportClient.Report.Basic
             dgvReport.AllowUserToAddRows = false;
             dgvReport.ColumnHeadersVisible = true;
             var column = new DataGridViewTextBoxColumn
+            {
+                HeaderText = "№ строки",
+                Width = 40,
+                DataPropertyName = "NumRow",
+                Name = "NumRow",
+                ReadOnly = true,
+                SortMode = DataGridViewColumnSortMode.NotSortable,
+                DefaultCellStyle = new DataGridViewCellStyle
+                {
+                    BackColor = Color.Azure
+                }
+            };
+            dgvReport.Columns.Add(column);
+            column = new DataGridViewTextBoxColumn
+
             {
                 HeaderText = mainHeader,
                 Width = widthFirstColumn,
@@ -445,23 +548,23 @@ namespace KmsReportClient.Report.Basic
                 }
             };
             dgvReport.Columns.Add(column);
-            column = new DataGridViewTextBoxColumn
-            {
-                HeaderText = "№ строки",
-                Width = 50,
-                DataPropertyName = "NumRow",
-                Name = "NumRow",
-                ReadOnly = true,
-                SortMode = DataGridViewColumnSortMode.NotSortable,
-                DefaultCellStyle = new DataGridViewCellStyle
-                {
-                    BackColor = Color.Azure
-                }
-            };
-            dgvReport.Columns.Add(column);
 
         }
 
+
+        private void SetStyleDgv()
+        {
+            for (int i = 0; i < Dgv.Rows.Count; i++)
+            {
+                foreach (var j in new[] { 4, 5, 7, 8, 9, 11 }){ 
+                Dgv.Rows[i].Cells[j].Style.BackColor = Color.Azure;
+                Dgv.Rows[i].Cells[j].ReadOnly = true;
+                }
+            };
+            
+            Dgv.Rows[12].DefaultCellStyle.BackColor = Color.Azure;
+            Dgv.Rows[12].ReadOnly = true;
+        }
 
         private void FillThemesForms(DataGridView dgvReport, string form)
         {
@@ -472,19 +575,20 @@ namespace KmsReportClient.Report.Basic
             }
 
             reportDto.Data = (from DataGridViewRow row in dgvReport.Rows
-                              let rowNum = row.Cells[1].Value.ToString().Trim()
+                              let rowNum = row.Cells[0].Value.ToString().Trim()
                               where !IsNotNeedFillRow(form, rowNum)
                               select new ReportMonthlyVolDataDto
                               {
                                   Code = rowNum,
                                   CountSluch = GlobalUtils.TryParseInt(row.Cells[2].Value),
                                   CountAppliedSluch = GlobalUtils.TryParseInt(row.Cells[3].Value),
-                                  CountSluchMEE = GlobalUtils.TryParseInt(row.Cells[4].Value),
-                                  CountSluchEKMP = GlobalUtils.TryParseInt(row.Cells[5].Value)
+                                  CountSluchMEE = GlobalUtils.TryParseInt(row.Cells[6].Value),
+                                  CountSluchEKMP = GlobalUtils.TryParseInt(row.Cells[10].Value)
                               }).ToArray();
+            SetFormula();
         }
 
-        
+
         private void FillDgvForms(DataGridView dgvReport, string form)
         {
             var reportDto = Report.ReportDataList?.Single(x => x.Theme == form);
@@ -496,17 +600,63 @@ namespace KmsReportClient.Report.Basic
             var rows = ThemeTextData.Tables_fromxml.Where(x => x.TableName_fromxml == form).SelectMany(x => x.Rows_fromxml).ToList();
             foreach (DataGridViewRow row in dgvReport.Rows)
             {
-                var rowNum = row.Cells[1].Value.ToString().Trim();
-                bool exclusionsRow = rows.Single(x => x.RowNum_fromxml == rowNum).Exclusion_fromxml;
-
+                var rowNum = row.Cells[0].Value.ToString().Trim();
                 var data = reportDto.Data.SingleOrDefault(x => x.Code == rowNum);
                 if (data != null)
                 {
-                    row.Cells[2].Value = data.CountSluch.ToString().Replace(",00", "");
-                    row.Cells[3].Value = data.CountAppliedSluch.ToString().Replace(",00", "");
-                    row.Cells[4].Value = data.CountSluchMEE.ToString().Replace(",00", "");
-                    row.Cells[5].Value = data.CountSluchEKMP.ToString().Replace(",00", "");
+                    row.Cells[2].Value = (int)data.CountSluch;
+                    row.Cells[3].Value = (int)data.CountAppliedSluch;
+                    row.Cells[6].Value = (int)data.CountSluchMEE;
+                    row.Cells[10].Value = (int)data.CountSluchEKMP;
                 }
+            }
+            SetStaticValue();
+            SetFormula();
+            SetTotalColumn();
+        }
+
+
+        private void SetStaticValue()
+        {
+            List<CellModel> normativ;
+
+            if (GetCurrentTheme() == "Стационарная помощь")
+            {
+                normativ = NormativKS;
+            }
+            else if (GetCurrentTheme() == "Дневной стационар")
+            {
+                normativ = NormativDS;
+            }
+            else if (GetCurrentTheme() == "АПП") { normativ = NormativAPP; }
+            else { normativ = NormativSMP; }
+            foreach (var data in normativ)
+            {
+                Dgv.Rows[data.Row].Cells[data.Column].Value = data.Value;
+            }
+        }
+
+        public override void CalculateCells()
+        {
+            
+            foreach (var i in new[] { 2, 3, 4, 6, 8, 10 })
+            {
+                int total = 0;
+                if (Dgv.Rows.Count < 13) // Если строк меньше 13, пропускаем
+                {
+                    continue;
+                }
+                for (int rowIndex = 0; rowIndex < Dgv.Rows.Count; rowIndex++)
+                {
+                    if (rowIndex == 12) continue;
+                    if (rowIndex >= Dgv.Rows.Count) continue; // Защита от выхода за пределы
+                    if (Dgv.Rows[rowIndex].Cells[i].Value != null)
+                    {
+                        total += Convert.ToInt32(Dgv.Rows[rowIndex].Cells[i].Value);
+                    }
+                }
+                // Устанавливаем сумму в строку 12 (индекс 12)
+                Dgv.Rows[12].Cells[i].Value = total;
             }
         }
     }
