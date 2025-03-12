@@ -170,6 +170,9 @@
     <Compile Include="Excel\Creator\Base\ExcelOpedFinanceCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelOpedUCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelOpedQCreator.cs" />
+    <Compile Include="Excel\Creator\Base\ExcelVerifyPlanCreator.cs" />
+    <Compile Include="Excel\Creator\Base\ExcelViolEKMPCreator.cs" />
+    <Compile Include="Excel\Creator\Base\ExcelViolMEECreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelZpz10_2025Creator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelZpz2025Creator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelZpz2025LethalCreator.cs" />

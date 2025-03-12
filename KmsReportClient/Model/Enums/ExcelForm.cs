@@ -190,5 +190,11 @@ namespace KmsReportClient.Model.Enums
         FFOMSPersonnel,
         [Description(GlobalConst.TempFolder + "MonthlyVol.xlsx")]
         MonthlyVol,
+        [Description(GlobalConst.TempFolder + "ViolMEE.xlsx")]
+        ViolMEE,
+        [Description(GlobalConst.TempFolder + "ViolEKMP.xlsx")]
+        ViolEKMP,
+        [Description(GlobalConst.TempFolder + "VerifyPlan.xlsx")]
+        VerifyPlan,
     }
 }

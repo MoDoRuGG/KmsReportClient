@@ -280,7 +280,7 @@ namespace KmsReportClient.Forms
                     ReportGlobalConst.ReportOped,
                     new ReportOpedProcessor(_client, _reportsDictionary, DgvReportOped, CbxOped, TxtbOped, PageOped)
                 },
-                 { 
+                 {
                     ReportGlobalConst.ReportOpedU,
                     new ReportOpedUProcessor(_client, _reportsDictionary, DgvReportOpedU, CbxOpedU, TxtbOpedU, PageOpedU)
                 },
@@ -390,16 +390,13 @@ namespace KmsReportClient.Forms
             BtnUpload.Visible = false;
             BtnUploaded.Visible = false;
             BtnAutoFill.Visible = false;
-            BtnSummary.Visible = false; 
+            BtnSummary.Visible = false;
             BtnSubmit.Text = "Утвердить отчет";
             consolidateMenu.Visible = true;
             serviceMenu.Visible = true;
             BtnSaveToDb.Visible = false;
             separatorExcel.Visible = false;
             toolStripSeparator2.Visible = false;
-
-
-
         }
 
         private void SetVisibilityFilials()
@@ -419,16 +416,16 @@ namespace KmsReportClient.Forms
 
             CmbTypeTree.SelectedIndex = 0;
             bool isNeedRefuseNotification = _reportView.CreateTreeView((int)TreeYear.Value);
-            if (isNeedRefuseNotification)
+            if (isNeedRefuseNotification && !CurrentUser.IsMain)
             {
                 var WF = new WaitingForm();
                 WF.Show();
                 MessageBox.Show(
-                    "Имеются отчеты, возвращенные на доработку",
-                    "Внимание",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-                
+                                    "Имеются отчеты, возвращенные на доработку",
+                                    "Внимание",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning
+                               );
             }
         }
 
@@ -474,18 +471,30 @@ namespace KmsReportClient.Forms
 
                 filialCode = CurrentUser.FilialCode;
             }
-            //else if (CurrentUser.IsMain && (ReportTree.SelectedNode.Parent.Text == "Нарушения МЭЭ" || ReportTree.SelectedNode.Parent.Text == "Нарушения ЭКМП" || ReportTree.SelectedNode.Parent.Text == "Планы проверок"))
-            //{
-            //    isNeedCreateReport = true;
-            //    _yymm = "Март 2025";
-            //    _currentReportName = ReportTree.SelectedNode.Parent.Text;
+            else if (CurrentUser.IsMain)
+            {
+                try
+                {
+                    if (ReportTree.SelectedNode.Parent.Text == "Нарушения МЭЭ" ||
+                ReportTree.SelectedNode.Parent.Text == "Нарушения ЭКМП" ||
+                ReportTree.SelectedNode.Parent.Text == "Планы проверок" ||
+                ReportTree.SelectedNode.Parent.Text == "Объемы ежемесячные")
+                    {
+                        isNeedCreateReport = true;
+                        _yymm = "Март 2025";
+                        _currentReportName = ReportTree.SelectedNode.Parent.Text;
+                        try
+                        {
+                            filialCode = _regions.Single(x => x.Value == ReportTree.SelectedNode.Text).Key;
+                        }
+                        catch (Exception ex) { }
 
-            //    filialCode = _regions.Single(x => x.Value == ReportTree.SelectedNode.Parent.Text).Key;
-
-
-            //}
-            //Console.WriteLine($"yymm={_yymm} currentReportName={_currentReportName} Филиал={filialCode}");
-
+                    }
+                }
+                catch (Exception ex) { }
+            }
+            Console.WriteLine($"yymm={_yymm} currentReportName={_currentReportName} Филиал={filialCode}");
+            
             if (isNeedCreateReport)
             {
                 _currentReport = _reportsDictionary.Single(x => x.Value == _currentReportName).Key;
@@ -493,6 +502,7 @@ namespace KmsReportClient.Forms
                 _processor.FilialCode = filialCode;
                 OpenReport();
             }
+
         }
 
 
@@ -655,11 +665,14 @@ namespace KmsReportClient.Forms
 
             BtnSubmit.Enabled = _processor.Report.Status != ReportStatus.Done;
             Console.WriteLine(!CurrentUser.IsMain);
-           
+
             BtnUploaded.Visible = _processor.IsVisibleBtnDownloadExcel();
             BtnHandle.Visible = _processor.IsVisibleBtnHandle();
             BtnSummary.Visible = _processor.IsVisibleBtnSummary();
-
+            if (_processor.Report.IdType == "TarAllow")
+            {
+                BtnSubmit.Visible = false;
+            }
             if (_isQuery)
             {
                 BtnUploaded.Visible = false;
@@ -2150,7 +2163,7 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
 
 
         }
-        
+
         private void DgvReportOpedU_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -2161,7 +2174,7 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         {
             _processor.CallculateCells();
         }
-        
+
         private void DgvReportOpedU_KeyDown(object sender, KeyEventArgs e)
         {
             _processor.CallculateCells();
@@ -2171,7 +2184,7 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         {
 
         }
-        
+
         private void DgvReportOpedU_KeyPress(object sender, KeyPressEventArgs e)
         {
 
@@ -2260,7 +2273,7 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         {
             _processor.CallculateCells();
         }
-        
+
         private void DgvReportOpedU_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
             _processor.CallculateCells();
@@ -2342,7 +2355,7 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         {
             OpenConsolidateReportForm(ConsolidateReport.ConsolidateOped);
         }
-        
+
         private void сводUToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenConsolidateReportForm(ConsolidateReport.ConsolidateOpedUnplanned);

@@ -221,9 +221,9 @@ namespace KmsReportClient.Report.Basic
 
         public override void ToExcel(string filename, string filialName)
         {
-            //var mm = YymmUtils.GetMonth(Report.Yymm.Substring(2, 2)) + " 20" + Report.Yymm.Substring(0, 2);
-            //var excel = new ExcelZpz10Creator(filename, ExcelForm.Zpz10, mm, filialName);
-            //excel.CreateReport(Report, null);
+            var mm = YymmUtils.GetMonth(Report.Yymm.Substring(2, 2)) + " 20" + Report.Yymm.Substring(0, 2);
+            var excel = new ExcelViolMEECreator(filename, ExcelForm.ViolMEE, mm, filialName);
+            excel.CreateReport(Report, null);
         }
 
         public override void SaveToDb()

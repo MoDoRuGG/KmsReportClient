@@ -214,16 +214,16 @@ namespace KmsReportClient.Report.Basic
 
             if (message.Length > 0)
             {
-                message = "Форма Нарушения ЭКМП. " + Environment.NewLine + message;
+                message = "Форма Планы Проверок. " + Environment.NewLine + message;
             }
             return message;
         }
 
         public override void ToExcel(string filename, string filialName)
         {
-            //var mm = YymmUtils.GetMonth(Report.Yymm.Substring(2, 2)) + " 20" + Report.Yymm.Substring(0, 2);
-            //var excel = new ExcelZpz10Creator(filename, ExcelForm.Zpz10, mm, filialName);
-            //excel.CreateReport(Report, null);
+            var mm = YymmUtils.GetMonth(Report.Yymm.Substring(2, 2)) + " 20" + Report.Yymm.Substring(0, 2);
+            var excel = new ExcelVerifyPlanCreator(filename, ExcelForm.VerifyPlan, mm, filialName);
+            excel.CreateReport(Report, null);
         }
 
         public override void SaveToDb()

@@ -39,15 +39,7 @@ namespace KmsReportClient.Excel.Creator.Base
             {
                 var dict = _MonVolDictionaries.Single(x => x.TableName == themeData.Theme);
                 var data = themeData.Data;
-                switch (themeData.Theme)
-                {
-                    case "Стационарная помощь":
-                    case "Дневной стационар":
-                    case "АПП":
-                    case "Скорая медицинская помощь":
-                        FillTable(data, dict.StartRow, dict.EndRow, themeData.Theme);
-                        break;
-                }
+                FillTable(data, dict.StartRow, dict.EndRow, themeData.Theme);
             }
         }
 
@@ -56,20 +48,19 @@ namespace KmsReportClient.Excel.Creator.Base
 
         private void FillTable(ReportMonthlyVolDataDto[] data, int startRowIndex, int endRowIndex, string form)
         {
-            for (int i = startRowIndex; i <= endRowIndex; i++)
+            int j = startRowIndex;
+            if (data != null)
             {
-                for (int j = 1; i <= 13; i++)
+                foreach (var row in data)
                 {
-                    var rowData = data?.SingleOrDefault(x => x.Code == j.ToString());
-                    if (rowData != null)
-                    {
-                        ObjWorkSheet.Cells[i, 2] = rowData.CountSluch;
-                        ObjWorkSheet.Cells[i, 3] = rowData.CountAppliedSluch;
-                        ObjWorkSheet.Cells[i, 6] = rowData.CountSluchMEE;
-                        ObjWorkSheet.Cells[i, 10] = rowData.CountSluchEKMP;
-                    };
+                    ObjWorkSheet.Cells[j, 2] = row.CountSluch;
+                    ObjWorkSheet.Cells[j, 3] = row.CountAppliedSluch;
+                    ObjWorkSheet.Cells[j, 6] = row.CountSluchMEE;
+                    ObjWorkSheet.Cells[j++, 10] = row.CountSluchEKMP;
+                    if (j == endRowIndex)
+                    break;
                 }
-            }
+            };
         }
     }
 }

@@ -76,10 +76,11 @@ namespace KmsReportClient.Model
                                 foreach (var region in regions)
                                 {
                                     var regionNode = new TreeNode { Text = region.Value };
-                                    var date = DateTime.ParseExact(report.YymmEnd, "yyMM", CultureInfo.InvariantCulture);
+                                    var date = DateTime.ParseExact("2503", "yyMM", CultureInfo.InvariantCulture);
                                     var color = FindReportColor(date, report.HistoryCode, region.Key, flows);
-                                    if (color != null) regionNode.BackColor = color.Value;
                                     reportNode.Nodes.Add(regionNode);
+                                    if (color != null) regionNode.BackColor = color.Value;
+                                    
                                 }
                             }
                             else
