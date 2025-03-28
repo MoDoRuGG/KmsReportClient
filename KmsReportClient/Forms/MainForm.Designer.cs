@@ -1320,7 +1320,7 @@ namespace KmsReportClient.Forms
             this.BtnSubmit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BtnSubmit.Name = "BtnSubmit";
             this.BtnSubmit.Size = new System.Drawing.Size(28, 28);
-            this.BtnSubmit.Text = "Сдать очтет";
+            this.BtnSubmit.Text = "Сдать отчет";
             this.BtnSubmit.Click += new System.EventHandler(this.BtnSend_Click);
             // 
             // BtnRefuse

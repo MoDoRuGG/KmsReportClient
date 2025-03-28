@@ -62,37 +62,37 @@ namespace KmsReportClient.Model
                     var rootNode = new TreeNode { Text = root.Value };
                     tree.Nodes.Add(rootNode);
 
-                    if (root.Key == FFOMS)
-                    {
-                        // Обработка FFOMS: отчеты без даты
-                        var ffomsReports = reportsHistory.Where(x => x.Type == FFOMS);
-                        foreach (var report in ffomsReports)
-                        {
-                            var reportNode = new TreeNode { Text = report.HistoryName };
-                            rootNode.Nodes.Add(reportNode);
-                            if (CurrentUser.IsMain)
-                            {
-                                // Для главного администратора: добавляем все регионы
-                                foreach (var region in regions)
-                                {
-                                    var regionNode = new TreeNode { Text = region.Value };
-                                    var date = DateTime.ParseExact("2503", "yyMM", CultureInfo.InvariantCulture);
-                                    var color = FindReportColor(date, report.HistoryCode, region.Key, flows);
-                                    reportNode.Nodes.Add(regionNode);
-                                    if (color != null) regionNode.BackColor = color.Value;
+                    //if (root.Key == FFOMS)
+                    //{
+                    //    // Обработка FFOMS: отчеты без даты
+                    //    var ffomsReports = reportsHistory.Where(x => x.Type == FFOMS);
+                    //    foreach (var report in ffomsReports)
+                    //    {
+                    //        var reportNode = new TreeNode { Text = report.HistoryName };
+                    //        rootNode.Nodes.Add(reportNode);
+                    //        if (CurrentUser.IsMain)
+                    //        {
+                    //            // Для главного администратора: добавляем все регионы
+                    //            foreach (var region in regions)
+                    //            {
+                    //                var regionNode = new TreeNode { Text = region.Value };
+                    //                var date = DateTime.ParseExact("2503", "yyMM", CultureInfo.InvariantCulture);
+                    //                var color = FindReportColor(date, report.HistoryCode, region.Key, flows);
+                    //                reportNode.Nodes.Add(regionNode);
+                    //                if (color != null) regionNode.BackColor = color.Value;
                                     
-                                }
-                            }
-                            else
-                            {
-                                // Для обычного пользователя: только текущий филиал
-                                var date = DateTime.ParseExact("2503", "yyMM", CultureInfo.InvariantCulture);
-                                var color = FindReportColor(date, report.HistoryCode, CurrentUser.FilialCode, flows);
-                                if (color != null) reportNode.BackColor = color.Value;
-                            }
-                        }
-                    }
-                    else
+                    //            }
+                    //        }
+                    //        else
+                    //        {
+                    //            // Для обычного пользователя: только текущий филиал
+                    //            var date = DateTime.ParseExact("2503", "yyMM", CultureInfo.InvariantCulture);
+                    //            var color = FindReportColor(date, report.HistoryCode, CurrentUser.FilialCode, flows);
+                    //            if (color != null) reportNode.BackColor = color.Value;
+                    //        }
+                    //    }
+                    //}
+                    //else
                     {
                         var dates = CreateDateList(root.Key, year);
                         foreach (var history in reportsHistory.Where(x => x.Type == root.Key))
@@ -253,7 +253,7 @@ namespace KmsReportClient.Model
                 //var date = DateTime.Today.AddMonths(-i);
                 var date = new DateTime(year, currentMonth - i, 15);
 
-                if (type == Quarterly)
+                if (type == Quarterly || type == FFOMS)
                 {
                     int ost = date.Month % 3;
                     if (ost != 0)
