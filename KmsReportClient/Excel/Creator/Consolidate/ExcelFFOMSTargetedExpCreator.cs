@@ -55,7 +55,8 @@ namespace KmsReportClient.Excel.Creator.Consolidate
             {"RU-VGG","АСП ООО «Капитал МС» - Филиал в Волгоградской области"},
             {"RU-VLA","АСП ООО «Капитал МС» - Филиал во Владимирской области"},
             {"RU-YAR","АСП ООО «Капитал МС» - Филиал в Ярославской области"},
-            {"RU-YEV","АСП ООО «Капитал МС» - Филиал в Еврейской Автономной Области"}
+            {"RU-YEV","АСП ООО «Капитал МС» - Филиал в Еврейской Автономной Области"},
+            {"RU", "Центральный офис ООО «Капитал МС»"}
         };
 
         protected override void FillReport(FFOMSTargetedExp report, FFOMSTargetedExp yearReport)
