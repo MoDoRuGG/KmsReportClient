@@ -73,7 +73,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
             {
                 ObjWorkSheet.Cells[1, 1] = regionName;
             }
-            int currentIndex = 3;
+            int currentIndex = 4;
             foreach (var data in report.MEE)
             {
                 ObjWorkSheet.Cells[currentIndex++, 3] = data.Target;
@@ -88,7 +88,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
             {
                 ObjWorkSheet.Cells[1, 1] = regionName;
             }
-            int currentIndex = 3;
+            int currentIndex = 4;
             foreach (var data in report.EKMP)
             {
                 ObjWorkSheet.Cells[currentIndex++, 3] = data.Target;
@@ -102,7 +102,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
             {
                 ObjWorkSheet.Cells[1, 1] = regionName;
             }
-            int currentIndex = 3;
+            int currentIndex = 4;
             foreach (var data in report.MD_EKMP)
             {
                 ObjWorkSheet.Cells[currentIndex++, 3] = data.Target;
