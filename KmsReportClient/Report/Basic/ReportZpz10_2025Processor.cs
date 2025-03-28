@@ -102,9 +102,6 @@ namespace KmsReportClient.Report.Basic
 
         public override void FillDataGridView(string form)
         {
-            var waitingForm = new WaitingForm();
-            waitingForm.Show();
-            Application.DoEvents();
             if (form == null)
             {
                 return;
@@ -125,8 +122,6 @@ namespace KmsReportClient.Report.Basic
                 FillDgvForms2(Dgv, form);
                 SetTotalColumn();
             }
-
-            waitingForm.Close();
         }
 
         public void SetFormula()

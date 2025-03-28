@@ -86,7 +86,7 @@ namespace KmsReportClient.Model
                             else
                             {
                                 // Для обычного пользователя: только текущий филиал
-                                var date = DateTime.ParseExact(report.YymmEnd, "yyMM", CultureInfo.InvariantCulture);
+                                var date = DateTime.ParseExact("2503", "yyMM", CultureInfo.InvariantCulture);
                                 var color = FindReportColor(date, report.HistoryCode, CurrentUser.FilialCode, flows);
                                 if (color != null) reportNode.BackColor = color.Value;
                             }
@@ -133,7 +133,6 @@ namespace KmsReportClient.Model
                                             nodeRegion.BackColor = color.Value;
                                         }
                                     }
-
                                 }
                             }
                         }

@@ -227,6 +227,9 @@
     <Compile Include="Excel\Creator\Consolidate\ExcelFFOMSOncoCTCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelFFOMSPersonnelCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelFFOMSTargetedExpCreator.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelFFOMSVerifyPlanCreator.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelFFOMSViolEKMPCreator.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelFFOMSViolMEECreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelOnkoCreator.cs" />
     <Compile Include="Excel\Creator\DynamicReportExcelCreator.cs" />
     <Compile Include="Excel\Creator\ExcelBaseCreator.cs" />
@@ -565,6 +568,15 @@
     <None Include="Connected Services\External\KmsReportClient.External.CreateFFOMSTargetedExpResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateFFOMSVerifyPlanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateFFOMSViolEKMPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateFFOMSViolMEEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateReport262T1Response.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -710,6 +722,15 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.FFOMSTargetedExp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.FFOMSVerifyPlan.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.FFOMSViolEKMP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.FFOMSViolMEE.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.FSSMonitoringPgDataDto.datasource">

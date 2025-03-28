@@ -418,8 +418,6 @@ namespace KmsReportClient.Forms
             bool isNeedRefuseNotification = _reportView.CreateTreeView((int)TreeYear.Value);
             if (isNeedRefuseNotification && !CurrentUser.IsMain)
             {
-                var WF = new WaitingForm();
-                WF.Show();
                 MessageBox.Show(
                                     "Имеются отчеты, возвращенные на доработку",
                                     "Внимание",
@@ -596,10 +594,6 @@ namespace KmsReportClient.Forms
 
         private void OpenReport()
         {
-            var waitingForm = new WaitingForm();
-            waitingForm.Show();
-
-
             var yymmExp = YymmUtils.ConvertPeriodToYymm(_yymm);
             var inReport = _processor.CollectReportFromWs(yymmExp);
             _processor.OldTheme = _processor.HasReport ? _processor.GetCurrentTheme() : _processor.ThemesList[0].Key;
@@ -625,8 +619,6 @@ namespace KmsReportClient.Forms
             _processor.FillDataGridView(_processor.OldTheme);
             _processor.SetReadonlyForDgv(SuccessStatuses.Contains(_processor.Report.Status));
 
-
-            waitingForm.Close();
             SetReportInterface();
 
             if (CurrentUser.IsMain && inReport == null)
@@ -1024,13 +1016,8 @@ namespace KmsReportClient.Forms
 
             try
             {
-                var waitingForm = new WaitingForm();
-                waitingForm.Show();
-                Application.DoEvents();
-
                 _processor.FindReports(filialList, yymmStart, yymmEnd, status, datasource);
                 _processor.FillDataGridView(_processor.GetCurrentTheme());
-                waitingForm.Close();
             }
             catch (Exception ex)
             {
@@ -1799,6 +1786,15 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         private void ОтчетНарушенияПоОбращениямЗЛToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.ViolationsOfAppeals);
 
+        private void НарушенияМЭЭToolStripMenuItem_Click(object sender, EventArgs e) =>
+            OpenConsolidateReportForm(ConsolidateReport.FFOMSViolMEE);
+
+        private void НарушенияЭКМПToolStripMenuItem_Click(object sender, EventArgs e) =>
+            OpenConsolidateReportForm(ConsolidateReport.FFOMSViolEKMP);
+
+        private void ПланыПроверокToolStripMenuItem_Click(object sender, EventArgs e) =>
+            OpenConsolidateReportForm(ConsolidateReport.FFOMSVerifyPlan);
+
         private void ВнеплановыеЭкспертизыToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.FFOMSTargetedExp);
 
@@ -2323,6 +2319,12 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         }
 
         private void DgvReportMonthlyVol_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            (_processor as ReportMonthlyVolProcessor).SetFormula();
+            (_processor as ReportMonthlyVolProcessor).CalculateCells();
+        }
+
+        private void DgvReportMonthlyVol_Move(object sender, MouseEventArgs e)
         {
             (_processor as ReportMonthlyVolProcessor).SetFormula();
             (_processor as ReportMonthlyVolProcessor).CalculateCells();

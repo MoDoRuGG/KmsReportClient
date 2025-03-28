@@ -34946,7 +34946,7 @@ namespace KmsReportClient.External {
         private string FilialField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.OncoCT_MEE[] OncoCT_MEEField;
+        private KmsReportClient.External.FFOMSOncoCT_MEE OncoCT_MEEField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -34972,7 +34972,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.OncoCT_MEE[] OncoCT_MEE {
+        public KmsReportClient.External.FFOMSOncoCT_MEE OncoCT_MEE {
             get {
                 return this.OncoCT_MEEField;
             }
@@ -34996,9 +34996,9 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OncoCT_MEE", Namespace="http://kms-oms.ru/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FFOMSOncoCT_MEE", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
-    public partial class OncoCT_MEE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class FFOMSOncoCT_MEE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -35006,7 +35006,7 @@ namespace KmsReportClient.External {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RowField;
         
-        private int TargetField;
+        private decimal TargetField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -35032,7 +35032,7 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int Target {
+        public decimal Target {
             get {
                 return this.TargetField;
             }
@@ -35176,6 +35176,369 @@ namespace KmsReportClient.External {
                 if ((this.ContractField.Equals(value) != true)) {
                     this.ContractField = value;
                     this.RaisePropertyChanged("Contract");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FFOMSViolMEE", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class FFOMSViolMEE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.FFOMSViolMEEdata[] DataViolMEEField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Filial {
+            get {
+                return this.FilialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
+                    this.FilialField = value;
+                    this.RaisePropertyChanged("Filial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public KmsReportClient.External.FFOMSViolMEEdata[] DataViolMEE {
+            get {
+                return this.DataViolMEEField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataViolMEEField, value) != true)) {
+                    this.DataViolMEEField = value;
+                    this.RaisePropertyChanged("DataViolMEE");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FFOMSViolMEEdata", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class FFOMSViolMEEdata : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RowNumField;
+        
+        private int CountField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string RowNum {
+            get {
+                return this.RowNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RowNumField, value) != true)) {
+                    this.RowNumField = value;
+                    this.RaisePropertyChanged("RowNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public int Count {
+            get {
+                return this.CountField;
+            }
+            set {
+                if ((this.CountField.Equals(value) != true)) {
+                    this.CountField = value;
+                    this.RaisePropertyChanged("Count");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FFOMSViolEKMP", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class FFOMSViolEKMP : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.FFOMSViolEKMPdata[] DataViolEKMPField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Filial {
+            get {
+                return this.FilialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
+                    this.FilialField = value;
+                    this.RaisePropertyChanged("Filial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public KmsReportClient.External.FFOMSViolEKMPdata[] DataViolEKMP {
+            get {
+                return this.DataViolEKMPField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataViolEKMPField, value) != true)) {
+                    this.DataViolEKMPField = value;
+                    this.RaisePropertyChanged("DataViolEKMP");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FFOMSViolEKMPdata", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class FFOMSViolEKMPdata : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RowNumField;
+        
+        private int CountField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string RowNum {
+            get {
+                return this.RowNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RowNumField, value) != true)) {
+                    this.RowNumField = value;
+                    this.RaisePropertyChanged("RowNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public int Count {
+            get {
+                return this.CountField;
+            }
+            set {
+                if ((this.CountField.Equals(value) != true)) {
+                    this.CountField = value;
+                    this.RaisePropertyChanged("Count");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FFOMSVerifyPlan", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class FFOMSVerifyPlan : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.FFOMSVerifyPlandata[] DataVerifyPlanField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Filial {
+            get {
+                return this.FilialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
+                    this.FilialField = value;
+                    this.RaisePropertyChanged("Filial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public KmsReportClient.External.FFOMSVerifyPlandata[] DataVerifyPlan {
+            get {
+                return this.DataVerifyPlanField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataVerifyPlanField, value) != true)) {
+                    this.DataVerifyPlanField = value;
+                    this.RaisePropertyChanged("DataVerifyPlan");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FFOMSVerifyPlandata", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class FFOMSVerifyPlandata : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RowNumField;
+        
+        private int CountField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string RowNum {
+            get {
+                return this.RowNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RowNumField, value) != true)) {
+                    this.RowNumField = value;
+                    this.RaisePropertyChanged("RowNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public int Count {
+            get {
+                return this.CountField;
+            }
+            set {
+                if ((this.CountField.Equals(value) != true)) {
+                    this.CountField = value;
+                    this.RaisePropertyChanged("Count");
                 }
             }
         }
@@ -41604,6 +41967,27 @@ namespace KmsReportClient.External {
         System.Threading.Tasks.Task<KmsReportClient.External.CreateFFOMSPersonnelResponse> CreateFFOMSPersonnelAsync(KmsReportClient.External.CreateFFOMSPersonnelRequest request);
         
         // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateFFOMSViolMEE", ReplyAction="*")]
+        KmsReportClient.External.CreateFFOMSViolMEEResponse CreateFFOMSViolMEE(KmsReportClient.External.CreateFFOMSViolMEERequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateFFOMSViolMEE", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateFFOMSViolMEEResponse> CreateFFOMSViolMEEAsync(KmsReportClient.External.CreateFFOMSViolMEERequest request);
+        
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateFFOMSViolEKMP", ReplyAction="*")]
+        KmsReportClient.External.CreateFFOMSViolEKMPResponse CreateFFOMSViolEKMP(KmsReportClient.External.CreateFFOMSViolEKMPRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateFFOMSViolEKMP", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateFFOMSViolEKMPResponse> CreateFFOMSViolEKMPAsync(KmsReportClient.External.CreateFFOMSViolEKMPRequest request);
+        
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateFFOMSVerifyPlan", ReplyAction="*")]
+        KmsReportClient.External.CreateFFOMSVerifyPlanResponse CreateFFOMSVerifyPlan(KmsReportClient.External.CreateFFOMSVerifyPlanRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateFFOMSVerifyPlan", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateFFOMSVerifyPlanResponse> CreateFFOMSVerifyPlanAsync(KmsReportClient.External.CreateFFOMSVerifyPlanRequest request);
+        
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
         [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ConsolidateProposalCollect", ReplyAction="*")]
         KmsReportClient.External.ConsolidateProposalCollectResponse ConsolidateProposalCollect(KmsReportClient.External.ConsolidateProposalCollectRequest request);
         
@@ -44756,6 +45140,210 @@ namespace KmsReportClient.External {
         
         public CreateFFOMSPersonnelResponseBody(KmsReportClient.External.FFOMSPersonnel[] CreateFFOMSPersonnelResult) {
             this.CreateFFOMSPersonnelResult = CreateFFOMSPersonnelResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateFFOMSViolMEERequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateFFOMSViolMEE", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateFFOMSViolMEERequestBody Body;
+        
+        public CreateFFOMSViolMEERequest() {
+        }
+        
+        public CreateFFOMSViolMEERequest(KmsReportClient.External.CreateFFOMSViolMEERequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateFFOMSViolMEERequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string yymm;
+        
+        public CreateFFOMSViolMEERequestBody() {
+        }
+        
+        public CreateFFOMSViolMEERequestBody(string yymm) {
+            this.yymm = yymm;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateFFOMSViolMEEResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateFFOMSViolMEEResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateFFOMSViolMEEResponseBody Body;
+        
+        public CreateFFOMSViolMEEResponse() {
+        }
+        
+        public CreateFFOMSViolMEEResponse(KmsReportClient.External.CreateFFOMSViolMEEResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateFFOMSViolMEEResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.FFOMSViolMEE[] CreateFFOMSViolMEEResult;
+        
+        public CreateFFOMSViolMEEResponseBody() {
+        }
+        
+        public CreateFFOMSViolMEEResponseBody(KmsReportClient.External.FFOMSViolMEE[] CreateFFOMSViolMEEResult) {
+            this.CreateFFOMSViolMEEResult = CreateFFOMSViolMEEResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateFFOMSViolEKMPRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateFFOMSViolEKMP", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateFFOMSViolEKMPRequestBody Body;
+        
+        public CreateFFOMSViolEKMPRequest() {
+        }
+        
+        public CreateFFOMSViolEKMPRequest(KmsReportClient.External.CreateFFOMSViolEKMPRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateFFOMSViolEKMPRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string yymm;
+        
+        public CreateFFOMSViolEKMPRequestBody() {
+        }
+        
+        public CreateFFOMSViolEKMPRequestBody(string yymm) {
+            this.yymm = yymm;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateFFOMSViolEKMPResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateFFOMSViolEKMPResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateFFOMSViolEKMPResponseBody Body;
+        
+        public CreateFFOMSViolEKMPResponse() {
+        }
+        
+        public CreateFFOMSViolEKMPResponse(KmsReportClient.External.CreateFFOMSViolEKMPResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateFFOMSViolEKMPResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.FFOMSViolEKMP[] CreateFFOMSViolEKMPResult;
+        
+        public CreateFFOMSViolEKMPResponseBody() {
+        }
+        
+        public CreateFFOMSViolEKMPResponseBody(KmsReportClient.External.FFOMSViolEKMP[] CreateFFOMSViolEKMPResult) {
+            this.CreateFFOMSViolEKMPResult = CreateFFOMSViolEKMPResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateFFOMSVerifyPlanRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateFFOMSVerifyPlan", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateFFOMSVerifyPlanRequestBody Body;
+        
+        public CreateFFOMSVerifyPlanRequest() {
+        }
+        
+        public CreateFFOMSVerifyPlanRequest(KmsReportClient.External.CreateFFOMSVerifyPlanRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateFFOMSVerifyPlanRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string yymm;
+        
+        public CreateFFOMSVerifyPlanRequestBody() {
+        }
+        
+        public CreateFFOMSVerifyPlanRequestBody(string yymm) {
+            this.yymm = yymm;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateFFOMSVerifyPlanResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateFFOMSVerifyPlanResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateFFOMSVerifyPlanResponseBody Body;
+        
+        public CreateFFOMSVerifyPlanResponse() {
+        }
+        
+        public CreateFFOMSVerifyPlanResponse(KmsReportClient.External.CreateFFOMSVerifyPlanResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateFFOMSVerifyPlanResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.FFOMSVerifyPlan[] CreateFFOMSVerifyPlanResult;
+        
+        public CreateFFOMSVerifyPlanResponseBody() {
+        }
+        
+        public CreateFFOMSVerifyPlanResponseBody(KmsReportClient.External.FFOMSVerifyPlan[] CreateFFOMSVerifyPlanResult) {
+            this.CreateFFOMSVerifyPlanResult = CreateFFOMSVerifyPlanResult;
         }
     }
     
@@ -51132,6 +51720,81 @@ namespace KmsReportClient.External {
             inValue.Body = new KmsReportClient.External.CreateFFOMSPersonnelRequestBody();
             inValue.Body.yymm = yymm;
             return ((KmsReportClient.External.EndpointSoap)(this)).CreateFFOMSPersonnelAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.CreateFFOMSViolMEEResponse KmsReportClient.External.EndpointSoap.CreateFFOMSViolMEE(KmsReportClient.External.CreateFFOMSViolMEERequest request) {
+            return base.Channel.CreateFFOMSViolMEE(request);
+        }
+        
+        public KmsReportClient.External.FFOMSViolMEE[] CreateFFOMSViolMEE(string yymm) {
+            KmsReportClient.External.CreateFFOMSViolMEERequest inValue = new KmsReportClient.External.CreateFFOMSViolMEERequest();
+            inValue.Body = new KmsReportClient.External.CreateFFOMSViolMEERequestBody();
+            inValue.Body.yymm = yymm;
+            KmsReportClient.External.CreateFFOMSViolMEEResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateFFOMSViolMEE(inValue);
+            return retVal.Body.CreateFFOMSViolMEEResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateFFOMSViolMEEResponse> KmsReportClient.External.EndpointSoap.CreateFFOMSViolMEEAsync(KmsReportClient.External.CreateFFOMSViolMEERequest request) {
+            return base.Channel.CreateFFOMSViolMEEAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.CreateFFOMSViolMEEResponse> CreateFFOMSViolMEEAsync(string yymm) {
+            KmsReportClient.External.CreateFFOMSViolMEERequest inValue = new KmsReportClient.External.CreateFFOMSViolMEERequest();
+            inValue.Body = new KmsReportClient.External.CreateFFOMSViolMEERequestBody();
+            inValue.Body.yymm = yymm;
+            return ((KmsReportClient.External.EndpointSoap)(this)).CreateFFOMSViolMEEAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.CreateFFOMSViolEKMPResponse KmsReportClient.External.EndpointSoap.CreateFFOMSViolEKMP(KmsReportClient.External.CreateFFOMSViolEKMPRequest request) {
+            return base.Channel.CreateFFOMSViolEKMP(request);
+        }
+        
+        public KmsReportClient.External.FFOMSViolEKMP[] CreateFFOMSViolEKMP(string yymm) {
+            KmsReportClient.External.CreateFFOMSViolEKMPRequest inValue = new KmsReportClient.External.CreateFFOMSViolEKMPRequest();
+            inValue.Body = new KmsReportClient.External.CreateFFOMSViolEKMPRequestBody();
+            inValue.Body.yymm = yymm;
+            KmsReportClient.External.CreateFFOMSViolEKMPResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateFFOMSViolEKMP(inValue);
+            return retVal.Body.CreateFFOMSViolEKMPResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateFFOMSViolEKMPResponse> KmsReportClient.External.EndpointSoap.CreateFFOMSViolEKMPAsync(KmsReportClient.External.CreateFFOMSViolEKMPRequest request) {
+            return base.Channel.CreateFFOMSViolEKMPAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.CreateFFOMSViolEKMPResponse> CreateFFOMSViolEKMPAsync(string yymm) {
+            KmsReportClient.External.CreateFFOMSViolEKMPRequest inValue = new KmsReportClient.External.CreateFFOMSViolEKMPRequest();
+            inValue.Body = new KmsReportClient.External.CreateFFOMSViolEKMPRequestBody();
+            inValue.Body.yymm = yymm;
+            return ((KmsReportClient.External.EndpointSoap)(this)).CreateFFOMSViolEKMPAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.CreateFFOMSVerifyPlanResponse KmsReportClient.External.EndpointSoap.CreateFFOMSVerifyPlan(KmsReportClient.External.CreateFFOMSVerifyPlanRequest request) {
+            return base.Channel.CreateFFOMSVerifyPlan(request);
+        }
+        
+        public KmsReportClient.External.FFOMSVerifyPlan[] CreateFFOMSVerifyPlan(string yymm) {
+            KmsReportClient.External.CreateFFOMSVerifyPlanRequest inValue = new KmsReportClient.External.CreateFFOMSVerifyPlanRequest();
+            inValue.Body = new KmsReportClient.External.CreateFFOMSVerifyPlanRequestBody();
+            inValue.Body.yymm = yymm;
+            KmsReportClient.External.CreateFFOMSVerifyPlanResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateFFOMSVerifyPlan(inValue);
+            return retVal.Body.CreateFFOMSVerifyPlanResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateFFOMSVerifyPlanResponse> KmsReportClient.External.EndpointSoap.CreateFFOMSVerifyPlanAsync(KmsReportClient.External.CreateFFOMSVerifyPlanRequest request) {
+            return base.Channel.CreateFFOMSVerifyPlanAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.CreateFFOMSVerifyPlanResponse> CreateFFOMSVerifyPlanAsync(string yymm) {
+            KmsReportClient.External.CreateFFOMSVerifyPlanRequest inValue = new KmsReportClient.External.CreateFFOMSVerifyPlanRequest();
+            inValue.Body = new KmsReportClient.External.CreateFFOMSVerifyPlanRequestBody();
+            inValue.Body.yymm = yymm;
+            return ((KmsReportClient.External.EndpointSoap)(this)).CreateFFOMSVerifyPlanAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

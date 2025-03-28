@@ -27,8 +27,6 @@ namespace KmsReportClient.Excel.Collector
 
         protected override AbstractReport CollectReportData(string form)
         {
-            var waitingForm = new WaitingForm();
-            waitingForm.Show();
             var themeData = form switch
             {
                 "Таблица 1" => FillTable1(form),
@@ -45,7 +43,7 @@ namespace KmsReportClient.Excel.Collector
                 Theme = form,
                 Data = themeData
             };
-            waitingForm.Close();
+
             return report;
 
         }

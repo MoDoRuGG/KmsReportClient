@@ -51,5 +51,8 @@
         FFOMSTargetedExp,
         FFOMSOncoCT,
         FFOMSPersonnel,
+        FFOMSViolMEE,
+        FFOMSViolEKMP,
+        FFOMSVerifyPlan,
     }
 }

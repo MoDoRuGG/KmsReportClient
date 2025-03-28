@@ -201,6 +201,8 @@ namespace KmsReportClient.Report.Basic
             {
                 FillDgvForms(Dgv, form);
             }
+            SetFormula();
+            SetTotalColumn();
         }
 
         protected override void FillReport(string form)
@@ -213,6 +215,8 @@ namespace KmsReportClient.Report.Basic
             {
                 FillThemesForms(Dgv, form);
             }
+            SetFormula();
+            SetTotalColumn();
         }
 
 
@@ -340,6 +344,9 @@ namespace KmsReportClient.Report.Basic
 
         public override void SaveToDb()
         {
+            SetStaticValue();
+            SetFormula();
+            SetTotalColumn();
             var request = new SaveReportRequest
             {
                 Body = new SaveReportRequestBody
@@ -367,10 +374,9 @@ namespace KmsReportClient.Report.Basic
             {
                 string resultC4 = "";
                 decimal valC3 = Dgv.Rows[row].Cells[3].Value == null ? 0 : Convert.ToInt32(Dgv.Rows[row].Cells[3].Value);
-                decimal valC5 = Dgv.Rows[row].Cells[5].Value == null ? 0 : Convert.ToInt32(Dgv.Rows[row].Cells[5].Value);
+                decimal valC5 = Dgv.Rows[row].Cells[5].Value == null ? 0 : Convert.ToDecimal(Dgv.Rows[row].Cells[5].Value);
                 resultC4 = Math.Round((valC3 * valC5) / 100).ToString();
-                Dgv.Rows[row].Cells[4].Value = resultC4;
-
+                
                 string resultC7 = "";
                 decimal valC6 = Dgv.Rows[row].Cells[6].Value == null ? 0 : Convert.ToInt32(Dgv.Rows[row].Cells[6].Value);
                 valC3 = Dgv.Rows[row].Cells[3].Value == null ? 0 : Convert.ToInt32(Dgv.Rows[row].Cells[3].Value);
@@ -383,15 +389,11 @@ namespace KmsReportClient.Report.Basic
                     resultC7 = "Деление на 0";
 
                 }
-                Dgv.Rows[row].Cells[7].Value = resultC7;
-
-
-
 
                 string resultC8 = "";
-                decimal valC9 = Dgv.Rows[row].Cells[9].Value == null ? 0 : Convert.ToInt32(Dgv.Rows[row].Cells[9].Value);
+                decimal valC9 = Dgv.Rows[row].Cells[9].Value == null ? 0 : Convert.ToDecimal(Dgv.Rows[row].Cells[9].Value);
                 resultC8 = Math.Round((valC3 * valC9) / 100).ToString();
-                Dgv.Rows[row].Cells[8].Value = resultC8;
+                
 
                 string resultC11 = "";
                 decimal valC10 = Dgv.Rows[row].Cells[10].Value == null ? 0 : Convert.ToInt32(Dgv.Rows[row].Cells[10].Value);
@@ -404,6 +406,9 @@ namespace KmsReportClient.Report.Basic
                     resultC11 = "Деление на 0";
 
                 }
+                Dgv.Rows[row].Cells[4].Value = resultC4;
+                Dgv.Rows[row].Cells[7].Value = resultC7;
+                Dgv.Rows[row].Cells[8].Value = resultC8;
                 Dgv.Rows[row].Cells[11].Value = resultC11;
             }
         }
@@ -512,7 +517,6 @@ namespace KmsReportClient.Report.Basic
                 };
                 dgvReport.Columns.Add(dgvColumn);
             }
-
         }
 
         private void CreateDgvCommonColumns(DataGridView dgvReport, int widthFirstColumn, string mainHeader)
@@ -548,7 +552,6 @@ namespace KmsReportClient.Report.Basic
                 }
             };
             dgvReport.Columns.Add(column);
-
         }
 
 
@@ -564,6 +567,9 @@ namespace KmsReportClient.Report.Basic
             
             Dgv.Rows[12].DefaultCellStyle.BackColor = Color.Azure;
             Dgv.Rows[12].ReadOnly = true;
+            SetStaticValue();
+            SetFormula();
+            SetTotalColumn();
         }
 
         private void FillThemesForms(DataGridView dgvReport, string form)
@@ -585,7 +591,9 @@ namespace KmsReportClient.Report.Basic
                                   CountSluchMEE = GlobalUtils.TryParseInt(row.Cells[6].Value),
                                   CountSluchEKMP = GlobalUtils.TryParseInt(row.Cells[10].Value)
                               }).ToArray();
+            SetStaticValue();
             SetFormula();
+            SetTotalColumn();
         }
 
 

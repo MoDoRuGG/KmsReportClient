@@ -3561,18 +3561,13 @@
       <s:complexType name="FFOMSOncoCT">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="OncoCT_MEE" type="tns:ArrayOfOncoCT_MEE" />
+          <s:element minOccurs="0" maxOccurs="1" name="OncoCT_MEE" type="tns:FFOMSOncoCT_MEE" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="ArrayOfOncoCT_MEE">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="OncoCT_MEE" nillable="true" type="tns:OncoCT_MEE" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="OncoCT_MEE">
+      <s:complexType name="FFOMSOncoCT_MEE">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="Row" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Target" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Target" type="s:decimal" />
         </s:sequence>
       </s:complexType>
       <s:element name="CreateFFOMSPersonnel">
@@ -3610,6 +3605,114 @@
           <s:element minOccurs="0" maxOccurs="1" name="Row" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="FullTime" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="Contract" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateFFOMSViolMEE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateFFOMSViolMEEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateFFOMSViolMEEResult" type="tns:ArrayOfFFOMSViolMEE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFFOMSViolMEE">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FFOMSViolMEE" nillable="true" type="tns:FFOMSViolMEE" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FFOMSViolMEE">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataViolMEE" type="tns:ArrayOfFFOMSViolMEEdata" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFFOMSViolMEEdata">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FFOMSViolMEEdata" nillable="true" type="tns:FFOMSViolMEEdata" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FFOMSViolMEEdata">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateFFOMSViolEKMP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateFFOMSViolEKMPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateFFOMSViolEKMPResult" type="tns:ArrayOfFFOMSViolEKMP" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFFOMSViolEKMP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FFOMSViolEKMP" nillable="true" type="tns:FFOMSViolEKMP" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FFOMSViolEKMP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataViolEKMP" type="tns:ArrayOfFFOMSViolEKMPdata" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFFOMSViolEKMPdata">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FFOMSViolEKMPdata" nillable="true" type="tns:FFOMSViolEKMPdata" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FFOMSViolEKMPdata">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateFFOMSVerifyPlan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateFFOMSVerifyPlanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateFFOMSVerifyPlanResult" type="tns:ArrayOfFFOMSVerifyPlan" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFFOMSVerifyPlan">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FFOMSVerifyPlan" nillable="true" type="tns:FFOMSVerifyPlan" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FFOMSVerifyPlan">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataVerifyPlan" type="tns:ArrayOfFFOMSVerifyPlandata" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFFOMSVerifyPlandata">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FFOMSVerifyPlandata" nillable="true" type="tns:FFOMSVerifyPlandata" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FFOMSVerifyPlandata">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:int" />
         </s:sequence>
       </s:complexType>
       <s:element name="ConsolidateProposalCollect">
@@ -5980,6 +6083,24 @@
   <wsdl:message name="CreateFFOMSPersonnelSoapOut">
     <wsdl:part name="parameters" element="tns:CreateFFOMSPersonnelResponse" />
   </wsdl:message>
+  <wsdl:message name="CreateFFOMSViolMEESoapIn">
+    <wsdl:part name="parameters" element="tns:CreateFFOMSViolMEE" />
+  </wsdl:message>
+  <wsdl:message name="CreateFFOMSViolMEESoapOut">
+    <wsdl:part name="parameters" element="tns:CreateFFOMSViolMEEResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateFFOMSViolEKMPSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateFFOMSViolEKMP" />
+  </wsdl:message>
+  <wsdl:message name="CreateFFOMSViolEKMPSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateFFOMSViolEKMPResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateFFOMSVerifyPlanSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateFFOMSVerifyPlan" />
+  </wsdl:message>
+  <wsdl:message name="CreateFFOMSVerifyPlanSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateFFOMSVerifyPlanResponse" />
+  </wsdl:message>
   <wsdl:message name="ConsolidateProposalCollectSoapIn">
     <wsdl:part name="parameters" element="tns:ConsolidateProposalCollect" />
   </wsdl:message>
@@ -6638,6 +6759,18 @@
     <wsdl:operation name="CreateFFOMSPersonnel">
       <wsdl:input message="tns:CreateFFOMSPersonnelSoapIn" />
       <wsdl:output message="tns:CreateFFOMSPersonnelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateFFOMSViolMEE">
+      <wsdl:input message="tns:CreateFFOMSViolMEESoapIn" />
+      <wsdl:output message="tns:CreateFFOMSViolMEESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateFFOMSViolEKMP">
+      <wsdl:input message="tns:CreateFFOMSViolEKMPSoapIn" />
+      <wsdl:output message="tns:CreateFFOMSViolEKMPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateFFOMSVerifyPlan">
+      <wsdl:input message="tns:CreateFFOMSVerifyPlanSoapIn" />
+      <wsdl:output message="tns:CreateFFOMSVerifyPlanSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="ConsolidateProposalCollect">
       <wsdl:input message="tns:ConsolidateProposalCollectSoapIn" />
@@ -7308,6 +7441,33 @@
     </wsdl:operation>
     <wsdl:operation name="CreateFFOMSPersonnel">
       <soap:operation soapAction="http://kms-oms.ru/CreateFFOMSPersonnel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFFOMSViolMEE">
+      <soap:operation soapAction="http://kms-oms.ru/CreateFFOMSViolMEE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFFOMSViolEKMP">
+      <soap:operation soapAction="http://kms-oms.ru/CreateFFOMSViolEKMP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFFOMSVerifyPlan">
+      <soap:operation soapAction="http://kms-oms.ru/CreateFFOMSVerifyPlan" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -8409,6 +8569,33 @@
     </wsdl:operation>
     <wsdl:operation name="CreateFFOMSPersonnel">
       <soap12:operation soapAction="http://kms-oms.ru/CreateFFOMSPersonnel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFFOMSViolMEE">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateFFOMSViolMEE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFFOMSViolEKMP">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateFFOMSViolEKMP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFFOMSVerifyPlan">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateFFOMSVerifyPlan" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

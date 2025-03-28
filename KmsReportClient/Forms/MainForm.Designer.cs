@@ -179,6 +179,9 @@ namespace KmsReportClient.Forms
             this.КПроверкеФФОМСToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ВнеплановыеЭкспертизыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ОнкологияХТToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.НарушенияМЭЭToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.НарушенияЭКМПToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ПланыПроверокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.КадрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сводПоВсемФилиаламToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вновьЗСИУДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -963,7 +966,10 @@ namespace KmsReportClient.Forms
             this.КПроверкеФФОМСToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ВнеплановыеЭкспертизыToolStripMenuItem,
             this.ОнкологияХТToolStripMenuItem,
-            this.КадрыToolStripMenuItem});
+            this.КадрыToolStripMenuItem,
+            this.НарушенияМЭЭToolStripMenuItem,
+            this.НарушенияЭКМПToolStripMenuItem,
+            this.ПланыПроверокToolStripMenuItem});
             this.КПроверкеФФОМСToolStripMenuItem.Name = "КПроверкеФФОМСToolStripMenuItem";
             this.КПроверкеФФОМСToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.КПроверкеФФОМСToolStripMenuItem.Text = "К проверке ФФОМС";
@@ -988,6 +994,27 @@ namespace KmsReportClient.Forms
             this.КадрыToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.КадрыToolStripMenuItem.Text = "Кадры";
             this.КадрыToolStripMenuItem.Click += new System.EventHandler(this.КадрыToolStripMenuItem_Click);
+            // 
+            // НарушенияМЭЭToolStripMenuItem
+            // 
+            this.НарушенияМЭЭToolStripMenuItem.Name = "НарушенияМЭЭToolStripMenuItem";
+            this.НарушенияМЭЭToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.НарушенияМЭЭToolStripMenuItem.Text = "Нарушения МЭЭ";
+            this.НарушенияМЭЭToolStripMenuItem.Click += new System.EventHandler(this.НарушенияМЭЭToolStripMenuItem_Click);
+            // 
+            // НарушенияЭКМПToolStripMenuItem
+            // 
+            this.НарушенияЭКМПToolStripMenuItem.Name = "НарушенияЭКМПToolStripMenuItem";
+            this.НарушенияЭКМПToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.НарушенияЭКМПToolStripMenuItem.Text = "Нарушения ЭКМП";
+            this.НарушенияЭКМПToolStripMenuItem.Click += new System.EventHandler(this.НарушенияЭКМПToolStripMenuItem_Click);
+            // 
+            // ПланыПроверокToolStripMenuItem
+            // 
+            this.ПланыПроверокToolStripMenuItem.Name = "ПланыПроверокToolStripMenuItem";
+            this.ПланыПроверокToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.ПланыПроверокToolStripMenuItem.Text = "Планы проверок";
+            this.ПланыПроверокToolStripMenuItem.Click += new System.EventHandler(this.ПланыПроверокToolStripMenuItem_Click);
             // 
             // НарушенияПоОбращениямЗЛToolStripMenuItem
             // 
@@ -1756,6 +1783,7 @@ namespace KmsReportClient.Forms
             this.TbControl.Controls.Add(this.PageViolEKMP);
             this.TbControl.Controls.Add(this.PageTarAllow);
             this.TbControl.Controls.Add(this.PageVerifyPlan);
+            this.TbControl.Controls.Add(this.PageMonthlyVol);
             this.TbControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.TbControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TbControl.Location = new System.Drawing.Point(4, 124);
@@ -4545,6 +4573,7 @@ namespace KmsReportClient.Forms
             this.DgvMonthlyVol.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.DgvReportMonthlyVol_CellBeginEdit);
             this.DgvMonthlyVol.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvReportMonthlyVol_CellEndEdit);
             this.DgvMonthlyVol.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DgvReportMonthlyVol_KeyPress);
+            this.DgvMonthlyVol.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DgvReportMonthlyVol_Move);
             // 
             // TbMonthlyVol
             // 
@@ -5008,6 +5037,9 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.ToolStripMenuItem ВнеплановыеЭкспертизыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ОнкологияХТToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem КадрыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem НарушенияМЭЭToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem НарушенияЭКМПToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ПланыПроверокToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сводПоВсемФилиаламToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem вновьЗСИУДToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выполнениеПланаToolStripMenuItem;
