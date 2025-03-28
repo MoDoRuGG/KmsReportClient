@@ -56,6 +56,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
             {"RU-YEV","АСП ООО «Капитал МС» - Филиал в Еврейской Автономной Области"},
             {"RU", "Центральный офис ООО «Капитал МС»"}
         };
+
         public ExcelFFOMSVerifyPlanCreator(
             string filename,
             string header,

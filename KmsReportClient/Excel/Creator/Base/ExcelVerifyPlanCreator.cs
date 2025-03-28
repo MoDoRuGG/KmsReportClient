@@ -21,7 +21,7 @@ namespace KmsReportClient.Excel.Creator.Base
 
         private readonly List<ReportDictionary> _Dictionaries = new List<ReportDictionary> {
 
-            new ReportDictionary {TableName = "Планы проверок", StartRow = 2, EndRow = 14, Index = 1},
+            new ReportDictionary {TableName = "Планы проверок", StartRow = 4, EndRow = 16, Index = 1},
         };
 
 
@@ -42,7 +42,7 @@ namespace KmsReportClient.Excel.Creator.Base
                         var rowData = data?.SingleOrDefault(x => x.Code == rowNum);
                         if (rowData != null)
                         {
-                            ObjWorkSheet.Cells[i, 4] = rowData.Count;
+                            ObjWorkSheet.Cells[i, 3] = rowData.Count;
                         }
                     }
                 }

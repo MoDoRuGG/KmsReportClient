@@ -21,7 +21,7 @@ namespace KmsReportClient.Excel.Creator.Base
 
         private readonly List<ReportDictionary> _Dictionaries = new List<ReportDictionary> {
 
-            new ReportDictionary {TableName = "Нарушения МЭЭ", StartRow = 3, EndRow = 18, Index = 1},
+            new ReportDictionary {TableName = "Нарушения МЭЭ", StartRow = 4, EndRow = 19, Index = 1},
         };
 
 
