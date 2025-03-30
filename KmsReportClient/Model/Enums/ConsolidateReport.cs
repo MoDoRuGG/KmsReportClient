@@ -54,5 +54,9 @@
         FFOMSViolMEE,
         FFOMSViolEKMP,
         FFOMSVerifyPlan,
+        FFOMSMonthlyVol,
+        FFOMSVolumesByTypes,
+        FFOMSLethal,
+
     }
 }

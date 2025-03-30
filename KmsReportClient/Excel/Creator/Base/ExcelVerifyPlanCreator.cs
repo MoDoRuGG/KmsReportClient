@@ -39,10 +39,11 @@ namespace KmsReportClient.Excel.Creator.Base
                     string rowNum = ObjWorkSheet.Cells[i, 1].Text;
                     if (!string.IsNullOrEmpty(rowNum))
                     {
-                        var rowData = data?.SingleOrDefault(x => x.Code == rowNum);
-                        if (rowData != null)
+                        var rowData = data?.OrderBy(x => x.Code == rowNum);
+                        foreach (var row in rowData)
+                        if (row != null)
                         {
-                            ObjWorkSheet.Cells[i, 3] = rowData.Count;
+                            ObjWorkSheet.Cells[i, 3] = row.Count;
                         }
                     }
                 }

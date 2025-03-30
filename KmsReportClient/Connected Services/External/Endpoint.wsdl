@@ -2798,6 +2798,90 @@
           <s:element minOccurs="1" maxOccurs="1" name="SubjectToDisp" type="s:int" />
         </s:sequence>
       </s:complexType>
+      <s:element name="CreateFFOMSMonthlyVol">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateFFOMSMonthlyVolResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateFFOMSMonthlyVolResult" type="tns:ArrayOfFFOMSMonthlyVol" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFFOMSMonthlyVol">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FFOMSMonthlyVol" nillable="true" type="tns:FFOMSMonthlyVol" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FFOMSMonthlyVol">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FFOMSMonthlyVol_SKP" type="tns:ArrayOfFFOMSMonthlyVol_SKP" />
+          <s:element minOccurs="0" maxOccurs="1" name="FFOMSMonthlyVol_SDP" type="tns:ArrayOfFFOMSMonthlyVol_SDP" />
+          <s:element minOccurs="0" maxOccurs="1" name="FFOMSMonthlyVol_APP" type="tns:ArrayOfFFOMSMonthlyVol_APP" />
+          <s:element minOccurs="0" maxOccurs="1" name="FFOMSMonthlyVol_SMP" type="tns:ArrayOfFFOMSMonthlyVol_SMP" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFFOMSMonthlyVol_SKP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FFOMSMonthlyVol_SKP" nillable="true" type="tns:FFOMSMonthlyVol_SKP" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FFOMSMonthlyVol_SKP">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RowNum" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountSluch" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountAppliedSluch" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountSluchMEE" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountSluchEKMP" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFFOMSMonthlyVol_SDP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FFOMSMonthlyVol_SDP" nillable="true" type="tns:FFOMSMonthlyVol_SDP" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FFOMSMonthlyVol_SDP">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RowNum" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountSluch" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountAppliedSluch" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountSluchMEE" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountSluchEKMP" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFFOMSMonthlyVol_APP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FFOMSMonthlyVol_APP" nillable="true" type="tns:FFOMSMonthlyVol_APP" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FFOMSMonthlyVol_APP">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RowNum" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountSluch" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountAppliedSluch" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountSluchMEE" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountSluchEKMP" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFFOMSMonthlyVol_SMP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FFOMSMonthlyVol_SMP" nillable="true" type="tns:FFOMSMonthlyVol_SMP" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FFOMSMonthlyVol_SMP">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RowNum" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountSluch" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountAppliedSluch" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountSluchMEE" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountSluchEKMP" type="s:int" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="CreateZpzForWebSite">
         <s:complexType>
           <s:sequence>
@@ -6017,6 +6101,12 @@
   <wsdl:message name="CreateConsolidate294SoapOut">
     <wsdl:part name="parameters" element="tns:CreateConsolidate294Response" />
   </wsdl:message>
+  <wsdl:message name="CreateFFOMSMonthlyVolSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateFFOMSMonthlyVol" />
+  </wsdl:message>
+  <wsdl:message name="CreateFFOMSMonthlyVolSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateFFOMSMonthlyVolResponse" />
+  </wsdl:message>
   <wsdl:message name="CreateZpzForWebSiteSoapIn">
     <wsdl:part name="parameters" element="tns:CreateZpzForWebSite" />
   </wsdl:message>
@@ -6716,6 +6806,10 @@
       <wsdl:input message="tns:CreateConsolidate294SoapIn" />
       <wsdl:output message="tns:CreateConsolidate294SoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="CreateFFOMSMonthlyVol">
+      <wsdl:input message="tns:CreateFFOMSMonthlyVolSoapIn" />
+      <wsdl:output message="tns:CreateFFOMSMonthlyVolSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="CreateZpzForWebSite">
       <wsdl:input message="tns:CreateZpzForWebSiteSoapIn" />
       <wsdl:output message="tns:CreateZpzForWebSiteSoapOut" />
@@ -7342,6 +7436,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateConsolidate294">
       <soap:operation soapAction="http://kms-oms.ru/CreateConsolidate294" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFFOMSMonthlyVol">
+      <soap:operation soapAction="http://kms-oms.ru/CreateFFOMSMonthlyVol" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -8470,6 +8573,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateConsolidate294">
       <soap12:operation soapAction="http://kms-oms.ru/CreateConsolidate294" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFFOMSMonthlyVol">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateFFOMSMonthlyVol" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

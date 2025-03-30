@@ -461,36 +461,36 @@ namespace KmsReportClient.Forms
                 filialCode = CurrentUser.FilialCode;
 
             }
-            else if (!CurrentUser.IsMain && (ReportTree.SelectedNode.Text == "Нарушения МЭЭ" || ReportTree.SelectedNode.Text == "Нарушения ЭКМП" || ReportTree.SelectedNode.Text == "Планы проверок" || ReportTree.SelectedNode.Text == "Объемы ежемесячные"))
-            {
-                isNeedCreateReport = true;
-                _yymm = "Март 2025";
-                _currentReportName = ReportTree.SelectedNode.Text;
+            //else if (!CurrentUser.IsMain && (ReportTree.SelectedNode.Text == "Нарушения МЭЭ" || ReportTree.SelectedNode.Text == "Нарушения ЭКМП" || ReportTree.SelectedNode.Text == "Планы проверок" || ReportTree.SelectedNode.Text == "Объемы ежемесячные"))
+            //{
+            //    isNeedCreateReport = true;
+            //    _yymm = "Март 2025";
+            //    _currentReportName = ReportTree.SelectedNode.Text;
 
-                filialCode = CurrentUser.FilialCode;
-            }
-            else if (CurrentUser.IsMain)
-            {
-                try
-                {
-                    if (ReportTree.SelectedNode.Parent.Text == "Нарушения МЭЭ" ||
-                ReportTree.SelectedNode.Parent.Text == "Нарушения ЭКМП" ||
-                ReportTree.SelectedNode.Parent.Text == "Планы проверок" ||
-                ReportTree.SelectedNode.Parent.Text == "Объемы ежемесячные")
-                    {
-                        isNeedCreateReport = true;
-                        _yymm = "Март 2025";
-                        _currentReportName = ReportTree.SelectedNode.Parent.Text;
-                        try
-                        {
-                            filialCode = _regions.Single(x => x.Value == ReportTree.SelectedNode.Text).Key;
-                        }
-                        catch (Exception ex) { }
+            //    filialCode = CurrentUser.FilialCode;
+            //}
+            //else if (CurrentUser.IsMain)
+            //{
+            //    try
+            //    {
+            //        if (ReportTree.SelectedNode.Parent.Text == "Нарушения МЭЭ" ||
+            //    ReportTree.SelectedNode.Parent.Text == "Нарушения ЭКМП" ||
+            //    ReportTree.SelectedNode.Parent.Text == "Планы проверок" ||
+            //    ReportTree.SelectedNode.Parent.Text == "Объемы ежемесячные")
+            //        {
+            //            isNeedCreateReport = true;
+            //            _yymm = "Март 2025";
+            //            _currentReportName = ReportTree.SelectedNode.Parent.Text;
+            //            try
+            //            {
+            //                filialCode = _regions.Single(x => x.Value == ReportTree.SelectedNode.Text).Key;
+            //            }
+            //            catch (Exception ex) { }
 
-                    }
-                }
-                catch (Exception ex) { }
-            }
+            //        }
+            //    }
+            //    catch (Exception ex) { }
+            //}
             Console.WriteLine($"yymm={_yymm} currentReportName={_currentReportName} Филиал={filialCode}");
             
             if (isNeedCreateReport)
@@ -686,9 +686,10 @@ namespace KmsReportClient.Forms
                 : ToolStripItemDisplayStyle.Text;
 
             TbControl.SelectedTab = _processor.Page;
+            Console.WriteLine(_processor.FilialCode);
             TbControl.SelectedTab.Text = !CurrentUser.IsMain ? $"{_currentReportName} | {_yymm}"
                 : ChkbFilter.Checked ? $"{_currentReportName} | Фильтр"
-                : $"{_currentReportName} | {_yymm} | {_regions.Single(x => x.Key == _processor.FilialCode).Value}";
+                : $"{_currentReportName} | {_yymm} | {_regions.SingleOrDefault(x => x.Key == _processor.FilialCode).Value}";
         }
 
 
@@ -1786,6 +1787,9 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         private void ОтчетНарушенияПоОбращениямЗЛToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.ViolationsOfAppeals);
 
+        private void ОбъёмыЕжемесячныеToolStripMenuItem_Click(object sender, EventArgs e) =>
+            OpenConsolidateReportForm(ConsolidateReport.FFOMSMonthlyVol);
+
         private void НарушенияМЭЭToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.FFOMSViolMEE);
 
@@ -1801,14 +1805,20 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         private void ОнкологияХТToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.FFOMSOncoCT);
 
-        private void КадрыToolStripMenuItem_Click(object sender, EventArgs e) =>
+        private void ФФОМСКадрыToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.FFOMSPersonnel);
+
+        private void ФФОМСЛетальныеЭКМПToolStripMenuItem_Click(object sender, EventArgs e) =>
+            OpenConsolidateReportForm(ConsolidateReport.FFOMSLethal);
+
+        private void ФФОМСОбъемыПоВидамПомощиToolStripMenuItem_Click(object sender, EventArgs e) =>
+            OpenConsolidateReportForm(ConsolidateReport.FFOMSVolumesByTypes);
 
         private void КонтрольЗПЗежемесячнаяToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.ControlZpzQuarterly);
 
-        private void КонтрольЗПЗ2025ежемесячнаяToolStripMenuItem_Click(object sender, EventArgs e) =>
-            OpenConsolidateReportForm(ConsolidateReport.ControlZpz2025Quarterly);
+        //private void КонтрольЗПЗ2025ежемесячнаяToolStripMenuItem_Click(object sender, EventArgs e) =>
+        //    OpenConsolidateReportForm(ConsolidateReport.ControlZpz2025Quarterly);
 
         private void КонтрольЗПЗ2023ToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.ControlZpz2023Quarterly);
@@ -1831,15 +1841,15 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         private void онкологияквартальныйToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.OnkoQuarterly);
 
-        private void ИсполненииЦПНПToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenConsolidateReportForm(ConsolidateReport.CnpnQuarterly);
-        }
+        //private void ИсполненииЦПНПToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    OpenConsolidateReportForm(ConsolidateReport.CnpnQuarterly);
+        //}
 
-        private void ЕжемесячныйToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenConsolidateReportForm(ConsolidateReport.CnpnMonthly);
-        }
+        //private void ЕжемесячныйToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    OpenConsolidateReportForm(ConsolidateReport.CnpnMonthly);
+        //}
 
         private void СердечнососудистыеЗаболеванияToolStripMenuItem_Click(object sender, EventArgs e)
         {

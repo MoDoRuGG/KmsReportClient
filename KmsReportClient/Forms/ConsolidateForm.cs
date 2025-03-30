@@ -70,7 +70,7 @@ namespace KmsReportClient.Forms
                                                                       ConsolidateReport.FFOMSViolMEE,
                                                                       ConsolidateReport.FFOMSViolEKMP,
                                                                       ConsolidateReport.FFOMSVerifyPlan,
-                                                                      //ConsolidateReport.FFOMSMonVol,
+                                                                      ConsolidateReport.FFOMSMonthlyVol,
 
                                                                     };
 
@@ -223,6 +223,24 @@ namespace KmsReportClient.Forms
                     saveFileDialog1.FileName = "Отчет Кадры";
                     cmbStart.DataSource = GlobalConst.Periods;
                     break;
+                case ConsolidateReport.FFOMSLethal:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать отчет Летальные ЭКМП";
+                    saveFileDialog1.FileName = "Отчет Летальные ЭКМП";
+                    cmbStart.DataSource = GlobalConst.Periods;
+                    break;
+                case ConsolidateReport.FFOMSVolumesByTypes:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать отчет Объемы по видам помощи";
+                    saveFileDialog1.FileName = "Отчет Объемы по видам помощи";
+                    cmbStart.DataSource = GlobalConst.Periods;
+                    break;
                 case ConsolidateReport.ZpzWebSite2025:
                     labelStart.Text = "Период";
                     nudSingle.Visible = false;
@@ -268,15 +286,15 @@ namespace KmsReportClient.Forms
                     saveFileDialog1.FileName = "Планы проверок";
                     cmbStart.DataSource = GlobalConst.Periods;
                     break;
-                //case ConsolidateReport.FFOMSMonthlyVol:
-                //    labelStart.Text = "Период";
-                //    nudSingle.Visible = false;
-                //    panelEnd.Visible = false;
-                //    panelRegion.Visible = false;
-                //    btnDo.Text = "Сформировать отчет Объемы ежемесячные";
-                //    saveFileDialog1.FileName = "Объемы ежемесячные";
-                //    cmbStart.DataSource = GlobalConst.Periods;
-                //    break;
+                case ConsolidateReport.FFOMSMonthlyVol:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать отчет Объемы ежемесячные";
+                    saveFileDialog1.FileName = "Объемы ежемесячные";
+                    cmbStart.DataSource = GlobalConst.Periods;
+                    break;
                 case ConsolidateReport.ControlZpzMonthly:
                     labelStart.Text = "Период";
                     nudSingle.Visible = false;
@@ -716,9 +734,9 @@ namespace KmsReportClient.Forms
                     case ConsolidateReport.FFOMSVerifyPlan:
                         CreateFFOMSVerifyPlan();
                         break;
-                    //case ConsolidateReport.FFOMSMonthlyVol:
-                    //    CreateFFOMSMonthlyVol();
-                    //    break;
+                    case ConsolidateReport.FFOMSMonthlyVol:
+                        CreateFFOMSMonthlyVol();
+                        break;
                     case ConsolidateReport.ZpzWebSite2025:
                         CreateZpzWebSite2025();
                         break;
@@ -1078,6 +1096,35 @@ namespace KmsReportClient.Forms
             GlobalUtils.OpenFileOrDirectory(folder);
         }
 
+        private void CreateFFOMSMonthlyVol()
+        {
+            string yymm = GetYymmQuarterly();
+            string folder = folderBrowserDialog1.SelectedPath;
+
+            var reports = _client.CreateFFOMSMonthlyVol(yymm);
+
+            foreach (var report in reports)
+            {
+                if (region_name.TryGetValue(report.Filial, out string regionName))
+                {
+                    string filename = folder + $"\\{regionName}_Объемы ежемесячные {yymm}.xlsx";
+                    string filialName = _regions.FirstOrDefault(x => x.Key == report.Filial)?.ForeignKey
+                    ?? throw new KeyNotFoundException($"Filial {report.Filial} не найден в _regions");
+                    CreateReport(filename, filialName, report);
+                }
+                else
+                {
+                    Log.Warn($"Код региона {report.Filial} не найден в словаре region_name");
+                }
+            }
+
+            var summaryReport = CollectSummaryFFOMSMonthlyVol(reports);
+            string summaryFilename = folder + $"\\Свод_Объемы ежемесячные {yymm}.xlsx";
+            CreateReport(summaryFilename, SummaryFilialName, summaryReport);
+
+            GlobalUtils.OpenFileOrDirectory(folder);
+        }
+
 
         private void CreateFFOMSVerifyPlan()
         {
@@ -1239,10 +1286,6 @@ namespace KmsReportClient.Forms
             var reports = _client.CreateZpzForWebSite2025(yymm);
 
 
-
-
-
-
             foreach (var report in reports)
             {
                 string filename = folder + $"\\Отчет_для_сайта_{report.Filial}_{yymm}.xlsx";
@@ -1364,7 +1407,50 @@ namespace KmsReportClient.Forms
             };
         }
 
+        private FFOMSMonthlyVol CollectSummaryFFOMSMonthlyVol(FFOMSMonthlyVol[] reports)
+        {
+            var SKP = reports.SelectMany(x => x.FFOMSMonthlyVol_SKP).GroupBy(x => x.RowNum).Select(x => new FFOMSMonthlyVol_SKP
+            {
+                RowNum = x.Key,
+                CountSluch = x.Sum(x => x.CountSluch),
+                CountAppliedSluch = x.Sum(x => x.CountAppliedSluch),
+                CountSluchMEE = x.Sum(x => x.CountSluchMEE),
+                CountSluchEKMP = x.Sum(x => x.CountSluchEKMP),
+            }).ToArray();
+            var SDP = reports.SelectMany(x => x.FFOMSMonthlyVol_SDP).GroupBy(x => x.RowNum).Select(x => new FFOMSMonthlyVol_SDP
+            {
+                RowNum = x.Key,
+                CountSluch = x.Sum(x => x.CountSluch),
+                CountAppliedSluch = x.Sum(x => x.CountAppliedSluch),
+                CountSluchMEE = x.Sum(x => x.CountSluchMEE),
+                CountSluchEKMP = x.Sum(x => x.CountSluchEKMP),
+            }).ToArray();
+            var APP = reports.SelectMany(x => x.FFOMSMonthlyVol_APP).GroupBy(x => x.RowNum).Select(x => new FFOMSMonthlyVol_APP
+            {
+                RowNum = x.Key,
+                CountSluch = x.Sum(x => x.CountSluch),
+                CountAppliedSluch = x.Sum(x => x.CountAppliedSluch),
+                CountSluchMEE = x.Sum(x => x.CountSluchMEE),
+                CountSluchEKMP = x.Sum(x => x.CountSluchEKMP),
+            }).ToArray();
+            var SMP = reports.SelectMany(x => x.FFOMSMonthlyVol_SMP).GroupBy(x => x.RowNum).Select(x => new FFOMSMonthlyVol_SMP
+            {
+                RowNum = x.Key,
+                CountSluch = x.Sum(x => x.CountSluch),
+                CountAppliedSluch = x.Sum(x => x.CountAppliedSluch),
+                CountSluchMEE = x.Sum(x => x.CountSluchMEE),
+                CountSluchEKMP = x.Sum(x => x.CountSluchEKMP),
+            }).ToArray();
 
+            return new FFOMSMonthlyVol
+            {
+                Filial = SummaryFilialCode,
+                FFOMSMonthlyVol_SKP = SKP,
+                FFOMSMonthlyVol_SDP = SDP,
+                FFOMSMonthlyVol_APP = APP,
+                FFOMSMonthlyVol_SMP = SMP
+            };
+        }
 
         private ViolationsOfAppeals CollectSummaryViolationsOfAppeals(ViolationsOfAppeals[] reports)
         {
@@ -1520,6 +1606,12 @@ namespace KmsReportClient.Forms
                 Filial = "Summary",  // Можно использовать любой идентификатор для итогового филиала
                 WSData = new WSData2025[] { summary }  // Возвращаем List, если нужно
             };
+        }
+
+        private void CreateReport(string filename, string filialName, FFOMSMonthlyVol report)
+        {
+            var excel = new ExcelFFOMSMonthlyVolCreator(filename, "", filialName);
+            excel.CreateReport(report, null);
         }
 
         private void CreateReport(string filename, string filialName, ZpzForWebSite report)

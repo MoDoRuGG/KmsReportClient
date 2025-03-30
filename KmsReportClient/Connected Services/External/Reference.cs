@@ -28247,6 +28247,531 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FFOMSMonthlyVol", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class FFOMSMonthlyVol : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.FFOMSMonthlyVol_SKP[] FFOMSMonthlyVol_SKPField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.FFOMSMonthlyVol_SDP[] FFOMSMonthlyVol_SDPField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.FFOMSMonthlyVol_APP[] FFOMSMonthlyVol_APPField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.FFOMSMonthlyVol_SMP[] FFOMSMonthlyVol_SMPField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Filial {
+            get {
+                return this.FilialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
+                    this.FilialField = value;
+                    this.RaisePropertyChanged("Filial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public KmsReportClient.External.FFOMSMonthlyVol_SKP[] FFOMSMonthlyVol_SKP {
+            get {
+                return this.FFOMSMonthlyVol_SKPField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FFOMSMonthlyVol_SKPField, value) != true)) {
+                    this.FFOMSMonthlyVol_SKPField = value;
+                    this.RaisePropertyChanged("FFOMSMonthlyVol_SKP");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public KmsReportClient.External.FFOMSMonthlyVol_SDP[] FFOMSMonthlyVol_SDP {
+            get {
+                return this.FFOMSMonthlyVol_SDPField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FFOMSMonthlyVol_SDPField, value) != true)) {
+                    this.FFOMSMonthlyVol_SDPField = value;
+                    this.RaisePropertyChanged("FFOMSMonthlyVol_SDP");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public KmsReportClient.External.FFOMSMonthlyVol_APP[] FFOMSMonthlyVol_APP {
+            get {
+                return this.FFOMSMonthlyVol_APPField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FFOMSMonthlyVol_APPField, value) != true)) {
+                    this.FFOMSMonthlyVol_APPField = value;
+                    this.RaisePropertyChanged("FFOMSMonthlyVol_APP");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public KmsReportClient.External.FFOMSMonthlyVol_SMP[] FFOMSMonthlyVol_SMP {
+            get {
+                return this.FFOMSMonthlyVol_SMPField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FFOMSMonthlyVol_SMPField, value) != true)) {
+                    this.FFOMSMonthlyVol_SMPField = value;
+                    this.RaisePropertyChanged("FFOMSMonthlyVol_SMP");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FFOMSMonthlyVol_SKP", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class FFOMSMonthlyVol_SKP : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private System.Nullable<int> RowNumField;
+        
+        private int CountSluchField;
+        
+        private int CountAppliedSluchField;
+        
+        private int CountSluchMEEField;
+        
+        private int CountSluchEKMPField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.Nullable<int> RowNum {
+            get {
+                return this.RowNumField;
+            }
+            set {
+                if ((this.RowNumField.Equals(value) != true)) {
+                    this.RowNumField = value;
+                    this.RaisePropertyChanged("RowNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public int CountSluch {
+            get {
+                return this.CountSluchField;
+            }
+            set {
+                if ((this.CountSluchField.Equals(value) != true)) {
+                    this.CountSluchField = value;
+                    this.RaisePropertyChanged("CountSluch");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int CountAppliedSluch {
+            get {
+                return this.CountAppliedSluchField;
+            }
+            set {
+                if ((this.CountAppliedSluchField.Equals(value) != true)) {
+                    this.CountAppliedSluchField = value;
+                    this.RaisePropertyChanged("CountAppliedSluch");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int CountSluchMEE {
+            get {
+                return this.CountSluchMEEField;
+            }
+            set {
+                if ((this.CountSluchMEEField.Equals(value) != true)) {
+                    this.CountSluchMEEField = value;
+                    this.RaisePropertyChanged("CountSluchMEE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public int CountSluchEKMP {
+            get {
+                return this.CountSluchEKMPField;
+            }
+            set {
+                if ((this.CountSluchEKMPField.Equals(value) != true)) {
+                    this.CountSluchEKMPField = value;
+                    this.RaisePropertyChanged("CountSluchEKMP");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FFOMSMonthlyVol_SDP", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class FFOMSMonthlyVol_SDP : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private System.Nullable<int> RowNumField;
+        
+        private int CountSluchField;
+        
+        private int CountAppliedSluchField;
+        
+        private int CountSluchMEEField;
+        
+        private int CountSluchEKMPField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.Nullable<int> RowNum {
+            get {
+                return this.RowNumField;
+            }
+            set {
+                if ((this.RowNumField.Equals(value) != true)) {
+                    this.RowNumField = value;
+                    this.RaisePropertyChanged("RowNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public int CountSluch {
+            get {
+                return this.CountSluchField;
+            }
+            set {
+                if ((this.CountSluchField.Equals(value) != true)) {
+                    this.CountSluchField = value;
+                    this.RaisePropertyChanged("CountSluch");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int CountAppliedSluch {
+            get {
+                return this.CountAppliedSluchField;
+            }
+            set {
+                if ((this.CountAppliedSluchField.Equals(value) != true)) {
+                    this.CountAppliedSluchField = value;
+                    this.RaisePropertyChanged("CountAppliedSluch");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int CountSluchMEE {
+            get {
+                return this.CountSluchMEEField;
+            }
+            set {
+                if ((this.CountSluchMEEField.Equals(value) != true)) {
+                    this.CountSluchMEEField = value;
+                    this.RaisePropertyChanged("CountSluchMEE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public int CountSluchEKMP {
+            get {
+                return this.CountSluchEKMPField;
+            }
+            set {
+                if ((this.CountSluchEKMPField.Equals(value) != true)) {
+                    this.CountSluchEKMPField = value;
+                    this.RaisePropertyChanged("CountSluchEKMP");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FFOMSMonthlyVol_APP", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class FFOMSMonthlyVol_APP : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private System.Nullable<int> RowNumField;
+        
+        private int CountSluchField;
+        
+        private int CountAppliedSluchField;
+        
+        private int CountSluchMEEField;
+        
+        private int CountSluchEKMPField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.Nullable<int> RowNum {
+            get {
+                return this.RowNumField;
+            }
+            set {
+                if ((this.RowNumField.Equals(value) != true)) {
+                    this.RowNumField = value;
+                    this.RaisePropertyChanged("RowNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public int CountSluch {
+            get {
+                return this.CountSluchField;
+            }
+            set {
+                if ((this.CountSluchField.Equals(value) != true)) {
+                    this.CountSluchField = value;
+                    this.RaisePropertyChanged("CountSluch");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int CountAppliedSluch {
+            get {
+                return this.CountAppliedSluchField;
+            }
+            set {
+                if ((this.CountAppliedSluchField.Equals(value) != true)) {
+                    this.CountAppliedSluchField = value;
+                    this.RaisePropertyChanged("CountAppliedSluch");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int CountSluchMEE {
+            get {
+                return this.CountSluchMEEField;
+            }
+            set {
+                if ((this.CountSluchMEEField.Equals(value) != true)) {
+                    this.CountSluchMEEField = value;
+                    this.RaisePropertyChanged("CountSluchMEE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public int CountSluchEKMP {
+            get {
+                return this.CountSluchEKMPField;
+            }
+            set {
+                if ((this.CountSluchEKMPField.Equals(value) != true)) {
+                    this.CountSluchEKMPField = value;
+                    this.RaisePropertyChanged("CountSluchEKMP");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FFOMSMonthlyVol_SMP", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class FFOMSMonthlyVol_SMP : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private System.Nullable<int> RowNumField;
+        
+        private int CountSluchField;
+        
+        private int CountAppliedSluchField;
+        
+        private int CountSluchMEEField;
+        
+        private int CountSluchEKMPField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.Nullable<int> RowNum {
+            get {
+                return this.RowNumField;
+            }
+            set {
+                if ((this.RowNumField.Equals(value) != true)) {
+                    this.RowNumField = value;
+                    this.RaisePropertyChanged("RowNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public int CountSluch {
+            get {
+                return this.CountSluchField;
+            }
+            set {
+                if ((this.CountSluchField.Equals(value) != true)) {
+                    this.CountSluchField = value;
+                    this.RaisePropertyChanged("CountSluch");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int CountAppliedSluch {
+            get {
+                return this.CountAppliedSluchField;
+            }
+            set {
+                if ((this.CountAppliedSluchField.Equals(value) != true)) {
+                    this.CountAppliedSluchField = value;
+                    this.RaisePropertyChanged("CountAppliedSluch");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int CountSluchMEE {
+            get {
+                return this.CountSluchMEEField;
+            }
+            set {
+                if ((this.CountSluchMEEField.Equals(value) != true)) {
+                    this.CountSluchMEEField = value;
+                    this.RaisePropertyChanged("CountSluchMEE");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public int CountSluchEKMP {
+            get {
+                return this.CountSluchEKMPField;
+            }
+            set {
+                if ((this.CountSluchEKMPField.Equals(value) != true)) {
+                    this.CountSluchEKMPField = value;
+                    this.RaisePropertyChanged("CountSluchEKMP");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ZpzForWebSite", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ZpzForWebSite : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -41890,6 +42415,13 @@ namespace KmsReportClient.External {
         System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidate294Response> CreateConsolidate294Async(KmsReportClient.External.CreateConsolidate294Request request);
         
         // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateFFOMSMonthlyVol", ReplyAction="*")]
+        KmsReportClient.External.CreateFFOMSMonthlyVolResponse CreateFFOMSMonthlyVol(KmsReportClient.External.CreateFFOMSMonthlyVolRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateFFOMSMonthlyVol", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateFFOMSMonthlyVolResponse> CreateFFOMSMonthlyVolAsync(KmsReportClient.External.CreateFFOMSMonthlyVolRequest request);
+        
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
         [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateZpzForWebSite", ReplyAction="*")]
         KmsReportClient.External.CreateZpzForWebSiteResponse CreateZpzForWebSite(KmsReportClient.External.CreateZpzForWebSiteRequest request);
         
@@ -44384,6 +44916,74 @@ namespace KmsReportClient.External {
         
         public CreateConsolidate294ResponseBody(KmsReportClient.External.Consolidate294 CreateConsolidate294Result) {
             this.CreateConsolidate294Result = CreateConsolidate294Result;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateFFOMSMonthlyVolRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateFFOMSMonthlyVol", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateFFOMSMonthlyVolRequestBody Body;
+        
+        public CreateFFOMSMonthlyVolRequest() {
+        }
+        
+        public CreateFFOMSMonthlyVolRequest(KmsReportClient.External.CreateFFOMSMonthlyVolRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateFFOMSMonthlyVolRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string yymm;
+        
+        public CreateFFOMSMonthlyVolRequestBody() {
+        }
+        
+        public CreateFFOMSMonthlyVolRequestBody(string yymm) {
+            this.yymm = yymm;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateFFOMSMonthlyVolResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateFFOMSMonthlyVolResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateFFOMSMonthlyVolResponseBody Body;
+        
+        public CreateFFOMSMonthlyVolResponse() {
+        }
+        
+        public CreateFFOMSMonthlyVolResponse(KmsReportClient.External.CreateFFOMSMonthlyVolResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateFFOMSMonthlyVolResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.FFOMSMonthlyVol[] CreateFFOMSMonthlyVolResult;
+        
+        public CreateFFOMSMonthlyVolResponseBody() {
+        }
+        
+        public CreateFFOMSMonthlyVolResponseBody(KmsReportClient.External.FFOMSMonthlyVol[] CreateFFOMSMonthlyVolResult) {
+            this.CreateFFOMSMonthlyVolResult = CreateFFOMSMonthlyVolResult;
         }
     }
     
@@ -51441,6 +52041,31 @@ namespace KmsReportClient.External {
             inValue.Body = new KmsReportClient.External.CreateConsolidate294RequestBody();
             inValue.Body.yymm = yymm;
             return ((KmsReportClient.External.EndpointSoap)(this)).CreateConsolidate294Async(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.CreateFFOMSMonthlyVolResponse KmsReportClient.External.EndpointSoap.CreateFFOMSMonthlyVol(KmsReportClient.External.CreateFFOMSMonthlyVolRequest request) {
+            return base.Channel.CreateFFOMSMonthlyVol(request);
+        }
+        
+        public KmsReportClient.External.FFOMSMonthlyVol[] CreateFFOMSMonthlyVol(string yymm) {
+            KmsReportClient.External.CreateFFOMSMonthlyVolRequest inValue = new KmsReportClient.External.CreateFFOMSMonthlyVolRequest();
+            inValue.Body = new KmsReportClient.External.CreateFFOMSMonthlyVolRequestBody();
+            inValue.Body.yymm = yymm;
+            KmsReportClient.External.CreateFFOMSMonthlyVolResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateFFOMSMonthlyVol(inValue);
+            return retVal.Body.CreateFFOMSMonthlyVolResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateFFOMSMonthlyVolResponse> KmsReportClient.External.EndpointSoap.CreateFFOMSMonthlyVolAsync(KmsReportClient.External.CreateFFOMSMonthlyVolRequest request) {
+            return base.Channel.CreateFFOMSMonthlyVolAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.CreateFFOMSMonthlyVolResponse> CreateFFOMSMonthlyVolAsync(string yymm) {
+            KmsReportClient.External.CreateFFOMSMonthlyVolRequest inValue = new KmsReportClient.External.CreateFFOMSMonthlyVolRequest();
+            inValue.Body = new KmsReportClient.External.CreateFFOMSMonthlyVolRequestBody();
+            inValue.Body.yymm = yymm;
+            return ((KmsReportClient.External.EndpointSoap)(this)).CreateFFOMSMonthlyVolAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
