@@ -23,7 +23,7 @@ namespace KmsReportClient.Report.Basic
 
         private readonly string[][] _headers = {
             new[]
-            { "За 2024 год" }, //ЭКМП
+            { "За отчетный период" }, //ЭКМП
         };
 
         private readonly Dictionary<string, string> _headersMap = new Dictionary<string, string>
