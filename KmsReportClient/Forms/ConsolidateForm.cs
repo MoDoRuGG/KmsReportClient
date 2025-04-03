@@ -71,6 +71,7 @@ namespace KmsReportClient.Forms
                                                                       ConsolidateReport.FFOMSViolEKMP,
                                                                       ConsolidateReport.FFOMSVerifyPlan,
                                                                       ConsolidateReport.FFOMSMonthlyVol,
+                                                                      
 
                                                                     };
 
@@ -223,7 +224,7 @@ namespace KmsReportClient.Forms
                     saveFileDialog1.FileName = "Отчет Кадры";
                     cmbStart.DataSource = GlobalConst.Periods;
                     break;
-                case ConsolidateReport.FFOMSLethal:
+                case ConsolidateReport.FFOMSLethalEKMP:
                     labelStart.Text = "Период";
                     nudSingle.Visible = false;
                     panelEnd.Visible = false;
@@ -697,6 +698,12 @@ namespace KmsReportClient.Forms
                         break;
                     case ConsolidateReport.ConsQuantityAR:
                         CreateConsolidateQuantityAddRemove();
+                        break;
+                    case ConsolidateReport.FFOMSVolumesByTypes:
+                        CreateFFOMSVolumesByTypes();
+                        break;
+                    case ConsolidateReport.FFOMSLethalEKMP:
+                        CreateFFOMSLethalEKMP();
                         break;
                     case ConsolidateReport.ConsQuantityQ:
                         CreateConsolidateQuantityQ();
@@ -1851,6 +1858,45 @@ namespace KmsReportClient.Forms
 
             var excel = new ExcelConsolidateQuantityFilialsCreator(saveFileDialog1.FileName, "", _filialName);
             excel.CreateReport(dataMonths, dataYear);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+        }
+
+
+        private void CreateFFOMSVolumesByTypes()
+        {
+            string yymm = GetYymmQuarterly();
+
+
+            var data = _client.CreateFFOMSVolumesByTypes(yymm);
+
+            if (data.VolFull.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            var excel = new ExcelFFOMSVolumesByTypesCreator(saveFileDialog1.FileName, "", _filialName);
+            excel.CreateReport(data,null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+        }
+
+        private void CreateFFOMSLethalEKMP()
+        {
+            string yymm = GetYymmQuarterly();
+
+
+            var data = _client.CollectFFOMSLethalEKMP(yymm);
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            var excel = new ExcelFFOMSLethalEKMPCreator(saveFileDialog1.FileName, "", _filialName);
+            excel.CreateReport(data, null);
 
             GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
         }

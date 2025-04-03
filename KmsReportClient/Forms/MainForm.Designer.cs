@@ -1008,8 +1008,8 @@ namespace KmsReportClient.Forms
             this.НарушенияЭКМПToolStripMenuItem,
             this.ПланыПроверокToolStripMenuItem,
             this.ОбъёмыЕжемесячныеToolStripMenuItem,
-            this.летальныеЭКМПToolStripMenuItem,
-            this.объемыПоВидамПомощиToolStripMenuItem});
+            this.ФФОМСЛетальныеЭКМПToolStripMenuItem,
+            this.ФФОМСОбъемыПоВидамПомощиToolStripMenuItem});
             this.КПроверкеФФОМСToolStripMenuItem.Name = "КПроверкеФФОМСToolStripMenuItem";
             this.КПроверкеФФОМСToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
             this.КПроверкеФФОМСToolStripMenuItem.Text = "К проверке ФФОМС";
@@ -3740,6 +3740,7 @@ namespace KmsReportClient.Forms
             // 
             // PageViolEKMP
             // 
+            this.PageViolEKMP.AutoScroll = true;
             this.PageViolEKMP.BackColor = System.Drawing.Color.LightSteelBlue;
             this.PageViolEKMP.Controls.Add(this.DgvViolEKMP);
             this.PageViolEKMP.Controls.Add(this.TbViolEKMP);
@@ -3756,30 +3757,27 @@ namespace KmsReportClient.Forms
             this.DgvViolEKMP.AllowUserToAddRows = false;
             this.DgvViolEKMP.AllowUserToDeleteRows = false;
             this.DgvViolEKMP.AllowUserToResizeColumns = false;
-            this.DgvViolEKMP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.DgvViolEKMP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvViolEKMP.BackgroundColor = System.Drawing.Color.AntiqueWhite;
-            this.DgvViolEKMP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle71;
             this.DgvViolEKMP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvViolEKMP.DefaultCellStyle = dataGridViewCellStyle72;
             this.DgvViolEKMP.Location = new System.Drawing.Point(10, 54);
             this.DgvViolEKMP.Name = "DgvViolEKMP";
-            this.DgvViolEKMP.RowHeadersDefaultCellStyle = dataGridViewCellStyle73;
-            this.DgvViolEKMP.Size = new System.Drawing.Size(1205, 496);
+            this.DgvViolEKMP.Size = new System.Drawing.Size(692, 271); // Уменьшенный размер
             this.DgvViolEKMP.TabIndex = 8;
             this.DgvViolEKMP.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.DgvReportViolEKMP_CellBeginEdit);
             this.DgvViolEKMP.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvReportViolEKMP_CellEndEdit);
             // 
             // TbViolEKMP
             // 
-            this.TbViolEKMP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.TbViolEKMP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TbViolEKMP.Location = new System.Drawing.Point(116, 9);
             this.TbViolEKMP.Multiline = true;
             this.TbViolEKMP.Name = "TbViolEKMP";
             this.TbViolEKMP.ReadOnly = true;
-            this.TbViolEKMP.Size = new System.Drawing.Size(1099, 39);
+            this.TbViolEKMP.Size = new System.Drawing.Size(580, 39);
             this.TbViolEKMP.TabIndex = 7;
             // 
             // CmbViolEKMP
@@ -4022,7 +4020,7 @@ namespace KmsReportClient.Forms
             this.TxtbInfo.Location = new System.Drawing.Point(3, 3);
             this.TxtbInfo.Multiline = true;
             this.TxtbInfo.Name = "TxtbInfo";
-            this.TxtbInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.TxtbInfo.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.TxtbInfo.Size = new System.Drawing.Size(713, 58);
             this.TxtbInfo.TabIndex = 7;
             // 
@@ -4043,7 +4041,7 @@ namespace KmsReportClient.Forms
             this.TbxEmentInfo.Location = new System.Drawing.Point(3, 3);
             this.TbxEmentInfo.Multiline = true;
             this.TbxEmentInfo.Name = "TbxEmentInfo";
-            this.TbxEmentInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.TbxEmentInfo.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.TbxEmentInfo.Size = new System.Drawing.Size(713, 58);
             this.TbxEmentInfo.TabIndex = 8;
             // 
@@ -4462,7 +4460,7 @@ namespace KmsReportClient.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.ClientSize = new System.Drawing.Size(950, 670);
+            this.ClientSize = new System.Drawing.Size(1000, 600);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);

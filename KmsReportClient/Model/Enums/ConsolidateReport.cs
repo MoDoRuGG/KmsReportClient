@@ -56,7 +56,7 @@
         FFOMSVerifyPlan,
         FFOMSMonthlyVol,
         FFOMSVolumesByTypes,
-        FFOMSLethal,
+        FFOMSLethalEKMP,
 
     }
 }

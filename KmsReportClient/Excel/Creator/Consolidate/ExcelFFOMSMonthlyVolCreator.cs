@@ -79,8 +79,8 @@ namespace KmsReportClient.Excel.Creator.Consolidate
             {
                 ObjWorkSheet.Cells[currentIndex, 2] = data.CountSluch;
                 ObjWorkSheet.Cells[currentIndex, 3] = data.CountAppliedSluch;
-                ObjWorkSheet.Cells[currentIndex, 6] = data.CountAppliedSluch;
-                ObjWorkSheet.Cells[currentIndex++, 10] = data.CountAppliedSluch;
+                ObjWorkSheet.Cells[currentIndex, 6] = data.CountSluchMEE;
+                ObjWorkSheet.Cells[currentIndex++, 10] = data.CountSluchEKMP;
             }
         }
 
@@ -91,8 +91,8 @@ namespace KmsReportClient.Excel.Creator.Consolidate
             {
                 ObjWorkSheet.Cells[currentIndex, 2] = data.CountSluch;
                 ObjWorkSheet.Cells[currentIndex, 3] = data.CountAppliedSluch;
-                ObjWorkSheet.Cells[currentIndex, 6] = data.CountAppliedSluch;
-                ObjWorkSheet.Cells[currentIndex++, 10] = data.CountAppliedSluch;
+                ObjWorkSheet.Cells[currentIndex, 6] = data.CountSluchMEE;
+                ObjWorkSheet.Cells[currentIndex++, 10] = data.CountSluchEKMP;
             }
         }
 
@@ -103,8 +103,8 @@ namespace KmsReportClient.Excel.Creator.Consolidate
             {
                 ObjWorkSheet.Cells[currentIndex, 2] = data.CountSluch;
                 ObjWorkSheet.Cells[currentIndex, 3] = data.CountAppliedSluch;
-                ObjWorkSheet.Cells[currentIndex, 6] = data.CountAppliedSluch;
-                ObjWorkSheet.Cells[currentIndex++, 10] = data.CountAppliedSluch;
+                ObjWorkSheet.Cells[currentIndex, 6] = data.CountSluchMEE;
+                ObjWorkSheet.Cells[currentIndex++, 10] = data.CountSluchEKMP;
             }
         }
 
@@ -115,8 +115,8 @@ namespace KmsReportClient.Excel.Creator.Consolidate
             {
                 ObjWorkSheet.Cells[currentIndex, 2] = data.CountSluch;
                 ObjWorkSheet.Cells[currentIndex, 3] = data.CountAppliedSluch;
-                ObjWorkSheet.Cells[currentIndex, 6] = data.CountAppliedSluch;
-                ObjWorkSheet.Cells[currentIndex++, 10] = data.CountAppliedSluch;
+                ObjWorkSheet.Cells[currentIndex, 6] = data.CountSluchMEE;
+                ObjWorkSheet.Cells[currentIndex++, 10] = data.CountSluchEKMP;
             }
         }
     }

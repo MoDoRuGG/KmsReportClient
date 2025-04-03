@@ -188,6 +188,8 @@ namespace KmsReportClient.Model.Enums
         FFOMSOncoCT,
         [Description(GlobalConst.TempFolder + "FFOMSPersonnel.xlsx")]
         FFOMSPersonnel,
+        [Description(GlobalConst.TempFolder + "FFOMSVolumesByTypes.xlsx")]
+        FFOMSVolumesByTypes,
         [Description(GlobalConst.TempFolder + "MonthlyVol.xlsx")]
         MonthlyVol,
         [Description(GlobalConst.TempFolder + "ViolMEE.xlsx")]
@@ -196,5 +198,7 @@ namespace KmsReportClient.Model.Enums
         ViolEKMP,
         [Description(GlobalConst.TempFolder + "VerifyPlan.xlsx")]
         VerifyPlan,
+        [Description(GlobalConst.TempFolder + "FFOMSLethalEKMP.xlsx")]
+        FFOMSLethalEKMP,
     }
 }

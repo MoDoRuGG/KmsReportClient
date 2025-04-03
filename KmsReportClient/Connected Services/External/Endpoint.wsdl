@@ -2,6 +2,21 @@
 <wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://kms-oms.ru/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://kms-oms.ru/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://kms-oms.ru/">
+      <s:element name="DownloadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filial" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadFileResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="DownloadDllFile">
         <s:complexType>
           <s:sequence>
@@ -140,7 +155,7 @@
       </s:complexType>
       <s:complexType name="ReportMonthlyVolDataDto">
         <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Code" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="CountSluch" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="CountAppliedSluch" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="CountSluchMEE" type="s:int" />
@@ -1023,6 +1038,82 @@
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ReportCadreDataDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateFFOMSVolumesByTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateFFOMSVolumesByTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateFFOMSVolumesByTypesResult" type="tns:FFOMSVolumesByTypes" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FFOMSVolumesByTypes">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="VolFull" type="tns:ArrayOfFFOMSVolumesByTypesFull" />
+          <s:element minOccurs="0" maxOccurs="1" name="VolFil" type="tns:ArrayOfFFOMSVolumesByTypesByFilials" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFFOMSVolumesByTypesFull">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FFOMSVolumesByTypesFull" nillable="true" type="tns:FFOMSVolumesByTypesFull" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FFOMSVolumesByTypesFull">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="mee_unpl" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="mee_pl" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ekmp_unpl" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ekmp_pl" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="mek_app" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="mee_app_unpl" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="mee_app_pl" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ekmp_app_unpl" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ekmp_app_pl" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="mek_skp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="mee_skp_unpl" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="mee_skp_pl" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ekmp_skp_unpl" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ekmp_skp_pl" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="mek_smp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="mee_smp_unpl" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="mee_smp_pl" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ekmp_smp_unpl" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ekmp_smp_pl" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="mek_sdp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="mee_sdp_unpl" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="mee_sdp_pl" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ekmp_sdp_unpl" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ekmp_sdp_pl" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFFOMSVolumesByTypesByFilials">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FFOMSVolumesByTypesByFilials" nillable="true" type="tns:FFOMSVolumesByTypesByFilials" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FFOMSVolumesByTypesByFilials">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="mek_app" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="mee_app" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ekmp_app" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="mek_skp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="mee_skp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ekmp_skp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="mek_smp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="mee_smp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ekmp_smp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="mek_sdp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="mee_sdp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ekmp_sdp" type="s:decimal" />
         </s:sequence>
       </s:complexType>
       <s:element name="CreateReport262T1">
@@ -2553,7 +2644,7 @@
         <s:sequence>
           <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="Id_Report_Data" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowNum" nillable="true" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="CountSluch" nillable="true" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="CountAppliedSluch" nillable="true" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="CountSluchMEE" nillable="true" type="s:int" />
@@ -4198,6 +4289,35 @@
           <s:element minOccurs="1" maxOccurs="1" name="EkmpLetalFact" type="s:decimal" />
           <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="NotesGoodReason" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CollectFFOMSLethalEKMP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CollectFFOMSLethalEKMPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CollectFFOMSLethalEKMPResult" type="tns:ArrayOfFFOMSLethalEKMP" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFFOMSLethalEKMP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FFOMSLethalEKMP" nillable="true" type="tns:FFOMSLethalEKMP" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FFOMSLethalEKMP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Row1" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Row12" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Row121" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Row11" type="s:decimal" />
         </s:sequence>
       </s:complexType>
       <s:element name="ConsolidateCPNP2QCollect">
@@ -5928,23 +6048,14 @@
       <s:element name="UploadFileResponse">
         <s:complexType />
       </s:element>
-      <s:element name="DownloadFile">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="filial" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="DownloadFileResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="DownloadFileResult" type="s:base64Binary" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="DownloadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadFile" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadFileResponse" />
+  </wsdl:message>
   <wsdl:message name="DownloadDllFileSoapIn">
     <wsdl:part name="parameters" element="tns:DownloadDllFile" />
   </wsdl:message>
@@ -6034,6 +6145,12 @@
   </wsdl:message>
   <wsdl:message name="CreateReportCadreTable2SoapOut">
     <wsdl:part name="parameters" element="tns:CreateReportCadreTable2Response" />
+  </wsdl:message>
+  <wsdl:message name="CreateFFOMSVolumesByTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateFFOMSVolumesByTypes" />
+  </wsdl:message>
+  <wsdl:message name="CreateFFOMSVolumesByTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateFFOMSVolumesByTypesResponse" />
   </wsdl:message>
   <wsdl:message name="CreateReport262T1SoapIn">
     <wsdl:part name="parameters" element="tns:CreateReport262T1" />
@@ -6274,6 +6391,12 @@
   </wsdl:message>
   <wsdl:message name="ConsolidateOpedQCollectSoapOut">
     <wsdl:part name="parameters" element="tns:ConsolidateOpedQCollectResponse" />
+  </wsdl:message>
+  <wsdl:message name="CollectFFOMSLethalEKMPSoapIn">
+    <wsdl:part name="parameters" element="tns:CollectFFOMSLethalEKMP" />
+  </wsdl:message>
+  <wsdl:message name="CollectFFOMSLethalEKMPSoapOut">
+    <wsdl:part name="parameters" element="tns:CollectFFOMSLethalEKMPResponse" />
   </wsdl:message>
   <wsdl:message name="ConsolidateCPNP2QCollectSoapIn">
     <wsdl:part name="parameters" element="tns:ConsolidateCPNP2QCollect" />
@@ -6695,13 +6818,11 @@
   <wsdl:message name="UploadFileSoapOut">
     <wsdl:part name="parameters" element="tns:UploadFileResponse" />
   </wsdl:message>
-  <wsdl:message name="DownloadFileSoapIn">
-    <wsdl:part name="parameters" element="tns:DownloadFile" />
-  </wsdl:message>
-  <wsdl:message name="DownloadFileSoapOut">
-    <wsdl:part name="parameters" element="tns:DownloadFileResponse" />
-  </wsdl:message>
   <wsdl:portType name="EndpointSoap">
+    <wsdl:operation name="DownloadFile">
+      <wsdl:input message="tns:DownloadFileSoapIn" />
+      <wsdl:output message="tns:DownloadFileSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="DownloadDllFile">
       <wsdl:input message="tns:DownloadDllFileSoapIn" />
       <wsdl:output message="tns:DownloadDllFileSoapOut" />
@@ -6761,6 +6882,10 @@
     <wsdl:operation name="CreateReportCadreTable2">
       <wsdl:input message="tns:CreateReportCadreTable2SoapIn" />
       <wsdl:output message="tns:CreateReportCadreTable2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateFFOMSVolumesByTypes">
+      <wsdl:input message="tns:CreateFFOMSVolumesByTypesSoapIn" />
+      <wsdl:output message="tns:CreateFFOMSVolumesByTypesSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="CreateReport262T1">
       <wsdl:input message="tns:CreateReport262T1SoapIn" />
@@ -6921,6 +7046,10 @@
     <wsdl:operation name="ConsolidateOpedQCollect">
       <wsdl:input message="tns:ConsolidateOpedQCollectSoapIn" />
       <wsdl:output message="tns:ConsolidateOpedQCollectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CollectFFOMSLethalEKMP">
+      <wsdl:input message="tns:CollectFFOMSLethalEKMPSoapIn" />
+      <wsdl:output message="tns:CollectFFOMSLethalEKMPSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="ConsolidateCPNP2QCollect">
       <wsdl:input message="tns:ConsolidateCPNP2QCollectSoapIn" />
@@ -7202,13 +7331,18 @@
       <wsdl:input message="tns:UploadFileSoapIn" />
       <wsdl:output message="tns:UploadFileSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="DownloadFile">
-      <wsdl:input message="tns:DownloadFileSoapIn" />
-      <wsdl:output message="tns:DownloadFileSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="EndpointSoap" type="tns:EndpointSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DownloadFile">
+      <soap:operation soapAction="http://kms-oms.ru/DownloadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="DownloadDllFile">
       <soap:operation soapAction="http://kms-oms.ru/DownloadDllFile" style="document" />
       <wsdl:input>
@@ -7337,6 +7471,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateReportCadreTable2">
       <soap:operation soapAction="http://kms-oms.ru/CreateReportCadreTable2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFFOMSVolumesByTypes">
+      <soap:operation soapAction="http://kms-oms.ru/CreateFFOMSVolumesByTypes" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -7697,6 +7840,15 @@
     </wsdl:operation>
     <wsdl:operation name="ConsolidateOpedQCollect">
       <soap:operation soapAction="http://kms-oms.ru/ConsolidateOpedQCollect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CollectFFOMSLethalEKMP">
+      <soap:operation soapAction="http://kms-oms.ru/CollectFFOMSLethalEKMP" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -8334,18 +8486,18 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="DownloadFile">
-      <soap:operation soapAction="http://kms-oms.ru/DownloadFile" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="EndpointSoap12" type="tns:EndpointSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DownloadFile">
+      <soap12:operation soapAction="http://kms-oms.ru/DownloadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="DownloadDllFile">
       <soap12:operation soapAction="http://kms-oms.ru/DownloadDllFile" style="document" />
       <wsdl:input>
@@ -8474,6 +8626,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateReportCadreTable2">
       <soap12:operation soapAction="http://kms-oms.ru/CreateReportCadreTable2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFFOMSVolumesByTypes">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateFFOMSVolumesByTypes" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -8834,6 +8995,15 @@
     </wsdl:operation>
     <wsdl:operation name="ConsolidateOpedQCollect">
       <soap12:operation soapAction="http://kms-oms.ru/ConsolidateOpedQCollect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CollectFFOMSLethalEKMP">
+      <soap12:operation soapAction="http://kms-oms.ru/CollectFFOMSLethalEKMP" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -9464,15 +9634,6 @@
     </wsdl:operation>
     <wsdl:operation name="UploadFile">
       <soap12:operation soapAction="http://kms-oms.ru/UploadFile" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DownloadFile">
-      <soap12:operation soapAction="http://kms-oms.ru/DownloadFile" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

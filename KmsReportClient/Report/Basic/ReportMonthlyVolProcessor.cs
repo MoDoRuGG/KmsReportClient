@@ -585,7 +585,7 @@ namespace KmsReportClient.Report.Basic
                               where !IsNotNeedFillRow(form, rowNum)
                               select new ReportMonthlyVolDataDto
                               {
-                                  Code = rowNum,
+                                  Code = GlobalUtils.TryParseInt(rowNum),
                                   CountSluch = GlobalUtils.TryParseInt(row.Cells[2].Value),
                                   CountAppliedSluch = GlobalUtils.TryParseInt(row.Cells[3].Value),
                                   CountSluchMEE = GlobalUtils.TryParseInt(row.Cells[6].Value),
@@ -609,7 +609,7 @@ namespace KmsReportClient.Report.Basic
             foreach (DataGridViewRow row in dgvReport.Rows)
             {
                 var rowNum = row.Cells[0].Value.ToString().Trim();
-                var data = reportDto.Data.SingleOrDefault(x => x.Code == rowNum);
+                var data = reportDto.Data.SingleOrDefault(x => x.Code.ToString() == rowNum);
                 if (data != null)
                 {
                     row.Cells[2].Value = (int)data.CountSluch;

@@ -1809,7 +1809,7 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
             OpenConsolidateReportForm(ConsolidateReport.FFOMSPersonnel);
 
         private void ФФОМСЛетальныеЭКМПToolStripMenuItem_Click(object sender, EventArgs e) =>
-            OpenConsolidateReportForm(ConsolidateReport.FFOMSLethal);
+            OpenConsolidateReportForm(ConsolidateReport.FFOMSLethalEKMP);
 
         private void ФФОМСОбъемыПоВидамПомощиToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.FFOMSVolumesByTypes);

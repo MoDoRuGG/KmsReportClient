@@ -224,6 +224,7 @@
     <Compile Include="Excel\Creator\Consolidate\ExcelControlZpz2023FullCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelControlZpz2023Creator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelControlZpzCreator.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelFFOMSLethalEKMPCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelFFOMSMonthlyVolCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelFFOMSOncoCTCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelFFOMSPersonnelCreator.cs" />
@@ -231,6 +232,7 @@
     <Compile Include="Excel\Creator\Consolidate\ExcelFFOMSVerifyPlanCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelFFOMSViolEKMPCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelFFOMSViolMEECreator.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelFFOMSVolumesByTypesCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelOnkoCreator.cs" />
     <Compile Include="Excel\Creator\DynamicReportExcelCreator.cs" />
     <Compile Include="Excel\Creator\ExcelBaseCreator.cs" />
@@ -452,6 +454,9 @@
     <None Include="Connected Services\External\KmsReportClient.External.CollectClientContextResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CollectFFOMSLethalEKMPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.CollectSummaryReportResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -579,6 +584,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateFFOMSViolMEEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateFFOMSVolumesByTypesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateReport262T1Response.datasource">
@@ -719,6 +727,9 @@
     <None Include="Connected Services\External\KmsReportClient.External.EditFilialResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.FFOMSLethalEKMP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.FFOMSMonthlyVol.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -738,6 +749,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.FFOMSViolMEE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.FFOMSVolumesByTypes.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.FSSMonitoringPgDataDto.datasource">
