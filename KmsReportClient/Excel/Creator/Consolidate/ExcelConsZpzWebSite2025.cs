@@ -13,9 +13,9 @@ namespace KmsReportClient.Excel.Creator.Consolidate
 
         protected override void FillReport(ZpzForWebSite2025 report, ZpzForWebSite2025 yearReport)
         {
-            ObjWorkSheet.Cells[2, 1] = FilialName;
-            ObjWorkSheet.Cells[3, 1] = $"2024 год";  //Заменить если нужно
-            int currentIndex = 8;
+            ObjWorkSheet.Cells[4, 1] = FilialName;
+            ObjWorkSheet.Cells[5, 1] = $"2024 год";  //Заменить если нужно
+            int currentIndex = 10;
             foreach (var col in report.WSData)
             {
                 ObjWorkSheet.Cells[currentIndex, 1] = col.Col1;

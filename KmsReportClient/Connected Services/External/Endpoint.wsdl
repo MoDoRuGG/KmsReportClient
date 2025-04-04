@@ -644,6 +644,38 @@
           <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:decimal" />
         </s:sequence>
       </s:complexType>
+      <s:element name="CreateZpzTable5">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateZpzTable5Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateZpzTable5Result" type="tns:ArrayOfConsolidateZpzTable5" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfConsolidateZpzTable5">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsolidateZpzTable5" nillable="true" type="tns:ConsolidateZpzTable5" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConsolidateZpzTable5">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountSmo" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountSmoAnother" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountInsured" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountInsuredRepresentative" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountTfoms" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountProsecutor" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountOutOfSmo" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="CreateReportCpnpM">
         <s:complexType>
           <s:sequence>
@@ -6104,6 +6136,12 @@
   <wsdl:message name="CreateReportVCRSoapOut">
     <wsdl:part name="parameters" element="tns:CreateReportVCRResponse" />
   </wsdl:message>
+  <wsdl:message name="CreateZpzTable5SoapIn">
+    <wsdl:part name="parameters" element="tns:CreateZpzTable5" />
+  </wsdl:message>
+  <wsdl:message name="CreateZpzTable5SoapOut">
+    <wsdl:part name="parameters" element="tns:CreateZpzTable5Response" />
+  </wsdl:message>
   <wsdl:message name="CreateReportCpnpMSoapIn">
     <wsdl:part name="parameters" element="tns:CreateReportCpnpM" />
   </wsdl:message>
@@ -6855,6 +6893,10 @@
       <wsdl:input message="tns:CreateReportVCRSoapIn" />
       <wsdl:output message="tns:CreateReportVCRSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="CreateZpzTable5">
+      <wsdl:input message="tns:CreateZpzTable5SoapIn" />
+      <wsdl:output message="tns:CreateZpzTable5SoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="CreateReportCpnpM">
       <wsdl:input message="tns:CreateReportCpnpMSoapIn" />
       <wsdl:output message="tns:CreateReportCpnpMSoapOut" />
@@ -7408,6 +7450,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateReportVCR">
       <soap:operation soapAction="http://kms-oms.ru/CreateReportVCR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateZpzTable5">
+      <soap:operation soapAction="http://kms-oms.ru/CreateZpzTable5" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -8563,6 +8614,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateReportVCR">
       <soap12:operation soapAction="http://kms-oms.ru/CreateReportVCR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateZpzTable5">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateZpzTable5" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

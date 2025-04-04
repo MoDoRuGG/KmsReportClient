@@ -234,6 +234,7 @@
     <Compile Include="Excel\Creator\Consolidate\ExcelFFOMSViolMEECreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelFFOMSVolumesByTypesCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelOnkoCreator.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelZpzTable5Creator.cs" />
     <Compile Include="Excel\Creator\DynamicReportExcelCreator.cs" />
     <Compile Include="Excel\Creator\ExcelBaseCreator.cs" />
     <Compile Include="Excel\Collector\F262Table3ExcelCollector.cs" />
@@ -538,6 +539,9 @@
     <None Include="Connected Services\External\KmsReportClient.External.ConsolidateVSS.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.ConsolidateZpzTable5.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateConsolidate294Response.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -665,6 +669,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateZpzForWebSiteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateZpzTable5Response.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CReport262Table1.datasource">

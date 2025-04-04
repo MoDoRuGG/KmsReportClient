@@ -155,6 +155,7 @@ namespace KmsReportClient.Forms
             this.контрольЗПЗ2025ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.контрольЗПЗ2025FullToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.летальные2025ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.результатыМЭК2025ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.формаОПЭДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сводToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.мониторингВССToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -766,10 +767,18 @@ namespace KmsReportClient.Forms
             this.отчетДляСайта2025ToolStripMenuItem,
             this.контрольЗПЗ2025ToolStripMenuItem,
             this.контрольЗПЗ2025FullToolStripMenuItem,
-            this.летальные2025ToolStripMenuItem});
+            this.летальные2025ToolStripMenuItem,
+            this.результатыМЭК2025ToolStripMenuItem});
             this.формаЗПЗ2025ToolStripMenuItem.Name = "формаЗПЗ2025ToolStripMenuItem";
             this.формаЗПЗ2025ToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
             this.формаЗПЗ2025ToolStripMenuItem.Text = "Форма ЗПЗ 118н";
+            // 
+            // результатыМЭК2025ToolStripMenuItem
+            // 
+            this.результатыМЭК2025ToolStripMenuItem.Name = "результатыМЭК2025ToolStripMenuItem";
+            this.результатыМЭК2025ToolStripMenuItem.Size = new System.Drawing.Size(279, 22);
+            this.результатыМЭК2025ToolStripMenuItem.Text = "Результаты МЭК пофилиально";
+            this.результатыМЭК2025ToolStripMenuItem.Click += new System.EventHandler(this.ОтчетРезультатыМЭКToolStripMenuItem_Click);
             // 
             // отчетДляСайта2025ToolStripMenuItem
             // 
@@ -4791,6 +4800,7 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.ToolStripMenuItem летальныеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem летальные2023ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem летальные2025ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem результатыМЭК2025ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SpravItem;
         private System.Windows.Forms.ToolStripMenuItem электронныеАдресаToolStripMenuItem;
         private System.Windows.Forms.TabPage PageOped;

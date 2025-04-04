@@ -7301,6 +7301,172 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateZpzTable5", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ConsolidateZpzTable5 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RowNumField;
+        
+        private decimal CountSmoField;
+        
+        private decimal CountSmoAnotherField;
+        
+        private decimal CountInsuredField;
+        
+        private decimal CountInsuredRepresentativeField;
+        
+        private decimal CountTfomsField;
+        
+        private decimal CountProsecutorField;
+        
+        private decimal CountOutOfSmoField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Filial {
+            get {
+                return this.FilialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
+                    this.FilialField = value;
+                    this.RaisePropertyChanged("Filial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string RowNum {
+            get {
+                return this.RowNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RowNumField, value) != true)) {
+                    this.RowNumField = value;
+                    this.RaisePropertyChanged("RowNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public decimal CountSmo {
+            get {
+                return this.CountSmoField;
+            }
+            set {
+                if ((this.CountSmoField.Equals(value) != true)) {
+                    this.CountSmoField = value;
+                    this.RaisePropertyChanged("CountSmo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public decimal CountSmoAnother {
+            get {
+                return this.CountSmoAnotherField;
+            }
+            set {
+                if ((this.CountSmoAnotherField.Equals(value) != true)) {
+                    this.CountSmoAnotherField = value;
+                    this.RaisePropertyChanged("CountSmoAnother");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public decimal CountInsured {
+            get {
+                return this.CountInsuredField;
+            }
+            set {
+                if ((this.CountInsuredField.Equals(value) != true)) {
+                    this.CountInsuredField = value;
+                    this.RaisePropertyChanged("CountInsured");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public decimal CountInsuredRepresentative {
+            get {
+                return this.CountInsuredRepresentativeField;
+            }
+            set {
+                if ((this.CountInsuredRepresentativeField.Equals(value) != true)) {
+                    this.CountInsuredRepresentativeField = value;
+                    this.RaisePropertyChanged("CountInsuredRepresentative");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public decimal CountTfoms {
+            get {
+                return this.CountTfomsField;
+            }
+            set {
+                if ((this.CountTfomsField.Equals(value) != true)) {
+                    this.CountTfomsField = value;
+                    this.RaisePropertyChanged("CountTfoms");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public decimal CountProsecutor {
+            get {
+                return this.CountProsecutorField;
+            }
+            set {
+                if ((this.CountProsecutorField.Equals(value) != true)) {
+                    this.CountProsecutorField = value;
+                    this.RaisePropertyChanged("CountProsecutor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        public decimal CountOutOfSmo {
+            get {
+                return this.CountOutOfSmoField;
+            }
+            set {
+                if ((this.CountOutOfSmoField.Equals(value) != true)) {
+                    this.CountOutOfSmoField = value;
+                    this.RaisePropertyChanged("CountOutOfSmo");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateCpnpM", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ConsolidateCpnpM : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -43106,6 +43272,13 @@ namespace KmsReportClient.External {
         System.Threading.Tasks.Task<KmsReportClient.External.CreateReportVCRResponse> CreateReportVCRAsync(KmsReportClient.External.CreateReportVCRRequest request);
         
         // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateZpzTable5", ReplyAction="*")]
+        KmsReportClient.External.CreateZpzTable5Response CreateZpzTable5(KmsReportClient.External.CreateZpzTable5Request request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateZpzTable5", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateZpzTable5Response> CreateZpzTable5Async(KmsReportClient.External.CreateZpzTable5Request request);
+        
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
         [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportCpnpM", ReplyAction="*")]
         KmsReportClient.External.CreateReportCpnpMResponse CreateReportCpnpM(KmsReportClient.External.CreateReportCpnpMRequest request);
         
@@ -44568,6 +44741,74 @@ namespace KmsReportClient.External {
         
         public CreateReportVCRResponseBody(KmsReportClient.External.ConsolidateVCR[] CreateReportVCRResult) {
             this.CreateReportVCRResult = CreateReportVCRResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateZpzTable5Request {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateZpzTable5", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateZpzTable5RequestBody Body;
+        
+        public CreateZpzTable5Request() {
+        }
+        
+        public CreateZpzTable5Request(KmsReportClient.External.CreateZpzTable5RequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateZpzTable5RequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string yymm;
+        
+        public CreateZpzTable5RequestBody() {
+        }
+        
+        public CreateZpzTable5RequestBody(string yymm) {
+            this.yymm = yymm;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateZpzTable5Response {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateZpzTable5Response", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateZpzTable5ResponseBody Body;
+        
+        public CreateZpzTable5Response() {
+        }
+        
+        public CreateZpzTable5Response(KmsReportClient.External.CreateZpzTable5ResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateZpzTable5ResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.ConsolidateZpzTable5[] CreateZpzTable5Result;
+        
+        public CreateZpzTable5ResponseBody() {
+        }
+        
+        public CreateZpzTable5ResponseBody(KmsReportClient.External.ConsolidateZpzTable5[] CreateZpzTable5Result) {
+            this.CreateZpzTable5Result = CreateZpzTable5Result;
         }
     }
     
@@ -52568,6 +52809,31 @@ namespace KmsReportClient.External {
             inValue.Body = new KmsReportClient.External.CreateReportVCRRequestBody();
             inValue.Body.yymm = yymm;
             return ((KmsReportClient.External.EndpointSoap)(this)).CreateReportVCRAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.CreateZpzTable5Response KmsReportClient.External.EndpointSoap.CreateZpzTable5(KmsReportClient.External.CreateZpzTable5Request request) {
+            return base.Channel.CreateZpzTable5(request);
+        }
+        
+        public KmsReportClient.External.ConsolidateZpzTable5[] CreateZpzTable5(string yymm) {
+            KmsReportClient.External.CreateZpzTable5Request inValue = new KmsReportClient.External.CreateZpzTable5Request();
+            inValue.Body = new KmsReportClient.External.CreateZpzTable5RequestBody();
+            inValue.Body.yymm = yymm;
+            KmsReportClient.External.CreateZpzTable5Response retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateZpzTable5(inValue);
+            return retVal.Body.CreateZpzTable5Result;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateZpzTable5Response> KmsReportClient.External.EndpointSoap.CreateZpzTable5Async(KmsReportClient.External.CreateZpzTable5Request request) {
+            return base.Channel.CreateZpzTable5Async(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.CreateZpzTable5Response> CreateZpzTable5Async(string yymm) {
+            KmsReportClient.External.CreateZpzTable5Request inValue = new KmsReportClient.External.CreateZpzTable5Request();
+            inValue.Body = new KmsReportClient.External.CreateZpzTable5RequestBody();
+            inValue.Body.yymm = yymm;
+            return ((KmsReportClient.External.EndpointSoap)(this)).CreateZpzTable5Async(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

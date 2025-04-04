@@ -233,6 +233,15 @@ namespace KmsReportClient.Forms
                     saveFileDialog1.FileName = "Отчет Летальные ЭКМП";
                     cmbStart.DataSource = GlobalConst.Periods;
                     break;
+                case ConsolidateReport.ZpzTable5:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать отчет Результаты МЭК пофилиально";
+                    saveFileDialog1.FileName = "Отчет Результаты МЭК пофилиально";
+                    cmbStart.DataSource = GlobalConst.Periods;
+                    break;
                 case ConsolidateReport.FFOMSVolumesByTypes:
                     labelStart.Text = "Период";
                     nudSingle.Visible = false;
@@ -704,6 +713,9 @@ namespace KmsReportClient.Forms
                         break;
                     case ConsolidateReport.FFOMSLethalEKMP:
                         CreateFFOMSLethalEKMP();
+                        break;
+                    case ConsolidateReport.ZpzTable5:
+                        CreateZpzTable5();
                         break;
                     case ConsolidateReport.ConsQuantityQ:
                         CreateConsolidateQuantityQ();
@@ -1896,6 +1908,26 @@ namespace KmsReportClient.Forms
                 return;
             }
             var excel = new ExcelFFOMSLethalEKMPCreator(saveFileDialog1.FileName, "", _filialName);
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+        }
+
+
+        private void CreateZpzTable5()
+        {
+            string yymm = GetYymmQuarterly();
+
+
+            var data = _client.CreateZpzTable5(yymm);
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            var excel = new ExcelZpzTable5Creator(saveFileDialog1.FileName, "", _filialName);
             excel.CreateReport(data, null);
 
             GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
