@@ -795,7 +795,7 @@ namespace KmsReportClient.Forms
                 if (message.Length > 0)
                 {
                     TxtbInfo.Text = message;
-                    MessageBox.Show(@"В отчете имеются ошибки. Перед выгрузкой в Excel их необходимо исправить",
+                    MessageBox.Show(@"В отчете имеются ошибки. Перед сохранием их необходимо исправить",
                         @"Контроль формы", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }

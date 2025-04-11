@@ -33,19 +33,9 @@ namespace KmsReportClient.Excel.Creator.Base
                 var dict = _Dictionaries.Single(x => x.TableName == themeData.Theme);
                 var data = themeData.Data;
 
-
-                for (int i = dict.StartRow; i <= dict.EndRow; i++)
+                for (int i = 0; i < themeData.Data.Length; i++)
                 {
-                    string rowNum = ObjWorkSheet.Cells[i, 1].Text;
-                    if (!string.IsNullOrEmpty(rowNum))
-                    {
-                        var rowData = data?.OrderBy(x => x.Code == rowNum);
-                        foreach (var row in rowData)
-                        if (row != null)
-                        {
-                            ObjWorkSheet.Cells[i, 3] = row.Count;
-                        }
-                    }
+                    ObjWorkSheet.Cells[i + 4, 3] = data[i].Count;
                 }
             }
         }
