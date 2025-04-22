@@ -275,88 +275,88 @@ namespace KmsReportClient.Report.Basic
                 //            message += "Таблица 4. \r\n Значение стр.2 должно быть меньше суммы строк 2.1-2.3 \r\n";
                 //        }
                 //    }
-                if (data.Theme == "Таблица 6" || data.Theme == "Таблица 7")
-                {
-                    string lastSumRow = data.Theme == "Таблица 6" ? "2.5, 2.6" : "2.5";
+                //if (data.Theme == "Таблица 6" || data.Theme == "Таблица 7")
+                //{
+                //    string lastSumRow = data.Theme == "Таблица 6" ? "2.5, 2.6" : "2.5";
 
-                    decimal gr4 = data.Data.Where(x => x.Code == "1").Sum(x => x.CountOutOfSmo);
-                    decimal gr4Another = data.Data.Where(x => x.Code.StartsWith("1") && x.Code.Length == 3 || x.Code == "1.9.1").Sum(x => x.CountOutOfSmo);
-                    decimal gr5 = data.Data.Where(x => x.Code == "1").Sum(x => x.CountAmbulatory);
-                    decimal gr5Another = data.Data.Where(x => x.Code.StartsWith("1") && x.Code.Length == 3).Sum(x => x.CountAmbulatory);
-                    decimal gr6 = data.Data.Where(x => x.Code == "1").Sum(x => x.CountDs);
-                    decimal gr6Another = data.Data.Where(x => x.Code.StartsWith("1") && x.Code.Length == 3 || x.Code == "1.9.1").Sum(x => x.CountDs);
-                    decimal gr7 = data.Data.Where(x => x.Code == "1").Sum(x => x.CountDsVmp);
-                    decimal gr7Another = data.Data.Where(x => x.Code.StartsWith("1") && x.Code.Length == 3 || x.Code == "1.9.1").Sum(x => x.CountDsVmp);
-                    decimal gr8 = data.Data.Where(x => x.Code == "1").Sum(x => x.CountStac);
-                    decimal gr8Another = data.Data.Where(x => x.Code.StartsWith("1") && x.Code.Length == 3).Sum(x => x.CountStac);
-                    decimal gr9 = data.Data.Where(x => x.Code == "1").Sum(x => x.CountStacVmp);
-                    decimal gr9Another = data.Data.Where(x => x.Code.StartsWith("1") && x.Code.Length == 3).Sum(x => x.CountStacVmp);
-                    decimal gr11 = data.Data.Where(x => x.Code == "1").Sum(x => x.CountOutOfSmoAnother);
-                    decimal gr11Another = data.Data.Where(x => x.Code.StartsWith("1") && x.Code.Length == 3).Sum(x => x.CountOutOfSmoAnother);
-                    decimal gr12 = data.Data.Where(x => x.Code == "1").Sum(x => x.CountAmbulatoryAnother);
-                    decimal gr12Another = data.Data.Where(x => x.Code.StartsWith("1") && x.Code.Length == 3).Sum(x => x.CountAmbulatoryAnother);
-                    decimal gr13 = data.Data.Where(x => x.Code == "1").Sum(x => x.CountDsAnother);
-                    decimal gr13Another = data.Data.Where(x => x.Code.StartsWith("1") && x.Code.Length == 3).Sum(x => x.CountDsAnother);
-                    decimal gr14 = data.Data.Where(x => x.Code == "1").Sum(x => x.CountDsVmpAnother);
-                    decimal gr14Another = data.Data.Where(x => x.Code.StartsWith("1") && x.Code.Length == 3).Sum(x => x.CountDsVmpAnother);
-                    decimal gr15 = data.Data.Where(x => x.Code == "1").Sum(x => x.CountStacAnother);
-                    decimal gr15Another = data.Data.Where(x => x.Code.StartsWith("1") && x.Code.Length == 3).Sum(x => x.CountStacAnother);
-                    decimal gr16 = data.Data.Where(x => x.Code == "1").Sum(x => x.CountStacVmpAnother);
-                    decimal gr16Another = data.Data.Where(x => x.Code.StartsWith("1") && x.Code.Length == 3).Sum(x => x.CountStacVmpAnother);
-                    if (gr4 < gr4Another)
-                    {
-                        localMessage += $"гр.4 - значение стр.1 должно быть больше или равно сумме строк 1.1, 1.2, 1.3, 1.4, 1.8, 1.9.1, 1.12 \r\n";
-                    }
-                    if (gr5 < gr5Another)
-                    {
-                        localMessage += $"гр.5 - значение стр.1 должно быть больше или равно сумме строк 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 1.10, 1.11, 1.13 \r\n";
-                    }
-                    if (gr6 < gr6Another)
-                    {
-                        localMessage += $"гр.6 - значение стр.1 должно быть больше или равно сумме строк 1.1, 1.2, 1.4, 1.7, 1.8, 1.9.1, 1.10 \r\n";
-                    }
-                    if (gr7 < gr7Another)
-                    {
-                        localMessage += $"гр.7 - значение стр.1 должно быть больше или равно сумме строк 1.1, 1.2, 1.3, 1.4, 1.7, 1.8, 1.9.1, 1.10 \r\n";
-                    }
-                    if (gr8 < gr8Another)
-                    {
-                        localMessage += $"гр.8 - значение стр.1 должно быть больше или равно сумме строк 1.1, 1.2, 1.3, 1.4, 1.7, 1.8, 1.9, 1.10 \r\n";
-                    }
-                    if (gr9 < gr9Another)
-                    {
-                        localMessage += $"гр.9 - значение стр.1 должно быть больше или равно сумме строк 1.1, 1.2, 1.3, 1.4, 1.7, 1.8, 1.9, 1.10 \r\n";
-                    }
-                    if (gr11 < gr11Another)
-                    {
-                        localMessage += $"гр.11 - значение стр.1 должно быть больше или равно сумме строк 1.1, 1.2, 1.3, 1.4, 1.12, 1.13 \r\n";
-                    }
-                    if (gr12 < gr12Another)
-                    {
-                        localMessage += $"гр.12 - значение стр.1 должно быть больше или равно сумме строк 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.9.1, 1.11 \r\n";
-                    }
-                    if (gr13 < gr13Another)
-                    {
-                        localMessage += $"гр.13 - значение стр.1 должно быть больше или равно сумме строк 1.1, 1.2, 1.4, 1.7, 1.8, 1.9.1 \r\n";
-                    }
-                    if (gr14 < gr14Another)
-                    {
-                        localMessage += $"гр.14 - значение стр.1 должно быть больше или равно сумме строк 1.1, 1.2, 1.3, 1.4, 1.7, 1.8, 1.9.1 \r\n";
-                    }
-                    if (gr15 < gr15Another)
-                    {
-                        localMessage += $"гр.15 - значение стр.1 должно быть больше или равно сумме строк 1.1, 1.2, 1.3, 1.4, 1.7, 1.8, 1.9.1 \r\n";
-                    }
-                    if (gr16 < gr16Another)
-                    {
-                        localMessage += $"гр.16 - значение стр.1 должно быть больше или равно сумме строк 1.1, 1.2, 1.3, 1.4, 1.7, 1.8, 1.9.1 \r\n";
-                    }
+                //    decimal gr4 = data.Data.Where(x => x.Code == "1").Sum(x => x.CountOutOfSmo);
+                //    decimal gr4Another = data.Data.Where(x => x.Code.StartsWith("1") && x.Code.Length == 3 || x.Code == "1.9.1").Sum(x => x.CountOutOfSmo);
+                //    decimal gr5 = data.Data.Where(x => x.Code == "1").Sum(x => x.CountAmbulatory);
+                //    decimal gr5Another = data.Data.Where(x => x.Code.StartsWith("1") && x.Code.Length == 3).Sum(x => x.CountAmbulatory);
+                //    decimal gr6 = data.Data.Where(x => x.Code == "1").Sum(x => x.CountDs);
+                //    decimal gr6Another = data.Data.Where(x => x.Code.StartsWith("1") && x.Code.Length == 3 || x.Code == "1.9.1").Sum(x => x.CountDs);
+                //    decimal gr7 = data.Data.Where(x => x.Code == "1").Sum(x => x.CountDsVmp);
+                //    decimal gr7Another = data.Data.Where(x => x.Code.StartsWith("1") && x.Code.Length == 3 || x.Code == "1.9.1").Sum(x => x.CountDsVmp);
+                //    decimal gr8 = data.Data.Where(x => x.Code == "1").Sum(x => x.CountStac);
+                //    decimal gr8Another = data.Data.Where(x => x.Code.StartsWith("1") && x.Code.Length == 3).Sum(x => x.CountStac);
+                //    decimal gr9 = data.Data.Where(x => x.Code == "1").Sum(x => x.CountStacVmp);
+                //    decimal gr9Another = data.Data.Where(x => x.Code.StartsWith("1") && x.Code.Length == 3).Sum(x => x.CountStacVmp);
+                //    decimal gr11 = data.Data.Where(x => x.Code == "1").Sum(x => x.CountOutOfSmoAnother);
+                //    decimal gr11Another = data.Data.Where(x => x.Code.StartsWith("1") && x.Code.Length == 3).Sum(x => x.CountOutOfSmoAnother);
+                //    decimal gr12 = data.Data.Where(x => x.Code == "1").Sum(x => x.CountAmbulatoryAnother);
+                //    decimal gr12Another = data.Data.Where(x => x.Code.StartsWith("1") && x.Code.Length == 3).Sum(x => x.CountAmbulatoryAnother);
+                //    decimal gr13 = data.Data.Where(x => x.Code == "1").Sum(x => x.CountDsAnother);
+                //    decimal gr13Another = data.Data.Where(x => x.Code.StartsWith("1") && x.Code.Length == 3).Sum(x => x.CountDsAnother);
+                //    decimal gr14 = data.Data.Where(x => x.Code == "1").Sum(x => x.CountDsVmpAnother);
+                //    decimal gr14Another = data.Data.Where(x => x.Code.StartsWith("1") && x.Code.Length == 3).Sum(x => x.CountDsVmpAnother);
+                //    decimal gr15 = data.Data.Where(x => x.Code == "1").Sum(x => x.CountStacAnother);
+                //    decimal gr15Another = data.Data.Where(x => x.Code.StartsWith("1") && x.Code.Length == 3).Sum(x => x.CountStacAnother);
+                //    decimal gr16 = data.Data.Where(x => x.Code == "1").Sum(x => x.CountStacVmpAnother);
+                //    decimal gr16Another = data.Data.Where(x => x.Code.StartsWith("1") && x.Code.Length == 3).Sum(x => x.CountStacVmpAnother);
+                //    if (gr4 < gr4Another)
+                //    {
+                //        localMessage += $"гр.4 - значение стр.1 должно быть больше или равно сумме строк 1.1, 1.2, 1.3, 1.4, 1.8, 1.9.1, 1.12 \r\n";
+                //    }
+                //    if (gr5 < gr5Another)
+                //    {
+                //        localMessage += $"гр.5 - значение стр.1 должно быть больше или равно сумме строк 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 1.10, 1.11, 1.13 \r\n";
+                //    }
+                //    if (gr6 < gr6Another)
+                //    {
+                //        localMessage += $"гр.6 - значение стр.1 должно быть больше или равно сумме строк 1.1, 1.2, 1.4, 1.7, 1.8, 1.9.1, 1.10 \r\n";
+                //    }
+                //    if (gr7 < gr7Another)
+                //    {
+                //        localMessage += $"гр.7 - значение стр.1 должно быть больше или равно сумме строк 1.1, 1.2, 1.3, 1.4, 1.7, 1.8, 1.9.1, 1.10 \r\n";
+                //    }
+                //    if (gr8 < gr8Another)
+                //    {
+                //        localMessage += $"гр.8 - значение стр.1 должно быть больше или равно сумме строк 1.1, 1.2, 1.3, 1.4, 1.7, 1.8, 1.9, 1.10 \r\n";
+                //    }
+                //    if (gr9 < gr9Another)
+                //    {
+                //        localMessage += $"гр.9 - значение стр.1 должно быть больше или равно сумме строк 1.1, 1.2, 1.3, 1.4, 1.7, 1.8, 1.9, 1.10 \r\n";
+                //    }
+                //    if (gr11 < gr11Another)
+                //    {
+                //        localMessage += $"гр.11 - значение стр.1 должно быть больше или равно сумме строк 1.1, 1.2, 1.3, 1.4, 1.12, 1.13 \r\n";
+                //    }
+                //    if (gr12 < gr12Another)
+                //    {
+                //        localMessage += $"гр.12 - значение стр.1 должно быть больше или равно сумме строк 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.9.1, 1.11 \r\n";
+                //    }
+                //    if (gr13 < gr13Another)
+                //    {
+                //        localMessage += $"гр.13 - значение стр.1 должно быть больше или равно сумме строк 1.1, 1.2, 1.4, 1.7, 1.8, 1.9.1 \r\n";
+                //    }
+                //    if (gr14 < gr14Another)
+                //    {
+                //        localMessage += $"гр.14 - значение стр.1 должно быть больше или равно сумме строк 1.1, 1.2, 1.3, 1.4, 1.7, 1.8, 1.9.1 \r\n";
+                //    }
+                //    if (gr15 < gr15Another)
+                //    {
+                //        localMessage += $"гр.15 - значение стр.1 должно быть больше или равно сумме строк 1.1, 1.2, 1.3, 1.4, 1.7, 1.8, 1.9.1 \r\n";
+                //    }
+                //    if (gr16 < gr16Another)
+                //    {
+                //        localMessage += $"гр.16 - значение стр.1 должно быть больше или равно сумме строк 1.1, 1.2, 1.3, 1.4, 1.7, 1.8, 1.9.1 \r\n";
+                //    }
 
-                    if (localMessage.Length > 0)
-                    {
-                        message += $"{data.Theme}. \r\n {localMessage}";
-                    }
-                }
+                //    if (localMessage.Length > 0)
+                //    {
+                //        message += $"{data.Theme}. \r\n {localMessage}";
+                //    }
+                //}
                 }
             if (message.Length > 0)
             {

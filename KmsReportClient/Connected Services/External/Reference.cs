@@ -33266,6 +33266,9 @@ namespace KmsReportClient.External {
         private string FilialField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string YymmField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private KmsReportClient.External.WSData2025[] WSDataField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -33292,6 +33295,19 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Yymm {
+            get {
+                return this.YymmField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.YymmField, value) != true)) {
+                    this.YymmField = value;
+                    this.RaisePropertyChanged("Yymm");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
         public KmsReportClient.External.WSData2025[] WSData {
             get {
                 return this.WSDataField;

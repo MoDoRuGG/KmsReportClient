@@ -1600,7 +1600,7 @@ namespace KmsReportClient.Forms
         {
             // Получаем все данные из WSData, преобразуем в массив
             var datas = reports.SelectMany(x => x.WSData).ToArray();
-
+            string yymm = reports.Select(x => x.Yymm).ElementAt(0);
             // Считаем сумму по всем колонкам
             var summary = new WSData2025
             {
@@ -1623,6 +1623,7 @@ namespace KmsReportClient.Forms
             return new ZpzForWebSite2025
             {
                 Filial = "Summary",  // Можно использовать любой идентификатор для итогового филиала
+                Yymm = yymm,
                 WSData = new WSData2025[] { summary }  // Возвращаем List, если нужно
             };
         }
