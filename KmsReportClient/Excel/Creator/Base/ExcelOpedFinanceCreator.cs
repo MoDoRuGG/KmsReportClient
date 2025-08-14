@@ -86,7 +86,7 @@ namespace KmsReportClient.Excel.Creator.Base
                     if (reportRow != null)
                     {
                             ObjWorkSheet.Cells[i, dataColumnNumber] = reportRow.ValueFact;
-                            ObjWorkSheet.Cells[i, dataColumnNumber + 1] = reportRow.Notes;
+                            ObjWorkSheet.Cells[i, dataColumnNumber + 2] = reportRow.Notes.ToString();
                     }
                 }
             }

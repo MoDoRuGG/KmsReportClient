@@ -1473,6 +1473,7 @@ namespace KmsReportClient.Forms
 
         private ViolationsOfAppeals CollectSummaryViolationsOfAppeals(ViolationsOfAppeals[] reports)
         {
+            string yymm = reports.Select(x => x.Yymm).ElementAt(0);
             var table1 = reports.SelectMany(x => x.T1).GroupBy(x => x.Row).Select(x => new ForT1VOA
             {
                 Row = x.Key,
@@ -1498,6 +1499,7 @@ namespace KmsReportClient.Forms
             return new ViolationsOfAppeals
             {
                 Filial = SummaryFilialCode,
+                Yymm = yymm,
                 T1 = table1,
                 T2 = table2,
                 T3 = table3

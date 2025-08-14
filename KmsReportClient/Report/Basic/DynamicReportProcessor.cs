@@ -450,17 +450,28 @@ namespace KmsReportClient.Report.Basic
                         }
                     }
 
-                    RowCounter = (int)Math.Ceiling((decimal)data.Count() / (decimal)ColCounter);
+                    // === КРИТИЧЕСКОЕ ИСПРАВЛЕНИЕ: Расчёт строк через Position ===
+                    int maxRow = -1;
+                    if (data.Any())
+                    {
+                        // Получаем максимальный номер строки из всех позиций
+                        maxRow = data
+                            .Where(item => !string.IsNullOrEmpty(item.Position))
+                            .Select(item => PositionSupport.GetRow(item.Position))
+                            .DefaultIfEmpty(-1)
+                            .Max();
+                    }
+                    RowCounter = maxRow + 1; // +1 потому что нумерация с 0
 
-                    //Добавляем строки
-                    if (RowCounter > 1)
+                    // Добавляем строки
+                    if (RowCounter > 0)
                     {
                         for (int i = 0; i < RowCounter; i++)
                             dgv.Rows.Add();
                     }
                     else
                     {
-                        dgv.Rows.Add();
+                        dgv.Rows.Add(); // 1 строка при отсутствии данных
                     }
                 }
             }

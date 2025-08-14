@@ -1293,7 +1293,7 @@ namespace KmsReportClient.Forms
             var tp = TbControl.TabPages[e.Index];
 
             var sf = new StringFormat { Alignment = StringAlignment.Center };
-            var headerRect = new RectangleF(e.Bounds.X, e.Bounds.Y + 2, e.Bounds.Width, e.Bounds.Height + 40);
+            var headerRect = new RectangleF(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height);
             var sb = new SolidBrush(SystemColors.Control);
 
             Color color = _processor.ColorReport;
