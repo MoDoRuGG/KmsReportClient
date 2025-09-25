@@ -16,7 +16,7 @@ namespace KmsReportClient.Excel.Creator.Base
             new ReportDictionary {TableName = "Результаты МЭК", StartRow = 6, EndRow = 6, Index = 1},
             new ReportDictionary {TableName = "Таблица 6", StartRow = 7, EndRow = 187, Index = 2},
             new ReportDictionary {TableName = "Таблица 7", StartRow = 7, EndRow = 407, Index = 3},
-            new ReportDictionary {TableName = "Таблица 8", StartRow = 6, EndRow = 459, Index = 4},
+            new ReportDictionary {TableName = "Таблица 8", StartRow = 6, EndRow = 484, Index = 4},
             new ReportDictionary {TableName = "Таблица 9", StartRow = 6, EndRow = 38, Index = 5},
             new ReportDictionary {TableName = "Оплата МП", StartRow = 6, EndRow = 6, Index = 6},
             new ReportDictionary {TableName = "Таблица 1Л", StartRow = 5, EndRow = 28, Index = 7},
