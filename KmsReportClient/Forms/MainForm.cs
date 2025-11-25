@@ -665,6 +665,10 @@ namespace KmsReportClient.Forms
             {
                 BtnSubmit.Visible = false;
             }
+            if (_processor.Report.IdType != "TarAllow")
+            {
+                BtnSubmit.Visible = true;
+            }
             if (_isQuery)
             {
                 BtnUploaded.Visible = false;
