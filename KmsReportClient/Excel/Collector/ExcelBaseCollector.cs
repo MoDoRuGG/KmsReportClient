@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using KmsReportClient.External;
 using Microsoft.Office.Interop.Excel;
 using NLog;
+using System.Runtime.InteropServices;
 
 namespace KmsReportClient.Excel.Collector
 {
@@ -31,10 +32,24 @@ namespace KmsReportClient.Excel.Collector
             }
             finally
             {
-                ObjExcel.Quit();
-                ObjWorkBook = null;
-                ObjWorkSheet = null;
-                ObjExcel = null;
+                // 1. Освобождаем рабочую книгу ДО закрытия приложения
+                if (ObjWorkBook != null)
+                {
+                    ObjWorkBook.Close(); // необязательно, но безопасно
+                    Marshal.ReleaseComObject(ObjWorkBook);
+                }
+
+                // 2. Закрываем и освобождаем приложение
+                if (ObjExcel!= null)
+                {
+                    ObjExcel.Quit();
+                    Marshal.ReleaseComObject(ObjExcel);
+                }
+
+                // 3. Обнуляем поля (если они используются повторно)
+                this.ObjWorkBook = null;
+                this.ObjWorkSheet = null;
+                this.ObjExcel = null;
             }
         }
 

@@ -2,6 +2,32 @@
 <wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://kms-oms.ru/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://kms-oms.ru/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://kms-oms.ru/">
+      <s:element name="EditFilial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filialCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filialName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="position" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditFilialResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UploadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bytes" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filial" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFileResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="DownloadFile">
         <s:complexType>
           <s:sequence>
@@ -2017,7 +2043,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Position" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Region" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegionId" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="Comment" type="tns:ArrayOfComment" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Dynamic" type="tns:ArrayOfReport_Dynamic" />
@@ -2026,7 +2052,6 @@
           <s:element minOccurs="0" maxOccurs="1" name="Scans_Base1" type="tns:ArrayOfScans_Base" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:ArrayOfReport_Flow" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Dynamic_Flow" type="tns:ArrayOfReport_Dynamic_Flow" />
-          <s:element minOccurs="0" maxOccurs="1" name="Region1" type="tns:Region" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfComment">
@@ -2121,6 +2146,8 @@
           <s:element minOccurs="0" maxOccurs="1" name="Report_Zpz2025" type="tns:ArrayOfReport_Zpz2025" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Violations" type="tns:ArrayOfReport_Violations" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_MonthlyVol" type="tns:ArrayOfReport_MonthlyVol" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_T5Newborn" type="tns:ArrayOfReport_T5Newborn" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_T6Students" type="tns:ArrayOfReport_T6Students" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Type" type="tns:Report_Type" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:Report_Flow" />
         </s:sequence>
@@ -2684,6 +2711,39 @@
           <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:Report_Data" />
         </s:sequence>
       </s:complexType>
+      <s:complexType name="ArrayOfReport_T5Newborn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Report_T5Newborn" nillable="true" type="tns:Report_T5Newborn" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Report_T5Newborn">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_Report_Data" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowNum" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MarketShare" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountNewborn" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMaterinityBills" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:Report_Data" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReport_T6Students">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Report_T6Students" nillable="true" type="tns:Report_T6Students" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Report_T6Students">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_Report_Data" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowNum" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountUniversity" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCollege" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountInsured" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:Report_Data" />
+        </s:sequence>
+      </s:complexType>
       <s:complexType name="Report_Type">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
@@ -2745,16 +2805,10 @@
           <s:element minOccurs="0" maxOccurs="1" name="name_head" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="name_short" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Employee" type="tns:ArrayOfEmployee" />
           <s:element minOccurs="0" maxOccurs="1" name="OpedFinancePlan" type="tns:ArrayOfOpedFinancePlan" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:ArrayOfReport_Flow" />
           <s:element minOccurs="0" maxOccurs="1" name="QuantityPlan" type="tns:ArrayOfQuantityPlan" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Dynamic_Flow" type="tns:ArrayOfReport_Dynamic_Flow" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfEmployee">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Employee" nillable="true" type="tns:Employee" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfOpedFinancePlan">
@@ -5249,6 +5303,83 @@
       <s:element name="WebReportCadreResponse">
         <s:complexType />
       </s:element>
+      <s:element name="WebReportT5Newborn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:ReportT5Newborn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReportT5Newborn">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AbstractReport">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ReportDataList" type="tns:ArrayOfReportT5NewbornDto" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfReportT5NewbornDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReportT5NewbornDto" nillable="true" type="tns:ReportT5NewbornDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReportT5NewbornDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Theme" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ReportT5NewbornDataDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReportT5NewbornDataDto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MarketShare" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountNewborn" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMaterinityBills" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WebReportT5NewbornResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="WebReportT6Students">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:ReportT6Students" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReportT6Students">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AbstractReport">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ReportDataList" type="tns:ArrayOfReportT6StudentsDto" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfReportT6StudentsDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReportT6StudentsDto" nillable="true" type="tns:ReportT6StudentsDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReportT6StudentsDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Theme" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ReportT6StudentsDataDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReportT6StudentsDataDto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountUniversity" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCollege" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountInsured" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WebReportT6StudentsResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="WebReportViolations">
         <s:complexType>
           <s:sequence>
@@ -5804,6 +5935,10 @@
           <s:enumeration value="PVPLoad" />
           <s:enumeration value="Doff" />
           <s:enumeration value="Zpz2025" />
+          <s:enumeration value="ZpzT1" />
+          <s:enumeration value="ZpzT2" />
+          <s:enumeration value="ZpzT3" />
+          <s:enumeration value="ZpzT4" />
           <s:enumeration value="ZpzQ2025" />
           <s:enumeration value="Zpz10_2025" />
           <s:enumeration value="ZpzL2025" />
@@ -5811,6 +5946,9 @@
           <s:enumeration value="ViolEKMP" />
           <s:enumeration value="VerifyPlan" />
           <s:enumeration value="MonthlyVol" />
+          <s:enumeration value="T5Newborn" />
+          <s:enumeration value="T6Students" />
+          <s:enumeration value="T7OldPolis" />
         </s:restriction>
       </s:simpleType>
       <s:element name="CollectSummaryReportResponse">
@@ -6056,34 +6194,20 @@
       <s:element name="SaveUserResponse">
         <s:complexType />
       </s:element>
-      <s:element name="EditFilial">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="filialCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="filialName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="fio" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="position" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="EditFilialResponse">
-        <s:complexType />
-      </s:element>
-      <s:element name="UploadFile">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="bytes" type="s:base64Binary" />
-            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="filial" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="UploadFileResponse">
-        <s:complexType />
-      </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="EditFilialSoapIn">
+    <wsdl:part name="parameters" element="tns:EditFilial" />
+  </wsdl:message>
+  <wsdl:message name="EditFilialSoapOut">
+    <wsdl:part name="parameters" element="tns:EditFilialResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadFile" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadFileResponse" />
+  </wsdl:message>
   <wsdl:message name="DownloadFileSoapIn">
     <wsdl:part name="parameters" element="tns:DownloadFile" />
   </wsdl:message>
@@ -6678,6 +6802,18 @@
   <wsdl:message name="WebReportCadreSoapOut">
     <wsdl:part name="parameters" element="tns:WebReportCadreResponse" />
   </wsdl:message>
+  <wsdl:message name="WebReportT5NewbornSoapIn">
+    <wsdl:part name="parameters" element="tns:WebReportT5Newborn" />
+  </wsdl:message>
+  <wsdl:message name="WebReportT5NewbornSoapOut">
+    <wsdl:part name="parameters" element="tns:WebReportT5NewbornResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebReportT6StudentsSoapIn">
+    <wsdl:part name="parameters" element="tns:WebReportT6Students" />
+  </wsdl:message>
+  <wsdl:message name="WebReportT6StudentsSoapOut">
+    <wsdl:part name="parameters" element="tns:WebReportT6StudentsResponse" />
+  </wsdl:message>
   <wsdl:message name="WebReportViolationsSoapIn">
     <wsdl:part name="parameters" element="tns:WebReportViolations" />
   </wsdl:message>
@@ -6846,19 +6982,15 @@
   <wsdl:message name="SaveUserSoapOut">
     <wsdl:part name="parameters" element="tns:SaveUserResponse" />
   </wsdl:message>
-  <wsdl:message name="EditFilialSoapIn">
-    <wsdl:part name="parameters" element="tns:EditFilial" />
-  </wsdl:message>
-  <wsdl:message name="EditFilialSoapOut">
-    <wsdl:part name="parameters" element="tns:EditFilialResponse" />
-  </wsdl:message>
-  <wsdl:message name="UploadFileSoapIn">
-    <wsdl:part name="parameters" element="tns:UploadFile" />
-  </wsdl:message>
-  <wsdl:message name="UploadFileSoapOut">
-    <wsdl:part name="parameters" element="tns:UploadFileResponse" />
-  </wsdl:message>
   <wsdl:portType name="EndpointSoap">
+    <wsdl:operation name="EditFilial">
+      <wsdl:input message="tns:EditFilialSoapIn" />
+      <wsdl:output message="tns:EditFilialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <wsdl:input message="tns:UploadFileSoapIn" />
+      <wsdl:output message="tns:UploadFileSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="DownloadFile">
       <wsdl:input message="tns:DownloadFileSoapIn" />
       <wsdl:output message="tns:DownloadFileSoapOut" />
@@ -7255,6 +7387,14 @@
       <wsdl:input message="tns:WebReportCadreSoapIn" />
       <wsdl:output message="tns:WebReportCadreSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="WebReportT5Newborn">
+      <wsdl:input message="tns:WebReportT5NewbornSoapIn" />
+      <wsdl:output message="tns:WebReportT5NewbornSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebReportT6Students">
+      <wsdl:input message="tns:WebReportT6StudentsSoapIn" />
+      <wsdl:output message="tns:WebReportT6StudentsSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="WebReportViolations">
       <wsdl:input message="tns:WebReportViolationsSoapIn" />
       <wsdl:output message="tns:WebReportViolationsSoapOut" />
@@ -7367,17 +7507,27 @@
       <wsdl:input message="tns:SaveUserSoapIn" />
       <wsdl:output message="tns:SaveUserSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="EditFilial">
-      <wsdl:input message="tns:EditFilialSoapIn" />
-      <wsdl:output message="tns:EditFilialSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="UploadFile">
-      <wsdl:input message="tns:UploadFileSoapIn" />
-      <wsdl:output message="tns:UploadFileSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="EndpointSoap" type="tns:EndpointSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EditFilial">
+      <soap:operation soapAction="http://kms-oms.ru/EditFilial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap:operation soapAction="http://kms-oms.ru/UploadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="DownloadFile">
       <soap:operation soapAction="http://kms-oms.ru/DownloadFile" style="document" />
       <wsdl:input>
@@ -8269,6 +8419,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="WebReportT5Newborn">
+      <soap:operation soapAction="http://kms-oms.ru/WebReportT5Newborn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebReportT6Students">
+      <soap:operation soapAction="http://kms-oms.ru/WebReportT6Students" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="WebReportViolations">
       <soap:operation soapAction="http://kms-oms.ru/WebReportViolations" style="document" />
       <wsdl:input>
@@ -8521,27 +8689,27 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="EditFilial">
-      <soap:operation soapAction="http://kms-oms.ru/EditFilial" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UploadFile">
-      <soap:operation soapAction="http://kms-oms.ru/UploadFile" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="EndpointSoap12" type="tns:EndpointSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EditFilial">
+      <soap12:operation soapAction="http://kms-oms.ru/EditFilial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap12:operation soapAction="http://kms-oms.ru/UploadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="DownloadFile">
       <soap12:operation soapAction="http://kms-oms.ru/DownloadFile" style="document" />
       <wsdl:input>
@@ -9433,6 +9601,24 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="WebReportT5Newborn">
+      <soap12:operation soapAction="http://kms-oms.ru/WebReportT5Newborn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebReportT6Students">
+      <soap12:operation soapAction="http://kms-oms.ru/WebReportT6Students" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="WebReportViolations">
       <soap12:operation soapAction="http://kms-oms.ru/WebReportViolations" style="document" />
       <wsdl:input>
@@ -9678,24 +9864,6 @@
     </wsdl:operation>
     <wsdl:operation name="SaveUser">
       <soap12:operation soapAction="http://kms-oms.ru/SaveUser" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="EditFilial">
-      <soap12:operation soapAction="http://kms-oms.ru/EditFilial" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UploadFile">
-      <soap12:operation soapAction="http://kms-oms.ru/UploadFile" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

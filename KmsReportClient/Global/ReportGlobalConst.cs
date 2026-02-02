@@ -31,7 +31,8 @@
         public const string ReportTargetedAllowances = "TarAllow";
         public const string ReportPVPLoad = "pvpl";
         public const string ReportDoff = "doff";
-
+        public const string ReportT5Newborn = "T5Newborn";
+        public const string ReportT6Students = "T6Students";
         public const string ReportZpz2025 = "Zpz2025";
         public const string ReportZpz10_2025 = "Zpz10_2025";
         public const string ReportZpzQ2025 = "Zpz_Q2025";

@@ -80,6 +80,10 @@ namespace KmsReportClient.DgvHeaderGenerator
             {
                 objDataGrid.ColumnHeadersHeight = 150;
             }
+            if (objDataGrid.Parent.Name == "PageT5Newborn")
+            {
+                objDataGrid.ColumnHeadersHeight = 150; // или 100 — подберите визуально
+            }
             //else if (objDataGrid.Parent.Name == "PageQuantity")
             //{
             //    objDataGrid.ColumnHeadersHeight = 163;
@@ -120,7 +124,7 @@ namespace KmsReportClient.DgvHeaderGenerator
             foreach (Header objChild in objHeaderTree.Children)
             {
 
-                objChild.Measure(objDataGrid, 15, objDataGrid.ColumnHeadersHeight/iNoOfLevels);
+                objChild.Measure(objDataGrid, 15, objDataGrid.ColumnHeadersHeight / iNoOfLevels);
                 objChild.AcceptRenderer(this);
             }
         }

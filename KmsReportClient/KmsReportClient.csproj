@@ -353,6 +353,8 @@
     <Compile Include="Report\Basic\ReportDoffProcessor.cs" />
     <Compile Include="Report\Basic\ReportMonthlyVolProcessor.cs" />
     <Compile Include="Report\Basic\ReportPVPLoadProcessor.cs" />
+    <Compile Include="Report\Basic\ReportT6StudentsProcessor.cs" />
+    <Compile Include="Report\Basic\ReportT5NewbornProcessor.cs" />
     <Compile Include="Report\Basic\ReportTargetedAllowancesProcessor.cs" />
     <Compile Include="Report\Basic\ReportQuantityProcessor.cs" />
     <Compile Include="Report\Basic\ReportReqVCRProcessor.cs" />
@@ -1005,6 +1007,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.WebReportReqVCRResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.WebReportT5NewbornResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.WebReportT6StudentsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.WebReportTargetedAllowancesResponse.datasource">

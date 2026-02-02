@@ -120,6 +120,57 @@ namespace KmsReportClient.Forms
             Log.Info($"Старт работы формы. Пользователь {CurrentUser.UserName}");
         }
 
+        private void HideAllReportTabs()
+        {
+            // Отключаем обработчик
+            TbControl.SelectedIndexChanged -= TabReport_SelectedIndexChanged;
+
+            try
+            {
+                PageIizl.Parent = null;
+                Page262.Parent = null;
+                Page294.Parent = null;
+                PagePgQ.Parent = null;
+                PagePg.Parent = null;
+                PageQuery.Parent = null;
+                PageOped.Parent = null;
+                PageOpedU.Parent = null;
+                PageOpedQ.Parent = null;
+                PageOtclkInfrorm.Parent = null;
+                tabVac.Parent = null;
+                PageFssMonitoring.Parent = null;
+                PageMonitoringVCR.Parent = null;
+                PageProposal.Parent = null;
+                tpOpedFinance.Parent = null;
+                tpOpedFinance3.Parent = null;
+                tpIizl2022.Parent = null;
+                PageCadre.Parent = null;
+                PageReqVCR.Parent = null;
+                PageZpz.Parent = null;
+                PageZpzQ.Parent = null;
+                PageZpz10.Parent = null;
+                PageZpzLethal.Parent = null;
+                PageEffectiveness.Parent = null;
+                PageQuantity.Parent = null;
+                PageTarAllow.Parent = null;
+                PageDoff.Parent = null;
+                PageZpz2025.Parent = null;
+                PageZpzQ2025.Parent = null;
+                PageZpz10_2025.Parent = null;
+                PageZpzLethal2025.Parent = null;
+                PageViolMEE.Parent = null;
+                PageViolEKMP.Parent = null;
+                PageVerifyPlan.Parent = null;
+                PageMonthlyVol.Parent = null;
+                PageT5Newborn.Parent = null;
+            }
+            finally
+            {
+                // Включаем обработчик обратно
+                TbControl.SelectedIndexChanged += TabReport_SelectedIndexChanged;
+            }
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             MenuDownload.Visible = false;
@@ -129,42 +180,7 @@ namespace KmsReportClient.Forms
             separatorExcel.Visible = true;
             PanelFilter.Enabled = true;
 
-            TbControl.TabPages.Remove(PageIizl);
-            TbControl.TabPages.Remove(Page262);
-            TbControl.TabPages.Remove(Page294);
-            TbControl.TabPages.Remove(PagePgQ);
-            TbControl.TabPages.Remove(PagePg);
-            TbControl.TabPages.Remove(PageQuery);
-            TbControl.TabPages.Remove(PageOped);
-            TbControl.TabPages.Remove(PageOpedU);
-            TbControl.TabPages.Remove(PageOpedQ);
-            TbControl.TabPages.Remove(PageOtclkInfrorm);
-            TbControl.TabPages.Remove(tabVac);
-            TbControl.TabPages.Remove(PageFssMonitoring);
-            TbControl.TabPages.Remove(PageMonitoringVCR);
-            TbControl.TabPages.Remove(PageIizl);
-            TbControl.TabPages.Remove(PageProposal);
-            TbControl.TabPages.Remove(tpOpedFinance);
-            TbControl.TabPages.Remove(tpOpedFinance3);
-            TbControl.TabPages.Remove(tpIizl2022);
-            TbControl.TabPages.Remove(PageCadre);
-            TbControl.TabPages.Remove(PageReqVCR);
-            TbControl.TabPages.Remove(PageZpz);
-            TbControl.TabPages.Remove(PageZpzQ);
-            TbControl.TabPages.Remove(PageZpz10);
-            TbControl.TabPages.Remove(PageZpzLethal);
-            TbControl.TabPages.Remove(PageEffectiveness);
-            TbControl.TabPages.Remove(PageQuantity);
-            TbControl.TabPages.Remove(PageTarAllow);
-            TbControl.TabPages.Remove(PageDoff);
-            TbControl.TabPages.Remove(PageZpz2025);
-            TbControl.TabPages.Remove(PageZpzQ2025);
-            TbControl.TabPages.Remove(PageZpz10_2025);
-            TbControl.TabPages.Remove(PageZpzLethal2025);
-            TbControl.TabPages.Remove(PageViolMEE);
-            TbControl.TabPages.Remove(PageViolEKMP);
-            TbControl.TabPages.Remove(PageVerifyPlan);
-            TbControl.TabPages.Remove(PageMonthlyVol);
+            HideAllReportTabs();
 
             if (CurrentUser.IsMain)
             {
@@ -219,6 +235,7 @@ namespace KmsReportClient.Forms
                         {PageViolEKMP, ReportGlobalConst.ReportViolEKMP},
                         {PageVerifyPlan, ReportGlobalConst.ReportVerifyPlan},
                         {PageMonthlyVol, ReportGlobalConst.ReportMonthlyVol},
+                        {PageT5Newborn, ReportGlobalConst.ReportT5Newborn},
             };
 
         private Dictionary<string, IReportProcessor> CreateProcessorMap() =>
@@ -367,7 +384,11 @@ namespace KmsReportClient.Forms
                 {
                     ReportGlobalConst.ReportMonthlyVol,
                     new ReportMonthlyVolProcessor(_client, _reportsDictionary, DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol, PageMonthlyVol)
-                }
+                },
+                {
+                    ReportGlobalConst.ReportT5Newborn,
+                    new ReportT5NewbornProcessor(_client, _reportsDictionary, DgvT5Newborn, CmbT5Newborn, TxtbT5Newborn, PageT5Newborn)
+                },
             };
 
         private void CreateNewFilter()
@@ -492,7 +513,7 @@ namespace KmsReportClient.Forms
             //    catch (Exception ex) { }
             //}
             Console.WriteLine($"yymm={_yymm} currentReportName={_currentReportName} Филиал={filialCode}");
-            
+
             if (isNeedCreateReport)
             {
                 _currentReport = _reportsDictionary.Single(x => x.Value == _currentReportName).Key;
@@ -549,7 +570,7 @@ namespace KmsReportClient.Forms
         {
             if (!TbControl.TabPages.Contains(PageQuery))
             {
-                TbControl.TabPages.Add(PageQuery);
+                PageQuery.Parent = TbControl;
             }
             _dynamicReportProcessor.data.Clear();
             var reportTag = ReportTree.SelectedNode.Tag as ReportNodeTag;
@@ -600,7 +621,7 @@ namespace KmsReportClient.Forms
 
             if (!_processor.HasReport)
             {
-                TbControl.TabPages.Add(_processor.Page);
+                _processor.Page.Parent = TbControl;
             }
 
             if (inReport != null)
@@ -674,7 +695,14 @@ namespace KmsReportClient.Forms
                 BtnUploaded.Visible = false;
                 BtnHandle.Visible = false;
                 BtnSummary.Visible = false;
-
+            }
+            if (TbControl.SelectedTab.Text.StartsWith("Целевые надбавки"))
+            {
+                BtnSubmit.Visible = false;
+            }
+            if (!TbControl.SelectedTab.Text.StartsWith("Целевые надбавки"))
+            {
+                BtnSubmit.Visible = true;
             }
 
             if (_processor.Report.IdType == "PG" || _processor.Report.IdType == "Zpz" || _processor.Report.IdType == "Zpz2025")
@@ -1293,50 +1321,76 @@ namespace KmsReportClient.Forms
 
         private void TabReport_DrawItem(object sender, DrawItemEventArgs e)
         {
+            if (e.Index < 0 || e.Index >= TbControl.TabPages.Count)
+                return;
+
             var g = e.Graphics;
             var tp = TbControl.TabPages[e.Index];
 
             var sf = new StringFormat { Alignment = StringAlignment.Center };
             var headerRect = new RectangleF(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height);
-            var sb = new SolidBrush(SystemColors.Control);
 
-            Color color = _processor.ColorReport;
+            // Цвет по умолчанию
+            Color color = SystemColors.Control;
 
-            if (_isQuery)
+            // Определяем цвет для ТЕКУЩЕЙ вкладки (e.Index), а не для выбранной!
+            if (_isQuery && ReportTree.SelectedNode != null)
             {
-                if (ReportTree.SelectedNode != null)
+                var tag = ReportTree.SelectedNode.Tag as ReportNodeTag;
+                if (tag?.idFlow != 0)
                 {
-                    var tag = ReportTree.SelectedNode.Tag as ReportNodeTag;
-                    if (tag != null)
-                    {
-                        if (tag.idFlow != 0)
-                        {
-                            var flow = _client.GetReportDynamicFlowById(tag.idFlow);
-                            color = (Color)GetColorForNode(flow.Status);
-
-                        }
-                    }
+                    var flow = _client.GetReportDynamicFlowById(tag.idFlow);
+                    color = (Color)GetColorForNode(flow.Status);
                 }
-
             }
-            if (TbControl.SelectedIndex == e.Index)
+            else
             {
-                sb.Color = color;
+                // Для обычных отчётов: получаем цвет из процессора текущей вкладки
+                if (_tabControlMap.TryGetValue(tp, out string reportId) &&
+                    _processorMap.TryGetValue(reportId, out IReportProcessor processor))
+                {
+                    color = processor.ColorReport;
+                }
+                // Иначе остаётся цвет по умолчанию (SystemColors.Control)
             }
 
+            var sb = new SolidBrush(TbControl.SelectedIndex == e.Index ? color : SystemColors.Control);
             g.FillRectangle(sb, e.Bounds);
-            g.DrawString(tp.Text, TbControl.Font, new SolidBrush(Color.Black), headerRect, sf);
+            g.DrawString(tp.Text, TbControl.Font, Brushes.Black, headerRect, sf);
+
+            // Освобождаем ресурсы
+            sb.Dispose();
+            sf.Dispose();
         }
 
         private void TabReport_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (TbControl.SelectedTab == null)
-            {
-                return;
-            }
+            var selectedTab = TbControl.SelectedTab;
 
-            _currentReport = _tabControlMap[TbControl.SelectedTab];
-            _processor = _processorMap[_currentReport];
+            if (selectedTab != null && _tabControlMap.TryGetValue(selectedTab, out string reportId))
+            {
+                _currentReport = reportId;
+
+                // Безопасное получение процессора для .NET Framework
+                if (_processorMap.TryGetValue(reportId, out IReportProcessor processor))
+                {
+                    _processor = processor;
+                    if (_processor.HasReport)
+                    {
+                        SetReportInterface();
+                    }
+                }
+                else
+                {
+                    _processor = null;
+                    // Опционально: очистка UI
+                }
+            }
+            else
+            {
+                _currentReport = string.Empty;
+                _processor = null;
+            }
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
@@ -1684,6 +1738,9 @@ namespace KmsReportClient.Forms
         private void CmbCadre_SelectedIndexChanged(object sender, EventArgs e) =>
         ChangeIndexComboBox(DgvCadre, CmbCadre, TxtbCadre);
 
+        private void CmbT5Newborn_SelectedIndexChanged(object sender, EventArgs e) =>
+        ChangeIndexComboBox(DgvT5Newborn, CmbT5Newborn, TxtbT5Newborn);
+
         private void CmbDoff_SelectedIndexChanged(object sender, EventArgs e) =>
         ChangeIndexComboBox(DgvDoff, CmbDoff, TbDoff);
 
@@ -1969,6 +2026,7 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
                     TbControl.TabPages.Remove(PageZpzQ2025);
                     TbControl.TabPages.Remove(PageQuery);
                     TbControl.TabPages.Remove(PageCadre);
+                    TbControl.TabPages.Remove(PageT5Newborn);
                     TbControl.TabPages.Remove(PageReqVCR);
                     TbControl.TabPages.Remove(PageOtclkInfrorm);
                     TbControl.TabPages.Remove(PageOped);
@@ -2399,6 +2457,11 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
             ChangeIndexComboBox(DgvCadre, CmbCadre, TxtbCadre);
         }
 
+        private void CmbPageT5Newborn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ChangeIndexComboBox(DgvT5Newborn, CmbT5Newborn, TxtbT5Newborn);
+        }
+
         private void CmbPageReqVCR_SelectedIndexChanged(object sender, EventArgs e)
         {
             ChangeIndexComboBox(DgvReqVCR, CmbReqVCR, TxtbReqVCR);
@@ -2410,6 +2473,11 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         }
 
         private void DgvCadre_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void DgvT5Newborn_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
 
         }
@@ -2448,6 +2516,11 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         private void DgvCadre_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             (_processor as ReportCadreProcessor).SetFormula();
+        }
+
+        private void DgvT5Newborn_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as ReportT5NewbornProcessor).SetFormula();
         }
 
         private void DgvReqVCR_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -2571,6 +2644,15 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
 
         }
 
+        private void DgvT5Newborn_KeyPress(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as ReportT5NewbornProcessor).SetFormula();
+        }
+
+        //private void DgvT6Students_KeyPress(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    (_processor as ReportT6Students_Processor).SetFormula();
+        //}
 
         private void сводToolStripMenuItemVCR_Click(object sender, EventArgs e)
         {
@@ -2687,6 +2769,11 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         }
 
         private void DgwReportIizl_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void TxtbInfo_TextChanged(object sender, EventArgs e)
         {
 
         }
