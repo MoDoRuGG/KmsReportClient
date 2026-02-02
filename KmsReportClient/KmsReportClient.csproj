@@ -377,6 +377,10 @@
     <Compile Include="Report\Basic\ReportViolMEEProcessor.cs" />
     <Compile Include="Report\Basic\ReportZpz10_2025Processor.cs" />
     <Compile Include="Report\Basic\ReportZpz2025LethalProcessor.cs" />
+    <Compile Include="Report\Basic\ReportZpzT4Processor.cs" />
+    <Compile Include="Report\Basic\ReportZpzT3Processor.cs" />
+    <Compile Include="Report\Basic\ReportZpzT2Processor.cs" />
+    <Compile Include="Report\Basic\ReportZpzT1Processor.cs" />
     <Compile Include="Report\Basic\ReportZpzLethalProcessor.cs" />
     <Compile Include="Report\Basic\ReportZpz10Processor.cs" />
     <Compile Include="Report\Basic\ReportZpz2025Processor.cs" />

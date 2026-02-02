@@ -34,6 +34,10 @@
         public const string ReportT5Newborn = "T5Newborn";
         public const string ReportT6Students = "T6Students";
         public const string ReportZpz2025 = "Zpz2025";
+        public const string ReportZpzT1 = "ZpzT1";
+        public const string ReportZpzT2 = "ZpzT2";
+        public const string ReportZpzT3 = "ZpzT3";
+        public const string ReportZpzT4 = "ZpzT4";
         public const string ReportZpz10_2025 = "Zpz10_2025";
         public const string ReportZpzQ2025 = "Zpz_Q2025";
         public const string ReportQueryZpz2025 = "QueryZpz2025";

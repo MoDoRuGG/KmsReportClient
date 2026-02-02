@@ -155,6 +155,10 @@ namespace KmsReportClient.Forms
                 PageTarAllow.Parent = null;
                 PageDoff.Parent = null;
                 PageZpz2025.Parent = null;
+                PageZpzT1.Parent = null;
+                PageZpzT2.Parent = null;
+                PageZpzT3.Parent = null;
+                PageZpzT4.Parent = null;
                 PageZpzQ2025.Parent = null;
                 PageZpz10_2025.Parent = null;
                 PageZpzLethal2025.Parent = null;
@@ -208,6 +212,10 @@ namespace KmsReportClient.Forms
                         {PageZpzQ, ReportGlobalConst.ReportZpzQ},
                         {PageQueryZpz, ReportGlobalConst.ReportZpzQ},
                         {PageZpz2025, ReportGlobalConst.ReportZpz2025},
+                        {PageZpzT1, ReportGlobalConst.ReportZpzT1},
+                        {PageZpzT2, ReportGlobalConst.ReportZpzT2},
+                        {PageZpzT3, ReportGlobalConst.ReportZpzT3},
+                        {PageZpzT4, ReportGlobalConst.ReportZpzT4},
                         {PageZpzQ2025, ReportGlobalConst.ReportZpzQ2025},
                         {PageQueryZpz2025, ReportGlobalConst.ReportZpzQ2025},
                         {PageOped, ReportGlobalConst.ReportOped},
@@ -269,7 +277,7 @@ namespace KmsReportClient.Forms
                 },
                 {
                     ReportGlobalConst.ReportZpzLethal,
-                    new ReportZpzLethalProcessor(_client, _reportsDictionary, DgwReportZpzLethal, CmbZpzLethal, TxtbZpzLethal, PageZpzLethal)
+                    new ReportZpzLethalProcessor(_client, _reportsDictionary, DgvReportZpzLethal, CmbZpzLethal, TxtbZpzLethal, PageZpzLethal)
                 },
                 {
                     ReportGlobalConst.ReportZpz10,
@@ -279,9 +287,25 @@ namespace KmsReportClient.Forms
                     ReportGlobalConst.ReportZpzQ,
                     new ReportZpzQProcessor(_client, _reportsDictionary, DgwReportZpzQ, CmbZpzQ, TxtbZpzQ, PageZpzQ)
                 },
-                                {
+                {
                     ReportGlobalConst.ReportZpz2025,
                     new ReportZpz2025Processor(_client, _reportsDictionary, DgvReportZpz2025, CmbZpz2025, TxtbZpz2025, PageZpz2025)
+                },
+                {
+                    ReportGlobalConst.ReportZpzT1,
+                    new ReportZpzT1Processor(_client, _reportsDictionary, DgvReportZpzT1, CmbZpzT1, TxtbZpzT1, PageZpzT1)
+                },
+                {
+                    ReportGlobalConst.ReportZpzT2,
+                    new ReportZpzT2Processor(_client, _reportsDictionary, DgvReportZpzT2, CmbZpzT2, TxtbZpzT2, PageZpzT2)
+                },
+                {
+                    ReportGlobalConst.ReportZpzT3,
+                    new ReportZpzT3Processor(_client, _reportsDictionary, DgvReportZpzT3, CmbZpzT3, TxtbZpzT3, PageZpzT3)
+                },
+                {
+                    ReportGlobalConst.ReportZpzT4,
+                    new ReportZpzT4Processor(_client, _reportsDictionary, DgvReportZpzT4, CmbZpzT4, TxtbZpzT4, PageZpzT4)
                 },
                 {
                     ReportGlobalConst.ReportZpz2025Lethal,
@@ -325,20 +349,20 @@ namespace KmsReportClient.Forms
                 },
                   {
                     ReportGlobalConst.MonitoringVCR,
-                    new MonitoringVCRProcessor(_client, _reportsDictionary, dgvMonitoringVCR, cbMonitoringVCR, tbMonitoringVCR, PageMonitoringVCR)
+                    new MonitoringVCRProcessor(_client, _reportsDictionary, DgvMonitoringVCR, cbMonitoringVCR, tbMonitoringVCR, PageMonitoringVCR)
                 },
 
                   {
                     ReportGlobalConst.ReportProposal,
                     new ReportProposalProcessor(_client, _reportsDictionary, dgvProposal, cbProposal, tbProposal, PageProposal)
-                },
+                  },
 
                    {
                     ReportGlobalConst.ReportOpedFinance,
                     new ReportOpedFinanceProcessor(_client, _reportsDictionary, dgvOpedFinance, cbOpedFinance, tbOpedFinance, tpOpedFinance)
-                },
+                    },
 
-                                   {
+                   {
                     ReportGlobalConst.ReportOpedFinance3,
                     new ReportOpedFinance3Processor(_client, _reportsDictionary, dgvOpedFinance3, cbOpedFinance3, tbOpedFinance3, tpOpedFinance3)
                 },
@@ -716,6 +740,10 @@ namespace KmsReportClient.Forms
                 DgwReportPg.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
                 DgwReportZpz.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
                 DgvReportZpz2025.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
+                DgvReportZpzT1.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
+                DgvReportZpzT2.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
+                DgvReportZpzT3.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
+                DgvReportZpzT4.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
             }
             TxtbInfo.Text = _processor.GetReportInfo();
             BtnCommentReport.Visible = true;
@@ -873,6 +901,10 @@ namespace KmsReportClient.Forms
             DgwReportZpz.ReadOnly = true;
             DgwReportZpz10.ReadOnly = false;
             DgvReportZpz2025.ReadOnly = true;
+            DgvReportZpzT1.ReadOnly = true;
+            DgvReportZpzT2.ReadOnly = true;
+            DgvReportZpzT3.ReadOnly = true;
+            DgvReportZpzT4.ReadOnly = true;
             DgvReportZpz10_2025.ReadOnly = false;
             _processor.SaveToDb();
         }
@@ -895,6 +927,10 @@ namespace KmsReportClient.Forms
             DgwReportZpz.ReadOnly = false;
             DgwReportZpz10.ReadOnly = false;
             DgvReportZpz2025.ReadOnly = false;
+            DgvReportZpzT1.ReadOnly = false;
+            DgvReportZpzT2.ReadOnly = false;
+            DgvReportZpzT3.ReadOnly = false;
+            DgvReportZpzT4.ReadOnly = false;
             DgvReportZpz10_2025.ReadOnly = false;
             _processor.FillDataGridView(theme);
             _processor.SaveToDb();
@@ -1115,7 +1151,13 @@ namespace KmsReportClient.Forms
 
         private void OpenConsolidateReportForm(ConsolidateReport consolidateReport)
         {
-            using var form = new ConsolidateForm(_client, _regions, consolidateReport, _processor.FilialName);
+            string filialName = "Российская Федерация";
+            //if (_processor == null)
+            //{
+            //    MessageBox.Show("Процессор отчётов не инициализирован.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+            using var form = new ConsolidateForm(_client, _regions, consolidateReport, filialName);
             form.ShowDialog();
         }
 
@@ -1754,7 +1796,7 @@ namespace KmsReportClient.Forms
         ChangeIndexComboBox(DgvReqVCR, CmbReqVCR, TxtbReqVCR);
 
         private void CmbZpzLethal_SelectedIndexChanged(object sender, EventArgs e) =>
-        ChangeIndexComboBox(DgwReportZpzLethal, CmbZpzLethal, TxtbZpzLethal);
+        ChangeIndexComboBox(DgvReportZpzLethal, CmbZpzLethal, TxtbZpzLethal);
 
         private void CmbZpz2025Lethal_SelectedIndexChanged(object sender, EventArgs e) =>
 ChangeIndexComboBox(DgvReportZpzLethal2025, CmbZpzLethal2025, TxtbZpzLethal2025);
@@ -2029,11 +2071,16 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
                     TbControl.TabPages.Remove(PageZpzQ);
                     TbControl.TabPages.Remove(PageZpz2025);
                     TbControl.TabPages.Remove(PageZpz10_2025);
+                    TbControl.TabPages.Remove(PageZpzT1);
+                    TbControl.TabPages.Remove(PageZpzT2);
+                    TbControl.TabPages.Remove(PageZpzT3);
+                    TbControl.TabPages.Remove(PageZpzT4);
                     TbControl.TabPages.Remove(PageZpzQ2025);
                     TbControl.TabPages.Remove(PageQuery);
                     TbControl.TabPages.Remove(PageCadre);
                     TbControl.TabPages.Remove(PageT5Newborn);
                     TbControl.TabPages.Remove(PageT6Students);
+                    //TbControl.TabPages.Remove(PageT7OldPolise);
                     TbControl.TabPages.Remove(PageReqVCR);
                     TbControl.TabPages.Remove(PageOtclkInfrorm);
                     TbControl.TabPages.Remove(PageOped);
