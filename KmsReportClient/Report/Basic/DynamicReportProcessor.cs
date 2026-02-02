@@ -327,7 +327,7 @@ namespace KmsReportClient.Report.Basic
             return Convert.ToInt32(stringSplit[2]);
         }
 
-        public int GetRow(string position)
+        public static int GetRow(string position)
         {
             char[] delimiterChars = { 'P', 'R', 'C' };
             string[] stringSplit = position.Split(delimiterChars);

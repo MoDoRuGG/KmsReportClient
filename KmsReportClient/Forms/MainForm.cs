@@ -163,6 +163,7 @@ namespace KmsReportClient.Forms
                 PageVerifyPlan.Parent = null;
                 PageMonthlyVol.Parent = null;
                 PageT5Newborn.Parent = null;
+                PageT6Students.Parent = null;
             }
             finally
             {
@@ -236,6 +237,7 @@ namespace KmsReportClient.Forms
                         {PageVerifyPlan, ReportGlobalConst.ReportVerifyPlan},
                         {PageMonthlyVol, ReportGlobalConst.ReportMonthlyVol},
                         {PageT5Newborn, ReportGlobalConst.ReportT5Newborn},
+                        {PageT6Students, ReportGlobalConst.ReportT6Students},
             };
 
         private Dictionary<string, IReportProcessor> CreateProcessorMap() =>
@@ -388,6 +390,10 @@ namespace KmsReportClient.Forms
                 {
                     ReportGlobalConst.ReportT5Newborn,
                     new ReportT5NewbornProcessor(_client, _reportsDictionary, DgvT5Newborn, CmbT5Newborn, TxtbT5Newborn, PageT5Newborn)
+                },
+                {
+                    ReportGlobalConst.ReportT6Students,
+                    new ReportT6StudentsProcessor(_client, _reportsDictionary, DgvT6Students, CmbT6Students, TxtbT6Students, PageT6Students)
                 },
             };
 
@@ -2027,6 +2033,7 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
                     TbControl.TabPages.Remove(PageQuery);
                     TbControl.TabPages.Remove(PageCadre);
                     TbControl.TabPages.Remove(PageT5Newborn);
+                    TbControl.TabPages.Remove(PageT6Students);
                     TbControl.TabPages.Remove(PageReqVCR);
                     TbControl.TabPages.Remove(PageOtclkInfrorm);
                     TbControl.TabPages.Remove(PageOped);
@@ -2462,6 +2469,11 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
             ChangeIndexComboBox(DgvT5Newborn, CmbT5Newborn, TxtbT5Newborn);
         }
 
+        private void CmbPageT6Students_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ChangeIndexComboBox(DgvT6Students, CmbT6Students, TxtbT6Students);
+        }
+
         private void CmbPageReqVCR_SelectedIndexChanged(object sender, EventArgs e)
         {
             ChangeIndexComboBox(DgvReqVCR, CmbReqVCR, TxtbReqVCR);
@@ -2648,11 +2660,6 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         {
             (_processor as ReportT5NewbornProcessor).SetFormula();
         }
-
-        //private void DgvT6Students_KeyPress(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    (_processor as ReportT6Students_Processor).SetFormula();
-        //}
 
         private void сводToolStripMenuItemVCR_Click(object sender, EventArgs e)
         {

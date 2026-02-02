@@ -475,8 +475,8 @@ namespace KmsReportClient.Forms
             ((System.ComponentModel.ISupportInitialize)(this.DgvCadre)).BeginInit();
             this.PageT5Newborn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvT5Newborn)).BeginInit();
-            //this.PageT6Students.SuspendLayout();
-            //((System.ComponentModel.ISupportInitialize)(this.DgvT6Students)).BeginInit();
+            this.PageT6Students.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvT6Students)).BeginInit();
             this.PageReqVCR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReqVCR)).BeginInit();
             this.PageZpz.SuspendLayout();
@@ -4564,80 +4564,79 @@ namespace KmsReportClient.Forms
             this.DgvPVPLoad.TabIndex = 8;
             this.DgvPVPLoad.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvPVPLoad_CellBeginEdit);
             this.DgvPVPLoad.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPVPLoad_CellEndEdit);
-            //// 
-            //// PageT6Students
-            //// 
-            //this.PageT6Students.BackColor = System.Drawing.Color.LightSteelBlue;
-            //this.PageT6Students.Controls.Add(this.TxtbT6Students);
-            //this.PageT6Students.Controls.Add(this.CmbT6Students);
-            //this.PageT6Students.Controls.Add(this.DgvT6Students);
-            //this.PageT6Students.Location = new System.Drawing.Point(4, 36);
-            //this.PageT6Students.Name = "PageT6Students";
-            //this.PageT6Students.Padding = new System.Windows.Forms.Padding(2);
-            //this.PageT6Students.Size = new System.Drawing.Size(712, 330);
-            //this.PageT6Students.TabIndex = 15;
-            //this.PageT6Students.Text = "tabPage1";
-            //// 
-            //// TxtbT6Students
-            //// 
-            //this.TxtbT6Students.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            //| System.Windows.Forms.AnchorStyles.Right)));
-            //this.TxtbT6Students.Location = new System.Drawing.Point(117, 7);
-            //this.TxtbT6Students.Multiline = true;
-            //this.TxtbT6Students.Name = "TxtbT6Students";
-            //this.TxtbT6Students.ReadOnly = true;
-            //this.TxtbT6Students.Size = new System.Drawing.Size(1101, 39);
-            //this.TxtbT6Students.TabIndex = 38;
-            //// 
-            //// CmbT6Students
-            //// 
-            //this.CmbT6Students.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            //this.CmbT6Students.FormattingEnabled = true;
-            //this.CmbT6Students.Location = new System.Drawing.Point(9, 5);
-            //this.CmbT6Students.Name = "CmbT6Students";
-            //this.CmbT6Students.Size = new System.Drawing.Size(100, 21);
-            //this.CmbT6Students.TabIndex = 37;
-            //this.CmbT6Students.SelectedIndexChanged += new System.EventHandler(this.CmbPageT6Students_SelectedIndexChanged);
-            //// 
-            //// DgvT6Students
-            //// 
-            //this.DgvT6Students.AllowUserToAddRows = false;
-            //this.DgvT6Students.AllowUserToDeleteRows = false;
-            //this.DgvT6Students.AllowUserToResizeColumns = false;
-            //this.DgvT6Students.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            //| System.Windows.Forms.AnchorStyles.Left)
-            //| System.Windows.Forms.AnchorStyles.Right)));
-            //this.DgvT6Students.BackgroundColor = System.Drawing.Color.AntiqueWhite;
-            //dataGridViewCellStyle96.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewCellStyle96.BackColor = System.Drawing.SystemColors.Control;
-            //dataGridViewCellStyle96.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            //dataGridViewCellStyle96.ForeColor = System.Drawing.SystemColors.WindowText;
-            //dataGridViewCellStyle96.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            //dataGridViewCellStyle96.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            //dataGridViewCellStyle96.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            //this.DgvT6Students.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle96;
-            //this.DgvT6Students.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            //dataGridViewCellStyle97.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            //dataGridViewCellStyle97.BackColor = System.Drawing.SystemColors.Window;
-            //dataGridViewCellStyle97.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            //dataGridViewCellStyle97.ForeColor = System.Drawing.SystemColors.ControlText;
-            //dataGridViewCellStyle97.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            //dataGridViewCellStyle97.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            //dataGridViewCellStyle97.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            //this.DgvT6Students.DefaultCellStyle = dataGridViewCellStyle97;
-            //this.DgvT6Students.Location = new System.Drawing.Point(12, 62);
-            //this.DgvT6Students.Name = "DgvT6Students";
-            //dataGridViewCellStyle98.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            //dataGridViewCellStyle98.BackColor = System.Drawing.SystemColors.Control;
-            //dataGridViewCellStyle98.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            //dataGridViewCellStyle98.ForeColor = System.Drawing.SystemColors.WindowText;
-            //dataGridViewCellStyle98.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            //dataGridViewCellStyle98.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            //dataGridViewCellStyle98.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            //this.DgvT6Students.RowHeadersDefaultCellStyle = dataGridViewCellStyle98;
-            //this.DgvT6Students.Size = new System.Drawing.Size(1211, 502);
-            //this.DgvT6Students.TabIndex = 36;
-            //this.DgvT6Students.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvT6Students_CellEndEdit);
+            // 
+            // PageT6Students
+            // 
+            this.PageT6Students.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.PageT6Students.Controls.Add(this.TxtbT6Students);
+            this.PageT6Students.Controls.Add(this.CmbT6Students);
+            this.PageT6Students.Controls.Add(this.DgvT6Students);
+            this.PageT6Students.Location = new System.Drawing.Point(4, 36);
+            this.PageT6Students.Name = "PageT6Students";
+            this.PageT6Students.Padding = new System.Windows.Forms.Padding(2);
+            this.PageT6Students.Size = new System.Drawing.Size(712, 330);
+            this.PageT6Students.TabIndex = 15;
+            this.PageT6Students.Text = "tabPage1";
+            // 
+            // TxtbT6Students
+            // 
+            this.TxtbT6Students.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtbT6Students.Location = new System.Drawing.Point(117, 7);
+            this.TxtbT6Students.Multiline = true;
+            this.TxtbT6Students.Name = "TxtbT6Students";
+            this.TxtbT6Students.ReadOnly = true;
+            this.TxtbT6Students.Size = new System.Drawing.Size(1101, 39);
+            this.TxtbT6Students.TabIndex = 38;
+            // 
+            // CmbT6Students
+            // 
+            this.CmbT6Students.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbT6Students.FormattingEnabled = true;
+            this.CmbT6Students.Location = new System.Drawing.Point(9, 5);
+            this.CmbT6Students.Name = "CmbT6Students";
+            this.CmbT6Students.Size = new System.Drawing.Size(100, 21);
+            this.CmbT6Students.TabIndex = 37;
+            this.CmbT6Students.SelectedIndexChanged += new System.EventHandler(this.CmbPageT6Students_SelectedIndexChanged);
+            // 
+            // DgvT6Students
+            // 
+            this.DgvT6Students.AllowUserToAddRows = false;
+            this.DgvT6Students.AllowUserToDeleteRows = false;
+            this.DgvT6Students.AllowUserToResizeColumns = false;
+            this.DgvT6Students.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DgvT6Students.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            dataGridViewCellStyle96.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle96.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle96.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle96.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle96.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle96.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle96.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvT6Students.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle96;
+            this.DgvT6Students.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle97.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle97.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle97.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle97.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle97.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle97.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle97.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvT6Students.DefaultCellStyle = dataGridViewCellStyle97;
+            this.DgvT6Students.Location = new System.Drawing.Point(12, 62);
+            this.DgvT6Students.Name = "DgvT6Students";
+            dataGridViewCellStyle98.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle98.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle98.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle98.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle98.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle98.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle98.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvT6Students.RowHeadersDefaultCellStyle = dataGridViewCellStyle98;
+            this.DgvT6Students.Size = new System.Drawing.Size(1211, 502);
+            this.DgvT6Students.TabIndex = 36;
             // 
             // летальныеЭКМПToolStripMenuItem
             // 

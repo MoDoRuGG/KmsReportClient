@@ -140,7 +140,7 @@ namespace KmsReportClient.Forms
             return (result + 1).ToString();
         }
 
-        public int GetLastIndexInGroup(Group group)
+        public static int GetLastIndexInGroup(Group group)
         {
             try
             {

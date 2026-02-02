@@ -147,7 +147,7 @@ namespace KmsReportClient.Excel.Creator
 
         }
 
-        public void SetData(Worksheet worksheet, List<DynamicDataDto> data, int startRow, int countClmn,bool checkRow)
+        public static void SetData(Worksheet worksheet, List<DynamicDataDto> data, int startRow, int countClmn,bool checkRow)
         {        
             foreach (var item in data)
             {
@@ -161,7 +161,7 @@ namespace KmsReportClient.Excel.Creator
 
 
 
-        public void SetStyle(Worksheet worksheet, int count, bool isGroup)
+        public static void SetStyle(Worksheet worksheet, int count, bool isGroup)
         {
             for (int i = 1; i <= count; i++)
             {

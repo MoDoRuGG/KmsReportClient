@@ -292,6 +292,9 @@
       <DependentUpon>EmailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\EmailService.cs" />
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ReleaseChangelogForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -405,9 +408,6 @@
     </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\SettingsForm.cs">
       <SubType>Form</SubType>

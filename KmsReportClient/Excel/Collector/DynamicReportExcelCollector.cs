@@ -92,11 +92,11 @@ namespace KmsReportClient.Excel.Collector
             return data;
         }
 
-        public string GetPosition(int page, int column, int row) => String.Format($"P{page}C{column}R{row}");
+        public static string GetPosition(int page, int column, int row) => String.Format($"P{page}C{column}R{row}");
 
-        protected int GetLastRow(Worksheet sheet) => sheet.Cells[sheet.Rows.Count, "A"].End[XlDirection.xlUp].Row;
-      
+        protected static int GetLastRow(Worksheet sheet) => sheet.Cells[sheet.Rows.Count, "A"].End[XlDirection.xlUp].Row;
 
-        protected int GetLastClmn(Worksheet sheet) => sheet.Cells[6, sheet.Columns.Count].End[XlDirection.xlToLeft].Column;
+
+        protected static int GetLastClmn(Worksheet sheet) => sheet.Cells[6, sheet.Columns.Count].End[XlDirection.xlToLeft].Column;
     }
 }

@@ -43,6 +43,6 @@ namespace KmsReportClient.Model.Enums
         [Description("TemplateTextVerifyPlan.xml")] VerifyPlan,
         [Description("TemplateTextMonthlyVol.xml")] MonthlyVol,
         [Description("TemplateTextT5Newborn.xml")] T5Newborn,
-        [Description("TemplateTextT6Students.xml")] T6Students,
+        [Description("TemplateTextT6Students.xml")] T6Students
     }
 }
