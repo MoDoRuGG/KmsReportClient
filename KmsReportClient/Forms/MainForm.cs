@@ -1820,6 +1820,18 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         private void CmbZpz2025_SelectedIndexChanged_1(object sender, EventArgs e) =>
             ChangeIndexComboBox(DgvReportZpz2025, CmbZpz2025, TxtbZpz2025);
 
+        private void CmbZpzT1_SelectedIndexChanged_1(object sender, EventArgs e) =>
+    ChangeIndexComboBox(DgvReportZpzT1, CmbZpzT1, TxtbZpzT1);
+
+        private void CmbZpzT2_SelectedIndexChanged_1(object sender, EventArgs e) =>
+        ChangeIndexComboBox(DgvReportZpzT2, CmbZpzT2, TxtbZpzT3);
+
+        private void CmbZpzT3_SelectedIndexChanged_1(object sender, EventArgs e) =>
+    ChangeIndexComboBox(DgvReportZpzT3, CmbZpzT3, TxtbZpzT3);
+
+        private void CmbZpzT4_SelectedIndexChanged_1(object sender, EventArgs e) =>
+        ChangeIndexComboBox(DgvReportZpzT4, CmbZpzT4, TxtbZpzT4);
+
         private void CmbZpz10_2025_SelectedIndexChanged(object sender, EventArgs e) =>
         ChangeIndexComboBox(DgvReportZpz10_2025, CmbZpz10_2025, TxtbZpz10_2025);
 

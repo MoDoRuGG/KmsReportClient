@@ -22,7 +22,6 @@ namespace KmsReportClient.Report.Basic
         private readonly string[][] _headers = {
             new[]
             { "Всего" }, //4
-
         };
 
         private readonly Dictionary<string, string> _headersMap = new Dictionary<string, string>

@@ -34,7 +34,7 @@ namespace KmsReportClient.Report.Basic
             base(inClient, dgv, cmb, txtb, page,
                 XmlFormTemplate.ZpzT1.GetDescription(),
                 Log,
-                ReportGlobalConst.ReportZpz2025,
+                ReportGlobalConst.ReportZpzT1,
                 reportsDictionary)
         {
             InitReport();
@@ -59,7 +59,7 @@ namespace KmsReportClient.Report.Basic
                 {
                     filialCode = FilialCode,
                     yymm = yymm,
-                    reportType = ReportType.Zpz2025
+                    reportType = ReportType.ZpzT1
                 }
             };
             var response = Client.GetReport(request)?.Body?.GetReportResult;
@@ -140,7 +140,7 @@ namespace KmsReportClient.Report.Basic
                     idUser = CurrentUser.IdUser,
                     report = Report,
                     yymm = Report.Yymm,
-                    reportType = ReportType.Zpz2025
+                    reportType = ReportType.ZpzT1
                 }
             };
             var response = Client.SaveReport(request).Body.SaveReportResult as ReportZpz2025;
@@ -160,7 +160,7 @@ namespace KmsReportClient.Report.Basic
                     filialCode = CurrentUser.FilialCode,
                     idUser = CurrentUser.IdUser,
                     yymm = Report.Yymm,
-                    reportType = ReportType.Zpz2025
+                    reportType = ReportType.ZpzT1
                 }
             };
             var response = Client.SaveReportDataSourceExcel(request).Body.SaveReportDataSourceExcelResult as ReportZpz2025;
@@ -180,7 +180,7 @@ namespace KmsReportClient.Report.Basic
                     filialCode = CurrentUser.FilialCode,
                     idUser = CurrentUser.IdUser,
                     yymm = Report.Yymm,
-                    reportType = ReportType.Zpz2025
+                    reportType = ReportType.ZpzT1
                 }
             };
             var response = Client.SaveReportDataSourceHandle(request).Body.SaveReportDataSourceHandleResult as ReportZpz2025;
@@ -201,7 +201,7 @@ namespace KmsReportClient.Report.Basic
                     status = status,
                     yymmStart = yymmStart,
                     yymmEnd = yymmEnd,
-                    reportType = ReportType.Zpz2025
+                    reportType = ReportType.ZpzT1
                 }
             };
             var response = Client.CollectSummaryReport(request);

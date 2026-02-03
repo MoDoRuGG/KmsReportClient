@@ -129,6 +129,18 @@ namespace KmsReportClient.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle96 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle97 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle98 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle99 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle100 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle101 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle102 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle103 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle104 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle105 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle106 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle107 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle108 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle109 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle110 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -433,22 +445,6 @@ namespace KmsReportClient.Forms
             this.TbxQueryZpz2025 = new System.Windows.Forms.TextBox();
             this.CmbQueryZpz2025 = new System.Windows.Forms.ComboBox();
             this.DgvQueryZpz2025 = new System.Windows.Forms.DataGridView();
-            //this.PageQueryZpzT1 = new System.Windows.Forms.TabPage();
-            //this.TbxQueryZpzT1 = new System.Windows.Forms.TextBox();
-            //this.CmbQueryZpzT1 = new System.Windows.Forms.ComboBox();
-            //this.DgvQueryZpzT1 = new System.Windows.Forms.DataGridView();
-            //this.PageQueryZpzT2 = new System.Windows.Forms.TabPage();
-            //this.TbxQueryZpzT2 = new System.Windows.Forms.TextBox();
-            //this.CmbQueryZpzT2 = new System.Windows.Forms.ComboBox();
-            //this.DgvQueryZpzT2 = new System.Windows.Forms.DataGridView();
-            //this.PageQueryZpzT3 = new System.Windows.Forms.TabPage();
-            //this.TbxQueryZpzT3 = new System.Windows.Forms.TextBox();
-            //this.CmbQueryZpzT3 = new System.Windows.Forms.ComboBox();
-            //this.DgvQueryZpzT3 = new System.Windows.Forms.DataGridView();
-            //this.PageQueryZpzT4 = new System.Windows.Forms.TabPage();
-            //this.TbxQueryZpzT4 = new System.Windows.Forms.TextBox();
-            //this.CmbQueryZpzT4 = new System.Windows.Forms.ComboBox();
-            //this.DgvQueryZpzT4 = new System.Windows.Forms.DataGridView();
             this.PageMonitoringVCR = new System.Windows.Forms.TabPage();
             this.tbMonitoringVCR = new System.Windows.Forms.TextBox();
             this.cbMonitoringVCR = new System.Windows.Forms.ComboBox();
@@ -519,14 +515,14 @@ namespace KmsReportClient.Forms
             ((System.ComponentModel.ISupportInitialize)(this.DgwReportZpz10)).BeginInit();
             this.PageZpz2025.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReportZpz2025)).BeginInit();
-            //this.PageZpzT1.SuspendLayout();
-            //((System.ComponentModel.ISupportInitialize)(this.DgvReportZpzT1)).BeginInit();
-            //this.PageZpzT2.SuspendLayout();
-            //((System.ComponentModel.ISupportInitialize)(this.DgvReportZpzT2)).BeginInit();
-            //this.PageZpzT3.SuspendLayout();
-            //((System.ComponentModel.ISupportInitialize)(this.DgvReportZpzT3)).BeginInit();
-            //this.PageZpzT4.SuspendLayout();
-            //((System.ComponentModel.ISupportInitialize)(this.DgvReportZpzT4)).BeginInit();
+            this.PageZpzT1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvReportZpzT1)).BeginInit();
+            this.PageZpzT2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvReportZpzT2)).BeginInit();
+            this.PageZpzT3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvReportZpzT3)).BeginInit();
+            this.PageZpzT4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvReportZpzT4)).BeginInit();
             this.PageZpzQ2025.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReportZpzQ2025)).BeginInit();
             this.PageZpz10_2025.SuspendLayout();
@@ -563,8 +559,6 @@ namespace KmsReportClient.Forms
             ((System.ComponentModel.ISupportInitialize)(this.DgvQueryZpz)).BeginInit();
             this.PageZpzLethal2025.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReportZpzLethal2025)).BeginInit();
-            this.PageZpz2025.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvQueryZpz2025)).BeginInit();
             this.PageMonitoringVCR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMonitoringVCR)).BeginInit();
             this.PageQuantity.SuspendLayout();
@@ -3191,6 +3185,228 @@ namespace KmsReportClient.Forms
             this.CmbZpz2025.Size = new System.Drawing.Size(100, 21);
             this.CmbZpz2025.TabIndex = 6;
             this.CmbZpz2025.SelectedIndexChanged += new System.EventHandler(this.CmbZpz2025_SelectedIndexChanged_1);
+
+
+            // 
+            // PageZpzT1
+            // 
+            this.PageZpzT1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.PageZpzT1.Controls.Add(this.DgvReportZpzT1);
+            this.PageZpzT1.Controls.Add(this.TxtbZpzT1);
+            this.PageZpzT1.Controls.Add(this.CmbZpzT1);
+            this.PageZpzT1.Location = new System.Drawing.Point(4, 36);
+            this.PageZpzT1.Name = "PageZpzT1";
+            this.PageZpzT1.Padding = new System.Windows.Forms.Padding(3);
+            this.PageZpzT1.Size = new System.Drawing.Size(712, 330);
+            this.PageZpzT1.TabIndex = 5;
+            this.PageZpzT1.Text = "tabPage1";
+            // 
+            // DgvReportZpzT1
+            // 
+            this.DgvReportZpzT1.AllowUserToAddRows = false;
+            this.DgvReportZpzT1.AllowUserToDeleteRows = false;
+            this.DgvReportZpzT1.AllowUserToResizeColumns = false;
+            this.DgvReportZpzT1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DgvReportZpzT1.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            this.DgvReportZpzT1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle99;
+            this.DgvReportZpzT1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvReportZpzT1.DefaultCellStyle = dataGridViewCellStyle100;
+            this.DgvReportZpzT1.Location = new System.Drawing.Point(7, 51);
+            this.DgvReportZpzT1.Name = "DgvReportZpzT1";
+            this.DgvReportZpzT1.RowHeadersDefaultCellStyle = dataGridViewCellStyle101;
+            this.DgvReportZpzT1.Size = new System.Drawing.Size(699, 272);
+            this.DgvReportZpzT1.TabIndex = 8;
+            // 
+            // TxtbZpzT1
+            // 
+            this.TxtbZpzT1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtbZpzT1.Location = new System.Drawing.Point(113, 6);
+            this.TxtbZpzT1.Multiline = true;
+            this.TxtbZpzT1.Name = "TxtbZpzT1";
+            this.TxtbZpzT1.ReadOnly = true;
+            this.TxtbZpzT1.Size = new System.Drawing.Size(593, 39);
+            this.TxtbZpzT1.TabIndex = 7;
+            // 
+            // CmbZpzT1
+            // 
+            this.CmbZpzT1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbZpzT1.FormattingEnabled = true;
+            this.CmbZpzT1.Location = new System.Drawing.Point(7, 6);
+            this.CmbZpzT1.Name = "CmbZpzT1";
+            this.CmbZpzT1.Size = new System.Drawing.Size(100, 21);
+            this.CmbZpzT1.TabIndex = 6;
+            this.CmbZpzT1.SelectedIndexChanged += new System.EventHandler(this.CmbZpzT1_SelectedIndexChanged_1);
+
+
+            // 
+            // PageZpzT2
+            // 
+            this.PageZpzT2.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.PageZpzT2.Controls.Add(this.DgvReportZpzT2);
+            this.PageZpzT2.Controls.Add(this.TxtbZpzT2);
+            this.PageZpzT2.Controls.Add(this.CmbZpzT2);
+            this.PageZpzT2.Location = new System.Drawing.Point(4, 36);
+            this.PageZpzT2.Name = "PageZpzT2";
+            this.PageZpzT2.Padding = new System.Windows.Forms.Padding(3);
+            this.PageZpzT2.Size = new System.Drawing.Size(712, 330);
+            this.PageZpzT2.TabIndex = 5;
+            this.PageZpzT2.Text = "tabPage1";
+            // 
+            // DgvReportZpzT2
+            // 
+            this.DgvReportZpzT2.AllowUserToAddRows = false;
+            this.DgvReportZpzT2.AllowUserToDeleteRows = false;
+            this.DgvReportZpzT2.AllowUserToResizeColumns = false;
+            this.DgvReportZpzT2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DgvReportZpzT2.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            this.DgvReportZpzT2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle102;
+            this.DgvReportZpzT2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvReportZpzT2.DefaultCellStyle = dataGridViewCellStyle102;
+            this.DgvReportZpzT2.Location = new System.Drawing.Point(7, 51);
+            this.DgvReportZpzT2.Name = "DgvReportZpzT2";
+            this.DgvReportZpzT2.RowHeadersDefaultCellStyle = dataGridViewCellStyle103;
+            this.DgvReportZpzT2.Size = new System.Drawing.Size(699, 272);
+            this.DgvReportZpzT2.TabIndex = 8;
+            // 
+            // TxtbZpzT2
+            // 
+            this.TxtbZpzT2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtbZpzT2.Location = new System.Drawing.Point(113, 6);
+            this.TxtbZpzT2.Multiline = true;
+            this.TxtbZpzT2.Name = "TxtbZpzT2";
+            this.TxtbZpzT2.ReadOnly = true;
+            this.TxtbZpzT2.Size = new System.Drawing.Size(593, 39);
+            this.TxtbZpzT2.TabIndex = 7;
+            // 
+            // CmbZpzT2
+            // 
+            this.CmbZpzT2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbZpzT2.FormattingEnabled = true;
+            this.CmbZpzT2.Location = new System.Drawing.Point(7, 6);
+            this.CmbZpzT2.Name = "CmbZpzT2";
+            this.CmbZpzT2.Size = new System.Drawing.Size(100, 21);
+            this.CmbZpzT2.TabIndex = 6;
+            this.CmbZpzT2.SelectedIndexChanged += new System.EventHandler(this.CmbZpzT2_SelectedIndexChanged_1);
+
+
+            // 
+            // PageZpzT3
+            // 
+            this.PageZpzT3.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.PageZpzT3.Controls.Add(this.DgvReportZpzT3);
+            this.PageZpzT3.Controls.Add(this.TxtbZpzT3);
+            this.PageZpzT3.Controls.Add(this.CmbZpzT3);
+            this.PageZpzT3.Location = new System.Drawing.Point(4, 36);
+            this.PageZpzT3.Name = "PageZpzT3";
+            this.PageZpzT3.Padding = new System.Windows.Forms.Padding(3);
+            this.PageZpzT3.Size = new System.Drawing.Size(712, 330);
+            this.PageZpzT3.TabIndex = 5;
+            this.PageZpzT3.Text = "tabPage1";
+            // 
+            // DgvReportZpzT3
+            // 
+            this.DgvReportZpzT3.AllowUserToAddRows = false;
+            this.DgvReportZpzT3.AllowUserToDeleteRows = false;
+            this.DgvReportZpzT3.AllowUserToResizeColumns = false;
+            this.DgvReportZpzT3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DgvReportZpzT3.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            this.DgvReportZpzT3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle104;
+            this.DgvReportZpzT3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvReportZpzT3.DefaultCellStyle = dataGridViewCellStyle105;
+            this.DgvReportZpzT3.Location = new System.Drawing.Point(7, 51);
+            this.DgvReportZpzT3.Name = "DgvReportZpzT3";
+            this.DgvReportZpzT3.RowHeadersDefaultCellStyle = dataGridViewCellStyle106;
+            this.DgvReportZpzT3.Size = new System.Drawing.Size(699, 272);
+            this.DgvReportZpzT3.TabIndex = 8;
+            // 
+            // TxtbZpzT3
+            // 
+            this.TxtbZpzT3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtbZpzT3.Location = new System.Drawing.Point(113, 6);
+            this.TxtbZpzT3.Multiline = true;
+            this.TxtbZpzT3.Name = "TxtbZpzT3";
+            this.TxtbZpzT3.ReadOnly = true;
+            this.TxtbZpzT3.Size = new System.Drawing.Size(593, 39);
+            this.TxtbZpzT3.TabIndex = 7;
+            // 
+            // CmbZpzT3
+            // 
+            this.CmbZpzT3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbZpzT3.FormattingEnabled = true;
+            this.CmbZpzT3.Location = new System.Drawing.Point(7, 6);
+            this.CmbZpzT3.Name = "CmbZpzT3";
+            this.CmbZpzT3.Size = new System.Drawing.Size(100, 21);
+            this.CmbZpzT3.TabIndex = 6;
+            this.CmbZpzT3.SelectedIndexChanged += new System.EventHandler(this.CmbZpzT3_SelectedIndexChanged_1);
+
+
+            // 
+            // PageZpzT4
+            // 
+            this.PageZpzT4.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.PageZpzT4.Controls.Add(this.DgvReportZpzT4);
+            this.PageZpzT4.Controls.Add(this.TxtbZpzT4);
+            this.PageZpzT4.Controls.Add(this.CmbZpzT4);
+            this.PageZpzT4.Location = new System.Drawing.Point(4, 36);
+            this.PageZpzT4.Name = "PageZpzT4";
+            this.PageZpzT4.Padding = new System.Windows.Forms.Padding(3);
+            this.PageZpzT4.Size = new System.Drawing.Size(712, 330);
+            this.PageZpzT4.TabIndex = 5;
+            this.PageZpzT4.Text = "tabPage1";
+            // 
+            // DgvReportZpzT4
+            // 
+            this.DgvReportZpzT4.AllowUserToAddRows = false;
+            this.DgvReportZpzT4.AllowUserToDeleteRows = false;
+            this.DgvReportZpzT4.AllowUserToResizeColumns = false;
+            this.DgvReportZpzT4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DgvReportZpzT4.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            this.DgvReportZpzT4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle107;
+            this.DgvReportZpzT4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvReportZpzT4.DefaultCellStyle = dataGridViewCellStyle108;
+            this.DgvReportZpzT4.Location = new System.Drawing.Point(7, 51);
+            this.DgvReportZpzT4.Name = "DgvReportZpzT4";
+            this.DgvReportZpzT4.RowHeadersDefaultCellStyle = dataGridViewCellStyle109;
+            this.DgvReportZpzT4.Size = new System.Drawing.Size(699, 272);
+            this.DgvReportZpzT4.TabIndex = 8;
+            // 
+            // TxtbZpzT4
+            // 
+            this.TxtbZpzT4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtbZpzT4.Location = new System.Drawing.Point(113, 6);
+            this.TxtbZpzT4.Multiline = true;
+            this.TxtbZpzT4.Name = "TxtbZpzT4";
+            this.TxtbZpzT4.ReadOnly = true;
+            this.TxtbZpzT4.Size = new System.Drawing.Size(593, 39);
+            this.TxtbZpzT4.TabIndex = 7;
+            // 
+            // CmbZpzT4
+            // 
+            this.CmbZpzT4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbZpzT4.FormattingEnabled = true;
+            this.CmbZpzT4.Location = new System.Drawing.Point(7, 6);
+            this.CmbZpzT4.Name = "CmbZpzT4";
+            this.CmbZpzT4.Size = new System.Drawing.Size(100, 21);
+            this.CmbZpzT4.TabIndex = 6;
+            this.CmbZpzT4.SelectedIndexChanged += new System.EventHandler(this.CmbZpzT4_SelectedIndexChanged_1);
+
+
+
+
+
+
             // 
             // PageZpzQ2025
             // 

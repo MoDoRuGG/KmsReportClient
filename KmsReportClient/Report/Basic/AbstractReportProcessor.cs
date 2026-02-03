@@ -510,7 +510,8 @@ namespace KmsReportClient.Report.Basic
 
             CreateDgvForForm(form, table);
 
-            if (Report.IdType == "PG" || Report.IdType == "PG_Q" || Report.IdType == "foped" || Report.IdType == "Zpz_Q" || Report.IdType == "Zpz" || Report.IdType == "ZpzLethal" || Report.IdType == "Zpz_Q2025" || Report.IdType == "Zpz2025" || Report.IdType == "ZpzL2025" || (Report.IdType == "Zpz10_2025" && GetCurrentTheme() == "Сведения СП"))
+            if (Report.IdType == "PG" || Report.IdType == "PG_Q" || Report.IdType == "foped" || Report.IdType == "Zpz_Q" || Report.IdType == "Zpz" || Report.IdType == "ZpzLethal" || Report.IdType == "Zpz_Q2025" || Report.IdType == "Zpz2025" || Report.IdType == "ZpzT1" || Report.IdType == "ZpzT2"|| Report.IdType == "ZpzT3"|| Report.IdType == "ZpzT4"
+            || Report.IdType == "ZpzL2025" || (Report.IdType == "Zpz10_2025" && GetCurrentTheme() == "Сведения СП"))
                 CreateTotalColumn();
 
         }

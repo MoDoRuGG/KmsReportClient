@@ -67,7 +67,7 @@ namespace KmsReportClient.Report.Basic
                 {
                     filialCode = FilialCode,
                     yymm = yymm,
-                    reportType = ReportType.Zpz2025
+                    reportType = ReportType.ZpzT3
                 }
             };
             var response = Client.GetReport(request)?.Body?.GetReportResult;
