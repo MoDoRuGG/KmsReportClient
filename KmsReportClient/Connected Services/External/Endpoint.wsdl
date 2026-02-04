@@ -2,6 +2,67 @@
 <wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://kms-oms.ru/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://kms-oms.ru/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://kms-oms.ru/">
+      <s:element name="CollectClientContext">
+        <s:complexType />
+      </s:element>
+      <s:element name="CollectClientContextResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CollectClientContextResult" type="tns:ClientContext" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClientContext">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Regions" type="tns:ArrayOfKmsReportDictionary" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReportTypes" type="tns:ArrayOfKmsReportDictionary" />
+          <s:element minOccurs="0" maxOccurs="1" name="Users" type="tns:ArrayOfKmsReportDictionary" />
+          <s:element minOccurs="0" maxOccurs="1" name="Emails" type="tns:ArrayOfKmsReportDictionary" />
+          <s:element minOccurs="0" maxOccurs="1" name="Heads" type="tns:ArrayOfHeadCompany" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfKmsReportDictionary">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="KmsReportDictionary" nillable="true" type="tns:KmsReportDictionary" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="KmsReportDictionary">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ForeignKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdditionalField" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShortName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfHeadCompany">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="HeadCompany" nillable="true" type="tns:HeadCompany" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HeadCompany">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FilialCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Position" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filialCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isAddUser" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="idUser" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveUserResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="EditFilial">
         <s:complexType>
           <s:sequence>
@@ -2148,6 +2209,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Report_MonthlyVol" type="tns:ArrayOfReport_MonthlyVol" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_T5Newborn" type="tns:ArrayOfReport_T5Newborn" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_T6Students" type="tns:ArrayOfReport_T6Students" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_T7OldPolis" type="tns:ArrayOfReport_T7OldPolis" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Type" type="tns:Report_Type" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:Report_Flow" />
         </s:sequence>
@@ -2744,6 +2806,21 @@
           <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:Report_Data" />
         </s:sequence>
       </s:complexType>
+      <s:complexType name="ArrayOfReport_T7OldPolis">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Report_T7OldPolis" nillable="true" type="tns:Report_T7OldPolis" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Report_T7OldPolis">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_Report_Data" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowNum" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CurrentQuantity" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountOldPolis" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:Report_Data" />
+        </s:sequence>
+      </s:complexType>
       <s:complexType name="Report_Type">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
@@ -2809,6 +2886,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:ArrayOfReport_Flow" />
           <s:element minOccurs="0" maxOccurs="1" name="QuantityPlan" type="tns:ArrayOfQuantityPlan" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Dynamic_Flow" type="tns:ArrayOfReport_Dynamic_Flow" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_T7OldPolisYearly" type="tns:ArrayOfReport_T7OldPolisYearly" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfOpedFinancePlan">
@@ -2833,6 +2911,20 @@
       <s:complexType name="QuantityPlan">
         <s:sequence>
           <s:element minOccurs="1" maxOccurs="1" name="Id_QuantityPlan" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Yymm" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Value" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Id_Region" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Region" type="tns:Region" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReport_T7OldPolisYearly">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Report_T7OldPolisYearly" nillable="true" type="tns:Report_T7OldPolisYearly" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Report_T7OldPolisYearly">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id_Report_T7OldPolisYearly" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Yymm" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="Value" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Id_Region" type="s:string" />
@@ -4085,6 +4177,33 @@
           <s:element minOccurs="1" maxOccurs="1" name="Value" type="s:int" />
         </s:sequence>
       </s:complexType>
+      <s:element name="GetT7OldPolisYearlyList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetT7OldPolisYearlyListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetT7OldPolisYearlyListResult" type="tns:ArrayOfT7OldPolisYearlyDictionaryItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfT7OldPolisYearlyDictionaryItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="T7OldPolisYearlyDictionaryItem" nillable="true" type="tns:T7OldPolisYearlyDictionaryItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="T7OldPolisYearlyDictionaryItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdReportT7OldPolisYearly" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdRegion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Yymm" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Value" type="s:int" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="CreateConsolidateQuantityAddRemove">
         <s:complexType>
           <s:sequence>
@@ -4347,6 +4466,16 @@
       <s:element name="SaveQuantityPlanListResponse">
         <s:complexType />
       </s:element>
+      <s:element name="SaveT7OldPolisYearlyList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="plans" type="tns:ArrayOfT7OldPolisYearlyDictionaryItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveT7OldPolisYearlyListResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="ConsolidateOpedQCollect">
         <s:complexType>
           <s:sequence>
@@ -4473,20 +4602,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="ArrayOfKmsReportDictionary">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="KmsReportDictionary" nillable="true" type="tns:KmsReportDictionary" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="KmsReportDictionary">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ForeignKey" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="AdditionalField" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ShortName" type="s:string" />
-        </s:sequence>
-      </s:complexType>
       <s:element name="GetYearOpedData">
         <s:complexType>
           <s:sequence>
@@ -6147,55 +6262,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="CollectClientContext">
-        <s:complexType />
-      </s:element>
-      <s:element name="CollectClientContextResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CollectClientContextResult" type="tns:ClientContext" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ClientContext">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Regions" type="tns:ArrayOfKmsReportDictionary" />
-          <s:element minOccurs="0" maxOccurs="1" name="ReportTypes" type="tns:ArrayOfKmsReportDictionary" />
-          <s:element minOccurs="0" maxOccurs="1" name="Users" type="tns:ArrayOfKmsReportDictionary" />
-          <s:element minOccurs="0" maxOccurs="1" name="Emails" type="tns:ArrayOfKmsReportDictionary" />
-          <s:element minOccurs="0" maxOccurs="1" name="Heads" type="tns:ArrayOfHeadCompany" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfHeadCompany">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="HeadCompany" nillable="true" type="tns:HeadCompany" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="HeadCompany">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="FilialCode" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Fio" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Position" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="SaveUser">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="filialCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="fio" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="isAddUser" type="s:boolean" />
-            <s:element minOccurs="1" maxOccurs="1" name="idUser" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SaveUserResponse">
-        <s:complexType />
-      </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="CollectClientContextSoapIn">
+    <wsdl:part name="parameters" element="tns:CollectClientContext" />
+  </wsdl:message>
+  <wsdl:message name="CollectClientContextSoapOut">
+    <wsdl:part name="parameters" element="tns:CollectClientContextResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveUserSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveUser" />
+  </wsdl:message>
+  <wsdl:message name="SaveUserSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveUserResponse" />
+  </wsdl:message>
   <wsdl:message name="EditFilialSoapIn">
     <wsdl:part name="parameters" element="tns:EditFilial" />
   </wsdl:message>
@@ -6496,6 +6576,12 @@
   <wsdl:message name="GetQuantityPlanListSoapOut">
     <wsdl:part name="parameters" element="tns:GetQuantityPlanListResponse" />
   </wsdl:message>
+  <wsdl:message name="GetT7OldPolisYearlyListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetT7OldPolisYearlyList" />
+  </wsdl:message>
+  <wsdl:message name="GetT7OldPolisYearlyListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetT7OldPolisYearlyListResponse" />
+  </wsdl:message>
   <wsdl:message name="CreateConsolidateQuantityAddRemoveSoapIn">
     <wsdl:part name="parameters" element="tns:CreateConsolidateQuantityAddRemove" />
   </wsdl:message>
@@ -6549,6 +6635,12 @@
   </wsdl:message>
   <wsdl:message name="SaveQuantityPlanListSoapOut">
     <wsdl:part name="parameters" element="tns:SaveQuantityPlanListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveT7OldPolisYearlyListSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveT7OldPolisYearlyList" />
+  </wsdl:message>
+  <wsdl:message name="SaveT7OldPolisYearlyListSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveT7OldPolisYearlyListResponse" />
   </wsdl:message>
   <wsdl:message name="ConsolidateOpedQCollectSoapIn">
     <wsdl:part name="parameters" element="tns:ConsolidateOpedQCollect" />
@@ -6970,19 +7062,15 @@
   <wsdl:message name="CheckPasswordNewSoapOut">
     <wsdl:part name="parameters" element="tns:CheckPasswordNewResponse" />
   </wsdl:message>
-  <wsdl:message name="CollectClientContextSoapIn">
-    <wsdl:part name="parameters" element="tns:CollectClientContext" />
-  </wsdl:message>
-  <wsdl:message name="CollectClientContextSoapOut">
-    <wsdl:part name="parameters" element="tns:CollectClientContextResponse" />
-  </wsdl:message>
-  <wsdl:message name="SaveUserSoapIn">
-    <wsdl:part name="parameters" element="tns:SaveUser" />
-  </wsdl:message>
-  <wsdl:message name="SaveUserSoapOut">
-    <wsdl:part name="parameters" element="tns:SaveUserResponse" />
-  </wsdl:message>
   <wsdl:portType name="EndpointSoap">
+    <wsdl:operation name="CollectClientContext">
+      <wsdl:input message="tns:CollectClientContextSoapIn" />
+      <wsdl:output message="tns:CollectClientContextSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUser">
+      <wsdl:input message="tns:SaveUserSoapIn" />
+      <wsdl:output message="tns:SaveUserSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="EditFilial">
       <wsdl:input message="tns:EditFilialSoapIn" />
       <wsdl:output message="tns:EditFilialSoapOut" />
@@ -7183,6 +7271,10 @@
       <wsdl:input message="tns:GetQuantityPlanListSoapIn" />
       <wsdl:output message="tns:GetQuantityPlanListSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetT7OldPolisYearlyList">
+      <wsdl:input message="tns:GetT7OldPolisYearlyListSoapIn" />
+      <wsdl:output message="tns:GetT7OldPolisYearlyListSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="CreateConsolidateQuantityAddRemove">
       <wsdl:input message="tns:CreateConsolidateQuantityAddRemoveSoapIn" />
       <wsdl:output message="tns:CreateConsolidateQuantityAddRemoveSoapOut" />
@@ -7218,6 +7310,10 @@
     <wsdl:operation name="SaveQuantityPlanList">
       <wsdl:input message="tns:SaveQuantityPlanListSoapIn" />
       <wsdl:output message="tns:SaveQuantityPlanListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveT7OldPolisYearlyList">
+      <wsdl:input message="tns:SaveT7OldPolisYearlyListSoapIn" />
+      <wsdl:output message="tns:SaveT7OldPolisYearlyListSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="ConsolidateOpedQCollect">
       <wsdl:input message="tns:ConsolidateOpedQCollectSoapIn" />
@@ -7499,17 +7595,27 @@
       <wsdl:input message="tns:CheckPasswordNewSoapIn" />
       <wsdl:output message="tns:CheckPasswordNewSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="CollectClientContext">
-      <wsdl:input message="tns:CollectClientContextSoapIn" />
-      <wsdl:output message="tns:CollectClientContextSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="SaveUser">
-      <wsdl:input message="tns:SaveUserSoapIn" />
-      <wsdl:output message="tns:SaveUserSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="EndpointSoap" type="tns:EndpointSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CollectClientContext">
+      <soap:operation soapAction="http://kms-oms.ru/CollectClientContext" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUser">
+      <soap:operation soapAction="http://kms-oms.ru/SaveUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="EditFilial">
       <soap:operation soapAction="http://kms-oms.ru/EditFilial" style="document" />
       <wsdl:input>
@@ -7960,6 +8066,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetT7OldPolisYearlyList">
+      <soap:operation soapAction="http://kms-oms.ru/GetT7OldPolisYearlyList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateConsolidateQuantityAddRemove">
       <soap:operation soapAction="http://kms-oms.ru/CreateConsolidateQuantityAddRemove" style="document" />
       <wsdl:input>
@@ -8034,6 +8149,15 @@
     </wsdl:operation>
     <wsdl:operation name="SaveQuantityPlanList">
       <soap:operation soapAction="http://kms-oms.ru/SaveQuantityPlanList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveT7OldPolisYearlyList">
+      <soap:operation soapAction="http://kms-oms.ru/SaveT7OldPolisYearlyList" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -8671,27 +8795,27 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CollectClientContext">
-      <soap:operation soapAction="http://kms-oms.ru/CollectClientContext" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SaveUser">
-      <soap:operation soapAction="http://kms-oms.ru/SaveUser" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="EndpointSoap12" type="tns:EndpointSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CollectClientContext">
+      <soap12:operation soapAction="http://kms-oms.ru/CollectClientContext" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUser">
+      <soap12:operation soapAction="http://kms-oms.ru/SaveUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="EditFilial">
       <soap12:operation soapAction="http://kms-oms.ru/EditFilial" style="document" />
       <wsdl:input>
@@ -9142,6 +9266,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetT7OldPolisYearlyList">
+      <soap12:operation soapAction="http://kms-oms.ru/GetT7OldPolisYearlyList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateConsolidateQuantityAddRemove">
       <soap12:operation soapAction="http://kms-oms.ru/CreateConsolidateQuantityAddRemove" style="document" />
       <wsdl:input>
@@ -9216,6 +9349,15 @@
     </wsdl:operation>
     <wsdl:operation name="SaveQuantityPlanList">
       <soap12:operation soapAction="http://kms-oms.ru/SaveQuantityPlanList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveT7OldPolisYearlyList">
+      <soap12:operation soapAction="http://kms-oms.ru/SaveT7OldPolisYearlyList" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -9846,24 +9988,6 @@
     </wsdl:operation>
     <wsdl:operation name="CheckPasswordNew">
       <soap12:operation soapAction="http://kms-oms.ru/CheckPasswordNew" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CollectClientContext">
-      <soap12:operation soapAction="http://kms-oms.ru/CollectClientContext" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SaveUser">
-      <soap12:operation soapAction="http://kms-oms.ru/SaveUser" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

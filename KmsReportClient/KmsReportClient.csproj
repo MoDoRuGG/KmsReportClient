@@ -267,6 +267,12 @@
     <Compile Include="Forms\CreateElementForm.Designer.cs">
       <DependentUpon>CreateElementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Dictionary\T7OldPolisYearlyDictionaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dictionary\T7OldPolisYearlyDictionaryForm.Designer.cs">
+      <DependentUpon>T7OldPolisYearlyDictionaryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Dictionary\QuantityPlanDictionaryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -356,6 +362,7 @@
     <Compile Include="Report\Basic\ReportDoffProcessor.cs" />
     <Compile Include="Report\Basic\ReportMonthlyVolProcessor.cs" />
     <Compile Include="Report\Basic\ReportPVPLoadProcessor.cs" />
+    <Compile Include="Report\Basic\ReportT7OldPolisProcessor.cs" />
     <Compile Include="Report\Basic\ReportT6StudentsProcessor.cs" />
     <Compile Include="Report\Basic\ReportT5NewbornProcessor.cs" />
     <Compile Include="Report\Basic\ReportTargetedAllowancesProcessor.cs" />
@@ -842,6 +849,9 @@
     <None Include="Connected Services\External\KmsReportClient.External.GetScansResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.GetT7OldPolisYearlyListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.GetVacYearDataResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -950,6 +960,9 @@
     <None Include="Connected Services\External\KmsReportClient.External.SaveScanResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.SaveT7OldPolisYearlyListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.SaveUserResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -957,6 +970,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.SendNotificationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.T7OldPolisYearlyDictionaryItem.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.UnreadComment.datasource">
@@ -1078,6 +1094,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateElementForm.resx">
       <DependentUpon>CreateElementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dictionary\T7OldPolisYearlyDictionaryForm.resx">
+      <DependentUpon>T7OldPolisYearlyDictionaryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dictionary\QuantityPlanDictionaryForm.resx">
       <DependentUpon>QuantityPlanDictionaryForm.cs</DependentUpon>

@@ -33,6 +33,7 @@
         public const string ReportDoff = "doff";
         public const string ReportT5Newborn = "T5Newborn";
         public const string ReportT6Students = "T6Students";
+        public const string ReportT7OldPolis = "T7OldPolis";
         public const string ReportZpz2025 = "Zpz2025";
         public const string ReportZpzT1 = "ZpzT1";
         public const string ReportZpzT2 = "ZpzT2";

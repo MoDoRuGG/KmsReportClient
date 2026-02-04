@@ -168,6 +168,7 @@ namespace KmsReportClient.Forms
                 PageMonthlyVol.Parent = null;
                 PageT5Newborn.Parent = null;
                 PageT6Students.Parent = null;
+                PageT7OldPolis.Parent = null;
             }
             finally
             {
@@ -246,6 +247,7 @@ namespace KmsReportClient.Forms
                         {PageMonthlyVol, ReportGlobalConst.ReportMonthlyVol},
                         {PageT5Newborn, ReportGlobalConst.ReportT5Newborn},
                         {PageT6Students, ReportGlobalConst.ReportT6Students},
+                        {PageT7OldPolis, ReportGlobalConst.ReportT7OldPolis},
             };
 
         private Dictionary<string, IReportProcessor> CreateProcessorMap() =>
@@ -419,6 +421,10 @@ namespace KmsReportClient.Forms
                     ReportGlobalConst.ReportT6Students,
                     new ReportT6StudentsProcessor(_client, _reportsDictionary, DgvT6Students, CmbT6Students, TxtbT6Students, PageT6Students)
                 },
+                //{
+                //    ReportGlobalConst.ReportT7OldPolis,
+                //    new ReportT7OldPolisProcessor(_client, _reportsDictionary, DgvT7OldPolis, CmbT7OldPolis, TxtbT7OldPolis, PageT7OldPolis)
+                //},
             };
 
         private void CreateNewFilter()
@@ -1789,6 +1795,9 @@ namespace KmsReportClient.Forms
         private void CmbT5Newborn_SelectedIndexChanged(object sender, EventArgs e) =>
         ChangeIndexComboBox(DgvT5Newborn, CmbT5Newborn, TxtbT5Newborn);
 
+        private void CmbT7OldPolis_SelectedIndexChanged(object sender, EventArgs e) =>
+ChangeIndexComboBox(DgvT7OldPolis, CmbT7OldPolis, TxtbT7OldPolis);
+
         private void CmbDoff_SelectedIndexChanged(object sender, EventArgs e) =>
         ChangeIndexComboBox(DgvDoff, CmbDoff, TbDoff);
 
@@ -2092,7 +2101,7 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
                     TbControl.TabPages.Remove(PageCadre);
                     TbControl.TabPages.Remove(PageT5Newborn);
                     TbControl.TabPages.Remove(PageT6Students);
-                    //TbControl.TabPages.Remove(PageT7OldPolise);
+                    TbControl.TabPages.Remove(PageT7OldPolis);
                     TbControl.TabPages.Remove(PageReqVCR);
                     TbControl.TabPages.Remove(PageOtclkInfrorm);
                     TbControl.TabPages.Remove(PageOped);
@@ -2720,6 +2729,11 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
             (_processor as ReportT5NewbornProcessor).SetFormula();
         }
 
+        //private void DgvT7OldPolis_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    (_processor as ReportT7OldPolisProcessor).SetFormula();
+        //}
+
         private void сводToolStripMenuItemVCR_Click(object sender, EventArgs e)
         {
             OpenConsolidateReportForm(ConsolidateReport.ConsolidateVCR);
@@ -2783,6 +2797,22 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
             };
         }
 
+        private void количествоПолисовСтарогоОбразцаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new T7OldPolisYearlyDictionaryForm(_client);
+            form.Show();
+            form.FormClosed += (s, ee) =>
+            {
+                if (form != null)
+                {
+                    if (!form.IsDisposed)
+                        form.Dispose();
+
+                    form = null;
+                }
+            };
+        }
+
         private void планЧисленностиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form = new QuantityPlanDictionaryForm(_client);
@@ -2807,6 +2837,10 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         private void cbIizl2022_SelectedIndexChanged(object sender, EventArgs e)
         {
             ChangeIndexComboBox(dgvIizl2022, cbIizl2022, tbIizl2022);
+        }
+        private void CmbPageT7OldPolis_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ChangeIndexComboBox(DgvT7OldPolis, CmbT7OldPolis, TxtbT7OldPolis);
         }
 
         private void dgvIizl2022_CellEndEdit(object sender, DataGridViewCellEventArgs e)

@@ -44,6 +44,7 @@ namespace KmsReportClient.Model.Enums
         [Description("TemplateTextMonthlyVol.xml")] MonthlyVol,
         [Description("TemplateTextT5Newborn.xml")] T5Newborn,
         [Description("TemplateTextT6Students.xml")] T6Students,
+        [Description("TemplateTextT7OldPolis.xml")] T7OldPolis,
         [Description("TemplateTextZpzT1.xml")] ZpzT1,
         [Description("TemplateTextZpzT2.xml")] ZpzT2,
         [Description("TemplateTextZpzT3.xml")] ZpzT3,

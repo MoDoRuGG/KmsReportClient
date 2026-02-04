@@ -141,6 +141,9 @@ namespace KmsReportClient.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle108 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle109 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle110 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle111 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle112 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle113 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -224,6 +227,7 @@ namespace KmsReportClient.Forms
             this.электронныеАдресаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.планРезультативностиЭкспертнойДеятельностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.планЧисленностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.количествоПолисовСтарогоОбразцаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuChangelog = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.TsslVersion = new System.Windows.Forms.ToolStripStatusLabel();
@@ -332,6 +336,10 @@ namespace KmsReportClient.Forms
             this.TxtbT6Students = new System.Windows.Forms.TextBox();
             this.CmbT6Students = new System.Windows.Forms.ComboBox();
             this.DgvT6Students = new System.Windows.Forms.DataGridView();
+            this.PageT7OldPolis = new System.Windows.Forms.TabPage();
+            this.TxtbT7OldPolis = new System.Windows.Forms.TextBox();
+            this.CmbT7OldPolis = new System.Windows.Forms.ComboBox();
+            this.DgvT7OldPolis = new System.Windows.Forms.DataGridView();
             this.PageReqVCR = new System.Windows.Forms.TabPage();
             this.TxtbReqVCR = new System.Windows.Forms.TextBox();
             this.CmbReqVCR = new System.Windows.Forms.ComboBox();
@@ -505,6 +513,8 @@ namespace KmsReportClient.Forms
             ((System.ComponentModel.ISupportInitialize)(this.DgvT5Newborn)).BeginInit();
             this.PageT6Students.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvT6Students)).BeginInit();
+            this.PageT7OldPolis.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvT7OldPolis)).BeginInit();
             this.PageReqVCR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReqVCR)).BeginInit();
             this.PageZpz.SuspendLayout();
@@ -1209,7 +1219,8 @@ namespace KmsReportClient.Forms
             this.SpravItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.электронныеАдресаToolStripMenuItem,
             this.планРезультативностиЭкспертнойДеятельностиToolStripMenuItem,
-            this.планЧисленностиToolStripMenuItem});
+            this.планЧисленностиToolStripMenuItem,
+            this.количествоПолисовСтарогоОбразцаToolStripMenuItem});
             this.SpravItem.Name = "SpravItem";
             this.SpravItem.Size = new System.Drawing.Size(94, 20);
             this.SpravItem.Text = "Справочники";
@@ -1235,6 +1246,13 @@ namespace KmsReportClient.Forms
             this.планЧисленностиToolStripMenuItem.Size = new System.Drawing.Size(348, 22);
             this.планЧисленностиToolStripMenuItem.Text = "План численности";
             this.планЧисленностиToolStripMenuItem.Click += new System.EventHandler(this.планЧисленностиToolStripMenuItem_Click);
+            // 
+            // количествоПолисовСтарогоОбразцаToolStripMenuItem
+            // 
+            this.количествоПолисовСтарогоОбразцаToolStripMenuItem.Name = "количествоПолисовСтарогоОбразцаToolStripMenuItem";
+            this.количествоПолисовСтарогоОбразцаToolStripMenuItem.Size = new System.Drawing.Size(348, 22);
+            this.количествоПолисовСтарогоОбразцаToolStripMenuItem.Text = "Количество полисов старого образца";
+            this.количествоПолисовСтарогоОбразцаToolStripMenuItem.Click += new System.EventHandler(this.количествоПолисовСтарогоОбразцаToolStripMenuItem_Click);
             // 
             // MenuChangelog
             // 
@@ -1840,6 +1858,7 @@ namespace KmsReportClient.Forms
             this.TbControl.Controls.Add(this.PageCadre);
             this.TbControl.Controls.Add(this.PageT5Newborn);
             this.TbControl.Controls.Add(this.PageT6Students);
+            this.TbControl.Controls.Add(this.PageT7OldPolis);
             this.TbControl.Controls.Add(this.PageReqVCR);
             this.TbControl.Controls.Add(this.PageZpz);
             this.TbControl.Controls.Add(this.PageZpzQ);
@@ -2835,6 +2854,80 @@ namespace KmsReportClient.Forms
             this.DgvT5Newborn.Size = new System.Drawing.Size(1211, 502);
             this.DgvT5Newborn.TabIndex = 36;
             this.DgvT5Newborn.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvT5Newborn_CellEndEdit);
+            // 
+            // PageT7OldPolis
+            // 
+            this.PageT7OldPolis.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.PageT7OldPolis.Controls.Add(this.TxtbT7OldPolis);
+            this.PageT7OldPolis.Controls.Add(this.CmbT7OldPolis);
+            this.PageT7OldPolis.Controls.Add(this.DgvT7OldPolis);
+            this.PageT7OldPolis.Location = new System.Drawing.Point(4, 36);
+            this.PageT7OldPolis.Name = "PageT7OldPolis";
+            this.PageT7OldPolis.Padding = new System.Windows.Forms.Padding(2);
+            this.PageT7OldPolis.Size = new System.Drawing.Size(712, 330);
+            this.PageT7OldPolis.TabIndex = 15;
+            this.PageT7OldPolis.Text = "Старые полисы";
+            // 
+            // TxtbT7OldPolis
+            // 
+            this.TxtbT7OldPolis.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtbT7OldPolis.Location = new System.Drawing.Point(117, 7);
+            this.TxtbT7OldPolis.Multiline = true;
+            this.TxtbT7OldPolis.Name = "TxtbT7OldPolis";
+            this.TxtbT7OldPolis.ReadOnly = true;
+            this.TxtbT7OldPolis.Size = new System.Drawing.Size(1101, 39);
+            this.TxtbT7OldPolis.TabIndex = 38;
+            // 
+            // CmbT7OldPolis
+            // 
+            this.CmbT7OldPolis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbT7OldPolis.FormattingEnabled = true;
+            this.CmbT7OldPolis.Location = new System.Drawing.Point(9, 5);
+            this.CmbT7OldPolis.Name = "CmbT7OldPolis";
+            this.CmbT7OldPolis.Size = new System.Drawing.Size(100, 21);
+            this.CmbT7OldPolis.TabIndex = 37;
+            this.CmbT7OldPolis.SelectedIndexChanged += new System.EventHandler(this.CmbPageT7OldPolis_SelectedIndexChanged);
+            // 
+            // DgvT7OldPolis
+            // 
+            this.DgvT7OldPolis.AllowUserToAddRows = false;
+            this.DgvT7OldPolis.AllowUserToDeleteRows = false;
+            this.DgvT7OldPolis.AllowUserToResizeColumns = false;
+            this.DgvT7OldPolis.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DgvT7OldPolis.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            dataGridViewCellStyle111.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle111.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle111.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle111.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle111.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle111.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle111.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvT7OldPolis.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle111;
+            this.DgvT7OldPolis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle112.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle112.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle112.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle112.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle112.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle112.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle112.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvT7OldPolis.DefaultCellStyle = dataGridViewCellStyle112;
+            this.DgvT7OldPolis.Location = new System.Drawing.Point(12, 62);
+            this.DgvT7OldPolis.Name = "DgvT7OldPolis";
+            dataGridViewCellStyle113.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle113.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle113.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle113.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle113.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle113.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle113.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvT7OldPolis.RowHeadersDefaultCellStyle = dataGridViewCellStyle113;
+            this.DgvT7OldPolis.Size = new System.Drawing.Size(1211, 502);
+            this.DgvT7OldPolis.TabIndex = 36;
+            //this.DgvT7OldPolis.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvT7OldPolis_CellEndEdit);
             // 
             // PageReqVCR
             // 
@@ -4995,6 +5088,9 @@ namespace KmsReportClient.Forms
             this.PageT6Students.ResumeLayout(false);
             this.PageT6Students.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvT6Students)).EndInit();
+            this.PageT7OldPolis.ResumeLayout(false);
+            this.PageT7OldPolis.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvT7OldPolis)).EndInit();
             this.PageReqVCR.ResumeLayout(false);
             this.PageReqVCR.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReqVCR)).EndInit();
@@ -5189,6 +5285,10 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.DataGridView DgvT6Students;
         private System.Windows.Forms.TextBox TxtbT6Students;
         private System.Windows.Forms.ComboBox CmbT6Students;
+        private System.Windows.Forms.TabPage PageT7OldPolis;
+        private System.Windows.Forms.DataGridView DgvT7OldPolis;
+        private System.Windows.Forms.TextBox TxtbT7OldPolis;
+        private System.Windows.Forms.ComboBox CmbT7OldPolis;
         private System.Windows.Forms.TabPage PageReqVCR;
         private System.Windows.Forms.DataGridView DgvReqVCR;
         private System.Windows.Forms.TextBox TxtbReqVCR;
@@ -5359,6 +5459,7 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.ToolStripMenuItem цПНП2квартальныйToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem планРезультативностиЭкспертнойДеятельностиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem планЧисленностиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem количествоПолисовСтарогоОбразцаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПЭДФинансыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem свод1ToolStripMenuItem;
         private System.Windows.Forms.TabPage tpIizl2022;
