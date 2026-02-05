@@ -191,7 +191,12 @@ namespace KmsReportClient.Report.Basic
 
         public override void InitReport()
         {
-
+            // Создаём пустой отчёт, чтобы избежать NullReferenceException
+            Report = new ReportT7OldPolis
+            {
+                ReportDataList = new ReportT7OldPolisDto[0], // или new ReportT7OldPolisDto[ThemesList.Count]
+                IdType = IdReportType
+            };
         }
 
         public override bool IsVisibleBtnDownloadExcel() => false;
