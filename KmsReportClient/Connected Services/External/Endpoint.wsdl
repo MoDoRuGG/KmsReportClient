@@ -2,6 +2,56 @@
 <wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://kms-oms.ru/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://kms-oms.ru/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://kms-oms.ru/">
+      <s:element name="GetReportsWithUnreadComments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filialCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportsWithUnreadCommentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReportsWithUnreadCommentsResult" type="tns:ArrayOfUnreadComment" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUnreadComment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UnreadComment" nillable="true" type="tns:UnreadComment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UnreadComment">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdFlow" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Yymm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdRegion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckPasswordNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPasswordNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckPasswordNewResult" type="tns:KmsReportDictionary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="KmsReportDictionary">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ForeignKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdditionalField" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShortName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="CollectClientContext">
         <s:complexType />
       </s:element>
@@ -24,15 +74,6 @@
       <s:complexType name="ArrayOfKmsReportDictionary">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="unbounded" name="KmsReportDictionary" nillable="true" type="tns:KmsReportDictionary" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="KmsReportDictionary">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ForeignKey" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="AdditionalField" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ShortName" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfHeadCompany">
@@ -5292,6 +5333,30 @@
       <s:element name="WebReportDoffResponse">
         <s:complexType />
       </s:element>
+      <s:element name="GetT7OldPolisConstants">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filialCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetT7OldPolisConstantsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetT7OldPolisConstantsResult" type="tns:ReportT7OldPolisDataDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReportT7OldPolisDataDto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CurrentQuantity" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountOldPolis" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Constant2019Count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AnnualCount" type="s:int" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="WebReportOpedFinance">
         <s:complexType>
           <s:sequence>
@@ -5493,6 +5558,36 @@
         </s:sequence>
       </s:complexType>
       <s:element name="WebReportT6StudentsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="WebReportT7OldPolis">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:ReportT7OldPolis" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReportT7OldPolis">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AbstractReport">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ReportDataList" type="tns:ArrayOfReportT7OldPolisDto" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfReportT7OldPolisDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReportT7OldPolisDto" nillable="true" type="tns:ReportT7OldPolisDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReportT7OldPolisDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Theme" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ReportT7OldPolisDataDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WebReportT7OldPolisResponse">
         <s:complexType />
       </s:element>
       <s:element name="WebReportViolations">
@@ -6221,49 +6316,20 @@
       <s:element name="AddCommentResponse">
         <s:complexType />
       </s:element>
-      <s:element name="GetReportsWithUnreadComments">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="filialCode" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetReportsWithUnreadCommentsResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetReportsWithUnreadCommentsResult" type="tns:ArrayOfUnreadComment" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfUnreadComment">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="UnreadComment" nillable="true" type="tns:UnreadComment" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="UnreadComment">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="IdFlow" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="Yymm" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="IdRegion" type="s:string" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="CheckPasswordNew">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CheckPasswordNewResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CheckPasswordNewResult" type="tns:KmsReportDictionary" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="GetReportsWithUnreadCommentsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReportsWithUnreadComments" />
+  </wsdl:message>
+  <wsdl:message name="GetReportsWithUnreadCommentsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReportsWithUnreadCommentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckPasswordNewSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckPasswordNew" />
+  </wsdl:message>
+  <wsdl:message name="CheckPasswordNewSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckPasswordNewResponse" />
+  </wsdl:message>
   <wsdl:message name="CollectClientContextSoapIn">
     <wsdl:part name="parameters" element="tns:CollectClientContext" />
   </wsdl:message>
@@ -6870,6 +6936,12 @@
   <wsdl:message name="WebReportDoffSoapOut">
     <wsdl:part name="parameters" element="tns:WebReportDoffResponse" />
   </wsdl:message>
+  <wsdl:message name="GetT7OldPolisConstantsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetT7OldPolisConstants" />
+  </wsdl:message>
+  <wsdl:message name="GetT7OldPolisConstantsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetT7OldPolisConstantsResponse" />
+  </wsdl:message>
   <wsdl:message name="WebReportOpedFinanceSoapIn">
     <wsdl:part name="parameters" element="tns:WebReportOpedFinance" />
   </wsdl:message>
@@ -6905,6 +6977,12 @@
   </wsdl:message>
   <wsdl:message name="WebReportT6StudentsSoapOut">
     <wsdl:part name="parameters" element="tns:WebReportT6StudentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebReportT7OldPolisSoapIn">
+    <wsdl:part name="parameters" element="tns:WebReportT7OldPolis" />
+  </wsdl:message>
+  <wsdl:message name="WebReportT7OldPolisSoapOut">
+    <wsdl:part name="parameters" element="tns:WebReportT7OldPolisResponse" />
   </wsdl:message>
   <wsdl:message name="WebReportViolationsSoapIn">
     <wsdl:part name="parameters" element="tns:WebReportViolations" />
@@ -7050,19 +7128,15 @@
   <wsdl:message name="AddCommentSoapOut">
     <wsdl:part name="parameters" element="tns:AddCommentResponse" />
   </wsdl:message>
-  <wsdl:message name="GetReportsWithUnreadCommentsSoapIn">
-    <wsdl:part name="parameters" element="tns:GetReportsWithUnreadComments" />
-  </wsdl:message>
-  <wsdl:message name="GetReportsWithUnreadCommentsSoapOut">
-    <wsdl:part name="parameters" element="tns:GetReportsWithUnreadCommentsResponse" />
-  </wsdl:message>
-  <wsdl:message name="CheckPasswordNewSoapIn">
-    <wsdl:part name="parameters" element="tns:CheckPasswordNew" />
-  </wsdl:message>
-  <wsdl:message name="CheckPasswordNewSoapOut">
-    <wsdl:part name="parameters" element="tns:CheckPasswordNewResponse" />
-  </wsdl:message>
   <wsdl:portType name="EndpointSoap">
+    <wsdl:operation name="GetReportsWithUnreadComments">
+      <wsdl:input message="tns:GetReportsWithUnreadCommentsSoapIn" />
+      <wsdl:output message="tns:GetReportsWithUnreadCommentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPasswordNew">
+      <wsdl:input message="tns:CheckPasswordNewSoapIn" />
+      <wsdl:output message="tns:CheckPasswordNewSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="CollectClientContext">
       <wsdl:input message="tns:CollectClientContextSoapIn" />
       <wsdl:output message="tns:CollectClientContextSoapOut" />
@@ -7467,6 +7541,10 @@
       <wsdl:input message="tns:WebReportDoffSoapIn" />
       <wsdl:output message="tns:WebReportDoffSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetT7OldPolisConstants">
+      <wsdl:input message="tns:GetT7OldPolisConstantsSoapIn" />
+      <wsdl:output message="tns:GetT7OldPolisConstantsSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="WebReportOpedFinance">
       <wsdl:input message="tns:WebReportOpedFinanceSoapIn" />
       <wsdl:output message="tns:WebReportOpedFinanceSoapOut" />
@@ -7490,6 +7568,10 @@
     <wsdl:operation name="WebReportT6Students">
       <wsdl:input message="tns:WebReportT6StudentsSoapIn" />
       <wsdl:output message="tns:WebReportT6StudentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebReportT7OldPolis">
+      <wsdl:input message="tns:WebReportT7OldPolisSoapIn" />
+      <wsdl:output message="tns:WebReportT7OldPolisSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="WebReportViolations">
       <wsdl:input message="tns:WebReportViolationsSoapIn" />
@@ -7587,17 +7669,27 @@
       <wsdl:input message="tns:AddCommentSoapIn" />
       <wsdl:output message="tns:AddCommentSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetReportsWithUnreadComments">
-      <wsdl:input message="tns:GetReportsWithUnreadCommentsSoapIn" />
-      <wsdl:output message="tns:GetReportsWithUnreadCommentsSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="CheckPasswordNew">
-      <wsdl:input message="tns:CheckPasswordNewSoapIn" />
-      <wsdl:output message="tns:CheckPasswordNewSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="EndpointSoap" type="tns:EndpointSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetReportsWithUnreadComments">
+      <soap:operation soapAction="http://kms-oms.ru/GetReportsWithUnreadComments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPasswordNew">
+      <soap:operation soapAction="http://kms-oms.ru/CheckPasswordNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CollectClientContext">
       <soap:operation soapAction="http://kms-oms.ru/CollectClientContext" style="document" />
       <wsdl:input>
@@ -8507,6 +8599,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetT7OldPolisConstants">
+      <soap:operation soapAction="http://kms-oms.ru/GetT7OldPolisConstants" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="WebReportOpedFinance">
       <soap:operation soapAction="http://kms-oms.ru/WebReportOpedFinance" style="document" />
       <wsdl:input>
@@ -8554,6 +8655,15 @@
     </wsdl:operation>
     <wsdl:operation name="WebReportT6Students">
       <soap:operation soapAction="http://kms-oms.ru/WebReportT6Students" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebReportT7OldPolis">
+      <soap:operation soapAction="http://kms-oms.ru/WebReportT7OldPolis" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -8777,27 +8887,27 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetReportsWithUnreadComments">
-      <soap:operation soapAction="http://kms-oms.ru/GetReportsWithUnreadComments" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CheckPasswordNew">
-      <soap:operation soapAction="http://kms-oms.ru/CheckPasswordNew" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="EndpointSoap12" type="tns:EndpointSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetReportsWithUnreadComments">
+      <soap12:operation soapAction="http://kms-oms.ru/GetReportsWithUnreadComments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPasswordNew">
+      <soap12:operation soapAction="http://kms-oms.ru/CheckPasswordNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CollectClientContext">
       <soap12:operation soapAction="http://kms-oms.ru/CollectClientContext" style="document" />
       <wsdl:input>
@@ -9707,6 +9817,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetT7OldPolisConstants">
+      <soap12:operation soapAction="http://kms-oms.ru/GetT7OldPolisConstants" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="WebReportOpedFinance">
       <soap12:operation soapAction="http://kms-oms.ru/WebReportOpedFinance" style="document" />
       <wsdl:input>
@@ -9754,6 +9873,15 @@
     </wsdl:operation>
     <wsdl:operation name="WebReportT6Students">
       <soap12:operation soapAction="http://kms-oms.ru/WebReportT6Students" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebReportT7OldPolis">
+      <soap12:operation soapAction="http://kms-oms.ru/WebReportT7OldPolis" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -9970,24 +10098,6 @@
     </wsdl:operation>
     <wsdl:operation name="AddComment">
       <soap12:operation soapAction="http://kms-oms.ru/AddComment" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetReportsWithUnreadComments">
-      <soap12:operation soapAction="http://kms-oms.ru/GetReportsWithUnreadComments" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CheckPasswordNew">
-      <soap12:operation soapAction="http://kms-oms.ru/CheckPasswordNew" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

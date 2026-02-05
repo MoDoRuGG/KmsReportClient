@@ -421,10 +421,10 @@ namespace KmsReportClient.Forms
                     ReportGlobalConst.ReportT6Students,
                     new ReportT6StudentsProcessor(_client, _reportsDictionary, DgvT6Students, CmbT6Students, TxtbT6Students, PageT6Students)
                 },
-                //{
-                //    ReportGlobalConst.ReportT7OldPolis,
-                //    new ReportT7OldPolisProcessor(_client, _reportsDictionary, DgvT7OldPolis, CmbT7OldPolis, TxtbT7OldPolis, PageT7OldPolis)
-                //},
+                {
+                    ReportGlobalConst.ReportT7OldPolis,
+                    new ReportT7OldPolisProcessor(_client, _reportsDictionary, DgvT7OldPolis, CmbT7OldPolis, TxtbT7OldPolis, PageT7OldPolis)
+                },
             };
 
         private void CreateNewFilter()
@@ -2542,6 +2542,11 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
             ChangeIndexComboBox(DgvT6Students, CmbT6Students, TxtbT6Students);
         }
 
+        private void CmbPageT7OldPolis_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ChangeIndexComboBox(DgvT7OldPolis, CmbT7OldPolis, TxtbT7OldPolis);
+        }
+
         private void CmbPageReqVCR_SelectedIndexChanged(object sender, EventArgs e)
         {
             ChangeIndexComboBox(DgvReqVCR, CmbReqVCR, TxtbReqVCR);
@@ -2718,6 +2723,11 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
             (_processor as ReportReqVCRProcessor).SetFormula();
         }
 
+        private void DgvT7OldPolis_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            (_processor as ReportT7OldPolisProcessor).SetFormula();
+        }
+
         private void DgvReqVCR_KeyPress(object sender, DataGridViewCellEventArgs e)
         {
             (_processor as ReportReqVCRProcessor).SetFormula();
@@ -2729,10 +2739,15 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
             (_processor as ReportT5NewbornProcessor).SetFormula();
         }
 
-        //private void DgvT7OldPolis_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    (_processor as ReportT7OldPolisProcessor).SetFormula();
-        //}
+        private void DgvT7OldPolis_CellBeginEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as ReportT7OldPolisProcessor).SetFormula();
+        }
+
+        private void DgvT7OldPolis_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            (_processor as ReportT7OldPolisProcessor).SetFormula();
+        }
 
         private void сводToolStripMenuItemVCR_Click(object sender, EventArgs e)
         {
@@ -2837,10 +2852,6 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         private void cbIizl2022_SelectedIndexChanged(object sender, EventArgs e)
         {
             ChangeIndexComboBox(dgvIizl2022, cbIizl2022, tbIizl2022);
-        }
-        private void CmbPageT7OldPolis_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ChangeIndexComboBox(DgvT7OldPolis, CmbT7OldPolis, TxtbT7OldPolis);
         }
 
         private void dgvIizl2022_CellEndEdit(object sender, DataGridViewCellEventArgs e)

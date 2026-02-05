@@ -2927,7 +2927,8 @@ namespace KmsReportClient.Forms
             this.DgvT7OldPolis.RowHeadersDefaultCellStyle = dataGridViewCellStyle113;
             this.DgvT7OldPolis.Size = new System.Drawing.Size(1211, 502);
             this.DgvT7OldPolis.TabIndex = 36;
-            //this.DgvT7OldPolis.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvT7OldPolis_CellEndEdit);
+            this.DgvT7OldPolis.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.DgvT7OldPolis_CellBeginEdit);
+            this.DgvT7OldPolis.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvT7OldPolis_CellEndEdit);
             // 
             // PageReqVCR
             // 
