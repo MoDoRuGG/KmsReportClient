@@ -132,18 +132,18 @@ namespace KmsReportClient.Forms.Dictionary
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.button2_Click);
             // 
-            // QuantityPlanDictionaryForm
+            // T7OldPolisDictionaryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1246, 581);
+            this.ClientSize = new System.Drawing.Size(500, 581);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dgvDictionary);
             this.Controls.Add(this.panel1);
-            this.Name = "QuantityPlanDictionaryForm";
+            this.Name = "T7OldPolisDictionaryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Справочник: План по численности на год";
+            this.Text = "Справочник: Количество полисов старого образца на 1 января отчетного года";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDictionary)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudYear)).EndInit();
             this.panel1.ResumeLayout(false);
