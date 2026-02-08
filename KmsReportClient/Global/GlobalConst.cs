@@ -37,6 +37,7 @@ namespace KmsReportClient.Global
         public static Color ColorIsDone = Color.YellowGreen;
         public static Color ColorRefuse = Color.Tomato;
         public static Color ColorSubmit = Color.PaleGreen;
+        public static Color ColorPartiallyApproved = Color.PaleGreen;
         public static Color ColorScan = Color.FromArgb(255, 255, 128);
         public static Color ColorBd = Color.LightYellow;
 

@@ -10,6 +10,7 @@ using System.Xml.Serialization;
 using KmsReportClient.External;
 using KmsReportClient.Global;
 using KmsReportClient.Model.XML;
+using KmsReportClient.Properties;
 using KmsReportClient.Support;
 using NLog;
 
@@ -36,6 +37,34 @@ namespace KmsReportClient.Report.Basic
         protected bool HasReport;
         protected Color ColorReport;
         protected TR Report;
+
+        private static readonly HashSet<string> MultiApprovalTypes =
+            new HashSet<string> { "ZpzT1", "ZpzT2", "ZpzT3" };
+
+        private string ExpandDirection(string dir)
+        {
+            return dir switch
+            {
+                "БУХ" => "Бухгалтерия",
+                "ВАУД" => "Внутренний аудитор",
+                "ДКР" => "Дирекция комплексного развития",
+                "ДЗПЗ" => "Дирекция по ЗПЗ и ЭКМП",
+                "ДИТ" => "Дирекция по информационным технологиям",
+                "ДИБ" => "Дирекция по обеспечению информационной безопасности",
+                "ДОМС" => "Дирекция по организации ОМС",
+                "ДПОБ" => "Дирекция по правовому обеспечению бизнеса",
+                "ДПРП" => "Дирекция по работе с персоналом",
+                "ДТОМС" => "Дирекция технологий ОМС",
+                "ДФАК" => "Дирекция финансового аудита и контроля",
+                "ПРИЕМ" => "Приемная",
+                "РУК" => "Руководство",
+                "СДО" => "Служба документационного обеспечения",
+                "СРЕГ" => "Служба по работе с регистром",
+                "СЮП" => "Служба юридической практики",
+                "ФИН" => "Финансовая дирекция",
+                _ => dir ?? "Неизвестно"
+            };
+        }
 
         protected AbstractReportProcessor(
             EndpointSoap client,
@@ -566,6 +595,7 @@ namespace KmsReportClient.Report.Basic
             }
 
             info += "Наличие скана: " + (!string.IsNullOrEmpty(Report.Scan) ? "Да; " : "Нет; ") + Environment.NewLine;
+
             if (Report.UserToCo != 0 && Report.DateToCo != null)
             {
                 info += $"Дата направления в ЦО: {Report.DateToCo.Value.ToShortDateString()} ";
@@ -583,10 +613,45 @@ namespace KmsReportClient.Report.Basic
                 info += $"Пользователь: {GetUser(Report.RefuseUser)}; " + Environment.NewLine;
             }
 
-            if (Report.UserSubmit != 0 && Report.DateIsDone != null)
+            // === НОВАЯ ЛОГИКА: запрашиваем данные согласования с сервера ===
+            if (MultiApprovalTypes.Contains(Report.IdType) && (Report.Status == ReportStatus.Submit || Report.Status == ReportStatus.PartiallyApproved))
             {
-                info += $"Дата утверждения: {Report.DateIsDone.Value.ToShortDateString()} ";
-                info += $"Пользователь: {GetUser(Report.UserSubmit)}; " + Environment.NewLine;
+                try
+                {
+                    var request = new GetApprovalInfoRequest
+                    {
+                        Body = new GetApprovalInfoRequestBody
+                        {
+                            idReportFlow = Report.IdFlow
+                        }
+                    };
+                    var response = Client.GetApprovalInfo(request);
+                    var approvals = response?.Body?.GetApprovalInfoResult;
+
+                    if (approvals != null && approvals.Length > 0)
+                    {
+                        info += "\nСогласование:\n" + Environment.NewLine;
+                        foreach (var a in approvals)
+                        {
+                            if (a.IsApproved)
+                                info += $"✅ {a.DirectionName}: {a.EmployeeName} ({a.ApprovedDate.Value.ToShortDateString()})\n" + Environment.NewLine;
+                            else
+                                info += $"⏳ {a.DirectionName}: ожидает\n" + Environment.NewLine;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    log.Warn(ex, "Не удалось загрузить информацию о согласовании");
+                }
+            }
+            else
+            {
+                if (Report.UserSubmit != 0 && Report.DateIsDone != null)
+                {
+                    info += $"Дата утверждения: {Report.DateIsDone.Value.ToShortDateString()} ";
+                    info += $"Пользователь: {GetUser(Report.UserSubmit)}; " + Environment.NewLine;
+                }
             }
 
             return info;

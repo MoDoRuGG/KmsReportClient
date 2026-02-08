@@ -39,6 +39,9 @@ namespace KmsReportClient.Forms
         private readonly List<KmsReportDictionary> _reportsDictionary;
 
 
+        private static readonly HashSet<string> MultiApprovalTypes =
+            new HashSet<string> { "ZpzT1", "ZpzT2", "ZpzT3" };
+
 
         public readonly string[] TreeTypes = { "Отчёты", "Запросы" };
 
@@ -1232,33 +1235,32 @@ namespace KmsReportClient.Forms
 
         private void RefuseReport()
         {
-            if (string.IsNullOrEmpty(_currentReport))
+            if (!SuccessStatuses.Contains(_processor.Report.Status)
+                && _processor.Report.Status != ReportStatus.PartiallyApproved)
             {
+                MessageBox.Show("Вернуть можно только отчёты в статусах: 'Направлен в ЦО', 'Частично утверждён', 'Утверждён'.");
                 return;
             }
 
             try
             {
-                if (!SuccessStatuses.Contains(_processor.Report.Status))
+                if (MultiApprovalTypes.Contains(_processor.Report.IdType))
                 {
-                    throw new Exception("Вернуть на доработку можно только отчеты в статусах: " +
-                        "'Направлен в ЦО' или 'Утвержден'");
+                    _client.RefuseReportMultiApproval(_processor.Report.IdFlow, CurrentUser.IdUser);
                 }
-
-                _processor.ChangeStatus(ReportStatus.Refuse);
+                else
+                {
+                    _processor.ChangeStatus(ReportStatus.Refuse);
+                }
 
                 ReportTree.SelectedNode.BackColor = ColorRefuse;
                 _processor.Report.Status = ReportStatus.Refuse;
                 BtnSubmit.Enabled = true;
-
-                MessageBox.Show("Отчет отправлен на доработку!", "Отправка на доработку", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                SetReportInterface();
             }
             catch (Exception ex)
             {
-                Log.Error(ex, "Error sending report to refuse");
-                MessageBox.Show("Ошибка отправки отчета на доработку!" + ex.Message, "Ошибка", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                MessageBox.Show("Ошибка: " + ex.Message);
             }
         }
 
@@ -1336,25 +1338,32 @@ namespace KmsReportClient.Forms
 
         private void DoneReport()
         {
-            if (_processor.Report.Status != ReportStatus.Submit)
+            if (_processor.Report.Status != ReportStatus.Submit
+                && _processor.Report.Status != ReportStatus.PartiallyApproved)
             {
-                MessageBox.Show("Можно утверждать только отчеты в статусе 'Отчет направлен в ЦО'", "Ошибка!",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Можно утверждать только отчёты в статусе 'Направлен в ЦО' или 'Частично утверждён'.");
                 return;
             }
 
             try
             {
-                _processor.ChangeStatus(ReportStatus.Done);
-                ReportTree.SelectedNode.BackColor = ColorIsDone;
-                _processor.Report.Status = ReportStatus.Done;
-                BtnSubmit.Enabled = false;
+                if (MultiApprovalTypes.Contains(_processor.Report.IdType))
+                {
+                    _client.ApproveReport(_processor.Report.IdFlow, CurrentUser.IdUser);
+                }
+                else
+                {
+                    _processor.ChangeStatus(ReportStatus.Done);
+                }
 
-                MessageBox.Show("Отчет утвержден!", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ReportTree.SelectedNode.BackColor = ColorIsDone;
+                _processor.Report.Status = ReportStatus.Done; // временно; лучше обновлять после GetReportInfo
+                BtnSubmit.Enabled = false;
+                SetReportInterface(); // ← обновит TxtbInfo.Text
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Ошибка сохранения отчета!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ошибка: " + ex.Message);
             }
         }
 

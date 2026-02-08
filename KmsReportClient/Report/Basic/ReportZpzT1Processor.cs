@@ -279,6 +279,12 @@ namespace KmsReportClient.Report.Basic
         {
             dgvReport.AllowUserToAddRows = false;
             dgvReport.ColumnHeadersVisible = true;
+
+            // ⚠️ КРИТИЧЕСКИ ВАЖНО: включаем перенос текста во ВСЕХ ячейках
+            dgvReport.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            dgvReport.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvReport.RowTemplate.Height = 0; // разрешаем автоматическую высоту
+
             var column = new DataGridViewTextBoxColumn
             {
                 HeaderText = mainHeader,
@@ -291,7 +297,9 @@ namespace KmsReportClient.Report.Basic
                 {
                     BackColor = Color.Azure
                 }
+
             };
+            
             dgvReport.Columns.Add(column);
             column = new DataGridViewTextBoxColumn
             {
@@ -307,6 +315,7 @@ namespace KmsReportClient.Report.Basic
                 }
             };
             dgvReport.Columns.Add(column);
+            
         }
 
         private void FillThemesForms3(DataGridView dgvReport, string form)

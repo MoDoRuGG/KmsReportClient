@@ -3240,6 +3240,7 @@ namespace KmsReportClient.Forms
             this.PageZpz2025.Size = new System.Drawing.Size(712, 330);
             this.PageZpz2025.TabIndex = 5;
             this.PageZpz2025.Text = "tabPage1";
+
             // 
             // DgvReportZpz2025
             // 
@@ -3258,6 +3259,8 @@ namespace KmsReportClient.Forms
             this.DgvReportZpz2025.RowHeadersDefaultCellStyle = dataGridViewCellStyle46;
             this.DgvReportZpz2025.Size = new System.Drawing.Size(699, 272);
             this.DgvReportZpz2025.TabIndex = 8;
+
+
             // 
             // TxtbZpz2025
             // 
@@ -3304,11 +3307,32 @@ namespace KmsReportClient.Forms
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvReportZpzT1.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            dataGridViewCellStyle99.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            dataGridViewCellStyle99.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle99.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle99.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle99.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle99.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle99.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgvReportZpzT1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle99;
             this.DgvReportZpzT1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle100.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle100.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle100.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle100.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle100.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle100.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle100.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DgvReportZpzT1.DefaultCellStyle = dataGridViewCellStyle100;
             this.DgvReportZpzT1.Location = new System.Drawing.Point(7, 51);
             this.DgvReportZpzT1.Name = "DgvReportZpzT1";
+            dataGridViewCellStyle101.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle101.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle101.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle101.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle101.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle101.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle101.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgvReportZpzT1.RowHeadersDefaultCellStyle = dataGridViewCellStyle101;
             this.DgvReportZpzT1.Size = new System.Drawing.Size(699, 272);
             this.DgvReportZpzT1.TabIndex = 8;
@@ -3350,7 +3374,7 @@ namespace KmsReportClient.Forms
             this.PageZpzT2.Text = "tabPage1";
             // 
             // DgvReportZpzT2
-            // 
+            //
             this.DgvReportZpzT2.AllowUserToAddRows = false;
             this.DgvReportZpzT2.AllowUserToDeleteRows = false;
             this.DgvReportZpzT2.AllowUserToResizeColumns = false;
@@ -3358,12 +3382,33 @@ namespace KmsReportClient.Forms
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvReportZpzT2.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            dataGridViewCellStyle102.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            dataGridViewCellStyle102.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle102.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle102.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle102.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle102.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle102.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgvReportZpzT2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle102;
             this.DgvReportZpzT2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvReportZpzT2.DefaultCellStyle = dataGridViewCellStyle102;
+            dataGridViewCellStyle103.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle103.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle103.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle103.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle103.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle103.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle103.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvReportZpzT2.DefaultCellStyle = dataGridViewCellStyle103;
             this.DgvReportZpzT2.Location = new System.Drawing.Point(7, 51);
             this.DgvReportZpzT2.Name = "DgvReportZpzT2";
-            this.DgvReportZpzT2.RowHeadersDefaultCellStyle = dataGridViewCellStyle103;
+            dataGridViewCellStyle104.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle104.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle104.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle104.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle104.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle104.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle104.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvReportZpzT2.RowHeadersDefaultCellStyle = dataGridViewCellStyle104;
             this.DgvReportZpzT2.Size = new System.Drawing.Size(699, 272);
             this.DgvReportZpzT2.TabIndex = 8;
             // 
@@ -3412,12 +3457,33 @@ namespace KmsReportClient.Forms
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvReportZpzT3.BackgroundColor = System.Drawing.Color.AntiqueWhite;
-            this.DgvReportZpzT3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle104;
+            dataGridViewCellStyle105.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            dataGridViewCellStyle105.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle105.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle105.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle105.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle105.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle105.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvReportZpzT3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle105;
             this.DgvReportZpzT3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvReportZpzT3.DefaultCellStyle = dataGridViewCellStyle105;
+            dataGridViewCellStyle106.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle106.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle106.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle106.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle106.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle106.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle106.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvReportZpzT3.DefaultCellStyle = dataGridViewCellStyle106;
             this.DgvReportZpzT3.Location = new System.Drawing.Point(7, 51);
             this.DgvReportZpzT3.Name = "DgvReportZpzT3";
-            this.DgvReportZpzT3.RowHeadersDefaultCellStyle = dataGridViewCellStyle106;
+            dataGridViewCellStyle107.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle107.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle107.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle107.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle107.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle107.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle107.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvReportZpzT3.RowHeadersDefaultCellStyle = dataGridViewCellStyle107;
             this.DgvReportZpzT3.Size = new System.Drawing.Size(699, 272);
             this.DgvReportZpzT3.TabIndex = 8;
             // 
@@ -3466,12 +3532,33 @@ namespace KmsReportClient.Forms
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvReportZpzT4.BackgroundColor = System.Drawing.Color.AntiqueWhite;
-            this.DgvReportZpzT4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle107;
+            dataGridViewCellStyle108.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            dataGridViewCellStyle108.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle108.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle108.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle108.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle108.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle108.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvReportZpzT4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle108;
             this.DgvReportZpzT4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvReportZpzT4.DefaultCellStyle = dataGridViewCellStyle108;
+            dataGridViewCellStyle109.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle109.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle109.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle109.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle109.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle109.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle109.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvReportZpzT4.DefaultCellStyle = dataGridViewCellStyle109;
             this.DgvReportZpzT4.Location = new System.Drawing.Point(7, 51);
             this.DgvReportZpzT4.Name = "DgvReportZpzT4";
-            this.DgvReportZpzT4.RowHeadersDefaultCellStyle = dataGridViewCellStyle109;
+            dataGridViewCellStyle110.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle110.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle110.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle110.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle110.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle110.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle110.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvReportZpzT4.RowHeadersDefaultCellStyle = dataGridViewCellStyle110;
             this.DgvReportZpzT4.Size = new System.Drawing.Size(699, 272);
             this.DgvReportZpzT4.TabIndex = 8;
             // 
@@ -4482,7 +4569,7 @@ namespace KmsReportClient.Forms
             // PageReportInfo
             // 
             this.PageReportInfo.Controls.Add(this.TxtbInfo);
-            this.PageReportInfo.Location = new System.Drawing.Point(4, 22);
+            this.PageReportInfo.Location = new System.Drawing.Point(4, 22); 
             this.PageReportInfo.Name = "PageReportInfo";
             this.PageReportInfo.Padding = new System.Windows.Forms.Padding(3);
             this.PageReportInfo.Size = new System.Drawing.Size(1018, 80);

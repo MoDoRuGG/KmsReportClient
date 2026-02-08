@@ -2,6 +2,59 @@
 <wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://kms-oms.ru/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://kms-oms.ru/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://kms-oms.ru/">
+      <s:element name="GetComments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idReport" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="filialCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCommentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCommentsResult" type="tns:ArrayOfReportComment" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfReportComment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReportComment" nillable="true" type="tns:ReportComment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReportComment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateIns" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IsReportHasComments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idReport" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsReportHasCommentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsReportHasCommentsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddComment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idReport" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idEmp" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCommentResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="GetReportsWithUnreadComments">
         <s:complexType>
           <s:sequence>
@@ -247,6 +300,7 @@
           <s:enumeration value="Submit" />
           <s:enumeration value="Refuse" />
           <s:enumeration value="Done" />
+          <s:enumeration value="PartiallyApproved" />
         </s:restriction>
       </s:simpleType>
       <s:simpleType name="DataSource">
@@ -2147,6 +2201,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="RegionId" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Direction" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Comment" type="tns:ArrayOfComment" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Dynamic" type="tns:ArrayOfReport_Dynamic" />
           <s:element minOccurs="0" maxOccurs="1" name="Responsible_Employee" type="tns:ArrayOfResponsible_Employee" />
@@ -2154,6 +2209,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Scans_Base1" type="tns:ArrayOfScans_Base" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:ArrayOfReport_Flow" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Dynamic_Flow" type="tns:ArrayOfReport_Dynamic_Flow" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Approval_Log" type="tns:ArrayOfReport_Approval_Log" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfComment">
@@ -2205,6 +2261,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Comment" type="tns:ArrayOfComment" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:ArrayOfReport_Data" />
           <s:element minOccurs="0" maxOccurs="1" name="Scans_Base" type="tns:ArrayOfScans_Base" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Approval_Log" type="tns:ArrayOfReport_Approval_Log" />
           <s:element minOccurs="0" maxOccurs="1" name="Employee" type="tns:Employee" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Type" type="tns:Report_Type" />
           <s:element minOccurs="0" maxOccurs="1" name="Region" type="tns:Region" />
@@ -2910,6 +2967,24 @@
           <s:element minOccurs="1" maxOccurs="1" name="Id_flow" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Employee" type="tns:Employee" />
           <s:element minOccurs="0" maxOccurs="1" name="Employee1" type="tns:Employee" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:Report_Flow" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReport_Approval_Log">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Report_Approval_Log" nillable="true" type="tns:Report_Approval_Log" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Report_Approval_Log">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_Report_Flow" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Approver_Direction" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Employee_Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Action" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Created_At" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Employee" type="tns:Employee" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:Report_Flow" />
         </s:sequence>
       </s:complexType>
@@ -6168,6 +6243,28 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="ApproveReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idReportFlow" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idUser" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ApproveReportResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RefuseReportMultiApproval">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idReportFlow" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idUser" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RefuseReportMultiApprovalResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="GetReport">
         <s:complexType>
           <s:sequence>
@@ -6184,6 +6281,34 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetApprovalInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idReportFlow" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApprovalInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApprovalInfoResult" type="tns:ArrayOfApprovalInfoDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfApprovalInfoDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ApprovalInfoDto" nillable="true" type="tns:ApprovalInfoDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ApprovalInfoDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Direction" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DirectionName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmployeeName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ApprovedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsApproved" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="SaveReport">
         <s:complexType>
           <s:sequence>
@@ -6263,61 +6388,26 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetComments">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="idReport" type="s:int" />
-            <s:element minOccurs="0" maxOccurs="1" name="filialCode" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetCommentsResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetCommentsResult" type="tns:ArrayOfReportComment" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfReportComment">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="ReportComment" nillable="true" type="tns:ReportComment" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ReportComment">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="DateIns" type="s:dateTime" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="IsReportHasComments">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="idReport" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="IsReportHasCommentsResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="IsReportHasCommentsResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="AddComment">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="idReport" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="idEmp" type="s:int" />
-            <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="AddCommentResponse">
-        <s:complexType />
-      </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="GetCommentsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetComments" />
+  </wsdl:message>
+  <wsdl:message name="GetCommentsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCommentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsReportHasCommentsSoapIn">
+    <wsdl:part name="parameters" element="tns:IsReportHasComments" />
+  </wsdl:message>
+  <wsdl:message name="IsReportHasCommentsSoapOut">
+    <wsdl:part name="parameters" element="tns:IsReportHasCommentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCommentSoapIn">
+    <wsdl:part name="parameters" element="tns:AddComment" />
+  </wsdl:message>
+  <wsdl:message name="AddCommentSoapOut">
+    <wsdl:part name="parameters" element="tns:AddCommentResponse" />
+  </wsdl:message>
   <wsdl:message name="GetReportsWithUnreadCommentsSoapIn">
     <wsdl:part name="parameters" element="tns:GetReportsWithUnreadComments" />
   </wsdl:message>
@@ -7080,11 +7170,29 @@
   <wsdl:message name="CollectSummaryReportSoapOut">
     <wsdl:part name="parameters" element="tns:CollectSummaryReportResponse" />
   </wsdl:message>
+  <wsdl:message name="ApproveReportSoapIn">
+    <wsdl:part name="parameters" element="tns:ApproveReport" />
+  </wsdl:message>
+  <wsdl:message name="ApproveReportSoapOut">
+    <wsdl:part name="parameters" element="tns:ApproveReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="RefuseReportMultiApprovalSoapIn">
+    <wsdl:part name="parameters" element="tns:RefuseReportMultiApproval" />
+  </wsdl:message>
+  <wsdl:message name="RefuseReportMultiApprovalSoapOut">
+    <wsdl:part name="parameters" element="tns:RefuseReportMultiApprovalResponse" />
+  </wsdl:message>
   <wsdl:message name="GetReportSoapIn">
     <wsdl:part name="parameters" element="tns:GetReport" />
   </wsdl:message>
   <wsdl:message name="GetReportSoapOut">
     <wsdl:part name="parameters" element="tns:GetReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApprovalInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApprovalInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetApprovalInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApprovalInfoResponse" />
   </wsdl:message>
   <wsdl:message name="SaveReportSoapIn">
     <wsdl:part name="parameters" element="tns:SaveReport" />
@@ -7110,25 +7218,19 @@
   <wsdl:message name="SendNotificationSoapOut">
     <wsdl:part name="parameters" element="tns:SendNotificationResponse" />
   </wsdl:message>
-  <wsdl:message name="GetCommentsSoapIn">
-    <wsdl:part name="parameters" element="tns:GetComments" />
-  </wsdl:message>
-  <wsdl:message name="GetCommentsSoapOut">
-    <wsdl:part name="parameters" element="tns:GetCommentsResponse" />
-  </wsdl:message>
-  <wsdl:message name="IsReportHasCommentsSoapIn">
-    <wsdl:part name="parameters" element="tns:IsReportHasComments" />
-  </wsdl:message>
-  <wsdl:message name="IsReportHasCommentsSoapOut">
-    <wsdl:part name="parameters" element="tns:IsReportHasCommentsResponse" />
-  </wsdl:message>
-  <wsdl:message name="AddCommentSoapIn">
-    <wsdl:part name="parameters" element="tns:AddComment" />
-  </wsdl:message>
-  <wsdl:message name="AddCommentSoapOut">
-    <wsdl:part name="parameters" element="tns:AddCommentResponse" />
-  </wsdl:message>
   <wsdl:portType name="EndpointSoap">
+    <wsdl:operation name="GetComments">
+      <wsdl:input message="tns:GetCommentsSoapIn" />
+      <wsdl:output message="tns:GetCommentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsReportHasComments">
+      <wsdl:input message="tns:IsReportHasCommentsSoapIn" />
+      <wsdl:output message="tns:IsReportHasCommentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddComment">
+      <wsdl:input message="tns:AddCommentSoapIn" />
+      <wsdl:output message="tns:AddCommentSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetReportsWithUnreadComments">
       <wsdl:input message="tns:GetReportsWithUnreadCommentsSoapIn" />
       <wsdl:output message="tns:GetReportsWithUnreadCommentsSoapOut" />
@@ -7637,9 +7739,21 @@
       <wsdl:input message="tns:CollectSummaryReportSoapIn" />
       <wsdl:output message="tns:CollectSummaryReportSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="ApproveReport">
+      <wsdl:input message="tns:ApproveReportSoapIn" />
+      <wsdl:output message="tns:ApproveReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RefuseReportMultiApproval">
+      <wsdl:input message="tns:RefuseReportMultiApprovalSoapIn" />
+      <wsdl:output message="tns:RefuseReportMultiApprovalSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetReport">
       <wsdl:input message="tns:GetReportSoapIn" />
       <wsdl:output message="tns:GetReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApprovalInfo">
+      <wsdl:input message="tns:GetApprovalInfoSoapIn" />
+      <wsdl:output message="tns:GetApprovalInfoSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="SaveReport">
       <wsdl:input message="tns:SaveReportSoapIn" />
@@ -7657,21 +7771,36 @@
       <wsdl:input message="tns:SendNotificationSoapIn" />
       <wsdl:output message="tns:SendNotificationSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetComments">
-      <wsdl:input message="tns:GetCommentsSoapIn" />
-      <wsdl:output message="tns:GetCommentsSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="IsReportHasComments">
-      <wsdl:input message="tns:IsReportHasCommentsSoapIn" />
-      <wsdl:output message="tns:IsReportHasCommentsSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="AddComment">
-      <wsdl:input message="tns:AddCommentSoapIn" />
-      <wsdl:output message="tns:AddCommentSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="EndpointSoap" type="tns:EndpointSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetComments">
+      <soap:operation soapAction="http://kms-oms.ru/GetComments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsReportHasComments">
+      <soap:operation soapAction="http://kms-oms.ru/IsReportHasComments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddComment">
+      <soap:operation soapAction="http://kms-oms.ru/AddComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetReportsWithUnreadComments">
       <soap:operation soapAction="http://kms-oms.ru/GetReportsWithUnreadComments" style="document" />
       <wsdl:input>
@@ -8815,8 +8944,35 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ApproveReport">
+      <soap:operation soapAction="http://kms-oms.ru/ApproveReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefuseReportMultiApproval">
+      <soap:operation soapAction="http://kms-oms.ru/RefuseReportMultiApproval" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetReport">
       <soap:operation soapAction="http://kms-oms.ru/GetReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApprovalInfo">
+      <soap:operation soapAction="http://kms-oms.ru/GetApprovalInfo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -8860,36 +9016,36 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetComments">
-      <soap:operation soapAction="http://kms-oms.ru/GetComments" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IsReportHasComments">
-      <soap:operation soapAction="http://kms-oms.ru/IsReportHasComments" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="AddComment">
-      <soap:operation soapAction="http://kms-oms.ru/AddComment" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="EndpointSoap12" type="tns:EndpointSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetComments">
+      <soap12:operation soapAction="http://kms-oms.ru/GetComments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsReportHasComments">
+      <soap12:operation soapAction="http://kms-oms.ru/IsReportHasComments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddComment">
+      <soap12:operation soapAction="http://kms-oms.ru/AddComment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetReportsWithUnreadComments">
       <soap12:operation soapAction="http://kms-oms.ru/GetReportsWithUnreadComments" style="document" />
       <wsdl:input>
@@ -10033,8 +10189,35 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ApproveReport">
+      <soap12:operation soapAction="http://kms-oms.ru/ApproveReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefuseReportMultiApproval">
+      <soap12:operation soapAction="http://kms-oms.ru/RefuseReportMultiApproval" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetReport">
       <soap12:operation soapAction="http://kms-oms.ru/GetReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApprovalInfo">
+      <soap12:operation soapAction="http://kms-oms.ru/GetApprovalInfo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -10071,33 +10254,6 @@
     </wsdl:operation>
     <wsdl:operation name="SendNotification">
       <soap12:operation soapAction="http://kms-oms.ru/SendNotification" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetComments">
-      <soap12:operation soapAction="http://kms-oms.ru/GetComments" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IsReportHasComments">
-      <soap12:operation soapAction="http://kms-oms.ru/IsReportHasComments" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="AddComment">
-      <soap12:operation soapAction="http://kms-oms.ru/AddComment" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

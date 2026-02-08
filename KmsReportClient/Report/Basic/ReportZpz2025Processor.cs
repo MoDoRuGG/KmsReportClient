@@ -335,6 +335,7 @@ namespace KmsReportClient.Report.Basic
                     BackColor = Color.Azure
                 }
             };
+            
             dgvReport.Columns.Add(column);
             column = new DataGridViewTextBoxColumn
             {
@@ -350,6 +351,7 @@ namespace KmsReportClient.Report.Basic
                 }
             };
             dgvReport.Columns.Add(column);
+            
         }
 
         private void FillThemesForms2(DataGridView dgvReport, string form)

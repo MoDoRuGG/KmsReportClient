@@ -7,5 +7,6 @@
         public string WorkPhone { get; set; }
         public string Position { get; set; }
         public string Filial { get; set; }
+        public string Direction { get; set; }
     }
 }
