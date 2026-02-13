@@ -873,6 +873,9 @@
     <None Include="Connected Services\External\KmsReportClient.External.GetZpz10YearDataResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.GetZpz10_2025YearDataBatchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.GetZpz10_2025YearDataResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -1066,6 +1069,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.ZpzForWebSite2025.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.ZpzYearDataRow.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Resources\w256h2561372777059DatabaseActive.png" />

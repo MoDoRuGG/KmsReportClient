@@ -15,6 +15,153 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="NotificationRequest", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class NotificationRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.ArrayOfString FilialsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ReportTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string YymmField;
+        
+        private bool IsRefuseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ThemeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TextField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CurrentEmailField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public KmsReportClient.External.ArrayOfString Filials {
+            get {
+                return this.FilialsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilialsField, value) != true)) {
+                    this.FilialsField = value;
+                    this.RaisePropertyChanged("Filials");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string ReportType {
+            get {
+                return this.ReportTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReportTypeField, value) != true)) {
+                    this.ReportTypeField = value;
+                    this.RaisePropertyChanged("ReportType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Yymm {
+            get {
+                return this.YymmField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.YymmField, value) != true)) {
+                    this.YymmField = value;
+                    this.RaisePropertyChanged("Yymm");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public bool IsRefuse {
+            get {
+                return this.IsRefuseField;
+            }
+            set {
+                if ((this.IsRefuseField.Equals(value) != true)) {
+                    this.IsRefuseField = value;
+                    this.RaisePropertyChanged("IsRefuse");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Theme {
+            get {
+                return this.ThemeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ThemeField, value) != true)) {
+                    this.ThemeField = value;
+                    this.RaisePropertyChanged("Theme");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string Text {
+            get {
+                return this.TextField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TextField, value) != true)) {
+                    this.TextField = value;
+                    this.RaisePropertyChanged("Text");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string CurrentEmail {
+            get {
+                return this.CurrentEmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CurrentEmailField, value) != true)) {
+                    this.CurrentEmailField = value;
+                    this.RaisePropertyChanged("CurrentEmail");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfString", Namespace="http://kms-oms.ru/", ItemName="string")]
+    [System.SerializableAttribute()]
+    public class ArrayOfString : System.Collections.Generic.List<string> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ReportComment", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ReportComment : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -474,13 +621,6 @@ namespace KmsReportClient.External {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfString", Namespace="http://kms-oms.ru/", ItemName="string")]
-    [System.SerializableAttribute()]
-    public class ArrayOfString : System.Collections.Generic.List<string> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -41171,6 +41311,67 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ZpzYearDataRow", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ZpzYearDataRow : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RowNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.ReportZpz2025DataDto DataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string RowNum {
+            get {
+                return this.RowNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RowNumField, value) != true)) {
+                    this.RowNumField = value;
+                    this.RaisePropertyChanged("RowNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public KmsReportClient.External.ReportZpz2025DataDto Data {
+            get {
+                return this.DataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataField, value) != true)) {
+                    this.DataField = value;
+                    this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="FSSMonitoringPgDataDto", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class FSSMonitoringPgDataDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -44633,149 +44834,16 @@ namespace KmsReportClient.External {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="NotificationRequest", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class NotificationRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private KmsReportClient.External.ArrayOfString FilialsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ReportTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string YymmField;
-        
-        private bool IsRefuseField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ThemeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TextField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CurrentEmailField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public KmsReportClient.External.ArrayOfString Filials {
-            get {
-                return this.FilialsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilialsField, value) != true)) {
-                    this.FilialsField = value;
-                    this.RaisePropertyChanged("Filials");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string ReportType {
-            get {
-                return this.ReportTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReportTypeField, value) != true)) {
-                    this.ReportTypeField = value;
-                    this.RaisePropertyChanged("ReportType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Yymm {
-            get {
-                return this.YymmField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.YymmField, value) != true)) {
-                    this.YymmField = value;
-                    this.RaisePropertyChanged("Yymm");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public bool IsRefuse {
-            get {
-                return this.IsRefuseField;
-            }
-            set {
-                if ((this.IsRefuseField.Equals(value) != true)) {
-                    this.IsRefuseField = value;
-                    this.RaisePropertyChanged("IsRefuse");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string Theme {
-            get {
-                return this.ThemeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ThemeField, value) != true)) {
-                    this.ThemeField = value;
-                    this.RaisePropertyChanged("Theme");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Text {
-            get {
-                return this.TextField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TextField, value) != true)) {
-                    this.TextField = value;
-                    this.RaisePropertyChanged("Text");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string CurrentEmail {
-            get {
-                return this.CurrentEmailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentEmailField, value) != true)) {
-                    this.CurrentEmailField = value;
-                    this.RaisePropertyChanged("CurrentEmail");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://kms-oms.ru/", ConfigurationName="External.EndpointSoap")]
     public interface EndpointSoap {
+        
+        // CODEGEN: Контракт генерации сообщений с именем request из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SendNotification", ReplyAction="*")]
+        KmsReportClient.External.SendNotificationResponse SendNotification(KmsReportClient.External.SendNotificationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SendNotification", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.SendNotificationResponse> SendNotificationAsync(KmsReportClient.External.SendNotificationRequest request);
         
         // CODEGEN: Контракт генерации сообщений с именем filialCode из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
         [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetComments", ReplyAction="*")]
@@ -45323,6 +45391,13 @@ namespace KmsReportClient.External {
         System.Threading.Tasks.Task<KmsReportClient.External.GetZpz10_2025YearDataResponse> GetZpz10_2025YearDataAsync(KmsReportClient.External.GetZpz10_2025YearDataRequest request);
         
         // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetZpz10_2025YearDataBatch", ReplyAction="*")]
+        KmsReportClient.External.GetZpz10_2025YearDataBatchResponse GetZpz10_2025YearDataBatch(KmsReportClient.External.GetZpz10_2025YearDataBatchRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetZpz10_2025YearDataBatch", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.GetZpz10_2025YearDataBatchResponse> GetZpz10_2025YearDataBatchAsync(KmsReportClient.External.GetZpz10_2025YearDataBatchRequest request);
+        
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
         [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetDoffYearData", ReplyAction="*")]
         KmsReportClient.External.GetDoffYearDataResponse GetDoffYearData(KmsReportClient.External.GetDoffYearDataRequest request);
         
@@ -45726,13 +45801,74 @@ namespace KmsReportClient.External {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveReportDataSourceExcel", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.SaveReportDataSourceExcelResponse> SaveReportDataSourceExcelAsync(KmsReportClient.External.SaveReportDataSourceExcelRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SendNotificationRequest {
         
-        // CODEGEN: Контракт генерации сообщений с именем request из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SendNotification", ReplyAction="*")]
-        KmsReportClient.External.SendNotificationResponse SendNotification(KmsReportClient.External.SendNotificationRequest request);
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SendNotification", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.SendNotificationRequestBody Body;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SendNotification", ReplyAction="*")]
-        System.Threading.Tasks.Task<KmsReportClient.External.SendNotificationResponse> SendNotificationAsync(KmsReportClient.External.SendNotificationRequest request);
+        public SendNotificationRequest() {
+        }
+        
+        public SendNotificationRequest(KmsReportClient.External.SendNotificationRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class SendNotificationRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.NotificationRequest request;
+        
+        public SendNotificationRequestBody() {
+        }
+        
+        public SendNotificationRequestBody(KmsReportClient.External.NotificationRequest request) {
+            this.request = request;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SendNotificationResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SendNotificationResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.SendNotificationResponseBody Body;
+        
+        public SendNotificationResponse() {
+        }
+        
+        public SendNotificationResponse(KmsReportClient.External.SendNotificationResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class SendNotificationResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string SendNotificationResult;
+        
+        public SendNotificationResponseBody() {
+        }
+        
+        public SendNotificationResponseBody(string SendNotificationResult) {
+            this.SendNotificationResult = SendNotificationResult;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -51071,6 +51207,86 @@ namespace KmsReportClient.External {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetZpz10_2025YearDataBatchRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetZpz10_2025YearDataBatch", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.GetZpz10_2025YearDataBatchRequestBody Body;
+        
+        public GetZpz10_2025YearDataBatchRequest() {
+        }
+        
+        public GetZpz10_2025YearDataBatchRequest(KmsReportClient.External.GetZpz10_2025YearDataBatchRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class GetZpz10_2025YearDataBatchRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string yymm;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string theme;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string fillial;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public KmsReportClient.External.ArrayOfString rowNumbers;
+        
+        public GetZpz10_2025YearDataBatchRequestBody() {
+        }
+        
+        public GetZpz10_2025YearDataBatchRequestBody(string yymm, string theme, string fillial, KmsReportClient.External.ArrayOfString rowNumbers) {
+            this.yymm = yymm;
+            this.theme = theme;
+            this.fillial = fillial;
+            this.rowNumbers = rowNumbers;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetZpz10_2025YearDataBatchResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetZpz10_2025YearDataBatchResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.GetZpz10_2025YearDataBatchResponseBody Body;
+        
+        public GetZpz10_2025YearDataBatchResponse() {
+        }
+        
+        public GetZpz10_2025YearDataBatchResponse(KmsReportClient.External.GetZpz10_2025YearDataBatchResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class GetZpz10_2025YearDataBatchResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.ZpzYearDataRow[] GetZpz10_2025YearDataBatchResult;
+        
+        public GetZpz10_2025YearDataBatchResponseBody() {
+        }
+        
+        public GetZpz10_2025YearDataBatchResponseBody(KmsReportClient.External.ZpzYearDataRow[] GetZpz10_2025YearDataBatchResult) {
+            this.GetZpz10_2025YearDataBatchResult = GetZpz10_2025YearDataBatchResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetDoffYearDataRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDoffYearData", Namespace="http://kms-oms.ru/", Order=0)]
@@ -54553,74 +54769,6 @@ namespace KmsReportClient.External {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SendNotificationRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SendNotification", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.SendNotificationRequestBody Body;
-        
-        public SendNotificationRequest() {
-        }
-        
-        public SendNotificationRequest(KmsReportClient.External.SendNotificationRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class SendNotificationRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public KmsReportClient.External.NotificationRequest request;
-        
-        public SendNotificationRequestBody() {
-        }
-        
-        public SendNotificationRequestBody(KmsReportClient.External.NotificationRequest request) {
-            this.request = request;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SendNotificationResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SendNotificationResponse", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.SendNotificationResponseBody Body;
-        
-        public SendNotificationResponse() {
-        }
-        
-        public SendNotificationResponse(KmsReportClient.External.SendNotificationResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class SendNotificationResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string SendNotificationResult;
-        
-        public SendNotificationResponseBody() {
-        }
-        
-        public SendNotificationResponseBody(string SendNotificationResult) {
-            this.SendNotificationResult = SendNotificationResult;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface EndpointSoapChannel : KmsReportClient.External.EndpointSoap, System.ServiceModel.IClientChannel {
     }
@@ -54646,6 +54794,31 @@ namespace KmsReportClient.External {
         
         public EndpointSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.SendNotificationResponse KmsReportClient.External.EndpointSoap.SendNotification(KmsReportClient.External.SendNotificationRequest request) {
+            return base.Channel.SendNotification(request);
+        }
+        
+        public string SendNotification(KmsReportClient.External.NotificationRequest request) {
+            KmsReportClient.External.SendNotificationRequest inValue = new KmsReportClient.External.SendNotificationRequest();
+            inValue.Body = new KmsReportClient.External.SendNotificationRequestBody();
+            inValue.Body.request = request;
+            KmsReportClient.External.SendNotificationResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).SendNotification(inValue);
+            return retVal.Body.SendNotificationResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.SendNotificationResponse> KmsReportClient.External.EndpointSoap.SendNotificationAsync(KmsReportClient.External.SendNotificationRequest request) {
+            return base.Channel.SendNotificationAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.SendNotificationResponse> SendNotificationAsync(KmsReportClient.External.NotificationRequest request) {
+            KmsReportClient.External.SendNotificationRequest inValue = new KmsReportClient.External.SendNotificationRequest();
+            inValue.Body = new KmsReportClient.External.SendNotificationRequestBody();
+            inValue.Body.request = request;
+            return ((KmsReportClient.External.EndpointSoap)(this)).SendNotificationAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -56657,6 +56830,37 @@ namespace KmsReportClient.External {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.GetZpz10_2025YearDataBatchResponse KmsReportClient.External.EndpointSoap.GetZpz10_2025YearDataBatch(KmsReportClient.External.GetZpz10_2025YearDataBatchRequest request) {
+            return base.Channel.GetZpz10_2025YearDataBatch(request);
+        }
+        
+        public KmsReportClient.External.ZpzYearDataRow[] GetZpz10_2025YearDataBatch(string yymm, string theme, string fillial, KmsReportClient.External.ArrayOfString rowNumbers) {
+            KmsReportClient.External.GetZpz10_2025YearDataBatchRequest inValue = new KmsReportClient.External.GetZpz10_2025YearDataBatchRequest();
+            inValue.Body = new KmsReportClient.External.GetZpz10_2025YearDataBatchRequestBody();
+            inValue.Body.yymm = yymm;
+            inValue.Body.theme = theme;
+            inValue.Body.fillial = fillial;
+            inValue.Body.rowNumbers = rowNumbers;
+            KmsReportClient.External.GetZpz10_2025YearDataBatchResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).GetZpz10_2025YearDataBatch(inValue);
+            return retVal.Body.GetZpz10_2025YearDataBatchResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.GetZpz10_2025YearDataBatchResponse> KmsReportClient.External.EndpointSoap.GetZpz10_2025YearDataBatchAsync(KmsReportClient.External.GetZpz10_2025YearDataBatchRequest request) {
+            return base.Channel.GetZpz10_2025YearDataBatchAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.GetZpz10_2025YearDataBatchResponse> GetZpz10_2025YearDataBatchAsync(string yymm, string theme, string fillial, KmsReportClient.External.ArrayOfString rowNumbers) {
+            KmsReportClient.External.GetZpz10_2025YearDataBatchRequest inValue = new KmsReportClient.External.GetZpz10_2025YearDataBatchRequest();
+            inValue.Body = new KmsReportClient.External.GetZpz10_2025YearDataBatchRequestBody();
+            inValue.Body.yymm = yymm;
+            inValue.Body.theme = theme;
+            inValue.Body.fillial = fillial;
+            inValue.Body.rowNumbers = rowNumbers;
+            return ((KmsReportClient.External.EndpointSoap)(this)).GetZpz10_2025YearDataBatchAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         KmsReportClient.External.GetDoffYearDataResponse KmsReportClient.External.EndpointSoap.GetDoffYearData(KmsReportClient.External.GetDoffYearDataRequest request) {
             return base.Channel.GetDoffYearData(request);
         }
@@ -58066,31 +58270,6 @@ namespace KmsReportClient.External {
             inValue.Body.filialCode = filialCode;
             inValue.Body.reportType = reportType;
             return ((KmsReportClient.External.EndpointSoap)(this)).SaveReportDataSourceExcelAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        KmsReportClient.External.SendNotificationResponse KmsReportClient.External.EndpointSoap.SendNotification(KmsReportClient.External.SendNotificationRequest request) {
-            return base.Channel.SendNotification(request);
-        }
-        
-        public string SendNotification(KmsReportClient.External.NotificationRequest request) {
-            KmsReportClient.External.SendNotificationRequest inValue = new KmsReportClient.External.SendNotificationRequest();
-            inValue.Body = new KmsReportClient.External.SendNotificationRequestBody();
-            inValue.Body.request = request;
-            KmsReportClient.External.SendNotificationResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).SendNotification(inValue);
-            return retVal.Body.SendNotificationResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<KmsReportClient.External.SendNotificationResponse> KmsReportClient.External.EndpointSoap.SendNotificationAsync(KmsReportClient.External.SendNotificationRequest request) {
-            return base.Channel.SendNotificationAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<KmsReportClient.External.SendNotificationResponse> SendNotificationAsync(KmsReportClient.External.NotificationRequest request) {
-            KmsReportClient.External.SendNotificationRequest inValue = new KmsReportClient.External.SendNotificationRequest();
-            inValue.Body = new KmsReportClient.External.SendNotificationRequestBody();
-            inValue.Body.request = request;
-            return ((KmsReportClient.External.EndpointSoap)(this)).SendNotificationAsync(inValue);
         }
     }
 }

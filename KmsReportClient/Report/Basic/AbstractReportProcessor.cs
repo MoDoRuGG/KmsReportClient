@@ -275,7 +275,7 @@ namespace KmsReportClient.Report.Basic
                                 }
                                 else
                                 {
-                                    if ((Report.IdType == "Zpz" || Report.IdType == "Zpz2025") && (GetCurrentTheme() == "Таблица 1" || GetCurrentTheme() == "Таблица 2" || GetCurrentTheme() == "Таблица 3" || GetCurrentTheme() == "Таблица 4"))
+                                    if ((Report.IdType == "Zpz" || Report.IdType == "Zpz2025" || Report.IdType == "ZpzT1" || Report.IdType == "ZpzT2" || Report.IdType == "ZpzT3" || Report.IdType == "ZpzT4") && (GetCurrentTheme() == "Таблица 1" || GetCurrentTheme() == "Таблица 2" || GetCurrentTheme() == "Таблица 3" || GetCurrentTheme() == "Таблица 4"))
                                     {
                                         if (Dgv.Rows[row].Cells[cell].ColumnIndex != 4) { valueCel += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value); }
                                     }
@@ -634,7 +634,7 @@ namespace KmsReportClient.Report.Basic
                         foreach (var a in approvals)
                         {
                             if (a.IsApproved)
-                                info += $"✅ {a.DirectionName}: {a.EmployeeName} ({a.ApprovedDate.Value.ToShortDateString()})\n" + Environment.NewLine;
+                                info += $"✅ {a.DirectionName}: {a.EmployeeName}  ({a.ApprovedDate.Value.ToShortDateString()})\n" + Environment.NewLine;
                             else
                                 info += $"⏳ {a.DirectionName}: ожидает\n" + Environment.NewLine;
                         }
@@ -714,7 +714,7 @@ namespace KmsReportClient.Report.Basic
             {
                 Client.ChangeStatus(Report.IdFlow, CurrentUser.IdUser, status);
 
-                Dgv.ReadOnly = status == ReportStatus.Done || status == ReportStatus.Submit;
+                Dgv.ReadOnly = status == ReportStatus.Done || status == ReportStatus.Submit || status == ReportStatus.PartiallyApproved;
             }
             catch (Exception ex)
             {

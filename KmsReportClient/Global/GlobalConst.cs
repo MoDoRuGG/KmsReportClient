@@ -29,9 +29,6 @@ namespace KmsReportClient.Global
              {"12","декабрь" },
         };
 
-
-
-
         public const string TempFolder = @"Template\";
 
         public static Color ColorIsDone = Color.YellowGreen;
@@ -40,6 +37,7 @@ namespace KmsReportClient.Global
         public static Color ColorPartiallyApproved = Color.PaleGreen;
         public static Color ColorScan = Color.FromArgb(255, 255, 128);
         public static Color ColorBd = Color.LightYellow;
+        public static Color ColorTransparent = Color.Transparent;
 
         public static List<KmsReportDictionary> EmailList = new List<KmsReportDictionary> {
 
@@ -56,7 +54,8 @@ namespace KmsReportClient.Global
             new KmsReportDictionary {Key = "Scan", Value = "Направлен скан"},
             new KmsReportDictionary {Key = "Submit", Value = "Направлен в ЦО"},
             new KmsReportDictionary {Key = "Refuse", Value = "На доработке"},
-            new KmsReportDictionary {Key = "Done", Value = "Принят в ЦО"}
+            new KmsReportDictionary {Key = "Done", Value = "Принят в ЦО"},
+            new KmsReportDictionary {Key = "PartiallyApproved", Value = "Частично утвержден"},
            
         };
 
@@ -67,6 +66,6 @@ namespace KmsReportClient.Global
 
         };
 
-        public static ReportStatus[] SuccessStatuses = { ReportStatus.Done, ReportStatus.Submit };
+        public static ReportStatus[] SuccessStatuses = { ReportStatus.Done, ReportStatus.Submit, ReportStatus.PartiallyApproved };
     }
 }

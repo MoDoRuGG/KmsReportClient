@@ -68,9 +68,21 @@ namespace KmsReportClient.Excel.Creator.Base
                     var rowData = data?.SingleOrDefault(x => x.Code == rowNum);
                     if (rowData != null)
                     {
-                        ObjWorkSheet.Cells[i, columnIndex] = rowData.CountSmoAnother;
-                        if (form == "Таблица 10")
-                        ObjWorkSheet.Cells[i, columnIndex+1] = rowData.CountSmo;
+                        if (rowData.Code.StartsWith("8"))
+                        {
+                            ObjWorkSheet.Cells[i, columnIndex + 1] = rowData.CountSmo;
+                        }
+                        else if (rowData.Code == "7.5")
+                        { 
+                            ObjWorkSheet.Cells[i, columnIndex] = rowData.CountSmoAnother;
+                            ObjWorkSheet.Cells[i, columnIndex + 1] = "X";
+                        }
+                        else
+                        {
+                            ObjWorkSheet.Cells[i, columnIndex] = rowData.CountSmoAnother;
+                            if (form == "Таблица 10")
+                                ObjWorkSheet.Cells[i, columnIndex + 1] = rowData.CountSmo;
+                        }
                     }
                 }
             }

@@ -674,7 +674,7 @@ namespace KmsReportClient.Forms
 
             _processor.HasReport = true;
             _processor.Report.Yymm = YymmUtils.ConvertPeriodToYymm(_yymm);
-            _processor.ColorReport = ReportTree.SelectedNode.BackColor;
+            //_processor.ColorReport = ReportTree.SelectedNode.BackColor;
             _processor.CreateReportForm(_processor.OldTheme);
             _processor.FillDataGridView(_processor.OldTheme);
             _processor.SetReadonlyForDgv(SuccessStatuses.Contains(_processor.Report.Status));
@@ -744,7 +744,7 @@ namespace KmsReportClient.Forms
                 BtnSubmit.Visible = true;
             }
 
-            if (_processor.Report.IdType == "PG" || _processor.Report.IdType == "Zpz" || _processor.Report.IdType == "Zpz2025")
+            if (_processor.Report.IdType == "PG" || _processor.Report.IdType == "Zpz" || _processor.Report.IdType == "Zpz2025" || _processor.Report.IdType == "ZpzT1" || _processor.Report.IdType == "ZpzT2" || _processor.Report.IdType == "ZpzT3" || _processor.Report.IdType == "ZpzT4")
             {
                 DgwReportPg.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
                 DgwReportZpz.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
@@ -754,6 +754,7 @@ namespace KmsReportClient.Forms
                 DgvReportZpzT3.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
                 DgvReportZpzT4.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
             }
+
             TxtbInfo.Text = _processor.GetReportInfo();
             BtnCommentReport.Visible = true;
             BtnCommentReport.DisplayStyle = CheckComment()
@@ -943,7 +944,6 @@ namespace KmsReportClient.Forms
             DgvReportZpz10_2025.ReadOnly = false;
             _processor.FillDataGridView(theme);
             _processor.SaveToDb();
-
         }
 
         private void UploadToExcel()
@@ -1349,17 +1349,29 @@ namespace KmsReportClient.Forms
             {
                 if (MultiApprovalTypes.Contains(_processor.Report.IdType))
                 {
+                    // 1. Вызываем утверждение на сервере
                     _client.ApproveReport(_processor.Report.IdFlow, CurrentUser.IdUser);
+
+                    // 2. ⚠️ КРИТИЧЕСКИ ВАЖНО: перезагружаем отчёт с сервера!
+                    var yymm = YymmUtils.ConvertPeriodToYymm(_yymm);
+                    var updatedReport = _processor.CollectReportFromWs(yymm);
+                    if (updatedReport != null)
+                    {
+                        _processor.Report = updatedReport; // ← обновляем локальный объект
+                    }
                 }
                 else
                 {
                     _processor.ChangeStatus(ReportStatus.Done);
                 }
 
-                ReportTree.SelectedNode.BackColor = ColorIsDone;
-                _processor.Report.Status = ReportStatus.Done; // временно; лучше обновлять после GetReportInfo
-                BtnSubmit.Enabled = false;
-                SetReportInterface(); // ← обновит TxtbInfo.Text
+                // 3. Обновляем UI на основе актуального статуса
+                var actualStatus = _processor.Report.Status;
+                ReportTree.SelectedNode.BackColor = (Color)GetColorForNode(ReportStatus.Done);
+                BtnSubmit.Enabled = actualStatus != ReportStatus.Done;
+                SetReportInterface(); // обновит TxtbInfo.Text
+
+                MessageBox.Show("Отчёт утверждён!", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -1408,13 +1420,14 @@ namespace KmsReportClient.Forms
             }
             else
             {
-                // Для обычных отчётов: получаем цвет из процессора текущей вкладки
+                // ИСПРАВЛЕНИЕ: не используем processor.ColorReport!
                 if (_tabControlMap.TryGetValue(tp, out string reportId) &&
-                    _processorMap.TryGetValue(reportId, out IReportProcessor processor))
+                    _processorMap.TryGetValue(reportId, out IReportProcessor processor) &&
+                    processor.HasReport)
                 {
-                    color = processor.ColorReport;
+                    // Берём цвет по актуальному статусу, а не по кэшированному ColorReport
+                    color = (Color)GetColorForNode(processor.Report.Status);
                 }
-                // Иначе остаётся цвет по умолчанию (SystemColors.Control)
             }
 
             var sb = new SolidBrush(TbControl.SelectedIndex == e.Index ? color : SystemColors.Control);
@@ -1538,12 +1551,14 @@ namespace KmsReportClient.Forms
                     return GlobalConst.ColorRefuse;
                 case ReportStatus.Submit:
                     return GlobalConst.ColorSubmit;
+                case ReportStatus.PartiallyApproved:
+                    return GlobalConst.ColorPartiallyApproved;
                 case ReportStatus.Scan:
                     return GlobalConst.ColorScan;
                 case ReportStatus.Saved:
                     return GlobalConst.ColorBd;
                 default:
-                    return null;
+                    return GlobalConst.ColorTransparent;
             }
         }
 

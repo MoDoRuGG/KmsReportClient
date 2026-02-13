@@ -74,15 +74,6 @@ namespace KmsReportClient.Service
 
                 if (versionRemote > currentVersion)
                 {
-                    foreach (var file in updateXml.RemoteFiles.Where(f => f.IsNeedDownload))
-                    {
-                        if (file.Name == XmlFormTemplate.TextMail.GetDescription() && File.Exists(TemplatesFolder + file.Name))
-                        {
-                            continue;
-                        }
-                        DownloadExcelTemplate(file.Name);
-                    }
-
                     var message = $"Обновление до версии {versionRemote}";
                     Log.Info(message);
                     MessageBox.Show(@$"Приложение будет автоматически обновлено до версии {versionRemoteT} и перезапущено!", @"Внимание",

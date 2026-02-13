@@ -292,6 +292,8 @@ namespace KmsReportClient.Model
                     return GlobalConst.ColorRefuse;
                 case ReportStatus.Submit:
                     return GlobalConst.ColorSubmit;
+                case ReportStatus.PartiallyApproved:
+                    return GlobalConst.ColorPartiallyApproved;
                 case ReportStatus.Scan:
                     return GlobalConst.ColorScan;
                 case ReportStatus.Saved:
