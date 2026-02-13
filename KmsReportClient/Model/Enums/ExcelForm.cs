@@ -53,6 +53,9 @@ namespace KmsReportClient.Model.Enums
         [Description(GlobalConst.TempFolder + "opedU.xlsx")]
         OpedU,
 
+        [Description(GlobalConst.TempFolder + "opedUnplanned.xlsx")]
+        OpedUnpl,
+
         [Description(GlobalConst.TempFolder + "cons262t1.xlsx")]
         C262T1,
 

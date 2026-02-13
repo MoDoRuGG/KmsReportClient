@@ -144,6 +144,9 @@ namespace KmsReportClient.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle111 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle112 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle113 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle114 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle115 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle116 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -312,6 +315,10 @@ namespace KmsReportClient.Forms
             this.TxtbOpedU = new System.Windows.Forms.TextBox();
             this.CbxOpedU = new System.Windows.Forms.ComboBox();
             this.DgvReportOpedU = new System.Windows.Forms.DataGridView();
+            this.PageOpedUnplanned = new System.Windows.Forms.TabPage();
+            this.TxtbOpedUnplanned = new System.Windows.Forms.TextBox();
+            this.CbxOpedUnplanned = new System.Windows.Forms.ComboBox();
+            this.DgvReportOpedUnplanned = new System.Windows.Forms.DataGridView();
             this.PageOtclkInfrorm = new System.Windows.Forms.TabPage();
             this.TxtOtclkInfrorm = new System.Windows.Forms.TextBox();
             this.CbxOtclkInfrorm = new System.Windows.Forms.ComboBox();
@@ -501,6 +508,8 @@ namespace KmsReportClient.Forms
             ((System.ComponentModel.ISupportInitialize)(this.DgvReportOped)).BeginInit();
             this.PageOpedU.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReportOpedU)).BeginInit();
+            this.PageOpedUnplanned.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvReportOpedUnplanned)).BeginInit();
             this.PageOtclkInfrorm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvOtclkInfrorm)).BeginInit();
             this.PageOpedQ.SuspendLayout();
@@ -1852,6 +1861,7 @@ namespace KmsReportClient.Forms
             this.TbControl.Controls.Add(this.PageQuery);
             this.TbControl.Controls.Add(this.PageOped);
             this.TbControl.Controls.Add(this.PageOpedU);
+            this.TbControl.Controls.Add(this.PageOpedUnplanned);
             this.TbControl.Controls.Add(this.PageOtclkInfrorm);
             this.TbControl.Controls.Add(this.PageOpedQ);
             this.TbControl.Controls.Add(this.tabVac);
@@ -5079,6 +5089,86 @@ namespace KmsReportClient.Forms
             this.DgvT6Students.RowHeadersDefaultCellStyle = dataGridViewCellStyle98;
             this.DgvT6Students.Size = new System.Drawing.Size(1211, 502);
             this.DgvT6Students.TabIndex = 36;
+
+
+            // 
+            // PageOpedUnplanned
+            // 
+            this.PageOpedUnplanned.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.PageOpedUnplanned.Controls.Add(this.TxtbOpedUnplanned);
+            this.PageOpedUnplanned.Controls.Add(this.CbxOpedUnplanned);
+            this.PageOpedUnplanned.Controls.Add(this.DgvReportOpedUnplanned);
+            this.PageOpedUnplanned.Location = new System.Drawing.Point(4, 36);
+            this.PageOpedUnplanned.Name = "PageOpedUnplanned";
+            this.PageOpedUnplanned.Padding = new System.Windows.Forms.Padding(3);
+            this.PageOpedUnplanned.Size = new System.Drawing.Size(712, 330);
+            this.PageOpedUnplanned.TabIndex = 7;
+            // 
+            // TxtbOpedUnplanned
+            // 
+            this.TxtbOpedUnplanned.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtbOpedUnplanned.Location = new System.Drawing.Point(115, 5);
+            this.TxtbOpedUnplanned.Multiline = true;
+            this.TxtbOpedUnplanned.Name = "TxtbOpedUnplanned";
+            this.TxtbOpedUnplanned.ReadOnly = true;
+            this.TxtbOpedUnplanned.Size = new System.Drawing.Size(593, 39);
+            this.TxtbOpedUnplanned.TabIndex = 14;
+            // 
+            // CbxOpedUnplanned
+            // 
+            this.CbxOpedUnplanned.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbxOpedUnplanned.FormattingEnabled = true;
+            this.CbxOpedUnplanned.Location = new System.Drawing.Point(9, 5);
+            this.CbxOpedUnplanned.Name = "CbxOpedUnplanned";
+            this.CbxOpedUnplanned.Size = new System.Drawing.Size(100, 21);
+            this.CbxOpedUnplanned.TabIndex = 13;
+            this.CbxOpedUnplanned.SelectedIndexChanged += new System.EventHandler(this.CbxOpedUnplanned_SelectedIndexChanged);
+            // 
+            // DgvReportOpedUnplanned
+            // 
+            this.DgvReportOpedUnplanned.AllowUserToAddRows = false;
+            this.DgvReportOpedUnplanned.AllowUserToDeleteRows = false;
+            this.DgvReportOpedUnplanned.AllowUserToResizeColumns = false;
+            this.DgvReportOpedUnplanned.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DgvReportOpedUnplanned.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            dataGridViewCellStyle114.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            dataGridViewCellStyle114.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle114.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle114.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle114.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle114.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle114.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvReportOpedUnplanned.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle114;
+            this.DgvReportOpedUnplanned.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle115.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle115.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle115.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle115.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle115.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle115.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle115.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvReportOpedUnplanned.DefaultCellStyle = dataGridViewCellStyle115;
+            this.DgvReportOpedUnplanned.Location = new System.Drawing.Point(5, 50);
+            this.DgvReportOpedUnplanned.Name = "DgvReportOpedUnplanned";
+            dataGridViewCellStyle116.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle116.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle116.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle116.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle116.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle116.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle116.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvReportOpedUnplanned.RowHeadersDefaultCellStyle = dataGridViewCellStyle116;
+            this.DgvReportOpedUnplanned.Size = new System.Drawing.Size(703, 276);
+            this.DgvReportOpedUnplanned.TabIndex = 12;
+            this.DgvReportOpedUnplanned.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.DgvReportOpedUnplanned_CellBeginEdit);
+            this.DgvReportOpedUnplanned.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DgvReportOpedUnplanned_KeyPress);
+
+
+
+
             // 
             // летальныеЭКМПToolStripMenuItem
             // 
@@ -5158,6 +5248,9 @@ namespace KmsReportClient.Forms
             this.PageOpedU.ResumeLayout(false);
             this.PageOpedU.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReportOpedU)).EndInit();
+            this.PageOpedUnplanned.ResumeLayout(false);
+            this.PageOpedUnplanned.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvReportOpedUnplanned)).EndInit();
             this.PageOtclkInfrorm.ResumeLayout(false);
             this.PageOtclkInfrorm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvOtclkInfrorm)).EndInit();
@@ -5490,6 +5583,10 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.TextBox TxtbOpedU;
         private System.Windows.Forms.ComboBox CbxOpedU;
         private System.Windows.Forms.DataGridView DgvReportOpedU;
+        private System.Windows.Forms.TabPage PageOpedUnplanned;
+        private System.Windows.Forms.TextBox TxtbOpedUnplanned;
+        private System.Windows.Forms.ComboBox CbxOpedUnplanned;
+        private System.Windows.Forms.DataGridView DgvReportOpedUnplanned;
         private System.Windows.Forms.ToolStripMenuItem формаОПЭДToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сводToolStripMenuItem;
         private System.Windows.Forms.TabPage PageOtclkInfrorm;

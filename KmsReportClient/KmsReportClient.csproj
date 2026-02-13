@@ -158,6 +158,7 @@
     <Compile Include="Excel\Creator\Base\ExcelDoffCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelMonthlyVolCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelOpedFinance2025Creator.cs" />
+    <Compile Include="Excel\Creator\Base\ExcelOpedUnplannedCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelQuantityCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelPVPLoadCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelTarAllowCreator.cs" />
@@ -361,6 +362,7 @@
     <Compile Include="Report\Basic\MonitoringVCRProcessor.cs" />
     <Compile Include="Report\Basic\ReportDoffProcessor.cs" />
     <Compile Include="Report\Basic\ReportMonthlyVolProcessor.cs" />
+    <Compile Include="Report\Basic\ReportOpedUnplannedProcessor.cs" />
     <Compile Include="Report\Basic\ReportPVPLoadProcessor.cs" />
     <Compile Include="Report\Basic\ReportT7OldPolisProcessor.cs" />
     <Compile Include="Report\Basic\ReportT6StudentsProcessor.cs" />
@@ -1027,6 +1029,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.WebReportOpedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.WebReportOpedUnplannedResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.WebReportOpedUResponse.datasource">

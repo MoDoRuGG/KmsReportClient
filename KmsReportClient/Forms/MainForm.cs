@@ -138,6 +138,7 @@ namespace KmsReportClient.Forms
                 PageQuery.Parent = null;
                 PageOped.Parent = null;
                 PageOpedU.Parent = null;
+                PageOpedUnplanned.Parent = null;
                 PageOpedQ.Parent = null;
                 PageOtclkInfrorm.Parent = null;
                 tabVac.Parent = null;
@@ -224,6 +225,7 @@ namespace KmsReportClient.Forms
                         {PageQueryZpz2025, ReportGlobalConst.ReportZpzQ2025},
                         {PageOped, ReportGlobalConst.ReportOped},
                         {PageOpedU, ReportGlobalConst.ReportOpedU},
+                        {PageOpedUnplanned, ReportGlobalConst.ReportOpedUnpl},
                         {PageOtclkInfrorm, ReportGlobalConst.ReportOtklik},
                         {PageOpedQ, ReportGlobalConst.ReportOpedQ},
                         {tabVac, ReportGlobalConst.ReportVac},
@@ -331,6 +333,10 @@ namespace KmsReportClient.Forms
                  {
                     ReportGlobalConst.ReportOpedU,
                     new ReportOpedUProcessor(_client, _reportsDictionary, DgvReportOpedU, CbxOpedU, TxtbOpedU, PageOpedU)
+                },
+                 {
+                    ReportGlobalConst.ReportOpedUnpl,
+                    new ReportOpedUnplannedProcessor(_client, _reportsDictionary, DgvReportOpedUnplanned, CbxOpedUnplanned, TxtbOpedUnplanned, PageOpedUnplanned)
                 },
                   {
                     ReportGlobalConst.ReportOpedQ,
@@ -2130,6 +2136,7 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
                     TbControl.TabPages.Remove(PageOtclkInfrorm);
                     TbControl.TabPages.Remove(PageOped);
                     TbControl.TabPages.Remove(PageOpedU);
+                    TbControl.TabPages.Remove(PageOpedUnplanned);
                     TbControl.TabPages.Remove(PageOpedQ);
                     TbControl.TabPages.Remove(PageProposal);
                     TbControl.TabPages.Remove(tpOpedFinance);
@@ -2328,6 +2335,11 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
 
         }
 
+        private void DgvReportOpedUnplanned_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void DgvReportOped_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -2335,6 +2347,12 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         }
 
         private void DgvReportOpedU_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+        }
+
+        private void DgvReportOpedUnplanned_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
 
 
@@ -2350,12 +2368,22 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
             _processor.CallculateCells();
         }
 
+        private void DgvReportOpedUnplanned_KeyDown(object sender, KeyEventArgs e)
+        {
+            _processor.CallculateCells();
+        }
+
         private void DgvReportOped_KeyPress(object sender, KeyPressEventArgs e)
         {
 
         }
 
         private void DgvReportOpedU_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void DgvReportOpedUnplanned_KeyPress(object sender, KeyPressEventArgs e)
         {
 
         }
@@ -2445,6 +2473,11 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         }
 
         private void DgvReportOpedU_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            _processor.CallculateCells();
+        }
+
+        private void DgvReportOpedUnplanned_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
             _processor.CallculateCells();
         }
@@ -2544,6 +2577,11 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         private void CbxOpedU_SelectedIndexChanged(object sender, EventArgs e)
         {
             ChangeIndexComboBox(DgvReportOpedU, CbxOpedU, TxtbOpedU);
+        }
+
+        private void CbxOpedUnplanned_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ChangeIndexComboBox(DgvReportOpedUnplanned, CbxOpedUnplanned, TxtbOpedUnplanned);
         }
 
         private void CbxOtclkInfrorm_SelectedIndexChanged(object sender, EventArgs e)

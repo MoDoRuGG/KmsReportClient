@@ -13,6 +13,7 @@
         public const string ReportQueryZpz = "QueryZpz";
         public const string ReportOped = "foped";
         public const string ReportOpedU = "fopedU";
+        public const string ReportOpedUnpl = "OpedUnpl";
         public const string ReportOtklik = "fcr";
         public const string ReportOpedQ = "opedQ";
         public const string ReportVac = "vac";
