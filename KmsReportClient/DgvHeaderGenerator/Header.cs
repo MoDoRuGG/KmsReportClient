@@ -30,63 +30,58 @@ namespace KmsReportClient.DgvHeaderGenerator
             ColumnId = -1;
         }
 
-        public void Measure(DataGridView objGrid, int iY, int iHeight)
+        public void Measure(DataGridView objGrid, int startY, int levelHeight, int totalHeaderHeight)
         {
             Width = 0;
+            Y = startY;
+
             if (Children.Count > 0)
             {
-                int tempY = string.IsNullOrEmpty(Name.Trim()) ? iY : iY + iHeight;
-                bool columnWidthSet = false;
+                // Если у узла есть имя — резервируем место под него
+                int childrenStartY = string.IsNullOrWhiteSpace(Name) ? startY : startY + levelHeight;
+
+                // Рекурсивно измеряем детей
                 foreach (Header child in Children)
                 {
-                    child.Measure(objGrid, tempY, iHeight);
+                    child.Measure(objGrid, childrenStartY, levelHeight, totalHeaderHeight);
                     Width += child.Width;
-                    if (!columnWidthSet && Width > 0)
+
+                    // Устанавливаем ColumnId в первый ВИДИМЫЙ дочерний столбец
+                    if (ColumnId == -1 && child.ColumnId != -1 && child.Width > 0)
                     {
                         ColumnId = child.ColumnId;
-                        columnWidthSet = true;
                     }
                 }
+
+                Height = string.IsNullOrWhiteSpace(Name) ? (totalHeaderHeight - startY) : levelHeight;
             }
-            else if (-1 != ColumnId && objGrid.Columns[ColumnId].Visible)
+            else if (ColumnId != -1 && ColumnId < objGrid.Columns.Count && objGrid.Columns[ColumnId].Visible)
             {
+                // Листовой узел: ширина = ширина столбца, высота = остаток до низа
                 Width = objGrid.Columns[ColumnId].Width;
-            }
-            Y = iY;
-            if (Children.Count == 0)
-            {
-                Height = objGrid.ColumnHeadersHeight - iY;
+                Height = totalHeaderHeight - startY;
             }
             else
             {
-                Height = iHeight;
+                // Скрытый или невалидный столбец
+                Width = 0;
+                Height = 0;
             }
         }
 
-        //public void AcceptRenderer(StackedHeaderDecorator objRenderer, DataGridView objGrid, int iY)
-        //{
-        //    foreach (Header children in Children)
-        //    {
-        //        children.AcceptRenderer(objRenderer, objGrid, iY);
-        //    }
-        //    if (-1 != ColumnId && !string.IsNullOrEmpty(Name.Trim()))
-        //    {
-        //        objRenderer.Render(this);
-        //    }
-
-        //}
-
-        public void AcceptRenderer(StackedHeaderDecorator objRenderer)
+        public void AcceptRenderer(StackedHeaderDecorator renderer)
         {
-            foreach (Header objChild in Children)
+            // Сначала отрисовываем текущий узел (верхние уровни)
+            if (ColumnId != -1 && !string.IsNullOrWhiteSpace(Name) && Width > 0 && Height > 0)
             {
-                objChild.AcceptRenderer(objRenderer);
-            }
-            if (-1 != ColumnId && !string.IsNullOrEmpty(Name.Trim()))
-            {
-                objRenderer.Render(this);
+                renderer.Render(this);
             }
 
+            // Затем рекурсивно обрабатываем детей (нижние уровни поверх)
+            foreach (Header child in Children)
+            {
+                child.AcceptRenderer(renderer);
+            }
         }
     }
 }

@@ -117,16 +117,71 @@ namespace KmsReportClient.DgvHeaderGenerator
 
         private void RenderColumnHeaders()
         {
-            objGraphics.FillRectangle(new SolidBrush(objDataGrid.ColumnHeadersDefaultCellStyle.BackColor),
-                                      new Rectangle(objDataGrid.DisplayRectangle.X, objDataGrid.DisplayRectangle.Y,
-                                                    objDataGrid.DisplayRectangle.Width, objDataGrid.ColumnHeadersHeight));
-
-            foreach (Header objChild in objHeaderTree.Children)
+            // === ВАЛИДАЦИЯ ===
+            if (objDataGrid == null || objHeaderTree?.Children == null || iNoOfLevels <= 0)
             {
+                Console.WriteLine("RenderColumnHeaders: Invalid state (null grid, headers or levels <= 0)");
+                return;
+            }
 
-                
-                objChild.Measure(objDataGrid, 0, objDataGrid.ColumnHeadersHeight / iNoOfLevels);
-                objChild.AcceptRenderer(this);
+            if (objDataGrid.ColumnHeadersHeight <= 0)
+            {
+                Console.WriteLine("RenderColumnHeaders: ColumnHeadersHeight is zero or negative");
+                return;
+            }
+
+            // === ОЧИСТКА ФОНА ===
+            var headerArea = new Rectangle(
+                objDataGrid.DisplayRectangle.X,
+                objDataGrid.DisplayRectangle.Y,
+                objDataGrid.DisplayRectangle.Width,
+                objDataGrid.ColumnHeadersHeight
+            );
+
+            using (var bgBrush = new SolidBrush(objDataGrid.ColumnHeadersDefaultCellStyle.BackColor))
+            {
+                objGraphics.FillRectangle(bgBrush, headerArea);
+            }
+
+            // === РАСЧЁТ ГЕОМЕТРИИ ===
+            const int TOP_PADDING = 3; // Настроено под визуальную гармонию (было 5)
+            int baseLevelHeight = objDataGrid.ColumnHeadersHeight / iNoOfLevels;
+            int remainder = objDataGrid.ColumnHeadersHeight % iNoOfLevels; // Остаток для последнего уровня
+
+            // === ОБХОД КОРНЕВЫХ УЗЛОВ ===
+            foreach (Header child in objHeaderTree.Children)
+            {
+                try
+                {
+                    // Передаём ОБЩУЮ высоту для корректного расчёта остатка в листовых узлах
+                    child.Measure(
+                        objDataGrid,
+                        TOP_PADDING,
+                        baseLevelHeight,
+                        objDataGrid.ColumnHeadersHeight
+                    );
+
+                    // Префиксный обход гарантирует: верхние уровни рисуются ПЕРВЫМИ (под дочерними)
+                    child.AcceptRenderer(this);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error rendering header '{child?.Name}': {ex.Message}");
+                    // Продолжаем обработку остальных заголовков
+                }
+            }
+
+            // === ДОП: Рисуем разделитель под заголовками (опционально) ===
+            using (var linePen = new Pen(objDataGrid.GridColor, 1))
+            {
+                int bottomY = objDataGrid.DisplayRectangle.Y + objDataGrid.ColumnHeadersHeight - 1;
+                objGraphics.DrawLine(
+                    linePen,
+                    objDataGrid.DisplayRectangle.X,
+                    bottomY,
+                    objDataGrid.DisplayRectangle.Right,
+                    bottomY
+                );
             }
         }
 

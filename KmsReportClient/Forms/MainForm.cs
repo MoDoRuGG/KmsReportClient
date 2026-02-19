@@ -1088,7 +1088,7 @@ namespace KmsReportClient.Forms
         {
             var filialList = new List<string>();
             if (!string.IsNullOrEmpty(TxtbFilials.Text))
-            {
+             {
                 var parsedFilialList = TxtbFilials.Text.Replace(", ", ",").Split(',');
                 filialList.AddRange(parsedFilialList.Select(f => _regions.Single(x => x.Value == f).Key));
             }
