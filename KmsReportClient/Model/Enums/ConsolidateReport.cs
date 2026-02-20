@@ -58,6 +58,8 @@
         FFOMSVolumesByTypes,
         FFOMSLethalEKMP,
         ZpzTable5,
-
+        Zpz10Cons,
+        Zpz10FilialCons,
+        Zpz10FilialGrowCons
     }
 }

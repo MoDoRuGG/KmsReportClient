@@ -182,6 +182,9 @@ namespace KmsReportClient.Forms
             this.контрольЗПЗ2025FullToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.летальные2025ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.результатыМЭК2025ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.таблица10свод2025ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.таблица10поФилиаламToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.таблица10поФилиаламНаростToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.формаОПЭДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сводToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.мониторингВССToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -286,21 +289,21 @@ namespace KmsReportClient.Forms
             this.PageIizl = new System.Windows.Forms.TabPage();
             this.TxtbIizl = new System.Windows.Forms.TextBox();
             this.CmbIizl = new System.Windows.Forms.ComboBox();
-            this.DgwReportIizl = new System.Windows.Forms.DataGridView();
+            this.DgvReportIizl = new System.Windows.Forms.DataGridView();
             this.Page262 = new System.Windows.Forms.TabPage();
-            this.DgwReport262 = new System.Windows.Forms.DataGridView();
+            this.DgvReport262 = new System.Windows.Forms.DataGridView();
             this.Txtb262 = new System.Windows.Forms.TextBox();
             this.Cmb262 = new System.Windows.Forms.ComboBox();
             this.Page294 = new System.Windows.Forms.TabPage();
-            this.DgwReport294 = new System.Windows.Forms.DataGridView();
+            this.DgvReport294 = new System.Windows.Forms.DataGridView();
             this.Txtb294 = new System.Windows.Forms.TextBox();
             this.Cmb294 = new System.Windows.Forms.ComboBox();
             this.PagePgQ = new System.Windows.Forms.TabPage();
-            this.DgwReportPgQ = new System.Windows.Forms.DataGridView();
+            this.DgvReportPgQ = new System.Windows.Forms.DataGridView();
             this.TxtbPgQ = new System.Windows.Forms.TextBox();
             this.CmbPgQ = new System.Windows.Forms.ComboBox();
             this.PagePg = new System.Windows.Forms.TabPage();
-            this.DgwReportPg = new System.Windows.Forms.DataGridView();
+            this.DgvReportPg = new System.Windows.Forms.DataGridView();
             this.TxtbPg = new System.Windows.Forms.TextBox();
             this.CmbPg = new System.Windows.Forms.ComboBox();
             this.PageQuery = new System.Windows.Forms.TabPage();
@@ -352,15 +355,15 @@ namespace KmsReportClient.Forms
             this.CmbReqVCR = new System.Windows.Forms.ComboBox();
             this.DgvReqVCR = new System.Windows.Forms.DataGridView();
             this.PageZpz = new System.Windows.Forms.TabPage();
-            this.DgwReportZpz = new System.Windows.Forms.DataGridView();
+            this.DgvReportZpz = new System.Windows.Forms.DataGridView();
             this.TxtbZpz = new System.Windows.Forms.TextBox();
             this.CmbZpz = new System.Windows.Forms.ComboBox();
             this.PageZpzQ = new System.Windows.Forms.TabPage();
-            this.DgwReportZpzQ = new System.Windows.Forms.DataGridView();
+            this.DgvReportZpzQ = new System.Windows.Forms.DataGridView();
             this.TxtbZpzQ = new System.Windows.Forms.TextBox();
             this.CmbZpzQ = new System.Windows.Forms.ComboBox();
             this.PageZpz10 = new System.Windows.Forms.TabPage();
-            this.DgwReportZpz10 = new System.Windows.Forms.DataGridView();
+            this.DgvReportZpz10 = new System.Windows.Forms.DataGridView();
             this.TxtbZpz10 = new System.Windows.Forms.TextBox();
             this.CmbZpz10 = new System.Windows.Forms.ComboBox();
             this.PageZpz2025 = new System.Windows.Forms.TabPage();
@@ -493,15 +496,15 @@ namespace KmsReportClient.Forms
             ((System.ComponentModel.ISupportInitialize)(this.NumStart)).BeginInit();
             this.TbControl.SuspendLayout();
             this.PageIizl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgwReportIizl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvReportIizl)).BeginInit();
             this.Page262.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgwReport262)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvReport262)).BeginInit();
             this.Page294.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgwReport294)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvReport294)).BeginInit();
             this.PagePgQ.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgwReportPgQ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvReportPgQ)).BeginInit();
             this.PagePg.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgwReportPg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvReportPg)).BeginInit();
             this.PageQuery.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvQuery)).BeginInit();
             this.PageOped.SuspendLayout();
@@ -527,11 +530,11 @@ namespace KmsReportClient.Forms
             this.PageReqVCR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReqVCR)).BeginInit();
             this.PageZpz.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgwReportZpz)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvReportZpz)).BeginInit();
             this.PageZpzQ.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgwReportZpzQ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvReportZpzQ)).BeginInit();
             this.PageZpz10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgwReportZpz10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvReportZpz10)).BeginInit();
             this.PageZpz2025.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReportZpz2025)).BeginInit();
             this.PageZpzT1.SuspendLayout();
@@ -842,7 +845,10 @@ namespace KmsReportClient.Forms
             this.контрольЗПЗ2025ToolStripMenuItem,
             this.контрольЗПЗ2025FullToolStripMenuItem,
             this.летальные2025ToolStripMenuItem,
-            this.результатыМЭК2025ToolStripMenuItem});
+            this.результатыМЭК2025ToolStripMenuItem,
+            this.таблица10свод2025ToolStripMenuItem,
+            this.таблица10поФилиаламToolStripMenuItem,
+            this.таблица10поФилиаламНаростToolStripMenuItem,});
             this.формаЗПЗ2025ToolStripMenuItem.Name = "формаЗПЗ2025ToolStripMenuItem";
             this.формаЗПЗ2025ToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
             this.формаЗПЗ2025ToolStripMenuItem.Text = "Форма ЗПЗ 118н";
@@ -881,6 +887,27 @@ namespace KmsReportClient.Forms
             this.результатыМЭК2025ToolStripMenuItem.Size = new System.Drawing.Size(279, 22);
             this.результатыМЭК2025ToolStripMenuItem.Text = "Результаты МЭК пофилиально";
             this.результатыМЭК2025ToolStripMenuItem.Click += new System.EventHandler(this.ОтчетРезультатыМЭКToolStripMenuItem_Click);
+            //
+            // таблица10свод2025ToolStripMenuItem
+            //
+            this.таблица10свод2025ToolStripMenuItem.Name = "таблица10свод2025ToolStripMenuItem";
+            this.таблица10свод2025ToolStripMenuItem.Size = new System.Drawing.Size(279, 22);
+            this.таблица10свод2025ToolStripMenuItem.Text = "Свод по Таблице 10";
+            this.таблица10свод2025ToolStripMenuItem.Click += new System.EventHandler(this.Таблица10свод2025ToolStripMenuItem_Click);
+            //
+            // таблица10поФилиаламToolStripMenuItem
+            //
+            this.таблица10поФилиаламToolStripMenuItem.Name = "таблица10поФилиаламToolStripMenuItem";
+            this.таблица10поФилиаламToolStripMenuItem.Size = new System.Drawing.Size(279, 22);
+            this.таблица10поФилиаламToolStripMenuItem.Text = "Свод по Таблице 10 за месяц пофилиально";
+            this.таблица10поФилиаламToolStripMenuItem.Click += new System.EventHandler(this.Таблица10поФилиаламToolStripMenuItem_Click);
+            //
+            // таблица10поФилиаламНаростToolStripMenuItem
+            //
+            this.таблица10поФилиаламНаростToolStripMenuItem.Name = "таблица10поФилиаламНаростToolStripMenuItem";
+            this.таблица10поФилиаламНаростToolStripMenuItem.Size = new System.Drawing.Size(300, 22);
+            this.таблица10поФилиаламНаростToolStripMenuItem.Text = "Свод по Таблице 10 по филиалам нарастающим итогом";
+            this.таблица10поФилиаламНаростToolStripMenuItem.Click += new System.EventHandler(this.Таблица10поФилиаламНаростToolStripMenuItem_Click);
             // 
             // формаОПЭДToolStripMenuItem
             // 
@@ -1908,7 +1935,7 @@ namespace KmsReportClient.Forms
             this.PageIizl.BackColor = System.Drawing.Color.LightSteelBlue;
             this.PageIizl.Controls.Add(this.TxtbIizl);
             this.PageIizl.Controls.Add(this.CmbIizl);
-            this.PageIizl.Controls.Add(this.DgwReportIizl);
+            this.PageIizl.Controls.Add(this.DgvReportIizl);
             this.PageIizl.Location = new System.Drawing.Point(4, 36);
             this.PageIizl.Name = "PageIizl";
             this.PageIizl.Padding = new System.Windows.Forms.Padding(3);
@@ -1939,12 +1966,12 @@ namespace KmsReportClient.Forms
             // 
             // DgwReportIizl
             // 
-            this.DgwReportIizl.AllowUserToAddRows = false;
-            this.DgwReportIizl.AllowUserToDeleteRows = false;
-            this.DgwReportIizl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.DgvReportIizl.AllowUserToAddRows = false;
+            this.DgvReportIizl.AllowUserToDeleteRows = false;
+            this.DgvReportIizl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DgwReportIizl.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            this.DgvReportIizl.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.MistyRose;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -1952,8 +1979,8 @@ namespace KmsReportClient.Forms
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwReportIizl.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.DgwReportIizl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvReportIizl.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DgvReportIizl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -1961,9 +1988,9 @@ namespace KmsReportClient.Forms
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwReportIizl.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DgwReportIizl.Location = new System.Drawing.Point(7, 37);
-            this.DgwReportIizl.Name = "DgwReportIizl";
+            this.DgvReportIizl.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DgvReportIizl.Location = new System.Drawing.Point(7, 37);
+            this.DgvReportIizl.Name = "DgwReportIizl";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -1971,16 +1998,16 @@ namespace KmsReportClient.Forms
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwReportIizl.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.DgwReportIizl.Size = new System.Drawing.Size(996, 374);
-            this.DgwReportIizl.TabIndex = 0;
-            this.DgwReportIizl.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwReportIizl_CellContentClick);
-            this.DgwReportIizl.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwReportIizl_CellEndEdit);
+            this.DgvReportIizl.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.DgvReportIizl.Size = new System.Drawing.Size(996, 374);
+            this.DgvReportIizl.TabIndex = 0;
+            this.DgvReportIizl.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwReportIizl_CellContentClick);
+            this.DgvReportIizl.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwReportIizl_CellEndEdit);
             // 
             // Page262
             // 
             this.Page262.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.Page262.Controls.Add(this.DgwReport262);
+            this.Page262.Controls.Add(this.DgvReport262);
             this.Page262.Controls.Add(this.Txtb262);
             this.Page262.Controls.Add(this.Cmb262);
             this.Page262.Location = new System.Drawing.Point(4, 36);
@@ -1992,12 +2019,12 @@ namespace KmsReportClient.Forms
             // 
             // DgwReport262
             // 
-            this.DgwReport262.AllowUserToAddRows = false;
-            this.DgwReport262.AllowUserToDeleteRows = false;
-            this.DgwReport262.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.DgvReport262.AllowUserToAddRows = false;
+            this.DgvReport262.AllowUserToDeleteRows = false;
+            this.DgvReport262.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DgwReport262.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            this.DgvReport262.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -2005,8 +2032,8 @@ namespace KmsReportClient.Forms
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwReport262.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.DgwReport262.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvReport262.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.DgvReport262.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -2014,9 +2041,9 @@ namespace KmsReportClient.Forms
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwReport262.DefaultCellStyle = dataGridViewCellStyle5;
-            this.DgwReport262.Location = new System.Drawing.Point(7, 52);
-            this.DgwReport262.Name = "DgwReport262";
+            this.DgvReport262.DefaultCellStyle = dataGridViewCellStyle5;
+            this.DgvReport262.Location = new System.Drawing.Point(7, 52);
+            this.DgvReport262.Name = "DgwReport262";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -2024,9 +2051,9 @@ namespace KmsReportClient.Forms
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwReport262.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.DgwReport262.Size = new System.Drawing.Size(699, 272);
-            this.DgwReport262.TabIndex = 2;
+            this.DgvReport262.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.DgvReport262.Size = new System.Drawing.Size(699, 272);
+            this.DgvReport262.TabIndex = 2;
             // 
             // Txtb262
             // 
@@ -2052,7 +2079,7 @@ namespace KmsReportClient.Forms
             // Page294
             // 
             this.Page294.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.Page294.Controls.Add(this.DgwReport294);
+            this.Page294.Controls.Add(this.DgvReport294);
             this.Page294.Controls.Add(this.Txtb294);
             this.Page294.Controls.Add(this.Cmb294);
             this.Page294.Location = new System.Drawing.Point(4, 36);
@@ -2064,13 +2091,13 @@ namespace KmsReportClient.Forms
             // 
             // DgwReport294
             // 
-            this.DgwReport294.AllowUserToAddRows = false;
-            this.DgwReport294.AllowUserToDeleteRows = false;
-            this.DgwReport294.AllowUserToResizeColumns = false;
-            this.DgwReport294.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.DgvReport294.AllowUserToAddRows = false;
+            this.DgvReport294.AllowUserToDeleteRows = false;
+            this.DgvReport294.AllowUserToResizeColumns = false;
+            this.DgvReport294.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DgwReport294.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            this.DgvReport294.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -2078,8 +2105,8 @@ namespace KmsReportClient.Forms
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwReport294.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.DgwReport294.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvReport294.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.DgvReport294.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -2087,9 +2114,9 @@ namespace KmsReportClient.Forms
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwReport294.DefaultCellStyle = dataGridViewCellStyle8;
-            this.DgwReport294.Location = new System.Drawing.Point(7, 51);
-            this.DgwReport294.Name = "DgwReport294";
+            this.DgvReport294.DefaultCellStyle = dataGridViewCellStyle8;
+            this.DgvReport294.Location = new System.Drawing.Point(7, 51);
+            this.DgvReport294.Name = "DgwReport294";
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -2097,9 +2124,9 @@ namespace KmsReportClient.Forms
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwReport294.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.DgwReport294.Size = new System.Drawing.Size(699, 272);
-            this.DgwReport294.TabIndex = 5;
+            this.DgvReport294.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.DgvReport294.Size = new System.Drawing.Size(699, 272);
+            this.DgvReport294.TabIndex = 5;
             // 
             // Txtb294
             // 
@@ -2125,7 +2152,7 @@ namespace KmsReportClient.Forms
             // PagePgQ
             // 
             this.PagePgQ.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.PagePgQ.Controls.Add(this.DgwReportPgQ);
+            this.PagePgQ.Controls.Add(this.DgvReportPgQ);
             this.PagePgQ.Controls.Add(this.TxtbPgQ);
             this.PagePgQ.Controls.Add(this.CmbPgQ);
             this.PagePgQ.Location = new System.Drawing.Point(4, 36);
@@ -2137,13 +2164,13 @@ namespace KmsReportClient.Forms
             // 
             // DgwReportPgQ
             // 
-            this.DgwReportPgQ.AllowUserToAddRows = false;
-            this.DgwReportPgQ.AllowUserToDeleteRows = false;
-            this.DgwReportPgQ.AllowUserToResizeColumns = false;
-            this.DgwReportPgQ.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.DgvReportPgQ.AllowUserToAddRows = false;
+            this.DgvReportPgQ.AllowUserToDeleteRows = false;
+            this.DgvReportPgQ.AllowUserToResizeColumns = false;
+            this.DgvReportPgQ.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DgwReportPgQ.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            this.DgvReportPgQ.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
             dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -2151,8 +2178,8 @@ namespace KmsReportClient.Forms
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwReportPgQ.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.DgwReportPgQ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvReportPgQ.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.DgvReportPgQ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -2160,9 +2187,9 @@ namespace KmsReportClient.Forms
             dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwReportPgQ.DefaultCellStyle = dataGridViewCellStyle11;
-            this.DgwReportPgQ.Location = new System.Drawing.Point(7, 51);
-            this.DgwReportPgQ.Name = "DgwReportPgQ";
+            this.DgvReportPgQ.DefaultCellStyle = dataGridViewCellStyle11;
+            this.DgvReportPgQ.Location = new System.Drawing.Point(7, 51);
+            this.DgvReportPgQ.Name = "DgwReportPgQ";
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -2170,9 +2197,9 @@ namespace KmsReportClient.Forms
             dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwReportPgQ.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.DgwReportPgQ.Size = new System.Drawing.Size(699, 272);
-            this.DgwReportPgQ.TabIndex = 8;
+            this.DgvReportPgQ.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.DgvReportPgQ.Size = new System.Drawing.Size(699, 272);
+            this.DgvReportPgQ.TabIndex = 8;
             // 
             // TxtbPgQ
             // 
@@ -2198,7 +2225,7 @@ namespace KmsReportClient.Forms
             // PagePg
             // 
             this.PagePg.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.PagePg.Controls.Add(this.DgwReportPg);
+            this.PagePg.Controls.Add(this.DgvReportPg);
             this.PagePg.Controls.Add(this.TxtbPg);
             this.PagePg.Controls.Add(this.CmbPg);
             this.PagePg.Location = new System.Drawing.Point(4, 36);
@@ -2210,13 +2237,13 @@ namespace KmsReportClient.Forms
             // 
             // DgwReportPg
             // 
-            this.DgwReportPg.AllowUserToAddRows = false;
-            this.DgwReportPg.AllowUserToDeleteRows = false;
-            this.DgwReportPg.AllowUserToResizeColumns = false;
-            this.DgwReportPg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.DgvReportPg.AllowUserToAddRows = false;
+            this.DgvReportPg.AllowUserToDeleteRows = false;
+            this.DgvReportPg.AllowUserToResizeColumns = false;
+            this.DgvReportPg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DgwReportPg.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            this.DgvReportPg.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
             dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -2224,8 +2251,8 @@ namespace KmsReportClient.Forms
             dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwReportPg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
-            this.DgwReportPg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvReportPg.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.DgvReportPg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -2233,9 +2260,9 @@ namespace KmsReportClient.Forms
             dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwReportPg.DefaultCellStyle = dataGridViewCellStyle14;
-            this.DgwReportPg.Location = new System.Drawing.Point(7, 51);
-            this.DgwReportPg.Name = "DgwReportPg";
+            this.DgvReportPg.DefaultCellStyle = dataGridViewCellStyle14;
+            this.DgvReportPg.Location = new System.Drawing.Point(7, 51);
+            this.DgvReportPg.Name = "DgwReportPg";
             dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -2243,9 +2270,9 @@ namespace KmsReportClient.Forms
             dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwReportPg.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
-            this.DgwReportPg.Size = new System.Drawing.Size(699, 272);
-            this.DgwReportPg.TabIndex = 8;
+            this.DgvReportPg.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.DgvReportPg.Size = new System.Drawing.Size(699, 272);
+            this.DgvReportPg.TabIndex = 8;
             // 
             // TxtbPg
             // 
@@ -3018,7 +3045,7 @@ namespace KmsReportClient.Forms
             // PageZpz
             // 
             this.PageZpz.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.PageZpz.Controls.Add(this.DgwReportZpz);
+            this.PageZpz.Controls.Add(this.DgvReportZpz);
             this.PageZpz.Controls.Add(this.TxtbZpz);
             this.PageZpz.Controls.Add(this.CmbZpz);
             this.PageZpz.Location = new System.Drawing.Point(4, 36);
@@ -3030,13 +3057,13 @@ namespace KmsReportClient.Forms
             // 
             // DgwReportZpz
             // 
-            this.DgwReportZpz.AllowUserToAddRows = false;
-            this.DgwReportZpz.AllowUserToDeleteRows = false;
-            this.DgwReportZpz.AllowUserToResizeColumns = false;
-            this.DgwReportZpz.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.DgvReportZpz.AllowUserToAddRows = false;
+            this.DgvReportZpz.AllowUserToDeleteRows = false;
+            this.DgvReportZpz.AllowUserToResizeColumns = false;
+            this.DgvReportZpz.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DgwReportZpz.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            this.DgvReportZpz.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
             dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -3044,8 +3071,8 @@ namespace KmsReportClient.Forms
             dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwReportZpz.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle44;
-            this.DgwReportZpz.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvReportZpz.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle44;
+            this.DgvReportZpz.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle45.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle45.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -3053,9 +3080,9 @@ namespace KmsReportClient.Forms
             dataGridViewCellStyle45.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle45.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwReportZpz.DefaultCellStyle = dataGridViewCellStyle45;
-            this.DgwReportZpz.Location = new System.Drawing.Point(7, 51);
-            this.DgwReportZpz.Name = "DgwReportZpz";
+            this.DgvReportZpz.DefaultCellStyle = dataGridViewCellStyle45;
+            this.DgvReportZpz.Location = new System.Drawing.Point(7, 51);
+            this.DgvReportZpz.Name = "DgwReportZpz";
             dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle46.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -3063,9 +3090,9 @@ namespace KmsReportClient.Forms
             dataGridViewCellStyle46.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle46.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwReportZpz.RowHeadersDefaultCellStyle = dataGridViewCellStyle46;
-            this.DgwReportZpz.Size = new System.Drawing.Size(699, 272);
-            this.DgwReportZpz.TabIndex = 8;
+            this.DgvReportZpz.RowHeadersDefaultCellStyle = dataGridViewCellStyle46;
+            this.DgvReportZpz.Size = new System.Drawing.Size(699, 272);
+            this.DgvReportZpz.TabIndex = 8;
             // 
             // TxtbZpz
             // 
@@ -3091,7 +3118,7 @@ namespace KmsReportClient.Forms
             // PageZpzQ
             // 
             this.PageZpzQ.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.PageZpzQ.Controls.Add(this.DgwReportZpzQ);
+            this.PageZpzQ.Controls.Add(this.DgvReportZpzQ);
             this.PageZpzQ.Controls.Add(this.TxtbZpzQ);
             this.PageZpzQ.Controls.Add(this.CmbZpzQ);
             this.PageZpzQ.Location = new System.Drawing.Point(4, 36);
@@ -3103,13 +3130,13 @@ namespace KmsReportClient.Forms
             // 
             // DgwReportZpzQ
             // 
-            this.DgwReportZpzQ.AllowUserToAddRows = false;
-            this.DgwReportZpzQ.AllowUserToDeleteRows = false;
-            this.DgwReportZpzQ.AllowUserToResizeColumns = false;
-            this.DgwReportZpzQ.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.DgvReportZpzQ.AllowUserToAddRows = false;
+            this.DgvReportZpzQ.AllowUserToDeleteRows = false;
+            this.DgvReportZpzQ.AllowUserToResizeColumns = false;
+            this.DgvReportZpzQ.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DgwReportZpzQ.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            this.DgvReportZpzQ.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
             dataGridViewCellStyle47.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle47.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -3117,8 +3144,8 @@ namespace KmsReportClient.Forms
             dataGridViewCellStyle47.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwReportZpzQ.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
-            this.DgwReportZpzQ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvReportZpzQ.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
+            this.DgvReportZpzQ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle48.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle48.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -3126,9 +3153,9 @@ namespace KmsReportClient.Forms
             dataGridViewCellStyle48.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle48.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwReportZpzQ.DefaultCellStyle = dataGridViewCellStyle48;
-            this.DgwReportZpzQ.Location = new System.Drawing.Point(7, 51);
-            this.DgwReportZpzQ.Name = "DgwReportZpzQ";
+            this.DgvReportZpzQ.DefaultCellStyle = dataGridViewCellStyle48;
+            this.DgvReportZpzQ.Location = new System.Drawing.Point(7, 51);
+            this.DgvReportZpzQ.Name = "DgwReportZpzQ";
             dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle49.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle49.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -3136,10 +3163,10 @@ namespace KmsReportClient.Forms
             dataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwReportZpzQ.RowHeadersDefaultCellStyle = dataGridViewCellStyle49;
-            this.DgwReportZpzQ.Size = new System.Drawing.Size(699, 272);
-            this.DgwReportZpzQ.TabIndex = 8;
-            this.DgwReportZpzQ.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvReportZpzQ_CellEndEdit);
+            this.DgvReportZpzQ.RowHeadersDefaultCellStyle = dataGridViewCellStyle49;
+            this.DgvReportZpzQ.Size = new System.Drawing.Size(699, 272);
+            this.DgvReportZpzQ.TabIndex = 8;
+            this.DgvReportZpzQ.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvReportZpzQ_CellEndEdit);
             // 
             // TxtbZpzQ
             // 
@@ -3165,7 +3192,7 @@ namespace KmsReportClient.Forms
             // PageZpz10
             // 
             this.PageZpz10.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.PageZpz10.Controls.Add(this.DgwReportZpz10);
+            this.PageZpz10.Controls.Add(this.DgvReportZpz10);
             this.PageZpz10.Controls.Add(this.TxtbZpz10);
             this.PageZpz10.Controls.Add(this.CmbZpz10);
             this.PageZpz10.Location = new System.Drawing.Point(4, 36);
@@ -3177,13 +3204,13 @@ namespace KmsReportClient.Forms
             // 
             // DgwReportZpz10
             // 
-            this.DgwReportZpz10.AllowUserToAddRows = false;
-            this.DgwReportZpz10.AllowUserToDeleteRows = false;
-            this.DgwReportZpz10.AllowUserToResizeColumns = false;
-            this.DgwReportZpz10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.DgvReportZpz10.AllowUserToAddRows = false;
+            this.DgvReportZpz10.AllowUserToDeleteRows = false;
+            this.DgvReportZpz10.AllowUserToResizeColumns = false;
+            this.DgvReportZpz10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DgwReportZpz10.BackgroundColor = System.Drawing.Color.AntiqueWhite;
+            this.DgvReportZpz10.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
             dataGridViewCellStyle50.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle50.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -3191,8 +3218,8 @@ namespace KmsReportClient.Forms
             dataGridViewCellStyle50.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle50.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwReportZpz10.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle50;
-            this.DgwReportZpz10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvReportZpz10.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle50;
+            this.DgvReportZpz10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle51.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle51.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -3200,9 +3227,9 @@ namespace KmsReportClient.Forms
             dataGridViewCellStyle51.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle51.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle51.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwReportZpz10.DefaultCellStyle = dataGridViewCellStyle51;
-            this.DgwReportZpz10.Location = new System.Drawing.Point(7, 51);
-            this.DgwReportZpz10.Name = "DgwReportZpz10";
+            this.DgvReportZpz10.DefaultCellStyle = dataGridViewCellStyle51;
+            this.DgvReportZpz10.Location = new System.Drawing.Point(7, 51);
+            this.DgvReportZpz10.Name = "DgwReportZpz10";
             dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle52.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle52.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -3210,12 +3237,12 @@ namespace KmsReportClient.Forms
             dataGridViewCellStyle52.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle52.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle52.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwReportZpz10.RowHeadersDefaultCellStyle = dataGridViewCellStyle52;
-            this.DgwReportZpz10.Size = new System.Drawing.Size(699, 272);
-            this.DgwReportZpz10.TabIndex = 8;
-            this.DgwReportZpz10.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.DgvReportZpz10_CellBeginEdit);
-            this.DgwReportZpz10.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvReportZpz10_CellEndEdit);
-            this.DgwReportZpz10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DgvReportZpz10_KeyPress);
+            this.DgvReportZpz10.RowHeadersDefaultCellStyle = dataGridViewCellStyle52;
+            this.DgvReportZpz10.Size = new System.Drawing.Size(699, 272);
+            this.DgvReportZpz10.TabIndex = 8;
+            this.DgvReportZpz10.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.DgvReportZpz10_CellBeginEdit);
+            this.DgvReportZpz10.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvReportZpz10_CellEndEdit);
+            this.DgvReportZpz10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DgvReportZpz10_KeyPress);
             // 
             // TxtbZpz10
             // 
@@ -5226,19 +5253,19 @@ namespace KmsReportClient.Forms
             this.TbControl.ResumeLayout(false);
             this.PageIizl.ResumeLayout(false);
             this.PageIizl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgwReportIizl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvReportIizl)).EndInit();
             this.Page262.ResumeLayout(false);
             this.Page262.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgwReport262)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvReport262)).EndInit();
             this.Page294.ResumeLayout(false);
             this.Page294.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgwReport294)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvReport294)).EndInit();
             this.PagePgQ.ResumeLayout(false);
             this.PagePgQ.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgwReportPgQ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvReportPgQ)).EndInit();
             this.PagePg.ResumeLayout(false);
             this.PagePg.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgwReportPg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvReportPg)).EndInit();
             this.PageQuery.ResumeLayout(false);
             this.PageQuery.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvQuery)).EndInit();
@@ -5277,13 +5304,13 @@ namespace KmsReportClient.Forms
             ((System.ComponentModel.ISupportInitialize)(this.DgvReqVCR)).EndInit();
             this.PageZpz.ResumeLayout(false);
             this.PageZpz.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgwReportZpz)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvReportZpz)).EndInit();
             this.PageZpzQ.ResumeLayout(false);
             this.PageZpzQ.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgwReportZpzQ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvReportZpzQ)).EndInit();
             this.PageZpz10.ResumeLayout(false);
             this.PageZpz10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgwReportZpz10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvReportZpz10)).EndInit();
             this.PageZpz2025.ResumeLayout(false);
             this.PageZpz2025.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReportZpz2025)).EndInit();
@@ -5430,24 +5457,24 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.TabPage PageIizl;
         private System.Windows.Forms.TextBox TxtbIizl;
         private System.Windows.Forms.ComboBox CmbIizl;
-        private System.Windows.Forms.DataGridView DgwReportIizl;
+        private System.Windows.Forms.DataGridView DgvReportIizl;
         private System.Windows.Forms.TabPage Page262;
-        private System.Windows.Forms.DataGridView DgwReport262;
+        private System.Windows.Forms.DataGridView DgvReport262;
         private System.Windows.Forms.TextBox Txtb262;
         private System.Windows.Forms.ComboBox Cmb262;
         private System.Windows.Forms.TabPage Page294;
-        private System.Windows.Forms.DataGridView DgwReport294;
+        private System.Windows.Forms.DataGridView DgvReport294;
         private System.Windows.Forms.TextBox Txtb294;
         private System.Windows.Forms.ComboBox Cmb294;
         private System.Windows.Forms.ToolStripMenuItem serviceMenu;
         private System.Windows.Forms.ToolStripMenuItem рассылкаУведомленийToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem форма294ToolStripMenuItem;
         private System.Windows.Forms.TabPage PagePgQ;
-        private System.Windows.Forms.DataGridView DgwReportPgQ;
+        private System.Windows.Forms.DataGridView DgvReportPgQ;
         private System.Windows.Forms.TextBox TxtbPgQ;
         private System.Windows.Forms.ComboBox CmbPgQ;
         private System.Windows.Forms.TabPage PageZpzQ;
-        private System.Windows.Forms.DataGridView DgwReportZpzQ;
+        private System.Windows.Forms.DataGridView DgvReportZpzQ;
         private System.Windows.Forms.TextBox TxtbZpzQ;
         private System.Windows.Forms.ComboBox CmbZpzQ;
         private System.Windows.Forms.TabPage PageZpzQ2025;
@@ -5489,11 +5516,11 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.ToolStripMenuItem отчетДляСайта2023ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отчетДляСайта2025ToolStripMenuItem;
         private System.Windows.Forms.TabPage PagePg;
-        private System.Windows.Forms.DataGridView DgwReportPg;
+        private System.Windows.Forms.DataGridView DgvReportPg;
         private System.Windows.Forms.TextBox TxtbPg;
         private System.Windows.Forms.ComboBox CmbPg;
         private System.Windows.Forms.TabPage PageZpz;
-        private System.Windows.Forms.DataGridView DgwReportZpz;
+        private System.Windows.Forms.DataGridView DgvReportZpz;
         private System.Windows.Forms.TextBox TxtbZpz;
         private System.Windows.Forms.ComboBox CmbZpz;
         private System.Windows.Forms.TabPage PageEffectiveness;
@@ -5501,7 +5528,7 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.TextBox tbEffectiveness;
         private System.Windows.Forms.ComboBox cmbEffectiveness;
         private System.Windows.Forms.TabPage PageZpz10;
-        private System.Windows.Forms.DataGridView DgwReportZpz10;
+        private System.Windows.Forms.DataGridView DgvReportZpz10;
         private System.Windows.Forms.TextBox TxtbZpz10;
         private System.Windows.Forms.ComboBox CmbZpz10;
         private System.Windows.Forms.TabPage PageZpzLethal;
@@ -5573,6 +5600,9 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.ToolStripMenuItem летальные2023ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem летальные2025ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem результатыМЭК2025ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem таблица10свод2025ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem таблица10поФилиаламToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem таблица10поФилиаламНаростToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SpravItem;
         private System.Windows.Forms.ToolStripMenuItem электронныеАдресаToolStripMenuItem;
         private System.Windows.Forms.TabPage PageOped;

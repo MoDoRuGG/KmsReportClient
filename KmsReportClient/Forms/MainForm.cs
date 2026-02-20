@@ -260,27 +260,27 @@ namespace KmsReportClient.Forms
             {
                 {
                     ReportGlobalConst.Report262,
-                    new Report262Processor(_client, _reportsDictionary, DgwReport262, Cmb262, Txtb262, Page262)
+                    new Report262Processor(_client, _reportsDictionary, DgvReport262, Cmb262, Txtb262, Page262)
                 },
                 {
                     ReportGlobalConst.Report294,
-                    new Report294Processor(_client, _reportsDictionary, DgwReport294, Cmb294, Txtb294, Page294)
+                    new Report294Processor(_client, _reportsDictionary, DgvReport294, Cmb294, Txtb294, Page294)
                 },
                 {
                     ReportGlobalConst.ReportIizl,
-                    new ReportIizlProcessor(_client, _reportsDictionary, DgwReportIizl, CmbIizl, TxtbIizl, PageIizl)
+                    new ReportIizlProcessor(_client, _reportsDictionary, DgvReportIizl, CmbIizl, TxtbIizl, PageIizl)
                 },
                 {
                     ReportGlobalConst.ReportPg,
-                    new ReportPgProcessor(_client, _reportsDictionary, DgwReportPg, CmbPg, TxtbPg, PagePg)
+                    new ReportPgProcessor(_client, _reportsDictionary, DgvReportPg, CmbPg, TxtbPg, PagePg)
                 },
                 {
                     ReportGlobalConst.ReportPgQ,
-                    new ReportPgQProcessor(_client, _reportsDictionary, DgwReportPgQ, CmbPgQ, TxtbPgQ, PagePgQ)
+                    new ReportPgQProcessor(_client, _reportsDictionary, DgvReportPgQ, CmbPgQ, TxtbPgQ, PagePgQ)
                 },
                 {
                     ReportGlobalConst.ReportZpz,
-                    new ReportZpzProcessor(_client, _reportsDictionary, DgwReportZpz, CmbZpz, TxtbZpz, PageZpz)
+                    new ReportZpzProcessor(_client, _reportsDictionary, DgvReportZpz, CmbZpz, TxtbZpz, PageZpz)
                 },
                 {
                     ReportGlobalConst.ReportZpzLethal,
@@ -288,11 +288,11 @@ namespace KmsReportClient.Forms
                 },
                 {
                     ReportGlobalConst.ReportZpz10,
-                    new ReportZpz10Processor(_client, _reportsDictionary, DgwReportZpz10, CmbZpz10, TxtbZpz10, PageZpz10)
+                    new ReportZpz10Processor(_client, _reportsDictionary, DgvReportZpz10, CmbZpz10, TxtbZpz10, PageZpz10)
                 },
                 {
                     ReportGlobalConst.ReportZpzQ,
-                    new ReportZpzQProcessor(_client, _reportsDictionary, DgwReportZpzQ, CmbZpzQ, TxtbZpzQ, PageZpzQ)
+                    new ReportZpzQProcessor(_client, _reportsDictionary, DgvReportZpzQ, CmbZpzQ, TxtbZpzQ, PageZpzQ)
                 },
                 {
                     ReportGlobalConst.ReportZpz2025,
@@ -752,8 +752,8 @@ namespace KmsReportClient.Forms
 
             if (_processor.Report.IdType == "PG" || _processor.Report.IdType == "Zpz" || _processor.Report.IdType == "Zpz2025" || _processor.Report.IdType == "ZpzT1" || _processor.Report.IdType == "ZpzT2" || _processor.Report.IdType == "ZpzT3" || _processor.Report.IdType == "ZpzT4")
             {
-                DgwReportPg.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
-                DgwReportZpz.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
+                DgvReportPg.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
+                DgvReportZpz.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
                 DgvReportZpz2025.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
                 DgvReportZpzT1.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
                 DgvReportZpzT2.ReadOnly = _processor.Report.DataSource != DataSource.Handle;
@@ -913,9 +913,9 @@ namespace KmsReportClient.Forms
                 _processor.Report.DataSource = DataSource.Excel;
             }
             _processor.SaveReportDataSourceExcel();
-            DgwReportPg.ReadOnly = true;
-            DgwReportZpz.ReadOnly = true;
-            DgwReportZpz10.ReadOnly = false;
+            DgvReportPg.ReadOnly = true;
+            DgvReportZpz.ReadOnly = true;
+            DgvReportZpz10.ReadOnly = false;
             DgvReportZpz2025.ReadOnly = true;
             DgvReportZpzT1.ReadOnly = true;
             DgvReportZpzT2.ReadOnly = true;
@@ -939,9 +939,9 @@ namespace KmsReportClient.Forms
             }
 
             _processor.SaveReportDataSourceHandle();
-            DgwReportPg.ReadOnly = false;
-            DgwReportZpz.ReadOnly = false;
-            DgwReportZpz10.ReadOnly = false;
+            DgvReportPg.ReadOnly = false;
+            DgvReportZpz.ReadOnly = false;
+            DgvReportZpz10.ReadOnly = false;
             DgvReportZpz2025.ReadOnly = false;
             DgvReportZpzT1.ReadOnly = false;
             DgvReportZpzT2.ReadOnly = false;
@@ -1799,22 +1799,22 @@ namespace KmsReportClient.Forms
             Close();
 
         private void CmbThemes_SelectedIndexChanged(object sender, EventArgs e) =>
-            ChangeIndexComboBox(DgwReportIizl, CmbIizl, TxtbIizl);
+            ChangeIndexComboBox(DgvReportIizl, CmbIizl, TxtbIizl);
 
         private void Cmb262_SelectedIndexChanged(object sender, EventArgs e) =>
-            ChangeIndexComboBox(DgwReport262, Cmb262, Txtb262);
+            ChangeIndexComboBox(DgvReport262, Cmb262, Txtb262);
 
         private void Cmb294_SelectedIndexChanged(object sender, EventArgs e) =>
-            ChangeIndexComboBox(DgwReport294, Cmb294, Txtb294);
+            ChangeIndexComboBox(DgvReport294, Cmb294, Txtb294);
 
         private void CmbPg_SelectedIndexChanged(object sender, EventArgs e) =>
-            ChangeIndexComboBox(DgwReportPgQ, CmbPgQ, TxtbPgQ);
+            ChangeIndexComboBox(DgvReportPgQ, CmbPgQ, TxtbPgQ);
 
         private void CmbPg_SelectedIndexChanged_1(object sender, EventArgs e) =>
-            ChangeIndexComboBox(DgwReportPg, CmbPg, TxtbPg);
+            ChangeIndexComboBox(DgvReportPg, CmbPg, TxtbPg);
 
         private void CmbZpz_SelectedIndexChanged(object sender, EventArgs e) =>
-        ChangeIndexComboBox(DgwReportZpzQ, CmbZpzQ, TxtbZpzQ);
+        ChangeIndexComboBox(DgvReportZpzQ, CmbZpzQ, TxtbZpzQ);
 
         private void CmbZpz2025_SelectedIndexChanged(object sender, EventArgs e) =>
         ChangeIndexComboBox(DgvReportZpzQ2025, CmbZpzQ2025, TxtbZpzQ2025);
@@ -1875,10 +1875,10 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         ChangeIndexComboBox(DgvReportZpz10_2025, CmbZpz10_2025, TxtbZpz10_2025);
 
         private void CmbZpz_SelectedIndexChanged_1(object sender, EventArgs e) =>
-    ChangeIndexComboBox(DgwReportZpz, CmbZpz, TxtbZpz);
+    ChangeIndexComboBox(DgvReportZpz, CmbZpz, TxtbZpz);
 
         private void CmbZpz10_SelectedIndexChanged(object sender, EventArgs e) =>
-        ChangeIndexComboBox(DgwReportZpz10, CmbZpz10, TxtbZpz10);
+        ChangeIndexComboBox(DgvReportZpz10, CmbZpz10, TxtbZpz10);
 
         private void BtnPlus_Click(object sender, EventArgs e) =>
              AddValueInTextBox();
@@ -1946,6 +1946,15 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
 
         private void ОтчетРезультатыМЭКToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.ZpzTable5);
+
+        private void Таблица10свод2025ToolStripMenuItem_Click(object sender, EventArgs e) =>
+            OpenConsolidateReportForm(ConsolidateReport.Zpz10Cons);
+
+        private void Таблица10поФилиаламToolStripMenuItem_Click(object sender, EventArgs e) =>
+            OpenConsolidateReportForm(ConsolidateReport.Zpz10FilialCons);
+
+        private void Таблица10поФилиаламНаростToolStripMenuItem_Click(object sender, EventArgs e) =>
+            OpenConsolidateReportForm(ConsolidateReport.Zpz10FilialGrowCons);
 
         private void ОтчетНарушенияПоОбращениямЗЛToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.ViolationsOfAppeals);

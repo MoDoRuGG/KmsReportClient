@@ -206,5 +206,11 @@ namespace KmsReportClient.Model.Enums
         VerifyPlan,
         [Description(GlobalConst.TempFolder + "FFOMSLethalEKMP.xlsx")]
         FFOMSLethalEKMP,
+        [Description(GlobalConst.TempFolder + "consZpzTable10.xlsx")]
+        Zpz10Cons,
+        [Description(GlobalConst.TempFolder + "consZpzTable10Filial.xlsx")]
+        Zpz10ConsFilial,
+        [Description(GlobalConst.TempFolder + "consZpzTable10FilialGrow.xlsx")]
+        Zpz10ConsFilialGrow,
     }
 }

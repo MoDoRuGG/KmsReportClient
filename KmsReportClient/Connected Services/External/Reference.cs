@@ -8763,6 +8763,231 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateZpzTable10", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ConsolidateZpzTable10 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RowNumField;
+        
+        private decimal YearlyField;
+        
+        private decimal ByMonthField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string RowNum {
+            get {
+                return this.RowNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RowNumField, value) != true)) {
+                    this.RowNumField = value;
+                    this.RaisePropertyChanged("RowNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal Yearly {
+            get {
+                return this.YearlyField;
+            }
+            set {
+                if ((this.YearlyField.Equals(value) != true)) {
+                    this.YearlyField = value;
+                    this.RaisePropertyChanged("Yearly");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public decimal ByMonth {
+            get {
+                return this.ByMonthField;
+            }
+            set {
+                if ((this.ByMonthField.Equals(value) != true)) {
+                    this.ByMonthField = value;
+                    this.RaisePropertyChanged("ByMonth");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateZpzTable10Filial", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ConsolidateZpzTable10Filial : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RowNumField;
+        
+        private decimal YearlyField;
+        
+        private decimal ByMonthField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string RowNum {
+            get {
+                return this.RowNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RowNumField, value) != true)) {
+                    this.RowNumField = value;
+                    this.RaisePropertyChanged("RowNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal Yearly {
+            get {
+                return this.YearlyField;
+            }
+            set {
+                if ((this.YearlyField.Equals(value) != true)) {
+                    this.YearlyField = value;
+                    this.RaisePropertyChanged("Yearly");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public decimal ByMonth {
+            get {
+                return this.ByMonthField;
+            }
+            set {
+                if ((this.ByMonthField.Equals(value) != true)) {
+                    this.ByMonthField = value;
+                    this.RaisePropertyChanged("ByMonth");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateZpzTable10FilialGrow", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ConsolidateZpzTable10FilialGrow : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RowNumField;
+        
+        private decimal YearlyField;
+        
+        private decimal ByMonthField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string RowNum {
+            get {
+                return this.RowNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RowNumField, value) != true)) {
+                    this.RowNumField = value;
+                    this.RaisePropertyChanged("RowNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal Yearly {
+            get {
+                return this.YearlyField;
+            }
+            set {
+                if ((this.YearlyField.Equals(value) != true)) {
+                    this.YearlyField = value;
+                    this.RaisePropertyChanged("Yearly");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public decimal ByMonth {
+            get {
+                return this.ByMonthField;
+            }
+            set {
+                if ((this.ByMonthField.Equals(value) != true)) {
+                    this.ByMonthField = value;
+                    this.RaisePropertyChanged("ByMonth");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateCpnpM", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class ConsolidateCpnpM : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -44988,6 +45213,27 @@ namespace KmsReportClient.External {
         System.Threading.Tasks.Task<KmsReportClient.External.CreateZpzTable5Response> CreateZpzTable5Async(KmsReportClient.External.CreateZpzTable5Request request);
         
         // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidateZpzTable10", ReplyAction="*")]
+        KmsReportClient.External.CreateConsolidateZpzTable10Response CreateConsolidateZpzTable10(KmsReportClient.External.CreateConsolidateZpzTable10Request request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidateZpzTable10", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateZpzTable10Response> CreateConsolidateZpzTable10Async(KmsReportClient.External.CreateConsolidateZpzTable10Request request);
+        
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidateZpzTable10Filial", ReplyAction="*")]
+        KmsReportClient.External.CreateConsolidateZpzTable10FilialResponse CreateConsolidateZpzTable10Filial(KmsReportClient.External.CreateConsolidateZpzTable10FilialRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidateZpzTable10Filial", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateZpzTable10FilialResponse> CreateConsolidateZpzTable10FilialAsync(KmsReportClient.External.CreateConsolidateZpzTable10FilialRequest request);
+        
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidateZpzTable10FilialGrow", ReplyAction="*")]
+        KmsReportClient.External.CreateConsolidateZpzTable10FilialGrowResponse CreateConsolidateZpzTable10FilialGrow(KmsReportClient.External.CreateConsolidateZpzTable10FilialGrowRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateConsolidateZpzTable10FilialGrow", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateZpzTable10FilialGrowResponse> CreateConsolidateZpzTable10FilialGrowAsync(KmsReportClient.External.CreateConsolidateZpzTable10FilialGrowRequest request);
+        
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
         [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateReportCpnpM", ReplyAction="*")]
         KmsReportClient.External.CreateReportCpnpMResponse CreateReportCpnpM(KmsReportClient.External.CreateReportCpnpMRequest request);
         
@@ -47238,6 +47484,210 @@ namespace KmsReportClient.External {
         
         public CreateZpzTable5ResponseBody(KmsReportClient.External.ConsolidateZpzTable5[] CreateZpzTable5Result) {
             this.CreateZpzTable5Result = CreateZpzTable5Result;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateConsolidateZpzTable10Request {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidateZpzTable10", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateConsolidateZpzTable10RequestBody Body;
+        
+        public CreateConsolidateZpzTable10Request() {
+        }
+        
+        public CreateConsolidateZpzTable10Request(KmsReportClient.External.CreateConsolidateZpzTable10RequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateConsolidateZpzTable10RequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string yymm;
+        
+        public CreateConsolidateZpzTable10RequestBody() {
+        }
+        
+        public CreateConsolidateZpzTable10RequestBody(string yymm) {
+            this.yymm = yymm;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateConsolidateZpzTable10Response {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidateZpzTable10Response", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateConsolidateZpzTable10ResponseBody Body;
+        
+        public CreateConsolidateZpzTable10Response() {
+        }
+        
+        public CreateConsolidateZpzTable10Response(KmsReportClient.External.CreateConsolidateZpzTable10ResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateConsolidateZpzTable10ResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.ConsolidateZpzTable10[] CreateConsolidateZpzTable10Result;
+        
+        public CreateConsolidateZpzTable10ResponseBody() {
+        }
+        
+        public CreateConsolidateZpzTable10ResponseBody(KmsReportClient.External.ConsolidateZpzTable10[] CreateConsolidateZpzTable10Result) {
+            this.CreateConsolidateZpzTable10Result = CreateConsolidateZpzTable10Result;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateConsolidateZpzTable10FilialRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidateZpzTable10Filial", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateConsolidateZpzTable10FilialRequestBody Body;
+        
+        public CreateConsolidateZpzTable10FilialRequest() {
+        }
+        
+        public CreateConsolidateZpzTable10FilialRequest(KmsReportClient.External.CreateConsolidateZpzTable10FilialRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateConsolidateZpzTable10FilialRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string yymm;
+        
+        public CreateConsolidateZpzTable10FilialRequestBody() {
+        }
+        
+        public CreateConsolidateZpzTable10FilialRequestBody(string yymm) {
+            this.yymm = yymm;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateConsolidateZpzTable10FilialResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidateZpzTable10FilialResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateConsolidateZpzTable10FilialResponseBody Body;
+        
+        public CreateConsolidateZpzTable10FilialResponse() {
+        }
+        
+        public CreateConsolidateZpzTable10FilialResponse(KmsReportClient.External.CreateConsolidateZpzTable10FilialResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateConsolidateZpzTable10FilialResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.ConsolidateZpzTable10Filial[] CreateConsolidateZpzTable10FilialResult;
+        
+        public CreateConsolidateZpzTable10FilialResponseBody() {
+        }
+        
+        public CreateConsolidateZpzTable10FilialResponseBody(KmsReportClient.External.ConsolidateZpzTable10Filial[] CreateConsolidateZpzTable10FilialResult) {
+            this.CreateConsolidateZpzTable10FilialResult = CreateConsolidateZpzTable10FilialResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateConsolidateZpzTable10FilialGrowRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidateZpzTable10FilialGrow", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateConsolidateZpzTable10FilialGrowRequestBody Body;
+        
+        public CreateConsolidateZpzTable10FilialGrowRequest() {
+        }
+        
+        public CreateConsolidateZpzTable10FilialGrowRequest(KmsReportClient.External.CreateConsolidateZpzTable10FilialGrowRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateConsolidateZpzTable10FilialGrowRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string yymm;
+        
+        public CreateConsolidateZpzTable10FilialGrowRequestBody() {
+        }
+        
+        public CreateConsolidateZpzTable10FilialGrowRequestBody(string yymm) {
+            this.yymm = yymm;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateConsolidateZpzTable10FilialGrowResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateConsolidateZpzTable10FilialGrowResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateConsolidateZpzTable10FilialGrowResponseBody Body;
+        
+        public CreateConsolidateZpzTable10FilialGrowResponse() {
+        }
+        
+        public CreateConsolidateZpzTable10FilialGrowResponse(KmsReportClient.External.CreateConsolidateZpzTable10FilialGrowResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateConsolidateZpzTable10FilialGrowResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.ConsolidateZpzTable10FilialGrow[] CreateConsolidateZpzTable10FilialGrowResult;
+        
+        public CreateConsolidateZpzTable10FilialGrowResponseBody() {
+        }
+        
+        public CreateConsolidateZpzTable10FilialGrowResponseBody(KmsReportClient.External.ConsolidateZpzTable10FilialGrow[] CreateConsolidateZpzTable10FilialGrowResult) {
+            this.CreateConsolidateZpzTable10FilialGrowResult = CreateConsolidateZpzTable10FilialGrowResult;
         }
     }
     
@@ -55425,6 +55875,81 @@ namespace KmsReportClient.External {
             inValue.Body = new KmsReportClient.External.CreateZpzTable5RequestBody();
             inValue.Body.yymm = yymm;
             return ((KmsReportClient.External.EndpointSoap)(this)).CreateZpzTable5Async(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.CreateConsolidateZpzTable10Response KmsReportClient.External.EndpointSoap.CreateConsolidateZpzTable10(KmsReportClient.External.CreateConsolidateZpzTable10Request request) {
+            return base.Channel.CreateConsolidateZpzTable10(request);
+        }
+        
+        public KmsReportClient.External.ConsolidateZpzTable10[] CreateConsolidateZpzTable10(string yymm) {
+            KmsReportClient.External.CreateConsolidateZpzTable10Request inValue = new KmsReportClient.External.CreateConsolidateZpzTable10Request();
+            inValue.Body = new KmsReportClient.External.CreateConsolidateZpzTable10RequestBody();
+            inValue.Body.yymm = yymm;
+            KmsReportClient.External.CreateConsolidateZpzTable10Response retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateConsolidateZpzTable10(inValue);
+            return retVal.Body.CreateConsolidateZpzTable10Result;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateZpzTable10Response> KmsReportClient.External.EndpointSoap.CreateConsolidateZpzTable10Async(KmsReportClient.External.CreateConsolidateZpzTable10Request request) {
+            return base.Channel.CreateConsolidateZpzTable10Async(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateZpzTable10Response> CreateConsolidateZpzTable10Async(string yymm) {
+            KmsReportClient.External.CreateConsolidateZpzTable10Request inValue = new KmsReportClient.External.CreateConsolidateZpzTable10Request();
+            inValue.Body = new KmsReportClient.External.CreateConsolidateZpzTable10RequestBody();
+            inValue.Body.yymm = yymm;
+            return ((KmsReportClient.External.EndpointSoap)(this)).CreateConsolidateZpzTable10Async(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.CreateConsolidateZpzTable10FilialResponse KmsReportClient.External.EndpointSoap.CreateConsolidateZpzTable10Filial(KmsReportClient.External.CreateConsolidateZpzTable10FilialRequest request) {
+            return base.Channel.CreateConsolidateZpzTable10Filial(request);
+        }
+        
+        public KmsReportClient.External.ConsolidateZpzTable10Filial[] CreateConsolidateZpzTable10Filial(string yymm) {
+            KmsReportClient.External.CreateConsolidateZpzTable10FilialRequest inValue = new KmsReportClient.External.CreateConsolidateZpzTable10FilialRequest();
+            inValue.Body = new KmsReportClient.External.CreateConsolidateZpzTable10FilialRequestBody();
+            inValue.Body.yymm = yymm;
+            KmsReportClient.External.CreateConsolidateZpzTable10FilialResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateConsolidateZpzTable10Filial(inValue);
+            return retVal.Body.CreateConsolidateZpzTable10FilialResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateZpzTable10FilialResponse> KmsReportClient.External.EndpointSoap.CreateConsolidateZpzTable10FilialAsync(KmsReportClient.External.CreateConsolidateZpzTable10FilialRequest request) {
+            return base.Channel.CreateConsolidateZpzTable10FilialAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateZpzTable10FilialResponse> CreateConsolidateZpzTable10FilialAsync(string yymm) {
+            KmsReportClient.External.CreateConsolidateZpzTable10FilialRequest inValue = new KmsReportClient.External.CreateConsolidateZpzTable10FilialRequest();
+            inValue.Body = new KmsReportClient.External.CreateConsolidateZpzTable10FilialRequestBody();
+            inValue.Body.yymm = yymm;
+            return ((KmsReportClient.External.EndpointSoap)(this)).CreateConsolidateZpzTable10FilialAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.CreateConsolidateZpzTable10FilialGrowResponse KmsReportClient.External.EndpointSoap.CreateConsolidateZpzTable10FilialGrow(KmsReportClient.External.CreateConsolidateZpzTable10FilialGrowRequest request) {
+            return base.Channel.CreateConsolidateZpzTable10FilialGrow(request);
+        }
+        
+        public KmsReportClient.External.ConsolidateZpzTable10FilialGrow[] CreateConsolidateZpzTable10FilialGrow(string yymm) {
+            KmsReportClient.External.CreateConsolidateZpzTable10FilialGrowRequest inValue = new KmsReportClient.External.CreateConsolidateZpzTable10FilialGrowRequest();
+            inValue.Body = new KmsReportClient.External.CreateConsolidateZpzTable10FilialGrowRequestBody();
+            inValue.Body.yymm = yymm;
+            KmsReportClient.External.CreateConsolidateZpzTable10FilialGrowResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateConsolidateZpzTable10FilialGrow(inValue);
+            return retVal.Body.CreateConsolidateZpzTable10FilialGrowResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateZpzTable10FilialGrowResponse> KmsReportClient.External.EndpointSoap.CreateConsolidateZpzTable10FilialGrowAsync(KmsReportClient.External.CreateConsolidateZpzTable10FilialGrowRequest request) {
+            return base.Channel.CreateConsolidateZpzTable10FilialGrowAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.CreateConsolidateZpzTable10FilialGrowResponse> CreateConsolidateZpzTable10FilialGrowAsync(string yymm) {
+            KmsReportClient.External.CreateConsolidateZpzTable10FilialGrowRequest inValue = new KmsReportClient.External.CreateConsolidateZpzTable10FilialGrowRequest();
+            inValue.Body = new KmsReportClient.External.CreateConsolidateZpzTable10FilialGrowRequestBody();
+            inValue.Body.yymm = yymm;
+            return ((KmsReportClient.External.EndpointSoap)(this)).CreateConsolidateZpzTable10FilialGrowAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

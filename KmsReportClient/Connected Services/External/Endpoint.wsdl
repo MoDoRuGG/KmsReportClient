@@ -949,6 +949,84 @@
           <s:element minOccurs="1" maxOccurs="1" name="CountOutOfSmo" type="s:decimal" />
         </s:sequence>
       </s:complexType>
+      <s:element name="CreateConsolidateZpzTable10">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateConsolidateZpzTable10Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateConsolidateZpzTable10Result" type="tns:ArrayOfConsolidateZpzTable10" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfConsolidateZpzTable10">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsolidateZpzTable10" nillable="true" type="tns:ConsolidateZpzTable10" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConsolidateZpzTable10">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Yearly" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ByMonth" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateConsolidateZpzTable10Filial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateConsolidateZpzTable10FilialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateConsolidateZpzTable10FilialResult" type="tns:ArrayOfConsolidateZpzTable10Filial" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfConsolidateZpzTable10Filial">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsolidateZpzTable10Filial" nillable="true" type="tns:ConsolidateZpzTable10Filial" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConsolidateZpzTable10Filial">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Yearly" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ByMonth" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateConsolidateZpzTable10FilialGrow">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateConsolidateZpzTable10FilialGrowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateConsolidateZpzTable10FilialGrowResult" type="tns:ArrayOfConsolidateZpzTable10FilialGrow" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfConsolidateZpzTable10FilialGrow">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsolidateZpzTable10FilialGrow" nillable="true" type="tns:ConsolidateZpzTable10FilialGrow" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConsolidateZpzTable10FilialGrow">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Yearly" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ByMonth" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="CreateReportCpnpM">
         <s:complexType>
           <s:sequence>
@@ -6555,6 +6633,24 @@
   <wsdl:message name="CreateZpzTable5SoapOut">
     <wsdl:part name="parameters" element="tns:CreateZpzTable5Response" />
   </wsdl:message>
+  <wsdl:message name="CreateConsolidateZpzTable10SoapIn">
+    <wsdl:part name="parameters" element="tns:CreateConsolidateZpzTable10" />
+  </wsdl:message>
+  <wsdl:message name="CreateConsolidateZpzTable10SoapOut">
+    <wsdl:part name="parameters" element="tns:CreateConsolidateZpzTable10Response" />
+  </wsdl:message>
+  <wsdl:message name="CreateConsolidateZpzTable10FilialSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateConsolidateZpzTable10Filial" />
+  </wsdl:message>
+  <wsdl:message name="CreateConsolidateZpzTable10FilialSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateConsolidateZpzTable10FilialResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateConsolidateZpzTable10FilialGrowSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateConsolidateZpzTable10FilialGrow" />
+  </wsdl:message>
+  <wsdl:message name="CreateConsolidateZpzTable10FilialGrowSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateConsolidateZpzTable10FilialGrowResponse" />
+  </wsdl:message>
   <wsdl:message name="CreateReportCpnpMSoapIn">
     <wsdl:part name="parameters" element="tns:CreateReportCpnpM" />
   </wsdl:message>
@@ -7354,6 +7450,18 @@
       <wsdl:input message="tns:CreateZpzTable5SoapIn" />
       <wsdl:output message="tns:CreateZpzTable5SoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="CreateConsolidateZpzTable10">
+      <wsdl:input message="tns:CreateConsolidateZpzTable10SoapIn" />
+      <wsdl:output message="tns:CreateConsolidateZpzTable10SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateConsolidateZpzTable10Filial">
+      <wsdl:input message="tns:CreateConsolidateZpzTable10FilialSoapIn" />
+      <wsdl:output message="tns:CreateConsolidateZpzTable10FilialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateConsolidateZpzTable10FilialGrow">
+      <wsdl:input message="tns:CreateConsolidateZpzTable10FilialGrowSoapIn" />
+      <wsdl:output message="tns:CreateConsolidateZpzTable10FilialGrowSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="CreateReportCpnpM">
       <wsdl:input message="tns:CreateReportCpnpMSoapIn" />
       <wsdl:output message="tns:CreateReportCpnpMSoapOut" />
@@ -8015,6 +8123,33 @@
     </wsdl:operation>
     <wsdl:operation name="CreateZpzTable5">
       <soap:operation soapAction="http://kms-oms.ru/CreateZpzTable5" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateConsolidateZpzTable10">
+      <soap:operation soapAction="http://kms-oms.ru/CreateConsolidateZpzTable10" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateConsolidateZpzTable10Filial">
+      <soap:operation soapAction="http://kms-oms.ru/CreateConsolidateZpzTable10Filial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateConsolidateZpzTable10FilialGrow">
+      <soap:operation soapAction="http://kms-oms.ru/CreateConsolidateZpzTable10FilialGrow" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -9278,6 +9413,33 @@
     </wsdl:operation>
     <wsdl:operation name="CreateZpzTable5">
       <soap12:operation soapAction="http://kms-oms.ru/CreateZpzTable5" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateConsolidateZpzTable10">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateConsolidateZpzTable10" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateConsolidateZpzTable10Filial">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateConsolidateZpzTable10Filial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateConsolidateZpzTable10FilialGrow">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateConsolidateZpzTable10FilialGrow" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

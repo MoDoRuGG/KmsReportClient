@@ -242,6 +242,33 @@ namespace KmsReportClient.Forms
                     saveFileDialog1.FileName = "Отчет Результаты МЭК пофилиально";
                     cmbStart.DataSource = GlobalConst.Periods;
                     break;
+                case ConsolidateReport.Zpz10Cons:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать свод по таблице 10 формы ЗПЗ";
+                    saveFileDialog1.FileName = "Свод по таблице 10 формы ЗПЗ 118н";
+                    cmbStart.DataSource = GlobalConst.Months;
+                    break;
+                case ConsolidateReport.Zpz10FilialCons:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать свод пофилиально по таблице 10 формы ЗПЗ";
+                    saveFileDialog1.FileName = "Пофилиальный свод по таблице 10 формы ЗПЗ 118н";
+                    cmbStart.DataSource = GlobalConst.Months;
+                    break;
+                case ConsolidateReport.Zpz10FilialGrowCons:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать свод по филиалам наростом по таблице 10 формы ЗПЗ";
+                    saveFileDialog1.FileName = "Свод по филиалам наростом по таблице 10 формы ЗПЗ 118н";
+                    cmbStart.DataSource = GlobalConst.Months;
+                    break;
                 case ConsolidateReport.FFOMSVolumesByTypes:
                     labelStart.Text = "Период";
                     nudSingle.Visible = false;
@@ -811,6 +838,15 @@ namespace KmsReportClient.Forms
                     case ConsolidateReport.ConsPropsal:
                         ConsolidateProposal();
                         break;
+                    case ConsolidateReport.Zpz10Cons:
+                        CreateZpz10Cons();
+                        break;
+                    case ConsolidateReport.Zpz10FilialCons:
+                        CreateZpz10FilialCons();
+                        break;
+                    case ConsolidateReport.Zpz10FilialGrowCons:
+                        CreateZpz10FilialGrowCons();
+                        break;
                 }
                 waitingForm.Close();
             }
@@ -929,6 +965,69 @@ namespace KmsReportClient.Forms
             }
 
             var excel = new ExcelConsolidateOpedQCreator(saveFileDialog1.FileName, "", _filialName);
+
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+
+        }
+
+        private void CreateZpz10Cons()
+        {
+            string yymm = GetYymm(cmbStart.Text, Convert.ToInt32(nudStart.Value)).ToString();
+
+            var data = _client.CreateConsolidateZpzTable10(yymm);
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var excel = new ExcelConsolidateZpzTable10Creator(saveFileDialog1.FileName, "", _filialName, yymm);
+
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+
+        }
+
+        private void CreateZpz10FilialCons()
+        {
+            string yymm = GetYymmQuarterly();
+
+            var data = _client.CreateConsolidateZpzTable10Filial(yymm);
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var excel = new ExcelConsolidateZpzTable10FilialCreator(saveFileDialog1.FileName, "", _filialName, yymm);
+
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+
+        }
+
+        private void CreateZpz10FilialGrowCons()
+        {
+            string yymm = GetYymmQuarterly();
+
+            var data = _client.CreateConsolidateZpzTable10FilialGrow(yymm);
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var excel = new ExcelConsolidateZpzTable10FilialGrowCreator(saveFileDialog1.FileName, "", _filialName, yymm);
 
             excel.CreateReport(data, null);
 

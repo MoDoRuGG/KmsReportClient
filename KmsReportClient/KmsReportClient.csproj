@@ -191,6 +191,9 @@
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateQuantityFP.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateQuantityAR.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateQuantityFilialCreator.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateZpzTable10FilialGrowCreator.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateZpzTable10FilialCreator.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateZpzTable10Creator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateVCRFilialCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateOpedUnplanned.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateCadreTable2Creator.cs" />
@@ -557,6 +560,15 @@
     <None Include="Connected Services\External\KmsReportClient.External.ConsolidateVSS.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.ConsolidateZpzTable10.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.ConsolidateZpzTable10Filial.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.ConsolidateZpzTable10FilialGrow.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.ConsolidateZpzTable5.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -582,6 +594,15 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateConsolidateQuantityQResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateConsolidateZpzTable10FilialGrowResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateConsolidateZpzTable10FilialResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateConsolidateZpzTable10Response.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateDynamicReportResponse.datasource">
