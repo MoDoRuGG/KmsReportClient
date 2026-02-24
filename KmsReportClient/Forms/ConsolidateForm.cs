@@ -995,7 +995,7 @@ namespace KmsReportClient.Forms
 
         private void CreateZpz10FilialCons()
         {
-            string yymm = GetYymmQuarterly();
+            string yymm = GetYymm(cmbStart.Text, Convert.ToInt32(nudStart.Value)).ToString();
 
             var data = _client.CreateConsolidateZpzTable10Filial(yymm);
 

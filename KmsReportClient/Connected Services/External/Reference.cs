@@ -8846,11 +8846,212 @@ namespace KmsReportClient.External {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RowNumField;
+        private string Id_RegionField;
         
-        private decimal YearlyField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RegionNameField;
         
-        private decimal ByMonthField;
+        private decimal _1Field;
+        
+        private decimal _11Field;
+        
+        private decimal _12Field;
+        
+        private decimal _13Field;
+        
+        private decimal _14Field;
+        
+        private decimal _2Field;
+        
+        private decimal _21Field;
+        
+        private decimal _22Field;
+        
+        private decimal _23Field;
+        
+        private decimal _24Field;
+        
+        private decimal _3Field;
+        
+        private decimal _31Field;
+        
+        private decimal _32Field;
+        
+        private decimal _33Field;
+        
+        private decimal _34Field;
+        
+        private decimal _4Field;
+        
+        private decimal _41Field;
+        
+        private decimal _411Field;
+        
+        private decimal _412Field;
+        
+        private decimal _413Field;
+        
+        private decimal _414Field;
+        
+        private decimal _42Field;
+        
+        private decimal _421Field;
+        
+        private decimal _422Field;
+        
+        private decimal _423Field;
+        
+        private decimal _424Field;
+        
+        private decimal _43Field;
+        
+        private decimal _431Field;
+        
+        private decimal _432Field;
+        
+        private decimal _433Field;
+        
+        private decimal _434Field;
+        
+        private decimal _44Field;
+        
+        private decimal _441Field;
+        
+        private decimal _442Field;
+        
+        private decimal _443Field;
+        
+        private decimal _444Field;
+        
+        private decimal _45Field;
+        
+        private decimal _451Field;
+        
+        private decimal _452Field;
+        
+        private decimal _453Field;
+        
+        private decimal _454Field;
+        
+        private decimal _46Field;
+        
+        private decimal _461Field;
+        
+        private decimal _462Field;
+        
+        private decimal _463Field;
+        
+        private decimal _464Field;
+        
+        private decimal _5Field;
+        
+        private decimal _51Field;
+        
+        private decimal _511Field;
+        
+        private decimal _512Field;
+        
+        private decimal _513Field;
+        
+        private decimal _514Field;
+        
+        private decimal _52Field;
+        
+        private decimal _521Field;
+        
+        private decimal _522Field;
+        
+        private decimal _523Field;
+        
+        private decimal _524Field;
+        
+        private decimal _53Field;
+        
+        private decimal _531Field;
+        
+        private decimal _532Field;
+        
+        private decimal _533Field;
+        
+        private decimal _534Field;
+        
+        private decimal _54Field;
+        
+        private decimal _541Field;
+        
+        private decimal _542Field;
+        
+        private decimal _543Field;
+        
+        private decimal _544Field;
+        
+        private decimal _55Field;
+        
+        private decimal _551Field;
+        
+        private decimal _552Field;
+        
+        private decimal _553Field;
+        
+        private decimal _554Field;
+        
+        private decimal _56Field;
+        
+        private decimal _561Field;
+        
+        private decimal _562Field;
+        
+        private decimal _563Field;
+        
+        private decimal _564Field;
+        
+        private decimal _6Field;
+        
+        private decimal _61Field;
+        
+        private decimal _62Field;
+        
+        private decimal _63Field;
+        
+        private decimal _64Field;
+        
+        private decimal _65Field;
+        
+        private decimal _66Field;
+        
+        private decimal _67Field;
+        
+        private decimal _7Field;
+        
+        private decimal _71Field;
+        
+        private decimal _72Field;
+        
+        private decimal _73Field;
+        
+        private decimal _74Field;
+        
+        private decimal _75Field;
+        
+        private decimal _76Field;
+        
+        private decimal _77Field;
+        
+        private decimal _78Field;
+        
+        private decimal _8Field;
+        
+        private decimal _81Field;
+        
+        private decimal _82Field;
+        
+        private decimal _83Field;
+        
+        private decimal _84Field;
+        
+        private decimal _85Field;
+        
+        private decimal _86Field;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -8863,40 +9064,1340 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string RowNum {
+        public string Id_Region {
             get {
-                return this.RowNumField;
+                return this.Id_RegionField;
             }
             set {
-                if ((object.ReferenceEquals(this.RowNumField, value) != true)) {
-                    this.RowNumField = value;
-                    this.RaisePropertyChanged("RowNum");
+                if ((object.ReferenceEquals(this.Id_RegionField, value) != true)) {
+                    this.Id_RegionField = value;
+                    this.RaisePropertyChanged("Id_Region");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string RegionName {
+            get {
+                return this.RegionNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RegionNameField, value) != true)) {
+                    this.RegionNameField = value;
+                    this.RaisePropertyChanged("RegionName");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public decimal Yearly {
+        public decimal _1 {
             get {
-                return this.YearlyField;
+                return this._1Field;
             }
             set {
-                if ((this.YearlyField.Equals(value) != true)) {
-                    this.YearlyField = value;
-                    this.RaisePropertyChanged("Yearly");
+                if ((this._1Field.Equals(value) != true)) {
+                    this._1Field = value;
+                    this.RaisePropertyChanged("_1");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public decimal ByMonth {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _11 {
             get {
-                return this.ByMonthField;
+                return this._11Field;
             }
             set {
-                if ((this.ByMonthField.Equals(value) != true)) {
-                    this.ByMonthField = value;
-                    this.RaisePropertyChanged("ByMonth");
+                if ((this._11Field.Equals(value) != true)) {
+                    this._11Field = value;
+                    this.RaisePropertyChanged("_11");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _12 {
+            get {
+                return this._12Field;
+            }
+            set {
+                if ((this._12Field.Equals(value) != true)) {
+                    this._12Field = value;
+                    this.RaisePropertyChanged("_12");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _13 {
+            get {
+                return this._13Field;
+            }
+            set {
+                if ((this._13Field.Equals(value) != true)) {
+                    this._13Field = value;
+                    this.RaisePropertyChanged("_13");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _14 {
+            get {
+                return this._14Field;
+            }
+            set {
+                if ((this._14Field.Equals(value) != true)) {
+                    this._14Field = value;
+                    this.RaisePropertyChanged("_14");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _2 {
+            get {
+                return this._2Field;
+            }
+            set {
+                if ((this._2Field.Equals(value) != true)) {
+                    this._2Field = value;
+                    this.RaisePropertyChanged("_2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _21 {
+            get {
+                return this._21Field;
+            }
+            set {
+                if ((this._21Field.Equals(value) != true)) {
+                    this._21Field = value;
+                    this.RaisePropertyChanged("_21");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _22 {
+            get {
+                return this._22Field;
+            }
+            set {
+                if ((this._22Field.Equals(value) != true)) {
+                    this._22Field = value;
+                    this.RaisePropertyChanged("_22");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _23 {
+            get {
+                return this._23Field;
+            }
+            set {
+                if ((this._23Field.Equals(value) != true)) {
+                    this._23Field = value;
+                    this.RaisePropertyChanged("_23");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _24 {
+            get {
+                return this._24Field;
+            }
+            set {
+                if ((this._24Field.Equals(value) != true)) {
+                    this._24Field = value;
+                    this.RaisePropertyChanged("_24");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _3 {
+            get {
+                return this._3Field;
+            }
+            set {
+                if ((this._3Field.Equals(value) != true)) {
+                    this._3Field = value;
+                    this.RaisePropertyChanged("_3");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _31 {
+            get {
+                return this._31Field;
+            }
+            set {
+                if ((this._31Field.Equals(value) != true)) {
+                    this._31Field = value;
+                    this.RaisePropertyChanged("_31");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _32 {
+            get {
+                return this._32Field;
+            }
+            set {
+                if ((this._32Field.Equals(value) != true)) {
+                    this._32Field = value;
+                    this.RaisePropertyChanged("_32");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _33 {
+            get {
+                return this._33Field;
+            }
+            set {
+                if ((this._33Field.Equals(value) != true)) {
+                    this._33Field = value;
+                    this.RaisePropertyChanged("_33");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _34 {
+            get {
+                return this._34Field;
+            }
+            set {
+                if ((this._34Field.Equals(value) != true)) {
+                    this._34Field = value;
+                    this.RaisePropertyChanged("_34");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _4 {
+            get {
+                return this._4Field;
+            }
+            set {
+                if ((this._4Field.Equals(value) != true)) {
+                    this._4Field = value;
+                    this.RaisePropertyChanged("_4");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _41 {
+            get {
+                return this._41Field;
+            }
+            set {
+                if ((this._41Field.Equals(value) != true)) {
+                    this._41Field = value;
+                    this.RaisePropertyChanged("_41");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _411 {
+            get {
+                return this._411Field;
+            }
+            set {
+                if ((this._411Field.Equals(value) != true)) {
+                    this._411Field = value;
+                    this.RaisePropertyChanged("_411");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _412 {
+            get {
+                return this._412Field;
+            }
+            set {
+                if ((this._412Field.Equals(value) != true)) {
+                    this._412Field = value;
+                    this.RaisePropertyChanged("_412");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _413 {
+            get {
+                return this._413Field;
+            }
+            set {
+                if ((this._413Field.Equals(value) != true)) {
+                    this._413Field = value;
+                    this.RaisePropertyChanged("_413");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _414 {
+            get {
+                return this._414Field;
+            }
+            set {
+                if ((this._414Field.Equals(value) != true)) {
+                    this._414Field = value;
+                    this.RaisePropertyChanged("_414");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _42 {
+            get {
+                return this._42Field;
+            }
+            set {
+                if ((this._42Field.Equals(value) != true)) {
+                    this._42Field = value;
+                    this.RaisePropertyChanged("_42");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _421 {
+            get {
+                return this._421Field;
+            }
+            set {
+                if ((this._421Field.Equals(value) != true)) {
+                    this._421Field = value;
+                    this.RaisePropertyChanged("_421");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _422 {
+            get {
+                return this._422Field;
+            }
+            set {
+                if ((this._422Field.Equals(value) != true)) {
+                    this._422Field = value;
+                    this.RaisePropertyChanged("_422");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _423 {
+            get {
+                return this._423Field;
+            }
+            set {
+                if ((this._423Field.Equals(value) != true)) {
+                    this._423Field = value;
+                    this.RaisePropertyChanged("_423");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _424 {
+            get {
+                return this._424Field;
+            }
+            set {
+                if ((this._424Field.Equals(value) != true)) {
+                    this._424Field = value;
+                    this.RaisePropertyChanged("_424");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _43 {
+            get {
+                return this._43Field;
+            }
+            set {
+                if ((this._43Field.Equals(value) != true)) {
+                    this._43Field = value;
+                    this.RaisePropertyChanged("_43");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _431 {
+            get {
+                return this._431Field;
+            }
+            set {
+                if ((this._431Field.Equals(value) != true)) {
+                    this._431Field = value;
+                    this.RaisePropertyChanged("_431");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _432 {
+            get {
+                return this._432Field;
+            }
+            set {
+                if ((this._432Field.Equals(value) != true)) {
+                    this._432Field = value;
+                    this.RaisePropertyChanged("_432");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _433 {
+            get {
+                return this._433Field;
+            }
+            set {
+                if ((this._433Field.Equals(value) != true)) {
+                    this._433Field = value;
+                    this.RaisePropertyChanged("_433");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _434 {
+            get {
+                return this._434Field;
+            }
+            set {
+                if ((this._434Field.Equals(value) != true)) {
+                    this._434Field = value;
+                    this.RaisePropertyChanged("_434");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _44 {
+            get {
+                return this._44Field;
+            }
+            set {
+                if ((this._44Field.Equals(value) != true)) {
+                    this._44Field = value;
+                    this.RaisePropertyChanged("_44");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _441 {
+            get {
+                return this._441Field;
+            }
+            set {
+                if ((this._441Field.Equals(value) != true)) {
+                    this._441Field = value;
+                    this.RaisePropertyChanged("_441");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _442 {
+            get {
+                return this._442Field;
+            }
+            set {
+                if ((this._442Field.Equals(value) != true)) {
+                    this._442Field = value;
+                    this.RaisePropertyChanged("_442");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _443 {
+            get {
+                return this._443Field;
+            }
+            set {
+                if ((this._443Field.Equals(value) != true)) {
+                    this._443Field = value;
+                    this.RaisePropertyChanged("_443");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _444 {
+            get {
+                return this._444Field;
+            }
+            set {
+                if ((this._444Field.Equals(value) != true)) {
+                    this._444Field = value;
+                    this.RaisePropertyChanged("_444");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _45 {
+            get {
+                return this._45Field;
+            }
+            set {
+                if ((this._45Field.Equals(value) != true)) {
+                    this._45Field = value;
+                    this.RaisePropertyChanged("_45");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _451 {
+            get {
+                return this._451Field;
+            }
+            set {
+                if ((this._451Field.Equals(value) != true)) {
+                    this._451Field = value;
+                    this.RaisePropertyChanged("_451");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _452 {
+            get {
+                return this._452Field;
+            }
+            set {
+                if ((this._452Field.Equals(value) != true)) {
+                    this._452Field = value;
+                    this.RaisePropertyChanged("_452");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _453 {
+            get {
+                return this._453Field;
+            }
+            set {
+                if ((this._453Field.Equals(value) != true)) {
+                    this._453Field = value;
+                    this.RaisePropertyChanged("_453");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _454 {
+            get {
+                return this._454Field;
+            }
+            set {
+                if ((this._454Field.Equals(value) != true)) {
+                    this._454Field = value;
+                    this.RaisePropertyChanged("_454");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _46 {
+            get {
+                return this._46Field;
+            }
+            set {
+                if ((this._46Field.Equals(value) != true)) {
+                    this._46Field = value;
+                    this.RaisePropertyChanged("_46");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _461 {
+            get {
+                return this._461Field;
+            }
+            set {
+                if ((this._461Field.Equals(value) != true)) {
+                    this._461Field = value;
+                    this.RaisePropertyChanged("_461");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _462 {
+            get {
+                return this._462Field;
+            }
+            set {
+                if ((this._462Field.Equals(value) != true)) {
+                    this._462Field = value;
+                    this.RaisePropertyChanged("_462");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _463 {
+            get {
+                return this._463Field;
+            }
+            set {
+                if ((this._463Field.Equals(value) != true)) {
+                    this._463Field = value;
+                    this.RaisePropertyChanged("_463");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _464 {
+            get {
+                return this._464Field;
+            }
+            set {
+                if ((this._464Field.Equals(value) != true)) {
+                    this._464Field = value;
+                    this.RaisePropertyChanged("_464");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _5 {
+            get {
+                return this._5Field;
+            }
+            set {
+                if ((this._5Field.Equals(value) != true)) {
+                    this._5Field = value;
+                    this.RaisePropertyChanged("_5");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _51 {
+            get {
+                return this._51Field;
+            }
+            set {
+                if ((this._51Field.Equals(value) != true)) {
+                    this._51Field = value;
+                    this.RaisePropertyChanged("_51");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _511 {
+            get {
+                return this._511Field;
+            }
+            set {
+                if ((this._511Field.Equals(value) != true)) {
+                    this._511Field = value;
+                    this.RaisePropertyChanged("_511");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _512 {
+            get {
+                return this._512Field;
+            }
+            set {
+                if ((this._512Field.Equals(value) != true)) {
+                    this._512Field = value;
+                    this.RaisePropertyChanged("_512");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _513 {
+            get {
+                return this._513Field;
+            }
+            set {
+                if ((this._513Field.Equals(value) != true)) {
+                    this._513Field = value;
+                    this.RaisePropertyChanged("_513");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _514 {
+            get {
+                return this._514Field;
+            }
+            set {
+                if ((this._514Field.Equals(value) != true)) {
+                    this._514Field = value;
+                    this.RaisePropertyChanged("_514");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _52 {
+            get {
+                return this._52Field;
+            }
+            set {
+                if ((this._52Field.Equals(value) != true)) {
+                    this._52Field = value;
+                    this.RaisePropertyChanged("_52");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _521 {
+            get {
+                return this._521Field;
+            }
+            set {
+                if ((this._521Field.Equals(value) != true)) {
+                    this._521Field = value;
+                    this.RaisePropertyChanged("_521");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _522 {
+            get {
+                return this._522Field;
+            }
+            set {
+                if ((this._522Field.Equals(value) != true)) {
+                    this._522Field = value;
+                    this.RaisePropertyChanged("_522");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _523 {
+            get {
+                return this._523Field;
+            }
+            set {
+                if ((this._523Field.Equals(value) != true)) {
+                    this._523Field = value;
+                    this.RaisePropertyChanged("_523");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _524 {
+            get {
+                return this._524Field;
+            }
+            set {
+                if ((this._524Field.Equals(value) != true)) {
+                    this._524Field = value;
+                    this.RaisePropertyChanged("_524");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _53 {
+            get {
+                return this._53Field;
+            }
+            set {
+                if ((this._53Field.Equals(value) != true)) {
+                    this._53Field = value;
+                    this.RaisePropertyChanged("_53");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _531 {
+            get {
+                return this._531Field;
+            }
+            set {
+                if ((this._531Field.Equals(value) != true)) {
+                    this._531Field = value;
+                    this.RaisePropertyChanged("_531");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _532 {
+            get {
+                return this._532Field;
+            }
+            set {
+                if ((this._532Field.Equals(value) != true)) {
+                    this._532Field = value;
+                    this.RaisePropertyChanged("_532");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _533 {
+            get {
+                return this._533Field;
+            }
+            set {
+                if ((this._533Field.Equals(value) != true)) {
+                    this._533Field = value;
+                    this.RaisePropertyChanged("_533");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _534 {
+            get {
+                return this._534Field;
+            }
+            set {
+                if ((this._534Field.Equals(value) != true)) {
+                    this._534Field = value;
+                    this.RaisePropertyChanged("_534");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _54 {
+            get {
+                return this._54Field;
+            }
+            set {
+                if ((this._54Field.Equals(value) != true)) {
+                    this._54Field = value;
+                    this.RaisePropertyChanged("_54");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _541 {
+            get {
+                return this._541Field;
+            }
+            set {
+                if ((this._541Field.Equals(value) != true)) {
+                    this._541Field = value;
+                    this.RaisePropertyChanged("_541");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _542 {
+            get {
+                return this._542Field;
+            }
+            set {
+                if ((this._542Field.Equals(value) != true)) {
+                    this._542Field = value;
+                    this.RaisePropertyChanged("_542");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _543 {
+            get {
+                return this._543Field;
+            }
+            set {
+                if ((this._543Field.Equals(value) != true)) {
+                    this._543Field = value;
+                    this.RaisePropertyChanged("_543");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _544 {
+            get {
+                return this._544Field;
+            }
+            set {
+                if ((this._544Field.Equals(value) != true)) {
+                    this._544Field = value;
+                    this.RaisePropertyChanged("_544");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _55 {
+            get {
+                return this._55Field;
+            }
+            set {
+                if ((this._55Field.Equals(value) != true)) {
+                    this._55Field = value;
+                    this.RaisePropertyChanged("_55");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _551 {
+            get {
+                return this._551Field;
+            }
+            set {
+                if ((this._551Field.Equals(value) != true)) {
+                    this._551Field = value;
+                    this.RaisePropertyChanged("_551");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _552 {
+            get {
+                return this._552Field;
+            }
+            set {
+                if ((this._552Field.Equals(value) != true)) {
+                    this._552Field = value;
+                    this.RaisePropertyChanged("_552");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _553 {
+            get {
+                return this._553Field;
+            }
+            set {
+                if ((this._553Field.Equals(value) != true)) {
+                    this._553Field = value;
+                    this.RaisePropertyChanged("_553");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _554 {
+            get {
+                return this._554Field;
+            }
+            set {
+                if ((this._554Field.Equals(value) != true)) {
+                    this._554Field = value;
+                    this.RaisePropertyChanged("_554");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _56 {
+            get {
+                return this._56Field;
+            }
+            set {
+                if ((this._56Field.Equals(value) != true)) {
+                    this._56Field = value;
+                    this.RaisePropertyChanged("_56");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _561 {
+            get {
+                return this._561Field;
+            }
+            set {
+                if ((this._561Field.Equals(value) != true)) {
+                    this._561Field = value;
+                    this.RaisePropertyChanged("_561");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _562 {
+            get {
+                return this._562Field;
+            }
+            set {
+                if ((this._562Field.Equals(value) != true)) {
+                    this._562Field = value;
+                    this.RaisePropertyChanged("_562");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _563 {
+            get {
+                return this._563Field;
+            }
+            set {
+                if ((this._563Field.Equals(value) != true)) {
+                    this._563Field = value;
+                    this.RaisePropertyChanged("_563");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _564 {
+            get {
+                return this._564Field;
+            }
+            set {
+                if ((this._564Field.Equals(value) != true)) {
+                    this._564Field = value;
+                    this.RaisePropertyChanged("_564");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _6 {
+            get {
+                return this._6Field;
+            }
+            set {
+                if ((this._6Field.Equals(value) != true)) {
+                    this._6Field = value;
+                    this.RaisePropertyChanged("_6");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _61 {
+            get {
+                return this._61Field;
+            }
+            set {
+                if ((this._61Field.Equals(value) != true)) {
+                    this._61Field = value;
+                    this.RaisePropertyChanged("_61");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _62 {
+            get {
+                return this._62Field;
+            }
+            set {
+                if ((this._62Field.Equals(value) != true)) {
+                    this._62Field = value;
+                    this.RaisePropertyChanged("_62");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _63 {
+            get {
+                return this._63Field;
+            }
+            set {
+                if ((this._63Field.Equals(value) != true)) {
+                    this._63Field = value;
+                    this.RaisePropertyChanged("_63");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _64 {
+            get {
+                return this._64Field;
+            }
+            set {
+                if ((this._64Field.Equals(value) != true)) {
+                    this._64Field = value;
+                    this.RaisePropertyChanged("_64");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _65 {
+            get {
+                return this._65Field;
+            }
+            set {
+                if ((this._65Field.Equals(value) != true)) {
+                    this._65Field = value;
+                    this.RaisePropertyChanged("_65");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _66 {
+            get {
+                return this._66Field;
+            }
+            set {
+                if ((this._66Field.Equals(value) != true)) {
+                    this._66Field = value;
+                    this.RaisePropertyChanged("_66");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _67 {
+            get {
+                return this._67Field;
+            }
+            set {
+                if ((this._67Field.Equals(value) != true)) {
+                    this._67Field = value;
+                    this.RaisePropertyChanged("_67");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _7 {
+            get {
+                return this._7Field;
+            }
+            set {
+                if ((this._7Field.Equals(value) != true)) {
+                    this._7Field = value;
+                    this.RaisePropertyChanged("_7");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _71 {
+            get {
+                return this._71Field;
+            }
+            set {
+                if ((this._71Field.Equals(value) != true)) {
+                    this._71Field = value;
+                    this.RaisePropertyChanged("_71");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _72 {
+            get {
+                return this._72Field;
+            }
+            set {
+                if ((this._72Field.Equals(value) != true)) {
+                    this._72Field = value;
+                    this.RaisePropertyChanged("_72");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _73 {
+            get {
+                return this._73Field;
+            }
+            set {
+                if ((this._73Field.Equals(value) != true)) {
+                    this._73Field = value;
+                    this.RaisePropertyChanged("_73");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _74 {
+            get {
+                return this._74Field;
+            }
+            set {
+                if ((this._74Field.Equals(value) != true)) {
+                    this._74Field = value;
+                    this.RaisePropertyChanged("_74");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _75 {
+            get {
+                return this._75Field;
+            }
+            set {
+                if ((this._75Field.Equals(value) != true)) {
+                    this._75Field = value;
+                    this.RaisePropertyChanged("_75");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _76 {
+            get {
+                return this._76Field;
+            }
+            set {
+                if ((this._76Field.Equals(value) != true)) {
+                    this._76Field = value;
+                    this.RaisePropertyChanged("_76");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _77 {
+            get {
+                return this._77Field;
+            }
+            set {
+                if ((this._77Field.Equals(value) != true)) {
+                    this._77Field = value;
+                    this.RaisePropertyChanged("_77");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _78 {
+            get {
+                return this._78Field;
+            }
+            set {
+                if ((this._78Field.Equals(value) != true)) {
+                    this._78Field = value;
+                    this.RaisePropertyChanged("_78");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _8 {
+            get {
+                return this._8Field;
+            }
+            set {
+                if ((this._8Field.Equals(value) != true)) {
+                    this._8Field = value;
+                    this.RaisePropertyChanged("_8");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _81 {
+            get {
+                return this._81Field;
+            }
+            set {
+                if ((this._81Field.Equals(value) != true)) {
+                    this._81Field = value;
+                    this.RaisePropertyChanged("_81");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _82 {
+            get {
+                return this._82Field;
+            }
+            set {
+                if ((this._82Field.Equals(value) != true)) {
+                    this._82Field = value;
+                    this.RaisePropertyChanged("_82");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _83 {
+            get {
+                return this._83Field;
+            }
+            set {
+                if ((this._83Field.Equals(value) != true)) {
+                    this._83Field = value;
+                    this.RaisePropertyChanged("_83");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _84 {
+            get {
+                return this._84Field;
+            }
+            set {
+                if ((this._84Field.Equals(value) != true)) {
+                    this._84Field = value;
+                    this.RaisePropertyChanged("_84");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _85 {
+            get {
+                return this._85Field;
+            }
+            set {
+                if ((this._85Field.Equals(value) != true)) {
+                    this._85Field = value;
+                    this.RaisePropertyChanged("_85");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public decimal _86 {
+            get {
+                return this._86Field;
+            }
+            set {
+                if ((this._86Field.Equals(value) != true)) {
+                    this._86Field = value;
+                    this.RaisePropertyChanged("_86");
                 }
             }
         }

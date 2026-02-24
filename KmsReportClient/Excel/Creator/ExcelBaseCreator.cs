@@ -29,8 +29,6 @@ namespace KmsReportClient.Excel.Creator
             this.Header = header;
             this.IsNeedPdf = isNeedPdf;
             this.FilialName = filialName;
- 
-            
         }
 
         public void CreateReport(T report, T yearReport)
