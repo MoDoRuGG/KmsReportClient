@@ -985,7 +985,7 @@ namespace KmsReportClient.Forms
                 return;
             }
 
-            var excel = new ExcelConsolidateZpzTable10Creator(saveFileDialog1.FileName, "", _filialName, yymm);
+            var excel = new ExcelConsolidateZpzTable10Creator(saveFileDialog1.FileName + "_" + yymm, "", _filialName, yymm);
 
             excel.CreateReport(data, null);
 
@@ -1006,7 +1006,7 @@ namespace KmsReportClient.Forms
                 return;
             }
 
-            var excel = new ExcelConsolidateZpzTable10FilialCreator(saveFileDialog1.FileName, "", _filialName, yymm);
+            var excel = new ExcelConsolidateZpzTable10FilialCreator(saveFileDialog1.FileName + "_" + yymm, "", _filialName, yymm);
 
             excel.CreateReport(data, null);
 
@@ -1016,7 +1016,7 @@ namespace KmsReportClient.Forms
 
         private void CreateZpz10FilialGrowCons()
         {
-            string yymm = GetYymmQuarterly();
+            string yymm = GetYymm(cmbStart.Text, Convert.ToInt32(nudStart.Value)).ToString();
 
             var data = _client.CreateConsolidateZpzTable10FilialGrow(yymm);
 
@@ -1027,7 +1027,7 @@ namespace KmsReportClient.Forms
                 return;
             }
 
-            var excel = new ExcelConsolidateZpzTable10FilialGrowCreator(saveFileDialog1.FileName, "", _filialName, yymm);
+            var excel = new ExcelConsolidateZpzTable10FilialGrowCreator(saveFileDialog1.FileName+"_"+yymm, "", _filialName, yymm);
 
             excel.CreateReport(data, null);
 

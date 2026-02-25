@@ -566,9 +566,6 @@
     <None Include="Connected Services\External\KmsReportClient.External.ConsolidateZpzTable10Filial.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\External\KmsReportClient.External.ConsolidateZpzTable10FilialGrow.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\External\KmsReportClient.External.ConsolidateZpzTable5.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
