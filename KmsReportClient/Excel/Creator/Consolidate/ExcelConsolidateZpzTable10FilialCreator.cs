@@ -121,7 +121,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
                 ObjWorkSheet.Cells[currentIndex, 89] = data._72;
                 ObjWorkSheet.Cells[currentIndex, 90] = data._73;
                 ObjWorkSheet.Cells[currentIndex, 91] = data._74;
-                ObjWorkSheet.Cells[currentIndex, 92] = data._75;
+                ObjWorkSheet.Cells[currentIndex, 92] = "X";
                 ObjWorkSheet.Cells[currentIndex, 93] = data._76;
                 ObjWorkSheet.Cells[currentIndex, 94] = data._77;
                 ObjWorkSheet.Cells[currentIndex, 95] = data._78;
