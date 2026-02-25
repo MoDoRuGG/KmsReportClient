@@ -26,7 +26,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
         {
             int countReport = report.Length;
             int currentIndex = 3;
-            CopyNullCells(ObjWorkSheet, countReport, 3);
+            CopyNullCells(ObjWorkSheet, countReport+1, 3);
 
             foreach (var data in report)
             {
