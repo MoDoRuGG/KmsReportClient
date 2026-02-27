@@ -26,7 +26,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
         {
             int countReport = report.Length;
             int currentIndex = 3;
-            CopyNullCells(ObjWorkSheet, countReport + 1, 3);
+            CopyNullCells(ObjWorkSheet, countReport + 2, 3);
 
             foreach (var data in report)
             {
@@ -135,6 +135,46 @@ namespace KmsReportClient.Excel.Creator.Consolidate
 
                 currentIndex++;
             }
+
+            // === ИТОГОВАЯ СТРОКА ===
+            int totalRow = currentIndex;
+
+            // Столбец A - надпись "ИТОГО"
+            ObjWorkSheet.Cells[totalRow, 1] = "ИТОГО";
+
+            // Столбцы 2-102 - формулы SUM
+            for (int col = 2; col <= 102; col++)
+            {
+                if (col == 96 || col == 97 || col == 98 ||col == 99 || col == 100 || col == 101 || col == 102)
+                {
+                    ObjWorkSheet.Cells[totalRow, col] = "X";
+                }
+                else
+                {
+                    // Формула: =SUM(C3:C{lastRow})
+                    string colLetter = GetColumnLetter(col);
+                    ObjWorkSheet.Cells[totalRow, col].Formula = $"=SUM({colLetter}3:{colLetter}{totalRow - 1})";
+                }
+            }
+
+            // Выделяем итоговую строку жирным
+            ObjWorkSheet.Range[$"A{totalRow}:CV{totalRow}"].Font.Bold = true;
+        }
+
+        // Вспомогательный метод: номер столбца → буква (2→B, 3→C, ..., 102→CV)
+        private string GetColumnLetter(int colNum)
+        {
+            int dividend = colNum;
+            string columnName = string.Empty;
+
+            while (dividend > 0)
+            {
+                int modulo = (dividend - 1) % 26;
+                columnName = Convert.ToChar(65 + modulo).ToString() + columnName;
+                dividend = (dividend - modulo) / 26;
+            }
+
+            return columnName;
         }
     }
 }
