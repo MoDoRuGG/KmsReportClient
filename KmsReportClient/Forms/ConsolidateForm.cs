@@ -985,7 +985,7 @@ namespace KmsReportClient.Forms
                 return;
             }
 
-            var excel = new ExcelConsolidateZpzTable10Creator(saveFileDialog1.FileName + "_" + yymm, "", _filialName, yymm);
+            var excel = new ExcelConsolidateZpzTable10Creator(saveFileDialog1.FileName, "", _filialName, yymm);
 
             excel.CreateReport(data, null);
 
@@ -1006,7 +1006,7 @@ namespace KmsReportClient.Forms
                 return;
             }
 
-            var excel = new ExcelConsolidateZpzTable10FilialCreator(saveFileDialog1.FileName + "_" + yymm, "", _filialName, yymm);
+            var excel = new ExcelConsolidateZpzTable10FilialCreator(saveFileDialog1.FileName, "", _filialName, yymm);
 
             excel.CreateReport(data, null);
 
@@ -1027,7 +1027,7 @@ namespace KmsReportClient.Forms
                 return;
             }
 
-            var excel = new ExcelConsolidateZpzTable10FilialGrowCreator(saveFileDialog1.FileName+"_"+yymm, "", _filialName, yymm);
+            var excel = new ExcelConsolidateZpzTable10FilialGrowCreator(saveFileDialog1.FileName, "", _filialName, yymm);
 
             excel.CreateReport(data, null);
 
