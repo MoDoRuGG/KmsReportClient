@@ -188,7 +188,7 @@ namespace KmsReportClient.Report.Basic
                 CountUniversity = GlobalUtils.TryParseInt(row.Cells[0].Value),
                 CountCollege = GlobalUtils.TryParseInt(row.Cells[1].Value),
                 CountInsured = GlobalUtils.TryParseInt(row.Cells[2].Value),
-                Comments = row.Cells[2].Value.ToString()
+                Comments = row.Cells[3].Value.ToString()
             };
         }
     }
