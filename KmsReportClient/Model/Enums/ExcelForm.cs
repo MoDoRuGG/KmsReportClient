@@ -212,5 +212,11 @@ namespace KmsReportClient.Model.Enums
         Zpz10ConsFilial,
         [Description(GlobalConst.TempFolder + "consZpzTable10FilialGrow.xlsx")]
         Zpz10ConsFilialGrow,
+        [Description(GlobalConst.TempFolder + "consT5Newborn.xlsx")]
+        consT5Newborn,
+        [Description(GlobalConst.TempFolder + "consT6Students.xlsx")]
+        consT6Students,
+        [Description(GlobalConst.TempFolder + "consT7OldPolis.xlsx")]
+        consT7OldPolis,
     }
 }

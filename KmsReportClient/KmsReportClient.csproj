@@ -191,6 +191,9 @@
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateQuantityFP.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateQuantityAR.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateQuantityFilialCreator.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateTable7OldPolisCreator.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateTable6StudentsCreator.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateTable5NewbornCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateZpzTable10FilialGrowCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateZpzTable10FilialCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateZpzTable10Creator.cs" />
@@ -552,6 +555,24 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.ConsolidateQuantityQ.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.ConsolidateTable5Newborn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.ConsolidateTable5NewbornCollectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.ConsolidateTable6Students.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.ConsolidateTable6StudentsCollectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.ConsolidateTable7OldPolis.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.ConsolidateTable7OldPolisCollectResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.ConsolidateVCR.datasource">

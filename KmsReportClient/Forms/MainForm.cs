@@ -1088,7 +1088,7 @@ namespace KmsReportClient.Forms
         {
             var filialList = new List<string>();
             if (!string.IsNullOrEmpty(TxtbFilials.Text))
-             {
+            {
                 var parsedFilialList = TxtbFilials.Text.Replace(", ", ",").Split(',');
                 filialList.AddRange(parsedFilialList.Select(f => _regions.Single(x => x.Value == f).Key));
             }
@@ -1308,12 +1308,12 @@ namespace KmsReportClient.Forms
                 return;
             }
 
-            if (_processor.Report.Status != ReportStatus.Scan)
-            {
-                MessageBox.Show("Можно сдавать только те отчеты, у которых загружен скан.", "Предупреждение!",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            //if (_processor.Report.Status != ReportStatus.Scan)
+            //{
+            //    MessageBox.Show("Можно сдавать только те отчеты, у которых загружен скан.", "Предупреждение!",
+            //        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
 
             var dialogResult = MessageBox.Show(
                 "Вы уверены что хотите сдать отчет? Дальнейшее редактирование данной версии будет невозможно",
@@ -1985,6 +1985,15 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
 
         private void ФФОМСОбъемыПоВидамПомощиToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.FFOMSVolumesByTypes);
+
+        private void Таблица5НоворожденныеToolStripMenuItem_Click(object sender, EventArgs e) =>
+            OpenConsolidateReportForm(ConsolidateReport.T5Newborn);
+
+        private void Таблица6СтудентыToolStripMenuItem_Click(object sender, EventArgs e) =>
+            OpenConsolidateReportForm(ConsolidateReport.T6Students);
+
+        private void Таблица7СтарыеПолисыToolStripMenuItem_Click(object sender, EventArgs e) =>
+            OpenConsolidateReportForm(ConsolidateReport.T7OldPolis);
 
         private void КонтрольЗПЗежемесячнаяToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.ControlZpzQuarterly);

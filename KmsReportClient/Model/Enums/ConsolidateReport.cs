@@ -60,6 +60,9 @@
         ZpzTable5,
         Zpz10Cons,
         Zpz10FilialCons,
-        Zpz10FilialGrowCons
+        Zpz10FilialGrowCons,
+        T5Newborn,
+        T6Students,
+        T7OldPolis,
     }
 }

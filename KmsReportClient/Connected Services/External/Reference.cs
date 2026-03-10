@@ -15,6 +15,113 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ApprovalInfoDto", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ApprovalInfoDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DirectionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DirectionNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmployeeNameField;
+        
+        private System.Nullable<System.DateTime> ApprovedDateField;
+        
+        private bool IsApprovedField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Direction {
+            get {
+                return this.DirectionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DirectionField, value) != true)) {
+                    this.DirectionField = value;
+                    this.RaisePropertyChanged("Direction");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string DirectionName {
+            get {
+                return this.DirectionNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DirectionNameField, value) != true)) {
+                    this.DirectionNameField = value;
+                    this.RaisePropertyChanged("DirectionName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string EmployeeName {
+            get {
+                return this.EmployeeNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmployeeNameField, value) != true)) {
+                    this.EmployeeNameField = value;
+                    this.RaisePropertyChanged("EmployeeName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public System.Nullable<System.DateTime> ApprovedDate {
+            get {
+                return this.ApprovedDateField;
+            }
+            set {
+                if ((this.ApprovedDateField.Equals(value) != true)) {
+                    this.ApprovedDateField = value;
+                    this.RaisePropertyChanged("ApprovedDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public bool IsApproved {
+            get {
+                return this.IsApprovedField;
+            }
+            set {
+                if ((this.IsApprovedField.Equals(value) != true)) {
+                    this.IsApprovedField = value;
+                    this.RaisePropertyChanged("IsApproved");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="AbstractReport", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.Report262))]
@@ -42781,6 +42888,398 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateTable5Newborn", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ConsolidateTable5Newborn : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RegionNameField;
+        
+        private decimal MarketShareField;
+        
+        private decimal CountNewbornField;
+        
+        private decimal CountMaterinityBillsField;
+        
+        private decimal ShareFromRegisterField;
+        
+        private decimal DeviationFromRegisterField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string RegionName {
+            get {
+                return this.RegionNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RegionNameField, value) != true)) {
+                    this.RegionNameField = value;
+                    this.RaisePropertyChanged("RegionName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public decimal MarketShare {
+            get {
+                return this.MarketShareField;
+            }
+            set {
+                if ((this.MarketShareField.Equals(value) != true)) {
+                    this.MarketShareField = value;
+                    this.RaisePropertyChanged("MarketShare");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public decimal CountNewborn {
+            get {
+                return this.CountNewbornField;
+            }
+            set {
+                if ((this.CountNewbornField.Equals(value) != true)) {
+                    this.CountNewbornField = value;
+                    this.RaisePropertyChanged("CountNewborn");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public decimal CountMaterinityBills {
+            get {
+                return this.CountMaterinityBillsField;
+            }
+            set {
+                if ((this.CountMaterinityBillsField.Equals(value) != true)) {
+                    this.CountMaterinityBillsField = value;
+                    this.RaisePropertyChanged("CountMaterinityBills");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public decimal ShareFromRegister {
+            get {
+                return this.ShareFromRegisterField;
+            }
+            set {
+                if ((this.ShareFromRegisterField.Equals(value) != true)) {
+                    this.ShareFromRegisterField = value;
+                    this.RaisePropertyChanged("ShareFromRegister");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public decimal DeviationFromRegister {
+            get {
+                return this.DeviationFromRegisterField;
+            }
+            set {
+                if ((this.DeviationFromRegisterField.Equals(value) != true)) {
+                    this.DeviationFromRegisterField = value;
+                    this.RaisePropertyChanged("DeviationFromRegister");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateTable6Students", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ConsolidateTable6Students : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IdRegionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RegionNameField;
+        
+        private decimal CountUniversityField;
+        
+        private decimal CountCollegeField;
+        
+        private decimal CountInsuredField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CommentsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string IdRegion {
+            get {
+                return this.IdRegionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IdRegionField, value) != true)) {
+                    this.IdRegionField = value;
+                    this.RaisePropertyChanged("IdRegion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string RegionName {
+            get {
+                return this.RegionNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RegionNameField, value) != true)) {
+                    this.RegionNameField = value;
+                    this.RaisePropertyChanged("RegionName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public decimal CountUniversity {
+            get {
+                return this.CountUniversityField;
+            }
+            set {
+                if ((this.CountUniversityField.Equals(value) != true)) {
+                    this.CountUniversityField = value;
+                    this.RaisePropertyChanged("CountUniversity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public decimal CountCollege {
+            get {
+                return this.CountCollegeField;
+            }
+            set {
+                if ((this.CountCollegeField.Equals(value) != true)) {
+                    this.CountCollegeField = value;
+                    this.RaisePropertyChanged("CountCollege");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public decimal CountInsured {
+            get {
+                return this.CountInsuredField;
+            }
+            set {
+                if ((this.CountInsuredField.Equals(value) != true)) {
+                    this.CountInsuredField = value;
+                    this.RaisePropertyChanged("CountInsured");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string Comments {
+            get {
+                return this.CommentsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CommentsField, value) != true)) {
+                    this.CommentsField = value;
+                    this.RaisePropertyChanged("Comments");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConsolidateTable7OldPolis", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ConsolidateTable7OldPolis : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RegionNameField;
+        
+        private int CountConstant2019Field;
+        
+        private int CountYearStartField;
+        
+        private int CurrentQuantityField;
+        
+        private int CountOldPolisField;
+        
+        private decimal ShareFromQuantityField;
+        
+        private int YearlyDynamicField;
+        
+        private int From2019DynamicField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string RegionName {
+            get {
+                return this.RegionNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RegionNameField, value) != true)) {
+                    this.RegionNameField = value;
+                    this.RaisePropertyChanged("RegionName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public int CountConstant2019 {
+            get {
+                return this.CountConstant2019Field;
+            }
+            set {
+                if ((this.CountConstant2019Field.Equals(value) != true)) {
+                    this.CountConstant2019Field = value;
+                    this.RaisePropertyChanged("CountConstant2019");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int CountYearStart {
+            get {
+                return this.CountYearStartField;
+            }
+            set {
+                if ((this.CountYearStartField.Equals(value) != true)) {
+                    this.CountYearStartField = value;
+                    this.RaisePropertyChanged("CountYearStart");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int CurrentQuantity {
+            get {
+                return this.CurrentQuantityField;
+            }
+            set {
+                if ((this.CurrentQuantityField.Equals(value) != true)) {
+                    this.CurrentQuantityField = value;
+                    this.RaisePropertyChanged("CurrentQuantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public int CountOldPolis {
+            get {
+                return this.CountOldPolisField;
+            }
+            set {
+                if ((this.CountOldPolisField.Equals(value) != true)) {
+                    this.CountOldPolisField = value;
+                    this.RaisePropertyChanged("CountOldPolis");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public decimal ShareFromQuantity {
+            get {
+                return this.ShareFromQuantityField;
+            }
+            set {
+                if ((this.ShareFromQuantityField.Equals(value) != true)) {
+                    this.ShareFromQuantityField = value;
+                    this.RaisePropertyChanged("ShareFromQuantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public int YearlyDynamic {
+            get {
+                return this.YearlyDynamicField;
+            }
+            set {
+                if ((this.YearlyDynamicField.Equals(value) != true)) {
+                    this.YearlyDynamicField = value;
+                    this.RaisePropertyChanged("YearlyDynamic");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public int From2019Dynamic {
+            get {
+                return this.From2019DynamicField;
+            }
+            set {
+                if ((this.From2019DynamicField.Equals(value) != true)) {
+                    this.From2019DynamicField = value;
+                    this.RaisePropertyChanged("From2019Dynamic");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="FFOMSLethalEKMP", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class FFOMSLethalEKMP : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -46381,116 +46880,30 @@ namespace KmsReportClient.External {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ApprovalInfoDto", Namespace="http://kms-oms.ru/")]
-    [System.SerializableAttribute()]
-    public partial class ApprovalInfoDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DirectionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DirectionNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmployeeNameField;
-        
-        private System.Nullable<System.DateTime> ApprovedDateField;
-        
-        private bool IsApprovedField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Direction {
-            get {
-                return this.DirectionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DirectionField, value) != true)) {
-                    this.DirectionField = value;
-                    this.RaisePropertyChanged("Direction");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string DirectionName {
-            get {
-                return this.DirectionNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DirectionNameField, value) != true)) {
-                    this.DirectionNameField = value;
-                    this.RaisePropertyChanged("DirectionName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string EmployeeName {
-            get {
-                return this.EmployeeNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmployeeNameField, value) != true)) {
-                    this.EmployeeNameField = value;
-                    this.RaisePropertyChanged("EmployeeName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public System.Nullable<System.DateTime> ApprovedDate {
-            get {
-                return this.ApprovedDateField;
-            }
-            set {
-                if ((this.ApprovedDateField.Equals(value) != true)) {
-                    this.ApprovedDateField = value;
-                    this.RaisePropertyChanged("ApprovedDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public bool IsApproved {
-            get {
-                return this.IsApprovedField;
-            }
-            set {
-                if ((this.IsApprovedField.Equals(value) != true)) {
-                    this.IsApprovedField = value;
-                    this.RaisePropertyChanged("IsApproved");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://kms-oms.ru/", ConfigurationName="External.EndpointSoap")]
     public interface EndpointSoap {
+        
+        // CODEGEN: Контракт генерации сообщений с именем GetApprovalInfoResult из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetApprovalInfo", ReplyAction="*")]
+        KmsReportClient.External.GetApprovalInfoResponse GetApprovalInfo(KmsReportClient.External.GetApprovalInfoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetApprovalInfo", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.GetApprovalInfoResponse> GetApprovalInfoAsync(KmsReportClient.External.GetApprovalInfoRequest request);
+        
+        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveReport", ReplyAction="*")]
+        KmsReportClient.External.SaveReportResponse SaveReport(KmsReportClient.External.SaveReportRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveReport", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.SaveReportResponse> SaveReportAsync(KmsReportClient.External.SaveReportRequest request);
+        
+        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveReportDataSourceHandle", ReplyAction="*")]
+        KmsReportClient.External.SaveReportDataSourceHandleResponse SaveReportDataSourceHandle(KmsReportClient.External.SaveReportDataSourceHandleRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveReportDataSourceHandle", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.SaveReportDataSourceHandleResponse> SaveReportDataSourceHandleAsync(KmsReportClient.External.SaveReportDataSourceHandleRequest request);
         
         // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
         [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveReportDataSourceExcel", ReplyAction="*")]
@@ -47010,6 +47423,27 @@ namespace KmsReportClient.External {
         System.Threading.Tasks.Task<KmsReportClient.External.ConsolidateOpedQCollectResponse> ConsolidateOpedQCollectAsync(KmsReportClient.External.ConsolidateOpedQCollectRequest request);
         
         // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ConsolidateTable5NewbornCollect", ReplyAction="*")]
+        KmsReportClient.External.ConsolidateTable5NewbornCollectResponse ConsolidateTable5NewbornCollect(KmsReportClient.External.ConsolidateTable5NewbornCollectRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ConsolidateTable5NewbornCollect", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.ConsolidateTable5NewbornCollectResponse> ConsolidateTable5NewbornCollectAsync(KmsReportClient.External.ConsolidateTable5NewbornCollectRequest request);
+        
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ConsolidateTable6StudentsCollect", ReplyAction="*")]
+        KmsReportClient.External.ConsolidateTable6StudentsCollectResponse ConsolidateTable6StudentsCollect(KmsReportClient.External.ConsolidateTable6StudentsCollectRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ConsolidateTable6StudentsCollect", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.ConsolidateTable6StudentsCollectResponse> ConsolidateTable6StudentsCollectAsync(KmsReportClient.External.ConsolidateTable6StudentsCollectRequest request);
+        
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ConsolidateTable7OldPolisCollect", ReplyAction="*")]
+        KmsReportClient.External.ConsolidateTable7OldPolisCollectResponse ConsolidateTable7OldPolisCollect(KmsReportClient.External.ConsolidateTable7OldPolisCollectRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ConsolidateTable7OldPolisCollect", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.ConsolidateTable7OldPolisCollectResponse> ConsolidateTable7OldPolisCollectAsync(KmsReportClient.External.ConsolidateTable7OldPolisCollectRequest request);
+        
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
         [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CollectFFOMSLethalEKMP", ReplyAction="*")]
         KmsReportClient.External.CollectFFOMSLethalEKMPResponse CollectFFOMSLethalEKMP(KmsReportClient.External.CollectFFOMSLethalEKMPRequest request);
         
@@ -47462,27 +47896,242 @@ namespace KmsReportClient.External {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetReport", ReplyAction="*")]
         System.Threading.Tasks.Task<KmsReportClient.External.GetReportResponse> GetReportAsync(KmsReportClient.External.GetReportRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetApprovalInfoRequest {
         
-        // CODEGEN: Контракт генерации сообщений с именем GetApprovalInfoResult из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetApprovalInfo", ReplyAction="*")]
-        KmsReportClient.External.GetApprovalInfoResponse GetApprovalInfo(KmsReportClient.External.GetApprovalInfoRequest request);
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetApprovalInfo", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.GetApprovalInfoRequestBody Body;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetApprovalInfo", ReplyAction="*")]
-        System.Threading.Tasks.Task<KmsReportClient.External.GetApprovalInfoResponse> GetApprovalInfoAsync(KmsReportClient.External.GetApprovalInfoRequest request);
+        public GetApprovalInfoRequest() {
+        }
         
-        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveReport", ReplyAction="*")]
-        KmsReportClient.External.SaveReportResponse SaveReport(KmsReportClient.External.SaveReportRequest request);
+        public GetApprovalInfoRequest(KmsReportClient.External.GetApprovalInfoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class GetApprovalInfoRequestBody {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveReport", ReplyAction="*")]
-        System.Threading.Tasks.Task<KmsReportClient.External.SaveReportResponse> SaveReportAsync(KmsReportClient.External.SaveReportRequest request);
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int idReportFlow;
         
-        // CODEGEN: Контракт генерации сообщений с именем report из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveReportDataSourceHandle", ReplyAction="*")]
-        KmsReportClient.External.SaveReportDataSourceHandleResponse SaveReportDataSourceHandle(KmsReportClient.External.SaveReportDataSourceHandleRequest request);
+        public GetApprovalInfoRequestBody() {
+        }
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/SaveReportDataSourceHandle", ReplyAction="*")]
-        System.Threading.Tasks.Task<KmsReportClient.External.SaveReportDataSourceHandleResponse> SaveReportDataSourceHandleAsync(KmsReportClient.External.SaveReportDataSourceHandleRequest request);
+        public GetApprovalInfoRequestBody(int idReportFlow) {
+            this.idReportFlow = idReportFlow;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetApprovalInfoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetApprovalInfoResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.GetApprovalInfoResponseBody Body;
+        
+        public GetApprovalInfoResponse() {
+        }
+        
+        public GetApprovalInfoResponse(KmsReportClient.External.GetApprovalInfoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class GetApprovalInfoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.ApprovalInfoDto[] GetApprovalInfoResult;
+        
+        public GetApprovalInfoResponseBody() {
+        }
+        
+        public GetApprovalInfoResponseBody(KmsReportClient.External.ApprovalInfoDto[] GetApprovalInfoResult) {
+            this.GetApprovalInfoResult = GetApprovalInfoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SaveReportRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveReport", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.SaveReportRequestBody Body;
+        
+        public SaveReportRequest() {
+        }
+        
+        public SaveReportRequest(KmsReportClient.External.SaveReportRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class SaveReportRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.AbstractReport report;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string yymm;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int idUser;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string filialCode;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public KmsReportClient.External.ReportType reportType;
+        
+        public SaveReportRequestBody() {
+        }
+        
+        public SaveReportRequestBody(KmsReportClient.External.AbstractReport report, string yymm, int idUser, string filialCode, KmsReportClient.External.ReportType reportType) {
+            this.report = report;
+            this.yymm = yymm;
+            this.idUser = idUser;
+            this.filialCode = filialCode;
+            this.reportType = reportType;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SaveReportResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveReportResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.SaveReportResponseBody Body;
+        
+        public SaveReportResponse() {
+        }
+        
+        public SaveReportResponse(KmsReportClient.External.SaveReportResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class SaveReportResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.AbstractReport SaveReportResult;
+        
+        public SaveReportResponseBody() {
+        }
+        
+        public SaveReportResponseBody(KmsReportClient.External.AbstractReport SaveReportResult) {
+            this.SaveReportResult = SaveReportResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SaveReportDataSourceHandleRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveReportDataSourceHandle", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.SaveReportDataSourceHandleRequestBody Body;
+        
+        public SaveReportDataSourceHandleRequest() {
+        }
+        
+        public SaveReportDataSourceHandleRequest(KmsReportClient.External.SaveReportDataSourceHandleRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class SaveReportDataSourceHandleRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.AbstractReport report;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string yymm;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int idUser;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string filialCode;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public KmsReportClient.External.ReportType reportType;
+        
+        public SaveReportDataSourceHandleRequestBody() {
+        }
+        
+        public SaveReportDataSourceHandleRequestBody(KmsReportClient.External.AbstractReport report, string yymm, int idUser, string filialCode, KmsReportClient.External.ReportType reportType) {
+            this.report = report;
+            this.yymm = yymm;
+            this.idUser = idUser;
+            this.filialCode = filialCode;
+            this.reportType = reportType;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SaveReportDataSourceHandleResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveReportDataSourceHandleResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.SaveReportDataSourceHandleResponseBody Body;
+        
+        public SaveReportDataSourceHandleResponse() {
+        }
+        
+        public SaveReportDataSourceHandleResponse(KmsReportClient.External.SaveReportDataSourceHandleResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class SaveReportDataSourceHandleResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.AbstractReport SaveReportDataSourceHandleResult;
+        
+        public SaveReportDataSourceHandleResponseBody() {
+        }
+        
+        public SaveReportDataSourceHandleResponseBody(KmsReportClient.External.AbstractReport SaveReportDataSourceHandleResult) {
+            this.SaveReportDataSourceHandleResult = SaveReportDataSourceHandleResult;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -52532,6 +53181,210 @@ namespace KmsReportClient.External {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ConsolidateTable5NewbornCollectRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsolidateTable5NewbornCollect", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.ConsolidateTable5NewbornCollectRequestBody Body;
+        
+        public ConsolidateTable5NewbornCollectRequest() {
+        }
+        
+        public ConsolidateTable5NewbornCollectRequest(KmsReportClient.External.ConsolidateTable5NewbornCollectRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class ConsolidateTable5NewbornCollectRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string yymm;
+        
+        public ConsolidateTable5NewbornCollectRequestBody() {
+        }
+        
+        public ConsolidateTable5NewbornCollectRequestBody(string yymm) {
+            this.yymm = yymm;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ConsolidateTable5NewbornCollectResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsolidateTable5NewbornCollectResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.ConsolidateTable5NewbornCollectResponseBody Body;
+        
+        public ConsolidateTable5NewbornCollectResponse() {
+        }
+        
+        public ConsolidateTable5NewbornCollectResponse(KmsReportClient.External.ConsolidateTable5NewbornCollectResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class ConsolidateTable5NewbornCollectResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.ConsolidateTable5Newborn[] ConsolidateTable5NewbornCollectResult;
+        
+        public ConsolidateTable5NewbornCollectResponseBody() {
+        }
+        
+        public ConsolidateTable5NewbornCollectResponseBody(KmsReportClient.External.ConsolidateTable5Newborn[] ConsolidateTable5NewbornCollectResult) {
+            this.ConsolidateTable5NewbornCollectResult = ConsolidateTable5NewbornCollectResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ConsolidateTable6StudentsCollectRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsolidateTable6StudentsCollect", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.ConsolidateTable6StudentsCollectRequestBody Body;
+        
+        public ConsolidateTable6StudentsCollectRequest() {
+        }
+        
+        public ConsolidateTable6StudentsCollectRequest(KmsReportClient.External.ConsolidateTable6StudentsCollectRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class ConsolidateTable6StudentsCollectRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string yymm;
+        
+        public ConsolidateTable6StudentsCollectRequestBody() {
+        }
+        
+        public ConsolidateTable6StudentsCollectRequestBody(string yymm) {
+            this.yymm = yymm;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ConsolidateTable6StudentsCollectResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsolidateTable6StudentsCollectResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.ConsolidateTable6StudentsCollectResponseBody Body;
+        
+        public ConsolidateTable6StudentsCollectResponse() {
+        }
+        
+        public ConsolidateTable6StudentsCollectResponse(KmsReportClient.External.ConsolidateTable6StudentsCollectResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class ConsolidateTable6StudentsCollectResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.ConsolidateTable6Students[] ConsolidateTable6StudentsCollectResult;
+        
+        public ConsolidateTable6StudentsCollectResponseBody() {
+        }
+        
+        public ConsolidateTable6StudentsCollectResponseBody(KmsReportClient.External.ConsolidateTable6Students[] ConsolidateTable6StudentsCollectResult) {
+            this.ConsolidateTable6StudentsCollectResult = ConsolidateTable6StudentsCollectResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ConsolidateTable7OldPolisCollectRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsolidateTable7OldPolisCollect", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.ConsolidateTable7OldPolisCollectRequestBody Body;
+        
+        public ConsolidateTable7OldPolisCollectRequest() {
+        }
+        
+        public ConsolidateTable7OldPolisCollectRequest(KmsReportClient.External.ConsolidateTable7OldPolisCollectRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class ConsolidateTable7OldPolisCollectRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string yymm;
+        
+        public ConsolidateTable7OldPolisCollectRequestBody() {
+        }
+        
+        public ConsolidateTable7OldPolisCollectRequestBody(string yymm) {
+            this.yymm = yymm;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ConsolidateTable7OldPolisCollectResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsolidateTable7OldPolisCollectResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.ConsolidateTable7OldPolisCollectResponseBody Body;
+        
+        public ConsolidateTable7OldPolisCollectResponse() {
+        }
+        
+        public ConsolidateTable7OldPolisCollectResponse(KmsReportClient.External.ConsolidateTable7OldPolisCollectResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class ConsolidateTable7OldPolisCollectResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.ConsolidateTable7OldPolis[] ConsolidateTable7OldPolisCollectResult;
+        
+        public ConsolidateTable7OldPolisCollectResponseBody() {
+        }
+        
+        public ConsolidateTable7OldPolisCollectResponseBody(KmsReportClient.External.ConsolidateTable7OldPolis[] ConsolidateTable7OldPolisCollectResult) {
+            this.ConsolidateTable7OldPolisCollectResult = ConsolidateTable7OldPolisCollectResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CollectFFOMSLethalEKMPRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="CollectFFOMSLethalEKMP", Namespace="http://kms-oms.ru/", Order=0)]
@@ -56480,242 +57333,6 @@ namespace KmsReportClient.External {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetApprovalInfoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetApprovalInfo", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.GetApprovalInfoRequestBody Body;
-        
-        public GetApprovalInfoRequest() {
-        }
-        
-        public GetApprovalInfoRequest(KmsReportClient.External.GetApprovalInfoRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class GetApprovalInfoRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int idReportFlow;
-        
-        public GetApprovalInfoRequestBody() {
-        }
-        
-        public GetApprovalInfoRequestBody(int idReportFlow) {
-            this.idReportFlow = idReportFlow;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetApprovalInfoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetApprovalInfoResponse", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.GetApprovalInfoResponseBody Body;
-        
-        public GetApprovalInfoResponse() {
-        }
-        
-        public GetApprovalInfoResponse(KmsReportClient.External.GetApprovalInfoResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class GetApprovalInfoResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public KmsReportClient.External.ApprovalInfoDto[] GetApprovalInfoResult;
-        
-        public GetApprovalInfoResponseBody() {
-        }
-        
-        public GetApprovalInfoResponseBody(KmsReportClient.External.ApprovalInfoDto[] GetApprovalInfoResult) {
-            this.GetApprovalInfoResult = GetApprovalInfoResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SaveReportRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveReport", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.SaveReportRequestBody Body;
-        
-        public SaveReportRequest() {
-        }
-        
-        public SaveReportRequest(KmsReportClient.External.SaveReportRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class SaveReportRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public KmsReportClient.External.AbstractReport report;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string yymm;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public int idUser;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string filialCode;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public KmsReportClient.External.ReportType reportType;
-        
-        public SaveReportRequestBody() {
-        }
-        
-        public SaveReportRequestBody(KmsReportClient.External.AbstractReport report, string yymm, int idUser, string filialCode, KmsReportClient.External.ReportType reportType) {
-            this.report = report;
-            this.yymm = yymm;
-            this.idUser = idUser;
-            this.filialCode = filialCode;
-            this.reportType = reportType;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SaveReportResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveReportResponse", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.SaveReportResponseBody Body;
-        
-        public SaveReportResponse() {
-        }
-        
-        public SaveReportResponse(KmsReportClient.External.SaveReportResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class SaveReportResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public KmsReportClient.External.AbstractReport SaveReportResult;
-        
-        public SaveReportResponseBody() {
-        }
-        
-        public SaveReportResponseBody(KmsReportClient.External.AbstractReport SaveReportResult) {
-            this.SaveReportResult = SaveReportResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SaveReportDataSourceHandleRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveReportDataSourceHandle", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.SaveReportDataSourceHandleRequestBody Body;
-        
-        public SaveReportDataSourceHandleRequest() {
-        }
-        
-        public SaveReportDataSourceHandleRequest(KmsReportClient.External.SaveReportDataSourceHandleRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class SaveReportDataSourceHandleRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public KmsReportClient.External.AbstractReport report;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string yymm;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public int idUser;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string filialCode;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public KmsReportClient.External.ReportType reportType;
-        
-        public SaveReportDataSourceHandleRequestBody() {
-        }
-        
-        public SaveReportDataSourceHandleRequestBody(KmsReportClient.External.AbstractReport report, string yymm, int idUser, string filialCode, KmsReportClient.External.ReportType reportType) {
-            this.report = report;
-            this.yymm = yymm;
-            this.idUser = idUser;
-            this.filialCode = filialCode;
-            this.reportType = reportType;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SaveReportDataSourceHandleResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveReportDataSourceHandleResponse", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.SaveReportDataSourceHandleResponseBody Body;
-        
-        public SaveReportDataSourceHandleResponse() {
-        }
-        
-        public SaveReportDataSourceHandleResponse(KmsReportClient.External.SaveReportDataSourceHandleResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class SaveReportDataSourceHandleResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public KmsReportClient.External.AbstractReport SaveReportDataSourceHandleResult;
-        
-        public SaveReportDataSourceHandleResponseBody() {
-        }
-        
-        public SaveReportDataSourceHandleResponseBody(KmsReportClient.External.AbstractReport SaveReportDataSourceHandleResult) {
-            this.SaveReportDataSourceHandleResult = SaveReportDataSourceHandleResult;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface EndpointSoapChannel : KmsReportClient.External.EndpointSoap, System.ServiceModel.IClientChannel {
     }
@@ -56741,6 +57358,97 @@ namespace KmsReportClient.External {
         
         public EndpointSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.GetApprovalInfoResponse KmsReportClient.External.EndpointSoap.GetApprovalInfo(KmsReportClient.External.GetApprovalInfoRequest request) {
+            return base.Channel.GetApprovalInfo(request);
+        }
+        
+        public KmsReportClient.External.ApprovalInfoDto[] GetApprovalInfo(int idReportFlow) {
+            KmsReportClient.External.GetApprovalInfoRequest inValue = new KmsReportClient.External.GetApprovalInfoRequest();
+            inValue.Body = new KmsReportClient.External.GetApprovalInfoRequestBody();
+            inValue.Body.idReportFlow = idReportFlow;
+            KmsReportClient.External.GetApprovalInfoResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).GetApprovalInfo(inValue);
+            return retVal.Body.GetApprovalInfoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.GetApprovalInfoResponse> KmsReportClient.External.EndpointSoap.GetApprovalInfoAsync(KmsReportClient.External.GetApprovalInfoRequest request) {
+            return base.Channel.GetApprovalInfoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.GetApprovalInfoResponse> GetApprovalInfoAsync(int idReportFlow) {
+            KmsReportClient.External.GetApprovalInfoRequest inValue = new KmsReportClient.External.GetApprovalInfoRequest();
+            inValue.Body = new KmsReportClient.External.GetApprovalInfoRequestBody();
+            inValue.Body.idReportFlow = idReportFlow;
+            return ((KmsReportClient.External.EndpointSoap)(this)).GetApprovalInfoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.SaveReportResponse KmsReportClient.External.EndpointSoap.SaveReport(KmsReportClient.External.SaveReportRequest request) {
+            return base.Channel.SaveReport(request);
+        }
+        
+        public KmsReportClient.External.AbstractReport SaveReport(KmsReportClient.External.AbstractReport report, string yymm, int idUser, string filialCode, KmsReportClient.External.ReportType reportType) {
+            KmsReportClient.External.SaveReportRequest inValue = new KmsReportClient.External.SaveReportRequest();
+            inValue.Body = new KmsReportClient.External.SaveReportRequestBody();
+            inValue.Body.report = report;
+            inValue.Body.yymm = yymm;
+            inValue.Body.idUser = idUser;
+            inValue.Body.filialCode = filialCode;
+            inValue.Body.reportType = reportType;
+            KmsReportClient.External.SaveReportResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).SaveReport(inValue);
+            return retVal.Body.SaveReportResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.SaveReportResponse> KmsReportClient.External.EndpointSoap.SaveReportAsync(KmsReportClient.External.SaveReportRequest request) {
+            return base.Channel.SaveReportAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.SaveReportResponse> SaveReportAsync(KmsReportClient.External.AbstractReport report, string yymm, int idUser, string filialCode, KmsReportClient.External.ReportType reportType) {
+            KmsReportClient.External.SaveReportRequest inValue = new KmsReportClient.External.SaveReportRequest();
+            inValue.Body = new KmsReportClient.External.SaveReportRequestBody();
+            inValue.Body.report = report;
+            inValue.Body.yymm = yymm;
+            inValue.Body.idUser = idUser;
+            inValue.Body.filialCode = filialCode;
+            inValue.Body.reportType = reportType;
+            return ((KmsReportClient.External.EndpointSoap)(this)).SaveReportAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.SaveReportDataSourceHandleResponse KmsReportClient.External.EndpointSoap.SaveReportDataSourceHandle(KmsReportClient.External.SaveReportDataSourceHandleRequest request) {
+            return base.Channel.SaveReportDataSourceHandle(request);
+        }
+        
+        public KmsReportClient.External.AbstractReport SaveReportDataSourceHandle(KmsReportClient.External.AbstractReport report, string yymm, int idUser, string filialCode, KmsReportClient.External.ReportType reportType) {
+            KmsReportClient.External.SaveReportDataSourceHandleRequest inValue = new KmsReportClient.External.SaveReportDataSourceHandleRequest();
+            inValue.Body = new KmsReportClient.External.SaveReportDataSourceHandleRequestBody();
+            inValue.Body.report = report;
+            inValue.Body.yymm = yymm;
+            inValue.Body.idUser = idUser;
+            inValue.Body.filialCode = filialCode;
+            inValue.Body.reportType = reportType;
+            KmsReportClient.External.SaveReportDataSourceHandleResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).SaveReportDataSourceHandle(inValue);
+            return retVal.Body.SaveReportDataSourceHandleResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.SaveReportDataSourceHandleResponse> KmsReportClient.External.EndpointSoap.SaveReportDataSourceHandleAsync(KmsReportClient.External.SaveReportDataSourceHandleRequest request) {
+            return base.Channel.SaveReportDataSourceHandleAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.SaveReportDataSourceHandleResponse> SaveReportDataSourceHandleAsync(KmsReportClient.External.AbstractReport report, string yymm, int idUser, string filialCode, KmsReportClient.External.ReportType reportType) {
+            KmsReportClient.External.SaveReportDataSourceHandleRequest inValue = new KmsReportClient.External.SaveReportDataSourceHandleRequest();
+            inValue.Body = new KmsReportClient.External.SaveReportDataSourceHandleRequestBody();
+            inValue.Body.report = report;
+            inValue.Body.yymm = yymm;
+            inValue.Body.idUser = idUser;
+            inValue.Body.filialCode = filialCode;
+            inValue.Body.reportType = reportType;
+            return ((KmsReportClient.External.EndpointSoap)(this)).SaveReportDataSourceHandleAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -58642,6 +59350,81 @@ namespace KmsReportClient.External {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.ConsolidateTable5NewbornCollectResponse KmsReportClient.External.EndpointSoap.ConsolidateTable5NewbornCollect(KmsReportClient.External.ConsolidateTable5NewbornCollectRequest request) {
+            return base.Channel.ConsolidateTable5NewbornCollect(request);
+        }
+        
+        public KmsReportClient.External.ConsolidateTable5Newborn[] ConsolidateTable5NewbornCollect(string yymm) {
+            KmsReportClient.External.ConsolidateTable5NewbornCollectRequest inValue = new KmsReportClient.External.ConsolidateTable5NewbornCollectRequest();
+            inValue.Body = new KmsReportClient.External.ConsolidateTable5NewbornCollectRequestBody();
+            inValue.Body.yymm = yymm;
+            KmsReportClient.External.ConsolidateTable5NewbornCollectResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).ConsolidateTable5NewbornCollect(inValue);
+            return retVal.Body.ConsolidateTable5NewbornCollectResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.ConsolidateTable5NewbornCollectResponse> KmsReportClient.External.EndpointSoap.ConsolidateTable5NewbornCollectAsync(KmsReportClient.External.ConsolidateTable5NewbornCollectRequest request) {
+            return base.Channel.ConsolidateTable5NewbornCollectAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.ConsolidateTable5NewbornCollectResponse> ConsolidateTable5NewbornCollectAsync(string yymm) {
+            KmsReportClient.External.ConsolidateTable5NewbornCollectRequest inValue = new KmsReportClient.External.ConsolidateTable5NewbornCollectRequest();
+            inValue.Body = new KmsReportClient.External.ConsolidateTable5NewbornCollectRequestBody();
+            inValue.Body.yymm = yymm;
+            return ((KmsReportClient.External.EndpointSoap)(this)).ConsolidateTable5NewbornCollectAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.ConsolidateTable6StudentsCollectResponse KmsReportClient.External.EndpointSoap.ConsolidateTable6StudentsCollect(KmsReportClient.External.ConsolidateTable6StudentsCollectRequest request) {
+            return base.Channel.ConsolidateTable6StudentsCollect(request);
+        }
+        
+        public KmsReportClient.External.ConsolidateTable6Students[] ConsolidateTable6StudentsCollect(string yymm) {
+            KmsReportClient.External.ConsolidateTable6StudentsCollectRequest inValue = new KmsReportClient.External.ConsolidateTable6StudentsCollectRequest();
+            inValue.Body = new KmsReportClient.External.ConsolidateTable6StudentsCollectRequestBody();
+            inValue.Body.yymm = yymm;
+            KmsReportClient.External.ConsolidateTable6StudentsCollectResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).ConsolidateTable6StudentsCollect(inValue);
+            return retVal.Body.ConsolidateTable6StudentsCollectResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.ConsolidateTable6StudentsCollectResponse> KmsReportClient.External.EndpointSoap.ConsolidateTable6StudentsCollectAsync(KmsReportClient.External.ConsolidateTable6StudentsCollectRequest request) {
+            return base.Channel.ConsolidateTable6StudentsCollectAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.ConsolidateTable6StudentsCollectResponse> ConsolidateTable6StudentsCollectAsync(string yymm) {
+            KmsReportClient.External.ConsolidateTable6StudentsCollectRequest inValue = new KmsReportClient.External.ConsolidateTable6StudentsCollectRequest();
+            inValue.Body = new KmsReportClient.External.ConsolidateTable6StudentsCollectRequestBody();
+            inValue.Body.yymm = yymm;
+            return ((KmsReportClient.External.EndpointSoap)(this)).ConsolidateTable6StudentsCollectAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.ConsolidateTable7OldPolisCollectResponse KmsReportClient.External.EndpointSoap.ConsolidateTable7OldPolisCollect(KmsReportClient.External.ConsolidateTable7OldPolisCollectRequest request) {
+            return base.Channel.ConsolidateTable7OldPolisCollect(request);
+        }
+        
+        public KmsReportClient.External.ConsolidateTable7OldPolis[] ConsolidateTable7OldPolisCollect(string yymm) {
+            KmsReportClient.External.ConsolidateTable7OldPolisCollectRequest inValue = new KmsReportClient.External.ConsolidateTable7OldPolisCollectRequest();
+            inValue.Body = new KmsReportClient.External.ConsolidateTable7OldPolisCollectRequestBody();
+            inValue.Body.yymm = yymm;
+            KmsReportClient.External.ConsolidateTable7OldPolisCollectResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).ConsolidateTable7OldPolisCollect(inValue);
+            return retVal.Body.ConsolidateTable7OldPolisCollectResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.ConsolidateTable7OldPolisCollectResponse> KmsReportClient.External.EndpointSoap.ConsolidateTable7OldPolisCollectAsync(KmsReportClient.External.ConsolidateTable7OldPolisCollectRequest request) {
+            return base.Channel.ConsolidateTable7OldPolisCollectAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.ConsolidateTable7OldPolisCollectResponse> ConsolidateTable7OldPolisCollectAsync(string yymm) {
+            KmsReportClient.External.ConsolidateTable7OldPolisCollectRequest inValue = new KmsReportClient.External.ConsolidateTable7OldPolisCollectRequest();
+            inValue.Body = new KmsReportClient.External.ConsolidateTable7OldPolisCollectRequestBody();
+            inValue.Body.yymm = yymm;
+            return ((KmsReportClient.External.EndpointSoap)(this)).ConsolidateTable7OldPolisCollectAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         KmsReportClient.External.CollectFFOMSLethalEKMPResponse KmsReportClient.External.EndpointSoap.CollectFFOMSLethalEKMP(KmsReportClient.External.CollectFFOMSLethalEKMPRequest request) {
             return base.Channel.CollectFFOMSLethalEKMP(request);
         }
@@ -60225,97 +61008,6 @@ namespace KmsReportClient.External {
             inValue.Body.yymm = yymm;
             inValue.Body.reportType = reportType;
             return ((KmsReportClient.External.EndpointSoap)(this)).GetReportAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        KmsReportClient.External.GetApprovalInfoResponse KmsReportClient.External.EndpointSoap.GetApprovalInfo(KmsReportClient.External.GetApprovalInfoRequest request) {
-            return base.Channel.GetApprovalInfo(request);
-        }
-        
-        public KmsReportClient.External.ApprovalInfoDto[] GetApprovalInfo(int idReportFlow) {
-            KmsReportClient.External.GetApprovalInfoRequest inValue = new KmsReportClient.External.GetApprovalInfoRequest();
-            inValue.Body = new KmsReportClient.External.GetApprovalInfoRequestBody();
-            inValue.Body.idReportFlow = idReportFlow;
-            KmsReportClient.External.GetApprovalInfoResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).GetApprovalInfo(inValue);
-            return retVal.Body.GetApprovalInfoResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<KmsReportClient.External.GetApprovalInfoResponse> KmsReportClient.External.EndpointSoap.GetApprovalInfoAsync(KmsReportClient.External.GetApprovalInfoRequest request) {
-            return base.Channel.GetApprovalInfoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<KmsReportClient.External.GetApprovalInfoResponse> GetApprovalInfoAsync(int idReportFlow) {
-            KmsReportClient.External.GetApprovalInfoRequest inValue = new KmsReportClient.External.GetApprovalInfoRequest();
-            inValue.Body = new KmsReportClient.External.GetApprovalInfoRequestBody();
-            inValue.Body.idReportFlow = idReportFlow;
-            return ((KmsReportClient.External.EndpointSoap)(this)).GetApprovalInfoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        KmsReportClient.External.SaveReportResponse KmsReportClient.External.EndpointSoap.SaveReport(KmsReportClient.External.SaveReportRequest request) {
-            return base.Channel.SaveReport(request);
-        }
-        
-        public KmsReportClient.External.AbstractReport SaveReport(KmsReportClient.External.AbstractReport report, string yymm, int idUser, string filialCode, KmsReportClient.External.ReportType reportType) {
-            KmsReportClient.External.SaveReportRequest inValue = new KmsReportClient.External.SaveReportRequest();
-            inValue.Body = new KmsReportClient.External.SaveReportRequestBody();
-            inValue.Body.report = report;
-            inValue.Body.yymm = yymm;
-            inValue.Body.idUser = idUser;
-            inValue.Body.filialCode = filialCode;
-            inValue.Body.reportType = reportType;
-            KmsReportClient.External.SaveReportResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).SaveReport(inValue);
-            return retVal.Body.SaveReportResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<KmsReportClient.External.SaveReportResponse> KmsReportClient.External.EndpointSoap.SaveReportAsync(KmsReportClient.External.SaveReportRequest request) {
-            return base.Channel.SaveReportAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<KmsReportClient.External.SaveReportResponse> SaveReportAsync(KmsReportClient.External.AbstractReport report, string yymm, int idUser, string filialCode, KmsReportClient.External.ReportType reportType) {
-            KmsReportClient.External.SaveReportRequest inValue = new KmsReportClient.External.SaveReportRequest();
-            inValue.Body = new KmsReportClient.External.SaveReportRequestBody();
-            inValue.Body.report = report;
-            inValue.Body.yymm = yymm;
-            inValue.Body.idUser = idUser;
-            inValue.Body.filialCode = filialCode;
-            inValue.Body.reportType = reportType;
-            return ((KmsReportClient.External.EndpointSoap)(this)).SaveReportAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        KmsReportClient.External.SaveReportDataSourceHandleResponse KmsReportClient.External.EndpointSoap.SaveReportDataSourceHandle(KmsReportClient.External.SaveReportDataSourceHandleRequest request) {
-            return base.Channel.SaveReportDataSourceHandle(request);
-        }
-        
-        public KmsReportClient.External.AbstractReport SaveReportDataSourceHandle(KmsReportClient.External.AbstractReport report, string yymm, int idUser, string filialCode, KmsReportClient.External.ReportType reportType) {
-            KmsReportClient.External.SaveReportDataSourceHandleRequest inValue = new KmsReportClient.External.SaveReportDataSourceHandleRequest();
-            inValue.Body = new KmsReportClient.External.SaveReportDataSourceHandleRequestBody();
-            inValue.Body.report = report;
-            inValue.Body.yymm = yymm;
-            inValue.Body.idUser = idUser;
-            inValue.Body.filialCode = filialCode;
-            inValue.Body.reportType = reportType;
-            KmsReportClient.External.SaveReportDataSourceHandleResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).SaveReportDataSourceHandle(inValue);
-            return retVal.Body.SaveReportDataSourceHandleResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<KmsReportClient.External.SaveReportDataSourceHandleResponse> KmsReportClient.External.EndpointSoap.SaveReportDataSourceHandleAsync(KmsReportClient.External.SaveReportDataSourceHandleRequest request) {
-            return base.Channel.SaveReportDataSourceHandleAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<KmsReportClient.External.SaveReportDataSourceHandleResponse> SaveReportDataSourceHandleAsync(KmsReportClient.External.AbstractReport report, string yymm, int idUser, string filialCode, KmsReportClient.External.ReportType reportType) {
-            KmsReportClient.External.SaveReportDataSourceHandleRequest inValue = new KmsReportClient.External.SaveReportDataSourceHandleRequest();
-            inValue.Body = new KmsReportClient.External.SaveReportDataSourceHandleRequestBody();
-            inValue.Body.report = report;
-            inValue.Body.yymm = yymm;
-            inValue.Body.idUser = idUser;
-            inValue.Body.filialCode = filialCode;
-            inValue.Body.reportType = reportType;
-            return ((KmsReportClient.External.EndpointSoap)(this)).SaveReportDataSourceHandleAsync(inValue);
         }
     }
 }
