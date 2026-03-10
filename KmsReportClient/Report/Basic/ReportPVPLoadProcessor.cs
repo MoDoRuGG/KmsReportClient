@@ -79,8 +79,9 @@ namespace KmsReportClient.Report.Basic
                     foreach (DataGridViewRow row in Dgv.Rows)
                     {
                         var rowData = Report.Data.FirstOrDefault(x => x.RowNumID == row.Index);
-                        if (rowData != null)
+                       if (rowData != null)
                         {
+
                             row.Cells[0].Value = rowData.PVP_name;
                             row.Cells[1].Value = rowData.location_of_the_office;
                             row.Cells[2].Value = rowData.number_of_insured_by_beginning_of_year;
@@ -95,8 +96,8 @@ namespace KmsReportClient.Report.Basic
                             row.Cells[11].Value = rowData.issued_by_PEO_and_extracts_from_ERZL;
                             row.Cells[12].Value = rowData.registered_total_citizens + rowData.issued_by_PEO_and_extracts_from_ERZL;
                             row.Cells[13].Value = rowData.newly_insured - rowData.PVP_plan;
-                            row.Cells[15].Value = rowData.appeals_through_EPGU;
-                            row.Cells[16].Value = rowData.notes;
+                            row.Cells[14].Value = rowData.appeals_through_EPGU;
+                            row.Cells[15].Value = rowData.notes;
 
                         }
                     }
@@ -214,10 +215,10 @@ namespace KmsReportClient.Report.Basic
                         registered_total_citizens = GlobalUtils.TryParseInt(row.Cells[8].Value),
                         newly_insured = GlobalUtils.TryParseInt(row.Cells[9].Value),
                         attracted_by_agents = GlobalUtils.TryParseInt(row.Cells[10].Value),
-                        issued_by_PEO_and_extracts_from_ERZL = GlobalUtils.TryParseInt(row.Cells[11].Value),
-                        workload_per_day_for_specialist = GlobalUtils.TryParseDecimal(row.Cells[12].Value),
-                        appeals_through_EPGU = GlobalUtils.TryParseInt(row.Cells[13].Value),
-                        notes = row.Cells[14].Value == null ? "" : row.Cells[14].Value.ToString()
+                        issued_by_PEO_and_extracts_from_ERZL = GlobalUtils.TryParseInt(row.Cells[10].Value),
+                        workload_per_day_for_specialist = GlobalUtils.TryParseDecimal(row.Cells[13].Value),
+                        appeals_through_EPGU = GlobalUtils.TryParseInt(row.Cells[14].Value),
+                        notes = row.Cells[15].Value == null ? "" : row.Cells[15].Value.ToString()
                     });
 
                     Report.Data = dataList.ToArray();

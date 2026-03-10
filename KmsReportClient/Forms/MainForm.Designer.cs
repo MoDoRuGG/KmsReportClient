@@ -221,6 +221,10 @@ namespace KmsReportClient.Forms
             this.ОбъёмыЕжемесячныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ФФОМСЛетальныеЭКМПToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ФФОМСОбъемыПоВидамПомощиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.СтрахованиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Таблица5НоворожденныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Таблица6СтудентыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Таблица7СтарыеПолисыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serviceMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.рассылкаУведомленийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuHelp = new System.Windows.Forms.ToolStripMenuItem();
@@ -644,7 +648,8 @@ namespace KmsReportClient.Forms
             this.кадрыToolStripMenuItem,
             this.численностьToolStripMenuItem,
             this.НарушенияПоОбращениямЗЛToolStripMenuItem,
-            this.КПроверкеФФОМСToolStripMenuItem});
+            this.КПроверкеФФОМСToolStripMenuItem,
+            this.СтрахованиеToolStripMenuItem});
             this.consolidateMenu.Name = "consolidateMenu";
             this.consolidateMenu.Size = new System.Drawing.Size(129, 20);
             this.consolidateMenu.Text = "Сводная отчетность";
@@ -1186,6 +1191,37 @@ namespace KmsReportClient.Forms
             this.ФФОМСОбъемыПоВидамПомощиToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.ФФОМСОбъемыПоВидамПомощиToolStripMenuItem.Text = "Объемы по видам помощи";
             this.ФФОМСОбъемыПоВидамПомощиToolStripMenuItem.Click += new System.EventHandler(this.ФФОМСОбъемыПоВидамПомощиToolStripMenuItem_Click);
+            // 
+            // СтрахованиеToolStripMenuItem
+            // 
+            this.СтрахованиеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Таблица5НоворожденныеToolStripMenuItem,
+            this.Таблица6СтудентыToolStripMenuItem,
+            this.Таблица7СтарыеПолисыToolStripMenuItem});
+            this.СтрахованиеToolStripMenuItem.Name = "СтрахованиеToolStripMenuItem";
+            this.СтрахованиеToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
+            this.СтрахованиеToolStripMenuItem.Text = "Страхование";
+            //
+            // Таблица5НоворожденныеToolStripMenuItem
+            // 
+            this.Таблица5НоворожденныеToolStripMenuItem.Name = "Таблица5НоворожденныеToolStripMenuItem";
+            this.Таблица5НоворожденныеToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.Таблица5НоворожденныеToolStripMenuItem.Text = "Свод к приложению 5: Страхование Новорожденных";
+            this.Таблица5НоворожденныеToolStripMenuItem.Click += new System.EventHandler(this.Таблица5НоворожденныеToolStripMenuItem_Click);
+            //
+            // Таблица6СтудентыToolStripMenuItem
+            // 
+            this.Таблица6СтудентыToolStripMenuItem.Name = "Таблица6СтудентыToolStripMenuItem";
+            this.Таблица6СтудентыToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.Таблица6СтудентыToolStripMenuItem.Text = "Свод к приложению 6: Страхование Студентов";
+            this.Таблица6СтудентыToolStripMenuItem.Click += new System.EventHandler(this.Таблица6СтудентыToolStripMenuItem_Click);
+            //
+            // Таблица7СтарыеПолисыToolStripMenuItem
+            // 
+            this.Таблица7СтарыеПолисыToolStripMenuItem.Name = "Таблица7СтарыеПолисыToolStripMenuItem";
+            this.Таблица7СтарыеПолисыToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.Таблица7СтарыеПолисыToolStripMenuItem.Text = "Свод к приложению 7: Динамика количества полисов ОМС старого образца";
+            this.Таблица7СтарыеПолисыToolStripMenuItem.Click += new System.EventHandler(this.Таблица7СтарыеПолисыToolStripMenuItem_Click);
             // 
             // serviceMenu
             // 
@@ -5453,6 +5489,10 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.ToolStripMenuItem сводКТаблице1ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сводКТаблице2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сводКТаблице3ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem СтрахованиеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Таблица5НоворожденныеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Таблица6СтудентыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Таблица7СтарыеПолисыToolStripMenuItem;
         private System.Windows.Forms.TabControl TbControl;
         private System.Windows.Forms.TabPage PageIizl;
         private System.Windows.Forms.TextBox TxtbIizl;

@@ -12,6 +12,7 @@ using KmsReportClient.Global;
 using KmsReportClient.Model.Enums;
 using KmsReportClient.Model.XML;
 using KmsReportClient.Support;
+using Microsoft.Office.Interop.Word;
 using NLog;
 
 namespace KmsReportClient.Report.Basic
@@ -25,7 +26,7 @@ namespace KmsReportClient.Report.Basic
             "Доля рынка (наша)\nна 01.01.2026",
             "Застраховано новорожденных\n(нарастающим итогом отчетного года),\nчел.",
             "Всего реестров счетов\nот МО по родам\n(нарастающим итогом отчетного года),\nчел.",
-            "Доля застрахованных\nот реестров счетов, %",
+            "Доля застрахованных\nот реестров счетов",
             "Отклонение от реестров\nтекущего месяца, чел.",
         };
 
@@ -69,8 +70,8 @@ namespace KmsReportClient.Report.Basic
             if (reportT5Newborn.Data != null)
             {
                 Dgv.Rows[0].Cells[0].Value = reportT5Newborn.Data.MarketShare;
-                Dgv.Rows[0].Cells[1].Value = reportT5Newborn.Data.CountNewborn;
-                Dgv.Rows[0].Cells[2].Value = reportT5Newborn.Data.CountMaterinityBills;
+                Dgv.Rows[0].Cells[1].Value = Convert.ToInt32(reportT5Newborn.Data.CountNewborn);
+                Dgv.Rows[0].Cells[2].Value = Convert.ToInt32(reportT5Newborn.Data.CountMaterinityBills);
                 Dgv.Rows[0].Cells[3].Value = reportT5Newborn.Data.CountMaterinityBills != 0
                     ? Math.Round((reportT5Newborn.Data.CountNewborn / reportT5Newborn.Data.CountMaterinityBills * 100), 2)
                     : 0;
@@ -164,16 +165,21 @@ namespace KmsReportClient.Report.Basic
             columns = based;
 
 
-            foreach (var clmn in columns)
+            for (int i = 0; i < columns.Count; i++)
             {
                 var column = new DataGridViewTextBoxColumn
                 {
-                    HeaderText = clmn,
+                    HeaderText = based[i],
                     DataPropertyName = "Indicator",
                     Name = "Indicator",
                     SortMode = DataGridViewColumnSortMode.NotSortable,
                     DefaultCellStyle = new DataGridViewCellStyle { BackColor = Color.Azure }
                 };
+
+                if (i == 0 || i == 3) // столбец "Доля (%)"
+                {
+                    column.DefaultCellStyle.Format = "0.00'%'";
+                }
 
                 Dgv.Columns.Add(column);
             }
@@ -194,8 +200,8 @@ namespace KmsReportClient.Report.Basic
             reportT5Newborn.Data = new ReportT5NewbornDataDto
             {
                 MarketShare = GlobalUtils.TryParseDecimal(row.Cells[0].Value),
-                CountNewborn = GlobalUtils.TryParseDecimal(row.Cells[1].Value),
-                CountMaterinityBills = GlobalUtils.TryParseDecimal(row.Cells[2].Value)
+                CountNewborn = Convert.ToInt32(GlobalUtils.TryParseInt(row.Cells[1].Value)),
+                CountMaterinityBills = Convert.ToInt32(GlobalUtils.TryParseInt(row.Cells[2].Value))
             };
         }
     }

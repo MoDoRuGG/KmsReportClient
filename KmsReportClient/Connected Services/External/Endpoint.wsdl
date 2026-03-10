@@ -2,7 +2,35 @@
 <wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://kms-oms.ru/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://kms-oms.ru/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://kms-oms.ru/">
-      <s:element name="SaveReportDataSourceExcel">
+      <s:element name="GetApprovalInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idReportFlow" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApprovalInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApprovalInfoResult" type="tns:ArrayOfApprovalInfoDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfApprovalInfoDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ApprovalInfoDto" nillable="true" type="tns:ApprovalInfoDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ApprovalInfoDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Direction" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DirectionName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmployeeName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ApprovedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsApproved" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveReport">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:AbstractReport" />
@@ -109,6 +137,42 @@
           <s:enumeration value="T7OldPolis" />
         </s:restriction>
       </s:simpleType>
+      <s:element name="SaveReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveReportResult" type="tns:AbstractReport" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveReportDataSourceHandle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:AbstractReport" />
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idUser" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="filialCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="reportType" type="tns:ReportType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveReportDataSourceHandleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveReportDataSourceHandleResult" type="tns:AbstractReport" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveReportDataSourceExcel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:AbstractReport" />
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idUser" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="filialCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="reportType" type="tns:ReportType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="SaveReportDataSourceExcelResponse">
         <s:complexType>
           <s:sequence>
@@ -4881,6 +4945,95 @@
           <s:element minOccurs="0" maxOccurs="1" name="NotesGoodReason" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="ConsolidateTable5NewbornCollect">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsolidateTable5NewbornCollectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsolidateTable5NewbornCollectResult" type="tns:ArrayOfConsolidateTable5Newborn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfConsolidateTable5Newborn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsolidateTable5Newborn" nillable="true" type="tns:ConsolidateTable5Newborn" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConsolidateTable5Newborn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RegionName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MarketShare" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountNewborn" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountMaterinityBills" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShareFromRegister" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeviationFromRegister" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsolidateTable6StudentsCollect">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsolidateTable6StudentsCollectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsolidateTable6StudentsCollectResult" type="tns:ArrayOfConsolidateTable6Students" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfConsolidateTable6Students">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsolidateTable6Students" nillable="true" type="tns:ConsolidateTable6Students" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConsolidateTable6Students">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="IdRegion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegionName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountUniversity" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountCollege" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountInsured" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsolidateTable7OldPolisCollect">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsolidateTable7OldPolisCollectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsolidateTable7OldPolisCollectResult" type="tns:ArrayOfConsolidateTable7OldPolis" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfConsolidateTable7OldPolis">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsolidateTable7OldPolis" nillable="true" type="tns:ConsolidateTable7OldPolis" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConsolidateTable7OldPolis">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RegionName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountConstant2019" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountYearStart" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CurrentQuantity" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountOldPolis" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShareFromQuantity" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="YearlyDynamic" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="From2019Dynamic" type="s:int" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="CollectFFOMSLethalEKMP">
         <s:complexType>
           <s:sequence>
@@ -6529,72 +6682,26 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetApprovalInfo">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="idReportFlow" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetApprovalInfoResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetApprovalInfoResult" type="tns:ArrayOfApprovalInfoDto" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfApprovalInfoDto">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="ApprovalInfoDto" nillable="true" type="tns:ApprovalInfoDto" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ApprovalInfoDto">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Direction" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="DirectionName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="EmployeeName" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="ApprovedDate" nillable="true" type="s:dateTime" />
-          <s:element minOccurs="1" maxOccurs="1" name="IsApproved" type="s:boolean" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="SaveReport">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:AbstractReport" />
-            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="idUser" type="s:int" />
-            <s:element minOccurs="0" maxOccurs="1" name="filialCode" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="reportType" type="tns:ReportType" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SaveReportResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SaveReportResult" type="tns:AbstractReport" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SaveReportDataSourceHandle">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:AbstractReport" />
-            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="idUser" type="s:int" />
-            <s:element minOccurs="0" maxOccurs="1" name="filialCode" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="reportType" type="tns:ReportType" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SaveReportDataSourceHandleResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SaveReportDataSourceHandleResult" type="tns:AbstractReport" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="GetApprovalInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApprovalInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetApprovalInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApprovalInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveReportSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveReport" />
+  </wsdl:message>
+  <wsdl:message name="SaveReportSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveReportDataSourceHandleSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveReportDataSourceHandle" />
+  </wsdl:message>
+  <wsdl:message name="SaveReportDataSourceHandleSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveReportDataSourceHandleResponse" />
+  </wsdl:message>
   <wsdl:message name="SaveReportDataSourceExcelSoapIn">
     <wsdl:part name="parameters" element="tns:SaveReportDataSourceExcel" />
   </wsdl:message>
@@ -7039,6 +7146,24 @@
   <wsdl:message name="ConsolidateOpedQCollectSoapOut">
     <wsdl:part name="parameters" element="tns:ConsolidateOpedQCollectResponse" />
   </wsdl:message>
+  <wsdl:message name="ConsolidateTable5NewbornCollectSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsolidateTable5NewbornCollect" />
+  </wsdl:message>
+  <wsdl:message name="ConsolidateTable5NewbornCollectSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsolidateTable5NewbornCollectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsolidateTable6StudentsCollectSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsolidateTable6StudentsCollect" />
+  </wsdl:message>
+  <wsdl:message name="ConsolidateTable6StudentsCollectSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsolidateTable6StudentsCollectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsolidateTable7OldPolisCollectSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsolidateTable7OldPolisCollect" />
+  </wsdl:message>
+  <wsdl:message name="ConsolidateTable7OldPolisCollectSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsolidateTable7OldPolisCollectResponse" />
+  </wsdl:message>
   <wsdl:message name="CollectFFOMSLethalEKMPSoapIn">
     <wsdl:part name="parameters" element="tns:CollectFFOMSLethalEKMP" />
   </wsdl:message>
@@ -7435,25 +7560,19 @@
   <wsdl:message name="GetReportSoapOut">
     <wsdl:part name="parameters" element="tns:GetReportResponse" />
   </wsdl:message>
-  <wsdl:message name="GetApprovalInfoSoapIn">
-    <wsdl:part name="parameters" element="tns:GetApprovalInfo" />
-  </wsdl:message>
-  <wsdl:message name="GetApprovalInfoSoapOut">
-    <wsdl:part name="parameters" element="tns:GetApprovalInfoResponse" />
-  </wsdl:message>
-  <wsdl:message name="SaveReportSoapIn">
-    <wsdl:part name="parameters" element="tns:SaveReport" />
-  </wsdl:message>
-  <wsdl:message name="SaveReportSoapOut">
-    <wsdl:part name="parameters" element="tns:SaveReportResponse" />
-  </wsdl:message>
-  <wsdl:message name="SaveReportDataSourceHandleSoapIn">
-    <wsdl:part name="parameters" element="tns:SaveReportDataSourceHandle" />
-  </wsdl:message>
-  <wsdl:message name="SaveReportDataSourceHandleSoapOut">
-    <wsdl:part name="parameters" element="tns:SaveReportDataSourceHandleResponse" />
-  </wsdl:message>
   <wsdl:portType name="EndpointSoap">
+    <wsdl:operation name="GetApprovalInfo">
+      <wsdl:input message="tns:GetApprovalInfoSoapIn" />
+      <wsdl:output message="tns:GetApprovalInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveReport">
+      <wsdl:input message="tns:SaveReportSoapIn" />
+      <wsdl:output message="tns:SaveReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveReportDataSourceHandle">
+      <wsdl:input message="tns:SaveReportDataSourceHandleSoapIn" />
+      <wsdl:output message="tns:SaveReportDataSourceHandleSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="SaveReportDataSourceExcel">
       <wsdl:input message="tns:SaveReportDataSourceExcelSoapIn" />
       <wsdl:output message="tns:SaveReportDataSourceExcelSoapOut" />
@@ -7750,6 +7869,18 @@
       <wsdl:input message="tns:ConsolidateOpedQCollectSoapIn" />
       <wsdl:output message="tns:ConsolidateOpedQCollectSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="ConsolidateTable5NewbornCollect">
+      <wsdl:input message="tns:ConsolidateTable5NewbornCollectSoapIn" />
+      <wsdl:output message="tns:ConsolidateTable5NewbornCollectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsolidateTable6StudentsCollect">
+      <wsdl:input message="tns:ConsolidateTable6StudentsCollectSoapIn" />
+      <wsdl:output message="tns:ConsolidateTable6StudentsCollectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsolidateTable7OldPolisCollect">
+      <wsdl:input message="tns:ConsolidateTable7OldPolisCollectSoapIn" />
+      <wsdl:output message="tns:ConsolidateTable7OldPolisCollectSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="CollectFFOMSLethalEKMP">
       <wsdl:input message="tns:CollectFFOMSLethalEKMPSoapIn" />
       <wsdl:output message="tns:CollectFFOMSLethalEKMPSoapOut" />
@@ -8014,21 +8145,36 @@
       <wsdl:input message="tns:GetReportSoapIn" />
       <wsdl:output message="tns:GetReportSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetApprovalInfo">
-      <wsdl:input message="tns:GetApprovalInfoSoapIn" />
-      <wsdl:output message="tns:GetApprovalInfoSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="SaveReport">
-      <wsdl:input message="tns:SaveReportSoapIn" />
-      <wsdl:output message="tns:SaveReportSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="SaveReportDataSourceHandle">
-      <wsdl:input message="tns:SaveReportDataSourceHandleSoapIn" />
-      <wsdl:output message="tns:SaveReportDataSourceHandleSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="EndpointSoap" type="tns:EndpointSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetApprovalInfo">
+      <soap:operation soapAction="http://kms-oms.ru/GetApprovalInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveReport">
+      <soap:operation soapAction="http://kms-oms.ru/SaveReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveReportDataSourceHandle">
+      <soap:operation soapAction="http://kms-oms.ru/SaveReportDataSourceHandle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SaveReportDataSourceExcel">
       <soap:operation soapAction="http://kms-oms.ru/SaveReportDataSourceExcel" style="document" />
       <wsdl:input>
@@ -8695,6 +8841,33 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ConsolidateTable5NewbornCollect">
+      <soap:operation soapAction="http://kms-oms.ru/ConsolidateTable5NewbornCollect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsolidateTable6StudentsCollect">
+      <soap:operation soapAction="http://kms-oms.ru/ConsolidateTable6StudentsCollect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsolidateTable7OldPolisCollect">
+      <soap:operation soapAction="http://kms-oms.ru/ConsolidateTable7OldPolisCollect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CollectFFOMSLethalEKMP">
       <soap:operation soapAction="http://kms-oms.ru/CollectFFOMSLethalEKMP" style="document" />
       <wsdl:input>
@@ -9289,36 +9462,36 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetApprovalInfo">
-      <soap:operation soapAction="http://kms-oms.ru/GetApprovalInfo" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SaveReport">
-      <soap:operation soapAction="http://kms-oms.ru/SaveReport" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SaveReportDataSourceHandle">
-      <soap:operation soapAction="http://kms-oms.ru/SaveReportDataSourceHandle" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="EndpointSoap12" type="tns:EndpointSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetApprovalInfo">
+      <soap12:operation soapAction="http://kms-oms.ru/GetApprovalInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveReport">
+      <soap12:operation soapAction="http://kms-oms.ru/SaveReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveReportDataSourceHandle">
+      <soap12:operation soapAction="http://kms-oms.ru/SaveReportDataSourceHandle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SaveReportDataSourceExcel">
       <soap12:operation soapAction="http://kms-oms.ru/SaveReportDataSourceExcel" style="document" />
       <wsdl:input>
@@ -9985,6 +10158,33 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ConsolidateTable5NewbornCollect">
+      <soap12:operation soapAction="http://kms-oms.ru/ConsolidateTable5NewbornCollect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsolidateTable6StudentsCollect">
+      <soap12:operation soapAction="http://kms-oms.ru/ConsolidateTable6StudentsCollect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsolidateTable7OldPolisCollect">
+      <soap12:operation soapAction="http://kms-oms.ru/ConsolidateTable7OldPolisCollect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CollectFFOMSLethalEKMP">
       <soap12:operation soapAction="http://kms-oms.ru/CollectFFOMSLethalEKMP" style="document" />
       <wsdl:input>
@@ -10572,33 +10772,6 @@
     </wsdl:operation>
     <wsdl:operation name="GetReport">
       <soap12:operation soapAction="http://kms-oms.ru/GetReport" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetApprovalInfo">
-      <soap12:operation soapAction="http://kms-oms.ru/GetApprovalInfo" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SaveReport">
-      <soap12:operation soapAction="http://kms-oms.ru/SaveReport" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SaveReportDataSourceHandle">
-      <soap12:operation soapAction="http://kms-oms.ru/SaveReportDataSourceHandle" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

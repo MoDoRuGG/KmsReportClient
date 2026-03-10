@@ -657,6 +657,36 @@ namespace KmsReportClient.Forms
                     btnDo.Text = "Сформировать сводный отчёт численность за период";
                     saveFileDialog1.FileName = "Квартальный сводный отчет численность";
                     break;
+
+                case ConsolidateReport.T5Newborn:
+                    labelStart.Text = "Период";
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    nudSingle.Visible = false;
+
+                    btnDo.Text = "Сформировать сводный отчет Страхование новорожденных";
+                    saveFileDialog1.FileName = "Страхование новорожденных";
+                    break;
+
+                case ConsolidateReport.T6Students:
+                    labelStart.Text = "Период";
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    nudSingle.Visible = false;
+
+                    btnDo.Text = "Сформировать сводный отчет Страхование студентов";
+                    saveFileDialog1.FileName = "Страхование студентов";
+                    break;
+
+                case ConsolidateReport.T7OldPolis:
+                    labelStart.Text = "Период";
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    nudSingle.Visible = false;
+
+                    btnDo.Text = "Сформировать сводный отчет Старые полисы";
+                    saveFileDialog1.FileName = "Старые полисы";
+                    break;
             }
         }
 
@@ -847,6 +877,15 @@ namespace KmsReportClient.Forms
                     case ConsolidateReport.Zpz10FilialGrowCons:
                         CreateZpz10FilialGrowCons();
                         break;
+                    case ConsolidateReport.T5Newborn:
+                        CreateT5NewbornCons();
+                        break;
+                    case ConsolidateReport.T6Students:
+                        CreateT6StudentsCons();
+                        break;
+                    case ConsolidateReport.T7OldPolis:
+                        CreateT7OldPolisCons();
+                        break;
                 }
                 waitingForm.Close();
             }
@@ -1028,6 +1067,69 @@ namespace KmsReportClient.Forms
             }
 
             var excel = new ExcelConsolidateZpzTable10FilialGrowCreator(saveFileDialog1.FileName, "", _filialName, yymm);
+
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+
+        }
+
+        private void CreateT5NewbornCons()
+        {
+            string yymm = GetYymm(cmbStart.Text, Convert.ToInt32(nudStart.Value)).ToString();
+
+            var data = _client.ConsolidateTable5NewbornCollect(yymm);
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var excel = new ExcelConsolidateTable5NewbornCreator(saveFileDialog1.FileName, "", _filialName, yymm);
+
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+
+        }
+
+        private void CreateT6StudentsCons()
+        {
+            string yymm = GetYymm(cmbStart.Text, Convert.ToInt32(nudStart.Value)).ToString();
+
+            var data = _client.ConsolidateTable6StudentsCollect(yymm);
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var excel = new ExcelConsolidateTable6StudentsCreator(saveFileDialog1.FileName, "", _filialName, yymm);
+
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
+
+        }
+
+        private void CreateT7OldPolisCons()
+        {
+            string yymm = GetYymm(cmbStart.Text, Convert.ToInt32(nudStart.Value)).ToString();
+
+            var data = _client.ConsolidateTable7OldPolisCollect(yymm);
+
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var excel = new ExcelConsolidateTable7OldPolisCreator(saveFileDialog1.FileName, "", _filialName, yymm);
 
             excel.CreateReport(data, null);
 
