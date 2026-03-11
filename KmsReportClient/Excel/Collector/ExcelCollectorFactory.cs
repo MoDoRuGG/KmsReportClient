@@ -16,6 +16,7 @@ namespace KmsReportClient.Excel.Collector
         private readonly IExcelCollector _zpz2025ExcelCollector = new Zpz2025ExcelCollector();
         private readonly IExcelCollector _zpz10_2025ExcelCollector = new Zpz2025ExcelCollector();
         private readonly IExcelCollector _zpz2025LethalExcelCollector = new ZpzQ2025ExcelCollector();
+        private readonly IExcelCollector _pvplExcelCollector = new PvplExcelCollector();
 
         public IExcelCollector GetExcelCollector(string reportType) =>
             reportType switch {
@@ -34,6 +35,7 @@ namespace KmsReportClient.Excel.Collector
                 ReportGlobalConst.ReportZpz10_2025 => _zpz10_2025ExcelCollector,
                 ReportGlobalConst.ReportZpzQ2025 => _zpzQ2025ExcelCollector,
                 ReportGlobalConst.ReportZpz2025Lethal => _zpz2025LethalExcelCollector,
+                ReportGlobalConst.ReportPVPLoad => _pvplExcelCollector,
                 _ => throw new Exception("Can't find excelCollector for this reportType")
             };
     }
