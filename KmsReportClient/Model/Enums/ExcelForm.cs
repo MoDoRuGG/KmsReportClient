@@ -218,5 +218,7 @@ namespace KmsReportClient.Model.Enums
         consT6Students,
         [Description(GlobalConst.TempFolder + "consT7OldPolis.xlsx")]
         consT7OldPolis,
+        [Description(GlobalConst.TempFolder + "T5Newborn.xlsx")]
+        T5Newborn,
     }
 }

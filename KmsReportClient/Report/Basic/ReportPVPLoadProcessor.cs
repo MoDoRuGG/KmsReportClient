@@ -87,7 +87,7 @@ namespace KmsReportClient.Report.Basic
                             row.Cells[1].Value = rowData.location_of_the_office;
                             row.Cells[2].Value = rowData.number_of_insured_by_beginning_of_year;
                             row.Cells[3].Value = rowData.number_of_insured_by_reporting_date;
-                            row.Cells[4].Value = rowData.population_dynamics;
+                            row.Cells[4].Value = rowData.number_of_insured_by_reporting_date - rowData.number_of_insured_by_beginning_of_year;
                             row.Cells[5].Value = rowData.specialist;
                             row.Cells[6].Value = rowData.conditions_of_employment;
                             row.Cells[7].Value = rowData.PVP_plan;
@@ -186,20 +186,21 @@ namespace KmsReportClient.Report.Basic
             Dgv.Columns.Clear();
             Dgv.Rows.Clear();
 
-            foreach (var clmn in headers)
-            {
-                var column = new DataGridViewTextBoxColumn
-                {
-                    HeaderText = clmn,
-                    DataPropertyName = "Indicator",
-                    Name = "Indicator",
-                    SortMode = DataGridViewColumnSortMode.NotSortable,
-                    DefaultCellStyle = new DataGridViewCellStyle { BackColor = Color.Azure },
-                    Width = 150
-                };
 
-                Dgv.Columns.Add(column);
-            }
+                for (int i = 0; i < headers.Count; i++)
+                {
+                    var column = new DataGridViewTextBoxColumn
+                    {
+                        HeaderText = headers[i],
+                        DataPropertyName = $"Col{i}",
+                        Name = $"Col{i}",  // Уникальное имя
+                        SortMode = DataGridViewColumnSortMode.NotSortable,
+                        DefaultCellStyle = new DataGridViewCellStyle { BackColor = Color.Azure },
+                        Width = 150
+                    };
+                    Dgv.Columns.Add(column);
+                }
+
 
             int RowCounter = Report.Data == null ? 0 : Report.Data.Length;
             if (RowCounter > 0)
@@ -212,30 +213,51 @@ namespace KmsReportClient.Report.Basic
                 Dgv.Rows.Add();
             }
 
+            foreach (DataGridViewRow row in Dgv.Rows)
+            {
+                // Блокировка редактирования
+                for (int i = 12; i <= 13; i++)
+                {
+                    row.Cells[i].ReadOnly = true;
+                }
+                row.Cells[4].ReadOnly = true;
+
+                row.Cells[4].Style.BackColor = row.Cells[12].Style.BackColor = row.Cells[13].Style.BackColor = Color.LightGray;
+            }
         }
 
-        public void SetFormula(int workDays = 21)
+        public void SetFormula()
         {
             foreach (DataGridViewRow row in Dgv.Rows)
             {
                 if (row.IsNewRow) continue;
 
                 // Входные данные
+                var countBegin = GlobalUtils.TryParseInt(row.Cells[2]);          // гр.1
+                var countCurrent = GlobalUtils.TryParseInt(row.Cells[3]);        // гр.2 
                 var rate = GlobalUtils.TryParseDecimal(row.Cells[6].Value);      // гр.5
                 var plan = GlobalUtils.TryParseInt(row.Cells[7].Value);          // гр.6
                 var totalCitizens = GlobalUtils.TryParseInt(row.Cells[8].Value); // гр.7
                 var newlyInsured = GlobalUtils.TryParseInt(row.Cells[9].Value);  // гр.8
                 var peo = GlobalUtils.TryParseInt(row.Cells[11].Value);          // гр.10
 
+                // Блокировка редактирования
+                for (int i = 12; i <= 13; i++)
+                {
+                    row.Cells[i].ReadOnly = true;
+                }
+                row.Cells[4].ReadOnly = true;
+                
+                row.Cells[4].Style.BackColor = row.Cells[12].Style.BackColor = row.Cells[13].Style.BackColor = Color.LightGray;
+
+
                 // Расчеты
+                row.Cells[4].Value = countCurrent - countBegin;                  // гр.3 (2-1)
                 row.Cells[12].Value = totalCitizens + peo;                       // гр.11 (7+10)
                 row.Cells[13].Value = newlyInsured - plan;                       // гр.12 (8-6)
-                row.Cells[12].Style.BackColor = row.Cells[13].Style.BackColor = Color.LightGray;
-
-                // Блокировка редактирования
-                for (int i = 12; i <= 13; i++) row.Cells[i].ReadOnly = true;
             }
         }
+
 
         protected override void FillReport(string form)
         {
@@ -252,7 +274,6 @@ namespace KmsReportClient.Report.Basic
                         location_of_the_office = row.Cells[1].Value?.ToString() ?? "",
                         number_of_insured_by_beginning_of_year = GlobalUtils.TryParseInt(row.Cells[2].Value),
                         number_of_insured_by_reporting_date = GlobalUtils.TryParseInt(row.Cells[3].Value),
-                        population_dynamics = GlobalUtils.TryParseInt(row.Cells[4].Value),
                         specialist = row.Cells[5].Value?.ToString() ?? "",
                         conditions_of_employment = GlobalUtils.TryParseDecimal(row.Cells[6].Value),
                         PVP_plan = GlobalUtils.TryParseInt(row.Cells[7].Value),

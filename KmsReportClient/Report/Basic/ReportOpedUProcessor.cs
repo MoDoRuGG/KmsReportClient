@@ -253,10 +253,22 @@ namespace KmsReportClient.Report.Basic
                 {
                     try
                     {
-                        Dgv.Rows[row].Cells[i].Value = Math.Round(GlobalUtils.TryParseDecimal(Dgv.Rows[row - 1].Cells[i].Value) / GlobalUtils.TryParseDecimal(Dgv.Rows[row - 2].Cells[i].Value) * 100, 2);
-
+                        var numerator = GlobalUtils.TryParseDecimal(Dgv.Rows[row - 1].Cells[i].Value);
+                        var denominator = GlobalUtils.TryParseDecimal(Dgv.Rows[row - 2].Cells[i].Value);
+                        
+                        if (denominator != 0)
+                        {
+                            Dgv.Rows[row].Cells[i].Value = Math.Round(numerator / denominator * 100, 2);
+                        }
+                        else
+                        {
+                            Dgv.Rows[row].Cells[i].Value = null;
+                        }
                     }
-                    catch (Exception) { }
+                    catch (Exception ex)
+                    {
+                        Log.Warn(ex, $"Ошибка расчета в строке {row}, колонка {i}");
+                    }
                 }
             }
         }
@@ -360,8 +372,6 @@ namespace KmsReportClient.Report.Basic
 
         protected override void FillReport(string form)
         {
-            int[] _notSaveRow = { 0, 4, 8 };
-
             if (form == null || form == "Свод")
             {
                 return;

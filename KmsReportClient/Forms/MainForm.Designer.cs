@@ -2927,6 +2927,7 @@ namespace KmsReportClient.Forms
             this.DgvT5Newborn.Size = new System.Drawing.Size(1211, 502);
             this.DgvT5Newborn.TabIndex = 36;
             this.DgvT5Newborn.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvT5Newborn_CellEndEdit);
+            this.DgvT5Newborn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DgvT5Newborn_KeyPress);
             // 
             // PageT7OldPolis
             // 
@@ -5120,8 +5121,8 @@ namespace KmsReportClient.Forms
             this.DgvT6Students.AllowUserToDeleteRows = false;
             this.DgvT6Students.AllowUserToResizeColumns = false;
             this.DgvT6Students.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+    | System.Windows.Forms.AnchorStyles.Left)
+    | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvT6Students.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             dataGridViewCellStyle96.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle96.BackColor = System.Drawing.SystemColors.Control;

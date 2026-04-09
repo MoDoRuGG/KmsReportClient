@@ -38,7 +38,6 @@ namespace KmsReportClient.Forms
         private readonly List<KmsReportDictionary> _regions;
         private readonly List<KmsReportDictionary> _reportsDictionary;
 
-
         private static readonly HashSet<string> MultiApprovalTypes =
             new HashSet<string> { "ZpzT1", "ZpzT2", "ZpzT3" };
 
@@ -676,6 +675,7 @@ namespace KmsReportClient.Forms
             else
             {
                 _processor.InitReport();
+                _processor.ValidReport();
             }
 
             _processor.HasReport = true;
@@ -697,6 +697,7 @@ namespace KmsReportClient.Forms
                     MessageBoxOptions.ServiceNotification
                     );
             }
+            
         }
 
 
@@ -1300,13 +1301,13 @@ namespace KmsReportClient.Forms
 
         private void SubmitReport()
         {
-            if (_processor.Report.Status == ReportStatus.Refuse)
-            {
-                MessageBox.Show(
-                    "Данный отчет был возвращен на доработку. Для повторной сдачи отчета необходимо перезакачать скан",
-                    "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            //if (_processor.Report.Status == ReportStatus.Refuse)
+            //{
+            //    MessageBox.Show(
+            //        "Данный отчет был возвращен на доработку. Для повторной сдачи отчета необходимо перезакачать скан",
+            //        "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
 
             //if (_processor.Report.Status != ReportStatus.Scan)
             //{
@@ -2617,6 +2618,11 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
             ChangeIndexComboBox(DgvT5Newborn, CmbT5Newborn, TxtbT5Newborn);
         }
 
+        private void DgvT5Newborn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            (_processor as ReportT5NewbornProcessor).SetFormula();
+        }
+
         private void CmbPageT6Students_SelectedIndexChanged(object sender, EventArgs e)
         {
             ChangeIndexComboBox(DgvT6Students, CmbT6Students, TxtbT6Students);
@@ -2644,7 +2650,7 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
 
         private void DgvT5Newborn_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-
+            (_processor as ReportT5NewbornProcessor).SetFormula();
         }
 
         private void DgvReqVCR_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -2659,7 +2665,6 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
 
         private void DgvCadre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            (_processor as ReportCadreProcessor).SetFormula();
             (_processor as ReportCadreProcessor).SetFormula();
         }
 
