@@ -162,6 +162,7 @@ namespace KmsReportClient.Forms
                 PageZpzT2.Parent = null;
                 PageZpzT3.Parent = null;
                 PageZpzT4.Parent = null;
+                Page140n.Parent = null;
                 PageZpzQ2025.Parent = null;
                 PageZpz10_2025.Parent = null;
                 PageZpzLethal2025.Parent = null;
@@ -171,6 +172,7 @@ namespace KmsReportClient.Forms
                 PageMonthlyVol.Parent = null;
                 PageT5Newborn.Parent = null;
                 PageT6Students.Parent = null;
+                PageT7OldPolis.Parent = null;
                 PageT7OldPolis.Parent = null;
             }
             finally
@@ -252,6 +254,7 @@ namespace KmsReportClient.Forms
                         {PageT5Newborn, ReportGlobalConst.ReportT5Newborn},
                         {PageT6Students, ReportGlobalConst.ReportT6Students},
                         {PageT7OldPolis, ReportGlobalConst.ReportT7OldPolis},
+                        {Page140n, ReportGlobalConst.Report140n},
             };
 
         private Dictionary<string, IReportProcessor> CreateProcessorMap() =>
@@ -432,6 +435,10 @@ namespace KmsReportClient.Forms
                 {
                     ReportGlobalConst.ReportT7OldPolis,
                     new ReportT7OldPolisProcessor(_client, _reportsDictionary, DgvT7OldPolis, CmbT7OldPolis, TxtbT7OldPolis, PageT7OldPolis)
+                },
+                {
+                    ReportGlobalConst.Report140n,
+                    new Report140nProcessor(_client, _reportsDictionary, Dgv140n, Cmb140n, Txtb140n, Page140n)
                 },
             };
 
@@ -2148,6 +2155,7 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
                     TbControl.TabPages.Remove(PageZpzQ2025);
                     TbControl.TabPages.Remove(PageQuery);
                     TbControl.TabPages.Remove(PageCadre);
+                    TbControl.TabPages.Remove(Page140n);
                     TbControl.TabPages.Remove(PageT5Newborn);
                     TbControl.TabPages.Remove(PageT6Students);
                     TbControl.TabPages.Remove(PageT7OldPolis);
@@ -2407,6 +2415,11 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
 
         }
 
+        private void Dgv140n_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            (_processor as Report140nProcessor).SetFormula();
+        }
+
         private void DgvReportZpz10_KeyPress(object sender, KeyPressEventArgs e)
         {
             (_processor as ReportZpz10Processor).SetFormula();
@@ -2499,6 +2512,11 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         private void DgvReportOpedUnplanned_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
             _processor.CallculateCells();
+        }
+
+        private void Dgv140n_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            (_processor as Report140nProcessor).SetFormula();
         }
 
 
@@ -2601,6 +2619,11 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         private void CbxOpedUnplanned_SelectedIndexChanged(object sender, EventArgs e)
         {
             ChangeIndexComboBox(DgvReportOpedUnplanned, CbxOpedUnplanned, TxtbOpedUnplanned);
+        }
+
+        private void Cmb140n_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ChangeIndexComboBox(Dgv140n, Cmb140n, Txtb140n);
         }
 
         private void CbxOtclkInfrorm_SelectedIndexChanged(object sender, EventArgs e)
