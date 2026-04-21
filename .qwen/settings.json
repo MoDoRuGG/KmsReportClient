@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(msbuild *)"
+      "Bash(msbuild *)",
+      "Bash(findstr *)",
+      "Bash(select-string *)",
+      "Bash(select-object *)"
     ]
-  }
+  },
+  "$version": 3
 }

@@ -2,42 +2,79 @@
 <wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://kms-oms.ru/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://kms-oms.ru/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://kms-oms.ru/">
-      <s:element name="GetApprovalInfo">
+      <s:element name="RefuseReportMultiApproval">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="idReportFlow" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetApprovalInfoResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetApprovalInfoResult" type="tns:ArrayOfApprovalInfoDto" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfApprovalInfoDto">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="ApprovalInfoDto" nillable="true" type="tns:ApprovalInfoDto" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ApprovalInfoDto">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Direction" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="DirectionName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="EmployeeName" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="ApprovedDate" nillable="true" type="s:dateTime" />
-          <s:element minOccurs="1" maxOccurs="1" name="IsApproved" type="s:boolean" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="SaveReport">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:AbstractReport" />
-            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="idUser" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RefuseReportMultiApprovalResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetReport">
+        <s:complexType>
+          <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="filialCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="reportType" type="tns:ReportType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="ReportType">
+        <s:restriction base="s:string">
+          <s:enumeration value="F262" />
+          <s:enumeration value="F294" />
+          <s:enumeration value="Iizl" />
+          <s:enumeration value="Iizl2022" />
+          <s:enumeration value="Pg" />
+          <s:enumeration value="Zpz" />
+          <s:enumeration value="PgQ" />
+          <s:enumeration value="ZpzQ" />
+          <s:enumeration value="Oped" />
+          <s:enumeration value="OpedU" />
+          <s:enumeration value="OpedUnpl" />
+          <s:enumeration value="OpedQ" />
+          <s:enumeration value="IR" />
+          <s:enumeration value="Vac" />
+          <s:enumeration value="MFSS" />
+          <s:enumeration value="MVCR" />
+          <s:enumeration value="Proposal" />
+          <s:enumeration value="OpedFinance" />
+          <s:enumeration value="OpedFinance3" />
+          <s:enumeration value="Cadre" />
+          <s:enumeration value="Infomaterial" />
+          <s:enumeration value="Zpz10" />
+          <s:enumeration value="Effective" />
+          <s:enumeration value="ZpzLethal" />
+          <s:enumeration value="ReqVCR" />
+          <s:enumeration value="Quantity" />
+          <s:enumeration value="TarAllow" />
+          <s:enumeration value="PVPLoad" />
+          <s:enumeration value="Doff" />
+          <s:enumeration value="Zpz2025" />
+          <s:enumeration value="ZpzT1" />
+          <s:enumeration value="ZpzT2" />
+          <s:enumeration value="ZpzT3" />
+          <s:enumeration value="ZpzT4" />
+          <s:enumeration value="ZpzQ2025" />
+          <s:enumeration value="Zpz10_2025" />
+          <s:enumeration value="ZpzL2025" />
+          <s:enumeration value="ViolMEE" />
+          <s:enumeration value="ViolEKMP" />
+          <s:enumeration value="VerifyPlan" />
+          <s:enumeration value="MonthlyVol" />
+          <s:enumeration value="T5Newborn" />
+          <s:enumeration value="T6Students" />
+          <s:enumeration value="T7OldPolis" />
+          <s:enumeration value="R140n" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReportResult" type="tns:AbstractReport" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -89,54 +126,45 @@
           <s:enumeration value="Handle" />
         </s:restriction>
       </s:simpleType>
-      <s:simpleType name="ReportType">
-        <s:restriction base="s:string">
-          <s:enumeration value="F262" />
-          <s:enumeration value="F294" />
-          <s:enumeration value="Iizl" />
-          <s:enumeration value="Iizl2022" />
-          <s:enumeration value="Pg" />
-          <s:enumeration value="Zpz" />
-          <s:enumeration value="PgQ" />
-          <s:enumeration value="ZpzQ" />
-          <s:enumeration value="Oped" />
-          <s:enumeration value="OpedU" />
-          <s:enumeration value="OpedUnpl" />
-          <s:enumeration value="OpedQ" />
-          <s:enumeration value="IR" />
-          <s:enumeration value="Vac" />
-          <s:enumeration value="MFSS" />
-          <s:enumeration value="MVCR" />
-          <s:enumeration value="Proposal" />
-          <s:enumeration value="OpedFinance" />
-          <s:enumeration value="OpedFinance3" />
-          <s:enumeration value="Cadre" />
-          <s:enumeration value="Infomaterial" />
-          <s:enumeration value="Zpz10" />
-          <s:enumeration value="Effective" />
-          <s:enumeration value="ZpzLethal" />
-          <s:enumeration value="ReqVCR" />
-          <s:enumeration value="Quantity" />
-          <s:enumeration value="TarAllow" />
-          <s:enumeration value="PVPLoad" />
-          <s:enumeration value="Doff" />
-          <s:enumeration value="Zpz2025" />
-          <s:enumeration value="ZpzT1" />
-          <s:enumeration value="ZpzT2" />
-          <s:enumeration value="ZpzT3" />
-          <s:enumeration value="ZpzT4" />
-          <s:enumeration value="ZpzQ2025" />
-          <s:enumeration value="Zpz10_2025" />
-          <s:enumeration value="ZpzL2025" />
-          <s:enumeration value="ViolMEE" />
-          <s:enumeration value="ViolEKMP" />
-          <s:enumeration value="VerifyPlan" />
-          <s:enumeration value="MonthlyVol" />
-          <s:enumeration value="T5Newborn" />
-          <s:enumeration value="T6Students" />
-          <s:enumeration value="T7OldPolis" />
-        </s:restriction>
-      </s:simpleType>
+      <s:element name="GetApprovalInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idReportFlow" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApprovalInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApprovalInfoResult" type="tns:ArrayOfApprovalInfoDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfApprovalInfoDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ApprovalInfoDto" nillable="true" type="tns:ApprovalInfoDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ApprovalInfoDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Direction" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DirectionName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmployeeName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ApprovedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsApproved" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:AbstractReport" />
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idUser" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="filialCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="reportType" type="tns:ReportType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="SaveReportResponse">
         <s:complexType>
           <s:sequence>
@@ -1442,6 +1470,36 @@
           <s:element minOccurs="0" maxOccurs="1" name="NotesGoodReason" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="CreateReportOpedUnplanned2026">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateReportOpedUnplanned2026Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateReportOpedUnplanned2026Result" type="tns:ArrayOfCReportOpedUnplanned2026" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCReportOpedUnplanned2026">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CReportOpedUnplanned2026" nillable="true" type="tns:CReportOpedUnplanned2026" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CReportOpedUnplanned2026">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="App" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ks" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ds" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Smp" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="CreateReportConsQuantityFilial">
         <s:complexType>
           <s:sequence>
@@ -2629,6 +2687,8 @@
           <s:element minOccurs="0" maxOccurs="1" name="Report_T5Newborn" type="tns:ArrayOfReport_T5Newborn" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_T6Students" type="tns:ArrayOfReport_T6Students" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_T7OldPolis" type="tns:ArrayOfReport_T7OldPolis" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_OpedUnplanned" type="tns:ArrayOfReport_OpedUnplanned" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_140n" type="tns:ArrayOfReport_140n" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Type" type="tns:Report_Type" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:Report_Flow" />
         </s:sequence>
@@ -3237,6 +3297,57 @@
           <s:element minOccurs="1" maxOccurs="1" name="RowNum" nillable="true" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="CurrentQuantity" nillable="true" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="CountOldPolis" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:Report_Data" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReport_OpedUnplanned">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Report_OpedUnplanned" nillable="true" type="tns:Report_OpedUnplanned" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Report_OpedUnplanned">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_Report_Data" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="App" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ks" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ds" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Smp" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:Report_Data" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReport_140n">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Report_140n" nillable="true" type="tns:Report_140n" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Report_140n">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_Report_Data" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowNum" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CZLdost" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CZLsmo" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KSErez" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KSE" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PPMinadvn" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Iidvn" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PPMinfdn" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Iidn" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KOJdosud" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KOJsud" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KOJzl" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KOJzlsmo" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KZAsobl" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KZAvsego" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DT" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Scpo" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KEKMPpodtv" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KEKMPtfoms" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KZSMOpodtv" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KPMOtfoms" nillable="true" type="s:decimal" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:Report_Data" />
         </s:sequence>
       </s:complexType>
@@ -4945,6 +5056,39 @@
           <s:element minOccurs="0" maxOccurs="1" name="NotesGoodReason" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="ConsolidateOpedUnplQCollect">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsolidateOpedUnplQCollectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsolidateOpedUnplQCollectResult" type="tns:ArrayOfConsolidateOpedUnplQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfConsolidateOpedUnplQ">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsolidateOpedUnplQ" nillable="true" type="tns:ConsolidateOpedUnplQ" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConsolidateOpedUnplQ">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Region" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LethalPlan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="LethalFact" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PovtorPlan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PovtorFact" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="OncoPlan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="OncoFact" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="EcoPlan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="EcoFact" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="ConsolidateTable5NewbornCollect">
         <s:complexType>
           <s:sequence>
@@ -5682,10 +5826,34 @@
       <s:element name="WebReportOpedUnplanned">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:ReportOpedU" />
+            <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:ReportOpedUnplanned" />
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:complexType name="ReportOpedUnplanned">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AbstractReport">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ReportDataList" type="tns:ArrayOfReportOpedUnplannedDto" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfReportOpedUnplannedDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReportOpedUnplannedDto" nillable="true" type="tns:ReportOpedUnplannedDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReportOpedUnplannedDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="App" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ks" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ds" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Smp" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="WebReportOpedUnplannedResponse">
         <s:complexType />
       </s:element>
@@ -6004,6 +6172,62 @@
         </s:sequence>
       </s:complexType>
       <s:element name="WebReportCadreResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="WebReport140n">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="report" type="tns:Report140n" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Report140n">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AbstractReport">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ReportDataList" type="tns:ArrayOfReport140nDto" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfReport140nDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Report140nDto" nillable="true" type="tns:Report140nDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Report140nDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Theme" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:Report140nDataDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Report140nDataDto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_Report_Data" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CZLdost" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CZLsmo" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KSErez" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KSE" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PPMinadvn" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Iidvn" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PPMinfdn" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Iidn" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KOJdosud" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KOJsud" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KOJzl" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KOJzlsmo" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KZAsobl" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KZAvsego" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DT" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Scpo" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KEKMPpodtv" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KEKMPtfoms" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KZSMOpodtv" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KPMOtfoms" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WebReport140nResponse">
         <s:complexType />
       </s:element>
       <s:element name="WebReportT5Newborn">
@@ -6655,35 +6879,20 @@
       <s:element name="ApproveReportResponse">
         <s:complexType />
       </s:element>
-      <s:element name="RefuseReportMultiApproval">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="idReportFlow" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="idUser" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="RefuseReportMultiApprovalResponse">
-        <s:complexType />
-      </s:element>
-      <s:element name="GetReport">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="filialCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="reportType" type="tns:ReportType" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetReportResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetReportResult" type="tns:AbstractReport" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="RefuseReportMultiApprovalSoapIn">
+    <wsdl:part name="parameters" element="tns:RefuseReportMultiApproval" />
+  </wsdl:message>
+  <wsdl:message name="RefuseReportMultiApprovalSoapOut">
+    <wsdl:part name="parameters" element="tns:RefuseReportMultiApprovalResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReportSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReport" />
+  </wsdl:message>
+  <wsdl:message name="GetReportSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReportResponse" />
+  </wsdl:message>
   <wsdl:message name="GetApprovalInfoSoapIn">
     <wsdl:part name="parameters" element="tns:GetApprovalInfo" />
   </wsdl:message>
@@ -6869,6 +7078,12 @@
   </wsdl:message>
   <wsdl:message name="CreateReportOpedUnplannedSoapOut">
     <wsdl:part name="parameters" element="tns:CreateReportOpedUnplannedResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateReportOpedUnplanned2026SoapIn">
+    <wsdl:part name="parameters" element="tns:CreateReportOpedUnplanned2026" />
+  </wsdl:message>
+  <wsdl:message name="CreateReportOpedUnplanned2026SoapOut">
+    <wsdl:part name="parameters" element="tns:CreateReportOpedUnplanned2026Response" />
   </wsdl:message>
   <wsdl:message name="CreateReportConsQuantityFilialSoapIn">
     <wsdl:part name="parameters" element="tns:CreateReportConsQuantityFilial" />
@@ -7145,6 +7360,12 @@
   </wsdl:message>
   <wsdl:message name="ConsolidateOpedQCollectSoapOut">
     <wsdl:part name="parameters" element="tns:ConsolidateOpedQCollectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsolidateOpedUnplQCollectSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsolidateOpedUnplQCollect" />
+  </wsdl:message>
+  <wsdl:message name="ConsolidateOpedUnplQCollectSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsolidateOpedUnplQCollectResponse" />
   </wsdl:message>
   <wsdl:message name="ConsolidateTable5NewbornCollectSoapIn">
     <wsdl:part name="parameters" element="tns:ConsolidateTable5NewbornCollect" />
@@ -7428,6 +7649,12 @@
   <wsdl:message name="WebReportCadreSoapOut">
     <wsdl:part name="parameters" element="tns:WebReportCadreResponse" />
   </wsdl:message>
+  <wsdl:message name="WebReport140nSoapIn">
+    <wsdl:part name="parameters" element="tns:WebReport140n" />
+  </wsdl:message>
+  <wsdl:message name="WebReport140nSoapOut">
+    <wsdl:part name="parameters" element="tns:WebReport140nResponse" />
+  </wsdl:message>
   <wsdl:message name="WebReportT5NewbornSoapIn">
     <wsdl:part name="parameters" element="tns:WebReportT5Newborn" />
   </wsdl:message>
@@ -7548,19 +7775,15 @@
   <wsdl:message name="ApproveReportSoapOut">
     <wsdl:part name="parameters" element="tns:ApproveReportResponse" />
   </wsdl:message>
-  <wsdl:message name="RefuseReportMultiApprovalSoapIn">
-    <wsdl:part name="parameters" element="tns:RefuseReportMultiApproval" />
-  </wsdl:message>
-  <wsdl:message name="RefuseReportMultiApprovalSoapOut">
-    <wsdl:part name="parameters" element="tns:RefuseReportMultiApprovalResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetReportSoapIn">
-    <wsdl:part name="parameters" element="tns:GetReport" />
-  </wsdl:message>
-  <wsdl:message name="GetReportSoapOut">
-    <wsdl:part name="parameters" element="tns:GetReportResponse" />
-  </wsdl:message>
   <wsdl:portType name="EndpointSoap">
+    <wsdl:operation name="RefuseReportMultiApproval">
+      <wsdl:input message="tns:RefuseReportMultiApprovalSoapIn" />
+      <wsdl:output message="tns:RefuseReportMultiApprovalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReport">
+      <wsdl:input message="tns:GetReportSoapIn" />
+      <wsdl:output message="tns:GetReportSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetApprovalInfo">
       <wsdl:input message="tns:GetApprovalInfoSoapIn" />
       <wsdl:output message="tns:GetApprovalInfoSoapOut" />
@@ -7684,6 +7907,10 @@
     <wsdl:operation name="CreateReportOpedUnplanned">
       <wsdl:input message="tns:CreateReportOpedUnplannedSoapIn" />
       <wsdl:output message="tns:CreateReportOpedUnplannedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateReportOpedUnplanned2026">
+      <wsdl:input message="tns:CreateReportOpedUnplanned2026SoapIn" />
+      <wsdl:output message="tns:CreateReportOpedUnplanned2026SoapOut" />
     </wsdl:operation>
     <wsdl:operation name="CreateReportConsQuantityFilial">
       <wsdl:input message="tns:CreateReportConsQuantityFilialSoapIn" />
@@ -7868,6 +8095,10 @@
     <wsdl:operation name="ConsolidateOpedQCollect">
       <wsdl:input message="tns:ConsolidateOpedQCollectSoapIn" />
       <wsdl:output message="tns:ConsolidateOpedQCollectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsolidateOpedUnplQCollect">
+      <wsdl:input message="tns:ConsolidateOpedUnplQCollectSoapIn" />
+      <wsdl:output message="tns:ConsolidateOpedUnplQCollectSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="ConsolidateTable5NewbornCollect">
       <wsdl:input message="tns:ConsolidateTable5NewbornCollectSoapIn" />
@@ -8057,6 +8288,10 @@
       <wsdl:input message="tns:WebReportCadreSoapIn" />
       <wsdl:output message="tns:WebReportCadreSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="WebReport140n">
+      <wsdl:input message="tns:WebReport140nSoapIn" />
+      <wsdl:output message="tns:WebReport140nSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="WebReportT5Newborn">
       <wsdl:input message="tns:WebReportT5NewbornSoapIn" />
       <wsdl:output message="tns:WebReportT5NewbornSoapOut" />
@@ -8137,17 +8372,27 @@
       <wsdl:input message="tns:ApproveReportSoapIn" />
       <wsdl:output message="tns:ApproveReportSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="RefuseReportMultiApproval">
-      <wsdl:input message="tns:RefuseReportMultiApprovalSoapIn" />
-      <wsdl:output message="tns:RefuseReportMultiApprovalSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetReport">
-      <wsdl:input message="tns:GetReportSoapIn" />
-      <wsdl:output message="tns:GetReportSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="EndpointSoap" type="tns:EndpointSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RefuseReportMultiApproval">
+      <soap:operation soapAction="http://kms-oms.ru/RefuseReportMultiApproval" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReport">
+      <soap:operation soapAction="http://kms-oms.ru/GetReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetApprovalInfo">
       <soap:operation soapAction="http://kms-oms.ru/GetApprovalInfo" style="document" />
       <wsdl:input>
@@ -8420,6 +8665,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateReportOpedUnplanned">
       <soap:operation soapAction="http://kms-oms.ru/CreateReportOpedUnplanned" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateReportOpedUnplanned2026">
+      <soap:operation soapAction="http://kms-oms.ru/CreateReportOpedUnplanned2026" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -8834,6 +9088,15 @@
     </wsdl:operation>
     <wsdl:operation name="ConsolidateOpedQCollect">
       <soap:operation soapAction="http://kms-oms.ru/ConsolidateOpedQCollect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsolidateOpedUnplQCollect">
+      <soap:operation soapAction="http://kms-oms.ru/ConsolidateOpedUnplQCollect" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -9264,6 +9527,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="WebReport140n">
+      <soap:operation soapAction="http://kms-oms.ru/WebReport140n" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="WebReportT5Newborn">
       <soap:operation soapAction="http://kms-oms.ru/WebReportT5Newborn" style="document" />
       <wsdl:input>
@@ -9444,27 +9716,27 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="RefuseReportMultiApproval">
-      <soap:operation soapAction="http://kms-oms.ru/RefuseReportMultiApproval" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetReport">
-      <soap:operation soapAction="http://kms-oms.ru/GetReport" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="EndpointSoap12" type="tns:EndpointSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RefuseReportMultiApproval">
+      <soap12:operation soapAction="http://kms-oms.ru/RefuseReportMultiApproval" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReport">
+      <soap12:operation soapAction="http://kms-oms.ru/GetReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetApprovalInfo">
       <soap12:operation soapAction="http://kms-oms.ru/GetApprovalInfo" style="document" />
       <wsdl:input>
@@ -9737,6 +10009,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateReportOpedUnplanned">
       <soap12:operation soapAction="http://kms-oms.ru/CreateReportOpedUnplanned" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateReportOpedUnplanned2026">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateReportOpedUnplanned2026" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -10151,6 +10432,15 @@
     </wsdl:operation>
     <wsdl:operation name="ConsolidateOpedQCollect">
       <soap12:operation soapAction="http://kms-oms.ru/ConsolidateOpedQCollect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsolidateOpedUnplQCollect">
+      <soap12:operation soapAction="http://kms-oms.ru/ConsolidateOpedUnplQCollect" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -10581,6 +10871,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="WebReport140n">
+      <soap12:operation soapAction="http://kms-oms.ru/WebReport140n" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="WebReportT5Newborn">
       <soap12:operation soapAction="http://kms-oms.ru/WebReportT5Newborn" style="document" />
       <wsdl:input>
@@ -10754,24 +11053,6 @@
     </wsdl:operation>
     <wsdl:operation name="ApproveReport">
       <soap12:operation soapAction="http://kms-oms.ru/ApproveReport" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="RefuseReportMultiApproval">
-      <soap12:operation soapAction="http://kms-oms.ru/RefuseReportMultiApproval" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetReport">
-      <soap12:operation soapAction="http://kms-oms.ru/GetReport" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

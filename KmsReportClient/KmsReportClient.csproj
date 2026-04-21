@@ -156,6 +156,7 @@
     <Compile Include="Excel\Collector\PgExcelCollector.cs" />
     <Compile Include="Excel\Collector\ZpzQ2025ExcelCollector.cs" />
     <Compile Include="Excel\Collector\ZpzQExcelCollector.cs" />
+    <Compile Include="Excel\Creator\Base\ExcelOpedUnplQCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelT5NewbornCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelDoffCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelMonthlyVolCreator.cs" />
@@ -368,6 +369,7 @@
     <Compile Include="Model\XML\TemplateForm.cs" />
     <Compile Include="Model\XML\TemplateTextMail.cs" />
     <Compile Include="Report\Basic\MonitoringVCRProcessor.cs" />
+    <Compile Include="Report\Basic\Report140nProcessor.cs" />
     <Compile Include="Report\Basic\ReportDoffProcessor.cs" />
     <Compile Include="Report\Basic\ReportMonthlyVolProcessor.cs" />
     <Compile Include="Report\Basic\ReportOpedUnplannedProcessor.cs" />
@@ -541,6 +543,12 @@
     <None Include="Connected Services\External\KmsReportClient.External.ConsolidateOpedQCollectResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.ConsolidateOpedUnplQ.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.ConsolidateOpedUnplQCollectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.ConsolidateProposal.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -706,6 +714,9 @@
     <None Include="Connected Services\External\KmsReportClient.External.CreateReportDispResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateReportOpedUnplanned2026Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateReportOpedUnplannedResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -749,6 +760,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CReportOpedUnplanned.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CReportOpedUnplanned2026.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CReportPg.datasource">
@@ -1043,6 +1057,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.ViolationsOfAppeals.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.WebReport140nResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.WebReportCadreResponse.datasource">

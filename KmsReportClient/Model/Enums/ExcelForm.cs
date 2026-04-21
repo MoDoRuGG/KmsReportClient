@@ -128,7 +128,7 @@ namespace KmsReportClient.Model.Enums
         letal,
         [Description(GlobalConst.TempFolder + "consOped.xlsx")]
         consOped,
-        [Description(GlobalConst.TempFolder + "consOpedU.xlsx")]
+        [Description(GlobalConst.TempFolder + "consOpedUnplanned.xlsx")]
         consOpedU,
         [Description(GlobalConst.TempFolder + "IR.xlsx")]
         IR,
@@ -148,6 +148,8 @@ namespace KmsReportClient.Model.Enums
         consVCR_filial,
         [Description(GlobalConst.TempFolder + "consOpedQ.xlsx")]
         consOpedQ,
+        [Description(GlobalConst.TempFolder + "consOpedUnplQ.xlsx")]
+        consOpedUnplQ,
         [Description(GlobalConst.TempFolder + "proposal.xlsx")]
         proposal,
         [Description(GlobalConst.TempFolder + "opedFinance.xlsx")]

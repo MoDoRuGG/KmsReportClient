@@ -15,9 +15,9 @@ namespace KmsReportClient.Excel.Creator.Base
         private readonly List<ReportDictionary> _zpzDictionaries = new List<ReportDictionary> {
             new ReportDictionary {TableName = "Результаты МЭК", StartRow = 6, EndRow = 6, Index = 1},
             new ReportDictionary {TableName = "Таблица 6", StartRow = 7, EndRow = 187, Index = 2},
-            new ReportDictionary {TableName = "Таблица 7", StartRow = 7, EndRow = 407, Index = 3},
+            new ReportDictionary {TableName = "Таблица 7", StartRow = 7, EndRow = 446, Index = 3},
             new ReportDictionary {TableName = "Таблица 8", StartRow = 6, EndRow = 484, Index = 4},
-            new ReportDictionary {TableName = "Таблица 9", StartRow = 6, EndRow = 38, Index = 5},
+            new ReportDictionary {TableName = "Таблица 9", StartRow = 6, EndRow = 41, Index = 5},
             new ReportDictionary {TableName = "Оплата МП", StartRow = 6, EndRow = 6, Index = 6},
             new ReportDictionary {TableName = "Таблица 1Л", StartRow = 5, EndRow = 28, Index = 7},
             new ReportDictionary {TableName = "Таблица 2Л", StartRow = 5, EndRow = 30, Index = 8},
@@ -349,23 +349,23 @@ namespace KmsReportClient.Excel.Creator.Base
 
         private void FinishZpz()
         {
-            ObjWorkSheet.Cells[41, 3] = CurrentUser.Director;
-            ObjWorkSheet.Cells[44, 1] = "Дата: " + DateTime.Today.ToShortDateString();
-            if (!string.IsNullOrEmpty(CurrentUser.DirectorPhone))
-            {
-                var code = GetPhoneCode(CurrentUser.DirectorPhone);
-                var number = GetPhoneNumber(CurrentUser.DirectorPhone);
-                ObjWorkSheet.Cells[44, 4] = $"+7 ({code}) {number}";
-            }
+            //ObjWorkSheet.Cells[41, 3] = CurrentUser.Director;
+            //ObjWorkSheet.Cells[44, 1] = "Дата: " + DateTime.Today.ToShortDateString();
+            //if (!string.IsNullOrEmpty(CurrentUser.DirectorPhone))
+            //{
+            //    var code = GetPhoneCode(CurrentUser.DirectorPhone);
+            //    var number = GetPhoneNumber(CurrentUser.DirectorPhone);
+            //    ObjWorkSheet.Cells[44, 4] = $"+7 ({code}) {number}";
+            //}
 
-            ObjWorkSheet.Cells[47, 3] = CurrentUser.UserName;
-            ObjWorkSheet.Cells[50, 1] = CurrentUser.Email ?? "";
-            if (!string.IsNullOrEmpty(CurrentUser.Phone))
-            {
-                var code = GetPhoneCode(CurrentUser.Phone);
-                var number = GetPhoneNumber(CurrentUser.Phone);
-                ObjWorkSheet.Cells[50, 4] = $"+7 ({code}) {number}";
-            }
+            //ObjWorkSheet.Cells[47, 3] = CurrentUser.UserName;
+            //ObjWorkSheet.Cells[50, 1] = CurrentUser.Email ?? "";
+            //if (!string.IsNullOrEmpty(CurrentUser.Phone))
+            //{
+            //    var code = GetPhoneCode(CurrentUser.Phone);
+            //    var number = GetPhoneNumber(CurrentUser.Phone);
+            //    ObjWorkSheet.Cells[50, 4] = $"+7 ({code}) {number}";
+            //}
         }
 
     }

@@ -7,7 +7,7 @@ using KmsReportClient.Model.Enums;
 
 namespace KmsReportClient.Excel.Creator.Consolidate
 {
-    class ExcelConsolidateOpedUnplannedCreator : ExcelBaseCreator<CReportOpedUnplanned[]>
+    class ExcelConsolidateOpedUnplannedCreator : ExcelBaseCreator<CReportOpedUnplanned2026[]>
     {
         private const int StartPosition = 11;
         private readonly List<KmsReportDictionary> _regions;
@@ -16,24 +16,27 @@ namespace KmsReportClient.Excel.Creator.Consolidate
             string header,
             string filialName) : base(filename, ExcelForm.consOpedU, header, filialName, false) { }
 
-        protected override void FillReport(CReportOpedUnplanned[] report, CReportOpedUnplanned[] yearReport)
+        protected override void FillReport(CReportOpedUnplanned2026[] report, CReportOpedUnplanned2026[] yearReport)
         {
             int countReport = report.Length;
             int currentIndex = StartPosition;
 
             int ind = 0;
 
-            while (ind < 252 && currentIndex < 420)
+            //while (ind < 252 && currentIndex < 420)
+            while (ind < 336 && currentIndex < 502)
+
             {
 
 
                 
 
-                for (int i = currentIndex; i <= currentIndex + 9; i++)
+                //for (int i = currentIndex; i <= currentIndex + 9; i++)
+                for (int i = currentIndex; i <= currentIndex + 11; i++)
                 {
                     //.Filial = _regions.Single(j => j.Key == d.Filial).Value;
                     //string exRowNum = Convert.ToString(ObjWorkSheet.Cells[i, 2].Value);
-                    var formulaRows = new int[] { currentIndex, currentIndex + 1, currentIndex + 3, currentIndex + 4, currentIndex + 6, currentIndex + 7 };
+                    var formulaRows = new int[] { currentIndex, currentIndex + 1, currentIndex + 3, currentIndex + 4, currentIndex + 6, currentIndex + 7, currentIndex + 9, currentIndex + 10 };
                     if (formulaRows.Contains(i))
                     {
                         ObjWorkSheet.Cells[i, 4] = report[ind].App;
@@ -41,13 +44,14 @@ namespace KmsReportClient.Excel.Creator.Consolidate
                         ObjWorkSheet.Cells[i, 6] = report[ind].Ds;
                         ObjWorkSheet.Cells[i, 7] = report[ind].Smp;
                         ObjWorkSheet.Cells[i, 8] = report[ind].Notes;
-                        ObjWorkSheet.Cells[i, 9] = report[ind].NotesGoodReason;
+                        //ObjWorkSheet.Cells[i, 9] = report[ind].NotesGoodReason;
                         ind++;
                     }
                     
                    
                 }
-                currentIndex = currentIndex + 10;
+                currentIndex = currentIndex + 12;
+                //currentIndex = currentIndex + 10;
             }
         }
     }

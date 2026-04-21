@@ -724,7 +724,7 @@ namespace KmsReportClient.Forms
                         CreateReportCadreT2();
                         break;
                     case ConsolidateReport.ConsolidateOpedUnplanned:
-                        CreateReportOpedUnplanned();
+                        CreateReportOpedUnplanned2026();
                         break;
                     case ConsolidateReport.Consolidate262T1:
                         CreateReport262T1();
@@ -994,7 +994,7 @@ namespace KmsReportClient.Forms
         {
             string yymm = GetYymmQuarterly2();
 
-            var data = _client.ConsolidateOpedQCollect(yymm);
+            var data = _client.ConsolidateOpedUnplQCollect(yymm);
 
             if (data.Length == 0)
             {
@@ -1003,7 +1003,7 @@ namespace KmsReportClient.Forms
                 return;
             }
 
-            var excel = new ExcelConsolidateOpedQCreator(saveFileDialog1.FileName, "", _filialName);
+            var excel = new ExcelConsolidateOpedUnplQCreator(saveFileDialog1.FileName, "", _filialName);
 
             excel.CreateReport(data, null);
 
@@ -2548,10 +2548,10 @@ namespace KmsReportClient.Forms
         }
 
 
-        private void CreateReportOpedUnplanned()
+        private void CreateReportOpedUnplanned2026()
         {
             string yymm = GetYymm(cmbStart.Text, Convert.ToInt32(nudStart.Value)).ToString();
-            var dataMonths = _client.CreateReportOpedUnplanned(yymm);
+            var dataMonths = _client.CreateReportOpedUnplanned2026(yymm);
             if (dataMonths.Length == 0)
             {
                 MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
@@ -2576,7 +2576,7 @@ namespace KmsReportClient.Forms
 
 
             string statPeriod = yymm.Substring(0, 2) + "01";
-            var dataYear = _client.CreateReportOpedUnplanned(yymm);
+            var dataYear = _client.CreateReportOpedUnplanned2026(yymm);
             foreach (var d in dataYear)
             {
                 if (d.Filial == "RU")
