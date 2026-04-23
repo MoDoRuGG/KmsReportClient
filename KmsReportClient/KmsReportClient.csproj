@@ -189,6 +189,7 @@
     <Compile Include="Excel\Creator\Base\ExcelPgQCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelProposalCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelVacCreator.cs" />
+    <Compile Include="Excel\Creator\Consolidate\ExcelConsolidate140nCreator.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateQuantityQ.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateQuantityInfo.cs" />
     <Compile Include="Excel\Creator\Consolidate\ExcelConsolidateQuantityFP.cs" />
@@ -489,6 +490,12 @@
     <None Include="Connected Services\External\KmsReportClient.External.CollectSummaryReportResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\External\KmsReportClient.External.Cons140nTable1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.Cons140nTable2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\External\KmsReportClient.External.Consolidate294.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -598,6 +605,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.ConsolidateZpzTable5.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateCons140nTable1Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\External\KmsReportClient.External.CreateCons140nTable2Response.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\External\KmsReportClient.External.CreateConsolidate294Response.datasource">

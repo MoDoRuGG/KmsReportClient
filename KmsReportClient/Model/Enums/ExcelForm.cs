@@ -5,6 +5,9 @@ namespace KmsReportClient.Model.Enums
 {
     public enum ExcelForm
     {
+        [Description(GlobalConst.TempFolder + "Cons140n.xlsx")]
+        R140n,
+
         [Description(GlobalConst.TempFolder + "f262.xlsx")]
         F262,
 

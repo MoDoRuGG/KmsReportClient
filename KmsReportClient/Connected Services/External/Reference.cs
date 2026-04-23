@@ -13971,6 +13971,112 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Cons140nTable1", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class Cons140nTable1 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.Report140nDataDto DataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Filial {
+            get {
+                return this.FilialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilialField, value) != true)) {
+                    this.FilialField = value;
+                    this.RaisePropertyChanged("Filial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public KmsReportClient.External.Report140nDataDto Data {
+            get {
+                return this.DataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataField, value) != true)) {
+                    this.DataField = value;
+                    this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Cons140nTable2", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class Cons140nTable2 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.Report140nDataDto DataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public KmsReportClient.External.Report140nDataDto Data {
+            get {
+                return this.DataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataField, value) != true)) {
+                    this.DataField = value;
+                    this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="FFOMSVolumesByTypes", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class FFOMSVolumesByTypes : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -48641,6 +48747,20 @@ namespace KmsReportClient.External {
         System.Threading.Tasks.Task<KmsReportClient.External.CreateReportCadreTable2Response> CreateReportCadreTable2Async(KmsReportClient.External.CreateReportCadreTable2Request request);
         
         // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateCons140nTable1", ReplyAction="*")]
+        KmsReportClient.External.CreateCons140nTable1Response CreateCons140nTable1(KmsReportClient.External.CreateCons140nTable1Request request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateCons140nTable1", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateCons140nTable1Response> CreateCons140nTable1Async(KmsReportClient.External.CreateCons140nTable1Request request);
+        
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateCons140nTable2", ReplyAction="*")]
+        KmsReportClient.External.CreateCons140nTable2Response CreateCons140nTable2(KmsReportClient.External.CreateCons140nTable2Request request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateCons140nTable2", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateCons140nTable2Response> CreateCons140nTable2Async(KmsReportClient.External.CreateCons140nTable2Request request);
+        
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
         [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CreateFFOMSVolumesByTypes", ReplyAction="*")]
         KmsReportClient.External.CreateFFOMSVolumesByTypesResponse CreateFFOMSVolumesByTypes(KmsReportClient.External.CreateFFOMSVolumesByTypesRequest request);
         
@@ -51903,6 +52023,142 @@ namespace KmsReportClient.External {
         
         public CreateReportCadreTable2ResponseBody(KmsReportClient.External.CReportCadreTable2[] CreateReportCadreTable2Result) {
             this.CreateReportCadreTable2Result = CreateReportCadreTable2Result;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateCons140nTable1Request {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateCons140nTable1", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateCons140nTable1RequestBody Body;
+        
+        public CreateCons140nTable1Request() {
+        }
+        
+        public CreateCons140nTable1Request(KmsReportClient.External.CreateCons140nTable1RequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateCons140nTable1RequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string yymm;
+        
+        public CreateCons140nTable1RequestBody() {
+        }
+        
+        public CreateCons140nTable1RequestBody(string yymm) {
+            this.yymm = yymm;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateCons140nTable1Response {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateCons140nTable1Response", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateCons140nTable1ResponseBody Body;
+        
+        public CreateCons140nTable1Response() {
+        }
+        
+        public CreateCons140nTable1Response(KmsReportClient.External.CreateCons140nTable1ResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateCons140nTable1ResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.Cons140nTable1[] CreateCons140nTable1Result;
+        
+        public CreateCons140nTable1ResponseBody() {
+        }
+        
+        public CreateCons140nTable1ResponseBody(KmsReportClient.External.Cons140nTable1[] CreateCons140nTable1Result) {
+            this.CreateCons140nTable1Result = CreateCons140nTable1Result;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateCons140nTable2Request {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateCons140nTable2", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateCons140nTable2RequestBody Body;
+        
+        public CreateCons140nTable2Request() {
+        }
+        
+        public CreateCons140nTable2Request(KmsReportClient.External.CreateCons140nTable2RequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateCons140nTable2RequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string yymm;
+        
+        public CreateCons140nTable2RequestBody() {
+        }
+        
+        public CreateCons140nTable2RequestBody(string yymm) {
+            this.yymm = yymm;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateCons140nTable2Response {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateCons140nTable2Response", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CreateCons140nTable2ResponseBody Body;
+        
+        public CreateCons140nTable2Response() {
+        }
+        
+        public CreateCons140nTable2Response(KmsReportClient.External.CreateCons140nTable2ResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CreateCons140nTable2ResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.Cons140nTable2[] CreateCons140nTable2Result;
+        
+        public CreateCons140nTable2ResponseBody() {
+        }
+        
+        public CreateCons140nTable2ResponseBody(KmsReportClient.External.Cons140nTable2[] CreateCons140nTable2Result) {
+            this.CreateCons140nTable2Result = CreateCons140nTable2Result;
         }
     }
     
@@ -60038,6 +60294,56 @@ namespace KmsReportClient.External {
             inValue.Body = new KmsReportClient.External.CreateReportCadreTable2RequestBody();
             inValue.Body.yymm = yymm;
             return ((KmsReportClient.External.EndpointSoap)(this)).CreateReportCadreTable2Async(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.CreateCons140nTable1Response KmsReportClient.External.EndpointSoap.CreateCons140nTable1(KmsReportClient.External.CreateCons140nTable1Request request) {
+            return base.Channel.CreateCons140nTable1(request);
+        }
+        
+        public KmsReportClient.External.Cons140nTable1[] CreateCons140nTable1(string yymm) {
+            KmsReportClient.External.CreateCons140nTable1Request inValue = new KmsReportClient.External.CreateCons140nTable1Request();
+            inValue.Body = new KmsReportClient.External.CreateCons140nTable1RequestBody();
+            inValue.Body.yymm = yymm;
+            KmsReportClient.External.CreateCons140nTable1Response retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateCons140nTable1(inValue);
+            return retVal.Body.CreateCons140nTable1Result;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateCons140nTable1Response> KmsReportClient.External.EndpointSoap.CreateCons140nTable1Async(KmsReportClient.External.CreateCons140nTable1Request request) {
+            return base.Channel.CreateCons140nTable1Async(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.CreateCons140nTable1Response> CreateCons140nTable1Async(string yymm) {
+            KmsReportClient.External.CreateCons140nTable1Request inValue = new KmsReportClient.External.CreateCons140nTable1Request();
+            inValue.Body = new KmsReportClient.External.CreateCons140nTable1RequestBody();
+            inValue.Body.yymm = yymm;
+            return ((KmsReportClient.External.EndpointSoap)(this)).CreateCons140nTable1Async(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.CreateCons140nTable2Response KmsReportClient.External.EndpointSoap.CreateCons140nTable2(KmsReportClient.External.CreateCons140nTable2Request request) {
+            return base.Channel.CreateCons140nTable2(request);
+        }
+        
+        public KmsReportClient.External.Cons140nTable2[] CreateCons140nTable2(string yymm) {
+            KmsReportClient.External.CreateCons140nTable2Request inValue = new KmsReportClient.External.CreateCons140nTable2Request();
+            inValue.Body = new KmsReportClient.External.CreateCons140nTable2RequestBody();
+            inValue.Body.yymm = yymm;
+            KmsReportClient.External.CreateCons140nTable2Response retVal = ((KmsReportClient.External.EndpointSoap)(this)).CreateCons140nTable2(inValue);
+            return retVal.Body.CreateCons140nTable2Result;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.CreateCons140nTable2Response> KmsReportClient.External.EndpointSoap.CreateCons140nTable2Async(KmsReportClient.External.CreateCons140nTable2Request request) {
+            return base.Channel.CreateCons140nTable2Async(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.CreateCons140nTable2Response> CreateCons140nTable2Async(string yymm) {
+            KmsReportClient.External.CreateCons140nTable2Request inValue = new KmsReportClient.External.CreateCons140nTable2Request();
+            inValue.Body = new KmsReportClient.External.CreateCons140nTable2RequestBody();
+            inValue.Body.yymm = yymm;
+            return ((KmsReportClient.External.EndpointSoap)(this)).CreateCons140nTable2Async(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

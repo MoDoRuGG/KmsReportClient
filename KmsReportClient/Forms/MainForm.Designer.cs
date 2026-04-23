@@ -225,6 +225,7 @@ namespace KmsReportClient.Forms
             this.ФФОМСЛетальныеЭКМПToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ФФОМСОбъемыПоВидамПомощиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.СтрахованиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ВыполнениеПоказателейСМОToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Таблица5НоворожденныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Таблица6СтудентыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Таблица7СтарыеПолисыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -656,7 +657,8 @@ namespace KmsReportClient.Forms
             this.численностьToolStripMenuItem,
             this.НарушенияПоОбращениямЗЛToolStripMenuItem,
             this.КПроверкеФФОМСToolStripMenuItem,
-            this.СтрахованиеToolStripMenuItem});
+            this.СтрахованиеToolStripMenuItem,
+            this.ВыполнениеПоказателейСМОToolStripMenuItem});
             this.consolidateMenu.Name = "consolidateMenu";
             this.consolidateMenu.Size = new System.Drawing.Size(129, 20);
             this.consolidateMenu.Text = "Сводная отчетность";
@@ -1119,6 +1121,13 @@ namespace KmsReportClient.Forms
             this.НарушенияПоОбращениямЗЛToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
             this.НарушенияПоОбращениямЗЛToolStripMenuItem.Text = "Нарушения по обращениям ЗЛ";
             this.НарушенияПоОбращениямЗЛToolStripMenuItem.Click += new System.EventHandler(this.ОтчетНарушенияПоОбращениямЗЛToolStripMenuItem_Click);
+            // 
+            // ВыполнениеПоказателейСМОToolStripMenuItem
+            // 
+            this.ВыполнениеПоказателейСМОToolStripMenuItem.Name = "ВыполнениеПоказателейСМОToolStripMenuItem";
+            this.ВыполнениеПоказателейСМОToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
+            this.ВыполнениеПоказателейСМОToolStripMenuItem.Text = "Выполнение показателей СМО";
+            this.ВыполнениеПоказателейСМОToolStripMenuItem.Click += new System.EventHandler(this.ВыполнениеПоказателейСМОToolStripMenuItem_Click);
             // 
             // КПроверкеФФОМСToolStripMenuItem
             // 
@@ -5576,6 +5585,7 @@ namespace KmsReportClient.Forms
         private System.Windows.Forms.ToolStripMenuItem сводКТаблице2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сводКТаблице3ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem СтрахованиеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ВыполнениеПоказателейСМОToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Таблица5НоворожденныеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Таблица6СтудентыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Таблица7СтарыеПолисыToolStripMenuItem;

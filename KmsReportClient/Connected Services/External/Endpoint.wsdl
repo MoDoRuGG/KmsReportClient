@@ -1633,6 +1633,81 @@
           <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ReportCadreDataDto" />
         </s:sequence>
       </s:complexType>
+      <s:element name="CreateCons140nTable1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateCons140nTable1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateCons140nTable1Result" type="tns:ArrayOfCons140nTable1" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCons140nTable1">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Cons140nTable1" nillable="true" type="tns:Cons140nTable1" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cons140nTable1">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Filial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:Report140nDataDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Report140nDataDto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_Report_Data" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CZLdost" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CZLsmo" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KSErez" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KSE" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PPMinadvn" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Iidvn" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PPMinfdn" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Iidn" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KOJdosud" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KOJsud" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KOJzl" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KOJzlsmo" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KZAsobl" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KZAvsego" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DT" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Scpo" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KEKMPpodtv" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KEKMPtfoms" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KZSMOpodtv" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="KPMOtfoms" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateCons140nTable2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateCons140nTable2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateCons140nTable2Result" type="tns:ArrayOfCons140nTable2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCons140nTable2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Cons140nTable2" nillable="true" type="tns:Cons140nTable2" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cons140nTable2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:Report140nDataDto" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="CreateFFOMSVolumesByTypes">
         <s:complexType>
           <s:sequence>
@@ -6201,32 +6276,6 @@
           <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:Report140nDataDto" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="Report140nDataDto">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Id_Report_Data" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="CZLdost" nillable="true" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CZLsmo" nillable="true" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="KSErez" nillable="true" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="KSE" nillable="true" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="PPMinadvn" nillable="true" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="Iidvn" nillable="true" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="PPMinfdn" nillable="true" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="Iidn" nillable="true" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="KOJdosud" nillable="true" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="KOJsud" nillable="true" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="KOJzl" nillable="true" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="KOJzlsmo" nillable="true" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="KZAsobl" nillable="true" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="KZAvsego" nillable="true" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="DT" nillable="true" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="Scpo" nillable="true" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="KEKMPpodtv" nillable="true" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="KEKMPtfoms" nillable="true" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="KZSMOpodtv" nillable="true" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="KPMOtfoms" nillable="true" type="s:decimal" />
-        </s:sequence>
-      </s:complexType>
       <s:element name="WebReport140nResponse">
         <s:complexType />
       </s:element>
@@ -7103,6 +7152,18 @@
   <wsdl:message name="CreateReportCadreTable2SoapOut">
     <wsdl:part name="parameters" element="tns:CreateReportCadreTable2Response" />
   </wsdl:message>
+  <wsdl:message name="CreateCons140nTable1SoapIn">
+    <wsdl:part name="parameters" element="tns:CreateCons140nTable1" />
+  </wsdl:message>
+  <wsdl:message name="CreateCons140nTable1SoapOut">
+    <wsdl:part name="parameters" element="tns:CreateCons140nTable1Response" />
+  </wsdl:message>
+  <wsdl:message name="CreateCons140nTable2SoapIn">
+    <wsdl:part name="parameters" element="tns:CreateCons140nTable2" />
+  </wsdl:message>
+  <wsdl:message name="CreateCons140nTable2SoapOut">
+    <wsdl:part name="parameters" element="tns:CreateCons140nTable2Response" />
+  </wsdl:message>
   <wsdl:message name="CreateFFOMSVolumesByTypesSoapIn">
     <wsdl:part name="parameters" element="tns:CreateFFOMSVolumesByTypes" />
   </wsdl:message>
@@ -7924,6 +7985,14 @@
       <wsdl:input message="tns:CreateReportCadreTable2SoapIn" />
       <wsdl:output message="tns:CreateReportCadreTable2SoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="CreateCons140nTable1">
+      <wsdl:input message="tns:CreateCons140nTable1SoapIn" />
+      <wsdl:output message="tns:CreateCons140nTable1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCons140nTable2">
+      <wsdl:input message="tns:CreateCons140nTable2SoapIn" />
+      <wsdl:output message="tns:CreateCons140nTable2SoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="CreateFFOMSVolumesByTypes">
       <wsdl:input message="tns:CreateFFOMSVolumesByTypesSoapIn" />
       <wsdl:output message="tns:CreateFFOMSVolumesByTypesSoapOut" />
@@ -8701,6 +8770,24 @@
     </wsdl:operation>
     <wsdl:operation name="CreateReportCadreTable2">
       <soap:operation soapAction="http://kms-oms.ru/CreateReportCadreTable2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCons140nTable1">
+      <soap:operation soapAction="http://kms-oms.ru/CreateCons140nTable1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCons140nTable2">
+      <soap:operation soapAction="http://kms-oms.ru/CreateCons140nTable2" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -10045,6 +10132,24 @@
     </wsdl:operation>
     <wsdl:operation name="CreateReportCadreTable2">
       <soap12:operation soapAction="http://kms-oms.ru/CreateReportCadreTable2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCons140nTable1">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateCons140nTable1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCons140nTable2">
+      <soap12:operation soapAction="http://kms-oms.ru/CreateCons140nTable2" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

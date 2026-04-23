@@ -61,7 +61,7 @@ namespace KmsReportClient.Forms
                 { "RU-YEV", "ЕАО" },
              };
 
-        private static readonly ConsolidateReport[] FolderReports = { ConsolidateReport.ZpzWebSite, 
+        private static readonly ConsolidateReport[] FolderReports = { ConsolidateReport.ZpzWebSite,
                                                                       ConsolidateReport.ZpzWebSite2023,
                                                                       ConsolidateReport.ZpzWebSite2025,
                                                                       ConsolidateReport.ViolationsOfAppeals,
@@ -71,7 +71,7 @@ namespace KmsReportClient.Forms
                                                                       ConsolidateReport.FFOMSViolEKMP,
                                                                       ConsolidateReport.FFOMSVerifyPlan,
                                                                       ConsolidateReport.FFOMSMonthlyVol,
-                                                                      
+
 
                                                                     };
 
@@ -527,6 +527,16 @@ namespace KmsReportClient.Forms
                     cmbStart.DataSource = GlobalConst.PeriodsQ;
                     break;
 
+                case ConsolidateReport.Cons140n:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать отчет о выполнении показателей СМО";
+                    saveFileDialog1.FileName = "Сводный отчет о выполнении показателей СМО";
+                    cmbStart.DataSource = GlobalConst.Periods;
+                    break;
+
                 case ConsolidateReport.ConsOpedFinance1:
                     labelStart.Text = "Период";
                     //nudSingle.Visible = false;
@@ -824,6 +834,10 @@ namespace KmsReportClient.Forms
                         break;
                     case ConsolidateReport.CnpnQuarterly:
                         CreateCReportCpnp();
+                        break;
+
+                    case ConsolidateReport.Cons140n:
+                        CreateCons140n();
                         break;
 
                     case ConsolidateReport.CnpnMonthly:
@@ -1233,7 +1247,7 @@ namespace KmsReportClient.Forms
 
 
 
-         
+
 
         private void CreateViolationsOfAppeals()
         {
@@ -1387,7 +1401,7 @@ namespace KmsReportClient.Forms
             foreach (var report in reports)
             {
                 if (region_name.TryGetValue(report.Filial, out string regionName))
-                { 
+                {
                     string filename = folder + $"\\{regionName}_Внеплановые экспертизы {yymm}.xlsx";
                     string filialName = _regions.FirstOrDefault(x => x.Key == report.Filial)?.ForeignKey
                     ?? throw new KeyNotFoundException($"Filial {report.Filial} не найден в _regions");
@@ -1440,29 +1454,29 @@ namespace KmsReportClient.Forms
 
         private void CreateFFOMSOncoCT()
         {
-                string yymm = GetYymmQuarterly();
+            string yymm = GetYymmQuarterly();
 
-                var data = _client.CreateFFOMSOncoCT(yymm);
-                if (data.Length == 0)
-                {
-                    MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-
-                foreach (var d in data)
-                {
-                    d.Filial = _regions.Single(x => x.Key == d.Filial).Value;
-                }
-
-                data = data.OrderBy(x => x.Filial).ToArray();
-
-                string filename = saveFileDialog1.FileName;
-                var excel = new ExcelFFOMSOncoCTCreator(filename, "", _filialName, yymm);
-                excel.CreateReport(data, null);
-
-                GlobalUtils.OpenFileOrDirectory(filename);
+            var data = _client.CreateFFOMSOncoCT(yymm);
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
+
+            foreach (var d in data)
+            {
+                d.Filial = _regions.Single(x => x.Key == d.Filial).Value;
+            }
+
+            data = data.OrderBy(x => x.Filial).ToArray();
+
+            string filename = saveFileDialog1.FileName;
+            var excel = new ExcelFFOMSOncoCTCreator(filename, "", _filialName, yymm);
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(filename);
+        }
 
 
 
@@ -1788,7 +1802,7 @@ namespace KmsReportClient.Forms
             {
                 Row = x.Key,
                 FullTime = x.Sum(x => x.FullTime),
-                Contract = x.Sum(x => x.Contract), 
+                Contract = x.Sum(x => x.Contract),
 
             }).ToArray();
 
@@ -2034,6 +2048,31 @@ namespace KmsReportClient.Forms
         }
 
 
+        private void CreateCons140n()
+        {
+            string yymm = GetYymmQuarterly();
+            var data = _client.CreateCons140nTable1(yymm);
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            foreach (var d in data)
+            {
+                d.Filial = _regions.Single(x => x.Key == d.Filial).Value;
+            }
+
+            data = data.OrderBy(x => x.Filial).ToArray();
+
+            string filename = saveFileDialog1.FileName;
+            var excel = new ExcelConsolidate140nCreator(filename, "", _filialName);
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(filename);
+        }
+
         private void CreateReportConsQuantityFilial()
         {
             string yymm = GetYymm(cmbStart.Text, Convert.ToInt32(nudStart.Value)).ToString();
@@ -2093,7 +2132,7 @@ namespace KmsReportClient.Forms
                 return;
             }
             var excel = new ExcelFFOMSVolumesByTypesCreator(saveFileDialog1.FileName, "", _filialName);
-            excel.CreateReport(data,null);
+            excel.CreateReport(data, null);
 
             GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
         }
@@ -2647,6 +2686,7 @@ namespace KmsReportClient.Forms
             GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
 
         }
+
 
 
         private void CreateCReportCpnpMonth()
