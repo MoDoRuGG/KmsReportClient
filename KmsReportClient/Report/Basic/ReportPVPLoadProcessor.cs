@@ -54,6 +54,20 @@ namespace KmsReportClient.Report.Basic
             reportsDictionary)
         {
             InitReport();
+
+            // Обработка ошибок прокрутки DataGridView
+            Dgv.Scroll += (sender, e) =>
+            {
+                try
+                {
+                    // Стандартная обработка прокрутки
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    // Игнорируем ошибку прокрутки
+                    Dgv.FirstDisplayedScrollingRowIndex = Math.Max(0, Dgv.Rows.Count - 1);
+                }
+            };
         }
 
         public override AbstractReport CollectReportFromWs(string yymm)
@@ -73,37 +87,38 @@ namespace KmsReportClient.Report.Basic
 
         public override void FillDataGridView(string form)
         {
-            if (Report != null)
+            if (Report != null && Report.Data != null)
             {
-                if (Report.Data != null)
+                ResetDataGridViewScroll();  // ← ДО заполнения
+
+                foreach (DataGridViewRow row in Dgv.Rows)
                 {
-                    foreach (DataGridViewRow row in Dgv.Rows)
+                    if (row.IsNewRow) continue;
+
+                    var rowData = Report.Data.FirstOrDefault(x => x.RowNumID == row.Index);
+                    if (rowData != null)
                     {
-                        var rowData = Report.Data.FirstOrDefault(x => x.RowNumID == row.Index);
-                       if (rowData != null)
-                        {
-
-                            row.Cells[0].Value = rowData.PVP_name;
-                            row.Cells[1].Value = rowData.location_of_the_office;
-                            row.Cells[2].Value = rowData.number_of_insured_by_beginning_of_year;
-                            row.Cells[3].Value = rowData.number_of_insured_by_reporting_date;
-                            row.Cells[4].Value = rowData.number_of_insured_by_reporting_date - rowData.number_of_insured_by_beginning_of_year;
-                            row.Cells[5].Value = rowData.specialist;
-                            row.Cells[6].Value = rowData.conditions_of_employment;
-                            row.Cells[7].Value = rowData.PVP_plan;
-                            row.Cells[8].Value = rowData.registered_total_citizens;
-                            row.Cells[9].Value = rowData.newly_insured;
-                            row.Cells[10].Value = rowData.attracted_by_agents;
-                            row.Cells[11].Value = rowData.issued_by_PEO_and_extracts_from_ERZL;
-                            row.Cells[12].Value = rowData.registered_total_citizens + rowData.issued_by_PEO_and_extracts_from_ERZL;
-                            row.Cells[13].Value = rowData.newly_insured - rowData.PVP_plan;
-                            row.Cells[14].Value = rowData.workload_per_day_for_specialist;
-                            row.Cells[15].Value = rowData.appeals_through_EPGU;
-                            row.Cells[16].Value = rowData.notes;
-
-                        }
+                        row.Cells[0].Value = rowData.PVP_name;
+                        row.Cells[1].Value = rowData.location_of_the_office;
+                        row.Cells[2].Value = rowData.number_of_insured_by_beginning_of_year;
+                        row.Cells[3].Value = rowData.number_of_insured_by_reporting_date;
+                        row.Cells[4].Value = rowData.number_of_insured_by_reporting_date - rowData.number_of_insured_by_beginning_of_year;
+                        row.Cells[5].Value = rowData.specialist;
+                        row.Cells[6].Value = rowData.conditions_of_employment;
+                        row.Cells[7].Value = rowData.PVP_plan;
+                        row.Cells[8].Value = rowData.registered_total_citizens;
+                        row.Cells[9].Value = rowData.newly_insured;
+                        row.Cells[10].Value = rowData.attracted_by_agents;
+                        row.Cells[11].Value = rowData.issued_by_PEO_and_extracts_from_ERZL;
+                        row.Cells[12].Value = rowData.registered_total_citizens + rowData.issued_by_PEO_and_extracts_from_ERZL;
+                        row.Cells[13].Value = rowData.newly_insured - rowData.PVP_plan;
+                        row.Cells[14].Value = rowData.workload_per_day_for_specialist;
+                        row.Cells[15].Value = rowData.appeals_through_EPGU;
+                        row.Cells[16].Value = rowData.notes;
                     }
                 }
+
+                ResetDataGridViewScroll();  // ← ПОСЛЕ заполнения
             }
         }
         public override void FindReports(List<string> filialList, string yymmStart, string yymmEnd, ReportStatus status, DataSource datasource)
@@ -187,19 +202,19 @@ namespace KmsReportClient.Report.Basic
             Dgv.Rows.Clear();
 
 
-                for (int i = 0; i < headers.Count; i++)
+            for (int i = 0; i < headers.Count; i++)
+            {
+                var column = new DataGridViewTextBoxColumn
                 {
-                    var column = new DataGridViewTextBoxColumn
-                    {
-                        HeaderText = headers[i],
-                        DataPropertyName = $"Col{i}",
-                        Name = $"Col{i}",  // Уникальное имя
-                        SortMode = DataGridViewColumnSortMode.NotSortable,
-                        DefaultCellStyle = new DataGridViewCellStyle { BackColor = Color.Azure },
-                        Width = 150
-                    };
-                    Dgv.Columns.Add(column);
-                }
+                    HeaderText = headers[i],
+                    DataPropertyName = $"Col{i}",
+                    Name = $"Col{i}",  // Уникальное имя
+                    SortMode = DataGridViewColumnSortMode.NotSortable,
+                    DefaultCellStyle = new DataGridViewCellStyle { BackColor = Color.Azure },
+                    Width = 150
+                };
+                Dgv.Columns.Add(column);
+            }
 
 
             int RowCounter = Report.Data == null ? 0 : Report.Data.Length;
@@ -247,7 +262,7 @@ namespace KmsReportClient.Report.Basic
                     row.Cells[i].ReadOnly = true;
                 }
                 row.Cells[4].ReadOnly = true;
-                
+
                 row.Cells[4].Style.BackColor = row.Cells[12].Style.BackColor = row.Cells[13].Style.BackColor = Color.LightGray;
 
 
@@ -262,33 +277,51 @@ namespace KmsReportClient.Report.Basic
         protected override void FillReport(string form)
         {
             List<PVPload> dataList = new List<PVPload>();
+
             foreach (DataGridViewRow row in Dgv.Rows)
             {
-                if (row.Index + 1 < Dgv.Rows.Count)
-                {
-                    int rowNum = row.Index;
-                    dataList.Add(new PVPload
-                    {
-                        RowNumID = row.Index,
-                        PVP_name = row.Cells[0].Value?.ToString() ?? "",
-                        location_of_the_office = row.Cells[1].Value?.ToString() ?? "",
-                        number_of_insured_by_beginning_of_year = GlobalUtils.TryParseInt(row.Cells[2].Value),
-                        number_of_insured_by_reporting_date = GlobalUtils.TryParseInt(row.Cells[3].Value),
-                        specialist = row.Cells[5].Value?.ToString() ?? "",
-                        conditions_of_employment = GlobalUtils.TryParseDecimal(row.Cells[6].Value),
-                        PVP_plan = GlobalUtils.TryParseInt(row.Cells[7].Value),
-                        registered_total_citizens = GlobalUtils.TryParseInt(row.Cells[8].Value),
-                        newly_insured = GlobalUtils.TryParseInt(row.Cells[9].Value),
-                        attracted_by_agents = GlobalUtils.TryParseInt(row.Cells[10].Value),
-                        issued_by_PEO_and_extracts_from_ERZL = GlobalUtils.TryParseInt(row.Cells[11].Value), // Исправлено: было 10
-                                                                                                             // Ячейки 12 и 13 расчетные, не сохраняем
-                        workload_per_day_for_specialist = GlobalUtils.TryParseDecimal(row.Cells[14].Value), // Исправлено: было 12
-                        appeals_through_EPGU = GlobalUtils.TryParseInt(row.Cells[15].Value), // Исправлено: было 13
-                        notes = row.Cells[16].Value?.ToString() ?? "" // Исправлено: было 14
-                    });
+                // ПРАВИЛЬНАЯ проверка: пропускаем IsNewRow
+                if (row.IsNewRow) continue;
 
-                    Report.Data = dataList.ToArray();
+                dataList.Add(new PVPload
+                {
+                    RowNumID = row.Index,
+                    PVP_name = row.Cells[0].Value?.ToString() ?? "",
+                    location_of_the_office = row.Cells[1].Value?.ToString() ?? "",
+                    number_of_insured_by_beginning_of_year = GlobalUtils.TryParseInt(row.Cells[2].Value),
+                    number_of_insured_by_reporting_date = GlobalUtils.TryParseInt(row.Cells[3].Value),
+                    population_dynamics = GlobalUtils.TryParseInt(row.Cells[4].Value),
+                    specialist = row.Cells[5].Value?.ToString() ?? "",
+                    conditions_of_employment = GlobalUtils.TryParseDecimal(row.Cells[6].Value),
+                    PVP_plan = GlobalUtils.TryParseInt(row.Cells[7].Value),
+                    registered_total_citizens = GlobalUtils.TryParseInt(row.Cells[8].Value),
+                    newly_insured = GlobalUtils.TryParseInt(row.Cells[9].Value),
+                    attracted_by_agents = GlobalUtils.TryParseInt(row.Cells[10].Value),
+                    issued_by_PEO_and_extracts_from_ERZL = GlobalUtils.TryParseInt(row.Cells[11].Value),
+                    workload_per_day_for_specialist = GlobalUtils.TryParseDecimal(row.Cells[14].Value),
+                    appeals_through_EPGU = GlobalUtils.TryParseInt(row.Cells[15].Value),
+                    notes = row.Cells[16].Value?.ToString() ?? ""
+                });
+            }
+
+            Report.Data = dataList.ToArray();  // ← Присваиваем ПОСЛЕ цикла
+        }
+
+        private void ResetDataGridViewScroll()
+        {
+            try
+            {
+                Dgv.ClearSelection();
+                Dgv.CurrentCell = null;
+
+                if (Dgv.Rows.Count > 0)
+                {
+                    Dgv.FirstDisplayedScrollingRowIndex = 0;
                 }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Ошибка сброса прокрутки DataGridView");
             }
         }
     }

@@ -322,7 +322,9 @@ namespace KmsReportClient.Report.Basic
 
             Dgv.Columns[2].ReadOnly =
             Dgv.Columns[5].ReadOnly =
+            Dgv.Columns[7].ReadOnly =
             Dgv.Columns[8].ReadOnly =
+            Dgv.Columns[10].ReadOnly =
             Dgv.Columns[11].ReadOnly =
             Dgv.Columns[15].ReadOnly =
             Dgv.Columns[18].ReadOnly =

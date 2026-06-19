@@ -203,7 +203,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
             ObjWorkSheet = (Worksheet)ObjWorkBook.Sheets[1];
             CopyNullCells(ObjWorkSheet, countReport, StartPosition);
 
-            foreach (var data in expertises) 
+            foreach (var data in expertises)
             {
                 ObjWorkSheet.Cells[currentIndex, 1] = data.Filial;
                 ObjWorkSheet.Cells[currentIndex, 2] = data.Expertise.Bills;
@@ -249,26 +249,43 @@ namespace KmsReportClient.Excel.Creator.Consolidate
                 ObjWorkSheet.Cells[currentIndex, 49] = data.Expertise.CountCaseDefectedBySmoPlan;
                 ObjWorkSheet.Cells[currentIndex, 51] = data.Expertise.CountEkmpDefectedCaseTarget;
                 ObjWorkSheet.Cells[currentIndex, 52] = data.Expertise.CountEkmpDefectedCasePlan;
-                ObjWorkSheet.Cells[currentIndex, 54] = data.Expertise.CountEkmpBadDs;
-                ObjWorkSheet.Cells[currentIndex, 55] = data.Expertise.CountEkmpBadDsNotAffected;
-                ObjWorkSheet.Cells[currentIndex, 56] = data.Expertise.CountEkmpBadDsProlonger;
-                ObjWorkSheet.Cells[currentIndex, 57] = data.Expertise.CountEkmpBadDsDecline;
-                ObjWorkSheet.Cells[currentIndex, 58] = data.Expertise.CountEkmpBadDsInjured;
-                ObjWorkSheet.Cells[currentIndex, 59] = data.Expertise.CountEkmpBadDsLeth;
-                ObjWorkSheet.Cells[currentIndex, 60] = data.Expertise.CountEkmpBadMed;
-                ObjWorkSheet.Cells[currentIndex, 61] = data.Expertise.CountEkmpUnreglamentedMed;
-                ObjWorkSheet.Cells[currentIndex, 62] = data.Expertise.CountEkmpStopMed;
-                ObjWorkSheet.Cells[currentIndex, 63] = data.Expertise.CountEkmpContinuity;
-                ObjWorkSheet.Cells[currentIndex, 64] = data.Expertise.CountEkmpUnprofile;
-                ObjWorkSheet.Cells[currentIndex, 65] = data.Expertise.CountEkmpUnfounded;
-                ObjWorkSheet.Cells[currentIndex, 66] = data.Expertise.CountEkmpRepeat;
-                ObjWorkSheet.Cells[currentIndex, 67] = data.Expertise.CountEkmpDifference;
-                ObjWorkSheet.Cells[currentIndex, 68] = data.Expertise.CountEkmpUnfoundedMedicaments;
-                ObjWorkSheet.Cells[currentIndex, 69] = data.Expertise.CountEkmpUnfoundedReject;
-                ObjWorkSheet.Cells[currentIndex, 70] = data.Expertise.CountEkmpDisp;
-                ObjWorkSheet.Cells[currentIndex, 71] = data.Expertise.CountEkmpRepeat2weeks;
-                ObjWorkSheet.Cells[currentIndex, 72] = data.Expertise.CountEkmpOutOfResults;
-                ObjWorkSheet.Cells[currentIndex++, 73] = data.Expertise.CountEkmpDoubleHospital;
+
+                ObjWorkSheet.Cells[currentIndex, 54] = data.Expertise.CountDefects;
+
+                ObjWorkSheet.Cells[currentIndex, 55] = data.Expertise.CountEkmpBadDs;
+                ObjWorkSheet.Cells[currentIndex, 56] = data.Expertise.CountEkmpBadDsNotAffected;
+                ObjWorkSheet.Cells[currentIndex, 57] = data.Expertise.CountEkmpBadDsProlonger;
+                ObjWorkSheet.Cells[currentIndex, 58] = data.Expertise.CountEkmpBadDsDecline;
+                ObjWorkSheet.Cells[currentIndex, 59] = data.Expertise.CountEkmpBadDsInjured;
+                ObjWorkSheet.Cells[currentIndex, 60] = data.Expertise.CountEkmpBadDsLeth;
+                ObjWorkSheet.Cells[currentIndex, 61] = data.Expertise.CountEkmpBadMed;
+
+                ObjWorkSheet.Cells[currentIndex, 62] = data.Expertise.D_3_2_1;
+                ObjWorkSheet.Cells[currentIndex, 63] = data.Expertise.D_3_2_2;
+                ObjWorkSheet.Cells[currentIndex, 64] = data.Expertise.D_3_2_3;
+                ObjWorkSheet.Cells[currentIndex, 65] = data.Expertise.D_3_2_4;
+                ObjWorkSheet.Cells[currentIndex, 66] = data.Expertise.D_3_2_5;
+
+                ObjWorkSheet.Cells[currentIndex, 67] = data.Expertise.CountEkmpUnreglamentedMed;
+                ObjWorkSheet.Cells[currentIndex, 68] = data.Expertise.CountEkmpStopMed;
+                ObjWorkSheet.Cells[currentIndex, 69] = data.Expertise.CountEkmpContinuity;
+                ObjWorkSheet.Cells[currentIndex, 70] = data.Expertise.CountEkmpUnprofile;
+                ObjWorkSheet.Cells[currentIndex, 71] = data.Expertise.CountEkmpUnfounded;
+                ObjWorkSheet.Cells[currentIndex, 72] = data.Expertise.CountEkmpRepeat;
+                ObjWorkSheet.Cells[currentIndex, 73] = data.Expertise.CountEkmpDifference;
+                ObjWorkSheet.Cells[currentIndex, 74] = data.Expertise.CountEkmpUnfoundedMedicaments;
+                ObjWorkSheet.Cells[currentIndex, 75] = data.Expertise.CountEkmpUnfoundedReject;
+                ObjWorkSheet.Cells[currentIndex, 76] = data.Expertise.CountEkmpDisp;
+                ObjWorkSheet.Cells[currentIndex, 77] = data.Expertise.CountEkmpRepeat2weeks;
+                ObjWorkSheet.Cells[currentIndex, 78] = data.Expertise.CountEkmpOutOfResults;
+
+                ObjWorkSheet.Cells[currentIndex, 79] = data.Expertise.D_2_12;
+                ObjWorkSheet.Cells[currentIndex, 80] = data.Expertise.D_2_13;
+                ObjWorkSheet.Cells[currentIndex, 81] = data.Expertise.D_2_14;
+                ObjWorkSheet.Cells[currentIndex, 82] = data.Expertise.D_1_4_4;
+                ObjWorkSheet.Cells[currentIndex, 83] = data.Expertise.D_2_16_1;
+                ObjWorkSheet.Cells[currentIndex, 84] = data.Expertise.D_2_16;
+                ObjWorkSheet.Cells[currentIndex++, 85] = data.Expertise.D_1_4_4_Another;
 
             }
         }

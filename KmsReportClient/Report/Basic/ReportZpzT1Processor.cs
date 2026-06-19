@@ -119,59 +119,61 @@ namespace KmsReportClient.Report.Basic
         public override string ValidReport()
         {
             string message = "";
-
-            // Получаем данные для "Таблица 1"
-            var table1Data = Report.ReportDataList?.FirstOrDefault(x => x.Theme == "Таблица 1")?.Data;
-            if (table1Data == null || table1Data.Length == 0)
+            if (FilialCode != "RU-PER")
             {
-                return message;
+                // Получаем данные для "Таблица 1"
+                var table1Data = Report.ReportDataList?.FirstOrDefault(x => x.Theme == "Таблица 1")?.Data;
+                if (table1Data == null || table1Data.Length == 0)
+                {
+                    return message;
+                }
+
+                // Родительская строка 3.1.6
+                var parentRow = table1Data.FirstOrDefault(x => x.Code == "3.1.6");
+                if (parentRow == null)
+                {
+                    return message;
+                }
+
+                // Дочерние строки: 3.1.6.1 – 3.1.6.13
+                // Фильтруем по префиксу "3.1.6." и проверяем, что код имеет формат "3.1.6.X"
+                var childRows = table1Data.Where(x =>
+                    x.Code.StartsWith("3.1.6.") &&
+                    x.Code.Length > 6 &&
+                    x.Code.Split('.').Length == 4).ToArray();
+
+                // Суммируем значения по каждому столбцу
+                // Примечание: свойства имеют тип decimal (не nullable), поэтому ?? не нужен
+                var sumCountSmo = childRows.Sum(x => x.CountSmo);
+                var sumCountSmoAnother = childRows.Sum(x => x.CountSmoAnother);
+                var sumCountAssignment = childRows.Sum(x => x.CountAssignment);
+
+                // Сравниваем с родительской строкой (с допуском для decimal)
+                const decimal epsilon = 0.01m;
+
+                if (Math.Abs(parentRow.CountSmo - sumCountSmo) > epsilon)
+                {
+                    message += $"гр.4 (Устные): значение стр.3.1.6 ({parentRow.CountSmo}) не равно сумме строк 3.1.6.1–3.1.6.13 ({sumCountSmo})\r\n";
+                }
+
+                if (Math.Abs(parentRow.CountSmoAnother - sumCountSmoAnother) > epsilon)
+                {
+                    message += $"гр.5 (Письменные): значение стр.3.1.6 ({parentRow.CountSmoAnother}) не равно сумме строк 3.1.6.1–3.1.6.13 ({sumCountSmoAnother})\r\n";
+                }
+
+                if (Math.Abs(parentRow.CountAssignment - sumCountAssignment) > epsilon)
+                {
+                    message += $"гр.6 (По поручениям): значение стр.3.1.6 ({parentRow.CountAssignment}) не равно сумме строк 3.1.6.1–3.1.6.13 ({sumCountAssignment})\r\n";
+                }
+
+                // Формируем итоговое сообщение
+                if (!string.IsNullOrEmpty(message))
+                {
+                    message = "Таблица 1. \r\n" + message;
+                }
             }
-
-            // Родительская строка 3.1.6
-            var parentRow = table1Data.FirstOrDefault(x => x.Code == "3.1.6");
-            if (parentRow == null)
-            {
-                return message;
-            }
-
-            // Дочерние строки: 3.1.6.1 – 3.1.6.13
-            // Фильтруем по префиксу "3.1.6." и проверяем, что код имеет формат "3.1.6.X"
-            var childRows = table1Data.Where(x =>
-                x.Code.StartsWith("3.1.6.") &&
-                x.Code.Length > 6 &&
-                x.Code.Split('.').Length == 4).ToArray();
-
-            // Суммируем значения по каждому столбцу
-            // Примечание: свойства имеют тип decimal (не nullable), поэтому ?? не нужен
-            var sumCountSmo = childRows.Sum(x => x.CountSmo);
-            var sumCountSmoAnother = childRows.Sum(x => x.CountSmoAnother);
-            var sumCountAssignment = childRows.Sum(x => x.CountAssignment);
-
-            // Сравниваем с родительской строкой (с допуском для decimal)
-            const decimal epsilon = 0.01m;
-
-            if (Math.Abs(parentRow.CountSmo - sumCountSmo) > epsilon)
-            {
-                message += $"гр.4 (Устные): значение стр.3.1.6 ({parentRow.CountSmo}) не равно сумме строк 3.1.6.1–3.1.6.13 ({sumCountSmo})\r\n";
-            }
-
-            if (Math.Abs(parentRow.CountSmoAnother - sumCountSmoAnother) > epsilon)
-            {
-                message += $"гр.5 (Письменные): значение стр.3.1.6 ({parentRow.CountSmoAnother}) не равно сумме строк 3.1.6.1–3.1.6.13 ({sumCountSmoAnother})\r\n";
-            }
-
-            if (Math.Abs(parentRow.CountAssignment - sumCountAssignment) > epsilon)
-            {
-                message += $"гр.6 (По поручениям): значение стр.3.1.6 ({parentRow.CountAssignment}) не равно сумме строк 3.1.6.1–3.1.6.13 ({sumCountAssignment})\r\n";
-            }
-
-            // Формируем итоговое сообщение
-            if (!string.IsNullOrEmpty(message))
-            {
-                message = "Таблица 1. \r\n" + message;
-            }
-
             return message;
+            
         }
 
         public override void ToExcel(string filename, string filialName)
@@ -351,7 +353,7 @@ namespace KmsReportClient.Report.Basic
                 }
 
             };
-            
+
             dgvReport.Columns.Add(column);
             column = new DataGridViewTextBoxColumn
             {
@@ -367,7 +369,7 @@ namespace KmsReportClient.Report.Basic
                 }
             };
             dgvReport.Columns.Add(column);
-            
+
         }
 
         private void FillThemesForms3(DataGridView dgvReport, string form)
@@ -393,7 +395,7 @@ namespace KmsReportClient.Report.Basic
 
         private void FillDgvForms1(DataGridView dgvReport, string form)
         {
-            var reportZpz2025Dto = Report.ReportDataList?.Single(x => x.Theme == form);
+            var reportZpz2025Dto = Report.ReportDataList?.SingleOrDefault(x => x.Theme == form);
             if (reportZpz2025Dto?.Data == null || reportZpz2025Dto.Data.Length == 0)
             {
                 return;

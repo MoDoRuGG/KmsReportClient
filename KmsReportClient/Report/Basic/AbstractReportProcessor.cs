@@ -260,11 +260,12 @@ namespace KmsReportClient.Report.Basic
                                     }
                                     // Потребовали, чтобы в 6й колонке была сумма 2-5. Попробуем плюсануть тут.
                                     else if (GetCurrentTheme() == "Таблица 1Л" && row != Dgv.Rows.Count - 1 && row != Dgv.Rows.Count - 2)
-                                    { Dgv.Rows[row].Cells[cell].Value = valueCel; };
+                                    { Dgv.Rows[row].Cells[cell].Value = valueCel; }
+                                    ;
                                 }
                                 else if (Report.IdType == "Zpz10_2025" && GetCurrentTheme() == "Сведения СП")
                                 {
-                                        valueCel += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value); 
+                                    valueCel += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value);
                                 }
                                 else if (GetCurrentTheme() == "Таблица 12")
                                 {
@@ -273,9 +274,16 @@ namespace KmsReportClient.Report.Basic
                                         valueCel += GlobalUtils.TryParseInt(Dgv.Rows[row].Cells[cell].Value);
                                     }
                                 }
+                                else if (GetCurrentTheme() == "Таблица 1")
+                                {
+                                    if ((Report.IdType == "Zpz2025" || Report.IdType == "ZpzT1"))
+                                    {
+                                        if (Dgv.Rows[row].Cells[cell].ColumnIndex != 4) { valueCel += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value); }
+                                    }
+                                }
                                 else
                                 {
-                                    if ((Report.IdType == "Zpz" || Report.IdType == "Zpz2025" || Report.IdType == "ZpzT1" || Report.IdType == "ZpzT2" || Report.IdType == "ZpzT3" || Report.IdType == "ZpzT4") && (GetCurrentTheme() == "Таблица 1" || GetCurrentTheme() == "Таблица 2" || GetCurrentTheme() == "Таблица 3" || GetCurrentTheme() == "Таблица 4"))
+                                    if ((Report.IdType == "Zpz" || Report.IdType == "Zpz2025" || Report.IdType == "ZpzT2" || Report.IdType == "ZpzT3" || Report.IdType == "ZpzT4") && (GetCurrentTheme() == "Таблица 2" || GetCurrentTheme() == "Таблица 3" || GetCurrentTheme() == "Таблица 4"))
                                     {
                                         if (Dgv.Rows[row].Cells[cell].ColumnIndex != 4) { valueCel += GlobalUtils.TryParseDecimal(Dgv.Rows[row].Cells[cell].Value); }
                                     }

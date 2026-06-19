@@ -503,8 +503,8 @@ namespace KmsReportClient.Forms
                     panelRegion.Visible = false;
                     nudSingle.Visible = false;
                     cmbStart.DataSource = GlobalConst.Periods;
-                    btnDo.Text = "Сформировать сводный отчёт Мониторинг ВСС 2024";
-                    saveFileDialog1.FileName = "Cводный отчет Мониторинг ВСС 2024";
+                    btnDo.Text = "Сформировать сводный отчёт Мониторинг ВСС 2026";
+                    saveFileDialog1.FileName = "Cводный отчет Мониторинг ВСС 2026";
                     break;
 
                 case ConsolidateReport.ConsolidateOpedQ:
@@ -644,8 +644,8 @@ namespace KmsReportClient.Forms
                     panelRegion.Visible = false;
                     nudSingle.Visible = false;
                     cmbStart.DataSource = GlobalConst.Periods;
-                    btnDo.Text = "Сформировать сводный отчет Мониторинг ВСС 2024 пофилиально";
-                    saveFileDialog1.FileName = "Пофилиальный Мониторинг ВСС 2024";
+                    btnDo.Text = "Сформировать сводный отчет Мониторинг ВСС 2026 пофилиально";
+                    saveFileDialog1.FileName = "Пофилиальный Мониторинг ВСС 2026";
                     break;
 
                 case ConsolidateReport.ConsQuantityFilial:

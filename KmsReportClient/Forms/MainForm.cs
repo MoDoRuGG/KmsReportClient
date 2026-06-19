@@ -174,6 +174,7 @@ namespace KmsReportClient.Forms
                 PageT6Students.Parent = null;
                 PageT7OldPolis.Parent = null;
                 PageT7OldPolis.Parent = null;
+                PageDispRepHeal.Parent = null;
             }
             finally
             {
@@ -255,6 +256,7 @@ namespace KmsReportClient.Forms
                         {PageT6Students, ReportGlobalConst.ReportT6Students},
                         {PageT7OldPolis, ReportGlobalConst.ReportT7OldPolis},
                         {Page140n, ReportGlobalConst.Report140n},
+                        {PageDispRepHeal, ReportGlobalConst.ReportDispRepHealth},
             };
 
         private Dictionary<string, IReportProcessor> CreateProcessorMap() =>
@@ -439,6 +441,10 @@ namespace KmsReportClient.Forms
                 {
                     ReportGlobalConst.Report140n,
                     new Report140nProcessor(_client, _reportsDictionary, Dgv140n, Cmb140n, Txtb140n, Page140n)
+                },
+                {
+                    ReportGlobalConst.ReportDispRepHealth,
+                    new ReportDispReproducktiveHealthProcessor(_client, _reportsDictionary, DgvDispRepHeal, CmbDispRepHeal, TxtbDispRepHeal, PageDispRepHeal)
                 },
             };
 
@@ -1969,9 +1975,6 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         private void ВыполнениеПоказателейСМОToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.Cons140n);
 
-        private void ToolStripMenuItem_Click(object sender, EventArgs e) =>
-            OpenConsolidateReportForm(ConsolidateReport.ViolationsOfAppeals);
-
         private void ОбъёмыЕжемесячныеToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.FFOMSMonthlyVol);
 
@@ -2425,6 +2428,11 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
             (_processor as Report140nProcessor).SetFormula();
         }
 
+        private void DgvDispRepHeal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            (_processor as ReportDispReproducktiveHealthProcessor).SetFormula();
+        }
+
         private void DgvReportZpz10_KeyPress(object sender, KeyPressEventArgs e)
         {
             (_processor as ReportZpz10Processor).SetFormula();
@@ -2522,6 +2530,11 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         private void Dgv140n_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
             (_processor as Report140nProcessor).SetFormula();
+        }
+
+        private void DgvDispRepHeal_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            (_processor as ReportDispReproducktiveHealthProcessor).SetFormula();
         }
 
 
@@ -2629,6 +2642,11 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         private void Cmb140n_SelectedIndexChanged(object sender, EventArgs e)
         {
             ChangeIndexComboBox(Dgv140n, Cmb140n, Txtb140n);
+        }
+
+        private void CmbDispRepHeal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ChangeIndexComboBox(DgvDispRepHeal, CmbDispRepHeal, TxtbDispRepHeal);
         }
 
         private void CbxOtclkInfrorm_SelectedIndexChanged(object sender, EventArgs e)

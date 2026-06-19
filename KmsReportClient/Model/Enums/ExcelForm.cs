@@ -225,5 +225,7 @@ namespace KmsReportClient.Model.Enums
         consT7OldPolis,
         [Description(GlobalConst.TempFolder + "T5Newborn.xlsx")]
         T5Newborn,
+        [Description(GlobalConst.TempFolder + "dispRepHealth.xlsx")]
+        dispRepHealth,
     }
 }

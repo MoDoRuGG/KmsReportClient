@@ -56,8 +56,10 @@ namespace KmsReportClient.Excel.Creator.Base
                         FillTable8(data, dict.StartRow, dict.EndRow, themeData.Theme);
                         break;
                     case "Таблица 6":
+                        FillTable6(data, dict.StartRow, dict.EndRow, themeData.Theme);
+                        break;
                     case "Таблица 7":
-                        FillTable67(data, dict.StartRow, dict.EndRow, themeData.Theme);
+                        FillTable7(data, dict.StartRow, dict.EndRow, themeData.Theme);
                         break;
                     case "Результаты МЭК":
                     case "Оплата МП":
@@ -185,7 +187,7 @@ namespace KmsReportClient.Excel.Creator.Base
             }
         }
 
-        private void FillTable67(ReportZpz2025DataDto[] data, int startRowIndex, int endRowIndex, string form)
+        private void FillTable6(ReportZpz2025DataDto[] data, int startRowIndex, int endRowIndex, string form)
         {
             for (int i = startRowIndex; i <= endRowIndex; i++)
             {
@@ -253,6 +255,80 @@ namespace KmsReportClient.Excel.Creator.Base
                         if (ObjWorkSheet.Cells[i, 16].Text != "x")
                         {
                             ObjWorkSheet.Cells[i, 16] = rowData.CountStacVmpAnother;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void FillTable7(ReportZpz2025DataDto[] data, int startRowIndex, int endRowIndex, string form)
+        {
+            for (int i = startRowIndex; i <= endRowIndex; i++)
+            {
+                string rowNum = ObjWorkSheet.Cells[i, 2].Text;
+                if (!string.IsNullOrEmpty(rowNum))
+                {
+                    var rowData = data?.SingleOrDefault(x => x.Code == rowNum);
+                    if (rowData != null)
+                    {
+                        if (ObjWorkSheet.Cells[i, 5].Text != "x")
+                        {
+                            ObjWorkSheet.Cells[i, 5] = rowData.CountOutOfSmo;
+                        }
+
+                        if (ObjWorkSheet.Cells[i, 6].Text != "x")
+                        {
+                            ObjWorkSheet.Cells[i, 6] = rowData.CountAmbulatory;
+                        }
+
+                        if (ObjWorkSheet.Cells[i, 7].Text != "x")
+                        {
+                            ObjWorkSheet.Cells[i, 7] = rowData.CountDs;
+                        }
+
+                        if (ObjWorkSheet.Cells[i, 8].Text != "x")
+                        {
+                            ObjWorkSheet.Cells[i, 8] = rowData.CountDsVmp;
+                        }
+
+                        if (ObjWorkSheet.Cells[i, 9].Text != "x")
+                        {
+                            ObjWorkSheet.Cells[i, 9] = rowData.CountStac;
+                        }
+
+                        if (ObjWorkSheet.Cells[i, 10].Text != "x")
+                        {
+                            ObjWorkSheet.Cells[i, 10] = rowData.CountStacVmp;
+                        }
+
+                        if (ObjWorkSheet.Cells[i, 12].Text != "x")
+                        {
+                            ObjWorkSheet.Cells[i, 12] = rowData.CountOutOfSmoAnother;
+                        }
+
+                        if (ObjWorkSheet.Cells[i, 13].Text != "x")
+                        {
+                            ObjWorkSheet.Cells[i, 13] = rowData.CountAmbulatoryAnother;
+                        }
+
+                        if (ObjWorkSheet.Cells[i, 14].Text != "x")
+                        {
+                            ObjWorkSheet.Cells[i, 14] = rowData.CountDsAnother;
+                        }
+
+                        if (ObjWorkSheet.Cells[i, 15].Text != "x")
+                        {
+                            ObjWorkSheet.Cells[i, 15] = rowData.CountDsVmpAnother;
+                        }
+
+                        if (ObjWorkSheet.Cells[i, 16].Text != "x")
+                        {
+                            ObjWorkSheet.Cells[i, 16] = rowData.CountStacAnother;
+                        }
+
+                        if (ObjWorkSheet.Cells[i, 17].Text != "x")
+                        {
+                            ObjWorkSheet.Cells[i, 17] = rowData.CountStacVmpAnother;
                         }
                     }
                 }

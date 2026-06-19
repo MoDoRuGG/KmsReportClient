@@ -13,6 +13,39 @@ namespace KmsReportClient.External {
     using System;
     
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfString", Namespace="http://kms-oms.ru/", ItemName="string")]
+    [System.SerializableAttribute()]
+    public class ArrayOfString : System.Collections.Generic.List<string> {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportStatus", Namespace="http://kms-oms.ru/")]
+    public enum ReportStatus : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        New = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Saved = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Scan = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Submit = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Refuse = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Done = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PartiallyApproved = 6,
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ReportType", Namespace="http://kms-oms.ru/")]
     public enum ReportType : int {
@@ -126,31 +159,34 @@ namespace KmsReportClient.External {
         Zpz10_2025 = 35,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ZpzL2025 = 36,
+        DispRepHeal = 36,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ViolMEE = 37,
+        ZpzL2025 = 37,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ViolEKMP = 38,
+        ViolMEE = 38,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        VerifyPlan = 39,
+        ViolEKMP = 39,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        MonthlyVol = 40,
+        VerifyPlan = 40,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        T5Newborn = 41,
+        MonthlyVol = 41,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        T6Students = 42,
+        T5Newborn = 42,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        T7OldPolis = 43,
+        T6Students = 43,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        R140n = 44,
+        T7OldPolis = 44,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        R140n = 45,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -166,6 +202,7 @@ namespace KmsReportClient.External {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportEffectiveness))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportViolations))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportMonthlyVol))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportDispReprodHealth))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportQuantity))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportVaccination))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(KmsReportClient.External.ReportOped))]
@@ -809,6 +846,29 @@ namespace KmsReportClient.External {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
         public KmsReportClient.External.ReportMonthlyVolDto[] ReportDataList {
+            get {
+                return this.ReportDataListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReportDataListField, value) != true)) {
+                    this.ReportDataListField = value;
+                    this.RaisePropertyChanged("ReportDataList");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportDispReprodHealth", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportDispReprodHealth : KmsReportClient.External.AbstractReport {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.ReportDispReprodHealthDto[] ReportDataListField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public KmsReportClient.External.ReportDispReprodHealthDto[] ReportDataList {
             get {
                 return this.ReportDataListField;
             }
@@ -1900,32 +1960,6 @@ namespace KmsReportClient.External {
                 }
             }
         }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportStatus", Namespace="http://kms-oms.ru/")]
-    public enum ReportStatus : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        New = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Saved = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Scan = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Submit = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Refuse = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Done = 5,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PartiallyApproved = 6,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -4745,6 +4779,142 @@ namespace KmsReportClient.External {
                 if ((this.CountSluchEKMPField.Equals(value) != true)) {
                     this.CountSluchEKMPField = value;
                     this.RaisePropertyChanged("CountSluchEKMP");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportDispReprodHealthDto", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportDispReprodHealthDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ThemeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.ReportDispReprodHealthDataDto[] DataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Theme {
+            get {
+                return this.ThemeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ThemeField, value) != true)) {
+                    this.ThemeField = value;
+                    this.RaisePropertyChanged("Theme");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public KmsReportClient.External.ReportDispReprodHealthDataDto[] Data {
+            get {
+                return this.DataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataField, value) != true)) {
+                    this.DataField = value;
+                    this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportDispReprodHealthDataDto", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class ReportDispReprodHealthDataDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodeField;
+        
+        private int YearlySumField;
+        
+        private int ForPeriodField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Code {
+            get {
+                return this.CodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodeField, value) != true)) {
+                    this.CodeField = value;
+                    this.RaisePropertyChanged("Code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int YearlySum {
+            get {
+                return this.YearlySumField;
+            }
+            set {
+                if ((this.YearlySumField.Equals(value) != true)) {
+                    this.YearlySumField = value;
+                    this.RaisePropertyChanged("YearlySum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int ForPeriod {
+            get {
+                return this.ForPeriodField;
+            }
+            set {
+                if ((this.ForPeriodField.Equals(value) != true)) {
+                    this.ForPeriodField = value;
+                    this.RaisePropertyChanged("ForPeriod");
                 }
             }
         }
@@ -8323,13 +8493,6 @@ namespace KmsReportClient.External {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfString", Namespace="http://kms-oms.ru/", ItemName="string")]
-    [System.SerializableAttribute()]
-    public class ArrayOfString : System.Collections.Generic.List<string> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -18904,6 +19067,8 @@ namespace KmsReportClient.External {
         
         private decimal CountEkmpDefectedCasePlanField;
         
+        private decimal CountDefectsField;
+        
         private decimal CountEkmpBadTargetField;
         
         private decimal CountEkmpBadPlanField;
@@ -18921,6 +19086,16 @@ namespace KmsReportClient.External {
         private decimal CountEkmpBadDsLethField;
         
         private decimal CountEkmpBadMedField;
+        
+        private decimal D_3_2_1Field;
+        
+        private decimal D_3_2_2Field;
+        
+        private decimal D_3_2_3Field;
+        
+        private decimal D_3_2_4Field;
+        
+        private decimal D_3_2_5Field;
         
         private decimal CountEkmpUnreglamentedMedField;
         
@@ -18946,7 +19121,19 @@ namespace KmsReportClient.External {
         
         private decimal CountEkmpOutOfResultsField;
         
-        private decimal CountEkmpDoubleHospitalField;
+        private decimal D_2_12Field;
+        
+        private decimal D_2_13Field;
+        
+        private decimal D_2_14Field;
+        
+        private decimal D_1_4_4Field;
+        
+        private decimal D_2_16_1Field;
+        
+        private decimal D_2_16Field;
+        
+        private decimal D_1_4_4_AnotherField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -19518,6 +19705,19 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=43)]
+        public decimal CountDefects {
+            get {
+                return this.CountDefectsField;
+            }
+            set {
+                if ((this.CountDefectsField.Equals(value) != true)) {
+                    this.CountDefectsField = value;
+                    this.RaisePropertyChanged("CountDefects");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=44)]
         public decimal CountEkmpBadTarget {
             get {
                 return this.CountEkmpBadTargetField;
@@ -19530,7 +19730,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=44)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=45)]
         public decimal CountEkmpBadPlan {
             get {
                 return this.CountEkmpBadPlanField;
@@ -19543,7 +19743,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=45)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=46)]
         public decimal CountEkmpBadDs {
             get {
                 return this.CountEkmpBadDsField;
@@ -19556,7 +19756,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=46)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=47)]
         public decimal CountEkmpBadDsNotAffected {
             get {
                 return this.CountEkmpBadDsNotAffectedField;
@@ -19569,7 +19769,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=47)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=48)]
         public decimal CountEkmpBadDsProlonger {
             get {
                 return this.CountEkmpBadDsProlongerField;
@@ -19582,7 +19782,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=48)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=49)]
         public decimal CountEkmpBadDsDecline {
             get {
                 return this.CountEkmpBadDsDeclineField;
@@ -19595,7 +19795,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=49)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=50)]
         public decimal CountEkmpBadDsInjured {
             get {
                 return this.CountEkmpBadDsInjuredField;
@@ -19608,7 +19808,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=50)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=51)]
         public decimal CountEkmpBadDsLeth {
             get {
                 return this.CountEkmpBadDsLethField;
@@ -19621,7 +19821,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=51)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=52)]
         public decimal CountEkmpBadMed {
             get {
                 return this.CountEkmpBadMedField;
@@ -19634,7 +19834,72 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=52)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=53)]
+        public decimal D_3_2_1 {
+            get {
+                return this.D_3_2_1Field;
+            }
+            set {
+                if ((this.D_3_2_1Field.Equals(value) != true)) {
+                    this.D_3_2_1Field = value;
+                    this.RaisePropertyChanged("D_3_2_1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=54)]
+        public decimal D_3_2_2 {
+            get {
+                return this.D_3_2_2Field;
+            }
+            set {
+                if ((this.D_3_2_2Field.Equals(value) != true)) {
+                    this.D_3_2_2Field = value;
+                    this.RaisePropertyChanged("D_3_2_2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=55)]
+        public decimal D_3_2_3 {
+            get {
+                return this.D_3_2_3Field;
+            }
+            set {
+                if ((this.D_3_2_3Field.Equals(value) != true)) {
+                    this.D_3_2_3Field = value;
+                    this.RaisePropertyChanged("D_3_2_3");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=56)]
+        public decimal D_3_2_4 {
+            get {
+                return this.D_3_2_4Field;
+            }
+            set {
+                if ((this.D_3_2_4Field.Equals(value) != true)) {
+                    this.D_3_2_4Field = value;
+                    this.RaisePropertyChanged("D_3_2_4");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=57)]
+        public decimal D_3_2_5 {
+            get {
+                return this.D_3_2_5Field;
+            }
+            set {
+                if ((this.D_3_2_5Field.Equals(value) != true)) {
+                    this.D_3_2_5Field = value;
+                    this.RaisePropertyChanged("D_3_2_5");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=58)]
         public decimal CountEkmpUnreglamentedMed {
             get {
                 return this.CountEkmpUnreglamentedMedField;
@@ -19647,7 +19912,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=53)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=59)]
         public decimal CountEkmpStopMed {
             get {
                 return this.CountEkmpStopMedField;
@@ -19660,7 +19925,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=54)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=60)]
         public decimal CountEkmpContinuity {
             get {
                 return this.CountEkmpContinuityField;
@@ -19673,7 +19938,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=55)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=61)]
         public decimal CountEkmpUnprofile {
             get {
                 return this.CountEkmpUnprofileField;
@@ -19686,7 +19951,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=56)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=62)]
         public decimal CountEkmpUnfounded {
             get {
                 return this.CountEkmpUnfoundedField;
@@ -19699,7 +19964,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=57)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=63)]
         public decimal CountEkmpRepeat {
             get {
                 return this.CountEkmpRepeatField;
@@ -19712,7 +19977,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=58)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=64)]
         public decimal CountEkmpDifference {
             get {
                 return this.CountEkmpDifferenceField;
@@ -19725,7 +19990,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=59)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=65)]
         public decimal CountEkmpUnfoundedMedicaments {
             get {
                 return this.CountEkmpUnfoundedMedicamentsField;
@@ -19738,7 +20003,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=60)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=66)]
         public decimal CountEkmpUnfoundedReject {
             get {
                 return this.CountEkmpUnfoundedRejectField;
@@ -19751,7 +20016,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=61)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=67)]
         public decimal CountEkmpDisp {
             get {
                 return this.CountEkmpDispField;
@@ -19764,7 +20029,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=62)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=68)]
         public decimal CountEkmpRepeat2weeks {
             get {
                 return this.CountEkmpRepeat2weeksField;
@@ -19777,7 +20042,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=63)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=69)]
         public decimal CountEkmpOutOfResults {
             get {
                 return this.CountEkmpOutOfResultsField;
@@ -19790,15 +20055,93 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=64)]
-        public decimal CountEkmpDoubleHospital {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=70)]
+        public decimal D_2_12 {
             get {
-                return this.CountEkmpDoubleHospitalField;
+                return this.D_2_12Field;
             }
             set {
-                if ((this.CountEkmpDoubleHospitalField.Equals(value) != true)) {
-                    this.CountEkmpDoubleHospitalField = value;
-                    this.RaisePropertyChanged("CountEkmpDoubleHospital");
+                if ((this.D_2_12Field.Equals(value) != true)) {
+                    this.D_2_12Field = value;
+                    this.RaisePropertyChanged("D_2_12");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=71)]
+        public decimal D_2_13 {
+            get {
+                return this.D_2_13Field;
+            }
+            set {
+                if ((this.D_2_13Field.Equals(value) != true)) {
+                    this.D_2_13Field = value;
+                    this.RaisePropertyChanged("D_2_13");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=72)]
+        public decimal D_2_14 {
+            get {
+                return this.D_2_14Field;
+            }
+            set {
+                if ((this.D_2_14Field.Equals(value) != true)) {
+                    this.D_2_14Field = value;
+                    this.RaisePropertyChanged("D_2_14");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=73)]
+        public decimal D_1_4_4 {
+            get {
+                return this.D_1_4_4Field;
+            }
+            set {
+                if ((this.D_1_4_4Field.Equals(value) != true)) {
+                    this.D_1_4_4Field = value;
+                    this.RaisePropertyChanged("D_1_4_4");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=74)]
+        public decimal D_2_16_1 {
+            get {
+                return this.D_2_16_1Field;
+            }
+            set {
+                if ((this.D_2_16_1Field.Equals(value) != true)) {
+                    this.D_2_16_1Field = value;
+                    this.RaisePropertyChanged("D_2_16_1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=75)]
+        public decimal D_2_16 {
+            get {
+                return this.D_2_16Field;
+            }
+            set {
+                if ((this.D_2_16Field.Equals(value) != true)) {
+                    this.D_2_16Field = value;
+                    this.RaisePropertyChanged("D_2_16");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=76)]
+        public decimal D_1_4_4_Another {
+            get {
+                return this.D_1_4_4_AnotherField;
+            }
+            set {
+                if ((this.D_1_4_4_AnotherField.Equals(value) != true)) {
+                    this.D_1_4_4_AnotherField = value;
+                    this.RaisePropertyChanged("D_1_4_4_Another");
                 }
             }
         }
@@ -25632,6 +25975,9 @@ namespace KmsReportClient.External {
         private KmsReportClient.External.Report_140n[] Report_140nField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.Report_DispReprodHealth[] Report_DispReprodHealthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private KmsReportClient.External.Report_Type Report_TypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -26116,6 +26462,19 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=36)]
+        public KmsReportClient.External.Report_DispReprodHealth[] Report_DispReprodHealth {
+            get {
+                return this.Report_DispReprodHealthField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Report_DispReprodHealthField, value) != true)) {
+                    this.Report_DispReprodHealthField = value;
+                    this.RaisePropertyChanged("Report_DispReprodHealth");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=37)]
         public KmsReportClient.External.Report_Type Report_Type {
             get {
                 return this.Report_TypeField;
@@ -26128,7 +26487,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=37)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=38)]
         public KmsReportClient.External.Report_Flow Report_Flow {
             get {
                 return this.Report_FlowField;
@@ -32913,6 +33272,127 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report_DispReprodHealth", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class Report_DispReprodHealth : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdField;
+        
+        private int Id_Report_DataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RowNumField;
+        
+        private System.Nullable<int> YearlySumField;
+        
+        private System.Nullable<int> ForPeriodField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.Report_Data Report_DataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id_Report_Data {
+            get {
+                return this.Id_Report_DataField;
+            }
+            set {
+                if ((this.Id_Report_DataField.Equals(value) != true)) {
+                    this.Id_Report_DataField = value;
+                    this.RaisePropertyChanged("Id_Report_Data");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string RowNum {
+            get {
+                return this.RowNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RowNumField, value) != true)) {
+                    this.RowNumField = value;
+                    this.RaisePropertyChanged("RowNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.Nullable<int> YearlySum {
+            get {
+                return this.YearlySumField;
+            }
+            set {
+                if ((this.YearlySumField.Equals(value) != true)) {
+                    this.YearlySumField = value;
+                    this.RaisePropertyChanged("YearlySum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public System.Nullable<int> ForPeriod {
+            get {
+                return this.ForPeriodField;
+            }
+            set {
+                if ((this.ForPeriodField.Equals(value) != true)) {
+                    this.ForPeriodField = value;
+                    this.RaisePropertyChanged("ForPeriod");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public KmsReportClient.External.Report_Data Report_Data {
+            get {
+                return this.Report_DataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Report_DataField, value) != true)) {
+                    this.Report_DataField = value;
+                    this.RaisePropertyChanged("Report_Data");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="OpedFinancePlan", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class OpedFinancePlan : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -39092,6 +39572,16 @@ namespace KmsReportClient.External {
         
         private decimal CountEkmpBadMedField;
         
+        private decimal D_3_2_1Field;
+        
+        private decimal D_3_2_2Field;
+        
+        private decimal D_3_2_3Field;
+        
+        private decimal D_3_2_4Field;
+        
+        private decimal D_3_2_5Field;
+        
         private decimal CountEkmpUnreglamentedMedField;
         
         private decimal CountEkmpStopMedField;
@@ -39117,6 +39607,20 @@ namespace KmsReportClient.External {
         private decimal CountEkmpOutOfResultsField;
         
         private decimal CountEkmpDoubleHospitalField;
+        
+        private decimal D_2_12Field;
+        
+        private decimal D_2_13Field;
+        
+        private decimal D_2_14Field;
+        
+        private decimal D_1_4_4Field;
+        
+        private decimal D_2_16_1Field;
+        
+        private decimal D_2_16Field;
+        
+        private decimal D_1_4_4_AnotherField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -39779,6 +40283,71 @@ namespace KmsReportClient.External {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=50)]
+        public decimal D_3_2_1 {
+            get {
+                return this.D_3_2_1Field;
+            }
+            set {
+                if ((this.D_3_2_1Field.Equals(value) != true)) {
+                    this.D_3_2_1Field = value;
+                    this.RaisePropertyChanged("D_3_2_1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=51)]
+        public decimal D_3_2_2 {
+            get {
+                return this.D_3_2_2Field;
+            }
+            set {
+                if ((this.D_3_2_2Field.Equals(value) != true)) {
+                    this.D_3_2_2Field = value;
+                    this.RaisePropertyChanged("D_3_2_2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=52)]
+        public decimal D_3_2_3 {
+            get {
+                return this.D_3_2_3Field;
+            }
+            set {
+                if ((this.D_3_2_3Field.Equals(value) != true)) {
+                    this.D_3_2_3Field = value;
+                    this.RaisePropertyChanged("D_3_2_3");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=53)]
+        public decimal D_3_2_4 {
+            get {
+                return this.D_3_2_4Field;
+            }
+            set {
+                if ((this.D_3_2_4Field.Equals(value) != true)) {
+                    this.D_3_2_4Field = value;
+                    this.RaisePropertyChanged("D_3_2_4");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=54)]
+        public decimal D_3_2_5 {
+            get {
+                return this.D_3_2_5Field;
+            }
+            set {
+                if ((this.D_3_2_5Field.Equals(value) != true)) {
+                    this.D_3_2_5Field = value;
+                    this.RaisePropertyChanged("D_3_2_5");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=55)]
         public decimal CountEkmpUnreglamentedMed {
             get {
                 return this.CountEkmpUnreglamentedMedField;
@@ -39791,7 +40360,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=51)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=56)]
         public decimal CountEkmpStopMed {
             get {
                 return this.CountEkmpStopMedField;
@@ -39804,7 +40373,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=52)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=57)]
         public decimal CountEkmpContinuity {
             get {
                 return this.CountEkmpContinuityField;
@@ -39817,7 +40386,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=53)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=58)]
         public decimal CountEkmpUnprofile {
             get {
                 return this.CountEkmpUnprofileField;
@@ -39830,7 +40399,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=54)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=59)]
         public decimal CountEkmpUnfounded {
             get {
                 return this.CountEkmpUnfoundedField;
@@ -39843,7 +40412,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=55)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=60)]
         public decimal CountEkmpRepeat {
             get {
                 return this.CountEkmpRepeatField;
@@ -39856,7 +40425,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=56)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=61)]
         public decimal CountEkmpDifference {
             get {
                 return this.CountEkmpDifferenceField;
@@ -39869,7 +40438,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=57)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=62)]
         public decimal CountEkmpUnfoundedMedicaments {
             get {
                 return this.CountEkmpUnfoundedMedicamentsField;
@@ -39882,7 +40451,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=58)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=63)]
         public decimal CountEkmpUnfoundedReject {
             get {
                 return this.CountEkmpUnfoundedRejectField;
@@ -39895,7 +40464,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=59)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=64)]
         public decimal CountEkmpDisp {
             get {
                 return this.CountEkmpDispField;
@@ -39908,7 +40477,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=60)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=65)]
         public decimal CountEkmpRepeat2weeks {
             get {
                 return this.CountEkmpRepeat2weeksField;
@@ -39921,7 +40490,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=61)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=66)]
         public decimal CountEkmpOutOfResults {
             get {
                 return this.CountEkmpOutOfResultsField;
@@ -39934,7 +40503,7 @@ namespace KmsReportClient.External {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=62)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=67)]
         public decimal CountEkmpDoubleHospital {
             get {
                 return this.CountEkmpDoubleHospitalField;
@@ -39943,6 +40512,97 @@ namespace KmsReportClient.External {
                 if ((this.CountEkmpDoubleHospitalField.Equals(value) != true)) {
                     this.CountEkmpDoubleHospitalField = value;
                     this.RaisePropertyChanged("CountEkmpDoubleHospital");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=68)]
+        public decimal D_2_12 {
+            get {
+                return this.D_2_12Field;
+            }
+            set {
+                if ((this.D_2_12Field.Equals(value) != true)) {
+                    this.D_2_12Field = value;
+                    this.RaisePropertyChanged("D_2_12");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=69)]
+        public decimal D_2_13 {
+            get {
+                return this.D_2_13Field;
+            }
+            set {
+                if ((this.D_2_13Field.Equals(value) != true)) {
+                    this.D_2_13Field = value;
+                    this.RaisePropertyChanged("D_2_13");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=70)]
+        public decimal D_2_14 {
+            get {
+                return this.D_2_14Field;
+            }
+            set {
+                if ((this.D_2_14Field.Equals(value) != true)) {
+                    this.D_2_14Field = value;
+                    this.RaisePropertyChanged("D_2_14");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=71)]
+        public decimal D_1_4_4 {
+            get {
+                return this.D_1_4_4Field;
+            }
+            set {
+                if ((this.D_1_4_4Field.Equals(value) != true)) {
+                    this.D_1_4_4Field = value;
+                    this.RaisePropertyChanged("D_1_4_4");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=72)]
+        public decimal D_2_16_1 {
+            get {
+                return this.D_2_16_1Field;
+            }
+            set {
+                if ((this.D_2_16_1Field.Equals(value) != true)) {
+                    this.D_2_16_1Field = value;
+                    this.RaisePropertyChanged("D_2_16_1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=73)]
+        public decimal D_2_16 {
+            get {
+                return this.D_2_16Field;
+            }
+            set {
+                if ((this.D_2_16Field.Equals(value) != true)) {
+                    this.D_2_16Field = value;
+                    this.RaisePropertyChanged("D_2_16");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=74)]
+        public decimal D_1_4_4_Another {
+            get {
+                return this.D_1_4_4_AnotherField;
+            }
+            set {
+                if ((this.D_1_4_4_AnotherField.Equals(value) != true)) {
+                    this.D_1_4_4_AnotherField = value;
+                    this.RaisePropertyChanged("D_1_4_4_Another");
                 }
             }
         }
@@ -45264,6 +45924,67 @@ namespace KmsReportClient.External {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DispRepHealthYearDataRow", Namespace="http://kms-oms.ru/")]
+    [System.SerializableAttribute()]
+    public partial class DispRepHealthYearDataRow : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RowNumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private KmsReportClient.External.ReportDispReprodHealthDataDto DataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string RowNum {
+            get {
+                return this.RowNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RowNumField, value) != true)) {
+                    this.RowNumField = value;
+                    this.RaisePropertyChanged("RowNum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public KmsReportClient.External.ReportDispReprodHealthDataDto Data {
+            get {
+                return this.DataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataField, value) != true)) {
+                    this.DataField = value;
+                    this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="FSSMonitoringPgDataDto", Namespace="http://kms-oms.ru/")]
     [System.SerializableAttribute()]
     public partial class FSSMonitoringPgDataDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -48489,6 +49210,19 @@ namespace KmsReportClient.External {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://kms-oms.ru/", ConfigurationName="External.EndpointSoap")]
     public interface EndpointSoap {
         
+        // CODEGEN: Контракт генерации сообщений с именем filials из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CollectSummaryReport", ReplyAction="*")]
+        KmsReportClient.External.CollectSummaryReportResponse CollectSummaryReport(KmsReportClient.External.CollectSummaryReportRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CollectSummaryReport", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.CollectSummaryReportResponse> CollectSummaryReportAsync(KmsReportClient.External.CollectSummaryReportRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ApproveReport", ReplyAction="*")]
+        void ApproveReport(int idReportFlow, int idUser);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ApproveReport", ReplyAction="*")]
+        System.Threading.Tasks.Task ApproveReportAsync(int idReportFlow, int idUser);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/RefuseReportMultiApproval", ReplyAction="*")]
         void RefuseReportMultiApproval(int idReportFlow, int idUser);
         
@@ -49160,6 +49894,20 @@ namespace KmsReportClient.External {
         System.Threading.Tasks.Task<KmsReportClient.External.GetZpz10_2025YearDataBatchResponse> GetZpz10_2025YearDataBatchAsync(KmsReportClient.External.GetZpz10_2025YearDataBatchRequest request);
         
         // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetDispReprodHealthYearData", ReplyAction="*")]
+        KmsReportClient.External.GetDispReprodHealthYearDataResponse GetDispReprodHealthYearData(KmsReportClient.External.GetDispReprodHealthYearDataRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetDispReprodHealthYearData", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.GetDispReprodHealthYearDataResponse> GetDispReprodHealthYearDataAsync(KmsReportClient.External.GetDispReprodHealthYearDataRequest request);
+        
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetDispReprodHealthYearDataBatch", ReplyAction="*")]
+        KmsReportClient.External.GetDispReprodHealthYearDataBatchResponse GetDispReprodHealthYearDataBatch(KmsReportClient.External.GetDispReprodHealthYearDataBatchRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetDispReprodHealthYearDataBatch", ReplyAction="*")]
+        System.Threading.Tasks.Task<KmsReportClient.External.GetDispReprodHealthYearDataBatchResponse> GetDispReprodHealthYearDataBatchAsync(KmsReportClient.External.GetDispReprodHealthYearDataBatchRequest request);
+        
+        // CODEGEN: Контракт генерации сообщений с именем yymm из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
         [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/GetDoffYearData", ReplyAction="*")]
         KmsReportClient.External.GetDoffYearDataResponse GetDoffYearData(KmsReportClient.External.GetDoffYearDataRequest request);
         
@@ -49523,19 +50271,90 @@ namespace KmsReportClient.External {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ChangeDataSource", ReplyAction="*")]
         System.Threading.Tasks.Task ChangeDataSourceAsync(int idReport, int idUser, KmsReportClient.External.DataSource datasource);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CollectSummaryReportRequest {
         
-        // CODEGEN: Контракт генерации сообщений с именем filials из пространства имен http://kms-oms.ru/ не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CollectSummaryReport", ReplyAction="*")]
-        KmsReportClient.External.CollectSummaryReportResponse CollectSummaryReport(KmsReportClient.External.CollectSummaryReportRequest request);
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CollectSummaryReport", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CollectSummaryReportRequestBody Body;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/CollectSummaryReport", ReplyAction="*")]
-        System.Threading.Tasks.Task<KmsReportClient.External.CollectSummaryReportResponse> CollectSummaryReportAsync(KmsReportClient.External.CollectSummaryReportRequest request);
+        public CollectSummaryReportRequest() {
+        }
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ApproveReport", ReplyAction="*")]
-        void ApproveReport(int idReportFlow, int idUser);
+        public CollectSummaryReportRequest(KmsReportClient.External.CollectSummaryReportRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CollectSummaryReportRequestBody {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://kms-oms.ru/ApproveReport", ReplyAction="*")]
-        System.Threading.Tasks.Task ApproveReportAsync(int idReportFlow, int idUser);
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.ArrayOfString filials;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string yymmStart;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string yymmEnd;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public KmsReportClient.External.ReportStatus status;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public KmsReportClient.External.ReportType reportType;
+        
+        public CollectSummaryReportRequestBody() {
+        }
+        
+        public CollectSummaryReportRequestBody(KmsReportClient.External.ArrayOfString filials, string yymmStart, string yymmEnd, KmsReportClient.External.ReportStatus status, KmsReportClient.External.ReportType reportType) {
+            this.filials = filials;
+            this.yymmStart = yymmStart;
+            this.yymmEnd = yymmEnd;
+            this.status = status;
+            this.reportType = reportType;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CollectSummaryReportResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CollectSummaryReportResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.CollectSummaryReportResponseBody Body;
+        
+        public CollectSummaryReportResponse() {
+        }
+        
+        public CollectSummaryReportResponse(KmsReportClient.External.CollectSummaryReportResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class CollectSummaryReportResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.AbstractReport CollectSummaryReportResult;
+        
+        public CollectSummaryReportResponseBody() {
+        }
+        
+        public CollectSummaryReportResponseBody(KmsReportClient.External.AbstractReport CollectSummaryReportResult) {
+            this.CollectSummaryReportResult = CollectSummaryReportResult;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -50887,10 +51706,13 @@ namespace KmsReportClient.External {
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
         public KmsReportClient.External.ReportMonthlyVol monthlyVol;
         
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public KmsReportClient.External.ReportDispReprodHealth dispReprodHealth;
+        
         public MethodForSendingChildModelRequestBody() {
         }
         
-        public MethodForSendingChildModelRequestBody(KmsReportClient.External.Report262 f262, KmsReportClient.External.Report294 f294, KmsReportClient.External.ReportIizl iilz, KmsReportClient.External.ReportPg pg, KmsReportClient.External.ReportZpz zpz, KmsReportClient.External.ReportZpz2025 zpz2025, KmsReportClient.External.ReportEffectiveness effective, KmsReportClient.External.ReportViolations violations, KmsReportClient.External.ReportMonthlyVol monthlyVol) {
+        public MethodForSendingChildModelRequestBody(KmsReportClient.External.Report262 f262, KmsReportClient.External.Report294 f294, KmsReportClient.External.ReportIizl iilz, KmsReportClient.External.ReportPg pg, KmsReportClient.External.ReportZpz zpz, KmsReportClient.External.ReportZpz2025 zpz2025, KmsReportClient.External.ReportEffectiveness effective, KmsReportClient.External.ReportViolations violations, KmsReportClient.External.ReportMonthlyVol monthlyVol, KmsReportClient.External.ReportDispReprodHealth dispReprodHealth) {
             this.f262 = f262;
             this.f294 = f294;
             this.iilz = iilz;
@@ -50900,6 +51722,7 @@ namespace KmsReportClient.External {
             this.effective = effective;
             this.violations = violations;
             this.monthlyVol = monthlyVol;
+            this.dispReprodHealth = dispReprodHealth;
         }
     }
     
@@ -56098,6 +56921,166 @@ namespace KmsReportClient.External {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetDispReprodHealthYearDataRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDispReprodHealthYearData", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.GetDispReprodHealthYearDataRequestBody Body;
+        
+        public GetDispReprodHealthYearDataRequest() {
+        }
+        
+        public GetDispReprodHealthYearDataRequest(KmsReportClient.External.GetDispReprodHealthYearDataRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class GetDispReprodHealthYearDataRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string yymm;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string theme;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string fillial;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string rowNum;
+        
+        public GetDispReprodHealthYearDataRequestBody() {
+        }
+        
+        public GetDispReprodHealthYearDataRequestBody(string yymm, string theme, string fillial, string rowNum) {
+            this.yymm = yymm;
+            this.theme = theme;
+            this.fillial = fillial;
+            this.rowNum = rowNum;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetDispReprodHealthYearDataResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDispReprodHealthYearDataResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.GetDispReprodHealthYearDataResponseBody Body;
+        
+        public GetDispReprodHealthYearDataResponse() {
+        }
+        
+        public GetDispReprodHealthYearDataResponse(KmsReportClient.External.GetDispReprodHealthYearDataResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class GetDispReprodHealthYearDataResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.ReportDispReprodHealthDataDto GetDispReprodHealthYearDataResult;
+        
+        public GetDispReprodHealthYearDataResponseBody() {
+        }
+        
+        public GetDispReprodHealthYearDataResponseBody(KmsReportClient.External.ReportDispReprodHealthDataDto GetDispReprodHealthYearDataResult) {
+            this.GetDispReprodHealthYearDataResult = GetDispReprodHealthYearDataResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetDispReprodHealthYearDataBatchRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDispReprodHealthYearDataBatch", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.GetDispReprodHealthYearDataBatchRequestBody Body;
+        
+        public GetDispReprodHealthYearDataBatchRequest() {
+        }
+        
+        public GetDispReprodHealthYearDataBatchRequest(KmsReportClient.External.GetDispReprodHealthYearDataBatchRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class GetDispReprodHealthYearDataBatchRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string yymm;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string theme;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string fillial;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public KmsReportClient.External.ArrayOfString rowNumbers;
+        
+        public GetDispReprodHealthYearDataBatchRequestBody() {
+        }
+        
+        public GetDispReprodHealthYearDataBatchRequestBody(string yymm, string theme, string fillial, KmsReportClient.External.ArrayOfString rowNumbers) {
+            this.yymm = yymm;
+            this.theme = theme;
+            this.fillial = fillial;
+            this.rowNumbers = rowNumbers;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetDispReprodHealthYearDataBatchResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDispReprodHealthYearDataBatchResponse", Namespace="http://kms-oms.ru/", Order=0)]
+        public KmsReportClient.External.GetDispReprodHealthYearDataBatchResponseBody Body;
+        
+        public GetDispReprodHealthYearDataBatchResponse() {
+        }
+        
+        public GetDispReprodHealthYearDataBatchResponse(KmsReportClient.External.GetDispReprodHealthYearDataBatchResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
+    public partial class GetDispReprodHealthYearDataBatchResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public KmsReportClient.External.DispRepHealthYearDataRow[] GetDispReprodHealthYearDataBatchResult;
+        
+        public GetDispReprodHealthYearDataBatchResponseBody() {
+        }
+        
+        public GetDispReprodHealthYearDataBatchResponseBody(KmsReportClient.External.DispRepHealthYearDataRow[] GetDispReprodHealthYearDataBatchResult) {
+            this.GetDispReprodHealthYearDataBatchResult = GetDispReprodHealthYearDataBatchResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetDoffYearDataRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDoffYearData", Namespace="http://kms-oms.ru/", Order=0)]
@@ -59222,90 +60205,6 @@ namespace KmsReportClient.External {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CollectSummaryReportRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CollectSummaryReport", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.CollectSummaryReportRequestBody Body;
-        
-        public CollectSummaryReportRequest() {
-        }
-        
-        public CollectSummaryReportRequest(KmsReportClient.External.CollectSummaryReportRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class CollectSummaryReportRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public KmsReportClient.External.ArrayOfString filials;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string yymmStart;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string yymmEnd;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public KmsReportClient.External.ReportStatus status;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public KmsReportClient.External.ReportType reportType;
-        
-        public CollectSummaryReportRequestBody() {
-        }
-        
-        public CollectSummaryReportRequestBody(KmsReportClient.External.ArrayOfString filials, string yymmStart, string yymmEnd, KmsReportClient.External.ReportStatus status, KmsReportClient.External.ReportType reportType) {
-            this.filials = filials;
-            this.yymmStart = yymmStart;
-            this.yymmEnd = yymmEnd;
-            this.status = status;
-            this.reportType = reportType;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CollectSummaryReportResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CollectSummaryReportResponse", Namespace="http://kms-oms.ru/", Order=0)]
-        public KmsReportClient.External.CollectSummaryReportResponseBody Body;
-        
-        public CollectSummaryReportResponse() {
-        }
-        
-        public CollectSummaryReportResponse(KmsReportClient.External.CollectSummaryReportResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://kms-oms.ru/")]
-    public partial class CollectSummaryReportResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public KmsReportClient.External.AbstractReport CollectSummaryReportResult;
-        
-        public CollectSummaryReportResponseBody() {
-        }
-        
-        public CollectSummaryReportResponseBody(KmsReportClient.External.AbstractReport CollectSummaryReportResult) {
-            this.CollectSummaryReportResult = CollectSummaryReportResult;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface EndpointSoapChannel : KmsReportClient.External.EndpointSoap, System.ServiceModel.IClientChannel {
     }
@@ -59331,6 +60230,47 @@ namespace KmsReportClient.External {
         
         public EndpointSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.CollectSummaryReportResponse KmsReportClient.External.EndpointSoap.CollectSummaryReport(KmsReportClient.External.CollectSummaryReportRequest request) {
+            return base.Channel.CollectSummaryReport(request);
+        }
+        
+        public KmsReportClient.External.AbstractReport CollectSummaryReport(KmsReportClient.External.ArrayOfString filials, string yymmStart, string yymmEnd, KmsReportClient.External.ReportStatus status, KmsReportClient.External.ReportType reportType) {
+            KmsReportClient.External.CollectSummaryReportRequest inValue = new KmsReportClient.External.CollectSummaryReportRequest();
+            inValue.Body = new KmsReportClient.External.CollectSummaryReportRequestBody();
+            inValue.Body.filials = filials;
+            inValue.Body.yymmStart = yymmStart;
+            inValue.Body.yymmEnd = yymmEnd;
+            inValue.Body.status = status;
+            inValue.Body.reportType = reportType;
+            KmsReportClient.External.CollectSummaryReportResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).CollectSummaryReport(inValue);
+            return retVal.Body.CollectSummaryReportResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.CollectSummaryReportResponse> KmsReportClient.External.EndpointSoap.CollectSummaryReportAsync(KmsReportClient.External.CollectSummaryReportRequest request) {
+            return base.Channel.CollectSummaryReportAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.CollectSummaryReportResponse> CollectSummaryReportAsync(KmsReportClient.External.ArrayOfString filials, string yymmStart, string yymmEnd, KmsReportClient.External.ReportStatus status, KmsReportClient.External.ReportType reportType) {
+            KmsReportClient.External.CollectSummaryReportRequest inValue = new KmsReportClient.External.CollectSummaryReportRequest();
+            inValue.Body = new KmsReportClient.External.CollectSummaryReportRequestBody();
+            inValue.Body.filials = filials;
+            inValue.Body.yymmStart = yymmStart;
+            inValue.Body.yymmEnd = yymmEnd;
+            inValue.Body.status = status;
+            inValue.Body.reportType = reportType;
+            return ((KmsReportClient.External.EndpointSoap)(this)).CollectSummaryReportAsync(inValue);
+        }
+        
+        public void ApproveReport(int idReportFlow, int idUser) {
+            base.Channel.ApproveReport(idReportFlow, idUser);
+        }
+        
+        public System.Threading.Tasks.Task ApproveReportAsync(int idReportFlow, int idUser) {
+            return base.Channel.ApproveReportAsync(idReportFlow, idUser);
         }
         
         public void RefuseReportMultiApproval(int idReportFlow, int idUser) {
@@ -59857,7 +60797,7 @@ namespace KmsReportClient.External {
             return base.Channel.MethodForSendingChildModel(request);
         }
         
-        public void MethodForSendingChildModel(KmsReportClient.External.Report262 f262, KmsReportClient.External.Report294 f294, KmsReportClient.External.ReportIizl iilz, KmsReportClient.External.ReportPg pg, KmsReportClient.External.ReportZpz zpz, KmsReportClient.External.ReportZpz2025 zpz2025, KmsReportClient.External.ReportEffectiveness effective, KmsReportClient.External.ReportViolations violations, KmsReportClient.External.ReportMonthlyVol monthlyVol) {
+        public void MethodForSendingChildModel(KmsReportClient.External.Report262 f262, KmsReportClient.External.Report294 f294, KmsReportClient.External.ReportIizl iilz, KmsReportClient.External.ReportPg pg, KmsReportClient.External.ReportZpz zpz, KmsReportClient.External.ReportZpz2025 zpz2025, KmsReportClient.External.ReportEffectiveness effective, KmsReportClient.External.ReportViolations violations, KmsReportClient.External.ReportMonthlyVol monthlyVol, KmsReportClient.External.ReportDispReprodHealth dispReprodHealth) {
             KmsReportClient.External.MethodForSendingChildModelRequest inValue = new KmsReportClient.External.MethodForSendingChildModelRequest();
             inValue.Body = new KmsReportClient.External.MethodForSendingChildModelRequestBody();
             inValue.Body.f262 = f262;
@@ -59869,6 +60809,7 @@ namespace KmsReportClient.External {
             inValue.Body.effective = effective;
             inValue.Body.violations = violations;
             inValue.Body.monthlyVol = monthlyVol;
+            inValue.Body.dispReprodHealth = dispReprodHealth;
             KmsReportClient.External.MethodForSendingChildModelResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).MethodForSendingChildModel(inValue);
         }
         
@@ -59877,7 +60818,7 @@ namespace KmsReportClient.External {
             return base.Channel.MethodForSendingChildModelAsync(request);
         }
         
-        public System.Threading.Tasks.Task<KmsReportClient.External.MethodForSendingChildModelResponse> MethodForSendingChildModelAsync(KmsReportClient.External.Report262 f262, KmsReportClient.External.Report294 f294, KmsReportClient.External.ReportIizl iilz, KmsReportClient.External.ReportPg pg, KmsReportClient.External.ReportZpz zpz, KmsReportClient.External.ReportZpz2025 zpz2025, KmsReportClient.External.ReportEffectiveness effective, KmsReportClient.External.ReportViolations violations, KmsReportClient.External.ReportMonthlyVol monthlyVol) {
+        public System.Threading.Tasks.Task<KmsReportClient.External.MethodForSendingChildModelResponse> MethodForSendingChildModelAsync(KmsReportClient.External.Report262 f262, KmsReportClient.External.Report294 f294, KmsReportClient.External.ReportIizl iilz, KmsReportClient.External.ReportPg pg, KmsReportClient.External.ReportZpz zpz, KmsReportClient.External.ReportZpz2025 zpz2025, KmsReportClient.External.ReportEffectiveness effective, KmsReportClient.External.ReportViolations violations, KmsReportClient.External.ReportMonthlyVol monthlyVol, KmsReportClient.External.ReportDispReprodHealth dispReprodHealth) {
             KmsReportClient.External.MethodForSendingChildModelRequest inValue = new KmsReportClient.External.MethodForSendingChildModelRequest();
             inValue.Body = new KmsReportClient.External.MethodForSendingChildModelRequestBody();
             inValue.Body.f262 = f262;
@@ -59889,6 +60830,7 @@ namespace KmsReportClient.External {
             inValue.Body.effective = effective;
             inValue.Body.violations = violations;
             inValue.Body.monthlyVol = monthlyVol;
+            inValue.Body.dispReprodHealth = dispReprodHealth;
             return ((KmsReportClient.External.EndpointSoap)(this)).MethodForSendingChildModelAsync(inValue);
         }
         
@@ -61809,6 +62751,68 @@ namespace KmsReportClient.External {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.GetDispReprodHealthYearDataResponse KmsReportClient.External.EndpointSoap.GetDispReprodHealthYearData(KmsReportClient.External.GetDispReprodHealthYearDataRequest request) {
+            return base.Channel.GetDispReprodHealthYearData(request);
+        }
+        
+        public KmsReportClient.External.ReportDispReprodHealthDataDto GetDispReprodHealthYearData(string yymm, string theme, string fillial, string rowNum) {
+            KmsReportClient.External.GetDispReprodHealthYearDataRequest inValue = new KmsReportClient.External.GetDispReprodHealthYearDataRequest();
+            inValue.Body = new KmsReportClient.External.GetDispReprodHealthYearDataRequestBody();
+            inValue.Body.yymm = yymm;
+            inValue.Body.theme = theme;
+            inValue.Body.fillial = fillial;
+            inValue.Body.rowNum = rowNum;
+            KmsReportClient.External.GetDispReprodHealthYearDataResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).GetDispReprodHealthYearData(inValue);
+            return retVal.Body.GetDispReprodHealthYearDataResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.GetDispReprodHealthYearDataResponse> KmsReportClient.External.EndpointSoap.GetDispReprodHealthYearDataAsync(KmsReportClient.External.GetDispReprodHealthYearDataRequest request) {
+            return base.Channel.GetDispReprodHealthYearDataAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.GetDispReprodHealthYearDataResponse> GetDispReprodHealthYearDataAsync(string yymm, string theme, string fillial, string rowNum) {
+            KmsReportClient.External.GetDispReprodHealthYearDataRequest inValue = new KmsReportClient.External.GetDispReprodHealthYearDataRequest();
+            inValue.Body = new KmsReportClient.External.GetDispReprodHealthYearDataRequestBody();
+            inValue.Body.yymm = yymm;
+            inValue.Body.theme = theme;
+            inValue.Body.fillial = fillial;
+            inValue.Body.rowNum = rowNum;
+            return ((KmsReportClient.External.EndpointSoap)(this)).GetDispReprodHealthYearDataAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        KmsReportClient.External.GetDispReprodHealthYearDataBatchResponse KmsReportClient.External.EndpointSoap.GetDispReprodHealthYearDataBatch(KmsReportClient.External.GetDispReprodHealthYearDataBatchRequest request) {
+            return base.Channel.GetDispReprodHealthYearDataBatch(request);
+        }
+        
+        public KmsReportClient.External.DispRepHealthYearDataRow[] GetDispReprodHealthYearDataBatch(string yymm, string theme, string fillial, KmsReportClient.External.ArrayOfString rowNumbers) {
+            KmsReportClient.External.GetDispReprodHealthYearDataBatchRequest inValue = new KmsReportClient.External.GetDispReprodHealthYearDataBatchRequest();
+            inValue.Body = new KmsReportClient.External.GetDispReprodHealthYearDataBatchRequestBody();
+            inValue.Body.yymm = yymm;
+            inValue.Body.theme = theme;
+            inValue.Body.fillial = fillial;
+            inValue.Body.rowNumbers = rowNumbers;
+            KmsReportClient.External.GetDispReprodHealthYearDataBatchResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).GetDispReprodHealthYearDataBatch(inValue);
+            return retVal.Body.GetDispReprodHealthYearDataBatchResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<KmsReportClient.External.GetDispReprodHealthYearDataBatchResponse> KmsReportClient.External.EndpointSoap.GetDispReprodHealthYearDataBatchAsync(KmsReportClient.External.GetDispReprodHealthYearDataBatchRequest request) {
+            return base.Channel.GetDispReprodHealthYearDataBatchAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<KmsReportClient.External.GetDispReprodHealthYearDataBatchResponse> GetDispReprodHealthYearDataBatchAsync(string yymm, string theme, string fillial, KmsReportClient.External.ArrayOfString rowNumbers) {
+            KmsReportClient.External.GetDispReprodHealthYearDataBatchRequest inValue = new KmsReportClient.External.GetDispReprodHealthYearDataBatchRequest();
+            inValue.Body = new KmsReportClient.External.GetDispReprodHealthYearDataBatchRequestBody();
+            inValue.Body.yymm = yymm;
+            inValue.Body.theme = theme;
+            inValue.Body.fillial = fillial;
+            inValue.Body.rowNumbers = rowNumbers;
+            return ((KmsReportClient.External.EndpointSoap)(this)).GetDispReprodHealthYearDataBatchAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         KmsReportClient.External.GetDoffYearDataResponse KmsReportClient.External.EndpointSoap.GetDoffYearData(KmsReportClient.External.GetDoffYearDataRequest request) {
             return base.Channel.GetDoffYearData(request);
         }
@@ -63064,47 +64068,6 @@ namespace KmsReportClient.External {
         
         public System.Threading.Tasks.Task ChangeDataSourceAsync(int idReport, int idUser, KmsReportClient.External.DataSource datasource) {
             return base.Channel.ChangeDataSourceAsync(idReport, idUser, datasource);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        KmsReportClient.External.CollectSummaryReportResponse KmsReportClient.External.EndpointSoap.CollectSummaryReport(KmsReportClient.External.CollectSummaryReportRequest request) {
-            return base.Channel.CollectSummaryReport(request);
-        }
-        
-        public KmsReportClient.External.AbstractReport CollectSummaryReport(KmsReportClient.External.ArrayOfString filials, string yymmStart, string yymmEnd, KmsReportClient.External.ReportStatus status, KmsReportClient.External.ReportType reportType) {
-            KmsReportClient.External.CollectSummaryReportRequest inValue = new KmsReportClient.External.CollectSummaryReportRequest();
-            inValue.Body = new KmsReportClient.External.CollectSummaryReportRequestBody();
-            inValue.Body.filials = filials;
-            inValue.Body.yymmStart = yymmStart;
-            inValue.Body.yymmEnd = yymmEnd;
-            inValue.Body.status = status;
-            inValue.Body.reportType = reportType;
-            KmsReportClient.External.CollectSummaryReportResponse retVal = ((KmsReportClient.External.EndpointSoap)(this)).CollectSummaryReport(inValue);
-            return retVal.Body.CollectSummaryReportResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<KmsReportClient.External.CollectSummaryReportResponse> KmsReportClient.External.EndpointSoap.CollectSummaryReportAsync(KmsReportClient.External.CollectSummaryReportRequest request) {
-            return base.Channel.CollectSummaryReportAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<KmsReportClient.External.CollectSummaryReportResponse> CollectSummaryReportAsync(KmsReportClient.External.ArrayOfString filials, string yymmStart, string yymmEnd, KmsReportClient.External.ReportStatus status, KmsReportClient.External.ReportType reportType) {
-            KmsReportClient.External.CollectSummaryReportRequest inValue = new KmsReportClient.External.CollectSummaryReportRequest();
-            inValue.Body = new KmsReportClient.External.CollectSummaryReportRequestBody();
-            inValue.Body.filials = filials;
-            inValue.Body.yymmStart = yymmStart;
-            inValue.Body.yymmEnd = yymmEnd;
-            inValue.Body.status = status;
-            inValue.Body.reportType = reportType;
-            return ((KmsReportClient.External.EndpointSoap)(this)).CollectSummaryReportAsync(inValue);
-        }
-        
-        public void ApproveReport(int idReportFlow, int idUser) {
-            base.Channel.ApproveReport(idReportFlow, idUser);
-        }
-        
-        public System.Threading.Tasks.Task ApproveReportAsync(int idReportFlow, int idUser) {
-            return base.Channel.ApproveReportAsync(idReportFlow, idUser);
         }
     }
 }

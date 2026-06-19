@@ -2,26 +2,33 @@
 <wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://kms-oms.ru/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://kms-oms.ru/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://kms-oms.ru/">
-      <s:element name="RefuseReportMultiApproval">
+      <s:element name="CollectSummaryReport">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="idReportFlow" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="idUser" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="RefuseReportMultiApprovalResponse">
-        <s:complexType />
-      </s:element>
-      <s:element name="GetReport">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="filialCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filials" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="yymmStart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yymmEnd" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="tns:ReportStatus" />
             <s:element minOccurs="1" maxOccurs="1" name="reportType" type="tns:ReportType" />
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ReportStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="New" />
+          <s:enumeration value="Saved" />
+          <s:enumeration value="Scan" />
+          <s:enumeration value="Submit" />
+          <s:enumeration value="Refuse" />
+          <s:enumeration value="Done" />
+          <s:enumeration value="PartiallyApproved" />
+        </s:restriction>
+      </s:simpleType>
       <s:simpleType name="ReportType">
         <s:restriction base="s:string">
           <s:enumeration value="F262" />
@@ -60,6 +67,7 @@
           <s:enumeration value="ZpzT4" />
           <s:enumeration value="ZpzQ2025" />
           <s:enumeration value="Zpz10_2025" />
+          <s:enumeration value="DispRepHeal" />
           <s:enumeration value="ZpzL2025" />
           <s:enumeration value="ViolMEE" />
           <s:enumeration value="ViolEKMP" />
@@ -71,10 +79,10 @@
           <s:enumeration value="R140n" />
         </s:restriction>
       </s:simpleType>
-      <s:element name="GetReportResponse">
+      <s:element name="CollectSummaryReportResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetReportResult" type="tns:AbstractReport" />
+            <s:element minOccurs="0" maxOccurs="1" name="CollectSummaryReportResult" type="tns:AbstractReport" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -108,17 +116,6 @@
           <s:element minOccurs="1" maxOccurs="1" name="DataSource" type="tns:DataSource" />
         </s:sequence>
       </s:complexType>
-      <s:simpleType name="ReportStatus">
-        <s:restriction base="s:string">
-          <s:enumeration value="New" />
-          <s:enumeration value="Saved" />
-          <s:enumeration value="Scan" />
-          <s:enumeration value="Submit" />
-          <s:enumeration value="Refuse" />
-          <s:enumeration value="Done" />
-          <s:enumeration value="PartiallyApproved" />
-        </s:restriction>
-      </s:simpleType>
       <s:simpleType name="DataSource">
         <s:restriction base="s:string">
           <s:enumeration value="New" />
@@ -126,6 +123,44 @@
           <s:enumeration value="Handle" />
         </s:restriction>
       </s:simpleType>
+      <s:element name="ApproveReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idReportFlow" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idUser" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ApproveReportResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RefuseReportMultiApproval">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idReportFlow" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idUser" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RefuseReportMultiApprovalResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filialCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="reportType" type="tns:ReportType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReportResult" type="tns:AbstractReport" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetApprovalInfo">
         <s:complexType>
           <s:sequence>
@@ -224,11 +259,6 @@
           <s:element minOccurs="0" maxOccurs="1" name="Theme" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Text" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="CurrentEmail" type="s:string" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfString">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="SendNotificationResponse">
@@ -481,6 +511,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="effective" type="tns:ReportEffectiveness" />
             <s:element minOccurs="0" maxOccurs="1" name="violations" type="tns:ReportViolations" />
             <s:element minOccurs="0" maxOccurs="1" name="monthlyVol" type="tns:ReportMonthlyVol" />
+            <s:element minOccurs="0" maxOccurs="1" name="dispReprodHealth" type="tns:ReportDispReprodHealth" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -883,6 +914,38 @@
           <s:element minOccurs="1" maxOccurs="1" name="CountAppliedSluch" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="CountSluchMEE" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="CountSluchEKMP" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReportDispReprodHealth">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AbstractReport">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ReportDataList" type="tns:ArrayOfReportDispReprodHealthDto" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfReportDispReprodHealthDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReportDispReprodHealthDto" nillable="true" type="tns:ReportDispReprodHealthDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReportDispReprodHealthDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Theme" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ArrayOfReportDispReprodHealthDataDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReportDispReprodHealthDataDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReportDispReprodHealthDataDto" nillable="true" type="tns:ReportDispReprodHealthDataDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReportDispReprodHealthDataDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="YearlySum" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ForPeriod" type="s:int" />
         </s:sequence>
       </s:complexType>
       <s:element name="MethodForSendingChildModelResponse">
@@ -2251,6 +2314,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="CountCaseDefectedBySmoPlan" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpDefectedCaseTarget" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpDefectedCasePlan" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountDefects" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadTarget" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadPlan" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadDs" type="s:decimal" />
@@ -2260,6 +2324,11 @@
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadDsInjured" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadDsLeth" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadMed" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="D_3_2_1" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="D_3_2_2" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="D_3_2_3" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="D_3_2_4" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="D_3_2_5" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpUnreglamentedMed" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpStopMed" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpContinuity" type="s:decimal" />
@@ -2272,7 +2341,13 @@
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpDisp" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpRepeat2weeks" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpOutOfResults" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="CountEkmpDoubleHospital" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="D_2_12" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="D_2_13" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="D_2_14" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="D_1_4_4" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="D_2_16_1" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="D_2_16" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="D_1_4_4_Another" type="s:decimal" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ZpzNormative2025">
@@ -2764,6 +2839,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Report_T7OldPolis" type="tns:ArrayOfReport_T7OldPolis" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_OpedUnplanned" type="tns:ArrayOfReport_OpedUnplanned" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_140n" type="tns:ArrayOfReport_140n" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_DispReprodHealth" type="tns:ArrayOfReport_DispReprodHealth" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Type" type="tns:Report_Type" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Flow" type="tns:Report_Flow" />
         </s:sequence>
@@ -3423,6 +3499,21 @@
           <s:element minOccurs="1" maxOccurs="1" name="KEKMPtfoms" nillable="true" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="KZSMOpodtv" nillable="true" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="KPMOtfoms" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:Report_Data" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReport_DispReprodHealth">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Report_DispReprodHealth" nillable="true" type="tns:Report_DispReprodHealth" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Report_DispReprodHealth">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_Report_Data" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="YearlySum" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ForPeriod" nillable="true" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Report_Data" type="tns:Report_Data" />
         </s:sequence>
       </s:complexType>
@@ -4324,6 +4415,11 @@
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadDsInjured" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadDsLeth" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpBadMed" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="D_3_2_1" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="D_3_2_2" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="D_3_2_3" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="D_3_2_4" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="D_3_2_5" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpUnreglamentedMed" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpStopMed" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpContinuity" type="s:decimal" />
@@ -4337,6 +4433,13 @@
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpRepeat2weeks" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpOutOfResults" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="CountEkmpDoubleHospital" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="D_2_12" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="D_2_13" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="D_2_14" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="D_1_4_4" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="D_2_16_1" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="D_2_16" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="D_1_4_4_Another" type="s:decimal" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ZpzFinance2025Full">
@@ -5501,6 +5604,51 @@
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ReportZpz2025DataDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDispReprodHealthYearData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="theme" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fillial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rowNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDispReprodHealthYearDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDispReprodHealthYearDataResult" type="tns:ReportDispReprodHealthDataDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDispReprodHealthYearDataBatch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yymm" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="theme" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fillial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rowNumbers" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDispReprodHealthYearDataBatchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDispReprodHealthYearDataBatchResult" type="tns:ArrayOfDispRepHealthYearDataRow" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDispRepHealthYearDataRow">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DispRepHealthYearDataRow" nillable="true" type="tns:DispRepHealthYearDataRow" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DispRepHealthYearDataRow">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RowNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ReportDispReprodHealthDataDto" />
         </s:sequence>
       </s:complexType>
       <s:element name="GetDoffYearData">
@@ -6899,37 +7047,20 @@
       <s:element name="ChangeDataSourceResponse">
         <s:complexType />
       </s:element>
-      <s:element name="CollectSummaryReport">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="filials" type="tns:ArrayOfString" />
-            <s:element minOccurs="0" maxOccurs="1" name="yymmStart" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="yymmEnd" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="status" type="tns:ReportStatus" />
-            <s:element minOccurs="1" maxOccurs="1" name="reportType" type="tns:ReportType" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CollectSummaryReportResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CollectSummaryReportResult" type="tns:AbstractReport" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ApproveReport">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="idReportFlow" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="idUser" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ApproveReportResponse">
-        <s:complexType />
-      </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="CollectSummaryReportSoapIn">
+    <wsdl:part name="parameters" element="tns:CollectSummaryReport" />
+  </wsdl:message>
+  <wsdl:message name="CollectSummaryReportSoapOut">
+    <wsdl:part name="parameters" element="tns:CollectSummaryReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApproveReportSoapIn">
+    <wsdl:part name="parameters" element="tns:ApproveReport" />
+  </wsdl:message>
+  <wsdl:message name="ApproveReportSoapOut">
+    <wsdl:part name="parameters" element="tns:ApproveReportResponse" />
+  </wsdl:message>
   <wsdl:message name="RefuseReportMultiApprovalSoapIn">
     <wsdl:part name="parameters" element="tns:RefuseReportMultiApproval" />
   </wsdl:message>
@@ -7506,6 +7637,18 @@
   <wsdl:message name="GetZpz10_2025YearDataBatchSoapOut">
     <wsdl:part name="parameters" element="tns:GetZpz10_2025YearDataBatchResponse" />
   </wsdl:message>
+  <wsdl:message name="GetDispReprodHealthYearDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDispReprodHealthYearData" />
+  </wsdl:message>
+  <wsdl:message name="GetDispReprodHealthYearDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDispReprodHealthYearDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDispReprodHealthYearDataBatchSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDispReprodHealthYearDataBatch" />
+  </wsdl:message>
+  <wsdl:message name="GetDispReprodHealthYearDataBatchSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDispReprodHealthYearDataBatchResponse" />
+  </wsdl:message>
   <wsdl:message name="GetDoffYearDataSoapIn">
     <wsdl:part name="parameters" element="tns:GetDoffYearData" />
   </wsdl:message>
@@ -7824,19 +7967,15 @@
   <wsdl:message name="ChangeDataSourceSoapOut">
     <wsdl:part name="parameters" element="tns:ChangeDataSourceResponse" />
   </wsdl:message>
-  <wsdl:message name="CollectSummaryReportSoapIn">
-    <wsdl:part name="parameters" element="tns:CollectSummaryReport" />
-  </wsdl:message>
-  <wsdl:message name="CollectSummaryReportSoapOut">
-    <wsdl:part name="parameters" element="tns:CollectSummaryReportResponse" />
-  </wsdl:message>
-  <wsdl:message name="ApproveReportSoapIn">
-    <wsdl:part name="parameters" element="tns:ApproveReport" />
-  </wsdl:message>
-  <wsdl:message name="ApproveReportSoapOut">
-    <wsdl:part name="parameters" element="tns:ApproveReportResponse" />
-  </wsdl:message>
   <wsdl:portType name="EndpointSoap">
+    <wsdl:operation name="CollectSummaryReport">
+      <wsdl:input message="tns:CollectSummaryReportSoapIn" />
+      <wsdl:output message="tns:CollectSummaryReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ApproveReport">
+      <wsdl:input message="tns:ApproveReportSoapIn" />
+      <wsdl:output message="tns:ApproveReportSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="RefuseReportMultiApproval">
       <wsdl:input message="tns:RefuseReportMultiApprovalSoapIn" />
       <wsdl:output message="tns:RefuseReportMultiApprovalSoapOut" />
@@ -8221,6 +8360,14 @@
       <wsdl:input message="tns:GetZpz10_2025YearDataBatchSoapIn" />
       <wsdl:output message="tns:GetZpz10_2025YearDataBatchSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetDispReprodHealthYearData">
+      <wsdl:input message="tns:GetDispReprodHealthYearDataSoapIn" />
+      <wsdl:output message="tns:GetDispReprodHealthYearDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDispReprodHealthYearDataBatch">
+      <wsdl:input message="tns:GetDispReprodHealthYearDataBatchSoapIn" />
+      <wsdl:output message="tns:GetDispReprodHealthYearDataBatchSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetDoffYearData">
       <wsdl:input message="tns:GetDoffYearDataSoapIn" />
       <wsdl:output message="tns:GetDoffYearDataSoapOut" />
@@ -8433,17 +8580,27 @@
       <wsdl:input message="tns:ChangeDataSourceSoapIn" />
       <wsdl:output message="tns:ChangeDataSourceSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="CollectSummaryReport">
-      <wsdl:input message="tns:CollectSummaryReportSoapIn" />
-      <wsdl:output message="tns:CollectSummaryReportSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="ApproveReport">
-      <wsdl:input message="tns:ApproveReportSoapIn" />
-      <wsdl:output message="tns:ApproveReportSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="EndpointSoap" type="tns:EndpointSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CollectSummaryReport">
+      <soap:operation soapAction="http://kms-oms.ru/CollectSummaryReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApproveReport">
+      <soap:operation soapAction="http://kms-oms.ru/ApproveReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="RefuseReportMultiApproval">
       <soap:operation soapAction="http://kms-oms.ru/RefuseReportMultiApproval" style="document" />
       <wsdl:input>
@@ -9308,6 +9465,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetDispReprodHealthYearData">
+      <soap:operation soapAction="http://kms-oms.ru/GetDispReprodHealthYearData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDispReprodHealthYearDataBatch">
+      <soap:operation soapAction="http://kms-oms.ru/GetDispReprodHealthYearDataBatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetDoffYearData">
       <soap:operation soapAction="http://kms-oms.ru/GetDoffYearData" style="document" />
       <wsdl:input>
@@ -9785,27 +9960,27 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CollectSummaryReport">
-      <soap:operation soapAction="http://kms-oms.ru/CollectSummaryReport" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ApproveReport">
-      <soap:operation soapAction="http://kms-oms.ru/ApproveReport" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="EndpointSoap12" type="tns:EndpointSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CollectSummaryReport">
+      <soap12:operation soapAction="http://kms-oms.ru/CollectSummaryReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApproveReport">
+      <soap12:operation soapAction="http://kms-oms.ru/ApproveReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="RefuseReportMultiApproval">
       <soap12:operation soapAction="http://kms-oms.ru/RefuseReportMultiApproval" style="document" />
       <wsdl:input>
@@ -10670,6 +10845,24 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetDispReprodHealthYearData">
+      <soap12:operation soapAction="http://kms-oms.ru/GetDispReprodHealthYearData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDispReprodHealthYearDataBatch">
+      <soap12:operation soapAction="http://kms-oms.ru/GetDispReprodHealthYearDataBatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetDoffYearData">
       <soap12:operation soapAction="http://kms-oms.ru/GetDoffYearData" style="document" />
       <wsdl:input>
@@ -11140,24 +11333,6 @@
     </wsdl:operation>
     <wsdl:operation name="ChangeDataSource">
       <soap12:operation soapAction="http://kms-oms.ru/ChangeDataSource" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CollectSummaryReport">
-      <soap12:operation soapAction="http://kms-oms.ru/CollectSummaryReport" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ApproveReport">
-      <soap12:operation soapAction="http://kms-oms.ru/ApproveReport" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
