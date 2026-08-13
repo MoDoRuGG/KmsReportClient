@@ -61,7 +61,7 @@ namespace KmsReportClient.Report.Basic
     // 8. Контроль за использованием медицинскими организациями средств ОМС (дебиторская задолженность МО)
     "8. Контроль за использованием медицинскими организациями средств ОМС (дебиторская задолженность МО);\r\nОбъем средств ОМС, направленных СМО в медицинскую организацию за отчетный период по заявкам на авансирование, не закрытым счетами\r\nДТ\r\n",
     "8. Контроль за использованием медицинскими организациями средств ОМС (дебиторская задолженность МО);\r\nОбщая сумма средств на оплату медицинской помощи по счетам медицинских организаций, предъявленным к оплате в соответствии с договорами на оказание и оплату медицинской помощи по ОМС за отчетный период\r\nСчпо\r\n",
-    "8. Контроль за использованием медицинскими организациями средств ОМС (дебиторская задолженность МО);\r\nФормула расчета\r\n1 квартал текущего года: (1-((ДТ/СЧпо) – 1/12*190%))*100\r\n",
+    "8. Контроль за использованием медицинскими организациями средств ОМС (дебиторская задолженность МО);\r\nФормула расчета:\r\n (1-((ДТ/СЧпо) – 1/12*коэфф))*100\r\n",
 
     // 9. Эффективность экспертной деятельности СМО по результатам контроля ТФОМС за качеством проведения СМО контроля объемов, сроков, качества и условий предоставления медицинской помощи
     "9. Эффективность экспертной деятельности СМО по результатам контроля ТФОМС за качеством проведения СМО контроля объемов, сроков, качества и условий предоставления медицинской помощи;\r\nКоличество экспертных заключений СМО по результатам проведенных в соответствии со статьей 40 Федерального закона № 326-ФЗ экспертиз качества медицинской помощи, подтвержденных результатами проведенных ТФОМС повторных экспертиз качества медицинской помощи в рамках осуществляемого ТФОМС контроля за качеством проведения СМО контроля объемов, сроков, качества и условий предоставления медицинской помощи, за отчетный период\r\nКЭКМПподтв\r\n",
@@ -145,7 +145,13 @@ namespace KmsReportClient.Report.Basic
             Dgv.Rows[0].Cells[22].Value = data.DT;
             Dgv.Rows[0].Cells[23].Value = data.Scpo;
             var scpoVal = data.Scpo ?? 0;
-            Dgv.Rows[0].Cells[24].Value = scpoVal != 0 ? (1 - ((data.DT / scpoVal) - 1M / 12 * 1.9M)) * 100 : 0;
+
+            // Определяем коэффициент: 1.9 для 1 квартала (месяц "03"), иначе 1
+            decimal coefficient = (!string.IsNullOrEmpty(Report?.Yymm) && Report.Yymm.EndsWith("03")) ? 1.9M : 1M;
+
+            Dgv.Rows[0].Cells[24].Value = scpoVal != 0
+                ? (1 - ((data.DT / scpoVal) - 1M / 12 * coefficient)) * 100
+                : 0;
 
             Dgv.Rows[0].Cells[25].Value = data.KEKMPpodtv;
             Dgv.Rows[0].Cells[26].Value = data.KEKMPtfoms;
@@ -212,10 +218,16 @@ namespace KmsReportClient.Report.Basic
                 var cell20 = GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[20].Value);
                 Dgv.Rows[0].Cells[21].Value = cell20 != 0 ? Math.Round(cell19 * 100 / cell20, 2) : 0;
 
-                // Ячейка 24: (1 - ((Ячейка 22 / Ячейка 23) - 1/12 * 190)) * 100
+                // Ячейка 24: (1 - ((Ячейка 22 / Ячейка 23) - 1/12 * коэффициент)) * 100
                 var cell22 = GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[22].Value);
                 var cell23 = GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[23].Value);
-                Dgv.Rows[0].Cells[24].Value = cell23 != 0 ? Math.Round((1 - ((cell22 / cell23) - 1M / 12 * 1.9M)) * 100, 2) : 0; // 1M для точности деления
+
+                // Определяем коэффициент: 1.9 для 1 квартала (месяц "03"), иначе 1
+                decimal coefficient = (!string.IsNullOrEmpty(Report?.Yymm) && Report.Yymm.EndsWith("03")) ? 1.9M : 1M;
+
+                Dgv.Rows[0].Cells[24].Value = cell23 != 0
+                    ? Math.Round((1 - ((cell22 / cell23) - 1M / 12 * coefficient)) * 100, 2)
+                    : 0;
 
                 // Ячейка 27: (Ячейка 25 / Ячейка 26) * 100
                 var cell25 = GlobalUtils.TryParseDecimal(Dgv.Rows[0].Cells[25].Value);
@@ -288,8 +300,8 @@ namespace KmsReportClient.Report.Basic
         public override void ToExcel(string filename, string filialName)
         {
 
-            //var excel = new ExcelCadreCreator(filename, ExcelForm.cadre, Report.Yymm, filialName, Client, FilialCode);
-            //excel.CreateReport(Report, null);
+            var excel = new Excel140nCreator(filename, ExcelForm.Rep140n, Report.Yymm, filialName, Client, FilialCode);
+            excel.CreateReport(Report, null);
         }
         public override string ValidReport() { return ""; }
         protected override void CreateDgvForForm(string form, List<TemplateRow> table)

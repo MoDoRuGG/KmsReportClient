@@ -156,6 +156,8 @@
     <Compile Include="Excel\Collector\PgExcelCollector.cs" />
     <Compile Include="Excel\Collector\ZpzQ2025ExcelCollector.cs" />
     <Compile Include="Excel\Collector\ZpzQExcelCollector.cs" />
+    <Compile Include="Excel\Creator\Base\Excel140nCreator.cs" />
+    <Compile Include="Excel\Creator\Base\ExcelEffectivenessCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelOpedUnplQCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelT5NewbornCreator.cs" />
     <Compile Include="Excel\Creator\Base\ExcelDoffCreator.cs" />

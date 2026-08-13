@@ -91,6 +91,10 @@ namespace KmsReportClient.DgvHeaderGenerator
             {
                 objDataGrid.ColumnHeadersHeight = 150; // или 100 — подберите визуально
             }
+            if (objDataGrid.Parent.Name == "PageEffectiveness")
+            {
+                objDataGrid.ColumnHeadersHeight = 90; // подберите значение: 70-100
+            }
             //else if (objDataGrid.Parent.Name == "PageQuantity")
             //{
             //    objDataGrid.ColumnHeadersHeight = 163;

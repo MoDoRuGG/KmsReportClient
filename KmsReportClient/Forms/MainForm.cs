@@ -175,6 +175,7 @@ namespace KmsReportClient.Forms
                 PageT7OldPolis.Parent = null;
                 PageT7OldPolis.Parent = null;
                 PageDispRepHeal.Parent = null;
+                PagePVPLoad.Parent = null;
             }
             finally
             {
@@ -1467,7 +1468,6 @@ namespace KmsReportClient.Forms
             {
                 _currentReport = reportId;
 
-                // Безопасное получение процессора для .NET Framework
                 if (_processorMap.TryGetValue(reportId, out IReportProcessor processor))
                 {
                     _processor = processor;
@@ -1479,7 +1479,6 @@ namespace KmsReportClient.Forms
                 else
                 {
                     _processor = null;
-                    // Опционально: очистка UI
                 }
             }
             else
@@ -1487,6 +1486,22 @@ namespace KmsReportClient.Forms
                 _currentReport = string.Empty;
                 _processor = null;
             }
+        }
+
+        private void ResizeDgvPVPLoadToContent()
+        {
+            int h = DgvPVPLoad.ColumnHeadersHeight + 2;
+            foreach (DataGridViewRow r in DgvPVPLoad.Rows) h += r.Height;
+
+            int w = DgvPVPLoad.RowHeadersWidth + 2;
+            foreach (DataGridViewColumn c in DgvPVPLoad.Columns) w += c.Width;
+
+            DgvPVPLoad.Size = new System.Drawing.Size(w, h);
+        }
+
+        private void DgvPVPLoad_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            BeginInvoke((MethodInvoker)ResizeDgvPVPLoadToContent);
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
@@ -2185,6 +2200,7 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
                     TbControl.TabPages.Remove(PageViolMEE);
                     TbControl.TabPages.Remove(PageViolEKMP);
                     TbControl.TabPages.Remove(PageVerifyPlan);
+                    TbControl.TabPages.Remove(PagePVPLoad);
                     break;
             }
         }
@@ -2819,6 +2835,7 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         private void dgvPVPLoad_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             (_processor as ReportPVPLoadProcessor).SetFormula();
+            ResizeDgvPVPLoadToContent();
 
         }
 

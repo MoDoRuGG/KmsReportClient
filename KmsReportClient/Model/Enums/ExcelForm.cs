@@ -173,7 +173,7 @@ namespace KmsReportClient.Model.Enums
         consProposal,
         [Description(GlobalConst.TempFolder + "cadre.xlsx")]
         cadre,
-        [Description(GlobalConst.TempFolder + "expertEffectiveness.xlsx")]
+        [Description(GlobalConst.TempFolder + "effectiveness.xlsx")]
         effectiveness,
         [Description(GlobalConst.TempFolder + "Quantity.xlsx")]
         Quantity,
@@ -227,5 +227,7 @@ namespace KmsReportClient.Model.Enums
         T5Newborn,
         [Description(GlobalConst.TempFolder + "dispRepHealth.xlsx")]
         dispRepHealth,
+        [Description(GlobalConst.TempFolder + "140n.xlsx")]
+        Rep140n,
     }
 }

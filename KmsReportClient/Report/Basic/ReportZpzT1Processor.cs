@@ -173,14 +173,91 @@ namespace KmsReportClient.Report.Basic
                 }
             }
             return message;
-            
+
         }
 
         public override void ToExcel(string filename, string filialName)
         {
             var mm = YymmUtils.GetMonth(Report.Yymm.Substring(2, 2)) + " 20" + Report.Yymm.Substring(0, 2);
+
+            // Собираем агрегированный отчет по всем 4 таблицам
+            var fullReport = CollectFullZpzReport(ReportType.ZpzT1);
+
             var excel = new ExcelZpz2025Creator(filename, ExcelForm.Zpz2025, mm, filialName);
-            excel.CreateReport(Report, null);
+            excel.CreateReport(fullReport, null);
+        }
+
+        private ReportZpz2025 CollectFullZpzReport(ReportType currentReportType)
+        {
+            var fullReport = new ReportZpz2025
+            {
+                Yymm = Report.Yymm,
+                IdType = Report.IdType,
+                DataSource = Report.DataSource,
+                Status = Report.Status
+            };
+
+            var dataList = new List<ReportZpz2025Dto>();
+            var existingThemes = new HashSet<string>();
+
+            // 1. Берем данные из текущего отчета (чтобы учесть несохраненные изменения пользователя в UI)
+            if (Report.ReportDataList != null)
+            {
+                foreach (var dto in Report.ReportDataList)
+                {
+                    if (dto != null && !string.IsNullOrEmpty(dto.Theme))
+                    {
+                        dataList.Add(dto);
+                        existingThemes.Add(dto.Theme);
+                    }
+                }
+            }
+
+            // 2. Запрашиваем данные по остальным таблицам с сервера
+            var allReportTypes = new[]
+            {
+        ReportType.ZpzT1,
+        ReportType.ZpzT2,
+        ReportType.ZpzT3,
+        ReportType.ZpzT4
+    };
+
+            foreach (var type in allReportTypes.Where(t => !t.Equals(currentReportType)))
+            {
+                var request = new GetReportRequest
+                {
+                    Body = new GetReportRequestBody
+                    {
+                        filialCode = FilialCode,
+                        yymm = Report.Yymm,
+                        reportType = type
+                    }
+                };
+
+                try
+                {
+                    var response = Client.GetReport(request)?.Body?.GetReportResult as ReportZpz2025;
+                    if (response?.ReportDataList != null)
+                    {
+                        foreach (var dto in response.ReportDataList)
+                        {
+                            // Добавляем только те таблицы, которых еще нет в текущем отчете
+                            if (dto != null && !string.IsNullOrEmpty(dto.Theme) && !existingThemes.Contains(dto.Theme))
+                            {
+                                dataList.Add(dto);
+                                existingThemes.Add(dto.Theme);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log.Warn(ex, $"Не удалось получить данные для отчета {type} при выгрузке в Excel.");
+                }
+            }
+
+            fullReport.ReportDataList = dataList.ToArray();
+            return fullReport;
         }
 
         public override void SaveToDb()
@@ -247,21 +324,65 @@ namespace KmsReportClient.Report.Basic
         {
             var array = new ArrayOfString();
             array.AddRange(filialList);
-            var request = new CollectSummaryReportRequest
+
+            var fullReport = new ReportZpz2025
             {
-                Body = new CollectSummaryReportRequestBody
-                {
-                    filials = array,
-                    status = status,
-                    yymmStart = yymmStart,
-                    yymmEnd = yymmEnd,
-                    reportType = ReportType.ZpzT1
-                }
+                IdType = IdReportType,
+                Yymm = yymmEnd,
+                ReportDataList = Array.Empty<ReportZpz2025Dto>()
             };
-            var response = Client.CollectSummaryReport(request);
-            Report = response.Body.CollectSummaryReportResult as ReportZpz2025;
-            Report.IdType = IdReportType;
-            Report.Yymm = yymmEnd;
+
+            var dataList = new List<ReportZpz2025Dto>();
+            var existingThemes = new HashSet<string>();
+
+            // Проходим по всем типам отчетов: T1, T2, T3, T4
+            var allReportTypes = new[]
+            {
+                ReportType.ZpzT1,
+                ReportType.ZpzT2,
+                ReportType.ZpzT3,
+                ReportType.ZpzT4
+            };
+
+            foreach (var reportType in allReportTypes)
+            {
+                var request = new CollectSummaryReportRequest
+                {
+                    Body = new CollectSummaryReportRequestBody
+                    {
+                        filials = array,
+                        status = status,
+                        yymmStart = yymmStart,
+                        yymmEnd = yymmEnd,
+                        reportType = reportType
+                    }
+                };
+
+                try
+                {
+                    var response = Client.CollectSummaryReport(request);
+                    var summaryReport = response?.Body?.CollectSummaryReportResult as ReportZpz2025;
+
+                    if (summaryReport?.ReportDataList != null)
+                    {
+                        foreach (var dto in summaryReport.ReportDataList)
+                        {
+                            if (dto != null && !string.IsNullOrEmpty(dto.Theme) && !existingThemes.Contains(dto.Theme))
+                            {
+                                dataList.Add(dto);
+                                existingThemes.Add(dto.Theme);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log.Warn(ex, $"Не удалось получить агрегированные данные для отчета {reportType} при использовании фильтра.");
+                }
+            }
+
+            fullReport.ReportDataList = dataList.ToArray();
+            Report = fullReport;
         }
 
         protected override void CreateDgvForForm(string form, List<TemplateRow> table)

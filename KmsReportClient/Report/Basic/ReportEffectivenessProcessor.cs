@@ -20,6 +20,7 @@ namespace KmsReportClient.Report.Basic
     public class ReportEffectivenessProcessor : AbstractReportProcessor<ReportEffectiveness>
     {
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
+        private StackedHeaderDecorator _headerDecorator;
 
         private readonly string[][] _headers =  // заголовки для стоблцов с данными
         {
@@ -68,6 +69,7 @@ namespace KmsReportClient.Report.Basic
         )
         {
             InitReport();
+            _headerDecorator = new StackedHeaderDecorator(Dgv);
         }
 
         public override void InitReport()
@@ -204,9 +206,15 @@ namespace KmsReportClient.Report.Basic
 
         public override void ToExcel(string filename, string filialName)
         {
-
-            //var excel = new ExcelCreator(filename, ExcelForm.effectiveness, Report.Yymm, filialName, Client, FilialCode);
-            //excel.CreateReport(Report, null);
+            var excel = new ExcelEffectivenessCreator(
+                filename,
+                ExcelForm.effectiveness,
+                Report.Yymm,
+                filialName,
+                Client,
+                FilialCode,
+                Cmb.Text);
+            excel.CreateReport(Report, null);
         }
 
         public override void SaveToDb()

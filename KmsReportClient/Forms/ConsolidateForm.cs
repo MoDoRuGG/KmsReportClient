@@ -2066,8 +2066,30 @@ namespace KmsReportClient.Forms
 
             data = data.OrderBy(x => x.Filial).ToArray();
 
+            // Вычисление периода
+            string year = "20" + yymm.Substring(0, 2);
+            string period = "";
+            switch (yymm.Substring(2))
+            {
+                case "03":
+                    period = $"1 квартал {year} года";
+                    break;
+                case "06":
+                    period = $"1 полугодие {year} года";
+                    break;
+                case "09":
+                    period = $"9 месяцев {year} года";
+                    break;
+                case "12":
+                    period = $"{year} год";
+                    break;
+                default:
+                    period = $"{year} год";
+                    break;
+            }
+
             string filename = saveFileDialog1.FileName;
-            var excel = new ExcelConsolidate140nCreator(filename, "", _filialName);
+            var excel = new ExcelConsolidate140nCreator(filename, "", _filialName, period);
             excel.CreateReport(data, null);
 
             GlobalUtils.OpenFileOrDirectory(filename);
