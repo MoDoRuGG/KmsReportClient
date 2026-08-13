@@ -64,5 +64,6 @@
         T5Newborn,
         T6Students,
         T7OldPolis,
+        Cons140n,
     }
 }

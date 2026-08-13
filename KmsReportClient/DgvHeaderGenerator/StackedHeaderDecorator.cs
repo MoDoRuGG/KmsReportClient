@@ -69,8 +69,15 @@ namespace KmsReportClient.DgvHeaderGenerator
         {
             iNoOfLevels = NoOfLevels(objHeaderTree);
             objGraphics = e.Graphics;
-            objDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-
+            objDataGrid.AutoResizeColumnHeadersHeight();
+            // 🔹 Кастомная подстройка для Page140n:
+            if (objDataGrid.Parent?.Name == "Page140n")
+            {
+                // Минимальная высота: 3 строки × ~22 px + отступы = ~70–90 px
+                int minHeight = 200; // подберите: 75/80/85/90 — визуально проверьте
+                if (objDataGrid.ColumnHeadersHeight < minHeight)
+                    objDataGrid.ColumnHeadersHeight = minHeight;
+            }
             if (objDataGrid.Parent.Name == "PageCadre")
             {
                 objDataGrid.ColumnHeadersHeight = 210;
@@ -83,6 +90,10 @@ namespace KmsReportClient.DgvHeaderGenerator
             if (objDataGrid.Parent.Name == "PageT5Newborn")
             {
                 objDataGrid.ColumnHeadersHeight = 150; // или 100 — подберите визуально
+            }
+            if (objDataGrid.Parent.Name == "PageEffectiveness")
+            {
+                objDataGrid.ColumnHeadersHeight = 90; // подберите значение: 70-100
             }
             //else if (objDataGrid.Parent.Name == "PageQuantity")
             //{
@@ -153,12 +164,12 @@ namespace KmsReportClient.DgvHeaderGenerator
             {
                 try
                 {
-                    // Передаём ОБЩУЮ высоту для корректного расчёта остатка в листовых узлах
                     child.Measure(
                         objDataGrid,
                         TOP_PADDING,
                         baseLevelHeight,
                         objDataGrid.ColumnHeadersHeight
+                        //level: 0
                     );
 
                     // Префиксный обход гарантирует: верхние уровни рисуются ПЕРВЫМИ (под дочерними)

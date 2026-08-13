@@ -5,6 +5,9 @@ namespace KmsReportClient.Model.Enums
 {
     public enum ExcelForm
     {
+        [Description(GlobalConst.TempFolder + "Cons140n.xlsx")]
+        R140n,
+
         [Description(GlobalConst.TempFolder + "f262.xlsx")]
         F262,
 
@@ -128,7 +131,7 @@ namespace KmsReportClient.Model.Enums
         letal,
         [Description(GlobalConst.TempFolder + "consOped.xlsx")]
         consOped,
-        [Description(GlobalConst.TempFolder + "consOpedU.xlsx")]
+        [Description(GlobalConst.TempFolder + "consOpedUnplanned.xlsx")]
         consOpedU,
         [Description(GlobalConst.TempFolder + "IR.xlsx")]
         IR,
@@ -148,6 +151,8 @@ namespace KmsReportClient.Model.Enums
         consVCR_filial,
         [Description(GlobalConst.TempFolder + "consOpedQ.xlsx")]
         consOpedQ,
+        [Description(GlobalConst.TempFolder + "consOpedUnplQ.xlsx")]
+        consOpedUnplQ,
         [Description(GlobalConst.TempFolder + "proposal.xlsx")]
         proposal,
         [Description(GlobalConst.TempFolder + "opedFinance.xlsx")]
@@ -168,7 +173,7 @@ namespace KmsReportClient.Model.Enums
         consProposal,
         [Description(GlobalConst.TempFolder + "cadre.xlsx")]
         cadre,
-        [Description(GlobalConst.TempFolder + "expertEffectiveness.xlsx")]
+        [Description(GlobalConst.TempFolder + "effectiveness.xlsx")]
         effectiveness,
         [Description(GlobalConst.TempFolder + "Quantity.xlsx")]
         Quantity,
@@ -218,5 +223,11 @@ namespace KmsReportClient.Model.Enums
         consT6Students,
         [Description(GlobalConst.TempFolder + "consT7OldPolis.xlsx")]
         consT7OldPolis,
+        [Description(GlobalConst.TempFolder + "T5Newborn.xlsx")]
+        T5Newborn,
+        [Description(GlobalConst.TempFolder + "dispRepHealth.xlsx")]
+        dispRepHealth,
+        [Description(GlobalConst.TempFolder + "140n.xlsx")]
+        Rep140n,
     }
 }

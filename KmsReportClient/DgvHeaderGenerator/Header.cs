@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -68,6 +69,60 @@ namespace KmsReportClient.DgvHeaderGenerator
                 Height = 0;
             }
         }
+
+        //public void Measure(DataGridView objGrid, int startY, int levelHeight, int totalHeaderHeight, int level = 0)
+        //{
+        //    Width = 0;
+        //    Y = startY;
+
+        //    // 🔹 Кастомная высота: для level == 1 (второй уровень — описание) — увеличиваем
+        //    int actualLevelHeight = levelHeight;
+        //    if (level == 1 && objGrid.Parent?.Name == "Page140n")
+        //    {
+        //        actualLevelHeight = levelHeight * 3; // или 2, 2.5 — подберите
+        //    }
+
+        //    if (Children.Count > 0)
+        //    {
+        //        int childrenStartY = string.IsNullOrWhiteSpace(Name) ? startY : startY + actualLevelHeight;
+
+        //        foreach (Header child in Children)
+        //        {
+        //            child.Measure(objGrid, childrenStartY, levelHeight, totalHeaderHeight, level + 1);
+        //            Width += child.Width;
+
+        //            if (ColumnId == -1 && child.ColumnId != -1 && child.Width > 0)
+        //                ColumnId = child.ColumnId;
+        //        }
+
+        //        Height = string.IsNullOrWhiteSpace(Name) ? (totalHeaderHeight - startY) : actualLevelHeight;
+        //    }
+        //    else if (ColumnId >= 0 && ColumnId < objGrid.Columns.Count && objGrid.Columns[ColumnId].Visible)
+        //    {
+        //        Width = objGrid.Columns[ColumnId].Width;
+
+        //        // Измеряем высоту текста с переносом
+        //        using (var g = objGrid.CreateGraphics())
+        //        {
+        //            var font = objGrid.ColumnHeadersDefaultCellStyle.Font;
+        //            var sf = new StringFormat
+        //            {
+        //                Alignment = StringAlignment.Center,
+        //                LineAlignment = StringAlignment.Near,
+        //                Trimming = StringTrimming.Word,
+        //                FormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip
+        //            };
+
+        //            SizeF size = g.MeasureString(Name, font, Width, sf);
+        //            Height = Math.Min((int)Math.Ceiling(size.Height), totalHeaderHeight - startY);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        Width = 0;
+        //        Height = 0;
+        //    }
+        //}
 
         public void AcceptRenderer(StackedHeaderDecorator renderer)
         {

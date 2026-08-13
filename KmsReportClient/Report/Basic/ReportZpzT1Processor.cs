@@ -119,14 +119,145 @@ namespace KmsReportClient.Report.Basic
         public override string ValidReport()
         {
             string message = "";
+            if (FilialCode != "RU-PER")
+            {
+                // Получаем данные для "Таблица 1"
+                var table1Data = Report.ReportDataList?.FirstOrDefault(x => x.Theme == "Таблица 1")?.Data;
+                if (table1Data == null || table1Data.Length == 0)
+                {
+                    return message;
+                }
+
+                // Родительская строка 3.1.6
+                var parentRow = table1Data.FirstOrDefault(x => x.Code == "3.1.6");
+                if (parentRow == null)
+                {
+                    return message;
+                }
+
+                // Дочерние строки: 3.1.6.1 – 3.1.6.13
+                // Фильтруем по префиксу "3.1.6." и проверяем, что код имеет формат "3.1.6.X"
+                var childRows = table1Data.Where(x =>
+                    x.Code.StartsWith("3.1.6.") &&
+                    x.Code.Length > 6 &&
+                    x.Code.Split('.').Length == 4).ToArray();
+
+                // Суммируем значения по каждому столбцу
+                // Примечание: свойства имеют тип decimal (не nullable), поэтому ?? не нужен
+                var sumCountSmo = childRows.Sum(x => x.CountSmo);
+                var sumCountSmoAnother = childRows.Sum(x => x.CountSmoAnother);
+                var sumCountAssignment = childRows.Sum(x => x.CountAssignment);
+
+                // Сравниваем с родительской строкой (с допуском для decimal)
+                const decimal epsilon = 0.01m;
+
+                if (Math.Abs(parentRow.CountSmo - sumCountSmo) > epsilon)
+                {
+                    message += $"гр.4 (Устные): значение стр.3.1.6 ({parentRow.CountSmo}) не равно сумме строк 3.1.6.1–3.1.6.13 ({sumCountSmo})\r\n";
+                }
+
+                if (Math.Abs(parentRow.CountSmoAnother - sumCountSmoAnother) > epsilon)
+                {
+                    message += $"гр.5 (Письменные): значение стр.3.1.6 ({parentRow.CountSmoAnother}) не равно сумме строк 3.1.6.1–3.1.6.13 ({sumCountSmoAnother})\r\n";
+                }
+
+                if (Math.Abs(parentRow.CountAssignment - sumCountAssignment) > epsilon)
+                {
+                    message += $"гр.6 (По поручениям): значение стр.3.1.6 ({parentRow.CountAssignment}) не равно сумме строк 3.1.6.1–3.1.6.13 ({sumCountAssignment})\r\n";
+                }
+
+                // Формируем итоговое сообщение
+                if (!string.IsNullOrEmpty(message))
+                {
+                    message = "Таблица 1. \r\n" + message;
+                }
+            }
             return message;
+
         }
 
         public override void ToExcel(string filename, string filialName)
         {
             var mm = YymmUtils.GetMonth(Report.Yymm.Substring(2, 2)) + " 20" + Report.Yymm.Substring(0, 2);
+
+            // Собираем агрегированный отчет по всем 4 таблицам
+            var fullReport = CollectFullZpzReport(ReportType.ZpzT1);
+
             var excel = new ExcelZpz2025Creator(filename, ExcelForm.Zpz2025, mm, filialName);
-            excel.CreateReport(Report, null);
+            excel.CreateReport(fullReport, null);
+        }
+
+        private ReportZpz2025 CollectFullZpzReport(ReportType currentReportType)
+        {
+            var fullReport = new ReportZpz2025
+            {
+                Yymm = Report.Yymm,
+                IdType = Report.IdType,
+                DataSource = Report.DataSource,
+                Status = Report.Status
+            };
+
+            var dataList = new List<ReportZpz2025Dto>();
+            var existingThemes = new HashSet<string>();
+
+            // 1. Берем данные из текущего отчета (чтобы учесть несохраненные изменения пользователя в UI)
+            if (Report.ReportDataList != null)
+            {
+                foreach (var dto in Report.ReportDataList)
+                {
+                    if (dto != null && !string.IsNullOrEmpty(dto.Theme))
+                    {
+                        dataList.Add(dto);
+                        existingThemes.Add(dto.Theme);
+                    }
+                }
+            }
+
+            // 2. Запрашиваем данные по остальным таблицам с сервера
+            var allReportTypes = new[]
+            {
+        ReportType.ZpzT1,
+        ReportType.ZpzT2,
+        ReportType.ZpzT3,
+        ReportType.ZpzT4
+    };
+
+            foreach (var type in allReportTypes.Where(t => !t.Equals(currentReportType)))
+            {
+                var request = new GetReportRequest
+                {
+                    Body = new GetReportRequestBody
+                    {
+                        filialCode = FilialCode,
+                        yymm = Report.Yymm,
+                        reportType = type
+                    }
+                };
+
+                try
+                {
+                    var response = Client.GetReport(request)?.Body?.GetReportResult as ReportZpz2025;
+                    if (response?.ReportDataList != null)
+                    {
+                        foreach (var dto in response.ReportDataList)
+                        {
+                            // Добавляем только те таблицы, которых еще нет в текущем отчете
+                            if (dto != null && !string.IsNullOrEmpty(dto.Theme) && !existingThemes.Contains(dto.Theme))
+                            {
+                                dataList.Add(dto);
+                                existingThemes.Add(dto.Theme);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log.Warn(ex, $"Не удалось получить данные для отчета {type} при выгрузке в Excel.");
+                }
+            }
+
+            fullReport.ReportDataList = dataList.ToArray();
+            return fullReport;
         }
 
         public override void SaveToDb()
@@ -193,21 +324,65 @@ namespace KmsReportClient.Report.Basic
         {
             var array = new ArrayOfString();
             array.AddRange(filialList);
-            var request = new CollectSummaryReportRequest
+
+            var fullReport = new ReportZpz2025
             {
-                Body = new CollectSummaryReportRequestBody
-                {
-                    filials = array,
-                    status = status,
-                    yymmStart = yymmStart,
-                    yymmEnd = yymmEnd,
-                    reportType = ReportType.ZpzT1
-                }
+                IdType = IdReportType,
+                Yymm = yymmEnd,
+                ReportDataList = Array.Empty<ReportZpz2025Dto>()
             };
-            var response = Client.CollectSummaryReport(request);
-            Report = response.Body.CollectSummaryReportResult as ReportZpz2025;
-            Report.IdType = IdReportType;
-            Report.Yymm = yymmEnd;
+
+            var dataList = new List<ReportZpz2025Dto>();
+            var existingThemes = new HashSet<string>();
+
+            // Проходим по всем типам отчетов: T1, T2, T3, T4
+            var allReportTypes = new[]
+            {
+                ReportType.ZpzT1,
+                ReportType.ZpzT2,
+                ReportType.ZpzT3,
+                ReportType.ZpzT4
+            };
+
+            foreach (var reportType in allReportTypes)
+            {
+                var request = new CollectSummaryReportRequest
+                {
+                    Body = new CollectSummaryReportRequestBody
+                    {
+                        filials = array,
+                        status = status,
+                        yymmStart = yymmStart,
+                        yymmEnd = yymmEnd,
+                        reportType = reportType
+                    }
+                };
+
+                try
+                {
+                    var response = Client.CollectSummaryReport(request);
+                    var summaryReport = response?.Body?.CollectSummaryReportResult as ReportZpz2025;
+
+                    if (summaryReport?.ReportDataList != null)
+                    {
+                        foreach (var dto in summaryReport.ReportDataList)
+                        {
+                            if (dto != null && !string.IsNullOrEmpty(dto.Theme) && !existingThemes.Contains(dto.Theme))
+                            {
+                                dataList.Add(dto);
+                                existingThemes.Add(dto.Theme);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log.Warn(ex, $"Не удалось получить агрегированные данные для отчета {reportType} при использовании фильтра.");
+                }
+            }
+
+            fullReport.ReportDataList = dataList.ToArray();
+            Report = fullReport;
         }
 
         protected override void CreateDgvForForm(string form, List<TemplateRow> table)
@@ -299,7 +474,7 @@ namespace KmsReportClient.Report.Basic
                 }
 
             };
-            
+
             dgvReport.Columns.Add(column);
             column = new DataGridViewTextBoxColumn
             {
@@ -315,7 +490,7 @@ namespace KmsReportClient.Report.Basic
                 }
             };
             dgvReport.Columns.Add(column);
-            
+
         }
 
         private void FillThemesForms3(DataGridView dgvReport, string form)
@@ -341,7 +516,7 @@ namespace KmsReportClient.Report.Basic
 
         private void FillDgvForms1(DataGridView dgvReport, string form)
         {
-            var reportZpz2025Dto = Report.ReportDataList?.Single(x => x.Theme == form);
+            var reportZpz2025Dto = Report.ReportDataList?.SingleOrDefault(x => x.Theme == form);
             if (reportZpz2025Dto?.Data == null || reportZpz2025Dto.Data.Length == 0)
             {
                 return;

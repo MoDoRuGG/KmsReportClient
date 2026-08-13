@@ -27,7 +27,7 @@ namespace KmsReportClient.Report.Basic
             "Застраховано новорожденных\n(нарастающим итогом отчетного года),\nчел.",
             "Всего реестров счетов\nот МО по родам\n(нарастающим итогом отчетного года),\nчел.",
             "Доля застрахованных\nот реестров счетов",
-            "Отклонение от реестров\nтекущего месяца, чел.",
+            "Отклонение от реестров\n в текущем месяце, чел.",
         };
 
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
@@ -146,8 +146,8 @@ namespace KmsReportClient.Report.Basic
 
         public override void ToExcel(string filename, string filialName)
         {
-            //var excel = new ExcelT5NewbornCreator(filename, ExcelForm.T5Newborn, Report.Yymm, filialName, Client, FilialCode);
-            //excel.CreateReport(Report, null);
+            var excel = new ExcelT5NewbornCreator(filename, ExcelForm.T5Newborn, Report.Yymm, filialName, Client, FilialCode);
+            excel.CreateReport(Report, null);
         }
 
         public override string ValidReport() { return ""; }

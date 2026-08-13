@@ -48,5 +48,7 @@
         public const string ReportViolEKMP = "ViolEKMP";
         public const string ReportVerifyPlan = "VerifyPlan";
         public const string ReportMonthlyVol = "MonthlyVol";
+        public const string Report140n = "R140n";
+        public const string ReportDispRepHealth = "dRepHeal";
     }
 }

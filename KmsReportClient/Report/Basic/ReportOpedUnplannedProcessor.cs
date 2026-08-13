@@ -15,7 +15,7 @@ using NLog;
 
 namespace KmsReportClient.Report.Basic
 {
-    public class ReportOpedUnplannedProcessor : AbstractReportProcessor<ReportOpedU>
+    public class ReportOpedUnplannedProcessor : AbstractReportProcessor<ReportOpedUnplanned>
     {
         #region Приватные переменные и объекты
         int[] _notSaveRow = { 0, 4, 8, 12 };
@@ -29,7 +29,6 @@ namespace KmsReportClient.Report.Basic
             "Дневной стационар\r\n\r\n",
             "Вне мед. организации\r\n\r\n",
             "Примечания\r\n",
-            //"Примечания (количество экспертиз, не проведенных по уважительным причинам - причины указать)\r\n"
             };
         #endregion
 
@@ -58,7 +57,7 @@ namespace KmsReportClient.Report.Basic
                 }
             };
             var response = Client.GetReport(request)?.Body?.GetReportResult;
-            return response == null ? null : response as ReportOpedU;
+            return response == null ? null : response as ReportOpedUnplanned;
         }
 
         public override void FillDataGridView(string form)
@@ -73,13 +72,8 @@ namespace KmsReportClient.Report.Basic
                 foreach (DataGridViewRow row in Dgv.Rows)
                 {
                     var rowNum = row.Cells[0].Value.ToString();
-                    //Console.WriteLine(rowNum);
 
                     var data = Report.ReportDataList.SingleOrDefault(x => x.RowNum.ToString() == rowNum);
-                    //if (form == "Свод")
-                    //{
-                    //    data = firstValueYear.SingleOrDefault(x => x.RowNum.ToString() == rowNum);
-                    //}
 
                     if (data != null)
                     {
@@ -87,17 +81,7 @@ namespace KmsReportClient.Report.Basic
                         row.Cells[3].Value = (int)data.Ks;
                         row.Cells[4].Value = (int)data.Ds;
                         row.Cells[5].Value = (int)data.Smp;
-                        //row.Cells[6].Value = (int)data.AppOnco;
-                        //row.Cells[7].Value = (int)data.KsOnco;
-                        //row.Cells[8].Value = (int)data.DsOnco;
-                        //row.Cells[9].Value = (int)data.SmpOnco;
-                        //row.Cells[10].Value = (int)data.AppLeth;
-                        //row.Cells[11].Value = (int)data.KsLeth;
-                        //row.Cells[12].Value = (int)data.DsLeth;
-                        //row.Cells[13].Value = (int)data.SmpLeth;
                         row.Cells[6].Value = data.Notes;
-                        //row.Cells[7].Value = data.NotesGoodReason;
-
                     }
                 }
 
@@ -114,10 +98,22 @@ namespace KmsReportClient.Report.Basic
                 {
                     try
                     {
-                        Dgv.Rows[row].Cells[i].Value = Math.Round(GlobalUtils.TryParseDecimal(Dgv.Rows[row - 1].Cells[i].Value) / GlobalUtils.TryParseDecimal(Dgv.Rows[row - 2].Cells[i].Value) * 100, 2);
-
+                        var numerator = GlobalUtils.TryParseDecimal(Dgv.Rows[row - 1].Cells[i].Value);
+                        var denominator = GlobalUtils.TryParseDecimal(Dgv.Rows[row - 2].Cells[i].Value);
+                        
+                        if (denominator != 0)
+                        {
+                            Dgv.Rows[row].Cells[i].Value = Math.Round(numerator / denominator * 100, 2);
+                        }
+                        else
+                        {
+                            Dgv.Rows[row].Cells[i].Value = null;
+                        }
                     }
-                    catch (Exception) { }
+                    catch (Exception ex)
+                    {
+                        Log.Warn(ex, $"Ошибка расчета в строке {row}, колонка {i}");
+                    }
                 }
             }
         }
@@ -131,7 +127,7 @@ namespace KmsReportClient.Report.Basic
         { }
         public override void InitReport()
         {
-            Report = new ReportOpedU { ReportDataList = new ReportOpedUDto[] { }, IdType = IdReportType };
+            Report = new ReportOpedUnplanned { ReportDataList = new ReportOpedUnplannedDto[] { }, IdType = IdReportType };
         }
 
         public override bool IsVisibleBtnDownloadExcel() => false;
@@ -158,7 +154,7 @@ namespace KmsReportClient.Report.Basic
                     reportType = ReportType.OpedUnpl
                 }
             };
-            var response = Client.SaveReport(request).Body.SaveReportResult as ReportOpedU;
+            var response = Client.SaveReport(request).Body.SaveReportResult as ReportOpedUnplanned;
             Report.IdFlow = response.IdFlow;
             Report.Status = response.Status;
         }
@@ -189,23 +185,6 @@ namespace KmsReportClient.Report.Basic
                 int rowIndex = Dgv.Rows.Add(dgvRow);
             };
 
-
-
-
-            //Dgv.Rows[5].ReadOnly = true;
-            //Dgv.Rows[6].ReadOnly = true;
-            //Dgv.Rows[7].ReadOnly = true;
-            //Dgv.Rows[8].ReadOnly = true;
-
-            //Dgv.Rows[5].Cells[6].ReadOnly = false;
-            //Dgv.Rows[6].Cells[6].ReadOnly = false;
-            //Dgv.Rows[7].Cells[6].ReadOnly = false;
-            //Dgv.Rows[8].Cells[6].ReadOnly = false;
-
-            //SetStaticValue();
-            //SetStyleDgv();
-
-
             foreach (int row in _notSaveRow)
             {
                 Dgv.Rows[row].DefaultCellStyle.BackColor = Color.LightGray;
@@ -221,36 +200,25 @@ namespace KmsReportClient.Report.Basic
 
         protected override void FillReport(string form)
         {
-            int[] _notSaveRow = { 0, 4, 8 };
-
             if (form == null || form == "Свод")
             {
                 return;
             }
 
-            var reportDto = new List<ReportOpedUDto>();
+            var reportDto = new List<ReportOpedUnplannedDto>();
 
             foreach (DataGridViewRow row in Dgv.Rows)
             {
                 if (!_notSaveRow.Contains(row.Index) && !_calcRows.Contains(row.Index))
                 {
-                    var data = new ReportOpedUDto
+                    var data = new ReportOpedUnplannedDto
                     {
                         RowNum = row.Cells[0].Value.ToString(),
                         App = GlobalUtils.TryParseInt(row.Cells[2].Value),
                         Ks = GlobalUtils.TryParseInt(row.Cells[3].Value),
                         Ds = GlobalUtils.TryParseInt(row.Cells[4].Value),
                         Smp = GlobalUtils.TryParseInt(row.Cells[5].Value),
-                        //AppOnco = GlobalUtils.TryParseInt(row.Cells[6].Value),
-                        //KsOnco = GlobalUtils.TryParseInt(row.Cells[7].Value),
-                        //DsOnco = GlobalUtils.TryParseInt(row.Cells[8].Value),
-                        //SmpOnco = GlobalUtils.TryParseInt(row.Cells[9].Value),
-                        //AppLeth = GlobalUtils.TryParseInt(row.Cells[10].Value),
-                        //KsLeth = GlobalUtils.TryParseInt(row.Cells[11].Value),
-                        //DsLeth = GlobalUtils.TryParseInt(row.Cells[12].Value),
-                        //SmpLeth = GlobalUtils.TryParseInt(row.Cells[13].Value),
                         Notes = row.Cells[6].Value?.ToString() ?? "",
-                        //NotesGoodReason = row.Cells[7].Value?.ToString() ?? "",
                     };
 
 

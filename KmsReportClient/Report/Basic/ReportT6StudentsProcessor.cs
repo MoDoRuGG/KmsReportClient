@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using KmsReportClient.DgvHeaderGenerator;
 using KmsReportClient.Excel.Creator.Base;
 using KmsReportClient.External;
+using KmsReportClient.Forms.Constructor;
 using KmsReportClient.Global;
 using KmsReportClient.Model.Enums;
 using KmsReportClient.Model.XML;
@@ -152,6 +153,7 @@ namespace KmsReportClient.Report.Basic
             Dgv.AllowUserToAddRows = false;
             Dgv.ColumnHeadersVisible = true;
 
+
             Dgv.Columns.Clear();
             Dgv.Rows.Clear();
 
@@ -171,12 +173,26 @@ namespace KmsReportClient.Report.Basic
                     DefaultCellStyle = new DataGridViewCellStyle { BackColor = Color.Azure }
                 };
 
+                if (clmn == columns.Last())
+                {
+                    column.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                    column.Width = 650; // Подберите нужную ширину
+                }
+
                 Dgv.Columns.Add(column);
             }
 
+            Dgv.RowTemplate.Height = 60;  // Увеличенная высота строки
+            Dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells; // Но с автоподбором при переполнении
+
             Dgv.Rows.Add();
-            Dgv.AutoSize = true;
-            Dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            // Dgv.AutoSize = true;  ← удалить
+
+            // Вместо этого:
+            Dgv.AutoSize = false;  // Позволяет работать скроллбарам
+            Dgv.ScrollBars = ScrollBars.Both;  // Явно включите прокрутку
+            Dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;  // Для переноса текста
 
         }
         protected override void FillReport(string form)
@@ -188,7 +204,7 @@ namespace KmsReportClient.Report.Basic
                 CountUniversity = GlobalUtils.TryParseInt(row.Cells[0].Value),
                 CountCollege = GlobalUtils.TryParseInt(row.Cells[1].Value),
                 CountInsured = GlobalUtils.TryParseInt(row.Cells[2].Value),
-                Comments = row.Cells[3].Value.ToString()
+                Comments = row.Cells[3].Value?.ToString() ?? ""
             };
         }
     }

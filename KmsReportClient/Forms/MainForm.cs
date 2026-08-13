@@ -38,7 +38,6 @@ namespace KmsReportClient.Forms
         private readonly List<KmsReportDictionary> _regions;
         private readonly List<KmsReportDictionary> _reportsDictionary;
 
-
         private static readonly HashSet<string> MultiApprovalTypes =
             new HashSet<string> { "ZpzT1", "ZpzT2", "ZpzT3" };
 
@@ -163,6 +162,7 @@ namespace KmsReportClient.Forms
                 PageZpzT2.Parent = null;
                 PageZpzT3.Parent = null;
                 PageZpzT4.Parent = null;
+                Page140n.Parent = null;
                 PageZpzQ2025.Parent = null;
                 PageZpz10_2025.Parent = null;
                 PageZpzLethal2025.Parent = null;
@@ -173,6 +173,9 @@ namespace KmsReportClient.Forms
                 PageT5Newborn.Parent = null;
                 PageT6Students.Parent = null;
                 PageT7OldPolis.Parent = null;
+                PageT7OldPolis.Parent = null;
+                PageDispRepHeal.Parent = null;
+                PagePVPLoad.Parent = null;
             }
             finally
             {
@@ -253,6 +256,8 @@ namespace KmsReportClient.Forms
                         {PageT5Newborn, ReportGlobalConst.ReportT5Newborn},
                         {PageT6Students, ReportGlobalConst.ReportT6Students},
                         {PageT7OldPolis, ReportGlobalConst.ReportT7OldPolis},
+                        {Page140n, ReportGlobalConst.Report140n},
+                        {PageDispRepHeal, ReportGlobalConst.ReportDispRepHealth},
             };
 
         private Dictionary<string, IReportProcessor> CreateProcessorMap() =>
@@ -433,6 +438,14 @@ namespace KmsReportClient.Forms
                 {
                     ReportGlobalConst.ReportT7OldPolis,
                     new ReportT7OldPolisProcessor(_client, _reportsDictionary, DgvT7OldPolis, CmbT7OldPolis, TxtbT7OldPolis, PageT7OldPolis)
+                },
+                {
+                    ReportGlobalConst.Report140n,
+                    new Report140nProcessor(_client, _reportsDictionary, Dgv140n, Cmb140n, Txtb140n, Page140n)
+                },
+                {
+                    ReportGlobalConst.ReportDispRepHealth,
+                    new ReportDispReproducktiveHealthProcessor(_client, _reportsDictionary, DgvDispRepHeal, CmbDispRepHeal, TxtbDispRepHeal, PageDispRepHeal)
                 },
             };
 
@@ -676,6 +689,7 @@ namespace KmsReportClient.Forms
             else
             {
                 _processor.InitReport();
+                _processor.ValidReport();
             }
 
             _processor.HasReport = true;
@@ -697,6 +711,7 @@ namespace KmsReportClient.Forms
                     MessageBoxOptions.ServiceNotification
                     );
             }
+            
         }
 
 
@@ -1300,13 +1315,13 @@ namespace KmsReportClient.Forms
 
         private void SubmitReport()
         {
-            if (_processor.Report.Status == ReportStatus.Refuse)
-            {
-                MessageBox.Show(
-                    "Данный отчет был возвращен на доработку. Для повторной сдачи отчета необходимо перезакачать скан",
-                    "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            //if (_processor.Report.Status == ReportStatus.Refuse)
+            //{
+            //    MessageBox.Show(
+            //        "Данный отчет был возвращен на доработку. Для повторной сдачи отчета необходимо перезакачать скан",
+            //        "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
 
             //if (_processor.Report.Status != ReportStatus.Scan)
             //{
@@ -1453,7 +1468,6 @@ namespace KmsReportClient.Forms
             {
                 _currentReport = reportId;
 
-                // Безопасное получение процессора для .NET Framework
                 if (_processorMap.TryGetValue(reportId, out IReportProcessor processor))
                 {
                     _processor = processor;
@@ -1465,7 +1479,6 @@ namespace KmsReportClient.Forms
                 else
                 {
                     _processor = null;
-                    // Опционально: очистка UI
                 }
             }
             else
@@ -1473,6 +1486,22 @@ namespace KmsReportClient.Forms
                 _currentReport = string.Empty;
                 _processor = null;
             }
+        }
+
+        private void ResizeDgvPVPLoadToContent()
+        {
+            int h = DgvPVPLoad.ColumnHeadersHeight + 2;
+            foreach (DataGridViewRow r in DgvPVPLoad.Rows) h += r.Height;
+
+            int w = DgvPVPLoad.RowHeadersWidth + 2;
+            foreach (DataGridViewColumn c in DgvPVPLoad.Columns) w += c.Width;
+
+            DgvPVPLoad.Size = new System.Drawing.Size(w, h);
+        }
+
+        private void DgvPVPLoad_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            BeginInvoke((MethodInvoker)ResizeDgvPVPLoadToContent);
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
@@ -1958,6 +1987,8 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
 
         private void ОтчетНарушенияПоОбращениямЗЛToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.ViolationsOfAppeals);
+        private void ВыполнениеПоказателейСМОToolStripMenuItem_Click(object sender, EventArgs e) =>
+            OpenConsolidateReportForm(ConsolidateReport.Cons140n);
 
         private void ОбъёмыЕжемесячныеToolStripMenuItem_Click(object sender, EventArgs e) =>
             OpenConsolidateReportForm(ConsolidateReport.FFOMSMonthlyVol);
@@ -2147,6 +2178,7 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
                     TbControl.TabPages.Remove(PageZpzQ2025);
                     TbControl.TabPages.Remove(PageQuery);
                     TbControl.TabPages.Remove(PageCadre);
+                    TbControl.TabPages.Remove(Page140n);
                     TbControl.TabPages.Remove(PageT5Newborn);
                     TbControl.TabPages.Remove(PageT6Students);
                     TbControl.TabPages.Remove(PageT7OldPolis);
@@ -2168,6 +2200,7 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
                     TbControl.TabPages.Remove(PageViolMEE);
                     TbControl.TabPages.Remove(PageViolEKMP);
                     TbControl.TabPages.Remove(PageVerifyPlan);
+                    TbControl.TabPages.Remove(PagePVPLoad);
                     break;
             }
         }
@@ -2406,6 +2439,16 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
 
         }
 
+        private void Dgv140n_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            (_processor as Report140nProcessor).SetFormula();
+        }
+
+        private void DgvDispRepHeal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            (_processor as ReportDispReproducktiveHealthProcessor).SetFormula();
+        }
+
         private void DgvReportZpz10_KeyPress(object sender, KeyPressEventArgs e)
         {
             (_processor as ReportZpz10Processor).SetFormula();
@@ -2498,6 +2541,16 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         private void DgvReportOpedUnplanned_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
             _processor.CallculateCells();
+        }
+
+        private void Dgv140n_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            (_processor as Report140nProcessor).SetFormula();
+        }
+
+        private void DgvDispRepHeal_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            (_processor as ReportDispReproducktiveHealthProcessor).SetFormula();
         }
 
 
@@ -2602,6 +2655,16 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
             ChangeIndexComboBox(DgvReportOpedUnplanned, CbxOpedUnplanned, TxtbOpedUnplanned);
         }
 
+        private void Cmb140n_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ChangeIndexComboBox(Dgv140n, Cmb140n, Txtb140n);
+        }
+
+        private void CmbDispRepHeal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ChangeIndexComboBox(DgvDispRepHeal, CmbDispRepHeal, TxtbDispRepHeal);
+        }
+
         private void CbxOtclkInfrorm_SelectedIndexChanged(object sender, EventArgs e)
         {
             ChangeIndexComboBox(DgvOtclkInfrorm, CbxOtclkInfrorm, TxtOtclkInfrorm);
@@ -2615,6 +2678,11 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         private void CmbPageT5Newborn_SelectedIndexChanged(object sender, EventArgs e)
         {
             ChangeIndexComboBox(DgvT5Newborn, CmbT5Newborn, TxtbT5Newborn);
+        }
+
+        private void DgvT5Newborn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            (_processor as ReportT5NewbornProcessor).SetFormula();
         }
 
         private void CmbPageT6Students_SelectedIndexChanged(object sender, EventArgs e)
@@ -2644,7 +2712,7 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
 
         private void DgvT5Newborn_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-
+            (_processor as ReportT5NewbornProcessor).SetFormula();
         }
 
         private void DgvReqVCR_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -2659,7 +2727,6 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
 
         private void DgvCadre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            (_processor as ReportCadreProcessor).SetFormula();
             (_processor as ReportCadreProcessor).SetFormula();
         }
 
@@ -2768,6 +2835,7 @@ ChangeIndexComboBox(DgvMonthlyVol, CmbMonthlyVol, TbMonthlyVol);
         private void dgvPVPLoad_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             (_processor as ReportPVPLoadProcessor).SetFormula();
+            ResizeDgvPVPLoadToContent();
 
         }
 

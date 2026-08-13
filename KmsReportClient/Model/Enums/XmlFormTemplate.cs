@@ -49,6 +49,8 @@ namespace KmsReportClient.Model.Enums
         [Description("TemplateTextZpzT1.xml")] ZpzT1,
         [Description("TemplateTextZpzT2.xml")] ZpzT2,
         [Description("TemplateTextZpzT3.xml")] ZpzT3,
-        [Description("TemplateTextZpzT4.xml")] ZpzT4
+        [Description("TemplateTextZpzT4.xml")] ZpzT4,
+        [Description("TemplateText140n.xml")] R140n,
+        [Description("TemplateTextDispRepHealth.xml")] DispRepHealth,
     }
 }

@@ -176,6 +176,7 @@ namespace KmsReportClient.Report.Basic
             {
                 FillDgvForms9(Dgv, form);
                 SetTotalColumn();
+                ValidateTable7AndTable9();
             }
             else if (_forms8.Contains(form))
             {
@@ -748,6 +749,20 @@ namespace KmsReportClient.Report.Basic
                                          GlobalUtils.TryParseDecimal(row.Cells[7].Value);
                 }
             }
+            
+            // Сохраняем текущие данные из DataGridView в Report для актуальности валидации
+            var currentTheme = GetCurrentTheme();
+            if (_forms67.Contains(currentTheme))
+            {
+                FillThemesForms67(Dgv, currentTheme);
+            }
+            else if (_forms9.Contains(currentTheme))
+            {
+                FillThemesForms9(Dgv, currentTheme);
+            }
+            
+            // Проверяем соответствие Таблицы 7 и Таблицы 9 при редактировании
+            ValidateTable7AndTable9();
         }
 
         private void SetStyle()
@@ -769,6 +784,75 @@ namespace KmsReportClient.Report.Basic
                     }
 
                 }
+            }
+        }
+
+        /// <summary>
+        /// Проверяет соответствие значения строки 1 колонки "Итого" Таблицы 7
+        /// значению строки 1.1.3.1 колонки "Итого" Таблицы 9.
+        /// При несоответствии подсвечивает ячейку Таблицы 9 красным цветом.
+        /// </summary>
+        public void ValidateTable7AndTable9()
+        {
+            try
+            {
+                // Получаем данные Таблицы 7 из Report (они актуальны после MapReportFromDgv/FillThemesForms67)
+                var table7Data = Report.ReportDataList?.SingleOrDefault(x => x.Theme == "Таблица 7");
+                if (table7Data?.Data == null)
+                {
+                    return;
+                }
+
+                // Получаем значение строки 1 из Таблицы 7
+                var table7Row1 = table7Data.Data.SingleOrDefault(x => x.Code == "1");
+                if (table7Row1 == null)
+                {
+                    return;
+                }
+
+                // Вычисляем "Итого" для строки 1 Таблицы 7
+                // Согласно логике SetTotalColumn:
+                // "Итого цел" = гр.4 + гр.5 + гр.6 + гр.8 (целевые экспертизы)
+                // "Итого план" = гр.11 + гр.12 + гр.13 + гр.15 (плановые экспертизы)
+                // "Итого" = "Итого цел" + "Итого план"
+                decimal table7Cel = table7Row1.CountOutOfSmo + table7Row1.CountAmbulatory + 
+                                    table7Row1.CountDs + table7Row1.CountStac;
+                decimal table7Plan = table7Row1.CountOutOfSmoAnother + table7Row1.CountAmbulatoryAnother + 
+                                     table7Row1.CountDsAnother + table7Row1.CountStacAnother;
+                decimal table7Total = table7Cel + table7Plan;
+
+                // Если сейчас отображается Таблица 9, обновляем подсветку
+                if (GetCurrentTheme() == "Таблица 9")
+                {
+                    // Находим строку 1.1.3.1 в текущей Таблице 9
+                    var table9Row1_1_3_1 = Dgv.Rows.Cast<DataGridViewRow>()
+                        .FirstOrDefault(x => x.Cells[1].Value?.ToString().Trim() == "1.1.3.1");
+
+                    if (table9Row1_1_3_1 == null)
+                    {
+                        return;
+                    }
+
+                    // Получаем значение из колонки "Итого" строки 1.1.3.1
+                    var totalCellValue = table9Row1_1_3_1.Cells["Total"].Value;
+                    decimal table9Total = GlobalUtils.TryParseDecimal(totalCellValue);
+
+                    // Сравниваем значения и подсвечиваем
+                    if (table7Total != table9Total)
+                    {
+                        // Подсвечиваем ячейку "Итого" строки 1.1.3.1 красным
+                        table9Row1_1_3_1.Cells["Total"].Style.BackColor = Color.LightCoral;
+                    }
+                    else
+                    {
+                        // Возвращаем стандартный цвет (светло-зеленый для итоговых колонок)
+                        table9Row1_1_3_1.Cells["Total"].Style.BackColor = Color.LightGreen;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Warn(ex, "Ошибка при проверке соответствия Таблицы 7 и Таблицы 9");
             }
         }
     }

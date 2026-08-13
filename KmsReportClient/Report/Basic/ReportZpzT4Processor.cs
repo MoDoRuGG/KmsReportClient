@@ -333,7 +333,7 @@ namespace KmsReportClient.Report.Basic
 
         private void FillDgvForms4(DataGridView dgvReport, string form)
         {
-            var reportZpz2025Dto = Report.ReportDataList?.Single(x => x.Theme == form);
+            var reportZpz2025Dto = Report.ReportDataList?.SingleOrDefault(x => x.Theme == form);
             if (reportZpz2025Dto?.Data == null || reportZpz2025Dto.Data.Length == 0)
             {
                 return;

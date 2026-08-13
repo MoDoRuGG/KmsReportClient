@@ -64,12 +64,7 @@ namespace KmsReportClient.Excel.Creator.Consolidate
                 ObjWorkSheet.Cells[currentIndex, 24] = data.Data.r11;
                 ObjWorkSheet.Cells[currentIndex, 25] = data.Data.r12;
                 ObjWorkSheet.Cells[currentIndex++, 26] = data.Data.r13;
-
-
             }
         }
-
     }
-
-
 }

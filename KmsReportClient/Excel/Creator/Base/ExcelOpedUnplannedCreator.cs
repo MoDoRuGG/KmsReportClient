@@ -10,7 +10,7 @@ using KmsReportClient.Support;
 
 namespace KmsReportClient.Excel.Creator.Base
 {
-    public class ExcelOpedUnplannedCreator : ExcelBaseCreator<ReportOpedU>
+    public class ExcelOpedUnplannedCreator : ExcelBaseCreator<ReportOpedUnplanned>
     {
         
 
@@ -24,7 +24,7 @@ namespace KmsReportClient.Excel.Creator.Base
          string filialName) : base(filename, reportName, header, filialName, false) { }
 
 
-        protected override void FillReport(ReportOpedU report, ReportOpedU yearReport)
+        protected override void FillReport(ReportOpedUnplanned report, ReportOpedUnplanned yearReport)
         {
             string year = 20 + report.Yymm.Substring(0, 2);
             int q = Convert.ToInt32(report.Yymm.Substring(2, 2)) / 3;
@@ -44,7 +44,6 @@ namespace KmsReportClient.Excel.Creator.Base
                     ObjWorkSheet.Cells[i, 5] = rowData.Ds;
                     ObjWorkSheet.Cells[i, 6] = rowData.Smp;
                     ObjWorkSheet.Cells[i, 7] = rowData.Notes;
-                    //ObjWorkSheet.Cells[i, 8] = rowData.NotesGoodReason;
                 }
                
             }

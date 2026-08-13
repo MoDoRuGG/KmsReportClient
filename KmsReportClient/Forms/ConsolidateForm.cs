@@ -61,7 +61,7 @@ namespace KmsReportClient.Forms
                 { "RU-YEV", "ЕАО" },
              };
 
-        private static readonly ConsolidateReport[] FolderReports = { ConsolidateReport.ZpzWebSite, 
+        private static readonly ConsolidateReport[] FolderReports = { ConsolidateReport.ZpzWebSite,
                                                                       ConsolidateReport.ZpzWebSite2023,
                                                                       ConsolidateReport.ZpzWebSite2025,
                                                                       ConsolidateReport.ViolationsOfAppeals,
@@ -71,7 +71,7 @@ namespace KmsReportClient.Forms
                                                                       ConsolidateReport.FFOMSViolEKMP,
                                                                       ConsolidateReport.FFOMSVerifyPlan,
                                                                       ConsolidateReport.FFOMSMonthlyVol,
-                                                                      
+
 
                                                                     };
 
@@ -503,8 +503,8 @@ namespace KmsReportClient.Forms
                     panelRegion.Visible = false;
                     nudSingle.Visible = false;
                     cmbStart.DataSource = GlobalConst.Periods;
-                    btnDo.Text = "Сформировать сводный отчёт Мониторинг ВСС 2024";
-                    saveFileDialog1.FileName = "Cводный отчет Мониторинг ВСС 2024";
+                    btnDo.Text = "Сформировать сводный отчёт Мониторинг ВСС 2026";
+                    saveFileDialog1.FileName = "Cводный отчет Мониторинг ВСС 2026";
                     break;
 
                 case ConsolidateReport.ConsolidateOpedQ:
@@ -525,6 +525,16 @@ namespace KmsReportClient.Forms
                     btnDo.Text = "Сформировать сводный отчет об исполнении ЦПНП";
                     saveFileDialog1.FileName = "Сводный отчет об исполнении ЦПНП";
                     cmbStart.DataSource = GlobalConst.PeriodsQ;
+                    break;
+
+                case ConsolidateReport.Cons140n:
+                    labelStart.Text = "Период";
+                    nudSingle.Visible = false;
+                    panelEnd.Visible = false;
+                    panelRegion.Visible = false;
+                    btnDo.Text = "Сформировать отчет о выполнении показателей СМО";
+                    saveFileDialog1.FileName = "Сводный отчет о выполнении показателей СМО";
+                    cmbStart.DataSource = GlobalConst.Periods;
                     break;
 
                 case ConsolidateReport.ConsOpedFinance1:
@@ -634,8 +644,8 @@ namespace KmsReportClient.Forms
                     panelRegion.Visible = false;
                     nudSingle.Visible = false;
                     cmbStart.DataSource = GlobalConst.Periods;
-                    btnDo.Text = "Сформировать сводный отчет Мониторинг ВСС 2024 пофилиально";
-                    saveFileDialog1.FileName = "Пофилиальный Мониторинг ВСС 2024";
+                    btnDo.Text = "Сформировать сводный отчет Мониторинг ВСС 2026 пофилиально";
+                    saveFileDialog1.FileName = "Пофилиальный Мониторинг ВСС 2026";
                     break;
 
                 case ConsolidateReport.ConsQuantityFilial:
@@ -724,7 +734,7 @@ namespace KmsReportClient.Forms
                         CreateReportCadreT2();
                         break;
                     case ConsolidateReport.ConsolidateOpedUnplanned:
-                        CreateReportOpedUnplanned();
+                        CreateReportOpedUnplanned2026();
                         break;
                     case ConsolidateReport.Consolidate262T1:
                         CreateReport262T1();
@@ -824,6 +834,10 @@ namespace KmsReportClient.Forms
                         break;
                     case ConsolidateReport.CnpnQuarterly:
                         CreateCReportCpnp();
+                        break;
+
+                    case ConsolidateReport.Cons140n:
+                        CreateCons140n();
                         break;
 
                     case ConsolidateReport.CnpnMonthly:
@@ -994,7 +1008,7 @@ namespace KmsReportClient.Forms
         {
             string yymm = GetYymmQuarterly2();
 
-            var data = _client.ConsolidateOpedQCollect(yymm);
+            var data = _client.ConsolidateOpedUnplQCollect(yymm);
 
             if (data.Length == 0)
             {
@@ -1003,7 +1017,7 @@ namespace KmsReportClient.Forms
                 return;
             }
 
-            var excel = new ExcelConsolidateOpedQCreator(saveFileDialog1.FileName, "", _filialName);
+            var excel = new ExcelConsolidateOpedUnplQCreator(saveFileDialog1.FileName, "", _filialName);
 
             excel.CreateReport(data, null);
 
@@ -1233,7 +1247,7 @@ namespace KmsReportClient.Forms
 
 
 
-         
+
 
         private void CreateViolationsOfAppeals()
         {
@@ -1387,7 +1401,7 @@ namespace KmsReportClient.Forms
             foreach (var report in reports)
             {
                 if (region_name.TryGetValue(report.Filial, out string regionName))
-                { 
+                {
                     string filename = folder + $"\\{regionName}_Внеплановые экспертизы {yymm}.xlsx";
                     string filialName = _regions.FirstOrDefault(x => x.Key == report.Filial)?.ForeignKey
                     ?? throw new KeyNotFoundException($"Filial {report.Filial} не найден в _regions");
@@ -1440,29 +1454,29 @@ namespace KmsReportClient.Forms
 
         private void CreateFFOMSOncoCT()
         {
-                string yymm = GetYymmQuarterly();
+            string yymm = GetYymmQuarterly();
 
-                var data = _client.CreateFFOMSOncoCT(yymm);
-                if (data.Length == 0)
-                {
-                    MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-
-                foreach (var d in data)
-                {
-                    d.Filial = _regions.Single(x => x.Key == d.Filial).Value;
-                }
-
-                data = data.OrderBy(x => x.Filial).ToArray();
-
-                string filename = saveFileDialog1.FileName;
-                var excel = new ExcelFFOMSOncoCTCreator(filename, "", _filialName, yymm);
-                excel.CreateReport(data, null);
-
-                GlobalUtils.OpenFileOrDirectory(filename);
+            var data = _client.CreateFFOMSOncoCT(yymm);
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
+
+            foreach (var d in data)
+            {
+                d.Filial = _regions.Single(x => x.Key == d.Filial).Value;
+            }
+
+            data = data.OrderBy(x => x.Filial).ToArray();
+
+            string filename = saveFileDialog1.FileName;
+            var excel = new ExcelFFOMSOncoCTCreator(filename, "", _filialName, yymm);
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(filename);
+        }
 
 
 
@@ -1788,7 +1802,7 @@ namespace KmsReportClient.Forms
             {
                 Row = x.Key,
                 FullTime = x.Sum(x => x.FullTime),
-                Contract = x.Sum(x => x.Contract), 
+                Contract = x.Sum(x => x.Contract),
 
             }).ToArray();
 
@@ -2034,6 +2048,53 @@ namespace KmsReportClient.Forms
         }
 
 
+        private void CreateCons140n()
+        {
+            string yymm = GetYymmQuarterly();
+            var data = _client.CreateCons140nTable1(yymm);
+            if (data.Length == 0)
+            {
+                MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            foreach (var d in data)
+            {
+                d.Filial = _regions.Single(x => x.Key == d.Filial).Value;
+            }
+
+            data = data.OrderBy(x => x.Filial).ToArray();
+
+            // Вычисление периода
+            string year = "20" + yymm.Substring(0, 2);
+            string period = "";
+            switch (yymm.Substring(2))
+            {
+                case "03":
+                    period = $"1 квартал {year} года";
+                    break;
+                case "06":
+                    period = $"1 полугодие {year} года";
+                    break;
+                case "09":
+                    period = $"9 месяцев {year} года";
+                    break;
+                case "12":
+                    period = $"{year} год";
+                    break;
+                default:
+                    period = $"{year} год";
+                    break;
+            }
+
+            string filename = saveFileDialog1.FileName;
+            var excel = new ExcelConsolidate140nCreator(filename, "", _filialName, period);
+            excel.CreateReport(data, null);
+
+            GlobalUtils.OpenFileOrDirectory(filename);
+        }
+
         private void CreateReportConsQuantityFilial()
         {
             string yymm = GetYymm(cmbStart.Text, Convert.ToInt32(nudStart.Value)).ToString();
@@ -2093,7 +2154,7 @@ namespace KmsReportClient.Forms
                 return;
             }
             var excel = new ExcelFFOMSVolumesByTypesCreator(saveFileDialog1.FileName, "", _filialName);
-            excel.CreateReport(data,null);
+            excel.CreateReport(data, null);
 
             GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
         }
@@ -2548,10 +2609,10 @@ namespace KmsReportClient.Forms
         }
 
 
-        private void CreateReportOpedUnplanned()
+        private void CreateReportOpedUnplanned2026()
         {
             string yymm = GetYymm(cmbStart.Text, Convert.ToInt32(nudStart.Value)).ToString();
-            var dataMonths = _client.CreateReportOpedUnplanned(yymm);
+            var dataMonths = _client.CreateReportOpedUnplanned2026(yymm);
             if (dataMonths.Length == 0)
             {
                 MessageBox.Show("По вашему запросу ничего не найдено", "Нет данных",
@@ -2576,7 +2637,7 @@ namespace KmsReportClient.Forms
 
 
             string statPeriod = yymm.Substring(0, 2) + "01";
-            var dataYear = _client.CreateReportOpedUnplanned(yymm);
+            var dataYear = _client.CreateReportOpedUnplanned2026(yymm);
             foreach (var d in dataYear)
             {
                 if (d.Filial == "RU")
@@ -2647,6 +2708,7 @@ namespace KmsReportClient.Forms
             GlobalUtils.OpenFileOrDirectory(saveFileDialog1.FileName);
 
         }
+
 
 
         private void CreateCReportCpnpMonth()
